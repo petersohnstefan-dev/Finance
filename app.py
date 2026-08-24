@@ -16,6 +16,7 @@ from src.market_scanner import MarketScanner, load_cached_market_scan
 from src.universe import CATEGORIZED_UNIVERSES
 from src.portfolio import PortfolioManager
 from src.macro_scanner import MacroScanner
+from src.insider_whale_tracker import WhaleInsiderTracker
 
 # Page Configuration
 st.set_page_config(
@@ -50,6 +51,7 @@ app_mode = st.sidebar.radio(
     [
         "🏆 Markt-Screener & Top-Rankings", 
         "🚨 Ausbruchs- & Katalysator-Radar",
+        "🐋 Whale- & Insider-Radar",
         "🌐 Makro-Klima, Zentralbanken & News",
         "💼 Musterdepots & Live-Performance (2x 10.000 €)",
         "🔍 Einzelaktien-Tiefenanalyse"
@@ -304,7 +306,134 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
         st.info("💡 **Tipp**: Wähle links '🔍 Einzelaktien-Tiefenanalyse', um jede Aktie im interaktiven Chart und mit allen Details anzusehen.")
 
 # ==============================================================================
-# MODE 3: MAKRO-KLIMA, ZENTRALBANKEN & QUALITÄTSMEDIEN
+# MODE 3: WHALE- & INSIDER-RADAR
+# ==============================================================================
+elif app_mode == "🐋 Whale- & Insider-Radar":
+    st.title("🐋 Whale- & Insider-Radar (Börsen-Legenden, US-Kongress & Vorstände)")
+    st.markdown("Verfolge die **13F-Meldungen der Star-Investoren**, die **Aktienkäufe von US-Kongressabgeordneten** und **Insiderkäufe von Vorständen (CEOs)**.")
+
+    tab_whales, tab_congress, tab_insiders = st.tabs([
+        "🏛️ Star-Investoren Portfolios (13F Filings)",
+        "🏛️ US-Kongress & Senat Trades (Politician Trading)",
+        "👔 Vorstands- & CEO-Insiderkäufe (Cluster Buys)"
+    ])
+
+    with tab_whales:
+        st.subheader("🏛️ Die Portfolios der Star-Investoren (13F Filings)")
+        st.caption("Verifizierte Bestände und jüngste Zukäufe der einflussreichsten Fondsmanager der Welt.")
+
+        investors = WhaleInsiderTracker.get_super_investors()
+        
+        # Investor Selector Cards
+        selected_mgr = st.selectbox(
+            "Investor auswählen:",
+            [inv["manager"] + " (" + inv["fund"] + ")" for inv in investors]
+        )
+
+        active_inv = next(inv for inv in investors if inv["manager"] in selected_mgr)
+
+        w_col1, w_col2, w_col3 = st.columns(3)
+        with w_col1:
+            st.metric("Fondsmanager", active_inv["manager"])
+        with w_col2:
+            st.metric("Fonds / Gesellschaft", active_inv["fund"], delta=active_inv["aum"])
+        with w_col3:
+            st.metric("Investment-Stil", active_inv["style"])
+
+        st.markdown(f"""
+        <div style="background-color: #1e293b; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
+            <b style="color: #38bdf8;">💡 Jüngste Ausrichtung & These:</b>
+            <p style="margin: 4px 0 0 0; color: #f1f5f9; font-size: 14px;">{active_inv['latest_conviction']}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("#### 📋 Top-Positionen im Portfolio:")
+        holdings_df = pd.DataFrame(active_inv["top_holdings"])
+        
+        action_map = {
+            "BOUGHT": "🟢 AUFGESTOCKT",
+            "NEW": "🟢 NEUEINSTIEG",
+            "HOLD": "🟡 GEHALTEN",
+            "REDUCED": "🔴 REDUZIERT"
+        }
+        holdings_df["Aktion"] = holdings_df["action"].map(lambda x: action_map.get(x, x))
+        holdings_df["Gewichtung (%)"] = holdings_df["weight_pct"].apply(lambda x: f"{x:.1f}%")
+        
+        display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Aktion"]].copy()
+        display_holdings.columns = ["Ticker", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Jüngste Transaktion"]
+
+        h_cfg = {
+            "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel"),
+            "Unternehmen": st.column_config.TextColumn("Unternehmen", help="Unternehmensname"),
+            "Portfolio-Gewicht": st.column_config.TextColumn("Gewichtung", help="Anteil am gesamten Aktienportfolio"),
+            "Aktienanzahl": st.column_config.TextColumn("Bestand", help="Gehaltene Aktien"),
+            "Jüngste Transaktion": st.column_config.TextColumn("Aktion", help="Kauf, Aufstockung oder Teilverkauf im letzten Quartal")
+        }
+
+        st.dataframe(display_holdings, column_config=h_cfg, use_container_width=True, hide_index=True)
+
+    with tab_congress:
+        st.subheader("🏛️ US-Kongress & Senat Trades (STOCK Act Disclosures)")
+        st.caption("Offiziell gemeldete Aktientransaktionen von US-Politikern (Nancy Pelosi, Senatoren & Abgeordnete).")
+
+        congress_trades = WhaleInsiderTracker.get_congress_trades()
+        c_df = pd.DataFrame(congress_trades)
+
+        display_c = c_df[[
+            "politician", "symbol", "name", "trade_type", "amount_range", 
+            "transaction_date", "disclosure_date", "pnl_estimate", "notes"
+        ]].copy()
+
+        display_c.columns = [
+            "Politiker / Fraktion", "Ticker", "Unternehmen", "Transaktion", 
+            "Volumen-Spanne", "Handelsdatum", "Offenlegung", "Rendite seither", "Hintergrund / Ausschuss"
+        ]
+
+        c_cfg = {
+            "Politiker / Fraktion": st.column_config.TextColumn("Politiker", help="Name und Parteizugehörigkeit"),
+            "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
+            "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
+            "Transaktion": st.column_config.TextColumn("Order-Typ", help="Aktienkauf, Verkauf oder Call-Optionen"),
+            "Volumen-Spanne": st.column_config.TextColumn("Geschätztes Volumen", help="Gemeldete Transaktionsgröße in USD"),
+            "Handelsdatum": st.column_config.TextColumn("Kaufdatum", help="Datum der Ausführung"),
+            "Offenlegung": st.column_config.TextColumn("Publikation", help="Datum der öffentlichen Meldung"),
+            "Rendite seither": st.column_config.TextColumn("Kursplus", help="Geschätzte Performance seit Kauf"),
+            "Hintergrund / Ausschuss": st.column_config.TextColumn("Kontext", help="Ausschuss-Mitgliedschaft oder regulatorischer Kontext")
+        }
+
+        st.dataframe(display_c, column_config=c_cfg, use_container_width=True, hide_index=True)
+
+    with tab_insiders:
+        st.subheader("👔 Vorstands- & CEO-Insiderkäufe (Directors' Dealings)")
+        st.caption("Echte Insider-Käufe von Führungskräften mit eigenem Privatvermögen – das stärkste Vertrauenssignal.")
+
+        insiders = WhaleInsiderTracker.get_insider_buys()
+        i_df = pd.DataFrame(insiders)
+
+        display_i = i_df[[
+            "symbol", "name", "insider", "role", "amount", "buy_price", "date", "signal"
+        ]].copy()
+
+        display_i.columns = [
+            "Ticker", "Unternehmen", "Führungskraft / Insider", "Position / Rolle", 
+            "Kaufvolumen", "Kaufkurs", "Datum", "KI-Signal"
+        ]
+
+        i_cfg = {
+            "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
+            "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
+            "Führungskraft / Insider": st.column_config.TextColumn("Insider", help="Name des Käufers"),
+            "Position / Rolle": st.column_config.TextColumn("Rolle", help="CEO, CFO, Gründer oder Aufsichtsrat"),
+            "Kaufvolumen": st.column_config.TextColumn("Summe", help="Investiertes Eigenkapital"),
+            "Kaufkurs": st.column_config.TextColumn("Kurs", help="Ausführungskurs"),
+            "Datum": st.column_config.TextColumn("Kaufdatum", help="Datum der Transaktion"),
+            "KI-Signal": st.column_config.TextColumn("Signal", help="Einstufung des Signals")
+        }
+
+        st.dataframe(display_i, column_config=i_cfg, use_container_width=True, hide_index=True)
+
+# ==============================================================================
+# MODE 4: MAKRO-KLIMA, ZENTRALBANKEN & QUALITÄTSMEDIEN
 # ==============================================================================
 elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
     st.title("🌐 Makro-Klima, Zentralbanken & Qualitätsmedien")
@@ -747,10 +876,11 @@ else:
         st.markdown("<br>", unsafe_allow_html=True)
 
         # Tabs
-        tab_chart, tab_short_sellers, tab_breakout, tab_short, tab_long, tab_analysts = st.tabs([
+        tab_chart, tab_short_sellers, tab_breakout, tab_whales_single, tab_short, tab_long, tab_analysts = st.tabs([
             "📊 Interaktiver Chart & Signale",
             "🪤 Leerverkäufer & Short-Interest",
             "🚨 Ausbruchs-Signale & Volumen",
+            "🐋 Whales & Insider-Trades",
             "⚡ Schiene 1: Kurz- & Mittelfristig",
             "🏛️ Schiene 2: Langfristig (Bilanzen)",
             "🎯 Analysten & News"
@@ -836,6 +966,29 @@ else:
                     st.markdown(f"**{tr['title']}**: {tr['desc']}")
             else:
                 st.info("Aktuell keine extremen Ausbruchsmuster aktiv.")
+
+        with tab_whales_single:
+            st.subheader(f"🐋 Whale-, Kongress- & Insider-Aktivität für {active_symbol}")
+            whale_info = WhaleInsiderTracker.get_whale_sentiment_for_ticker(active_symbol)
+            if whale_info["has_activity"]:
+                st.success(f"🎯 **Hohe institutionelle / Insider-Aktivität erkannt (+{whale_info['score_boost']} Punkte Score-Bonus)**")
+                
+                if whale_info["whale_holders"]:
+                    st.markdown("#### 🏛️ Star-Investoren (13F Filings):")
+                    for wh in whale_info["whale_holders"]:
+                        st.markdown(f"- **{wh['manager']}** ({wh['fund']}): **{wh['weight']}% Depot-Gewichtung** *(Aktion: {wh['action']})*")
+                
+                if whale_info["congress_buyers"]:
+                    st.markdown("#### 🏛️ US-Kongress / Senat Käufe (STOCK Act):")
+                    for cg in whale_info["congress_buyers"]:
+                        st.markdown(f"- **{cg['politician']}**: {cg['trade_type']} ({cg['amount_range']}) am {cg['transaction_date']} *(Hintergrund: {cg['notes']})*")
+                
+                if whale_info["insider_buyers"]:
+                    st.markdown("#### 👔 Vorstands- & CEO-Insiderkäufe:")
+                    for ins in whale_info["insider_buyers"]:
+                        st.markdown(f"- **{ins['insider']}** ({ins['role']}): Kauf über **{ins['amount']}** zu {ins['buy_price']} am {ins['date']} ({ins['signal']})")
+            else:
+                st.info("Aktuell keine meldepflichtigen 13F-Whale-Positionen, Kongress-Trades oder Vorstandskäufe für diesen Ticker hinterlegt.")
 
         with tab_short:
             st.subheader("⚡ Kurz- & Mittelfristige Faktoren")
