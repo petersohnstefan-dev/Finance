@@ -640,13 +640,15 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
 
         active_inv = next(inv for inv in investors if inv["manager"] in selected_mgr)
 
-        w_col1, w_col2, w_col3 = st.columns(3)
+        w_col1, w_col2, w_col3, w_col4 = st.columns(4)
         with w_col1:
             st.metric("Fondsmanager", active_inv["manager"])
         with w_col2:
             st.metric("Fonds / Gesellschaft", active_inv["fund"], delta=active_inv["aum"])
         with w_col3:
             st.metric("Investment-Stil", active_inv["style"])
+        with w_col4:
+            st.metric("13F Stichtag & Meldung", active_inv.get("filing_date", "14.08.2026"), delta=f"Filing: {active_inv.get('filing_period', 'Q2')}")
 
         st.markdown(f"""
         <div style="background-color: #1e293b; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
@@ -666,15 +668,17 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         }
         holdings_df["Aktion"] = holdings_df["action"].map(lambda x: action_map.get(x, x))
         holdings_df["Gewichtung (%)"] = holdings_df["weight_pct"].apply(lambda x: f"{x:.1f}%")
+        holdings_df["Kaufkurs-Spanne"] = holdings_df.get("est_buy_range", "-")
         
-        display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Aktion"]].copy()
-        display_holdings.columns = ["Ticker", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Jüngste Transaktion"]
+        display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Kaufkurs-Spanne", "Aktion"]].copy()
+        display_holdings.columns = ["Ticker", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
 
         h_cfg = {
             "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel"),
             "Unternehmen": st.column_config.TextColumn("Unternehmen", help="Unternehmensname"),
             "Portfolio-Gewicht": st.column_config.TextColumn("Gewichtung", help="Anteil am gesamten Aktienportfolio"),
             "Aktienanzahl": st.column_config.TextColumn("Bestand", help="Gehaltene Aktien"),
+            "Geschätzte Kaufspanne": st.column_config.TextColumn("Kaufspanne", help="Durchschnittlicher Kursbereich im Meldequartal"),
             "Jüngste Transaktion": st.column_config.TextColumn("Aktion", help="Kauf, Aufstockung oder Teilverkauf im letzten Quartal")
         }
 
@@ -712,19 +716,21 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         st.dataframe(display_c, column_config=c_cfg, use_container_width=True, hide_index=True)
 
     with tab_insiders:
-        st.subheader("👔 Vorstands- & CEO-Insiderkäufe (Directors' Dealings)")
-        st.caption("Echte Insider-Käufe von Führungskräften mit eigenem Privatvermögen – das stärkste Vertrauenssignal.")
+        st.subheader("👔 Vorstands- & CEO-Insiderkäufe (Directors' Dealings & Skin-in-the-Game)")
+        st.caption("Echte Insider-Käufe von Führungskräften – bewertet nach der relativen Signifikanz zum Privatvermögen.")
+
+        st.info("💡 **Relative Skin-in-the-Game Formel**: Wenn ein neuer CEO mit 7,5 Mio. € Privatvermögen für **900.000 € (12% seines Vermögens)** eigene Aktien kauft, ist das Vertrauenssignal ungleich höher als wenn eine Milliardärs-Dynastie reine Dividenden reinvestiert (<0.1% des Vermögens).")
 
         insiders = WhaleInsiderTracker.get_insider_buys()
         i_df = pd.DataFrame(insiders)
 
         display_i = i_df[[
-            "symbol", "name", "insider", "role", "amount", "buy_price", "date", "signal"
+            "symbol", "name", "insider", "role", "amount", "net_worth_est", "wealth_pct", "skin_in_game", "date", "signal"
         ]].copy()
 
         display_i.columns = [
             "Ticker", "Unternehmen", "Führungskraft / Insider", "Position / Rolle", 
-            "Kaufvolumen", "Kaufkurs", "Datum", "KI-Signal"
+            "Kaufvolumen", "Geschätztes Vermögen", "Anteil am Vermögen (%)", "Skin-in-the-Game Stufe", "Datum", "KI-Signal"
         ]
 
         i_cfg = {
@@ -732,8 +738,10 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
             "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
             "Führungskraft / Insider": st.column_config.TextColumn("Insider", help="Name des Käufers"),
             "Position / Rolle": st.column_config.TextColumn("Rolle", help="CEO, CFO, Gründer oder Aufsichtsrat"),
-            "Kaufvolumen": st.column_config.TextColumn("Summe", help="Investiertes Eigenkapital"),
-            "Kaufkurs": st.column_config.TextColumn("Kurs", help="Ausführungskurs"),
+            "Kaufvolumen": st.column_config.TextColumn("Kaufsumme", help="Investiertes Eigenkapital"),
+            "Geschätztes Vermögen": st.column_config.TextColumn("Privatvermögen", help="Geschätztes Nettovermögen des Insiders"),
+            "Anteil am Vermögen (%)": st.column_config.TextColumn("Vermögensanteil", help="Prozentualer Anteil der Transaktion am geschätzten Gesamtvermögen"),
+            "Skin-in-the-Game Stufe": st.column_config.TextColumn("Skin-in-the-Game", help="Signalstärke basierend auf relativem Vermögensanteil"),
             "Datum": st.column_config.TextColumn("Kaufdatum", help="Datum der Transaktion"),
             "KI-Signal": st.column_config.TextColumn("Signal", help="Einstufung des Signals")
         }
