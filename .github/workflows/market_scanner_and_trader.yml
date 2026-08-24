@@ -1,0 +1,60 @@
+﻿name: 24/7 AI Market Scanner & Portfolio Trader
+
+on:
+  schedule:
+    # 06:00 UTC (08:00 CEST) - Vor dem europäischen Börsenstart (Mo-Fr)
+    - cron: '0 6 * * 1-5'
+    # 13:00 UTC (15:00 CEST) - Vor der US-Wallstreet Eröffnung (Mo-Fr)
+    - cron: '0 13 * * 1-5'
+    # 18:00 UTC (20:00 CEST) - Nachbörslicher Check (Mo-Fr)
+    - cron: '0 18 * * 1-5'
+  workflow_dispatch: # Ermöglicht manuelles Starten per Klick in GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  scan-and-trade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Code auschecken
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 3.12 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Abhängigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🔍 1. Markt & Foren vollständig scannen
+        run: |
+          python -m src.market_scanner
+
+      - name: 💼 2. Musterdepots aktualisieren & Handels-Check ausführen
+        run: |
+          python -c "
+          import json
+          from src.portfolio import PortfolioManager
+          pm = PortfolioManager(initial_capital_per_depot=10000.0)
+          pm.update_live_prices()
+          scan_data = json.load(open('data/market_scan_results.json', encoding='utf-8'))['data']
+          actions = pm.auto_trade_check(scan_data)
+          print('Ausgeführte Aktionen:', actions)
+          "
+
+      - name: 💾 3. Aktualisierte Daten & Depots zurück nach GitHub pushen
+        run: |
+          git config --global user.name 'Finance AI Bot'
+          git config --global user.email 'bot@antigravity.ai'
+          git add data/
+          if git diff --staged --quiet; then
+            echo 'Keine Änderungen zum Committen.'
+          else
+            git commit -m '🤖 Automatischer 24/7 Markt-Scan & Depot-Update [skip ci]'
+            git push
+          fi
