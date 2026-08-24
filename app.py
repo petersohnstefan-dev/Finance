@@ -340,56 +340,87 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
         st.info("💡 **Tipp**: Wähle links '🔍 Einzelaktien-Tiefenanalyse', um jede Aktie im interaktiven Chart und mit allen Details anzusehen.")
 
 # ==============================================================================
-# MODE 3: ECHTZEIT-INTRADAY-RADAR (LIVE-TICKS)
+# MODE 3: ECHTZEIT-INTRADAY-RADAR (LIVE-TICKS ACROSS 160+ ASSETS)
 # ==============================================================================
 elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
-    st.title("⚡ Echtzeit-Intraday-Radar (100% Kostenloser Live-Tick-Feed)")
-    st.markdown("Überwacht **Sekunden-Preisticks** und **1-Minuten-Volumenschocks** von High-Beta-Aktien *(Moderna, Nvidia, Palantir, Rivian)* und Krypto *(Bitcoin, Solana)* ohne teure API-Kosten.")
+    st.title("⚡ Echtzeit-Intraday-Radar (160+ Multi-Asset Live-Stream)")
+    st.markdown("Überwacht **Sekunden-Preisticks** und **1-Minuten-Volumenschocks** über **160+ Werte** *(SDAX, MDAX, DAX, US-Biotech & Growth, Krypto, Rohstoffe)* ohne teure API-Kosten.")
 
     rt_scanner = RealTimeBreakoutScanner()
+    categories = rt_scanner.get_categories()
 
-    # Control Bar
-    col_rt_btn, col_rt_status, col_rt_mode = st.columns([1.5, 1.5, 2])
-    with col_rt_btn:
-        if st.button("⚡ Live-Tick-Scan jetzt ausführen", use_container_width=True):
-            with st.spinner("Frage Live-Ticks über kostenlose Schnittstellen ab..."):
-                new_alerts = rt_scanner.scan_once()
-                if new_alerts:
-                    st.success(f"🚨 {len(new_alerts)} akute Intraday-Ausbrüche erkannt!")
-                else:
-                    st.info("Ticks aktualisiert. Keine extremen Volumenschocks in den letzten 60 Sekunden.")
-                st.rerun()
+    # Category Selector & Scan Control
+    col_c1, col_c2 = st.columns([2, 1.5])
+    with col_c1:
+        selected_cat = st.selectbox("🎯 Universum / Marktbereich wählen:", categories, index=0)
+    with col_c2:
+        st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
+        scan_btn = st.button(f"⚡ Live-Scan für '{selected_cat[:20]}...' ausführen", use_container_width=True)
 
-    with col_rt_status:
-        st.metric("Live-Datenstrom", "🟢 Aktiv (0 Delay)", help="Krypto via Binance Live API, Aktien via Realtime Fast-Info")
-    with col_rt_mode:
-        st.metric("Reaktionszeit-Modell", "< 5 Sekunden", help="Erkennt Kurssprünge > +1.5% in unter 60 Sekunden")
+    if scan_btn:
+        with st.spinner(f"Scanne alle Assets in **{selected_cat}** parallel in Echtzeit..."):
+            res = rt_scanner.scan_category(selected_cat)
+            if res.get("alerts"):
+                st.success(f"🚨 {len(res['alerts'])} akute Intraday-Ausbrüche erkannt!")
+            else:
+                st.success(f"✅ {res['count']} Assets in Real-Time aktualisiert. Keine extremen Spikes in den letzten 60 Sekunden.")
+            st.rerun()
 
-    # 1. Live Price Ticker Board
-    st.markdown("### 📊 Live-Preise der High-Priority-Watchlist")
+    # Status Bar
+    s1, s2, s3 = st.columns(3)
+    with s1:
+        st.metric("Überwachte Anlageklassen", "7 Märkte (160+ Assets)", help="SDAX, MDAX, DAX, US Tech, Biotechs, Krypto, Rohstoffe")
+    with s2:
+        st.metric("Live-Stream Status", "🟢 Aktiv (0 Delay)", help="Parallele Multi-Thread Abfrage in < 2 Sekunden")
+    with s3:
+        st.metric("Intraday-Spike-Schwelle", "≥ +1.5% in < 60 Sek.", help="Erkennt explosionsartige Kursanstiege vor dem Massenmarkt")
+
+    # 1. Live Ticks Board & Filter
+    st.markdown(f"### 📊 Live-Preise: {selected_cat}")
     live_ticks = rt_scanner.get_live_ticks_snapshot()
-    if not live_ticks:
-        live_ticks = {
-            "MRNA": {"name": "Moderna", "price": 138.89, "type": "STOCK", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "NVDA": {"name": "Nvidia", "price": 208.48, "type": "STOCK", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "PLTR": {"name": "Palantir", "price": 175.89, "type": "STOCK", "price": 175.89, "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "RIVN": {"name": "Rivian", "price": 16.60, "type": "STOCK", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "BTC-USD": {"name": "Bitcoin", "price": 78951.27, "type": "CRYPTO", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "SOL-USD": {"name": "Solana", "price": 96.54, "type": "CRYPTO", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "ETH-USD": {"name": "Ethereum", "price": 2474.83, "type": "CRYPTO", "time": datetime.datetime.now().strftime("%H:%M:%S")},
-            "GC=F": {"name": "Gold", "price": 4706.10, "type": "COMMODITY", "time": datetime.datetime.now().strftime("%H:%M:%S")}
-        }
+    
+    # Filter live ticks for current category tickers
+    from src.realtime_scanner import WATCHLIST_CATEGORIES
+    cat_symbols = WATCHLIST_CATEGORIES.get(selected_cat, [])
+    filtered_ticks = {k: v for k, v in live_ticks.items() if k in cat_symbols}
 
-    t_cols = st.columns(4)
-    for idx, (sym, t_info) in enumerate(live_ticks.items()):
-        col_idx = idx % 4
-        with t_cols[col_idx]:
-            curr_sym = "$" if t_info.get("type") == "STOCK" else ("$" if "USD" in sym else "€")
-            st.metric(
-                label=f"{t_info['name']} ({sym})",
-                value=f"{t_info['price']:,.2f} {curr_sym}",
-                delta=f"🕒 {t_info.get('time', 'Live')}"
-            )
+    # If category not yet scanned into cache, show defaults
+    if not filtered_ticks:
+        with st.spinner(f"Lade initiale Live-Preise für {selected_cat}..."):
+            res = rt_scanner.scan_category(selected_cat)
+            filtered_ticks = res.get("ticks", {})
+
+    # Search Box for individual ticker
+    search_q = st.text_input("🔍 Ticker filtern (z.B. MRNA, PLTR, BTC, NVDA, SDF.DE, SOL):", value="")
+    if search_q.strip():
+        q = search_q.strip().upper()
+        filtered_ticks = {k: v for k, v in filtered_ticks.items() if q in k}
+
+    # Display Top Ticks Grid
+    top_items = list(filtered_ticks.items())[:8]
+    if top_items:
+        t_cols = st.columns(4)
+        for idx, (sym, t_info) in enumerate(top_items):
+            col_idx = idx % 4
+            with t_cols[col_idx]:
+                curr_sym = "$" if t_info.get("type") == "STOCK" else ("$" if "USD" in sym else "€")
+                st.metric(
+                    label=f"{t_info.get('name', sym)} ({sym})",
+                    value=f"{t_info['price']:,.2f} {curr_sym}",
+                    delta=f"🕒 {t_info.get('time', 'Live')}"
+                )
+
+    # Comprehensive Table for All Assets in Category
+    if filtered_ticks:
+        st.markdown("#### 📋 Alle Ticks im gewählten Universum:")
+        t_df = pd.DataFrame(list(filtered_ticks.values()))
+        display_t = pd.DataFrame()
+        display_t["Ticker"] = t_df["symbol"] if "symbol" in t_df.columns else list(filtered_ticks.keys())
+        display_t["Preis"] = t_df["price"].apply(lambda x: f"{x:,.2f}")
+        display_t["Typ"] = t_df.get("type", "STOCK")
+        display_t["Aktualisiert"] = t_df.get("time", "-")
+        
+        st.dataframe(display_t, use_container_width=True, hide_index=True)
 
     # 2. Instant Breakout & Short Squeeze Alerts
     st.markdown("---")
@@ -399,12 +430,13 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
     recent_alerts = rt_scanner.get_recent_alerts()
     if recent_alerts:
         a_df = pd.DataFrame(recent_alerts)
-        display_a = a_df[["time_str", "symbol", "name", "trigger_price", "change_1min_pct", "short_float", "urgency", "message"]].copy()
-        display_a["trigger_price"] = display_a["trigger_price"].apply(lambda x: f"{x:.2f} $")
-        display_a["change_1min_pct"] = display_a["change_1min_pct"].apply(lambda x: f"+{x:.2f}%")
-        display_a["short_float"] = display_a["short_float"].apply(lambda x: f"{x:.1f}%" if x > 0 else "-")
-        
-        display_a.columns = ["Uhrzeit", "Ticker", "Name", "Auslöse-Kurs", "1-Min-Sprung", "Short Float", "Dringlichkeit", "KI-Meldung & Signal"]
+        display_a = pd.DataFrame()
+        display_a["Uhrzeit"] = a_df.get("time_str", a_df.get("timestamp", "-"))
+        display_a["Ticker"] = a_df["symbol"]
+        display_a["Auslöse-Kurs"] = a_df["trigger_price"].apply(lambda x: f"{x:.2f} $" if pd.notnull(x) else "-")
+        display_a["1-Min-Sprung"] = a_df["change_1min_pct"].apply(lambda x: f"+{x:.2f}%" if pd.notnull(x) else "-")
+        display_a["Dringlichkeit"] = a_df.get("urgency", "⚡ HOCH")
+        display_a["KI-Meldung & Signal"] = a_df["message"]
         
         st.dataframe(display_a, use_container_width=True, hide_index=True)
     else:
