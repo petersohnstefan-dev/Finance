@@ -959,9 +959,18 @@ else:
         synthesizer = DecisionSynthesizer()
         breakout_radar = BreakoutRadar()
 
+        options_intel = OptionsDarkPoolEngine.get_options_flow_for_ticker(active_symbol)
+        revision_intel = EarningsRevisionEngine.get_revision_metrics(active_symbol)
+        whale_intel = WhaleInsiderTracker.get_whale_sentiment_for_ticker(active_symbol)
+        macro_intel = FREDMacroEngine.get_macro_indicators()
+
         short_results = short_engine.evaluate(prices_df, sentiment)
         long_results = long_engine.evaluate(fundamentals, consensus)
-        synth_result = synthesizer.synthesize(short_results, long_results, fundamentals, consensus)
+        synth_result = synthesizer.synthesize(
+            short_results, long_results, fundamentals, consensus,
+            options_intel=options_intel, revision_intel=revision_intel,
+            macro_intel=macro_intel, whale_intel=whale_intel
+        )
         breakout_res = breakout_radar.analyze_breakout_potential(prices_df, fundamentals, sentiment.get("forum_mentions", 0))
 
         # Header Bar
