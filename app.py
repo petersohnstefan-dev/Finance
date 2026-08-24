@@ -718,6 +718,65 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
         horizontal=True
     )[0]
 
+    # Expandable Strategy Handbook & Percentages
+    with st.expander("📖 Strategie-Handbuch: Nach welchen Formeln & Prozenten handelt die KI?"):
+        h_tab1, h_tab2, h_tab3 = st.tabs([
+            "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
+            "📈 2. Mittelfrist-Depot (1–6 Monate)",
+            "🏛️ 3. Langfrist-Depot (1–5+ Jahre)"
+        ])
+
+        with h_tab1:
+            st.markdown("""
+            #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes & Hebel)
+            **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung und Leerverkäufer-Fallen.
+
+            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+            | :--- | :---: | :--- |
+            | **📈 Charttechnik & Momentum** | **30 %** | Kurs über EMA 20 & EMA 50, RSI zwischen 50–68, MACD Crossover |
+            | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50, ungewöhnliche OTM Call-Sweeps, Dark-Pool-Blöcke |
+            | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % ODER BaFin-Eindeckungen (Short-Squeeze-Gefahr) |
+            | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish) |
+            | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse von Börsen in Cold Wallets (Verknappung) |
+
+            * **🟢 KAUF-Trigger:** Kurzfrist-Score ≥ **75 / 100**.
+            * **🔴 VERKAUFS-Trigger:** Fester **Stop-Loss bei -7 %** (bzw. **-15 %** bei Hebel-Zertifikaten) oder **Take-Profit bei +20 %** (bzw. **+40 %** bei Hebel-Zertifikaten).
+            """)
+
+        with h_tab2:
+            st.markdown("""
+            #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing & Wachstum)
+            **Ziel:** Reiten starker Aufwärtstrends bei Unternehmen mit systematisch steigenden Gewinnschätzungen.
+
+            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+            | :--- | :---: | :--- |
+            | **📈 Earnings-Revisionen (EPS)** | **35 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + EPS-Surprises |
+            | **🎙️ Earnings Call KI-Tonalität** | **25 %** | KI-Sprachscore > 85/100 (Fokus auf Margenwachstum & Auftragsrekorde) |
+            | **📊 Trendfolge über EMA 50** | **20 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
+            | **🐋 Whale- & Kongress-Tracking** | **10 %** | Star-Investoren (Buffett, Druckenmiller) oder Kongressmitglieder kaufen |
+            | **🌐 FRED-Makro & Zinskurve** | **10 %** | Normalisierung der Zinskurve (10Y/2Y) und fallender US-Dollar-Index (DXY) |
+
+            * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100**.
+            * **🔴 VERKAUFS-Trigger:** **Trailing Stop-Loss bei -10 %** oder **Mittelfrist-Ziel bei +35 %**.
+            """)
+
+        with h_tab3:
+            st.markdown("""
+            #### 🏛️ Langfristiges Investment-Depot (Quality, Gold & Moat)
+            **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold und digitalem Wertspeicher.
+
+            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+            | :--- | :---: | :--- |
+            | **🏰 Kapitalrendite & Burggraben** | **35 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 % |
+            | **🛡️ Bilanzqualität & Solidität** | **25 %** | Verschuldungsgrad (Debt/Equity) < 1,0, krisensicherer Cash-Bestand |
+            | **🌐 FRED-Makro & Zyklen** | **20 %** | Allokation in Gold & Bitcoin als Währungs- und Inflationsabsicherung |
+            | **🏷️ Bewertung & Sicherheitsmarge** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus mit ≥ 25 % Sicherheitspuffer |
+            | **🎯 Analysten-Upside & Insider** | **10 %** | Konsenskursziel > +15 % + Käufe durch CEOs/Vorstände (*Directors' Dealings*) |
+
+            * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100**.
+            * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
+            """)
+
     # Action Toolbar
     col_act1, col_act2, col_info_p = st.columns([1, 1.5, 2])
     with col_act1:
