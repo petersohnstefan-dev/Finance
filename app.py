@@ -581,13 +581,50 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
 # ==============================================================================
 elif app_mode == "🐋 Whale- & Insider-Radar":
     st.title("🐋 Whale- & Insider-Radar (Börsen-Legenden, US-Kongress & Vorstände)")
-    st.markdown("Verfolge die **13F-Meldungen der Star-Investoren**, die **Aktienkäufe von US-Kongressabgeordneten** und **Insiderkäufe von Vorständen (CEOs)**.")
+    st.markdown("Verfolge die **13F-Meldungen von 12+ Star-Investoren**, die **Aktienkäufe von US-Kongressabgeordneten** und **Insiderkäufe von CEOs & Vorständen**.")
 
-    tab_whales, tab_congress, tab_insiders = st.tabs([
+    tab_search, tab_whales, tab_congress, tab_insiders = st.tabs([
+        "🔍 Ticker-Schnellsuche (Welcher Wal hält meine Aktie?)",
         "🏛️ Star-Investoren Portfolios (13F Filings)",
         "🏛️ US-Kongress & Senat Trades (Politician Trading)",
         "👔 Vorstands- & CEO-Insiderkäufe (Cluster Buys)"
     ])
+
+    with tab_search:
+        st.subheader("🔍 Ticker-Schnellsuche: Whale-, Kongress- & Insider-Bestände")
+        st.caption("Prüfe blitzschnell für jede Aktie, ob Milliardäre (Buffett, Burry, Druckenmiller), US-Politiker oder CEOs investiert sind.")
+        
+        col_s_in, col_s_btn = st.columns([3, 1])
+        with col_s_in:
+            search_ticker = st.text_input("Ticker oder Unternehmensname eingeben (z. B. NVDA, PLTR, MRNA, BABA, SAP, BMW, TSLA, LLY):", value="NVDA").strip().upper()
+
+        if search_ticker:
+            w_info = WhaleInsiderTracker.get_whale_sentiment_for_ticker(search_ticker)
+            if w_info["has_activity"]:
+                st.success(f"🎯 **Aktivität für {search_ticker} gefunden! (+{w_info['score_boost']} Punkte Score-Bonus im System)**")
+                
+                res_col1, res_col2 = st.columns(2)
+                with res_col1:
+                    if w_info["whale_holders"]:
+                        st.markdown("#### 🏛️ Star-Investoren mit Position:")
+                        for wh in w_info["whale_holders"]:
+                            act_badge = "🟢 AUFGESTOCKT" if wh["action"] == "BOUGHT" else ("🟢 NEU" if wh["action"] == "NEW" else ("🔴 REDUZIERT" if wh["action"] == "REDUCED" else "🟡 GEHALTEN"))
+                            st.markdown(f"- **{wh['manager']}** (*{wh['fund']}*): **{wh['weight']}% Gewichtung** `[{act_badge}]`")
+                    else:
+                        st.info("Keine meldepflichtigen 13F-Positionen der Top-Wale.")
+
+                with res_col2:
+                    if w_info["congress_buyers"]:
+                        st.markdown("#### 🏛️ Käufe von US-Politikern (STOCK Act):")
+                        for cg in w_info["congress_buyers"]:
+                            st.markdown(f"- **{cg['politician']}**: {cg['trade_type']} ({cg['amount_range']}) am {cg['transaction_date']} *(Notiz: {cg['notes']})*")
+                    
+                    if w_info["insider_buyers"]:
+                        st.markdown("#### 👔 Vorstandskäufe (Directors' Dealings):")
+                        for ins in w_info["insider_buyers"]:
+                            st.markdown(f"- **{ins['insider']}** ({ins['role']}): Kauf über **{ins['amount']}** zu {ins['buy_price']} am {ins['date']}")
+            else:
+                st.info(f"Für **{search_ticker}** liegen aktuell keine aktiven 13F-Whale-Bestände, Kongress-Käufe oder Insider-Transaktionen vor.")
 
     with tab_whales:
         st.subheader("🏛️ Die Portfolios der Star-Investoren (13F Filings)")
