@@ -26,145 +26,74 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom High-Contrast & Mobile-Optimized Styling
+# Custom Soft & Clean Styling
 st.markdown("""
 <style>
-    /* Global Base High Contrast */
-    .stApp {
-        background-color: #0b0f17;
-        color: #f8fafc;
-    }
-    
-    /* High-Contrast Interactive Buttons */
-    div[data-testid="stButton"] > button {
-        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
-        color: #ffffff !important;
-        border: 1.5px solid #38bdf8 !important;
-        border-radius: 8px !important;
-        font-weight: 700 !important;
-        font-size: 15px !important;
-        padding: 10px 20px !important;
-        min-height: 46px !important;
-        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
-        transition: all 0.2s ease-in-out !important;
-    }
-    div[data-testid="stButton"] > button:hover {
-        background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
-        border-color: #7dd3fc !important;
-        box-shadow: 0 6px 16px rgba(56, 189, 248, 0.5) !important;
-        transform: translateY(-1px) !important;
-    }
-    div[data-testid="stButton"] > button:active {
-        transform: scale(0.98) !important;
-    }
-
-    /* High-Contrast Radio Buttons (Segmented & Touch-Friendly) */
-    div[data-testid="stRadio"] > div[role="radiogroup"] {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        background-color: #111827;
-        padding: 8px;
-        border-radius: 10px;
-        border: 1.5px solid #1f2937;
-    }
-    
-    /* Horizontal Radio Buttons (Depot Selector) */
-    div[data-testid="stRadio"] > div[role="radiogroup"][aria-orientation="horizontal"] {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    div[data-testid="stRadio"] label {
-        background-color: #1e293b !important;
-        color: #f1f5f9 !important;
-        border: 1.5px solid #334155 !important;
-        border-radius: 8px !important;
-        padding: 10px 14px !important;
-        margin: 2px !important;
-        cursor: pointer !important;
-        font-weight: 600 !important;
-        font-size: 14px !important;
-        transition: all 0.2s ease !important;
-        display: flex !important;
-        align-items: center !important;
-        min-height: 42px !important;
-    }
-    
-    div[data-testid="stRadio"] label:hover {
-        background-color: #334155 !important;
-        border-color: #64748b !important;
-        color: #ffffff !important;
-    }
-
-    /* Active / Checked Radio Item Highlight */
-    div[data-testid="stRadio"] label[data-checked="true"],
-    div[data-testid="stRadio"] label:has(input:checked) {
-        background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%) !important;
-        border: 2px solid #38bdf8 !important;
-        color: #ffffff !important;
-        box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
-        font-weight: 700 !important;
-    }
-
-    /* High-Contrast Tabs */
-    div[data-testid="stTabs"] button[role="tab"] {
-        background-color: #1e293b !important;
-        color: #94a3b8 !important;
-        border: 1px solid #334155 !important;
-        border-radius: 6px 6px 0 0 !important;
-        font-weight: 600 !important;
-        padding: 8px 16px !important;
-        margin-right: 4px !important;
-    }
-    div[data-testid="stTabs"] button[aria-selected="true"] {
-        background-color: #0f172a !important;
-        color: #38bdf8 !important;
-        border: 2px solid #38bdf8 !important;
-        border-bottom: none !important;
-        font-weight: 700 !important;
-    }
-
-    /* Inputs & Selectboxes */
-    div[data-baseweb="select"] > div, 
-    div[data-baseweb="input"] > div {
-        background-color: #1e293b !important;
-        border: 1.5px solid #475569 !important;
-        border-radius: 8px !important;
-        color: #ffffff !important;
-    }
-    div[data-baseweb="select"] > div:hover,
-    div[data-baseweb="input"] > div:hover {
-        border-color: #38bdf8 !important;
-    }
-
-    /* Metric Cards */
+    /* Clean, Legible Metric Containers */
     div[data-testid="metric-container"] {
-        background-color: #161e2e;
-        border: 1.5px solid #334155;
+        background-color: #1a1e29;
+        border: 1px solid #2e384d;
         border-radius: 10px;
         padding: 12px 16px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    div[data-testid="stMetricValue"] {
-        font-weight: 800 !important;
-        color: #f8fafc !important;
+    
+    /* Clean Touch-Friendly Buttons */
+    div[data-testid="stButton"] > button {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+        border: 1px solid #3b82f6 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        padding: 8px 18px !important;
+        min-height: 44px !important;
+        transition: all 0.2s ease !important;
+    }
+    div[data-testid="stButton"] > button:hover {
+        background-color: #1d4ed8 !important;
+        border-color: #60a5fa !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+    }
+
+    /* Clean Radio Buttons (Segmented Look with Soft Background) */
+    div[data-testid="stRadio"] label {
+        background-color: #1e2433 !important;
+        color: #f1f5f9 !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+        padding: 8px 14px !important;
+        margin: 2px !important;
+        cursor: pointer !important;
+        font-weight: 500 !important;
+        font-size: 14px !important;
+        transition: all 0.2s ease !important;
+    }
+    div[data-testid="stRadio"] label:hover {
+        background-color: #2d3748 !important;
+        border-color: #4a5568 !important;
+    }
+    div[data-testid="stRadio"] label:has(input:checked) {
+        background-color: #1e3a8a !important;
+        border: 1.5px solid #38bdf8 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+    }
+
+    /* Clean Tabs */
+    div[data-testid="stTabs"] button[role="tab"] {
+        border-radius: 6px 6px 0 0 !important;
+        font-weight: 600 !important;
     }
 
     /* Mobile Responsive Optimizations */
     @media (max-width: 768px) {
         div[data-testid="stRadio"] label {
             width: 100% !important;
-            margin-bottom: 6px !important;
-            font-size: 15px !important;
+            margin-bottom: 4px !important;
         }
         div[data-testid="stButton"] > button {
             width: 100% !important;
-            font-size: 16px !important;
-            padding: 12px !important;
-        }
-        .metric-card {
-            padding: 10px !important;
         }
     }
 </style>
@@ -180,7 +109,7 @@ app_mode = st.sidebar.radio(
         "🚨 Ausbruchs- & Katalysator-Radar",
         "🐋 Whale- & Insider-Radar",
         "🌐 Makro-Klima, Zentralbanken & News",
-        "💼 Musterdepots & Live-Performance (2x 10.000 €)",
+        "💼 Musterdepots & Live-Performance (3x 10.000 €)",
         "🔍 Einzelaktien-Tiefenanalyse"
     ],
     index=0
@@ -659,20 +588,21 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
         st.info("Keine Nachrichten für den gewählten Filter gefunden.")
 
 # ==============================================================================
-# MODE 4: MUSTERDEPOTS & LIVE-PERFORMANCE
+# MODE 5: MUSTERDEPOTS & LIVE-PERFORMANCE (3 DEPOTS)
 # ==============================================================================
-elif app_mode == "💼 Musterdepots & Live-Performance (2x 10.000 €)":
-    st.title("💼 Autonome Musterdepots (2x 10.000 € Startkapital)")
-    st.markdown("Zwei getrennte Echtzeit-Musterdepots: Eines für **aktives Kurz-/Mittelfrist-Trading** und eines für **langfristiges Qualitäts-Investing**.")
+elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
+    st.title("💼 Autonome Musterdepots (3x 10.000 € Startkapital)")
+    st.markdown("Drei getrennte Echtzeit-Musterdepots: **Kurzfristig (Tage–Wochen)**, **Mittelfristig (1–6 Monate)** und **Langfristig (Jahre)**.")
 
     pm = PortfolioManager(initial_capital_per_depot=10000.0)
 
-    # Depot Selector
+    # Depot Selector (3 Depots)
     selected_depot_key = st.radio(
         "Wähle das Depot:",
         [
-            ("short_term", "⚡ Kurz-/Mittelfristiges Trading-Depot (Momentum & Squeeze)"),
-            ("long_term", "🏛️ Langfristiges Investment-Depot (Quality & Value)")
+            ("short_term", "⚡ Kurzfristig (Tage–Wochen / Squeezes & Hebel)"),
+            ("medium_term", "📈 Mittelfristig (1–6 Monate / Growth & Trend)"),
+            ("long_term", "🏛️ Langfristig (Jahre / Quality, Gold & Moat)")
         ],
         format_func=lambda x: x[1],
         horizontal=True

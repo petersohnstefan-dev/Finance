@@ -9,7 +9,7 @@ from src.derivatives import DerivativeEngine
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
 class PortfolioManager:
-    """Manages multi-asset paper trading portfolios (Stocks, Crypto, Gold, Knock-Outs, Factor & Bonus Certificates)."""
+    """Manages 3 distinct paper trading portfolios (Short-Term, Medium-Term, Long-Term)."""
 
     def __init__(self, initial_capital_per_depot: float = 10000.0):
         self.initial_capital = initial_capital_per_depot
@@ -17,12 +17,23 @@ class PortfolioManager:
         self.data = self._load()
 
     def _load(self) -> Dict[str, Any]:
-        """Loads existing portfolio state without resetting."""
+        """Loads existing portfolio state, migrating to 3 depots if needed."""
         if os.path.exists(PORTFOLIO_FILE):
             try:
                 with open(PORTFOLIO_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if "portfolios" in data and "short_term" in data["portfolios"]:
+                        # Ensure medium_term exists
+                        if "medium_term" not in data["portfolios"]:
+                            data["portfolios"]["medium_term"] = {
+                                "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate)",
+                                "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien über EMA 20/50 & Faktor-Zertifikate.",
+                                "initial_cash": self.initial_capital,
+                                "cash": self.initial_capital,
+                                "positions": {},
+                                "history": []
+                            }
+                            self._save(data)
                         return data
             except Exception:
                 pass
@@ -33,16 +44,24 @@ class PortfolioManager:
             "currency": "EUR",
             "portfolios": {
                 "short_term": {
-                    "name": "⚡ Kurz-/Mittelfristiges Trading-Depot (Momentum, Hebel & Squeeze)",
-                    "strategy": "Aktives Swing-Trading auf Momentum, Ausbrüche & Squeezes via Aktien, Krypto, Knock-Out & Faktor-Zertifikate (Stop-Loss -7% / Take-Profit +20%).",
+                    "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
+                    "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
+                    "initial_cash": self.initial_capital,
+                    "cash": self.initial_capital,
+                    "positions": {},
+                    "history": []
+                },
+                "medium_term": {
+                    "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
+                    "strategy": "Mittelfristige Trendfolge auf starke Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
                     "initial_cash": self.initial_capital,
                     "cash": self.initial_capital,
                     "positions": {},
                     "history": []
                 },
                 "long_term": {
-                    "name": "🏛️ Langfristiges Investment-Depot (Quality, Gold & Bonus-Zertifikate)",
-                    "strategy": "Langfristiges Buy & Hold bei soliden Burggraben-Unternehmen (ROE > 15%), Gold, Bitcoin und Bonus-Zertifikaten mit Sicherheitspuffer.",
+                    "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
+                    "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
                     "initial_cash": self.initial_capital,
                     "cash": self.initial_capital,
                     "positions": {},
@@ -159,7 +178,7 @@ class PortfolioManager:
         return True
 
     def update_live_prices(self):
-        """Fetches fresh live prices for underlying assets and recalculates derivative values."""
+        """Fetches fresh live prices for all positions across all 3 depots."""
         underlying_prices = {}
         all_symbols = set()
         
@@ -250,85 +269,96 @@ class PortfolioManager:
         }
 
     def auto_trade_check(self, scan_results: List[Dict[str, Any]]) -> List[str]:
-        """Autonomous AI Trading Engine: manages stops, targets, breakouts, knockouts, and factor certificates."""
+        """Autonomous 3-Depot AI Trading Engine."""
         actions_taken = []
         self.update_live_prices()
 
-        # 1. Check Short-Term Trading Portfolio
+        # 1. Kurzfristiges Trading-Depot (Squeezes, Ausbrüche & Hebel)
         st_depot = self.data["portfolios"]["short_term"]
         for sym in list(st_depot["positions"].keys()):
             pos = st_depot["positions"][sym]
             curr_p = pos["current_price"]
-            
-            # Check Knockout event
             if pos.get("is_knocked_out"):
-                self.sell("short_term", sym, 0.001, reason="❌ Knock-Out Barriere berührt (Totalverlust der Hebelposition)")
+                self.sell("short_term", sym, 0.001, reason="❌ Knock-Out Barriere berührt (Totalverlust)")
                 actions_taken.append(f"KNOCK-OUT {sym}")
                 continue
-
-            # Stop Loss Check
             if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
-                self.sell("short_term", sym, curr_p, reason="🚨 Stop-Loss ausgelöst zur Verlustbegrenzung")
-                actions_taken.append(f"VERKAUF {sym} (Stop-Loss bei {curr_p:.2f} €)")
-            # Take Profit Check
+                self.sell("short_term", sym, curr_p, reason="🚨 Stop-Loss ausgelöst (-7%) zur Verlustbegrenzung")
+                actions_taken.append(f"VERKAUF {sym} (Stop-Loss)")
             elif pos.get("take_profit") and curr_p >= pos["take_profit"]:
-                self.sell("short_term", sym, curr_p, reason="🎯 Take-Profit erreicht - Gewinnsicherung")
-                actions_taken.append(f"VERKAUF {sym} (Take-Profit bei {curr_p:.2f} €)")
+                self.sell("short_term", sym, curr_p, reason="🎯 Take-Profit erreicht (+20%)")
+                actions_taken.append(f"VERKAUF {sym} (Take-Profit)")
 
-        # Buy top setups if cash is available
-        if st_depot["cash"] >= 1200.0 and len(st_depot["positions"]) < 5:
-            # Look for highest breakout / momentum scores
+        if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
             candidates = sorted(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)), reverse=True)
             for cand in candidates:
                 sym = cand["symbol"]
                 p = cand.get("price")
                 if sym not in st_depot["positions"] and p and p > 0:
-                    alloc = min(1800.0, st_depot["cash"] * 0.9)
-                    
-                    # If high breakout score, use Turbo Knock-Out Bull (3.5x leverage)!
-                    if cand.get("breakout_score", 0) >= 50:
+                    alloc = min(2000.0, st_depot["cash"] * 0.85)
+                    if cand.get("breakout_score", 0) >= 45:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, cand.get("name", sym), p, direction="LONG", target_leverage=3.5)
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
-                        sl = cert_price * 0.85  # -15% on certificate
-                        tp = cert_price * 1.40  # +40% Take Profit
                         self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
-                                 reason=f"🚨 Akuter Ausbruchs-Alarm ({cand.get('breakout_score')}/100) - Hebel {turbo['leverage']}x",
-                                 stop_loss=sl, take_profit=tp, derivative_meta=turbo)
-                        actions_taken.append(f"KAUF {turbo['name']} ({shares:.1f} Stk.)")
+                                 reason=f"🚨 Akuter Ausbruchs-Alarm ({cand.get('breakout_score')}/100)",
+                                 stop_loss=cert_price*0.85, take_profit=cert_price*1.40, derivative_meta=turbo)
+                        actions_taken.append(f"KAUF {turbo['name']} für Kurzfrist-Depot")
                     else:
                         shares = alloc / p
-                        sl = p * 0.93
-                        tp = p * 1.20
                         self.buy("short_term", sym, cand.get("name", sym), shares, p,
-                                 reason=f"Starkes Momentum & Trendfolge ({cand.get('short_score')}/100)",
-                                 stop_loss=sl, take_profit=tp)
-                        actions_taken.append(f"KAUF {sym} ({shares:.2f} Stk.)")
+                                 reason=f"Kurzfrist-Momentum ({cand.get('short_score')}/100)",
+                                 stop_loss=p*0.93, take_profit=p*1.20)
+                        actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
                     break
 
-        # 2. Check Long-Term Investment Portfolio
+        # 2. Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)
+        mt_depot = self.data["portfolios"]["medium_term"]
+        for sym in list(mt_depot["positions"].keys()):
+            pos = mt_depot["positions"][sym]
+            curr_p = pos["current_price"]
+            if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
+                self.sell("medium_term", sym, curr_p, reason="🚨 Trailing Stop-Loss ausgelöst (-10%)")
+                actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Stop)")
+            elif pos.get("take_profit") and curr_p >= pos["take_profit"]:
+                self.sell("medium_term", sym, curr_p, reason="🎯 Mittelfrist-Kursziel erreicht (+35%)")
+                actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Ziel)")
+
+        if mt_depot["cash"] >= 1500.0 and len(mt_depot["positions"]) < 4:
+            candidates = sorted(scan_results, key=lambda x: (x.get("short_score", 0) * 0.5 + x.get("long_score", 0) * 0.5), reverse=True)
+            for cand in candidates:
+                sym = cand["symbol"]
+                p = cand.get("price")
+                if sym not in mt_depot["positions"] and p and p > 0:
+                    alloc = min(2000.0, mt_depot["cash"] * 0.85)
+                    shares = alloc / p
+                    self.buy("medium_term", sym, cand.get("name", sym), shares, p,
+                             reason=f"📈 Starker mittelfristiger Trend & Wachstum (Gesamt: {cand.get('total_score')}/100)",
+                             stop_loss=p*0.90, take_profit=p*1.35)
+                    actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
+                    break
+
+        # 3. Langfristiges Investment-Depot (Jahre / Quality & Moat)
         lt_depot = self.data["portfolios"]["long_term"]
-        if lt_depot["cash"] >= 1200.0 and len(lt_depot["positions"]) < 5:
+        if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4:
             candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
             for cand in candidates:
                 sym = cand["symbol"]
                 p = cand.get("price")
                 if sym not in lt_depot["positions"] and p and p > 0:
-                    alloc = min(1800.0, lt_depot["cash"] * 0.9)
-                    
-                    # Option: Create Bonus Certificate for high quality stocks
+                    alloc = min(2000.0, lt_depot["cash"] * 0.85)
                     if cand.get("long_score", 0) >= 90:
                         bonus = DerivativeEngine.create_bonus_certificate(sym, cand.get("name", sym), p, barrier_pct=25.0, bonus_pct=14.0)
                         shares = alloc / p
                         self.buy("long_term", bonus["wkn"], bonus["name"], shares, p,
-                                 reason=f"🛡️ Bonus-Zertifikat mit 25% Sicherheitspuffer & +14% Bonuschance (Score {cand.get('long_score')}/100)",
+                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus)",
                                  derivative_meta=bonus)
-                        actions_taken.append(f"KAUF {bonus['name']}")
+                        actions_taken.append(f"KAUF {bonus['name']} für Langfrist-Depot")
                     else:
                         shares = alloc / p
                         self.buy("long_term", sym, cand.get("name", sym), shares, p,
                                  reason=f"Qualitäts-Compounder ({cand.get('long_score')}/100)")
-                        actions_taken.append(f"KAUF {sym} ({shares:.2f} Stk.)")
+                        actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
                     break
 
         return actions_taken

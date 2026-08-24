@@ -1,67 +1,48 @@
 {
-  "created_at": "2026-08-24 17:18:32",
+  "created_at": "2026-08-24 22:07:07",
   "currency": "EUR",
   "portfolios": {
     "short_term": {
-      "name": "⚡ Kurz-/Mittelfristiges Trading-Depot (Aktien, Krypto & Momentum)",
-      "strategy": "Aktives Swing-Trading auf Momentum, Ausbrüche & Short Squeezes mit Stop-Loss (-7%) und Take-Profit (+20%).",
+      "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
+      "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
       "initial_cash": 10000.0,
-      "cash": 1000.0,
+      "cash": 4500.0,
       "positions": {
         "MRNA": {
           "symbol": "MRNA",
           "name": "Moderna, Inc.",
-          "shares": 14.7037,
-          "buy_price": 136.02,
-          "current_price": 139.6,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": 126.5,
-          "take_profit": 163.22,
-          "reason": "Biotech-Ausbruch, hoher Short Float (15.2%) und hohes Volumen"
+          "shares": 14.3999,
+          "buy_price": 138.89,
+          "current_price": 138.89,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 129.17,
+          "take_profit": 166.67,
+          "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
+          "derivative_type": "STOCK"
         },
         "RIVN": {
           "symbol": "RIVN",
           "name": "Rivian Automotive, Inc.",
-          "shares": 118.8001,
-          "buy_price": 16.84,
-          "current_price": 16.83,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": 15.66,
-          "take_profit": 20.2,
-          "reason": "Top Kurzfrist-Momentum (Score 95/100) über EMA 20/50"
-        },
-        "PLTR": {
-          "symbol": "PLTR",
-          "name": "Palantir Technologies Inc.",
-          "shares": 11.3178,
-          "buy_price": 176.71,
-          "current_price": 178.29,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": 164.34,
-          "take_profit": 212.06,
-          "reason": "Starker Foren-Buzz, hohes Kaufvolumen und KI-Wachstum"
+          "shares": 120.4819,
+          "buy_price": 16.6,
+          "current_price": 16.6,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 15.44,
+          "take_profit": 19.92,
+          "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf",
+          "derivative_type": "STOCK"
         },
         "SOL-USD": {
           "symbol": "SOL-USD",
           "name": "Solana USD",
-          "shares": 15.5392,
-          "buy_price": 96.53,
-          "current_price": 96.18,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": 89.77,
-          "take_profit": 115.84,
-          "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"
-        },
-        "DUOL": {
-          "symbol": "DUOL",
-          "name": "Duolingo, Inc.",
-          "shares": 10.2648,
-          "buy_price": 146.13,
-          "current_price": 146.46,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": 135.9,
-          "take_profit": 175.36,
-          "reason": "Trendfolge-Setup über 200-Tage-Linie mit stabiler Wachstumsdynamik"
+          "shares": 15.5666,
+          "buy_price": 96.36,
+          "current_price": 96.36,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 89.61,
+          "take_profit": 115.63,
+          "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -69,114 +50,169 @@
           "type": "BUY",
           "symbol": "MRNA",
           "name": "Moderna, Inc.",
-          "shares": 14.7037,
-          "price": 136.02,
+          "product_type": "STOCK",
+          "shares": 14.3999,
+          "price": 138.89,
           "total": 2000.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Biotech-Ausbruch, hoher Short Float (15.2%) und hohes Volumen"
+          "date": "2026-08-24 22:07",
+          "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"
         },
         {
           "type": "BUY",
           "symbol": "RIVN",
           "name": "Rivian Automotive, Inc.",
-          "shares": 118.8001,
-          "price": 16.84,
+          "product_type": "STOCK",
+          "shares": 120.4819,
+          "price": 16.6,
           "total": 2000.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Top Kurzfrist-Momentum (Score 95/100) über EMA 20/50"
-        },
-        {
-          "type": "BUY",
-          "symbol": "PLTR",
-          "name": "Palantir Technologies Inc.",
-          "shares": 11.3178,
-          "price": 176.71,
-          "total": 2000.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Starker Foren-Buzz, hohes Kaufvolumen und KI-Wachstum"
+          "date": "2026-08-24 22:07",
+          "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"
         },
         {
           "type": "BUY",
           "symbol": "SOL-USD",
           "name": "Solana USD",
-          "shares": 15.5392,
-          "price": 96.53,
+          "product_type": "STOCK",
+          "shares": 15.5666,
+          "price": 96.36,
           "total": 1500.0,
-          "date": "2026-08-24 17:18",
+          "date": "2026-08-24 22:07",
           "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"
+        }
+      ]
+    },
+    "medium_term": {
+      "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
+      "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
+      "initial_cash": 10000.0,
+      "cash": 4000.0,
+      "positions": {
+        "PLTR": {
+          "symbol": "PLTR",
+          "name": "Palantir Technologies Inc.",
+          "shares": 11.3707,
+          "buy_price": 175.89,
+          "current_price": 175.89,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 158.3,
+          "take_profit": 237.45,
+          "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
+          "derivative_type": "STOCK"
+        },
+        "DUOL": {
+          "symbol": "DUOL",
+          "name": "Duolingo, Inc.",
+          "shares": 13.6203,
+          "buy_price": 146.84,
+          "current_price": 146.84,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 132.16,
+          "take_profit": 198.23,
+          "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
+          "derivative_type": "STOCK"
+        },
+        "NVDA": {
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "shares": 9.5932,
+          "buy_price": 208.48,
+          "current_price": 208.48,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 187.63,
+          "take_profit": 281.45,
+          "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
+          "derivative_type": "STOCK"
+        }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "symbol": "PLTR",
+          "name": "Palantir Technologies Inc.",
+          "product_type": "STOCK",
+          "shares": 11.3707,
+          "price": 175.89,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07",
+          "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50"
         },
         {
           "type": "BUY",
           "symbol": "DUOL",
           "name": "Duolingo, Inc.",
-          "shares": 10.2648,
-          "price": 146.13,
-          "total": 1500.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Trendfolge-Setup über 200-Tage-Linie mit stabiler Wachstumsdynamik"
+          "product_type": "STOCK",
+          "shares": 13.6203,
+          "price": 146.84,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07",
+          "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie"
+        },
+        {
+          "type": "BUY",
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "product_type": "STOCK",
+          "shares": 9.5932,
+          "price": 208.48,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07",
+          "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"
         }
       ]
     },
     "long_term": {
-      "name": "🏛️ Langfristiges Investment-Depot (Qualität, Gold & Krypto-Core)",
-      "strategy": "Langfristiges Buy & Hold bei soliden Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung und Bitcoin als Core-Asset.",
+      "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
+      "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
       "initial_cash": 10000.0,
-      "cash": 1000.0000000000002,
+      "cash": 3000.0,
       "positions": {
         "SAP.DE": {
           "symbol": "SAP.DE",
           "name": "SAP SE                        I",
-          "shares": 10.6508,
-          "buy_price": 187.78,
+          "shares": 10.6838,
+          "buy_price": 187.2,
           "current_price": 187.2,
-          "buy_date": "2026-08-24 17:18",
+          "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
-          "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"
+          "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
+          "derivative_type": "STOCK"
         },
         "MUV2.DE": {
           "symbol": "MUV2.DE",
           "name": "MUENCHENER RUECKVERS.-GES. AG N",
-          "shares": 3.8655,
-          "buy_price": 517.4,
+          "shares": 3.8565,
+          "buy_price": 518.6,
           "current_price": 518.6,
-          "buy_date": "2026-08-24 17:18",
+          "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
-          "reason": "Münchener Rück: KGV unter 10, starke Dividendenhistorie, Langfrist-Score 100"
-        },
-        "ADBE": {
-          "symbol": "ADBE",
-          "name": "Adobe Inc.",
-          "shares": 7.2056,
-          "buy_price": 277.56,
-          "current_price": 276.71,
-          "buy_date": "2026-08-24 17:18",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "Adobe: KGV ~15.7, hohe Free-Cashflow-Marge, weltweiter Software-Moat"
+          "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie",
+          "derivative_type": "STOCK"
         },
         "GC=F": {
           "symbol": "GC=F",
           "name": "Gold Dec 26",
-          "shares": 0.3171,
-          "buy_price": 4730.4,
-          "current_price": 4687.7,
-          "buy_date": "2026-08-24 17:18",
+          "shares": 0.3186,
+          "buy_price": 4708.6,
+          "current_price": 4708.6,
+          "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
-          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im übergeordneten Bullenmarkt"
+          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
+          "derivative_type": "STOCK"
         },
         "BTC-USD": {
           "symbol": "BTC-USD",
           "name": "Bitcoin USD",
-          "shares": 0.0188,
-          "buy_price": 79711.63,
-          "current_price": 79077.3,
-          "buy_date": "2026-08-24 17:18",
+          "shares": 0.0191,
+          "buy_price": 78682.79,
+          "current_price": 78682.79,
+          "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
-          "reason": "Bitcoin: Digitales Gold, limitierte Geldmenge und langfristiger Makrotrend über SMA200"
+          "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -184,51 +220,45 @@
           "type": "BUY",
           "symbol": "SAP.DE",
           "name": "SAP SE                        I",
-          "shares": 10.6508,
-          "price": 187.78,
+          "product_type": "STOCK",
+          "shares": 10.6838,
+          "price": 187.2,
           "total": 2000.0,
-          "date": "2026-08-24 17:18",
+          "date": "2026-08-24 22:07",
           "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"
         },
         {
           "type": "BUY",
           "symbol": "MUV2.DE",
           "name": "MUENCHENER RUECKVERS.-GES. AG N",
-          "shares": 3.8655,
-          "price": 517.4,
+          "product_type": "STOCK",
+          "shares": 3.8565,
+          "price": 518.6,
           "total": 2000.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Münchener Rück: KGV unter 10, starke Dividendenhistorie, Langfrist-Score 100"
-        },
-        {
-          "type": "BUY",
-          "symbol": "ADBE",
-          "name": "Adobe Inc.",
-          "shares": 7.2056,
-          "price": 277.56,
-          "total": 2000.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Adobe: KGV ~15.7, hohe Free-Cashflow-Marge, weltweiter Software-Moat"
+          "date": "2026-08-24 22:07",
+          "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie"
         },
         {
           "type": "BUY",
           "symbol": "GC=F",
           "name": "Gold Dec 26",
-          "shares": 0.3171,
-          "price": 4730.4,
+          "product_type": "STOCK",
+          "shares": 0.3186,
+          "price": 4708.6,
           "total": 1500.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im übergeordneten Bullenmarkt"
+          "date": "2026-08-24 22:07",
+          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"
         },
         {
           "type": "BUY",
           "symbol": "BTC-USD",
           "name": "Bitcoin USD",
-          "shares": 0.0188,
-          "price": 79711.63,
+          "product_type": "STOCK",
+          "shares": 0.0191,
+          "price": 78682.79,
           "total": 1500.0,
-          "date": "2026-08-24 17:18",
-          "reason": "Bitcoin: Digitales Gold, limitierte Geldmenge und langfristiger Makrotrend über SMA200"
+          "date": "2026-08-24 22:07",
+          "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200"
         }
       ]
     }
