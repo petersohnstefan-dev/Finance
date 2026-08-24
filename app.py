@@ -386,36 +386,52 @@ elif app_mode == "💼 Musterdepots & Live-Performance (2x 10.000 €)":
         if summary["positions"]:
             pos_df = pd.DataFrame(summary["positions"])
             
+            for col in ["product_type", "leverage", "distance_to_ko"]:
+                if col not in pos_df.columns:
+                    pos_df[col] = None
+
             display_pos = pos_df[[
-                "symbol", "name", "shares", "buy_price", "current_price", 
-                "value", "pnl", "pnl_pct", "stop_loss", "take_profit", "reason"
+                "symbol", "name", "product_type", "shares", "buy_price", "current_price", 
+                "value", "pnl", "pnl_pct", "leverage", "distance_to_ko", "stop_loss", "take_profit", "reason"
             ]].copy()
 
             display_pos.columns = [
-                "Ticker", "Name", "Stück", "Kaufkurs", "Aktuell", 
-                "Marktwert (€)", "Gewinn (€)", "Rendite (%)", "Stop-Loss", "Take-Profit", "Kaufgrund"
+                "Ticker / WKN", "Instrument / Name", "Produkttyp", "Stück", "Kaufkurs", "Aktuell", 
+                "Marktwert (€)", "Gewinn (€)", "Rendite (%)", "Hebel", "KO-/Puffer-Abstand", "Stop-Loss", "Take-Profit", "Kaufgrund"
             ]
 
+            type_map = {
+                "STOCK": "Aktie / Krypto",
+                "KNOCKOUT": "⚡ Knock-Out",
+                "FACTOR": "🚀 Faktor-Zertifikat",
+                "BONUS": "🛡️ Bonus-Zertifikat"
+            }
+            display_pos["Produkttyp"] = display_pos["Produkttyp"].map(lambda x: type_map.get(x, x))
             display_pos["Kaufkurs"] = display_pos["Kaufkurs"].apply(lambda x: f"{x:.2f}")
             display_pos["Aktuell"] = display_pos["Aktuell"].apply(lambda x: f"{x:.2f}")
             display_pos["Marktwert (€)"] = display_pos["Marktwert (€)"].apply(lambda x: f"{x:,.2f} €")
             display_pos["Gewinn (€)"] = display_pos["Gewinn (€)"].apply(lambda x: f"{x:+,.2f} €")
             display_pos["Rendite (%)"] = display_pos["Rendite (%)"].apply(lambda x: f"{x:+.2f}%")
+            display_pos["Hebel"] = display_pos["Hebel"].apply(lambda x: f"{x:.1f}x" if pd.notnull(x) else "-")
+            display_pos["KO-/Puffer-Abstand"] = display_pos["KO-/Puffer-Abstand"].apply(lambda x: f"{x:.1f}%" if pd.notnull(x) else "-")
             display_pos["Stop-Loss"] = display_pos["Stop-Loss"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
             display_pos["Take-Profit"] = display_pos["Take-Profit"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
 
             pos_cfg = {
-                "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel"),
-                "Name": st.column_config.TextColumn("Name", help="Name des Unternehmens"),
-                "Stück": st.column_config.NumberColumn("Stück", help="Anzahl gehaltener Aktien"),
-                "Kaufkurs": st.column_config.TextColumn("Kaufkurs", help="Einstandskurs"),
-                "Aktuell": st.column_config.TextColumn("Aktuell", help="Aktueller Börsenkurs"),
+                "Ticker / WKN": st.column_config.TextColumn("Ticker / WKN", help="Börsenkürzel oder WKN des Zertifikats"),
+                "Instrument / Name": st.column_config.TextColumn("Name", help="Name des Unternehmens oder Zertifikats"),
+                "Produkttyp": st.column_config.TextColumn("Typ", help="Aktie, Krypto, Knock-Out, Faktor- oder Bonus-Zertifikat"),
+                "Stück": st.column_config.NumberColumn("Stück", help="Anzahl gehaltener Stücke / Zertifikate"),
+                "Kaufkurs": st.column_config.TextColumn("Kaufkurs", help="Einstandskurs in Euro"),
+                "Aktuell": st.column_config.TextColumn("Aktuell", help="Aktueller Kurs"),
                 "Marktwert (€)": st.column_config.TextColumn("Marktwert (€)", help="Gesamtwert der Position"),
                 "Gewinn (€)": st.column_config.TextColumn("Gewinn (€)", help="Unrealisierter Buchgewinn/-verlust"),
-                "Rendite (%)": st.column_config.TextColumn("Rendite (%)", help="Prozentuale Performance seit Kauf"),
-                "Stop-Loss": st.column_config.TextColumn("Stop-Loss", help="Automatischer Verkaufs-Trigger zur Verlustbegrenzung"),
+                "Rendite (%)": st.column_config.TextColumn("Rendite (%)", help="Prozentuale Rendite"),
+                "Hebel": st.column_config.TextColumn("Hebel", help="Effektiver Hebel (z. B. 3.5x) bei Derivaten"),
+                "KO-/Puffer-Abstand": st.column_config.TextColumn("KO-Puffer", help="Prozentualer Abstand zur Knock-Out Schwelle bzw. Barriere"),
+                "Stop-Loss": st.column_config.TextColumn("Stop-Loss", help="Automatischer Verkaufs-Trigger"),
                 "Take-Profit": st.column_config.TextColumn("Take-Profit", help="Automatischer Gewinnmitnahme-Trigger"),
-                "Kaufgrund": st.column_config.TextColumn("Kaufgrund", help="KI-Analyse & Einstiegsthese")
+                "Kaufgrund": st.column_config.TextColumn("Kaufgrund / Signal", help="KI-Analyse & Einstiegsthese")
             }
 
             st.dataframe(
