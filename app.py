@@ -26,75 +26,46 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom Soft & Clean Styling
+# Clean & High-Legibility Styling
 st.markdown("""
 <style>
-    /* Clean, Legible Metric Containers */
+    /* Metric Cards */
     div[data-testid="metric-container"] {
         background-color: #1a1e29;
-        border: 1px solid #2e384d;
+        border: 1px solid #334155;
         border-radius: 10px;
         padding: 12px 16px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
-    /* Clean Touch-Friendly Buttons */
+
+    /* Buttons with high legibility */
     div[data-testid="stButton"] > button {
-        background-color: #2563eb !important;
+        background-color: #0284c7 !important;
         color: #ffffff !important;
-        border: 1px solid #3b82f6 !important;
+        border: 1px solid #38bdf8 !important;
         border-radius: 8px !important;
         font-weight: 600 !important;
         font-size: 15px !important;
-        padding: 8px 18px !important;
-        min-height: 44px !important;
-        transition: all 0.2s ease !important;
+        padding: 8px 16px !important;
+        min-height: 42px !important;
     }
     div[data-testid="stButton"] > button:hover {
-        background-color: #1d4ed8 !important;
-        border-color: #60a5fa !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+        background-color: #0369a1 !important;
+        border-color: #7dd3fc !important;
     }
 
-    /* Clean Radio Buttons (Segmented Look with Soft Background) */
-    div[data-testid="stRadio"] label {
-        background-color: #1e2433 !important;
-        color: #f1f5f9 !important;
-        border: 1px solid #334155 !important;
-        border-radius: 8px !important;
-        padding: 8px 14px !important;
-        margin: 2px !important;
-        cursor: pointer !important;
+    /* Sidebar Navigation - Crystal Clear White Text */
+    section[data-testid="stSidebar"] {
+        background-color: #111827 !important;
+    }
+    section[data-testid="stSidebar"] .stRadio label p {
+        font-size: 15px !important;
         font-weight: 500 !important;
-        font-size: 14px !important;
-        transition: all 0.2s ease !important;
+        color: #f8fafc !important;
     }
-    div[data-testid="stRadio"] label:hover {
-        background-color: #2d3748 !important;
-        border-color: #4a5568 !important;
-    }
-    div[data-testid="stRadio"] label:has(input:checked) {
-        background-color: #1e3a8a !important;
-        border: 1.5px solid #38bdf8 !important;
-        color: #ffffff !important;
-        font-weight: 700 !important;
-    }
-
-    /* Clean Tabs */
-    div[data-testid="stTabs"] button[role="tab"] {
-        border-radius: 6px 6px 0 0 !important;
-        font-weight: 600 !important;
-    }
-
-    /* Mobile Responsive Optimizations */
-    @media (max-width: 768px) {
-        div[data-testid="stRadio"] label {
-            width: 100% !important;
-            margin-bottom: 4px !important;
-        }
-        div[data-testid="stButton"] > button {
-            width: 100% !important;
-        }
+    section[data-testid="stSidebar"] h1, 
+    section[data-testid="stSidebar"] h2, 
+    section[data-testid="stSidebar"] h3 {
+        color: #38bdf8 !important;
     }
 </style>
 """, unsafe_allow_html=True)
