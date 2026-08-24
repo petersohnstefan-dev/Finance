@@ -1,4 +1,4 @@
-﻿import json
+import json
 import os
 import datetime
 from typing import Dict, Any, List, Optional
@@ -269,9 +269,12 @@ class PortfolioManager:
         }
 
     def auto_trade_check(self, scan_results: List[Dict[str, Any]]) -> List[str]:
-        """Autonomous 3-Depot AI Trading Engine."""
+        """Autonomous 3-Depot AI Trading Engine driven by Real-Time Ticks and Multi-Factor Intelligence."""
         actions_taken = []
         self.update_live_prices()
+
+        from src.realtime_scanner import RealTimeBreakoutScanner
+        rt_alerts = RealTimeBreakoutScanner.get_recent_alerts()
 
         # 1. Kurzfristiges Trading-Depot (Squeezes, Ausbrüche & Hebel)
         st_depot = self.data["portfolios"]["short_term"]
@@ -290,27 +293,44 @@ class PortfolioManager:
                 actions_taken.append(f"VERKAUF {sym} (Take-Profit)")
 
         if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
-            candidates = sorted(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)), reverse=True)
-            for cand in candidates:
-                sym = cand["symbol"]
-                p = cand.get("price")
+            # Priority 1: Instant Real-Time Sub-Minute Alerts
+            bought_from_realtime = False
+            for alert in rt_alerts:
+                sym = alert["symbol"]
+                p = alert.get("trigger_price")
                 if sym not in st_depot["positions"] and p and p > 0:
                     alloc = min(2000.0, st_depot["cash"] * 0.85)
-                    if cand.get("breakout_score", 0) >= 45:
-                        turbo = DerivativeEngine.create_turbo_knockout(sym, cand.get("name", sym), p, direction="LONG", target_leverage=3.5)
-                        cert_price = turbo["cert_price"]
-                        shares = alloc / cert_price
-                        self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
-                                 reason=f"🚨 Akuter Ausbruchs-Alarm ({cand.get('breakout_score')}/100)",
-                                 stop_loss=cert_price*0.85, take_profit=cert_price*1.40, derivative_meta=turbo)
-                        actions_taken.append(f"KAUF {turbo['name']} für Kurzfrist-Depot")
-                    else:
-                        shares = alloc / p
-                        self.buy("short_term", sym, cand.get("name", sym), shares, p,
-                                 reason=f"Kurzfrist-Momentum ({cand.get('short_score')}/100)",
-                                 stop_loss=p*0.93, take_profit=p*1.20)
-                        actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
+                    shares = alloc / p
+                    self.buy("short_term", sym, alert.get("name", sym), shares, p,
+                             reason=f"⚡ Echtzeit-Intraday-Spike ({alert.get('change_1min_pct', 2.0):+.1f}% in <60s / {alert.get('urgency', 'Alarm')})",
+                             stop_loss=p*0.93, take_profit=p*1.20)
+                    actions_taken.append(f"KAUF {sym} (⚡ Echtzeit-Spike)")
+                    bought_from_realtime = True
                     break
+
+            # Priority 2: High-Ranked Universe Breakouts
+            if not bought_from_realtime:
+                candidates = sorted(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)), reverse=True)
+                for cand in candidates:
+                    sym = cand["symbol"]
+                    p = cand.get("price")
+                    if sym not in st_depot["positions"] and p and p > 0:
+                        alloc = min(2000.0, st_depot["cash"] * 0.85)
+                        if cand.get("breakout_score", 0) >= 45:
+                            turbo = DerivativeEngine.create_turbo_knockout(sym, cand.get("name", sym), p, direction="LONG", target_leverage=3.5)
+                            cert_price = turbo["cert_price"]
+                            shares = alloc / cert_price
+                            self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
+                                     reason=f"🚨 Akuter Ausbruchs-Alarm ({cand.get('breakout_score')}/100)",
+                                     stop_loss=cert_price*0.85, take_profit=cert_price*1.40, derivative_meta=turbo)
+                            actions_taken.append(f"KAUF {turbo['name']} für Kurzfrist-Depot")
+                        else:
+                            shares = alloc / p
+                            self.buy("short_term", sym, cand.get("name", sym), shares, p,
+                                     reason=f"Kurzfrist-Momentum ({cand.get('short_score')}/100)",
+                                     stop_loss=p*0.93, take_profit=p*1.20)
+                            actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
+                        break
 
         # 2. Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)
         mt_depot = self.data["portfolios"]["medium_term"]
