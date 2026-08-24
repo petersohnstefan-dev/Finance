@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
 import datetime
+import time
 import os
 
 from config import WATCHLISTS
