@@ -3,25 +3,30 @@ import os
 import datetime
 from typing import Dict, Any, List, Optional
 import yfinance as yf
+from src.db import PortfolioDB
 
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
 class PortfolioManager:
-    """Manages virtual paper trading portfolios (Short-Term Trading & Long-Term Investment)."""
+    """Manages virtual paper trading portfolios with persistent dual-storage (SQLite + JSON)."""
 
     def __init__(self, initial_capital_per_depot: float = 10000.0):
         self.initial_capital = initial_capital_per_depot
+        self.db = PortfolioDB()
         self.data = self._load()
 
     def _load(self) -> Dict[str, Any]:
+        """Loads existing portfolio state without resetting."""
         if os.path.exists(PORTFOLIO_FILE):
             try:
                 with open(PORTFOLIO_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
+                    if "portfolios" in data and "short_term" in data["portfolios"]:
+                        return data
             except Exception:
                 pass
 
-        # Initialize fresh portfolios
+        # Default fallback only if file is completely missing
         now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         initial_data = {
             "created_at": now_str,
@@ -29,7 +34,7 @@ class PortfolioManager:
             "portfolios": {
                 "short_term": {
                     "name": "⚡ Kurz-/Mittelfristiges Trading-Depot (Momentum & Squeeze)",
-                    "strategy": "Aktives Swing-Trading, Momentum-Ausbrüche, Squeeze-Setups mit festem Stop-Loss (-7%) und Take-Profit (+20%).",
+                    "strategy": "Aktives Swing-Trading, Momentum-Ausbrüche, Squeeze-Setups mit Stop-Loss (-7%) und Take-Profit (+20%).",
                     "initial_cash": self.initial_capital,
                     "cash": self.initial_capital,
                     "positions": {},
@@ -37,7 +42,7 @@ class PortfolioManager:
                 },
                 "long_term": {
                     "name": "🏛️ Langfristiges Investment-Depot (Quality & Value)",
-                    "strategy": "Kauf solider Qualitätsunternehmen mit starkem Burggraben (ROE > 15%), gesunder Bilanz und fairem KGV.",
+                    "strategy": "Kauf solider Qualitätsunternehmen mit starkem Burggraben (ROE > 15%), gesunder Bilanz und Gold/Krypto-Core.",
                     "initial_cash": self.initial_capital,
                     "cash": self.initial_capital,
                     "positions": {},
@@ -57,14 +62,13 @@ class PortfolioManager:
 
     def buy(self, depot_key: str, symbol: str, name: str, shares: float, price: float, 
             reason: str = "", stop_loss: Optional[float] = None, take_profit: Optional[float] = None) -> bool:
-        """Executes a buy order in the specified portfolio."""
+        """Executes a buy order in the specified portfolio and logs to SQLite + JSON."""
         depot = self.data["portfolios"].get(depot_key)
         if not depot:
             return False
 
         cost = shares * price
         if cost > depot["cash"]:
-            # Adjust shares to fit available cash if slightly over
             shares = depot["cash"] / price
             cost = shares * price
 
@@ -78,9 +82,9 @@ class PortfolioManager:
             pos = depot["positions"][symbol]
             total_shares = pos["shares"] + shares
             avg_price = ((pos["shares"] * pos["buy_price"]) + cost) / total_shares
-            pos["shares"] = total_shares
-            pos["buy_price"] = avg_price
-            pos["current_price"] = price
+            pos["shares"] = round(total_shares, 4)
+            pos["buy_price"] = round(avg_price, 2)
+            pos["current_price"] = round(price, 2)
         else:
             depot["positions"][symbol] = {
                 "symbol": symbol,
@@ -94,7 +98,7 @@ class PortfolioManager:
                 "reason": reason
             }
 
-        depot["history"].append({
+        trade_record = {
             "type": "BUY",
             "symbol": symbol,
             "name": name,
@@ -103,13 +107,20 @@ class PortfolioManager:
             "total": round(cost, 2),
             "date": now_str,
             "reason": reason
-        })
+        }
+        depot["history"].append(trade_record)
+
+        # Mirror to SQLite
+        try:
+            self.db.record_trade(depot_key, "BUY", symbol, name, shares, cost, price, reason=reason)
+        except Exception:
+            pass
 
         self._save()
         return True
 
     def sell(self, depot_key: str, symbol: str, price: float, reason: str = "") -> bool:
-        """Sells an entire open position."""
+        """Sells an entire open position and records realized gain/loss."""
         depot = self.data["portfolios"].get(depot_key)
         if not depot or symbol not in depot["positions"]:
             return False
@@ -123,26 +134,34 @@ class PortfolioManager:
         depot["cash"] += revenue
         now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
-        depot["history"].append({
+        trade_record = {
             "type": "SELL",
             "symbol": symbol,
             "name": pos["name"],
-            "shares": shares,
-            "buy_price": pos["buy_price"],
+            "shares": round(shares, 4),
+            "buy_price": round(pos["buy_price"], 2),
             "sell_price": round(price, 2),
             "total": round(revenue, 2),
             "pnl": round(pnl, 2),
             "pnl_pct": round(pnl_pct, 2),
             "date": now_str,
             "reason": reason
-        })
+        }
+        depot["history"].append(trade_record)
+
+        # Mirror to SQLite
+        try:
+            self.db.record_trade(depot_key, "SELL", symbol, pos["name"], shares, revenue, 
+                                 pos["buy_price"], sell_price=price, pnl=pnl, pnl_pct=pnl_pct, reason=reason)
+        except Exception:
+            pass
 
         del depot["positions"][symbol]
         self._save()
         return True
 
     def update_live_prices(self):
-        """Fetches fresh market prices for all open positions across both portfolios."""
+        """Fetches fresh live market prices for all open positions."""
         all_symbols = set()
         for depot in self.data["portfolios"].values():
             all_symbols.update(depot["positions"].keys())
@@ -200,6 +219,14 @@ class PortfolioManager:
         total_pnl = total_value - init_cash
         total_pnl_pct = (total_pnl / init_cash) * 100.0
 
+        # Record daily snapshot to SQLite
+        try:
+            self.db.record_daily_snapshot(
+                depot_key, total_value, cash, invested_value, total_pnl, total_pnl_pct, len(positions_list)
+            )
+        except Exception:
+            pass
+
         return {
             "name": depot.get("name"),
             "strategy": depot.get("strategy"),
@@ -214,9 +241,9 @@ class PortfolioManager:
         }
 
     def auto_trade_check(self, scan_results: List[Dict[str, Any]]) -> List[str]:
-        """Automated trader: checks stop loss, take profit, and opens positions based on top scan scores."""
+        """Continuous automated trader: checks stop loss, take profit, and opens positions only if cash available."""
         actions_taken = []
-        scan_dict = {d["symbol"]: d for d in scan_results}
+        self.update_live_prices()
 
         # 1. Check Short-Term Trading Portfolio
         st_depot = self.data["portfolios"]["short_term"]
@@ -232,15 +259,14 @@ class PortfolioManager:
                 self.sell("short_term", sym, curr_p, reason="🎯 Take-Profit erreicht (+20%) - Gewinnsicherung")
                 actions_taken.append(f"VERKAUF {sym} (Take-Profit bei {curr_p:.2f} €)")
 
-        # Buy top short-term candidates if cash available
+        # Only buy if free cash >= 1500 EUR and fewer than 5 positions
         if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 5:
-            # Sort by short_score / breakout_score
             candidates = sorted(scan_results, key=lambda x: (x.get("short_score", 0) + x.get("breakout_score", 0)), reverse=True)
             for cand in candidates:
                 sym = cand["symbol"]
                 p = cand.get("price")
                 if sym not in st_depot["positions"] and p and p > 0:
-                    alloc = min(2000.0, st_depot["cash"] * 0.9)
+                    alloc = min(1800.0, st_depot["cash"] * 0.9)
                     shares = alloc / p
                     sl = p * 0.93  # -7% Stop Loss
                     tp = p * 1.20  # +20% Take Profit
@@ -258,10 +284,10 @@ class PortfolioManager:
                 sym = cand["symbol"]
                 p = cand.get("price")
                 if sym not in lt_depot["positions"] and p and p > 0:
-                    alloc = min(2000.0, lt_depot["cash"] * 0.9)
+                    alloc = min(1800.0, lt_depot["cash"] * 0.9)
                     shares = alloc / p
                     self.buy("long_term", sym, cand.get("name", sym), shares, p, 
-                             reason=f"Exzellenter Long-Term Score ({cand.get('long_score')}/100), KGV {cand.get('pe', 'N/A')}")
+                             reason=f"Exzellenter Long-Term Score ({cand.get('long_score')}/100)")
                     actions_taken.append(f"KAUF {sym} ({shares:.2f} Stk. zu {p:.2f} € für Langfrist-Depot)")
                     break
 
