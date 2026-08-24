@@ -1,11 +1,15 @@
 ﻿from typing import Dict, Any, List
 
 class LongTermEngine:
-    """Evaluates long-term investing quality, valuation, moat, and analyst consensus."""
+    """Evaluates long-term investing quality, valuation, moat, or macro trend strength for commodities/cryptos."""
 
     def evaluate(self, fundamentals: Dict[str, Any], consensus: Dict[str, Any]) -> Dict[str, Any]:
         score = 50.0  # Base neutral score
         signals: List[Dict[str, str]] = []
+
+        symbol = fundamentals.get("symbol", "")
+        is_crypto = "-USD" in symbol or "-EUR" in symbol
+        is_commodity = "=F" in symbol or "GC" in symbol or "CL" in symbol or "SI" in symbol
 
         pe = fundamentals.get("trailingPE")
         fwd_pe = fundamentals.get("forwardPE")
@@ -18,6 +22,55 @@ class LongTermEngine:
         upside = consensus.get("upsideMeanPct")
         rec_mean = consensus.get("recommendationMean")
 
+        current_p = fundamentals.get("currentPrice") or 0.0
+        fifty_high = fundamentals.get("fiftyTwoWeekHigh")
+        fifty_low = fundamentals.get("fiftyTwoWeekLow")
+        two_hundred_avg = fundamentals.get("twoHundredDayAverage")
+
+        # -------------------------------------------------------------
+        # BRANCH A: COMMODITIES & CRYPTOCURRENCIES (Macro Trend Model)
+        # -------------------------------------------------------------
+        if is_crypto or is_commodity or (pe is None and roe is None):
+            asset_type = "Krypto" if is_crypto else "Rohstoff/Edelmetall"
+            
+            # 1. 200-Tage-Linie (Übergeordneter Makro-Bullenmarkt)
+            if two_hundred_avg and current_p > 0:
+                if current_p > two_hundred_avg:
+                    score += 20
+                    signals.append({"type": "bullish", "title": "Über 200-Tage-Trendlinie", "desc": f"Makro-Aufwärtstrend intakt ({current_p:.2f} über SMA200 {two_hundred_avg:.2f})"})
+                else:
+                    score -= 15
+                    signals.append({"type": "bearish", "title": "Unter 200-Tage-Trendlinie", "desc": "Makro-Abwärtstrend oder Konsolidierung"})
+
+            # 2. 52-Wochen-Position
+            if fifty_high and fifty_low and fifty_high > fifty_low and current_p > 0:
+                rel_pos = (current_p - fifty_low) / (fifty_high - fifty_low) * 100.0
+                if rel_pos >= 80.0:
+                    score += 20
+                    signals.append({"type": "bullish", "title": "In Nähe 52-Wochen-Hoch", "desc": f"Starke relative Stärke ({rel_pos:.1f}% der 52W-Spanne)"})
+                elif rel_pos <= 25.0:
+                    score -= 15
+                    signals.append({"type": "bearish", "title": "In Nähe 52-Wochen-Tief", "desc": f"Anhaltende Schwächephase ({rel_pos:.1f}% der 52W-Spanne)"})
+
+            # 3. Marktkapitalisierung & Stabilität (für Krypto)
+            mcap = fundamentals.get("marketCap")
+            if mcap and mcap >= 10e9:
+                score += 10
+                signals.append({"type": "info", "title": "Hohe Marktliquidität", "desc": "Etablierter Bluechip-Wert der Assetklasse"})
+
+            final_score = max(0, min(100, round(score)))
+            if final_score >= 70:
+                status = f"🚀 Starker {asset_type}-Makrotrend"
+            elif final_score >= 50:
+                status = f"⚖️ Neutraler {asset_type}-Trend"
+            else:
+                status = f"📉 Schwacher {asset_type}-Zyklus"
+
+            return {"score": final_score, "status": status, "signals": signals}
+
+        # -------------------------------------------------------------
+        # BRANCH B: AKTIEN (Fundamentales Unternehmens-Modell)
+        # -------------------------------------------------------------
         # 1. Valuation: P/E & Forward P/E (max 20 pts)
         if pe is not None:
             if pe < 15:

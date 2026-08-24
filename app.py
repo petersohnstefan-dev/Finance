@@ -109,7 +109,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
         f_col1, f_col2, f_col3 = st.columns(3)
         
         with f_col1:
-            region_filter = st.selectbox("Region / Markt", ["Alle", "USA", "Deutschland", "Europa"])
+            region_filter = st.selectbox("Asset-Klasse / Region", ["Alle", "🪙 Krypto", "🥇 Edelmetalle", "🛢️ Rohstoffe", "USA", "Deutschland", "Europa"])
         with f_col2:
             if is_breakout_mode:
                 ranking_mode = st.selectbox(

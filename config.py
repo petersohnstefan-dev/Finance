@@ -1,15 +1,17 @@
-﻿"""Configuration for the Finance Decision Support System."""
+﻿"""Configuration for the Multi-Asset Finance Decision Support System."""
 
-# Predefined watchlists for quick selection
+# Predefined watchlists for quick selection across all asset classes
 WATCHLISTS = {
-    "???? US Tech Leaders": ["NVDA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"],
-    "???? DAX / Deutschland": ["SAP.DE", "SIE.DE", "ALV.DE", "DTE.DE", "MBG.DE", "BMW.DE", "BAS.DE"],
-    "???? Europa Champions": ["ASML.AS", "MC.PA", "OR.PA", "AIR.PA", "NESN.SW", "NOVN.SW", "AZN.L"],
-    "?? US Dividenden & Value": ["JNJ", "PG", "KO", "PEP", "ABBV", "XOM", "CVX"],
-    "? High Growth / Disruptiv": ["PLTR", "CRWD", "SNOW", "ARM", "AMD", "COIN"]
+    "🪙 Kryptowährungen": ["BTC-USD", "ETH-USD", "SOL-USD", "XRP-USD", "BNB-USD", "DOGE-USD", "AVAX-USD", "LINK-USD"],
+    "🥇 Edelmetalle": ["GC=F", "SI=F", "PL=F", "PA=F", "HG=F"],
+    "🛢️ Rohstoffe & Energie": ["CL=F", "BZ=F", "NG=F", "ZW=F", "KC=F", "CC=F"],
+    "🇺🇸 US Tech Leaders": ["NVDA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"],
+    "🇩🇪 DAX / Deutschland": ["SAP.DE", "SIE.DE", "ALV.DE", "DTE.DE", "MBG.DE", "BMW.DE", "BAS.DE"],
+    "🇩🇪 SDAX Deutsche Nebenwerte": ["SDF.DE", "GFT.DE", "WAF.DE", "BC8.DE", "DWS.DE", "EVT.DE"],
+    "🇪🇺 Europa Champions": ["ASML.AS", "BESI.AS", "AIR.PA", "CAP.PA", "DSY.PA"],
+    "⚡ High Growth / Disruptiv": ["MRNA", "PLTR", "CRWD", "SNOW", "ARM", "COIN", "MSTR", "RKLB"]
 }
 
-# Scoring Thresholds & Parameters
 TECHNICAL_CONFIG = {
     "rsi_period": 14,
     "rsi_oversold": 30,
@@ -19,14 +21,4 @@ TECHNICAL_CONFIG = {
     "sma_slow": 200,
     "bb_period": 20,
     "bb_std": 2.0
-}
-
-FUNDAMENTAL_THRESHOLDS = {
-    "pe_low": 15.0,
-    "pe_fair": 25.0,
-    "pe_high": 40.0,
-    "peg_good": 1.5,
-    "roe_good": 0.15,       # 15%
-    "debt_to_equity_max": 1.5,
-    "fcf_yield_good": 0.04   # 4%
 }

@@ -17,7 +17,7 @@ from src.breakout_radar import BreakoutRadar
 DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "market_scan_results.json")
 
 class MarketScanner:
-    """Scans and ranks the stock universe for short-term, long-term, and short-squeeze/breakout opportunities."""
+    """Scans and ranks across Stocks, Cryptocurrencies, Precious Metals, and Commodities."""
 
     def __init__(self, tickers: Optional[List[str]] = None):
         self.tickers = tickers or FULL_MARKET_UNIVERSE
@@ -36,7 +36,8 @@ class MarketScanner:
             social_sentiment = fetcher.get_social_sentiment()
 
             # Integrate forum sentiment
-            f_info = forum_data.get(ticker.upper()) or {}
+            clean_sym = ticker.split("-")[0].split(".")[0].split("=")[0].upper()
+            f_info = forum_data.get(clean_sym) or forum_data.get(ticker.upper()) or {}
             mentions = f_info.get("mentions", 0)
             if mentions > 0:
                 social_sentiment["forum_mentions"] = mentions
@@ -49,18 +50,31 @@ class MarketScanner:
             synth = self.synthesizer.synthesize(short_res, long_res, fundamentals, consensus)
             breakout_res = self.breakout_radar.analyze_breakout_potential(df_with_ind, fundamentals, mentions)
 
-            if ".DE" in ticker:
+            # Determine Asset Class & Region
+            if "-USD" in ticker or "-EUR" in ticker:
+                region = "🪙 Krypto"
+                sector = "Kryptowährung"
+            elif any(met in ticker for met in ["GC=F", "SI=F", "PL=F", "PA=F", "HG=F"]):
+                region = "🥇 Edelmetalle"
+                sector = "Edelmetall / Rohstoff"
+            elif "=F" in ticker:
+                region = "🛢️ Rohstoffe"
+                sector = "Energie & Agrar"
+            elif ".DE" in ticker:
                 region = "Deutschland"
+                sector = fundamentals.get("sector", "Aktie (DE)")
             elif any(ext in ticker for ext in [".PA", ".AS", ".SW", ".L", ".MC", ".MI"]):
                 region = "Europa"
+                sector = fundamentals.get("sector", "Aktie (EU)")
             else:
                 region = "USA"
+                sector = fundamentals.get("sector", "Aktie (US)")
 
             return {
                 "symbol": ticker,
                 "name": fundamentals.get("shortName", ticker),
                 "region": region,
-                "sector": fundamentals.get("sector", "N/A"),
+                "sector": sector,
                 "industry": fundamentals.get("industry", "N/A"),
                 "price": fundamentals.get("currentPrice") or (prices_df['Close'].iloc[-1] if not prices_df.empty else 0),
                 "currency": fundamentals.get("currency", "USD"),
@@ -103,15 +117,15 @@ class MarketScanner:
             return None
 
     def run_full_scan(self, max_workers: int = 12, progress_callback=None) -> List[Dict[str, Any]]:
-        """Scans forums first, then scans all stocks concurrently."""
-        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 1. Scanne Foren (Reddit r/wallstreetbets, r/stocks, etc.)...\n")
+        """Scans forums, then scans all assets (Stocks, Cryptos, Metals, Commodities)."""
+        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 1. Scanne Foren (Reddit r/wallstreetbets, r/CryptoCurrency, etc.)...\n")
         sys.stdout.flush()
         harvester = ForumSentimentHarvester(self.tickers)
         forum_data = harvester.scan_reddit(limit_per_sub=50)
         sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Foren-Scan fertig. Erwaehnungen fuer {len(forum_data)} Ticker erfasst.\n")
         sys.stdout.flush()
 
-        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 2. Starte Marktanalyse fuer {len(self.tickers)} Aktien (inkl. Leerverkaeufer-Daten)...\n")
+        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 2. Starte Multi-Asset-Analyse fuer {len(self.tickers)} Assets (Aktien, Krypto, Rohstoffe)...\n")
         sys.stdout.flush()
         results = []
         completed = 0
@@ -131,8 +145,8 @@ class MarketScanner:
                     pass
                 if progress_callback:
                     progress_callback(completed, len(self.tickers))
-                if completed % 20 == 0 or completed == len(self.tickers):
-                    sys.stdout.write(f"  Fortschritt: {completed}/{len(self.tickers)} Aktien verarbeitet...\n")
+                if completed % 25 == 0 or completed == len(self.tickers):
+                    sys.stdout.write(f"  Fortschritt: {completed}/{len(self.tickers)} Assets verarbeitet...\n")
                     sys.stdout.flush()
 
         results.sort(key=lambda x: x["total_score"], reverse=True)
@@ -145,7 +159,7 @@ class MarketScanner:
                 "data": results
             }, f, indent=2, ensure_ascii=False)
 
-        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Markt-Scan erfolgreich gespeichert ({len(results)} Aktien).\n")
+        sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Multi-Asset-Scan erfolgreich gespeichert ({len(results)} Assets).\n")
         sys.stdout.flush()
         return results
 
