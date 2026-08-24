@@ -929,26 +929,48 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
             """)
 
-    # Action Toolbar
-    col_act1, col_act2, col_info_p = st.columns([1, 1.5, 2])
-    with col_act1:
-        if st.button("🔄 Kurse aktualisieren", use_container_width=True):
-            with st.spinner("Lade frische Börsenkurse für Depot-Positionen..."):
-                pm.update_live_prices()
-                st.success("Kurse aktualisiert!")
-                st.rerun()
+    # Action Toolbar & Continuous Autopilot Engine
+    st.markdown("---")
+    col_auto1, col_auto2, col_manual = st.columns([2, 1.2, 1.5])
+    with col_auto1:
+        auto_pilot_enabled = st.toggle("🤖 **Vollautomatischer KI-Autopilot** (100% Kostenlos)", value=True, help="Führt Stop-Loss, Take-Profit & Rebalancing kontinuierlich im Hintergrund aus.")
+    with col_auto2:
+        auto_interval = st.selectbox("Taktung", ["⚡ 15 Sekunden", "🕒 30 Sekunden", "⏱️ 60 Sekunden"], index=1, label_visibility="collapsed")
+    with col_manual:
+        manual_trigger = st.button("⚡ Jetzt sofort prüfen", use_container_width=True, help="Löst den Autopilot-Check sofort manuell aus.")
 
-    with col_act2:
-        if st.button("🤖 Autonomen Handels-Check ausführen", use_container_width=True):
-            with st.spinner("Prüfe Stop-Loss, Take-Profit und Markt-Top-Picks..."):
+    # Background Automated Execution Loop
+    interval_secs = 15 if "15" in auto_interval else (30 if "30" in auto_interval else 60)
+    now_ts = time.time()
+    last_check_ts = st.session_state.get("last_auto_check_ts", 0)
+
+    if auto_pilot_enabled:
+        time_since_last = int(now_ts - last_check_ts)
+        next_check_in = max(0, interval_secs - time_since_last)
+        st.caption(f"🟢 **Autopilot läuft permanent**: Nächster automatischer Check in **{next_check_in}s** • Kosten: **0,00 €** (Öffentliche Live-Feeds).")
+        
+        if manual_trigger or (now_ts - last_check_ts >= interval_secs):
+            st.session_state["last_auto_check_ts"] = now_ts
+            with st.spinner("Autopilot prüft Stop-Loss, Take-Profit & Markt-Ausbrüche..."):
                 scan_data = load_cached_market_scan()
                 scan_list = scan_data.get("data", []) if scan_data else []
                 actions = pm.auto_trade_check(scan_list)
                 if actions:
-                    st.success(f"Handlungen ausgeführt: {', '.join(actions)}")
-                else:
-                    st.info("Keine Handlungsnotwendigkeit (alle Positionen innerhalb der Risikoparameter).")
+                    st.success(f"🤖 **Autopilot hat gehandelt:** {', '.join(actions)}")
+                elif manual_trigger:
+                    st.info("Alle Positionen im grünen Bereich (keine Handlungsnotwendigkeit).")
+            if manual_trigger:
                 st.rerun()
+    elif manual_trigger:
+        with st.spinner("Prüfe Stop-Loss, Take-Profit und Markt-Top-Picks..."):
+            scan_data = load_cached_market_scan()
+            scan_list = scan_data.get("data", []) if scan_data else []
+            actions = pm.auto_trade_check(scan_list)
+            if actions:
+                st.success(f"Handlungen ausgeführt: {', '.join(actions)}")
+            else:
+                st.info("Keine Handlungsnotwendigkeit.")
+        st.rerun()
 
     summary = pm.get_depot_summary(selected_depot_key)
 
