@@ -26,19 +26,146 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom Styling
+# Custom High-Contrast & Mobile-Optimized Styling
 st.markdown("""
 <style>
-    .metric-card {
-        background-color: #1e222d;
-        border-radius: 10px;
-        padding: 15px;
-        border: 1px solid #2e3546;
-        margin-bottom: 10px;
+    /* Global Base High Contrast */
+    .stApp {
+        background-color: #0b0f17;
+        color: #f8fafc;
     }
-    .stDataFrame {
+    
+    /* High-Contrast Interactive Buttons */
+    div[data-testid="stButton"] > button {
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+        color: #ffffff !important;
+        border: 1.5px solid #38bdf8 !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        padding: 10px 20px !important;
+        min-height: 46px !important;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    div[data-testid="stButton"] > button:hover {
+        background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+        border-color: #7dd3fc !important;
+        box-shadow: 0 6px 16px rgba(56, 189, 248, 0.5) !important;
+        transform: translateY(-1px) !important;
+    }
+    div[data-testid="stButton"] > button:active {
+        transform: scale(0.98) !important;
+    }
+
+    /* High-Contrast Radio Buttons (Segmented & Touch-Friendly) */
+    div[data-testid="stRadio"] > div[role="radiogroup"] {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #111827;
+        padding: 8px;
         border-radius: 10px;
-        overflow: hidden;
+        border: 1.5px solid #1f2937;
+    }
+    
+    /* Horizontal Radio Buttons (Depot Selector) */
+    div[data-testid="stRadio"] > div[role="radiogroup"][aria-orientation="horizontal"] {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    div[data-testid="stRadio"] label {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+        border: 1.5px solid #334155 !important;
+        border-radius: 8px !important;
+        padding: 10px 14px !important;
+        margin: 2px !important;
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        transition: all 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        min-height: 42px !important;
+    }
+    
+    div[data-testid="stRadio"] label:hover {
+        background-color: #334155 !important;
+        border-color: #64748b !important;
+        color: #ffffff !important;
+    }
+
+    /* Active / Checked Radio Item Highlight */
+    div[data-testid="stRadio"] label[data-checked="true"],
+    div[data-testid="stRadio"] label:has(input:checked) {
+        background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%) !important;
+        border: 2px solid #38bdf8 !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+        font-weight: 700 !important;
+    }
+
+    /* High-Contrast Tabs */
+    div[data-testid="stTabs"] button[role="tab"] {
+        background-color: #1e293b !important;
+        color: #94a3b8 !important;
+        border: 1px solid #334155 !important;
+        border-radius: 6px 6px 0 0 !important;
+        font-weight: 600 !important;
+        padding: 8px 16px !important;
+        margin-right: 4px !important;
+    }
+    div[data-testid="stTabs"] button[aria-selected="true"] {
+        background-color: #0f172a !important;
+        color: #38bdf8 !important;
+        border: 2px solid #38bdf8 !important;
+        border-bottom: none !important;
+        font-weight: 700 !important;
+    }
+
+    /* Inputs & Selectboxes */
+    div[data-baseweb="select"] > div, 
+    div[data-baseweb="input"] > div {
+        background-color: #1e293b !important;
+        border: 1.5px solid #475569 !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+    }
+    div[data-baseweb="select"] > div:hover,
+    div[data-baseweb="input"] > div:hover {
+        border-color: #38bdf8 !important;
+    }
+
+    /* Metric Cards */
+    div[data-testid="metric-container"] {
+        background-color: #161e2e;
+        border: 1.5px solid #334155;
+        border-radius: 10px;
+        padding: 12px 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    div[data-testid="stMetricValue"] {
+        font-weight: 800 !important;
+        color: #f8fafc !important;
+    }
+
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 768px) {
+        div[data-testid="stRadio"] label {
+            width: 100% !important;
+            margin-bottom: 6px !important;
+            font-size: 15px !important;
+        }
+        div[data-testid="stButton"] > button {
+            width: 100% !important;
+            font-size: 16px !important;
+            padding: 12px !important;
+        }
+        .metric-card {
+            padding: 10px !important;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
