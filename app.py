@@ -722,16 +722,18 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         st.info("💡 **Relative Skin-in-the-Game Formel**: Wenn ein neuer CEO mit 7,5 Mio. € Privatvermögen für **900.000 € (12% seines Vermögens)** eigene Aktien kauft, ist das Vertrauenssignal ungleich höher als wenn eine Milliardärs-Dynastie reine Dividenden reinvestiert (<0.1% des Vermögens).")
 
         insiders = WhaleInsiderTracker.get_insider_buys()
-        i_df = pd.DataFrame(insiders)
-
-        display_i = i_df[[
-            "symbol", "name", "insider", "role", "amount", "net_worth_est", "wealth_pct", "skin_in_game", "date", "signal"
-        ]].copy()
-
-        display_i.columns = [
-            "Ticker", "Unternehmen", "Führungskraft / Insider", "Position / Rolle", 
-            "Kaufvolumen", "Geschätztes Vermögen", "Anteil am Vermögen (%)", "Skin-in-the-Game Stufe", "Datum", "KI-Signal"
-        ]
+        display_i = pd.DataFrame()
+        
+        display_i["Ticker"] = [item.get("symbol", "-") for item in insiders]
+        display_i["Unternehmen"] = [item.get("name", "-") for item in insiders]
+        display_i["Führungskraft / Insider"] = [item.get("insider", "-") for item in insiders]
+        display_i["Position / Rolle"] = [item.get("role", "-") for item in insiders]
+        display_i["Kaufvolumen"] = [item.get("amount", "-") for item in insiders]
+        display_i["Geschätztes Vermögen"] = [item.get("net_worth_est", "-") for item in insiders]
+        display_i["Anteil am Vermögen (%)"] = [item.get("wealth_pct", "-") for item in insiders]
+        display_i["Skin-in-the-Game Stufe"] = [item.get("skin_in_game", "🟢 Hoch") for item in insiders]
+        display_i["Datum"] = [item.get("date", "-") for item in insiders]
+        display_i["KI-Signal"] = [item.get("signal", "🟢 KAUF") for item in insiders]
 
         i_cfg = {
             "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
