@@ -1,4 +1,4 @@
-﻿"""Free Real-Time Intraday Momentum & Breakout Engine across 160+ Multi-Asset Watchlists."""
+"""Free Real-Time Intraday Momentum & Breakout Engine across 160+ Multi-Asset Watchlists."""
 
 import os
 import time
@@ -8,31 +8,16 @@ import urllib.request
 from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
-from src.universe import (
-    UNIVERSE_CRYPTO, UNIVERSE_METALS, UNIVERSE_COMMODITIES,
-    UNIVERSE_US_GROWTH_MIDCAPS, UNIVERSE_US_LEADERS,
-    UNIVERSE_DE_SDAX, UNIVERSE_DE_MDAX, UNIVERSE_DE_DAX
-)
+from src.universe import CATEGORIZED_UNIVERSES, FULL_MARKET_UNIVERSE
 
 ALERTS_LOG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "realtime_alerts.json")
 LIVE_PRICES_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "live_ticks.json")
 
-# Build categorized real-time universes
-WATCHLIST_CATEGORIES = {
-    "🔥 Hot-Momentum & Squeeze-Radar": [
-        "MRNA", "RIVN", "PLTR", "SOL-USD", "NVDA", "MSTR", "COIN", "ASTS", "SMCI", 
-        "BTC-USD", "SDF.DE", "EVT.DE", "HFG.DE", "GC=F", "HIMS", "DUOL", "RDDT", "ARM"
-    ],
-    "🪙 Krypto Live-Stream (0 Delay)": UNIVERSE_CRYPTO,
-    "🇺🇸 US Biotech, Growth & Mid-Caps": UNIVERSE_US_GROWTH_MIDCAPS,
-    "🇺🇸 US Mega-Cap Leaders": UNIVERSE_US_LEADERS,
-    "🇩🇪 Deutschland: SDAX & MDAX": UNIVERSE_DE_SDAX + UNIVERSE_DE_MDAX,
-    "🇩🇪 Deutschland: DAX 40": UNIVERSE_DE_DAX,
-    "🥇 Edelmetalle & Rohstoffe": UNIVERSE_METALS + UNIVERSE_COMMODITIES
-}
+# 500+ Assets categorized
+WATCHLIST_CATEGORIES = CATEGORIZED_UNIVERSES
 
 class RealTimeBreakoutScanner:
-    """Monitors live price ticks and volume spikes in real-time across 160+ assets without paid APIs."""
+    """Monitors live price ticks and volume spikes in real-time across 500+ assets without paid APIs."""
 
     def __init__(self):
         self.price_history = {}  # {symbol: [{"time": ts, "price": px}]}
