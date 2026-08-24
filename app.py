@@ -17,6 +17,10 @@ from src.universe import CATEGORIZED_UNIVERSES
 from src.portfolio import PortfolioManager
 from src.macro_scanner import MacroScanner
 from src.insider_whale_tracker import WhaleInsiderTracker
+from src.advanced_intelligence import (
+    MasterIntelligenceHub, OptionsDarkPoolEngine, BaFinShortRegister,
+    EarningsRevisionEngine, EarningsCallAnalyzer, FREDMacroEngine, CryptoOnChainEngine
+)
 
 # Page Configuration
 st.set_page_config(
@@ -78,6 +82,7 @@ app_mode = st.sidebar.radio(
     [
         "🏆 Markt-Screener & Top-Rankings", 
         "🚨 Ausbruchs- & Katalysator-Radar",
+        "🔮 Smart-Money & Makro-Radar (6 Module)",
         "🐋 Whale- & Insider-Radar",
         "🌐 Makro-Klima, Zentralbanken & News",
         "💼 Musterdepots & Live-Performance (3x 10.000 €)",
@@ -333,7 +338,141 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
         st.info("💡 **Tipp**: Wähle links '🔍 Einzelaktien-Tiefenanalyse', um jede Aktie im interaktiven Chart und mit allen Details anzusehen.")
 
 # ==============================================================================
-# MODE 3: WHALE- & INSIDER-RADAR
+# MODE 3: SMART-MONEY & MAKRO-RADAR (6 MODULE)
+# ==============================================================================
+elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
+    st.title("🔮 Institutionelles Smart-Money & Makro-Radar (6 Module)")
+    st.markdown("Die **6 quantitativen Informationsquellen führender Hedgefonds** für maximale Entscheidungstrefferquote.")
+
+    tab_m1, tab_m2, tab_m3, tab_m4, tab_m5, tab_m6 = st.tabs([
+        "🎯 1. Optionen-Fluss & Dark Pools",
+        "🏛️ 2. BaFin Leerverkäufer (DE/EU)",
+        "📈 3. Earnings-Revisionen (EPS)",
+        "🎙️ 4. Earnings-Call KI-Tonalität",
+        "🌐 5. FRED-Makro & Zinskurve",
+        "⛓️ 6. Krypto On-Chain & Whales"
+    ])
+
+    # Module 1: Options Flow
+    with tab_m1:
+        st.subheader("🎯 Ungewöhnlicher Options-Fluss & Dark Pool Großblöcke")
+        st.caption("Echtzeit-Tracking von institutionellen Call-Sweeps weit aus dem Geld und außerbörslichen Dark-Pool-Transaktionen.")
+        
+        opt_alerts = OptionsDarkPoolEngine.get_top_unusual_options_alerts()
+        o_df = pd.DataFrame(opt_alerts)
+        
+        display_o = o_df[["symbol", "name", "type", "strike", "expiry", "premium", "put_call_ratio", "signal"]].copy()
+        display_o.columns = ["Ticker", "Unternehmen", "Order-Typ", "Strike", "Verfall", "Prämie", "Put/Call", "KI-Signal"]
+        
+        st.dataframe(display_o, use_container_width=True, hide_index=True)
+        st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
+
+    # Module 2: BaFin Shorts
+    with tab_m2:
+        st.subheader("🏛️ Offizielles BaFin & Bundesanzeiger Leerverkäufer-Register (Deutschland & Europa)")
+        st.caption("Tagesgenaue Netto-Leerverkaufspositionen meldepflichtiger Hedgefonds (ab 0,5% des Aktienkapitals).")
+        
+        bafin_shorts = BaFinShortRegister.get_official_shorts()
+        b_df = pd.DataFrame(bafin_shorts)
+        
+        display_b = b_df[["symbol", "name", "hedge_fund", "short_pct", "change", "date", "status"]].copy()
+        display_b["short_pct"] = display_b["short_pct"].apply(lambda x: f"{x:.2f}%")
+        display_b["change"] = display_b["change"].apply(lambda x: f"{x:+.2f}%")
+        display_b.columns = ["Ticker", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
+        
+        st.dataframe(display_b, use_container_width=True, hide_index=True)
+        st.warning("🚨 **Squeeze-Signal**: Wenn aggressive Hedgefonds wie Marshall Wace oder Citadel beginnen, Positionen rasch zu reduzieren (negative Veränderung), entsteht oft eine gewaltige Short-Squeeze-Rallye.")
+
+    # Module 3: Earnings Revisions
+    with tab_m3:
+        st.subheader("📈 Gewinnschätzungs-Revisionen (Analyst EPS Momentum)")
+        st.caption("Unternehmen, deren Umsatz- und Gewinnschätzungen in den letzten 30 Tagen von der Wall Street systematisch nach oben korrigiert wurden.")
+        
+        rev_sample = ["NVDA", "PLTR", "SAP.DE", "DUOL", "MUV2.DE", "MRNA", "ADBE", "RIVN"]
+        rev_data = [EarningsRevisionEngine.get_revision_metrics(sym) for sym in rev_sample]
+        r_df = pd.DataFrame(rev_data)
+        
+        display_r = r_df[["symbol", "revision_score", "upgrades_last_30d", "downgrades_last_30d", "eps_beat_rate_pct", "last_quarter_surprise_pct", "status"]].copy()
+        display_r.columns = ["Ticker", "Revisions-Score", "Upgrades (30T)", "Downgrades (30T)", "Beat-Rate (%)", "Letzte EPS-Surprise", "Trend-Status"]
+        display_r["Beat-Rate (%)"] = display_r["Beat-Rate (%)"].apply(lambda x: f"{x:.0f}%")
+        display_r["Letzte EPS-Surprise"] = display_r["Letzte EPS-Surprise"].apply(lambda x: f"{x:+.1f}%")
+        
+        st.dataframe(display_r, use_container_width=True, hide_index=True)
+
+    # Module 4: Earnings Call Transcripts
+    with tab_m4:
+        st.subheader("🎙️ KI-Tonalitätsanalyse von Quartals-Telefonkonferenzen (Earnings Calls)")
+        st.caption("NLP-Auswertung der Wortwahl von CEOs & CFOs im Analysten-Gespräch auf Zuversicht, Risiken und Margenaussichten.")
+        
+        calls = EarningsCallAnalyzer.CALL_ANALYSES
+        for sym, c_data in calls.items():
+            st.markdown(f"""
+            <div style="background-color: #1a1e29; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                    <b style="font-size: 16px; color: white;">{sym} • {c_data['date']}</b>
+                    <span style="font-weight: bold; color: #38bdf8;">CEO-Tonalität: {c_data['ceo_tone']}</span>
+                </div>
+                <div style="margin: 8px 0; font-size: 14px; color: #cbd5e1;"><b>Schlüsselbegriffe:</b> {', '.join(c_data['key_phrases'])}</div>
+                <div style="font-size: 13px; color: #94a3b8;"><b>Warnsignale / Risiken:</b> {', '.join(c_data['caution_flags'])}</div>
+                <div style="margin-top: 6px; font-size: 14px; color: #f1f5f9; background-color: #111827; padding: 8px; border-radius: 6px;">
+                    🧠 <b>KI-Urteil:</b> {c_data['ai_verdict']}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Module 5: FRED Macro
+    with tab_m5:
+        st.subheader("🌐 FRED-Makrodaten & US-Zinskurve (Federal Reserve St. Louis)")
+        st.caption("Das makroökonomische Fundament: Renditen, Zinsstrukturkurve, Dollar-Index und Kreditmärkte.")
+        
+        fred = FREDMacroEngine.get_macro_indicators()
+        
+        f1, f2, f3, f4 = st.columns(4)
+        with f1:
+            st.metric("US 10-Jahres-Rendite", fred["us_10y_yield"])
+        with f2:
+            st.metric("US 2-Jahres-Rendite", fred["us_2y_yield"])
+        with f3:
+            st.metric("US-Dollar Index (DXY)", fred["us_dollar_index_dxy"], delta=fred["dxy_trend"][:15])
+        with f4:
+            st.metric("High-Yield Spread", fred["us_high_yield_spread"][:5], delta="Solide / Keine Panik")
+
+        st.markdown(f"""
+        <div style="background-color: #1e293b; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <h4 style="margin: 0 0 4px 0; color: #34d399;">📐 Zinskurven-Zustand: {fred['yield_curve_spread']}</h4>
+            <p style="margin: 0; color: #e2e8f0; font-size: 14px;">{fred['yield_curve_status']}</p>
+            <p style="margin: 6px 0 0 0; color: #f8fafc; font-size: 14px;"><b>Fazit:</b> {fred['verdict']}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Module 6: Crypto On-Chain
+    with tab_m6:
+        st.subheader("⛓️ Krypto On-Chain & Whale-Flow Intelligence")
+        st.caption("Blockchain-Transaktionsdaten: Börsenzuflüsse/-abflüsse, Wale-Akkumulation und Stablecoin-Reserven.")
+        
+        onchain = CryptoOnChainEngine.get_onchain_metrics()
+        
+        o1, o2, o3 = st.columns(3)
+        with o1:
+            st.metric("On-Chain Score", f"{onchain['onchain_score']} / 100", delta="Starke Verknappung")
+        with o2:
+            st.metric("Fear & Greed Index", onchain["fear_and_greed_index"], delta="Greed / Gier")
+        with o3:
+            st.metric("MVRV Z-Score", onchain["mvrv_z_score"][:4], help="Bewertungsbandbreite des Bitcoin-Netzwerks")
+
+        st.markdown(f"""
+        <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Börsen-Netflow:</b> {onchain['btc_exchange_netflow']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Stablecoin-Reserven:</b> {onchain['stablecoin_supply_ratio']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Whale-Aktivität:</b> {onchain['whale_wallet_accumulation']}</div>
+            <div style="margin-top: 10px; font-size: 14px; color: #38bdf8; background-color: #0f172a; padding: 10px; border-radius: 6px;">
+                🚀 <b>Fazit:</b> {onchain['summary']}
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+# ==============================================================================
+# MODE 4: WHALE- & INSIDER-RADAR
 # ==============================================================================
 elif app_mode == "🐋 Whale- & Insider-Radar":
     st.title("🐋 Whale- & Insider-Radar (Börsen-Legenden, US-Kongress & Vorstände)")

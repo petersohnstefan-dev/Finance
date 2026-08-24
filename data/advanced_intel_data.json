@@ -1,0 +1,108 @@
+{
+  "updated_at": "2026-08-24 22:17:29",
+  "options_alerts": [
+    {
+      "symbol": "MRNA",
+      "name": "Moderna",
+      "type": "⚡ Ungewöhnlicher OTM Call-Sweep",
+      "strike": " Calls",
+      "expiry": "Sep 2026",
+      "premium": ".8 Mio.",
+      "put_call_ratio": 0.28,
+      "signal": "🟢 Extrem bullische Vorab-Positionierung"
+    },
+    {
+      "symbol": "NVDA",
+      "name": "Nvidia",
+      "type": "⚡ Institutional Dark Pool Block",
+      "strike": " Calls",
+      "expiry": "Okt 2026",
+      "premium": ".5 Mio.",
+      "put_call_ratio": 0.42,
+      "signal": "🟢 Institutionelle Großkäufe"
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "type": "⚡ Aggressive Call-Akkumulation",
+      "strike": " Calls",
+      "expiry": "Sep 2026",
+      "premium": ".2 Mio.",
+      "put_call_ratio": 0.35,
+      "signal": "🟢 Starke Nachfrage nach Upside-Hebel"
+    }
+  ],
+  "bafin_shorts": [
+    {
+      "symbol": "SDF.DE",
+      "name": "K+S AG",
+      "hedge_fund": "Marshall Wace LLP",
+      "short_pct": 2.85,
+      "previous_pct": 3.2,
+      "change": -0.35,
+      "date": "2026-08-21",
+      "status": "🚨 Short-Eindeckung eingeleitet (Squeeze-Frühwarnung)"
+    },
+    {
+      "symbol": "EVT.DE",
+      "name": "Evotec SE",
+      "hedge_fund": "Qube Research & Technologies",
+      "short_pct": 2.45,
+      "previous_pct": 2.1,
+      "change": 0.35,
+      "date": "2026-08-19",
+      "status": "⚠️ Leerverkaufsposition aufgestockt"
+    },
+    {
+      "symbol": "WAF.DE",
+      "name": "Siltronic AG",
+      "hedge_fund": "Citadel Advisors Europe",
+      "short_pct": 1.92,
+      "previous_pct": 2.3,
+      "change": -0.38,
+      "date": "2026-08-20",
+      "status": "🚨 Eindeckung aktiv"
+    },
+    {
+      "symbol": "HFG.DE",
+      "name": "HelloFresh SE",
+      "hedge_fund": "BlackRock Investment UK",
+      "short_pct": 3.1,
+      "previous_pct": 3.1,
+      "change": 0.0,
+      "date": "2026-08-18",
+      "status": "⏸️ Hohe Short-Position stabil"
+    },
+    {
+      "symbol": "GFT.DE",
+      "name": "GFT Technologies",
+      "hedge_fund": "Millennium Capital",
+      "short_pct": 0.75,
+      "previous_pct": 0.95,
+      "change": -0.2,
+      "date": "2026-08-22",
+      "status": "🟢 Bären ziehen sich zurück"
+    }
+  ],
+  "fred_macro": {
+    "us_10y_yield": "3.88%",
+    "us_2y_yield": "3.92%",
+    "yield_curve_spread": "-0.04% (Un-Inversion / Normalisierung)",
+    "yield_curve_status": "🔄 Zinskurve normalisiert sich nach historischer Inversion (Klassischer Vorbote von Fed-Zinssenkungen)",
+    "us_dollar_index_dxy": "101.40",
+    "dxy_trend": "📉 Schwächer werdender Dollar (Starkes Rückenwind-Signal für Gold, Krypto & Rohstoffe)",
+    "us_high_yield_spread": "3.15% (Historisch niedrig / Keine Kreditausfall-Panik)",
+    "fed_net_liquidity": ".25 Bio. (Stabil)",
+    "fred_macro_score": 76,
+    "verdict": "🟢 Makroökonomisch extrem günstiges Fenster für Zinswende-Gewinner (Gold, Tech & Krypto)."
+  },
+  "crypto_onchain": {
+    "btc_exchange_netflow": "📉 -18.400 BTC (Starke Netto-Abflüsse in Cold Wallets / Angebotsschock)",
+    "stablecoin_supply_ratio": " Mrd. USDT/USDC (Rekord-Trockenpulver an den Seitenlinien)",
+    "whale_wallet_accumulation": "🟢 Wale (>1.000 BTC) akkumulieren seit 60 Tagen kontinuierlich",
+    "mvrv_z_score": "1.85 (Gesunder Bullenmarkt-Bereich / Weit entfernt von Manie-Top > 6.0)",
+    "fear_and_greed_index": "58 / 100 (Greed / Gier - Gesundes Marktumfeld)",
+    "onchain_score": 82,
+    "summary": "🚀 Fundamentale On-Chain-Daten signalisieren Verknappung des liquiden Angebots bei hoher Kaufbereitschaft."
+  }
+}
