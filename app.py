@@ -15,6 +15,7 @@ from src.breakout_radar import BreakoutRadar
 from src.market_scanner import MarketScanner, load_cached_market_scan
 from src.universe import CATEGORIZED_UNIVERSES
 from src.portfolio import PortfolioManager
+from src.macro_scanner import MacroScanner
 
 # Page Configuration
 st.set_page_config(
@@ -49,6 +50,7 @@ app_mode = st.sidebar.radio(
     [
         "🏆 Markt-Screener & Top-Rankings", 
         "🚨 Ausbruchs- & Katalysator-Radar",
+        "🌐 Makro-Klima, Zentralbanken & News",
         "💼 Musterdepots & Live-Performance (2x 10.000 €)",
         "🔍 Einzelaktien-Tiefenanalyse"
     ],
@@ -302,7 +304,106 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
         st.info("💡 **Tipp**: Wähle links '🔍 Einzelaktien-Tiefenanalyse', um jede Aktie im interaktiven Chart und mit allen Details anzusehen.")
 
 # ==============================================================================
-# MODE 3: MUSTERDEPOTS & LIVE-PERFORMANCE
+# MODE 3: MAKRO-KLIMA, ZENTRALBANKEN & QUALITÄTSMEDIEN
+# ==============================================================================
+elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
+    st.title("🌐 Makro-Klima, Zentralbanken & Qualitätsmedien")
+    st.markdown("Echtzeit-Überwachung von **Leitzinsen (Fed, EZB, SNB, BoE)**, Inflation und verifizierten Nachrichten aus **Handelsblatt, FAZ, Reuters, CNBC & EZB**.")
+
+    macro_scanner = MacroScanner()
+    
+    col_macro_btn, col_macro_info = st.columns([1, 3])
+    with col_macro_btn:
+        if st.button("🔄 Makro-Daten & News jetzt laden", use_container_width=True):
+            with st.spinner("Lade Zentralbank-Daten und RSS-Feeds aus Qualitätsmedien..."):
+                macro_scanner.get_full_macro_report()
+                st.success("Makro-Daten & News aktualisiert!")
+                st.rerun()
+
+    report = macro_scanner.get_full_macro_report()
+    climate_info = report["macro_climate"]
+    news_items = report["news"]
+
+    # 1. Macro Climate Score & KPIs
+    st.markdown("---")
+    m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+    with m_col1:
+        st.metric(
+            "Makro-Klima-Score", 
+            f"{climate_info['macro_score']} / 100", 
+            delta="Expansiv / Easing" if climate_info['macro_score'] >= 65 else ("Neutral" if climate_info['macro_score'] >= 45 else "Defensiv"),
+            help="Stimmungswert basierend auf Leitzinsen, Inflationstrend und Wirtschaftsberichten"
+        )
+    with m_col2:
+        st.metric("Fed Leitzins (USA)", "5.25% - 5.50%", delta="Zinswende / Dovish", help="US Federal Reserve Benchmark Zinsspanne")
+    with m_col3:
+        st.metric("EZB Leitzins (Euroraum)", "3.75%", delta="Lockerung eingeleitet", help="Europäische Zentralbank Einlagesatz")
+    with m_col4:
+        st.metric("Gefilterte Qualitäts-News", f"{len(news_items)} Artikel", help="Aktuelle Meldungen aus FAZ, Handelsblatt, Reuters, CNBC & EZB")
+
+    # Strategy Banner
+    st.markdown(f"""
+    <div style="background-color: #1e293b; border-left: 5px solid #38bdf8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+        <h4 style="margin: 0 0 5px 0; color: #38bdf8;">🧭 Makro-Ausrichtung der KI: {climate_info['climate']}</h4>
+        <p style="margin: 0; color: #e2e8f0; font-size: 15px;">{climate_info['guidance']}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # 2. Central Banks Rate Board
+    st.markdown("### 🏛️ Zentralbank-Barometer & Zinspfade")
+    cb_cols = st.columns(4)
+    cb_data = climate_info.get("central_banks", {})
+
+    for idx, (cb_name, cb_vals) in enumerate(cb_data.items()):
+        with cb_cols[idx]:
+            st.markdown(f"""
+            <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                <div style="font-weight: bold; color: #38bdf8; font-size: 16px;">{cb_name}</div>
+                <div style="font-size: 24px; font-weight: bold; color: #f59e0b; margin: 4px 0;">{cb_vals['rate']}</div>
+                <div style="font-size: 13px; color: #cbd5e1;"><b>Haltung:</b> {cb_vals['stance']}</div>
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
+                <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Inflation: {cb_vals['current_cpi']} (Ziel: {cb_vals['inflation_target']})</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # 3. Quality Financial News Feed
+    st.markdown("---")
+    st.markdown("### 📰 Live-Nachrichten-Ticker aus seriösen Wirtschaftsmedien")
+    
+    n_f1, n_f2 = st.columns([1, 2])
+    with n_f1:
+        sources_available = ["Alle"] + sorted(list(set(n["source"] for n in news_items)))
+        selected_source = st.selectbox("Quelle filtern", sources_available)
+    with n_f2:
+        search_query = st.text_input("🔍 Schlagwort / Ticker suchen (z. B. Zinsen, Fed, Gold, Nvidia, Inflation):", value="")
+
+    filtered_news = news_items
+    if selected_source != "Alle":
+        filtered_news = [n for n in filtered_news if n["source"] == selected_source]
+    if search_query.strip():
+        q = search_query.strip().lower()
+        filtered_news = [n for n in filtered_news if q in n["title"].lower() or q in n.get("snippet", "").lower()]
+
+    if filtered_news:
+        for item in filtered_news:
+            source_badge_color = "#38bdf8" if "EZB" in item["source"] or "Fed" in item["source"] else ("#f59e0b" if "Handelsblatt" in item["source"] or "FAZ" in item["source"] else "#a78bfa")
+            st.markdown(f"""
+            <div style="background-color: #1a1e29; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; color: #94a3b8;">
+                    <span style="font-weight: bold; color: {source_badge_color};">📌 {item['source']} • {item.get('category', '')}</span>
+                    <span>🕒 {item.get('published', '')[:25]}</span>
+                </div>
+                <h4 style="margin: 6px 0; color: white;">
+                    <a href="{item['link']}" target="_blank" style="color: #f1f5f9; text-decoration: none;">{item['title']}</a>
+                </h4>
+                <p style="margin: 0; font-size: 13px; color: #cbd5e1;">{item.get('snippet', '')}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.info("Keine Nachrichten für den gewählten Filter gefunden.")
+
+# ==============================================================================
+# MODE 4: MUSTERDEPOTS & LIVE-PERFORMANCE
 # ==============================================================================
 elif app_mode == "💼 Musterdepots & Live-Performance (2x 10.000 €)":
     st.title("💼 Autonome Musterdepots (2x 10.000 € Startkapital)")
