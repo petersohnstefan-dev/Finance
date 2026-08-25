@@ -33,23 +33,37 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Clean, High-Legibility & Institutional UI Styling
+# Clean, High-Legibility Light Theme Styling (Weißer Hintergrund)
 st.markdown("""
 <style>
+    /* Main Background & Base Styling */
+    .stApp {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+    }
+
     /* Metric Cards */
     div[data-testid="metric-container"] {
-        background-color: #1a1e29;
-        border: 1px solid #334155;
-        border-radius: 10px;
-        padding: 12px 16px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        background-color: #f8fafc !important;
+        border: 1.5px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        padding: 12px 16px !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    }
+    div[data-testid="metric-container"] label {
+        color: #64748b !important;
+        font-weight: 600 !important;
+    }
+    div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
+        color: #0f172a !important;
+        font-weight: 750 !important;
     }
 
     /* Buttons with high legibility */
     div[data-testid="stButton"] > button {
         background-color: #0284c7 !important;
         color: #ffffff !important;
-        border: 1px solid #38bdf8 !important;
+        border: 1px solid #0369a1 !important;
         border-radius: 8px !important;
         font-weight: 600 !important;
         font-size: 15px !important;
@@ -59,24 +73,24 @@ st.markdown("""
     }
     div[data-testid="stButton"] > button:hover {
         background-color: #0369a1 !important;
-        border-color: #7dd3fc !important;
+        border-color: #0c4a6e !important;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+        box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
     }
 
     /* Sidebar Navigation Container */
     section[data-testid="stSidebar"] {
-        background-color: #0b0f19 !important;
-        border-right: 1px solid #1e293b !important;
+        background-color: #f8fafc !important;
+        border-right: 1.5px solid #e2e8f0 !important;
     }
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
     section[data-testid="stSidebar"] h3 {
-        color: #38bdf8 !important;
+        color: #0284c7 !important;
     }
 
     /* ========================================================================= */
-    /* RADIO BUTTONS: HIGH VISIBILITY, CARD PILLS & TOP ALIGNMENT                */
+    /* RADIO BUTTONS: LIGHT THEME, HIGH CONTRAST & TOP-ALIGNED CIRCLES          */
     /* ========================================================================= */
     div[data-testid="stRadio"] {
         margin-bottom: 12px !important;
@@ -90,29 +104,29 @@ st.markdown("""
     div[data-testid="stRadio"] div[role="radiogroup"] label {
         display: flex !important;
         align-items: flex-start !important; /* Forces top alignment for multi-line text */
-        background-color: #1e293b !important;
-        border: 1.5px solid #334155 !important;
+        background-color: #ffffff !important;
+        border: 1.5px solid #cbd5e1 !important;
         border-radius: 9px !important;
         padding: 9px 12px !important;
         margin-bottom: 4px !important;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
         cursor: pointer !important;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
     }
 
     /* Hover State */
     div[data-testid="stRadio"] div[role="radiogroup"] label:hover {
-        background-color: #26354a !important;
-        border-color: #38bdf8 !important;
+        background-color: #f1f5f9 !important;
+        border-color: #0284c7 !important;
         transform: translateX(2px);
     }
 
     /* Active / Checked State */
     div[data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked),
     div[data-testid="stRadio"] div[role="radiogroup"] label[aria-checked="true"] {
-        background-color: rgba(56, 189, 248, 0.16) !important;
-        border-color: #38bdf8 !important;
-        box-shadow: 0 0 12px rgba(56, 189, 248, 0.28) !important;
+        background-color: #e0f2fe !important;
+        border-color: #0284c7 !important;
+        box-shadow: 0 0 8px rgba(2, 132, 199, 0.25) !important;
     }
 
     /* The Radio Circle Container: Top Alignment Baseline */
@@ -124,8 +138,8 @@ st.markdown("""
 
     /* The Circle SVG / Element */
     div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child > div {
-        border: 2px solid #38bdf8 !important;
-        background-color: #0f172a !important;
+        border: 2px solid #0284c7 !important;
+        background-color: #ffffff !important;
         width: 17px !important;
         height: 17px !important;
     }
@@ -135,8 +149,8 @@ st.markdown("""
     div[data-testid="stRadio"] div[role="radiogroup"] label span,
     div[data-testid="stRadio"] div[role="radiogroup"] label div:nth-child(2) {
         font-size: 14.5px !important;
-        font-weight: 550 !important;
-        color: #f8fafc !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
         line-height: 1.35 !important;
     }
 </style>
@@ -145,13 +159,13 @@ st.markdown("""
 # ----------------- SIDEBAR NAVIGATION & STRUCTURE -----------------
 with st.sidebar:
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 12px 14px; border-radius: 10px; border: 1px solid #38bdf8; margin-bottom: 15px;">
-        <span style="font-size: 1.1rem; font-weight: 700; color: #38bdf8;">📈 Institutional Finance Hub</span><br>
-        <span style="font-size: 0.8rem; color: #94a3b8;">Multi-Source Quantitative Decision Engine</span>
+    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 12px 14px; border-radius: 10px; border: 1.5px solid #0284c7; margin-bottom: 15px;">
+        <span style="font-size: 1.1rem; font-weight: 700; color: #0284c7;">📈 Institutional Finance Hub</span><br>
+        <span style="font-size: 0.8rem; color: #475569;">Multi-Source Quantitative Decision Engine</span>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #94a3b8; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;'>📌 Hauptmenü & Module</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;'>📌 Hauptmenü & Module</p>", unsafe_allow_html=True)
 
     app_mode = st.radio(
         "Hauptmenü",
@@ -174,8 +188,8 @@ with st.sidebar:
     # Sidebar Quick Status Box
     berlin_now_str = get_berlin_now().strftime("%H:%M:%S")
     st.markdown(f"""
-    <div style="background-color: #111827; padding: 10px 12px; border-radius: 8px; border: 1px solid #1e293b; font-size: 0.82rem; color: #94a3b8;">
-        <span style="color: #22c55e; font-weight: 700;">🟢 Live-System aktiv</span><br>
+    <div style="background-color: #0f172a; padding: 10px 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 0.82rem; color: #475569;">
+        <span style="color: #16a34a; font-weight: 700;">🟢 Live-System aktiv</span><br>
         Börsenzeit: <b>{berlin_now_str} MESZ</b><br>
         Universum: <b>500+ globale Assets</b>
     </div>
@@ -307,7 +321,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                 )
 
                 st.markdown(f"""
-                <div style="background-color: #1a1e29; border: 1px solid {'#f43f5e' if is_breakout_mode else '#38bdf8'}; border-radius: 10px; padding: 15px; margin-bottom: 10px;">
+                <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid {'#f43f5e' if is_breakout_mode else '#38bdf8'}; border-radius: 10px; padding: 15px; margin-bottom: 10px;">
                     <div style="font-size: 14px; color: #38bdf8; font-weight: bold;">{badge} • {item.get('region')} ({item.get('sector', 'N/A')})</div>
                     <h3 style="margin: 4px 0 2px 0; color: white;">{item.get('name')} ({item.get('symbol')})</h3>
                     <div style="font-size: 20px; font-weight: bold; color: #f59e0b;">{p:.2f} {curr}</div>
@@ -598,14 +612,14 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         calls = EarningsCallAnalyzer.CALL_ANALYSES
         for sym, c_data in calls.items():
             st.markdown(f"""
-            <div style="background-color: #1a1e29; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
+            <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
                 <div style="display: flex; justify-content: space-between; font-size: 13px;">
                     <b style="font-size: 16px; color: white;">{sym} • {c_data['date']}</b>
                     <span style="font-weight: bold; color: #38bdf8;">CEO-Tonalität: {c_data['ceo_tone']}</span>
                 </div>
-                <div style="margin: 8px 0; font-size: 14px; color: #cbd5e1;"><b>Schlüsselbegriffe:</b> {', '.join(c_data['key_phrases'])}</div>
-                <div style="font-size: 13px; color: #94a3b8;"><b>Warnsignale / Risiken:</b> {', '.join(c_data['caution_flags'])}</div>
-                <div style="margin-top: 6px; font-size: 14px; color: #f1f5f9; background-color: #111827; padding: 8px; border-radius: 6px;">
+                <div style="margin: 8px 0; font-size: 14px; color: #334155;"><b>Schlüsselbegriffe:</b> {', '.join(c_data['key_phrases'])}</div>
+                <div style="font-size: 13px; color: #64748b;"><b>Warnsignale / Risiken:</b> {', '.join(c_data['caution_flags'])}</div>
+                <div style="margin-top: 6px; font-size: 14px; color: #0f172a; background-color: #111827; padding: 8px; border-radius: 6px;">
                     🧠 <b>KI-Urteil:</b> {c_data['ai_verdict']}
                 </div>
             </div>
@@ -629,10 +643,10 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             st.metric("High-Yield Spread", fred["us_high_yield_spread"][:5], delta="Solide / Keine Panik")
 
         st.markdown(f"""
-        <div style="background-color: #1e293b; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
             <h4 style="margin: 0 0 4px 0; color: #34d399;">📐 Zinskurven-Zustand: {fred['yield_curve_spread']}</h4>
-            <p style="margin: 0; color: #e2e8f0; font-size: 14px;">{fred['yield_curve_status']}</p>
-            <p style="margin: 6px 0 0 0; color: #f8fafc; font-size: 14px;"><b>Fazit:</b> {fred['verdict']}</p>
+            <p style="margin: 0; color: #1e293b; font-size: 14px;">{fred['yield_curve_status']}</p>
+            <p style="margin: 6px 0 0 0; color: #0f172a; font-size: 14px;"><b>Fazit:</b> {fred['verdict']}</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -652,11 +666,11 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             st.metric("MVRV Z-Score", onchain["mvrv_z_score"][:4], help="Bewertungsbandbreite des Bitcoin-Netzwerks")
 
         st.markdown(f"""
-        <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin: 15px 0;">
-            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Börsen-Netflow:</b> {onchain['btc_exchange_netflow']}</div>
-            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Stablecoin-Reserven:</b> {onchain['stablecoin_supply_ratio']}</div>
-            <div style="margin-bottom: 8px; font-size: 14px; color: #f1f5f9;"><b>Whale-Aktivität:</b> {onchain['whale_wallet_accumulation']}</div>
-            <div style="margin-top: 10px; font-size: 14px; color: #38bdf8; background-color: #0f172a; padding: 10px; border-radius: 6px;">
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Börsen-Netflow:</b> {onchain['btc_exchange_netflow']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Stablecoin-Reserven:</b> {onchain['stablecoin_supply_ratio']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Whale-Aktivität:</b> {onchain['whale_wallet_accumulation']}</div>
+            <div style="margin-top: 10px; font-size: 14px; color: #38bdf8; background-color: #1e293b; padding: 10px; border-radius: 6px;">
                 🚀 <b>Fazit:</b> {onchain['summary']}
             </div>
         </div>
@@ -737,9 +751,9 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
             st.metric("13F Stichtag & Meldung", active_inv.get("filing_date", "14.08.2026"), delta=f"Filing: {active_inv.get('filing_period', 'Q2')}")
 
         st.markdown(f"""
-        <div style="background-color: #1e293b; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
             <b style="color: #38bdf8;">💡 Jüngste Ausrichtung & These:</b>
-            <p style="margin: 4px 0 0 0; color: #f1f5f9; font-size: 14px;">{active_inv['latest_conviction']}</p>
+            <p style="margin: 4px 0 0 0; color: #0f172a; font-size: 14px;">{active_inv['latest_conviction']}</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -876,9 +890,9 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
 
     # Strategy Banner
     st.markdown(f"""
-    <div style="background-color: #1e293b; border-left: 5px solid #38bdf8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 5px solid #38bdf8; border-radius: 8px; padding: 15px; margin: 15px 0;">
         <h4 style="margin: 0 0 5px 0; color: #38bdf8;">🧭 Makro-Ausrichtung der KI: {climate_info['climate']}</h4>
-        <p style="margin: 0; color: #e2e8f0; font-size: 15px;">{climate_info['guidance']}</p>
+        <p style="margin: 0; color: #1e293b; font-size: 15px;">{climate_info['guidance']}</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -897,11 +911,11 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
         for idx, (cb_name, cb_vals) in enumerate(cb_data.items()):
             with cb_cols[idx]:
                 st.markdown(f"""
-                <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
                     <div style="font-weight: bold; color: #38bdf8; font-size: 16px;">{cb_name}</div>
                     <div style="font-size: 24px; font-weight: bold; color: #f59e0b; margin: 4px 0;">{cb_vals['rate']}</div>
-                    <div style="font-size: 13px; color: #cbd5e1;"><b>Haltung:</b> {cb_vals['stance']}</div>
-                    <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
+                    <div style="font-size: 13px; color: #334155;"><b>Haltung:</b> {cb_vals['stance']}</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
                     <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Inflation: {cb_vals['current_cpi']} (Ziel: {cb_vals['inflation_target']})</div>
                 </div>
                 """, unsafe_allow_html=True)
@@ -923,9 +937,9 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
 
         # Current Day Detailed Strategy Card
         st.markdown(f"""
-        <div style="background-color: #1e293b; border-left: 5px solid #a78bfa; border-radius: 8px; padding: 15px; margin: 15px 0;">
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 5px solid #a78bfa; border-radius: 8px; padding: 15px; margin: 15px 0;">
             <h4 style="margin: 0 0 5px 0; color: #a78bfa;">🎯 Heutiges statistisches Marktmuster: {seas['day_bias']['name']}</h4>
-            <p style="margin: 4px 0; color: #e2e8f0; font-size: 14px;">{seas['day_bias']['description']}</p>
+            <p style="margin: 4px 0; color: #1e293b; font-size: 14px;">{seas['day_bias']['description']}</p>
             <div style="margin-top: 8px; font-size: 13px; color: #38bdf8;"><b>🤖 Handelsregel der KI für heute:</b> {seas['day_bias']['trading_rule']}</div>
         </div>
         """, unsafe_allow_html=True)
@@ -971,15 +985,15 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
             for item in filtered_news:
                 source_badge_color = "#38bdf8" if "EZB" in item["source"] or "Fed" in item["source"] else ("#f59e0b" if "Handelsblatt" in item["source"] or "FAZ" in item["source"] else "#a78bfa")
                 st.markdown(f"""
-                <div style="background-color: #1a1e29; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
-                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #94a3b8;">
+                <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
                         <span style="font-weight: bold; color: {source_badge_color};">📌 {item['source']} • {item.get('category', '')}</span>
                         <span>🕒 {item.get('published', '')[:25]}</span>
                     </div>
                     <h4 style="margin: 6px 0; color: white;">
-                        <a href="{item['link']}" target="_blank" style="color: #f1f5f9; text-decoration: none;">{item['title']}</a>
+                        <a href="{item['link']}" target="_blank" style="color: #0f172a; text-decoration: none;">{item['title']}</a>
                     </h4>
-                    <p style="margin: 0; font-size: 13px; color: #cbd5e1;">{item.get('snippet', '')}</p>
+                    <p style="margin: 0; font-size: 13px; color: #334155;">{item.get('snippet', '')}</p>
                 </div>
                 """, unsafe_allow_html=True)
         else:
@@ -1027,11 +1041,11 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
         col_st1, col_st2 = st.columns([2.8, 1.2])
         with col_st1:
             st.markdown(f"""
-            <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 13.5px; color: #f8fafc;">
+            <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 13.5px; color: #0f172a;">
                     🟢 <b>Live-Stream</b> • Letztes Update: <b style="color: #38bdf8;">{now_time} (MESZ / Berlin)</b> • <span style="color: #a78bfa;">📅 {seas['weekday']}: <b>{seas['day_bias']['name']}</b> ({seas['total_score_modifier']:+d} Pkt.)</span>
                 </span>
-                <span style="font-size: 12.5px; color: #94a3b8;">Taktung: <b style="color: #34d399;">alle 30s</b> (0,00 €)</span>
+                <span style="font-size: 12.5px; color: #64748b;">Taktung: <b style="color: #34d399;">alle 30s</b> (0,00 €)</span>
             </div>
             """, unsafe_allow_html=True)
         with col_st2:
@@ -1134,7 +1148,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             )
 
             fig_eq.update_layout(
-                template="plotly_dark",
+                template="plotly_white",
                 height=480,
                 margin=dict(l=20, r=20, t=40, b=20),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
@@ -1254,10 +1268,10 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 st.markdown("#### 🕵️‍♂️ 3. Dark Pool & Optionen-Großblöcke (Smart Money)")
                 for b in macro_ov["block_trades"][:3]:
                     st.markdown(f"""
-                    <div style="background-color: #1e293b; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #38bdf8;">
+                    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #38bdf8;">
                         <span style="font-weight: 700; color: #38bdf8;">{b['symbol']} ({b['name']})</span> &bull; 
-                        <span style="color: #cbd5e1;">{b['type']}</span><br>
-                        <span style="font-size: 0.85rem; color: #94a3b8;">Größe: {b['size']} | Volumen: <b>{b['value']}</b> | {b['time']}</span>
+                        <span style="color: #334155;">{b['type']}</span><br>
+                        <span style="font-size: 0.85rem; color: #64748b;">Größe: {b['size']} | Volumen: <b>{b['value']}</b> | {b['time']}</span>
                     </div>
                     """, unsafe_allow_html=True)
 
@@ -1265,10 +1279,10 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 st.markdown("#### 🏛️ 4. SEC Form 4 Insider- & Kongress-Trades")
                 for c in macro_ov["congress_trades"][:2]:
                     st.markdown(f"""
-                    <div style="background-color: #1e293b; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #a78bfa;">
+                    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #a78bfa;">
                         <span style="font-weight: 700; color: #a78bfa;">{c['politician']}</span> ({c['committee']})<br>
-                        <span style="color: #cbd5e1;">{c['asset']} &bull; <b>{c['amount']}</b></span><br>
-                        <span style="font-size: 0.85rem; color: #94a3b8;">Historischer Track-Record: {c['history_track_record']}</span>
+                        <span style="color: #334155;">{c['asset']} &bull; <b>{c['amount']}</b></span><br>
+                        <span style="font-size: 0.85rem; color: #64748b;">Historischer Track-Record: {c['history_track_record']}</span>
                     </div>
                     """, unsafe_allow_html=True)
 
@@ -1293,7 +1307,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 marker=dict(colors=['#38bdf8', '#a78bfa', '#34d399', '#f59e0b', '#ec4899', '#475569'])
             )])
             fig_donut.update_layout(
-                template="plotly_dark",
+                template="plotly_white",
                 height=400,
                 margin=dict(l=20, r=20, t=30, b=20),
                 legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5)
@@ -1511,7 +1525,7 @@ else:
         sc1, sc2, sc3, sc4 = st.columns(4)
         with sc1:
             st.markdown(f"""
-            <div style="text-align: center; background-color: #1a1e29; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
+            <div style="text-align: center; background-color: #0f172a; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
                 <div style="font-size: 13px; color: #888;">GESAMT-SCORE</div>
                 <div style="font-size: 32px; font-weight: bold; color: #38bdf8;">{synth_result['total_score']} / 100</div>
                 <div style="font-size: 11px; color: #aaa;">Synthese</div>
@@ -1519,7 +1533,7 @@ else:
             """, unsafe_allow_html=True)
         with sc2:
             st.markdown(f"""
-            <div style="text-align: center; background-color: #1a1e29; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
+            <div style="text-align: center; background-color: #0f172a; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
                 <div style="font-size: 13px; color: #888;">⚡ KURZFRIST</div>
                 <div style="font-size: 32px; font-weight: bold; color: #a78bfa;">{short_results['score']} / 100</div>
                 <div style="font-size: 11px; color: #ddd;">{short_results['status'][:20]}...</div>
@@ -1527,7 +1541,7 @@ else:
             """, unsafe_allow_html=True)
         with sc3:
             st.markdown(f"""
-            <div style="text-align: center; background-color: #1a1e29; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
+            <div style="text-align: center; background-color: #0f172a; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
                 <div style="font-size: 13px; color: #888;">🏛️ LANGFRIST</div>
                 <div style="font-size: 32px; font-weight: bold; color: #34d399;">{long_results['score']} / 100</div>
                 <div style="font-size: 11px; color: #ddd;">{long_results['status'][:20]}...</div>
@@ -1535,7 +1549,7 @@ else:
             """, unsafe_allow_html=True)
         with sc4:
             st.markdown(f"""
-            <div style="text-align: center; background-color: #1a1e29; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
+            <div style="text-align: center; background-color: #0f172a; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; border: 1px solid #2e3546;">
                 <div style="font-size: 13px; color: #888;">🚨 SQUEEZE & AUSBRUCH</div>
                 <div style="font-size: 32px; font-weight: bold; color: #f43f5e;">{breakout_res['breakout_score']} / 100</div>
                 <div style="font-size: 11px; color: #ddd;">{breakout_res['status'][:20]}...</div>
@@ -1577,7 +1591,7 @@ else:
 
             fig.update_layout(
                 height=600,
-                template="plotly_dark",
+                template="plotly_white",
                 xaxis_rangeslider_visible=False,
                 margin=dict(l=20, r=20, t=30, b=20),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
