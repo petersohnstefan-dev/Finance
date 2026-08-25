@@ -33,7 +33,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Clean & High-Legibility Styling
+# Clean, High-Legibility & Institutional UI Styling
 st.markdown("""
 <style>
     /* Metric Cards */
@@ -42,6 +42,7 @@ st.markdown("""
         border: 1px solid #334155;
         border-radius: 10px;
         padding: 12px 16px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     /* Buttons with high legibility */
@@ -54,21 +55,19 @@ st.markdown("""
         font-size: 15px !important;
         padding: 8px 16px !important;
         min-height: 42px !important;
+        transition: all 0.2s ease-in-out !important;
     }
     div[data-testid="stButton"] > button:hover {
         background-color: #0369a1 !important;
         border-color: #7dd3fc !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
     }
 
-    /* Sidebar Navigation - Crystal Clear White Text */
+    /* Sidebar Navigation Container */
     section[data-testid="stSidebar"] {
-        background-color: #111827 !important;
-    }
-    section[data-testid="stSidebar"] .stRadio label p {
-        font-size: 15px !important;
-        font-weight: 500 !important;
-        color: #f8fafc !important;
-        line-height: 1.35 !important;
+        background-color: #0b0f19 !important;
+        border-right: 1px solid #1e293b !important;
     }
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
@@ -76,43 +75,111 @@ st.markdown("""
         color: #38bdf8 !important;
     }
 
-    /* Radio Buttons: Align circular radio buttons to top with text */
+    /* ========================================================================= */
+    /* RADIO BUTTONS: HIGH VISIBILITY, CARD PILLS & TOP ALIGNMENT                */
+    /* ========================================================================= */
+    div[data-testid="stRadio"] {
+        margin-bottom: 12px !important;
+    }
+    
+    div[data-testid="stRadio"] div[role="radiogroup"] {
+        gap: 8px !important;
+    }
+
+    /* Top-align radio circle and text in every label */
     div[data-testid="stRadio"] div[role="radiogroup"] label {
-        align-items: flex-start !important;
+        display: flex !important;
+        align-items: flex-start !important; /* Forces top alignment for multi-line text */
+        background-color: #1e293b !important;
+        border: 1.5px solid #334155 !important;
+        border-radius: 9px !important;
+        padding: 9px 12px !important;
+        margin-bottom: 4px !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
         cursor: pointer !important;
-        margin-bottom: 6px !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important;
     }
+
+    /* Hover State */
+    div[data-testid="stRadio"] div[role="radiogroup"] label:hover {
+        background-color: #26354a !important;
+        border-color: #38bdf8 !important;
+        transform: translateX(2px);
+    }
+
+    /* Active / Checked State */
+    div[data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked),
+    div[data-testid="stRadio"] div[role="radiogroup"] label[aria-checked="true"] {
+        background-color: rgba(56, 189, 248, 0.16) !important;
+        border-color: #38bdf8 !important;
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.28) !important;
+    }
+
+    /* The Radio Circle Container: Top Alignment Baseline */
     div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child {
-        margin-top: 3px !important;
+        margin-top: 3px !important; /* Perfect top alignment with first line of text */
+        margin-right: 10px !important;
+        flex-shrink: 0 !important;
     }
-    div[data-testid="stRadio"] label {
-        align-items: flex-start !important;
+
+    /* The Circle SVG / Element */
+    div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child > div {
+        border: 2px solid #38bdf8 !important;
+        background-color: #0f172a !important;
+        width: 17px !important;
+        height: 17px !important;
     }
-    div[data-testid="stRadio"] label > div:first-child {
-        margin-top: 3px !important;
+
+    /* Label Text Typography */
+    div[data-testid="stRadio"] div[role="radiogroup"] label p,
+    div[data-testid="stRadio"] div[role="radiogroup"] label span,
+    div[data-testid="stRadio"] div[role="radiogroup"] label div:nth-child(2) {
+        font-size: 14.5px !important;
+        font-weight: 550 !important;
+        color: #f8fafc !important;
+        line-height: 1.35 !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# ----------------- SIDEBAR NAVIGATION -----------------
-st.sidebar.title("📈 Börsen-System")
+# ----------------- SIDEBAR NAVIGATION & STRUCTURE -----------------
+with st.sidebar:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 12px 14px; border-radius: 10px; border: 1px solid #38bdf8; margin-bottom: 15px;">
+        <span style="font-size: 1.1rem; font-weight: 700; color: #38bdf8;">📈 Institutional Finance Hub</span><br>
+        <span style="font-size: 0.8rem; color: #94a3b8;">Multi-Source Quantitative Decision Engine</span>
+    </div>
+    """, unsafe_allow_html=True)
 
-app_mode = st.sidebar.radio(
-    "Hauptmenü",
-    [
-        "🏆 Markt-Screener & Top-Rankings", 
-        "🚨 Ausbruchs- & Katalysator-Radar",
-        "⚡ Echtzeit-Intraday-Radar (Live-Ticks)",
-        "🔮 Smart-Money & Makro-Radar (6 Module)",
-        "🐋 Whale- & Insider-Radar",
-        "🌐 Makro-Klima, Zentralbanken & News",
-        "💼 Musterdepots & Live-Performance (3x 10.000 €)",
-        "🔍 Einzelaktien-Tiefenanalyse"
-    ],
-    index=0
-)
+    st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #94a3b8; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;'>📌 Hauptmenü & Module</p>", unsafe_allow_html=True)
 
-st.sidebar.markdown("---")
+    app_mode = st.radio(
+        "Hauptmenü",
+        [
+            "🏆 Markt-Screener & Top-Rankings", 
+            "🚨 Ausbruchs- & Katalysator-Radar",
+            "⚡ Echtzeit-Intraday-Radar (Live-Ticks)",
+            "🔮 Smart-Money & Makro-Radar (6 Module)",
+            "🐋 Whale- & Insider-Radar",
+            "🌐 Makro-Klima, Zentralbanken & News",
+            "💼 Musterdepots & Live-Performance (3x 10.000 €)",
+            "🔍 Einzelaktien-Tiefenanalyse"
+        ],
+        index=0,
+        label_visibility="collapsed"
+    )
+
+    st.markdown("---")
+    
+    # Sidebar Quick Status Box
+    berlin_now_str = get_berlin_now().strftime("%H:%M:%S")
+    st.markdown(f"""
+    <div style="background-color: #111827; padding: 10px 12px; border-radius: 8px; border: 1px solid #1e293b; font-size: 0.82rem; color: #94a3b8;">
+        <span style="color: #22c55e; font-weight: 700;">🟢 Live-System aktiv</span><br>
+        Börsenzeit: <b>{berlin_now_str} MESZ</b><br>
+        Universum: <b>500+ globale Assets</b>
+    </div>
+    """, unsafe_allow_html=True)
 
 # ==============================================================================
 # MODE 1 & 2: MARKT-SCREENER / AUSBRUCHS-RADAR
