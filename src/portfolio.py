@@ -372,19 +372,18 @@ class PortfolioManager:
         except Exception:
             pass
 
-        # Immutable audit trade history from SQLite database merged with json history
+        # Immutable audit trade history directly from SQLite database with fallback to json
         db_trades = self.db.get_trades(depot_key)
-        json_trades = list(reversed(depot.get("history", [])))
-        
-        seen = set()
+        if db_trades:
+            raw_history = db_trades
+        else:
+            raw_history = list(reversed(depot.get("history", [])))
+
         merged_history = []
-        for t in db_trades + json_trades:
+        for t in raw_history:
             t_type = t.get("type") or t.get("trade_type") or t.get("action", "BUY")
             t_sym = t.get("symbol", "")
-            t_date = str(t.get("date") or t.get("executed_at", ""))[:16]
-            key = (t_date, t_sym, t_type)
-            if key not in seen and t_sym:
-                seen.add(key)
+            if t_sym:
                 merged_history.append({
                     "type": t_type,
                     "action": t_type,
