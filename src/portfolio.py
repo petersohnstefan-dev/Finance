@@ -508,20 +508,31 @@ class PortfolioManager:
                               reason=f"💡 Opportunitäts-Umschichtung: Gewinn bei +{swap_gain:.1f}% mitgenommen für neuen Ausbruch {top_st_candidate['symbol']}")
                     actions_taken.append(f"UMSCHICHTUNG: {swap_sym} (+{swap_gain:.1f}%) ➔ {top_st_candidate['symbol']}")
 
-            # Execute Buy if cash available
+            # Execute Buy if cash available (Long or Short Turbo)
             if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
                 p = top_st_candidate["price"]
                 sym = top_st_candidate["symbol"]
                 if p and p > 0:
                     alloc = min(2000.0, st_depot["cash"] * 0.85)
-                    shares = alloc / p
-                    self.buy("short_term", sym, top_st_candidate["name"], shares, p,
-                             reason=top_st_candidate["reason"],
-                             stop_loss=p*0.93, take_profit=None)  # Dynamic trailing instead of rigid take_profit!
-                    actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
+                    # Check if candidate is a Bearish Short Breakdown vs Bullish Breakout
+                    is_bearish = top_st_candidate.get("direction") == "SHORT" or "Absturz" in top_st_candidate["reason"] or "Breakdown" in top_st_candidate["reason"]
+                    if is_bearish:
+                        turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
+                        cert_price = turbo["cert_price"]
+                        shares = alloc / cert_price
+                        self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
+                                 reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
+                                 stop_loss=cert_price*0.85, take_profit=None, derivative_meta=turbo)
+                        actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
+                    else:
+                        shares = alloc / p
+                        self.buy("short_term", sym, top_st_candidate["name"], shares, p,
+                                 reason=top_st_candidate["reason"],
+                                 stop_loss=p*0.93, take_profit=None)  # Dynamic trailing
+                        actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
 
         # ----------------------------------------------------------------------
-        # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing)
+        # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing & Hedge)
         # ----------------------------------------------------------------------
         mt_depot = self.data["portfolios"]["medium_term"]
         for sym in list(mt_depot["positions"].keys()):
@@ -548,7 +559,7 @@ class PortfolioManager:
                     actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Stop)")
                 continue
 
-        # Mittelfrist Opportunity Reallocation
+        # Mittelfrist Opportunity & Macro-Hedge Check
         if scan_results:
             top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
             if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
@@ -574,7 +585,7 @@ class PortfolioManager:
                         actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
 
         # ----------------------------------------------------------------------
-        # 3. LANGFRISTIGES INVESTMENT-DEPOT (Jahre / Quality & Moat)
+        # 3. LANGFRISTIGES INVESTMENT-DEPOT (Jahre / Quality, Moat & Macro-Hedge)
         # ----------------------------------------------------------------------
         lt_depot = self.data["portfolios"]["long_term"]
         if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4 and scan_results:

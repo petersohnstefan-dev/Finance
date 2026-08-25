@@ -1191,25 +1191,26 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
 
             with h_tab1:
                 st.markdown("""
-                #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes & Hebel)
-                **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung und Leerverkäufer-Fallen.
+                #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes, Hebel & Shorts)
+                **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung, Leerverkäufer-Fallen & **bearishe Short-Breakdowns**.
 
                 | Faktor | Gewichtung | Kriterien & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **📈 Charttechnik & Momentum** | **30 %** | Kurs über EMA 20 & EMA 50, RSI zwischen 50–68, MACD Crossover |
-                | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50, ungewöhnliche OTM Call-Sweeps, Dark-Pool-Blöcke |
-                | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % ODER BaFin-Eindeckungen (Short-Squeeze-Gefahr) |
-                | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish) |
-                | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse von Börsen in Cold Wallets (Verknappung) |
+                | **📈 Charttechnik & Momentum** | **30 %** | Kurs über/unter EMA 20 & EMA 50, RSI zwischen 50–68 (Long) bzw. < 40 (Short) |
+                | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50 (Long) oder > 1.20 (Bearish Put-Sweeps), Block-Trades |
+                | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % (Squeeze) ODER aggressive BaFin-Netto-Aufstockungen (Short-Signal) |
+                | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish / Extreme Panik) |
+                | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse (Long) oder massive Zuflüsse auf Börsen (Verkaufsdruck) |
 
-                * **🟢 KAUF-Trigger:** Kurzfrist-Score ≥ **75 / 100**.
-                * **🔴 VERKAUFS-Trigger:** Fester **Stop-Loss bei -7 %** (bzw. **-15 %** bei Hebel-Zertifikaten) oder **Take-Profit bei +20 %** (bzw. **+40 %** bei Hebel-Zertifikaten).
+                * **🟢 KAUF-Trigger (Long):** Kurzfrist-Score ≥ **75 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Hebel)**.
+                * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
+                * **🎯 Dynamischer Trailing-Exit:** Ab +10 % Gewinn Stop-Loss auf Einstand + 3 % nachziehen; ab +18 % greift ein dynamischer Trailing-Stop (6 % Puffer unter dem Zwischenhoch).
                 """)
 
             with h_tab2:
                 st.markdown("""
-                #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing & Wachstum)
-                **Ziel:** Reiten starker Aufwärtstrends bei Unternehmen mit systematisch steigenden Gewinnschätzungen.
+                #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing, Wachstum & Makro-Hedging)
+                **Ziel:** Reiten starker Aufwärtstrends bei Wachstumsaktien + **aktive Portfolio-Absicherung bei Markt-Korrekturen**.
 
                 | Faktor | Gewichtung | Kriterien & Schwellenwerte |
                 | :--- | :---: | :--- |
@@ -1220,13 +1221,14 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 | **🌐 FRED-Makro & Zinskurve** | **10 %** | Normalisierung der Zinskurve (10Y/2Y) und fallender US-Dollar-Index (DXY) |
 
                 * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100**.
-                * **🔴 VERKAUFS-Trigger:** **Trailing Stop-Loss bei -10 %** oder **Mittelfrist-Ziel bei +35 %**.
+                * **🛡️ Makro-Absicherung (Hedge):** Bei marktweiten Abverkäufen (VIX > 28 / Zins-Schock) kauft die KI temporär **Index-Puts (DAX / S&P 500 Short-Hedge)**, um Buchgewinne abzusichern.
+                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) werden dynamisch liquidiert, um frisches Kapital für neue Leader freizusetzen.
                 """)
 
             with h_tab3:
                 st.markdown("""
-                #### 🏛️ Langfristiges Investment-Depot (Quality, Gold & Moat)
-                **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold und digitalem Wertspeicher.
+                #### 🏛️ Langfristiges Investment-Depot (Quality, Gold, Moat & Crash-Schutz)
+                **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold, digitalem Wertspeicher & defensiven Bonus-Zertifikaten.
 
                 | Faktor | Gewichtung | Kriterien & Schwellenwerte |
                 | :--- | :---: | :--- |
@@ -1236,8 +1238,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 | **🏷️ Bewertung & Sicherheitsmarge** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus mit ≥ 25 % Sicherheitspuffer |
                 | **🎯 Analysten-Upside & Insider** | **10 %** | Konsenskursziel > +15 % + Käufe durch CEOs/Vorstände (*Directors' Dealings*) |
 
-                * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100**.
-                * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
+                * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100** ➔ Qualitäts-Compounder oder **🛡️ Bonus-Zertifikat (-25 % Puffer, +14 % Bonusrendite)**.
+                * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Aktien.
                 """)
 
     # Call the fragment
