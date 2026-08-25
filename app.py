@@ -1046,11 +1046,79 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
         st.caption(f"🎯 **Strategie:** {summary['strategy']}")
 
         # Charts & Positions
-        tab_pos, tab_alloc, tab_hist = st.tabs([
+        tab_chart, tab_pos, tab_alloc, tab_hist = st.tabs([
+            "📈 Depot-Wertentwicklung (Equity Curve)",
             "📋 Offene Positionen & Buchgewinne (Live-Ticks)",
             "🥧 Asset Allocation (Gewichtung)",
             "📜 Transaktions-Historie (Trade Log)"
         ])
+
+        with tab_chart:
+            st.markdown("#### 📈 Depot-Wertentwicklung & Gesamtkapitalverlauf (Equity Curve)")
+            st.caption("Verlauf des gesamten Depotwerts (Investiertes Kapital + Cash) im Zeitverlauf gegenüber dem Startkapital von 10.000 €.")
+            
+            eq_df = pm.get_equity_curve(depot_key)
+            
+            # High-legibility Plotly Equity Chart
+            fig_eq = make_subplots(
+                rows=2, cols=1, 
+                shared_xaxes=True, 
+                vertical_spacing=0.08,
+                row_heights=[0.75, 0.25],
+                subplot_titles=("Depot-Gesamtwert (€)", "Täglicher Gewinn / Verlust (€)")
+            )
+
+            # 1. Total Value Line & Area
+            fig_eq.add_trace(
+                go.Scatter(
+                    x=eq_df["date"], 
+                    y=eq_df["total_value"], 
+                    name="Depot-Gesamtwert", 
+                    mode="lines+markers",
+                    line=dict(color="#38bdf8", width=3),
+                    fill="tozeroy",
+                    fillcolor="rgba(56, 189, 248, 0.12)",
+                    hovertemplate="<b>Datum:</b> %{x}<br><b>Gesamtwert:</b> %{y:,.2f} €<extra></extra>"
+                ),
+                row=1, col=1
+            )
+
+            # 2. Baseline 10.000 € Line
+            fig_eq.add_trace(
+                go.Scatter(
+                    x=eq_df["date"], 
+                    y=eq_df["baseline"], 
+                    name="Startkapital (10.000 €)", 
+                    mode="lines",
+                    line=dict(color="#94a3b8", width=1.5, dash="dash"),
+                    hovertemplate="<b>Startkapital:</b> 10.000,00 €<extra></extra>"
+                ),
+                row=1, col=1
+            )
+
+            # 3. PnL Bar in row 2
+            bar_colors = ["#22c55e" if p >= 0 else "#ef4444" for p in eq_df["pnl"]]
+            fig_eq.add_trace(
+                go.Bar(
+                    x=eq_df["date"], 
+                    y=eq_df["pnl"], 
+                    name="Gewinn / Verlust (€)",
+                    marker_color=bar_colors,
+                    hovertemplate="<b>Datum:</b> %{x}<br><b>P&L:</b> %{y:+,.2f} €<extra></extra>"
+                ),
+                row=2, col=1
+            )
+
+            fig_eq.update_layout(
+                template="plotly_dark",
+                height=480,
+                margin=dict(l=20, r=20, t=40, b=20),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+                hovermode="x unified"
+            )
+            fig_eq.update_yaxes(title_text="Euro (€)", row=1, col=1)
+            fig_eq.update_yaxes(title_text="P&L (€)", row=2, col=1)
+            st.plotly_chart(fig_eq, use_container_width=True)
 
         with tab_pos:
             if summary["positions"]:

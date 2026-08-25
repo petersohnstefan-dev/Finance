@@ -1,4 +1,4 @@
-﻿import sqlite3
+import sqlite3
 import os
 import json
 import datetime
@@ -130,3 +130,15 @@ class PortfolioDB:
                 num_positions = excluded.num_positions
             """, (today_str, depot_id, total_value, cash, invested_value, pnl, pnl_pct, num_positions))
             conn.commit()
+
+    def get_snapshots(self, depot_id: str) -> List[Dict[str, Any]]:
+        with self._get_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT snapshot_date, total_value, cash, invested_value, pnl, pnl_pct, num_positions
+            FROM daily_snapshots
+            WHERE depot_id = ?
+            ORDER BY snapshot_date ASC
+            """, (depot_id,))
+            rows = cursor.fetchall()
+            return [dict(row) for row in rows]
