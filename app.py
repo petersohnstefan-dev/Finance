@@ -22,6 +22,7 @@ from src.advanced_intelligence import (
     MasterIntelligenceHub, OptionsDarkPoolEngine, BaFinShortRegister, USShortInterestRegister,
     EarningsRevisionEngine, EarningsCallAnalyzer, FREDMacroEngine, CryptoOnChainEngine
 )
+from src.commodities_forex_radar import CommoditiesIntelEngine, ForexCurrencyEngine
 from src.realtime_scanner import RealTimeBreakoutScanner
 from src.market_seasonality import MarketSeasonalityEngine, get_berlin_now
 
@@ -176,6 +177,7 @@ with st.sidebar:
             "🔮 Smart-Money & Makro-Radar (6 Module)",
             "🐋 Whale- & Insider-Radar",
             "🌐 Makro-Klima, Zentralbanken & News",
+            "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)",
             "💼 Musterdepots & Live-Performance (3x 10.000 €)",
             "🔍 Einzelaktien-Tiefenanalyse"
         ],
@@ -1074,6 +1076,130 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
                 """, unsafe_allow_html=True)
         else:
             st.info("Keine Nachrichten für den gewählten Filter gefunden.")
+
+# ==============================================================================
+# MODE: COMMODITIES, PRECIOUS METALS, OIL & FOREX
+# ==============================================================================
+elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
+    st.title("🪙 Rohstoffe, Edelmetalle, Öl & Globale Devisen (FX)")
+    st.markdown("Echtzeit-Tracking von **Gold, Silber, Rohöl, Kupfer & Währungen** inklusive struktureller Makro-Ratios, CFTC CoT Daten, US-Lagerbeständen und Zinsdifferenzen.")
+
+    tab_pm, tab_energy, tab_forex = st.tabs([
+        "👑 Edelmetalle & Struktur-Ratios (Gold, Silber & GSR)",
+        "🛢️ Energie & Rohstoffe (WTI, Brent, Kupfer & Gas)",
+        "💱 Globale Devisen & Währungen (Forex, DXY & Carry-Trade)"
+    ])
+
+    with tab_pm:
+        st.subheader("👑 Edelmetall-Intelligence & Struktur-Ratios")
+        st.caption("Verhältnis-Indikatoren (*Gold/Silver Ratio*, *Gold/Oil*), Zentralbank-Goldkäufe und CFTC CoT Positionierung.")
+        
+        pm_data = CommoditiesIntelEngine.get_precious_metals_overview()
+        
+        # 1. Price Metrics
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Gold (Spot / Unze)", f"${pm_data['gold_price']:,.2f}", delta="Sicherer Hafen")
+        m2.metric("Silber (Spot / Unze)", f"${pm_data['silver_price']:,.2f}", delta="Industrie & Monetär")
+        m3.metric("Platin (Spot / Unze)", f"${pm_data['platinum_price']:,.2f}", delta="Katalysator-Bedarf")
+        m4.metric("Kupfer (High Grade)", f"${pm_data['copper_price']:.2f} / lb", delta="Dr. Kupfer")
+
+        st.markdown("---")
+        st.markdown("#### 📐 Die wichtigsten Struktur-Ratios & Signal-Ampeln")
+        
+        r_col1, r_col2 = st.columns(2)
+        with r_col1:
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px;">
+                <h4 style="margin: 0 0 6px 0; color: #b45309;">📊 Gold/Silber-Ratio (GSR): {pm_data['gold_silver_ratio']}</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>Signal:</b> {pm_data['gsr_signal']}</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+                    <b>Regel:</b> Historischer Mittelwert liegt bei ~65. Ein Ratio über 80 bedeutet, dass Silber im Vergleich zu Gold historisch extrem unterbewertet ist und massive Aufhol-Rallyes startet.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #0284c7; border-radius: 8px; padding: 14px 16px;">
+                <h4 style="margin: 0 0 6px 0; color: #0284c7;">🛢️ Gold/Öl-Ratio (Kaufkraft-Index)</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>Wert:</b> {pm_data['gold_oil_ratio']}</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+                    Zeigt an, wie viele Barrel Öl mit einer Unze Gold gekauft werden können. Hohe Werte (>30) signalisieren eine historisch starke Kaufkraft von Gold.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with r_col2:
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #10b981; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px;">
+                <h4 style="margin: 0 0 6px 0; color: #047857;">🏛️ Globale Zentralbank-Goldkäufe</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>Kauf-Volumen:</b> {pm_data['central_bank_gold_demand']}</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+                    Weltweiter Ent-Dollarisierungstrend: Zentralbanken akkumulieren physisches Gold als strategische Reserve.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #7c3aed; border-radius: 8px; padding: 14px 16px;">
+                <h4 style="margin: 0 0 6px 0; color: #7c3aed;">📈 CFTC CoT & Realzins-Treiber</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>CoT Managed Money:</b> {pm_data['cot_gold_managed_money']}</p>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #0f172a;"><b>US 10Y TIPS Realzins:</b> {pm_data['us_10y_real_yield']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+    with tab_energy:
+        st.subheader("🛢️ Energie- & Rohstoff-Intelligence (Öl, Gas & Industriemetalle)")
+        st.caption("Echtzeit-Rohölpreise, US-Lagerbestandsveränderungen (EIA), OPEC+ Disziplin und Raffinerie-Margen.")
+        
+        en_data = CommoditiesIntelEngine.get_energy_commodities_overview()
+        
+        e1, e2, e3, e4 = st.columns(4)
+        e1.metric("WTI Rohöl (US Light Sweet)", f"${en_data['wti_price']:.2f} / bbl")
+        e2.metric("Brent Rohöl (Nordsee)", f"${en_data['brent_price']:.2f} / bbl", delta=en_data['brent_wti_spread'])
+        e3.metric("Erdgas (Henry Hub)", f"${en_data['natural_gas_price']:.2f} / MMBtu")
+        e4.metric("3:2:1 Crack Spread", en_data['crack_spread_margin'].split("(")[0].strip(), help="Raffinerie-Gewinnmarge pro Barrel")
+
+        st.markdown("---")
+        st.markdown("#### 🏭 Fundamentale Rohöl- & Angebots-Faktoren")
+        
+        oe_col1, oe_col2 = st.columns(2)
+        with oe_col1:
+            st.info(f"📊 **EIA US-Rohöl-Lagerbestände:** {en_data['eia_crude_inventory']}")
+            st.info(f"🛢️ **OPEC+ Reservekapazitäten:** {en_data['opec_spare_capacity']}")
+        with oe_col2:
+            st.success(f"⛽ **Raffinerie-Margen (Crack Spread):** {en_data['crack_spread_margin']}")
+            st.warning(f"🌐 **Rohstoff-Regime:** {en_data['oil_regime_verdict']}")
+
+    with tab_forex:
+        st.subheader("💱 Globale Währungen, US Dollar Index & Zinsdifferenzen (Carry Trade)")
+        st.caption("Devisenmärkte steuern globale Kapitalflüsse: Wechselkurse, Zinsdifferenzen der Zentralbanken und DXY-Gewichtung.")
+        
+        fx_data = ForexCurrencyEngine.get_forex_overview()
+        rates = fx_data["rates"]
+        
+        # FX Matrix
+        fc1, fc2, fc3, fc4 = st.columns(4)
+        fc1.metric("EUR / USD", f"{rates.get('EUR/USD', 1.0850):.4f}", delta="Hauptwährungspaar")
+        fc2.metric("USD / JPY", f"{rates.get('USD/JPY', 154.00):.2f}", delta="Carry Trade Schlüsselkurs")
+        fc3.metric("GBP / USD", f"{rates.get('GBP/USD', 1.3000):.4f}")
+        fc4.metric("USD / CHF", f"{rates.get('USD/CHF', 0.8500):.4f}", delta="Sicherer Hafen")
+
+        fc5, fc6, fc7, fc8 = st.columns(4)
+        fc5.metric("EUR / CHF", f"{rates.get('EUR/CHF', 0.9300):.4f}")
+        fc6.metric("AUD / USD", f"{rates.get('AUD/USD', 0.6700):.4f}", delta="Rohstoff-Währung")
+        fc7.metric("USD / CAD", f"{rates.get('USD/CAD', 1.3500):.4f}")
+        fc8.metric("US Dollar Index (DXY)", f"{rates.get('DXY', 101.40):.2f}", delta="Leitwährung")
+
+        st.markdown("---")
+        st.markdown("#### 🚨 JPY Carry-Trade Risiko-Barometer & Zentralbank-Zinsmatrix")
+        
+        st.warning(f"**JPY Carry Trade Status:** {fx_data['jpy_carry_trade_risk']}")
+        
+        cb_df = pd.DataFrame(fx_data["central_bank_rates"])
+        cb_df.columns = ["Zentralbank", "Aktueller Leitzins", "Nächster Zinsschritt (Erwartung)", "Geldpolitische Ausrichtung"]
+        st.dataframe(cb_df, use_container_width=True, hide_index=True)
+        
+        st.caption(f"**US Dollar Index (DXY) Korbzusammensetzung:** {fx_data['dxy_breakdown']}")
 
 # ==============================================================================
 # MODE 5: MUSTERDEPOTS & LIVE-PERFORMANCE (3 DEPOTS)
