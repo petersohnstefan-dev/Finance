@@ -1091,8 +1091,15 @@ elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
     ])
 
     with tab_pm:
-        st.subheader("👑 Edelmetall-Intelligence & Struktur-Ratios")
-        st.caption("Verhältnis-Indikatoren (*Gold/Silver Ratio*, *Gold/Oil*), Zentralbank-Goldkäufe und CFTC CoT Positionierung.")
+        st.subheader("👑 Edelmetall-Intelligence & Struktur-Ratios (Gold, Silber & Platin)")
+        st.caption("Echtzeit-Edelmetallanalytik: Verhältnis-Indikatoren (*Gold/Silver Ratio*, *Gold/Oil*), World Gold Council Zentralbankdaten und CFTC CoT Fonds-Positionierung.")
+        
+        st.info("""
+        💡 **Relevanz für Kauf- und Verkaufsentscheidungen:**
+        Edelmetalle sind das seismografische Frühwarnsystem für weltweite Währungsabwertung, Realzinswenden und geopolitische Risiken.
+        * **Gold/Silber-Ratio > 80:** Löst einen **+15 Punkte Alpha-Bonus** für Silber- und Minenaktien aus (historischer Squeeze-Aufholer).
+        * **Fallende US-Realzinsen (< 1.8 %):** Beflügeln die Gold-Allokation im Langfrist-Depot.
+        """)
         
         pm_data = CommoditiesIntelEngine.get_precious_metals_overview()
         
@@ -1148,8 +1155,14 @@ elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
             """, unsafe_allow_html=True)
 
     with tab_energy:
-        st.subheader("🛢️ Energie- & Rohstoff-Intelligence (Öl, Gas & Industriemetalle)")
-        st.caption("Echtzeit-Rohölpreise, US-Lagerbestandsveränderungen (EIA), OPEC+ Disziplin und Raffinerie-Margen.")
+        st.subheader("🛢️ Energie- & Rohstoff-Intelligence (WTI, Brent, Gas & Kupfer)")
+        st.caption("Echtzeit-Rohölpreise, US-Lagerbestandsveränderungen (EIA), OPEC+ Förderdisziplin und Raffinerie-Margen.")
+        
+        st.info("""
+        💡 **Relevanz für Kauf- und Verkaufsentscheidungen:**
+        * **Kupfer/Gold-Ratio:** „Dr. Kupfer“ misst den globalen Konjunkturmotor. Steigt das Ratio, investiert die KI verstärkt in Zykliker und Industrie-Nebenwerte (SDAX/US Mid-Caps).
+        * **3:2:1 Crack Spread (> $20/bbl):** Signalisiert hohe Raffinerie-Rentabilität und stabile reale Energienachfrage.
+        """)
         
         en_data = CommoditiesIntelEngine.get_energy_commodities_overview()
         
@@ -1171,8 +1184,14 @@ elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
             st.warning(f"🌐 **Rohstoff-Regime:** {en_data['oil_regime_verdict']}")
 
     with tab_forex:
-        st.subheader("💱 Globale Währungen, US Dollar Index & Zinsdifferenzen (Carry Trade)")
+        st.subheader("💱 Globale Währungen, US Dollar Index (DXY) & Zinsdifferenzen (Carry Trade)")
         st.caption("Devisenmärkte steuern globale Kapitalflüsse: Wechselkurse, Zinsdifferenzen der Zentralbanken und DXY-Gewichtung.")
+        
+        st.warning("""
+        🚨 **Automatisches Risikomanagement der KI über Devisen:**
+        * **US Dollar Index (DXY < 101.5):** Schwacher Dollar öffnet das globale Liquiditätsventil ➔ Aggressive Freigabe für Tech-Growth & Krypto.
+        * **JPY Carry-Trade Alarm (USD/JPY < 145):** Fällt der Yen drastisch, droht weltweites Deleveraging ➔ Die KI schaltet sofort in den **defensiven Schutzmodus** (Pausierung neuer Hebel-Longs, Stop-Loss-Nachzug).
+        """)
         
         fx_data = ForexCurrencyEngine.get_forex_overview()
         rates = fx_data["rates"]
@@ -1567,10 +1586,11 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
         with st.expander("📖 Strategie-Handbuch & Allokations-Regeln (Nach welchen Formeln handelt die KI?)"):
             st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
             st.markdown("---")
-            h_tab1, h_tab2, h_tab3 = st.tabs([
+            h_tab1, h_tab2, h_tab3, h_tab4 = st.tabs([
                 "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
                 "📈 2. Mittelfrist-Depot (1–6 Monate)",
-                "🏛️ 3. Langfrist-Depot (1–5+ Jahre)"
+                "🏛️ 3. Langfrist-Depot (1–5+ Jahre)",
+                "🪙 4. Rohstoff-, Edelmetall- & FX-Regeln (GSR, DXY & Carry-Trade)"
             ])
 
             with h_tab1:
@@ -1631,6 +1651,20 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 * **🛡️ Fortlaufendes Bilanz- & Burggraben-Audit:** Verschlechtert sich die Bonität (Piotroski < 5 oder Altman Z droht in Notlage abzurutschen), trennt sich das System vom Titel, um das Langfrist-Portfolio vor Value Traps zu schützen.
                 * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Kernaktien.
                 * **📜 Unveränderlicher Audit-Trail:** Alle Transaktionen werden atomar in der SQLite-Datenbank protokolliert.
+                """)
+
+            with h_tab4:
+                st.markdown("""
+                #### 🪙 Rohstoff-, Edelmetall- & Devisen-Filter in der Entscheidungs-Engine
+                **Wie fließen Gold, Silber, Rohöl und Devisen in Kauf- und Verkaufsentscheidungen ein?**
+
+                | Indikator / Makro-Kennzahl | Schwellenwert | Auswirkung auf Kauf- & Verkaufsanalyse |
+                | :--- | :---: | :--- |
+                | **📊 Gold/Silber-Ratio (GSR)** | **> 80.0** | **🚨 Silber-Superzyklus (+15 Punkte Alpha):** Silber & Minenaktien (PAAS, FSM) werden massiv übergewichtet (historische Aufholrallye). Bei **< 55.0** wird Gold im Langfrist-Depot bevorzugt. |
+                | **💵 US Dollar Index (DXY)** | **< 101.50** | **🌊 Globaler Liquiditäts-Rückenwind (+4 Punkte Alpha):** Schwacher Dollar beflügelt Gold, Rohstoffe, Tech-Growth & Krypto. Bei **> 104.50** defensiver Risikoabschlag (-6 Punkte). |
+                | **🚨 JPY Carry-Trade Unwind Risk** | **USD/JPY < 145** | **🛑 Notfall-Schutzventil (-10 Punkte Alpha):** Pausiert sofort neue gehebelte Long-Einstiege im Kurzfrist-Depot und zieht Trailing-Stops auf Einstand nach, um Liquiditätsschocks abzufedern. |
+                | **🏛️ Zentralbank-Goldkäufe & TIPS** | **Realzins < 1.8 %** | **👑 Gold-Allokation freigegeben:** Physische Gold-ETCs (4GLD.DE) im Langfrist-Depot als Inflations- und Geldentwertungsschutz gegen US-Schuldenwachstum. |
+                | **🛢️ EIA Öl-Lager & Crack Spread** | **Marge > $20/bbl** | **🏭 Konjunktur-Freigabe:** Hohe Raffinerie-Margen und Lagerabbau bestätigen reale Nachfrage ➔ Freigabe für Industrie-, Chemie- & Energieaktien im Mittelfrist-Depot. |
                 """)
 
     # Call the fragment

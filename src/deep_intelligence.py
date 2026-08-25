@@ -243,11 +243,13 @@ class CryptoOnchainDerivativesEngine:
             "onchain_verdict": "🚀 Fundamentale Verknappung des liquiden Angebots; extrem starkes Makro-Fundament."
         }
 
+from src.commodities_forex_radar import CommoditiesIntelEngine, ForexCurrencyEngine
+
 # ==============================================================================
 # MASTER DEEP INTELLIGENCE HUB (Unified Gateway)
 # ==============================================================================
 class DeepIntelligenceHub:
-    """Aggregates all 6 intelligence dimensions into a single unified engine."""
+    """Aggregates all 8 intelligence dimensions into a single unified engine."""
 
     def __init__(self):
         self.options_engine = SmartMoneyOptionsEngine()
@@ -256,25 +258,47 @@ class DeepIntelligenceHub:
         self.social_engine = SocialSentimentEngine()
         self.forensic_engine = ForensicQualityEngine()
         self.crypto_engine = CryptoOnchainDerivativesEngine()
+        self.commodities_engine = CommoditiesIntelEngine()
+        self.forex_engine = ForexCurrencyEngine()
 
     def get_asset_360_intelligence(self, symbol: str) -> Dict[str, Any]:
         """Returns the full 360-degree multi-source intelligence profile for any symbol."""
         is_crypto = "-USD" in symbol
+        is_gold_or_commodity = any(x in symbol.upper() for x in ["GLD", "GOLD", "SLV", "SILVER", "GC=F", "SI=F", "CL=F", "BZ=F"])
         
         flow = self.options_engine.get_orderflow_metrics(symbol)
         social = self.social_engine.get_social_spike_score(symbol)
         forensic = self.forensic_engine.get_forensic_metrics(symbol)
-        
         crypto_data = self.crypto_engine.get_crypto_intelligence(symbol) if is_crypto else None
         
+        # Commodities & Forex Macro Adjustments
+        pm_ov = self.commodities_engine.get_precious_metals_overview()
+        fx_ov = self.forex_engine.get_forex_overview()
+        
+        macro_boost = 0.0
+        # GSR Super-Cycle Boost for Silver & Precious Metals
+        if is_gold_or_commodity and pm_ov.get("gold_silver_ratio", 70) >= 80.0:
+            macro_boost += 8.0  # Silver undervaluation catch-up bonus
+            
+        # DXY Tailwinds for Tech & Growth
+        dxy = fx_ov.get("dxy_index", 101.4)
+        if dxy < 101.5:
+            macro_boost += 4.0  # Weaker dollar boosts global liquidity & tech
+        elif dxy > 104.5:
+            macro_boost -= 6.0  # Strong dollar acts as liquidity drag
+            
+        # JPY Carry Trade Unwind Risk Penalty
+        if "HOCH" in fx_ov.get("jpy_carry_trade_risk", ""):
+            macro_boost -= 10.0  # Protective derisking
+
         # Composite Multi-Source Alpha Score (0 - 100)
         alpha_components = [
             flow.get("smart_money_score", 70) * 0.30,
             social.get("nlp_sentiment_score", 75) * 0.25,
             forensic.get("quality_investing_score", 80) * 0.25,
-            85 * 0.20  # Macro baseline
+            min(98, max(40, 85 + macro_boost)) * 0.20
         ]
-        composite_alpha_score = round(sum(alpha_components), 1)
+        composite_alpha_score = min(99.0, max(15.0, round(sum(alpha_components), 1)))
 
         return {
             "symbol": symbol,
@@ -282,13 +306,17 @@ class DeepIntelligenceHub:
             "smart_money_flow": flow,
             "social_sentiment": social,
             "forensic_quality": forensic,
-            "crypto_onchain": crypto_data
+            "crypto_onchain": crypto_data,
+            "macro_currency_boost": macro_boost
         }
 
     def get_macro_and_insider_overview(self) -> Dict[str, Any]:
-        """Returns global macro liquidity, top insider trades, and unusual options blocks."""
+        """Returns global macro liquidity, commodities, forex, insider trades, and unusual options blocks."""
         return {
             "macro_liquidity": self.macro_engine.get_liquidity_regime(),
+            "commodities_macro": self.commodities_engine.get_precious_metals_overview(),
+            "energy_macro": self.commodities_engine.get_energy_commodities_overview(),
+            "forex_macro": self.forex_engine.get_forex_overview(),
             "insider_buys": self.insider_engine.get_top_insider_buys(),
             "congress_trades": self.insider_engine.get_congress_trades(),
             "whale_convictions": self.insider_engine.get_whale_convictions(),
