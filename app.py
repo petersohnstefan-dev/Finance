@@ -1163,8 +1163,25 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 if "date" in h_df.columns:
                     h_df = h_df.sort_values(by="date", ascending=False)
                 
+                def format_german_date(d_str):
+                    if not d_str or d_str == "-":
+                        return "-"
+                    try:
+                        clean = str(d_str).strip()
+                        parts = clean.split()
+                        if len(parts) >= 2:
+                            d_part, t_part = parts[0], parts[1][:5]
+                            y, m, d = d_part.split("-")
+                            return f"{d}.{m}.{y} {t_part} Uhr"
+                        elif "-" in clean:
+                            y, m, d = clean.split("-")
+                            return f"{d}.{m}.{y}"
+                        return clean
+                    except Exception:
+                        return str(d_str)
+
                 display_h = pd.DataFrame()
-                display_h["Zeitpunkt"] = h_df.get("date", "-")
+                display_h["Zeitpunkt"] = h_df["date"].apply(format_german_date)
                 
                 action_map = {"BUY": "🟢 KAUF", "SELL": "🔴 VERKAUF"}
                 display_h["Aktion"] = h_df.apply(lambda r: action_map.get(r.get("action") or r.get("type", "BUY"), r.get("type", "-")), axis=1)
