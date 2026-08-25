@@ -8,6 +8,7 @@ import yfinance as yf
 from src.db import PortfolioDB
 from src.derivatives import DerivativeEngine
 from src.deep_intelligence import DeepIntelligenceHub
+from src.wkn_mapping import get_wkn, get_wkn_display
 
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
@@ -357,10 +358,13 @@ class PortfolioManager:
             pos_val = shares * curr_p
             pnl = (curr_p - buy_p) * shares
             pnl_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+            wkn_code = get_wkn(sym)
 
             invested_value += pos_val
             positions_list.append({
-                "symbol": sym,
+                "wkn": wkn_code,
+                "symbol": wkn_code,
+                "ticker": sym,
                 "name": pos.get("name", sym),
                 "product_type": pos.get("derivative_type", "STOCK"),
                 "shares": shares,
@@ -401,10 +405,13 @@ class PortfolioManager:
             t_type = t.get("type") or t.get("trade_type") or t.get("action", "BUY")
             t_sym = t.get("symbol", "")
             if t_sym:
+                wkn_code = get_wkn(t_sym)
                 merged_history.append({
+                    "wkn": wkn_code,
                     "type": t_type,
                     "action": t_type,
-                    "symbol": t_sym,
+                    "symbol": wkn_code,
+                    "ticker": t_sym,
                     "name": t.get("name", t_sym),
                     "product_type": t.get("product_type", "STOCK"),
                     "shares": t.get("shares", 0),

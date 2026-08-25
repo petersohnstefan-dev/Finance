@@ -1,3 +1,4 @@
+from src.wkn_mapping import get_wkn
 """Advanced Institutional Intelligence Hub comprising 6 specialized modules:
 1. Options Flow & Dark Pools
 2. BaFin / Bundesanzeiger Net Short Positions
@@ -72,7 +73,7 @@ class OptionsDarkPoolEngine:
     def get_top_unusual_options_alerts() -> List[Dict[str, Any]]:
         return [
             {
-                "symbol": "MRNA", "name": "Moderna", "type": "⚡ Ungewöhnlicher OTM Call-Sweep",
+                "wkn": "A2N9D9", "symbol": "MRNA", "name": "Moderna", "type": "⚡ Ungewöhnlicher OTM Call-Sweep",
                 "strike": " Calls", "expiry": "Sep 2026", "premium": ".8 Mio.",
                 "put_call_ratio": 0.28, "signal": "🟢 Extrem bullische Vorab-Positionierung"
             },
@@ -96,27 +97,27 @@ class BaFinShortRegister:
 
     OFFICIAL_DE_SHORTS = [
         {
-            "symbol": "SDF.DE", "name": "K+S AG", "hedge_fund": "Marshall Wace LLP",
+            "wkn": "KSAG88", "symbol": "SDF.DE", "name": "K+S AG", "hedge_fund": "Marshall Wace LLP",
             "short_pct": 2.85, "previous_pct": 3.20, "change": -0.35, "date": "2026-08-21",
             "status": "🚨 Short-Eindeckung eingeleitet (Squeeze-Frühwarnung)"
         },
         {
-            "symbol": "EVT.DE", "name": "Evotec SE", "hedge_fund": "Qube Research & Technologies",
+            "wkn": "566480", "symbol": "EVT.DE", "name": "Evotec SE", "hedge_fund": "Qube Research & Technologies",
             "short_pct": 2.45, "previous_pct": 2.10, "change": +0.35, "date": "2026-08-19",
             "status": "⚠️ Leerverkaufsposition aufgestockt"
         },
         {
-            "symbol": "WAF.DE", "name": "Siltronic AG", "hedge_fund": "Citadel Advisors Europe",
+            "wkn": "WCH888", "symbol": "WAF.DE", "name": "Siltronic AG", "hedge_fund": "Citadel Advisors Europe",
             "short_pct": 1.92, "previous_pct": 2.30, "change": -0.38, "date": "2026-08-20",
             "status": "🚨 Eindeckung aktiv"
         },
         {
-            "symbol": "HFG.DE", "name": "HelloFresh SE", "hedge_fund": "BlackRock Investment UK",
+            "wkn": "A16140", "symbol": "HFG.DE", "name": "HelloFresh SE", "hedge_fund": "BlackRock Investment UK",
             "short_pct": 3.10, "previous_pct": 3.10, "change": 0.00, "date": "2026-08-18",
             "status": "⏸️ Hohe Short-Position stabil"
         },
         {
-            "symbol": "GFT.DE", "name": "GFT Technologies", "hedge_fund": "Millennium Capital",
+            "wkn": "590087", "symbol": "GFT.DE", "name": "GFT Technologies", "hedge_fund": "Millennium Capital",
             "short_pct": 0.75, "previous_pct": 0.95, "change": -0.20, "date": "2026-08-22",
             "status": "🟢 Bären ziehen sich zurück"
         }
@@ -138,37 +139,37 @@ class USShortInterestRegister:
 
     OFFICIAL_US_SHORTS = [
         {
-            "symbol": "BEAM", "name": "Beam Therapeutics", "short_float_pct": 18.50,
+            "wkn": "A2PZ4W", "symbol": "BEAM", "name": "Beam Therapeutics", "short_float_pct": 18.50,
             "days_to_cover": 6.8, "short_volume_change": -2.40, "date": "2026-08-22",
             "status": "🚨 Aggressive Eindeckung (Squeeze-Frühwarnung)"
         },
         {
-            "symbol": "MRNA", "name": "Moderna Inc.", "short_float_pct": 15.20,
+            "wkn": "A2N9D9", "symbol": "MRNA", "name": "Moderna Inc.", "short_float_pct": 15.20,
             "days_to_cover": 5.1, "short_volume_change": -1.80, "date": "2026-08-21",
             "status": "🚨 Eindeckung aktiv (Short Squeeze Risiko hoch)"
         },
         {
-            "symbol": "UPST", "name": "Upstart Holdings", "short_float_pct": 24.50,
+            "wkn": "A2QJL7", "symbol": "UPST", "name": "Upstart Holdings", "short_float_pct": 24.50,
             "days_to_cover": 5.9, "short_volume_change": -3.10, "date": "2026-08-23",
             "status": "🚨 Massiver Short Squeeze Alarm"
         },
         {
-            "symbol": "RIVN", "name": "Rivian Automotive", "short_float_pct": 14.80,
+            "wkn": "A3C47B", "symbol": "RIVN", "name": "Rivian Automotive", "short_float_pct": 14.80,
             "days_to_cover": 4.2, "short_volume_change": -1.10, "date": "2026-08-20",
             "status": "🟢 Bären reduzieren nach VW-Deal & CEO-Kauf"
         },
         {
-            "symbol": "SMCI", "name": "Super Micro Computer", "short_float_pct": 16.40,
+            "wkn": "A0MKJF", "symbol": "SMCI", "name": "Super Micro Computer", "short_float_pct": 16.40,
             "days_to_cover": 3.8, "short_volume_change": +1.20, "date": "2026-08-19",
             "status": "⚠️ Leerverkäufer stocken auf (Hohes Tauziehen)"
         },
         {
-            "symbol": "PLUG", "name": "Plug Power", "short_float_pct": 22.80,
+            "wkn": "A1JA81", "symbol": "PLUG", "name": "Plug Power", "short_float_pct": 22.80,
             "days_to_cover": 7.4, "short_volume_change": 0.00, "date": "2026-08-18",
             "status": "⏸️ Extrem hohe Short-Wette stabil"
         },
         {
-            "symbol": "ENPH", "name": "Enphase Energy", "short_float_pct": 13.10,
+            "wkn": "A1JC82", "symbol": "ENPH", "name": "Enphase Energy", "short_float_pct": 13.10,
             "days_to_cover": 4.5, "short_volume_change": -0.90, "date": "2026-08-22",
             "status": "🟢 Bären ziehen sich zurück"
         }

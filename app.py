@@ -24,6 +24,7 @@ from src.advanced_intelligence import (
 )
 from src.commodities_forex_radar import CommoditiesIntelEngine, ForexCurrencyEngine
 from src.bonds_yields_radar import BondYieldsIntelEngine
+from src.wkn_mapping import get_wkn, get_wkn_display
 from src.realtime_scanner import RealTimeBreakoutScanner
 from src.market_seasonality import MarketSeasonalityEngine, get_berlin_now
 
@@ -494,7 +495,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
             filtered_ticks = res.get("ticks", {})
 
     # Search Box for individual ticker
-    search_q = st.text_input("🔍 Ticker filtern (z.B. MRNA, PLTR, BTC, NVDA, SDF.DE, SOL):", value="")
+    search_q = st.text_input("🔍 WKN / Wertpapier filtern (z.B. A2N9D9, A2QA4J, 716460, 918422, A278KE):", value="")
     if search_q.strip():
         q = search_q.strip().upper()
         filtered_ticks = {k: v for k, v in filtered_ticks.items() if q in k}
@@ -518,7 +519,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
         st.markdown("#### 📋 Alle Ticks im gewählten Universum:")
         t_df = pd.DataFrame(list(filtered_ticks.values()))
         display_t = pd.DataFrame()
-        display_t["Ticker"] = t_df["symbol"] if "symbol" in t_df.columns else list(filtered_ticks.keys())
+        display_t["WKN"] = [get_wkn(s) for s in (t_df["symbol"] if "symbol" in t_df.columns else list(filtered_ticks.keys()))]
         display_t["Preis"] = t_df["price"].apply(lambda x: f"{x:,.2f}")
         display_t["Typ"] = t_df.get("type", "STOCK")
         display_t["Aktualisiert"] = t_df.get("time", "-")
@@ -535,7 +536,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
         a_df = pd.DataFrame(recent_alerts)
         display_a = pd.DataFrame()
         display_a["Uhrzeit"] = a_df.get("time_str", a_df.get("timestamp", "-"))
-        display_a["Ticker"] = a_df["symbol"]
+        display_a["WKN"] = [get_wkn(s) for s in a_df["symbol"]]
         display_a["Auslöse-Kurs"] = a_df["trigger_price"].apply(lambda x: f"{x:.2f} $" if pd.notnull(x) else "-")
         display_a["1-Min-Sprung"] = a_df["change_1min_pct"].apply(lambda x: f"+{x:.2f}%" if pd.notnull(x) else "-")
         display_a["Dringlichkeit"] = a_df.get("urgency", "⚡ HOCH")
@@ -570,7 +571,8 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         o_df = pd.DataFrame(opt_alerts)
         
         display_o = o_df[["symbol", "name", "type", "strike", "expiry", "premium", "put_call_ratio", "signal"]].copy()
-        display_o.columns = ["Ticker", "Unternehmen", "Order-Typ", "Strike", "Verfall", "Prämie", "Put/Call", "KI-Signal"]
+        display_o["WKN"] = [get_wkn(s) for s in display_o["symbol"] if "symbol" in display_o.columns] if "symbol" in display_o.columns else display_o.iloc[:, 0].apply(get_wkn)
+        display_o.columns = ["WKN", "Unternehmen", "Order-Typ", "Strike", "Verfall", "Prämie", "Put/Call", "KI-Signal"]
         
         st.dataframe(display_o, use_container_width=True, hide_index=True)
         st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
@@ -596,7 +598,8 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             display_us["short_float_pct"] = display_us["short_float_pct"].apply(lambda x: f"{x:.1f}%")
             display_us["days_to_cover"] = display_us["days_to_cover"].apply(lambda x: f"{x:.1f} Tage")
             display_us["short_volume_change"] = display_us["short_volume_change"].apply(lambda x: f"{x:+.2f}%")
-            display_us.columns = ["Ticker", "Unternehmen", "Short Float (%)", "Days to Cover (DTC)", "Short-Volumen Δ", "Meldedatum", "Squeeze-Signal"]
+            display_us["symbol"] = [get_wkn(s) for s in display_us["symbol"]]
+            display_us.columns = ["WKN", "Unternehmen", "Short Float (%)", "Days to Cover (DTC)", "Short-Volumen Δ", "Meldedatum", "Squeeze-Signal"]
             
             st.dataframe(display_us, use_container_width=True, hide_index=True)
             
@@ -605,7 +608,7 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             st.markdown("##### 🔍 Live US-Ticker Short-Interest Abfrage")
             us_search_col1, us_search_col2 = st.columns([3, 1])
             with us_search_col1:
-                us_query = st.text_input("US-Ticker eingeben (z. B. PLTR, NVDA, TSLA, GME, MRNA, RIVN, CVNA):", value="PLTR", key="us_short_lookup").strip().upper()
+                us_query = st.text_input("WKN oder US-Ticker eingeben (z. B. A2QA4J, 918422, A1CX3T, A2N9D9, PLTR, NVDA):", value="A2QA4J", key="us_short_lookup").strip().upper()
             
             if us_query:
                 try:
@@ -634,7 +637,8 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             display_b = b_df[["symbol", "name", "hedge_fund", "short_pct", "change", "date", "status"]].copy()
             display_b["short_pct"] = display_b["short_pct"].apply(lambda x: f"{x:.2f}%")
             display_b["change"] = display_b["change"].apply(lambda x: f"{x:+.2f}%")
-            display_b.columns = ["Ticker", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
+            display_b["symbol"] = [get_wkn(s) for s in display_b["symbol"]]
+            display_b.columns = ["WKN", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
             
             st.dataframe(display_b, use_container_width=True, hide_index=True)
         
@@ -677,7 +681,8 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         r_df = pd.DataFrame(rev_data)
         
         display_r = r_df[["symbol", "revision_score", "upgrades_last_30d", "downgrades_last_30d", "eps_beat_rate_pct", "last_quarter_surprise_pct", "status"]].copy()
-        display_r.columns = ["Ticker", "Revisions-Score", "Upgrades (30T)", "Downgrades (30T)", "Beat-Rate (%)", "Letzte EPS-Surprise", "Trend-Status"]
+        display_r["symbol"] = [get_wkn(s) for s in display_r["symbol"]]
+        display_r.columns = ["WKN", "Revisions-Score", "Upgrades (30T)", "Downgrades (30T)", "Beat-Rate (%)", "Letzte EPS-Surprise", "Trend-Status"]
         display_r["Beat-Rate (%)"] = display_r["Beat-Rate (%)"].apply(lambda x: f"{x:.0f}%")
         display_r["Letzte EPS-Surprise"] = display_r["Letzte EPS-Surprise"].apply(lambda x: f"{x:+.1f}%")
         
@@ -775,7 +780,7 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         
         col_s_in, col_s_btn = st.columns([3, 1])
         with col_s_in:
-            search_ticker = st.text_input("Ticker oder Unternehmensname eingeben (z. B. NVDA, PLTR, MRNA, BABA, SAP, BMW, TSLA, LLY):", value="NVDA").strip().upper()
+            search_ticker = st.text_input("WKN oder Ticker eingeben (z. B. 918422, A2QA4J, A2N9D9, 716460, 519000, NVDA, PLTR, SAP):", value="918422").strip().upper()
 
         if search_ticker:
             w_info = WhaleInsiderTracker.get_whale_sentiment_for_ticker(search_ticker)
@@ -850,7 +855,8 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         holdings_df["Kaufkurs-Spanne"] = holdings_df.get("est_buy_range", "-")
         
         display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Kaufkurs-Spanne", "Aktion"]].copy()
-        display_holdings.columns = ["Ticker", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
+        display_holdings["symbol"] = [get_wkn(s) for s in display_holdings["symbol"]]
+        display_holdings.columns = ["WKN", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
 
         h_cfg = {
             "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel"),
@@ -903,7 +909,7 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         insiders = WhaleInsiderTracker.get_insider_buys()
         display_i = pd.DataFrame()
         
-        display_i["Ticker"] = [item.get("symbol", "-") for item in insiders]
+        display_i["WKN"] = [get_wkn(item.get("symbol", "-")) for item in insiders]
         display_i["Unternehmen"] = [item.get("name", "-") for item in insiders]
         display_i["Führungskraft / Insider"] = [item.get("insider", "-") for item in insiders]
         display_i["Position / Rolle"] = [item.get("role", "-") for item in insiders]
@@ -1547,7 +1553,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                         pos_df[col] = None
 
                 display_pos = pd.DataFrame()
-                display_pos["Ticker / WKN"] = pos_df["symbol"]
+                display_pos["WKN"] = pos_df["symbol"].apply(get_wkn)
                 display_pos["Instrument / Name"] = pos_df["name"]
                 
                 type_map = {
@@ -1571,7 +1577,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 display_pos["Kaufgrund"] = pos_df["reason"]
 
                 pos_cfg = {
-                    "Ticker / WKN": st.column_config.TextColumn("Ticker / WKN", help="Börsenkürzel oder WKN des Zertifikats"),
+                    "WKN": st.column_config.TextColumn("WKN", help="Offizielle deutsche Wertpapierkennnummer (WKZ)"),
                     "Instrument / Name": st.column_config.TextColumn("Name", help="Name des Unternehmens oder Zertifikats"),
                     "Produkttyp": st.column_config.TextColumn("Typ", help="Aktie, Krypto, Knock-Out, Faktor- oder Bonus-Zertifikat"),
                     "Stück": st.column_config.NumberColumn("Stück", help="Anzahl gehaltener Stücke / Zertifikate"),
@@ -1627,7 +1633,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 forensic = p_intel["forensic_quality"]
                 
                 intel_rows.append({
-                    "Symbol": sym,
+                    "WKN": get_wkn(sym),
                     "Name": p["name"][:20],
                     "Alpha-Score": f"⭐ {p_intel['composite_alpha_score']}/100",
                     "Dark Pool Anteil": f"{flow['dark_pool_share_pct']}%",
@@ -1836,8 +1842,8 @@ else:
     st.sidebar.subheader("🔍 Aktie auswählen")
     category = st.sidebar.selectbox("Kategorie / Markt", list(CATEGORIZED_UNIVERSES.keys()))
     default_tickers = CATEGORIZED_UNIVERSES[category]
-    selected_preset = st.sidebar.selectbox("Favoriten", default_tickers)
-    custom_ticker = st.sidebar.text_input("Oder Ticker manuell eingeben (z.B. MRNA, AAPL, SDF.DE, PLTR):", value="")
+    selected_preset = st.sidebar.selectbox("Favoriten", default_tickers, format_func=lambda s: get_wkn_display(s, s))
+    custom_ticker = st.sidebar.text_input("Oder WKN / Ticker eingeben (z.B. A2N9D9, 865985, 716460, A2QA4J, 918422):", value="")
     active_symbol = custom_ticker.strip().upper() if custom_ticker.strip() else selected_preset
     chart_period = st.sidebar.selectbox("Chart-Zeitraum", ["3mo", "6mo", "1y", "2y", "5y"], index=2)
 
