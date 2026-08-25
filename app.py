@@ -23,6 +23,7 @@ from src.advanced_intelligence import (
     EarningsRevisionEngine, EarningsCallAnalyzer, FREDMacroEngine, CryptoOnChainEngine
 )
 from src.commodities_forex_radar import CommoditiesIntelEngine, ForexCurrencyEngine
+from src.bonds_yields_radar import BondYieldsIntelEngine
 from src.realtime_scanner import RealTimeBreakoutScanner
 from src.market_seasonality import MarketSeasonalityEngine, get_berlin_now
 
@@ -177,7 +178,7 @@ with st.sidebar:
             "🔮 Smart-Money & Makro-Radar (6 Module)",
             "🐋 Whale- & Insider-Radar",
             "🌐 Makro-Klima, Zentralbanken & News",
-            "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)",
+            "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
             "💼 Musterdepots & Live-Performance (3x 10.000 €)",
             "🔍 Einzelaktien-Tiefenanalyse"
         ],
@@ -1080,13 +1081,14 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
 # ==============================================================================
 # MODE: COMMODITIES, PRECIOUS METALS, OIL & FOREX
 # ==============================================================================
-elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
-    st.title("🪙 Rohstoffe, Edelmetalle, Öl & Globale Devisen (FX)")
-    st.markdown("Echtzeit-Tracking von **Gold, Silber, Rohöl, Kupfer & Währungen** inklusive struktureller Makro-Ratios, CFTC CoT Daten, US-Lagerbeständen und Zinsdifferenzen.")
+elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
+    st.title("🪙 Rohstoffe, Anleihen, Zinsen & Globale Devisen (FICC)")
+    st.markdown("Echtzeit-Tracking von **Edelmetallen, Rohöl, Staatsanleihen, Zinskurven & Devisen** inklusive Zinsstrukturkurve, High-Yield Spreads, CFTC CoT Daten und Zinsdifferenzen.")
 
-    tab_pm, tab_energy, tab_forex = st.tabs([
+    tab_pm, tab_energy, tab_bonds, tab_forex = st.tabs([
         "👑 Edelmetalle & Struktur-Ratios (Gold, Silber & GSR)",
-        "🛢️ Energie & Rohstoffe (WTI, Brent, Kupfer & Gas)",
+        "🛢️ Energie & Rohstoffe (WTI, Brent, Gas & Kupfer)",
+        "🏛️ Anleihen-, Zins- & Kreditmärkte (Bonds, Yield Curve & Spreads)",
         "💱 Globale Devisen & Währungen (Forex, DXY & Carry-Trade)"
     ])
 
@@ -1183,6 +1185,68 @@ elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
             st.success(f"⛽ **Raffinerie-Margen (Crack Spread):** {en_data['crack_spread_margin']}")
             st.warning(f"🌐 **Rohstoff-Regime:** {en_data['oil_regime_verdict']}")
 
+    with tab_bonds:
+        st.subheader("🏛️ Globaler Anleihenmarkt, Renditen & Zinskurven-Intelligence")
+        st.caption("Staatsanleihe-Renditen (US Treasuries, Bundesanleihen), Zinskurven-Inversion / Disinversion, Kreditrisiko (High-Yield OAS) und Realzinsen.")
+
+        b_data = BondYieldsIntelEngine.get_bond_market_overview()
+
+        # 1. Top Yield Metrics
+        by1, by2, by3, by4 = st.columns(4)
+        by1.metric("US 10-Jahres-Treasury", f"{b_data['us_10y_yield']:.2f}%", delta="Weltzins-Benchmark")
+        by2.metric("US 2-Jahres-Treasury", f"{b_data['us_2y_yield']:.2f}%", delta="Fed-Zinserwartung")
+        by3.metric("10Y - 2Y Zinsspread", f"{b_data['spread_10y_2y_bps']:+.1f} Bp", delta=b_data['curve_regime'])
+        by4.metric("US 30-Jahres-Yield", f"{b_data['us_30y_yield']:.2f}%", delta="Langfrist-Kredit")
+
+        st.markdown("---")
+        st.markdown("#### 📐 Zinskurven-Zustand & Rezessions-Frühwarnmodell")
+
+        b_col1, b_col2 = st.columns(2)
+        with b_col1:
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #0284c7; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px;">
+                <h4 style="margin: 0 0 6px 0; color: #0284c7;">📐 Zinskurven-Status: {b_data['curve_status']}</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>10Y - 2Y Spread:</b> {b_data['spread_10y_2y_bps']:+.1f} Basispunkte | <b>10Y - 3M Spread:</b> {b_data['spread_10y_3m_bps']:+.1f} Bp</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+                    <b>Regel:</b> Die gefährlichste Phase ist die <i>Disinversion</i> (wenn die Kurve nach monatelanger Inversion wieder steiler wird). Genau dann beginnen historisch die meisten Rezessionen und Notenbanken senken die Zinsen.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 14px 16px;">
+                <h4 style="margin: 0 0 6px 0; color: #b45309;">📊 NY Fed Rezessions-Wahrscheinlichkeit: {b_data['recession_probability_pct']}%</h4>
+                <p style="margin: 0; font-size: 13px; color: #0f172a;">
+                    Basiert auf dem klassischen Zinsstrukturmodell der Federal Reserve Bank of New York (10Y minus 3M Spread).
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with b_col2:
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #10b981; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px;">
+                <h4 style="margin: 0 0 6px 0; color: #047857;">💳 Kreditrisiko & High-Yield Spreads (OAS)</h4>
+                <p style="margin: 0; font-size: 14px; color: #0f172a;"><b>US High Yield OAS:</b> {b_data['credit_data']['us_high_yield_oas']}</p>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #0f172a;"><b>US Investment Grade:</b> {b_data['credit_data']['us_ig_spread']}</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+                    Solange der Junk-Bond Spread unter 400 Bp bleibt, herrscht kein akuter Kreditkrisen-Stress an den Rentenmärkten.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.markdown(f"""
+            <div style="background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #7c3aed; border-radius: 8px; padding: 14px 16px;">
+                <h4 style="margin: 0 0 6px 0; color: #7c3aed;">💡 Zins-Urteil der KI für die Depot-Allokation</h4>
+                <p style="margin: 0; font-size: 13.5px; color: #0f172a;"><b>{b_data['trade_verdict']}</b></p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("---")
+        st.markdown("#### 🌐 Globale Staatsanleihen im Vergleich (Sovereign Yields)")
+        sov_df = pd.DataFrame(b_data["sovereign_yields"])
+        sov_df.columns = ["Staat / Anleihe", "10-Jahres-Rendite", "Spread zu Dt. Bund", "Markt-Rolle"]
+        st.dataframe(sov_df, use_container_width=True, hide_index=True)
+
     with tab_forex:
         st.subheader("💱 Globale Währungen, US Dollar Index (DXY) & Zinsdifferenzen (Carry Trade)")
         st.caption("Devisenmärkte steuern globale Kapitalflüsse: Wechselkurse, Zinsdifferenzen der Zentralbanken und DXY-Gewichtung.")
@@ -1219,6 +1283,7 @@ elif app_mode == "🪙 Rohstoffe, Edelmetalle, Öl & Devisen (FX)":
         st.dataframe(cb_df, use_container_width=True, hide_index=True)
         
         st.caption(f"**US Dollar Index (DXY) Korbzusammensetzung:** {fx_data['dxy_breakdown']}")
+
 
 # ==============================================================================
 # MODE 5: MUSTERDEPOTS & LIVE-PERFORMANCE (3 DEPOTS)
@@ -1590,7 +1655,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
                 "📈 2. Mittelfrist-Depot (1–6 Monate)",
                 "🏛️ 3. Langfrist-Depot (1–5+ Jahre)",
-                "🪙 4. Rohstoff-, Edelmetall- & FX-Regeln (GSR, DXY & Carry-Trade)"
+                "🪙 4. Rohstoff-, Anleihen- & FX-Regeln (GSR, Zinskurve, DXY & Carry-Trade)"
             ])
 
             with h_tab1:

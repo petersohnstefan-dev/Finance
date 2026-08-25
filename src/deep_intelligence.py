@@ -244,12 +244,13 @@ class CryptoOnchainDerivativesEngine:
         }
 
 from src.commodities_forex_radar import CommoditiesIntelEngine, ForexCurrencyEngine
+from src.bonds_yields_radar import BondYieldsIntelEngine
 
 # ==============================================================================
 # MASTER DEEP INTELLIGENCE HUB (Unified Gateway)
 # ==============================================================================
 class DeepIntelligenceHub:
-    """Aggregates all 8 intelligence dimensions into a single unified engine."""
+    """Aggregates all 9 intelligence dimensions into a single unified engine."""
 
     def __init__(self):
         self.options_engine = SmartMoneyOptionsEngine()
@@ -260,6 +261,7 @@ class DeepIntelligenceHub:
         self.crypto_engine = CryptoOnchainDerivativesEngine()
         self.commodities_engine = CommoditiesIntelEngine()
         self.forex_engine = ForexCurrencyEngine()
+        self.bond_engine = BondYieldsIntelEngine()
 
     def get_asset_360_intelligence(self, symbol: str) -> Dict[str, Any]:
         """Returns the full 360-degree multi-source intelligence profile for any symbol."""
@@ -271,9 +273,10 @@ class DeepIntelligenceHub:
         forensic = self.forensic_engine.get_forensic_metrics(symbol)
         crypto_data = self.crypto_engine.get_crypto_intelligence(symbol) if is_crypto else None
         
-        # Commodities & Forex Macro Adjustments
+        # Commodities, Forex & Bond Market Macro Adjustments
         pm_ov = self.commodities_engine.get_precious_metals_overview()
         fx_ov = self.forex_engine.get_forex_overview()
+        bonds_ov = self.bond_engine.get_bond_market_overview()
         
         macro_boost = 0.0
         # GSR Super-Cycle Boost for Silver & Precious Metals
@@ -286,6 +289,12 @@ class DeepIntelligenceHub:
             macro_boost += 4.0  # Weaker dollar boosts global liquidity & tech
         elif dxy > 104.5:
             macro_boost -= 6.0  # Strong dollar acts as liquidity drag
+            
+        # Yield Curve & 10Y Yield Factor
+        if bonds_ov.get("us_10y_yield", 4.0) < 3.90:
+            macro_boost += 3.0  # Lower cost of capital expands valuation multiples
+        elif "Disinversion" in bonds_ov.get("curve_regime", ""):
+            macro_boost -= 2.0  # Mild defensive penalty during disinversion
             
         # JPY Carry Trade Unwind Risk Penalty
         if "HOCH" in fx_ov.get("jpy_carry_trade_risk", ""):
@@ -311,11 +320,12 @@ class DeepIntelligenceHub:
         }
 
     def get_macro_and_insider_overview(self) -> Dict[str, Any]:
-        """Returns global macro liquidity, commodities, forex, insider trades, and unusual options blocks."""
+        """Returns global macro liquidity, commodities, bonds, forex, insider trades, and unusual options blocks."""
         return {
             "macro_liquidity": self.macro_engine.get_liquidity_regime(),
             "commodities_macro": self.commodities_engine.get_precious_metals_overview(),
             "energy_macro": self.commodities_engine.get_energy_commodities_overview(),
+            "bonds_macro": self.bond_engine.get_bond_market_overview(),
             "forex_macro": self.forex_engine.get_forex_overview(),
             "insider_buys": self.insider_engine.get_top_insider_buys(),
             "congress_trades": self.insider_engine.get_congress_trades(),
