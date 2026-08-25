@@ -1198,6 +1198,99 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
         by3.metric("10Y - 2Y Zinsspread", f"{b_data['spread_10y_2y_bps']:+.1f} Bp", delta=b_data['curve_regime'])
         by4.metric("US 30-Jahres-Yield", f"{b_data['us_30y_yield']:.2f}%", delta="Langfrist-Kredit")
 
+        # 2. Interactive Historical Bond & Stock-to-Bond Ratio Chart
+        st.markdown("---")
+        st.markdown("#### 📈 Historischer Trend: Anleiherenditen vs. Anleihekurse & Aktien/Bond-Verhältnis")
+        st.caption("Vergleicht die 10-jährige US-Staatsanleiherendite mit dem Kurs langlaufender US-Staatsanleihen (TLT) und dem Risiko-Thermometer (SPY / TLT).")
+
+        b_hist_df = BondYieldsIntelEngine.get_historical_bond_chart_data(period="6mo")
+        if not b_hist_df.empty:
+            fig_bonds = make_subplots(
+                rows=2, cols=1,
+                shared_xaxes=True,
+                vertical_spacing=0.10,
+                subplot_titles=(
+                    "⚖️ 1. Die Zins-Wippe: US 10-Jahres-Rendite (%) vs. 20+ Year Treasury Bond ETF ($ TLT)",
+                    "📊 2. Stock-to-Bond Ratio (S&P 500 vs. 20Y Treasuries: Steigend = Risk-On / Fallend = Risk-Off)"
+                ),
+                row_heights=[0.6, 0.4]
+            )
+
+            # Subplot 1: Yield vs Bond Price
+            fig_bonds.add_trace(
+                go.Scatter(
+                    x=b_hist_df["date"], y=b_hist_df["us_10y_yield"],
+                    name="US 10Y Rendite (%)",
+                    line=dict(color="#0284c7", width=2.5),
+                    hovertemplate="<b>Datum:</b> %{x}<br><b>US 10Y Rendite:</b> %{y:.2f}%<extra></extra>"
+                ),
+                row=1, col=1
+            )
+            fig_bonds.add_trace(
+                go.Scatter(
+                    x=b_hist_df["date"], y=b_hist_df["tlt_bond_price"],
+                    name="TLT Bond-Preis ($)",
+                    line=dict(color="#10b981", width=2, dash="dot"),
+                    yaxis="y2",
+                    hovertemplate="<b>Datum:</b> %{x}<br><b>TLT Kurs:</b> $%{y:.2f}<extra></extra>"
+                ),
+                row=1, col=1
+            )
+
+            # Subplot 2: Stock-to-Bond Ratio
+            fig_bonds.add_trace(
+                go.Scatter(
+                    x=b_hist_df["date"], y=b_hist_df["stock_to_bond_ratio"],
+                    name="Stock-to-Bond Ratio (SPY/TLT)",
+                    line=dict(color="#f59e0b", width=2.5),
+                    fill="tozeroy",
+                    fillcolor="rgba(245, 158, 11, 0.08)",
+                    hovertemplate="<b>Datum:</b> %{x}<br><b>SPY/TLT Ratio:</b> %{y:.2f}<extra></extra>"
+                ),
+                row=2, col=1
+            )
+
+            fig_bonds.update_layout(
+                template="plotly_white",
+                height=520,
+                margin=dict(l=20, r=20, t=40, b=20),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+                hovermode="x unified"
+            )
+            fig_bonds.update_yaxes(title_text="Rendite (%)", row=1, col=1)
+            fig_bonds.update_yaxes(title_text="Stock/Bond Ratio", row=2, col=1)
+            st.plotly_chart(fig_bonds, use_container_width=True)
+
+        # 3. Educational Guide & Ratios
+        st.markdown("---")
+        st.markdown("### 📖 Leitfaden: Was bedeuten steigende/fallende Bonds & die wichtigsten Ratios?")
+
+        col_bg1, col_bg2 = st.columns(2)
+        with col_bg1:
+            st.markdown("""
+            #### 🔄 1. Die fundamentale Wippe: Was bedeutet Steigen & Fallen?
+            * **📉 Wenn Renditen FALLEN (Anleihekurse STEIGEN):**
+              * **Ursache:** Erwartung von Zinssenkungen der Notenbank, schwächere Konjunkturdaten oder geopolitische Flucht in sichere Häfen (*Flight to Safety*).
+              * **Auswirkung auf Aktien:** **Massiver Rückenwind für Tech- & Wachstumsaktien** (*Palantir, Nvidia, Duolingo, Biotech*). Niedrigere Zinsen verringern den Diskontierungsfaktor für zukünftige Cashflows (*Multiple Expansion*).
+            * **📈 Wenn Renditen STEIGEN (Anleihekurse FALLEN):**
+              * **Ursache:** Anziehende Inflation, starkes Wirtschaftswachstum oder hohe Staatsverschuldung (Notenbanken halten Zinsen länger hoch).
+              * **Auswirkung auf Aktien:** **Bewertungsdruck auf hochbewertete Wachstumswerte** (*KGV-Kompression*); vorteilhaft für Banken, Versicherer (*Münchener Rück*) und Value-Substanzwerte.
+            """)
+
+        with col_bg2:
+            st.markdown("""
+            #### ⚖️ 2. Die 3 wichtigsten Verhältnis-Kennzahlen (Ratios):
+            * **📊 1. Stock-to-Bond Ratio (`SPY / TLT` - Das Risiko-Thermometer):**
+              * Misst das Verhältnis von US-Aktien zu langlaufenden Staatsanleihen.
+              * **Steigender Trend:** Kapital rotiert aggressiv in Aktien (**Risk-On / Bullenmarkt**).
+              * **Fallender Trend:** Großinvestoren fliehen aus Aktien in sichere Anleihen (**Risk-Off / Bärenmarkt**).
+            * **🏷️ 2. Aktienrisikoprämie (Equity Risk Premium - ERP):**
+              * `S&P 500 Gewinnrendite (4.2 %) minus US 10Y Rendite (4.1 %) = +0.1 %`.
+              * Liegt die Risikoprämie nahe 0, bieten "risikolose" Staatsanleihen fast dieselbe Rendite wie Aktien ➔ Aktien sind historisch sportlich bewertet.
+            * **💳 3. High-Yield vs. Treasuries Ratio (`HYG / TLT`):**
+              * Misst den Risiko-Appetit an den Unternehmens-Kreditmärkten.
+            """)
+
         st.markdown("---")
         st.markdown("#### 📐 Zinskurven-Zustand & Rezessions-Frühwarnmodell")
 
@@ -1246,6 +1339,7 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
         sov_df = pd.DataFrame(b_data["sovereign_yields"])
         sov_df.columns = ["Staat / Anleihe", "10-Jahres-Rendite", "Spread zu Dt. Bund", "Markt-Rolle"]
         st.dataframe(sov_df, use_container_width=True, hide_index=True)
+
 
     with tab_forex:
         st.subheader("💱 Globale Währungen, US Dollar Index (DXY) & Zinsdifferenzen (Carry Trade)")
