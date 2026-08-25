@@ -1160,6 +1160,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             if summary["history"]:
                 hist_list = summary["history"]
                 h_df = pd.DataFrame(hist_list)
+                if "date" in h_df.columns:
+                    h_df = h_df.sort_values(by="date", ascending=False)
                 
                 display_h = pd.DataFrame()
                 display_h["Zeitpunkt"] = h_df.get("date", "-")

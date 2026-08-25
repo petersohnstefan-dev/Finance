@@ -401,6 +401,9 @@ class PortfolioManager:
                     "reason": t.get("reason", "")
                 })
 
+        # Sort strictly descending: newest trades on top, oldest at the bottom
+        merged_history.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+
         return {
             "name": depot.get("name"),
             "strategy": depot.get("strategy"),
