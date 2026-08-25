@@ -5,6 +5,7 @@ import time
 import json
 import datetime
 import urllib.request
+import pandas as pd
 from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
@@ -43,12 +44,21 @@ class RealTimeBreakoutScanner:
             return None
 
     def fetch_stock_live_price(self, symbol: str) -> Optional[float]:
-        """Free real-time stock & futures quotes via yfinance fast_info."""
+        """Free real-time stock, ETF & futures quotes with pre/post-market live streaming support."""
         try:
             t = yf.Ticker(symbol)
+            # Try ultra-fast 1-day 1-minute pre/post-market tick first for active US/EU tickers
+            try:
+                df = t.history(period="1d", interval="1m", prepost=True)
+                if not df.empty and pd.notnull(df["Close"].iloc[-1]):
+                    return round(float(df["Close"].iloc[-1]), 2)
+            except Exception:
+                pass
+
+            # Fallback to fast_info
             fi = t.fast_info
-            px = fi.last_price or fi.regular_market_previous_close
-            return float(px) if px else None
+            px = getattr(fi, 'last_price', None) or getattr(fi, 'regular_market_previous_close', None)
+            return round(float(px), 2) if px else None
         except Exception:
             return None
 
