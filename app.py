@@ -570,9 +570,15 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         opt_alerts = OptionsDarkPoolEngine.get_top_unusual_options_alerts()
         o_df = pd.DataFrame(opt_alerts)
         
-        display_o = o_df[["symbol", "name", "type", "strike", "expiry", "premium", "put_call_ratio", "signal"]].copy()
-        display_o["WKN"] = [get_wkn(s) for s in display_o["symbol"] if "symbol" in display_o.columns] if "symbol" in display_o.columns else display_o.iloc[:, 0].apply(get_wkn)
-        display_o.columns = ["WKN", "Unternehmen", "Order-Typ", "Strike", "Verfall", "Prämie", "Put/Call", "KI-Signal"]
+        display_o = pd.DataFrame()
+        display_o["WKN"] = [get_wkn(s) for s in o_df["symbol"]]
+        display_o["Unternehmen"] = o_df["name"]
+        display_o["Order-Typ"] = o_df["type"]
+        display_o["Strike"] = o_df["strike"]
+        display_o["Verfall"] = o_df["expiry"]
+        display_o["Prämie"] = o_df["premium"]
+        display_o["Put/Call"] = o_df["put_call_ratio"]
+        display_o["KI-Signal"] = o_df["signal"]
         
         st.dataframe(display_o, use_container_width=True, hide_index=True)
         st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
@@ -859,7 +865,7 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         display_holdings.columns = ["WKN", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
 
         h_cfg = {
-            "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel"),
+            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
             "Unternehmen": st.column_config.TextColumn("Unternehmen", help="Unternehmensname"),
             "Portfolio-Gewicht": st.column_config.TextColumn("Gewichtung", help="Anteil am gesamten Aktienportfolio"),
             "Aktienanzahl": st.column_config.TextColumn("Bestand", help="Gehaltene Aktien"),
@@ -876,19 +882,20 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         congress_trades = WhaleInsiderTracker.get_congress_trades()
         c_df = pd.DataFrame(congress_trades)
 
-        display_c = c_df[[
-            "politician", "symbol", "name", "trade_type", "amount_range", 
-            "transaction_date", "disclosure_date", "pnl_estimate", "notes"
-        ]].copy()
-
-        display_c.columns = [
-            "Politiker / Fraktion", "Ticker", "Unternehmen", "Transaktion", 
-            "Volumen-Spanne", "Handelsdatum", "Offenlegung", "Rendite seither", "Hintergrund / Ausschuss"
-        ]
+        display_c = pd.DataFrame()
+        display_c["Politiker / Fraktion"] = c_df["politician"]
+        display_c["WKN"] = [get_wkn(s) for s in c_df["symbol"]]
+        display_c["Unternehmen"] = c_df["name"]
+        display_c["Transaktion"] = c_df["trade_type"]
+        display_c["Volumen-Spanne"] = c_df["amount_range"]
+        display_c["Handelsdatum"] = c_df["transaction_date"]
+        display_c["Offenlegung"] = c_df["disclosure_date"]
+        display_c["Rendite seither"] = c_df["pnl_estimate"]
+        display_c["Hintergrund / Ausschuss"] = c_df["notes"]
 
         c_cfg = {
             "Politiker / Fraktion": st.column_config.TextColumn("Politiker", help="Name und Parteizugehörigkeit"),
-            "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
+            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
             "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
             "Transaktion": st.column_config.TextColumn("Order-Typ", help="Aktienkauf, Verkauf oder Call-Optionen"),
             "Volumen-Spanne": st.column_config.TextColumn("Geschätztes Volumen", help="Gemeldete Transaktionsgröße in USD"),
@@ -921,7 +928,7 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         display_i["KI-Signal"] = [item.get("signal", "🟢 KAUF") for item in insiders]
 
         i_cfg = {
-            "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
+            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
             "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
             "Führungskraft / Insider": st.column_config.TextColumn("Insider", help="Name des Käufers"),
             "Position / Rolle": st.column_config.TextColumn("Rolle", help="CEO, CFO, Gründer oder Aufsichtsrat"),
