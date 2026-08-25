@@ -536,14 +536,25 @@ class PortfolioManager:
                     actions_taken.append(f"VERKAUF {sym} (Stop-Loss)")
                 continue
 
-        # 1f. Opportunity Check & Intelligent Capital Reallocation
-        # 1f. Multi-Source Opportunity Check & Intelligent Capital Reallocation
+            # 1f. Laufendes Thesen-Audit (Thesis Invalidation / Momentum-Erosion)
+            pos_intel = self.deep_intel.get_asset_360_intelligence(sym)
+            pos_alpha = pos_intel.get("composite_alpha_score", 70)
+            flow = pos_intel.get("smart_money_flow", {})
+            if pos_alpha < 42 or flow.get("put_call_ratio", 0.8) > 1.35:
+                self.sell("short_term", sym, curr_p, 
+                          reason=f"🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: {pos_alpha:.0f}/100, PCR: {flow.get('put_call_ratio', 1.0):.2f}) ➔ Vorzeitiger Ausstieg")
+                actions_taken.append(f"THESEN-AUSSTIEG {sym} (Alpha {pos_alpha:.0f}/100)")
+                continue
+
+        # 1g. Multi-Source Opportunity Check & Intelligent Capital Reallocation
         top_st_candidate = None
+        best_score = 50
         if rt_alerts:
             sym = rt_alerts[0]["symbol"]
             intel = self.deep_intel.get_asset_360_intelligence(sym)
             flow = intel["smart_money_flow"]
             social = intel["social_sentiment"]
+            best_score = intel.get("composite_alpha_score", 75)
             spike_reason = f"⚡ Echtzeit-Spike ({rt_alerts[0].get('change_1min_pct', 2.0):+.1f}%) | Dark Pool: {flow['dark_pool_share_pct']}% | Social: +{social['relative_mentions_spike_pct']:.0f}%"
             top_st_candidate = {"symbol": sym, "name": rt_alerts[0].get("name", sym), 
                                 "price": rt_alerts[0].get("trigger_price"), "reason": spike_reason, "is_realtime": True}
@@ -566,20 +577,31 @@ class PortfolioManager:
                     top_st_candidate = {"symbol": best_cand["symbol"], "name": best_cand.get("name", best_cand["symbol"]),
                                         "price": best_cand.get("price"), "reason": reason_str, "is_realtime": False}
 
-        # If we have a great candidate but low cash, intelligently swap the most mature profitable position!
+        # If we have a great candidate but low cash, intelligently swap the most mature profitable or weakest dead-money position!
         if top_st_candidate and top_st_candidate["symbol"] not in st_depot["positions"]:
             if st_depot["cash"] < 1500.0 and len(st_depot["positions"]) >= 3:
-                # Find best position with at least +5% gain to free up cash
-                profitable_positions = [
-                    (s, p, (p["current_price"] - p["buy_price"]) / p["buy_price"] * 100.0)
-                    for s, p in st_depot["positions"].items()
-                ]
-                profitable_positions = sorted(profitable_positions, key=lambda x: x[2], reverse=True)
-                if profitable_positions and profitable_positions[0][2] >= 5.0:
-                    swap_sym, swap_pos, swap_gain = profitable_positions[0]
+                held_rankings = []
+                for s, p in st_depot["positions"].items():
+                    h_intel = self.deep_intel.get_asset_360_intelligence(s)
+                    h_alpha = h_intel.get("composite_alpha_score", 70)
+                    h_gain = (p["current_price"] - p["buy_price"]) / p["buy_price"] * 100.0 if p["buy_price"] > 0 else 0.0
+                    held_rankings.append((s, p, h_alpha, h_gain))
+                
+                # Check for profitable harvest first (>= 5%)
+                prof_positions = sorted([x for x in held_rankings if x[3] >= 5.0], key=lambda x: x[3], reverse=True)
+                if prof_positions:
+                    swap_sym, swap_pos, swap_alpha, swap_gain = prof_positions[0]
                     self.sell("short_term", swap_sym, swap_pos["current_price"], 
                               reason=f"💡 Opportunitäts-Umschichtung: Gewinn bei +{swap_gain:.1f}% mitgenommen für neuen Ausbruch {top_st_candidate['symbol']}")
                     actions_taken.append(f"UMSCHICHTUNG: {swap_sym} (+{swap_gain:.1f}%) ➔ {top_st_candidate['symbol']}")
+                else:
+                    # Dead Money / Alpha-Spread Swap (Delta >= 25 Alpha points)
+                    held_by_alpha = sorted(held_rankings, key=lambda x: x[2])
+                    weakest_sym, weakest_pos, weakest_alpha, weakest_gain = held_by_alpha[0]
+                    if (best_score - weakest_alpha) >= 25.0:
+                        self.sell("short_term", weakest_sym, weakest_pos["current_price"],
+                                  reason=f"💡 Opportunitäts-Tausch (Dead Money): Schwächeren Wert ({weakest_sym}, Alpha {weakest_alpha:.0f}) gegen Top-Ausbruch ({top_st_candidate['symbol']}, Alpha {best_score:.0f}) getauscht")
+                        actions_taken.append(f"OPPORTUNITÄTS-TAUSCH: {weakest_sym} ➔ {top_st_candidate['symbol']}")
 
             # Execute Buy if cash available (Long or Short Turbo)
             if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
@@ -587,7 +609,6 @@ class PortfolioManager:
                 sym = top_st_candidate["symbol"]
                 if p and p > 0:
                     alloc = min(2000.0, st_depot["cash"] * 0.85)
-                    # Check if candidate is a Bearish Short Breakdown vs Bullish Breakout
                     is_bearish = top_st_candidate.get("direction") == "SHORT" or "Absturz" in top_st_candidate["reason"] or "Breakdown" in top_st_candidate["reason"]
                     if is_bearish:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
@@ -632,20 +653,43 @@ class PortfolioManager:
                     actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Stop)")
                 continue
 
-        # Mittelfrist Opportunity & Macro-Hedge Check
+            # 2e. Laufendes Wachstums- & Trend-Audit (Thesen-Bruch)
+            mt_pos_intel = self.deep_intel.get_asset_360_intelligence(sym)
+            mt_alpha = mt_pos_intel.get("composite_alpha_score", 70)
+            if mt_alpha < 45:
+                self.sell("medium_term", sym, curr_p,
+                          reason=f"⚠️ Thesen-Bruch: Mittelfristiges Wachstums-Rating unter 45 gefallen (Alpha: {mt_alpha:.0f}/100) ➔ Vorzeitiger Ausstieg")
+                actions_taken.append(f"THESEN-AUSSTIEG {sym} (Alpha {mt_alpha:.0f}/100)")
+                continue
+
+        # Mittelfrist Opportunity & Dead-Money Check
         if scan_results:
             top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
             if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
                 cand_intel = self.deep_intel.get_asset_360_intelligence(top_mt_cand["symbol"])
+                cand_alpha = cand_intel.get("composite_alpha_score", 75)
                 if mt_depot["cash"] < 1500.0 and len(mt_depot["positions"]) >= 3:
-                    # Check for mature winner to reallocate
-                    mt_profs = [(s, p, (p["current_price"] - p["buy_price"])/p["buy_price"]*100.0) for s, p in mt_depot["positions"].items()]
-                    mt_profs = sorted(mt_profs, key=lambda x: x[2], reverse=True)
-                    if mt_profs and mt_profs[0][2] >= 8.0:
-                        s_sym, s_pos, s_gain = mt_profs[0]
+                    mt_rankings = []
+                    for s, p in mt_depot["positions"].items():
+                        m_intel = self.deep_intel.get_asset_360_intelligence(s)
+                        m_alpha = m_intel.get("composite_alpha_score", 70)
+                        m_gain = (p["current_price"] - p["buy_price"])/p["buy_price"]*100.0 if p["buy_price"] > 0 else 0.0
+                        mt_rankings.append((s, p, m_alpha, m_gain))
+                    
+                    mt_profs = sorted([x for x in mt_rankings if x[3] >= 8.0], key=lambda x: x[3], reverse=True)
+                    if mt_profs:
+                        s_sym, s_pos, s_alpha, s_gain = mt_profs[0]
                         self.sell("medium_term", s_sym, s_pos["current_price"],
                                   reason=f"💡 Opportunitäts-Umschichtung: Gewinn bei +{s_gain:.1f}% realisiert für neuen Growth-Leader {top_mt_cand['symbol']}")
                         actions_taken.append(f"UMSCHICHTUNG: {s_sym} (+{s_gain:.1f}%) ➔ {top_mt_cand['symbol']}")
+                    else:
+                        # Dead-Money Rotation (Delta >= 20 Alpha points)
+                        mt_by_alpha = sorted(mt_rankings, key=lambda x: x[2])
+                        w_sym, w_pos, w_alpha, w_gain = mt_by_alpha[0]
+                        if (cand_alpha - w_alpha) >= 20.0:
+                            self.sell("medium_term", w_sym, w_pos["current_price"],
+                                      reason=f"💡 Opportunitäts-Tausch: Stagnierenden Titel ({w_sym}, Alpha {w_alpha:.0f}) gegen stärkeren Growth-Leader ({top_mt_cand['symbol']}, Alpha {cand_alpha:.0f}) getauscht")
+                            actions_taken.append(f"OPPORTUNITÄTS-TAUSCH: {w_sym} ➔ {top_mt_cand['symbol']}")
 
                 if mt_depot["cash"] >= 1500.0 and len(mt_depot["positions"]) < 4:
                     p = top_mt_cand.get("price")
@@ -663,6 +707,19 @@ class PortfolioManager:
         # 3. LANGFRISTIGES INVESTMENT-DEPOT (Jahre / Quality, Moat & Macro-Hedge)
         # ----------------------------------------------------------------------
         lt_depot = self.data["portfolios"]["long_term"]
+        for sym in list(lt_depot["positions"].keys()):
+            pos = lt_depot["positions"][sym]
+            curr_p = pos["current_price"]
+            buy_p = pos["buy_price"]
+            lt_intel = self.deep_intel.get_asset_360_intelligence(sym)
+            forensic = lt_intel.get("forensic_quality", {})
+            q_score = forensic.get("quality_investing_score", 80)
+            # If fundamental moat or balance sheet quality breaks down (< 45/100):
+            if q_score < 45:
+                self.sell("long_term", sym, curr_p,
+                          reason=f"🚨 Qualitäts-Degradierung: Fundamental-Rating auf {q_score}/100 gefallen ➔ Burggraben-Austausch")
+                actions_taken.append(f"QUALITÄTS-AUSSTIEG {sym}")
+                continue
         if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4 and scan_results:
             candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
             for cand in candidates:

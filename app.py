@@ -1306,7 +1306,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 * **🟢 KAUF-Trigger (Long):** Multi-Source Alpha-Score ≥ **55 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Knock-Out Call)**.
                 * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
                 * **🎯 Dynamischer Trailing-Exit:** Ab +8 % Gewinn Stop-Loss auf Einstand + 3 % nachziehen; ab +18 % greift ein dynamischer Trailing-Stop (6 % Puffer unter dem Zwischenhoch).
-                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) werden dynamisch liquidiert, wenn Cash < 1.500 € ist, um frisches Kapital für neue Leader freizusetzen.
+                * **🛡️ Laufendes Thesen-Audit (Thesen-Bruch):** Fällt der Alpha-Score eines gehaltenen Werts unter **42 / 100** oder dreht der Optionenfluss bärisch (Put/Call > 1.35), wird die Position **sofort vorzeitig abgestoßen** – auch wenn der Stop-Loss noch nicht berührt wurde!
+                * **💡 Opportunitäts-Tausch (Dead-Money-Schutz):** Wenn ein Wert seitwärts dümpelt und ein neuer Kandidat mit einem um **≥ 25 Punkte höheren Alpha-Score** auftaucht, wird die schwächste Position automatisch für den neuen Leader liquidiert.
                 * **🛡️ Freitags-Derisking:** Vor dem Wochenende werden gehebelte Knock-Out-Gewinne (ab +10 %) automatisch realisiert, um Wochenend-Gaps zu vermeiden.
                 """)
 
@@ -1326,6 +1327,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100** bei expansiver US-Netto-Liquidität.
                 * **🛡️ Makro-Absicherung (Hedge):** Bei marktweiten Abverkäufen (VIX > 28 / Liquiditätsabfall) kauft die KI temporär **Index-Puts (DAX / S&P 500 Short-Hedge)**, um Buchgewinne abzusichern.
                 * **🎯 Trailing-Stop:** Ab +10 % Gewinn Stop-Loss auf Einstand + 5 %; ab +20 % Trailing-Stop mit 8 % Puffer unter dem Peak.
+                * **🛡️ Laufendes Wachstums-Audit:** Bricht die Trendlinie (EMA 50) oder stürzt das Analysten-Sentiment ab (Score < 45), erfolgt ein **vorzeitiger Thesen-Ausstieg**, um kein totes Kapital mitzuschleppen.
+                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) oder stagnierende Titel werden bei Verfügbarkeit neuer Top-Growth-Leader (Alpha-Vorteil ≥ 20 Punkte) umgeschichtet.
                 """)
 
             with h_tab3:
@@ -1342,6 +1345,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus-Zertifikate mit ≥ 25 % Sicherheitspuffer |
 
                 * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100** ➔ Qualitäts-Compounder oder **🛡️ Bonus-Zertifikat (-25 % Puffer, +14 % Bonusrendite)**.
+                * **🛡️ Fortlaufendes Bilanz- & Burggraben-Audit:** Verschlechtert sich die Bonität (Piotroski < 5 oder Altman Z droht in Notlage abzurutschen), trennt sich das System vom Titel, um das Langfrist-Portfolio vor Value Traps zu schützen.
                 * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Kernaktien.
                 * **📜 Unveränderlicher Audit-Trail:** Alle Transaktionen werden atomar in der SQLite-Datenbank protokolliert.
                 """)
