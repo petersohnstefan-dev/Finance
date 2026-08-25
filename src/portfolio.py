@@ -1,6 +1,7 @@
 import json
 import os
 import datetime
+import pandas as pd
 from typing import Dict, Any, List, Optional
 import yfinance as yf
 from src.db import PortfolioDB
