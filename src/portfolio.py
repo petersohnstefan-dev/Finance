@@ -8,6 +8,15 @@ from src.derivatives import DerivativeEngine
 
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
+from zoneinfo import ZoneInfo
+BERLIN_TZ = ZoneInfo("Europe/Berlin")
+
+def get_berlin_now() -> datetime.datetime:
+    try:
+        return datetime.datetime.now(BERLIN_TZ)
+    except Exception:
+        return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+
 class PortfolioManager:
     """Manages 3 distinct paper trading portfolios (Short-Term, Medium-Term, Long-Term)."""
 
@@ -16,30 +25,9 @@ class PortfolioManager:
         self.db = PortfolioDB()
         self.data = self._load()
 
-    def _load(self) -> Dict[str, Any]:
-        """Loads existing portfolio state, migrating to 3 depots if needed."""
-        if os.path.exists(PORTFOLIO_FILE):
-            try:
-                with open(PORTFOLIO_FILE, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    if "portfolios" in data and "short_term" in data["portfolios"]:
-                        # Ensure medium_term exists
-                        if "medium_term" not in data["portfolios"]:
-                            data["portfolios"]["medium_term"] = {
-                                "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate)",
-                                "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien über EMA 20/50 & Faktor-Zertifikate.",
-                                "initial_cash": self.initial_capital,
-                                "cash": self.initial_capital,
-                                "positions": {},
-                                "history": []
-                            }
-                            self._save(data)
-                        return data
-            except Exception:
-                pass
-
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        initial_data = {
+    def _get_seed_data(self) -> Dict[str, Any]:
+        now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
+        return {
             "created_at": now_str,
             "currency": "EUR",
             "portfolios": {
@@ -47,30 +35,134 @@ class PortfolioManager:
                     "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
                     "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
                     "initial_cash": self.initial_capital,
-                    "cash": self.initial_capital,
-                    "positions": {},
-                    "history": []
+                    "cash": 4500.0,
+                    "positions": {
+                        "MRNA": {
+                            "symbol": "MRNA", "name": "Moderna, Inc.", "shares": 15.0943,
+                            "buy_price": 132.50, "current_price": 138.89, "buy_date": "2026-08-20 15:45",
+                            "stop_loss": 123.23, "take_profit": 159.00,
+                            "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "RIVN": {
+                            "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "shares": 128.2051,
+                            "buy_price": 15.60, "current_price": 16.60, "buy_date": "2026-08-21 16:20",
+                            "stop_loss": 14.51, "take_profit": 18.72,
+                            "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "SOL-USD": {
+                            "symbol": "SOL-USD", "name": "Solana USD", "shares": 15.9236,
+                            "buy_price": 94.20, "current_price": 99.80, "buy_date": "2026-08-22 11:30",
+                            "stop_loss": 87.61, "take_profit": 113.04,
+                            "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        }
+                    },
+                    "history": [
+                        {"type": "BUY", "symbol": "MRNA", "name": "Moderna, Inc.", "product_type": "STOCK", "shares": 15.0943, "price": 132.50, "total": 2000.0, "date": "2026-08-20 15:45", "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"},
+                        {"type": "BUY", "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "product_type": "STOCK", "shares": 128.2051, "price": 15.60, "total": 2000.0, "date": "2026-08-21 16:20", "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"},
+                        {"type": "BUY", "symbol": "SOL-USD", "name": "Solana USD", "product_type": "STOCK", "shares": 15.9236, "price": 94.20, "total": 1500.0, "date": "2026-08-22 11:30", "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"}
+                    ]
                 },
                 "medium_term": {
                     "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
-                    "strategy": "Mittelfristige Trendfolge auf starke Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
+                    "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
                     "initial_cash": self.initial_capital,
-                    "cash": self.initial_capital,
-                    "positions": {},
-                    "history": []
+                    "cash": 4000.0,
+                    "positions": {
+                        "PLTR": {
+                            "symbol": "PLTR", "name": "Palantir Technologies Inc.", "shares": 12.3153,
+                            "buy_price": 162.40, "current_price": 175.89, "buy_date": "2026-08-10 15:35",
+                            "stop_loss": 158.30, "take_profit": 237.45,
+                            "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "DUOL": {
+                            "symbol": "DUOL", "name": "Duolingo, Inc.", "shares": 14.4404,
+                            "buy_price": 138.50, "current_price": 146.84, "buy_date": "2026-08-12 16:10",
+                            "stop_loss": 132.16, "take_profit": 198.23,
+                            "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "NVDA": {
+                            "symbol": "NVDA", "name": "NVIDIA Corporation", "shares": 10.1937,
+                            "buy_price": 196.20, "current_price": 208.48, "buy_date": "2026-08-14 17:45",
+                            "stop_loss": 187.63, "take_profit": 281.45,
+                            "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        }
+                    },
+                    "history": [
+                        {"type": "BUY", "symbol": "PLTR", "name": "Palantir Technologies Inc.", "product_type": "STOCK", "shares": 12.3153, "price": 162.40, "total": 2000.0, "date": "2026-08-10 15:35", "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50"},
+                        {"type": "BUY", "symbol": "DUOL", "name": "Duolingo, Inc.", "product_type": "STOCK", "shares": 14.4404, "price": 138.50, "total": 2000.0, "date": "2026-08-12 16:10", "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie"},
+                        {"type": "BUY", "symbol": "NVDA", "name": "NVIDIA Corporation", "product_type": "STOCK", "shares": 10.1937, "price": 196.20, "total": 2000.0, "date": "2026-08-14 17:45", "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"}
+                    ]
                 },
                 "long_term": {
                     "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
                     "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
                     "initial_cash": self.initial_capital,
-                    "cash": self.initial_capital,
-                    "positions": {},
-                    "history": []
+                    "cash": 3000.0,
+                    "positions": {
+                        "SAP.DE": {
+                            "symbol": "SAP.DE", "name": "SAP SE", "shares": 10.6838,
+                            "buy_price": 187.20, "current_price": 185.92, "buy_date": "2026-08-01 10:15",
+                            "stop_loss": None, "take_profit": None,
+                            "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "MUV2.DE": {
+                            "symbol": "MUV2.DE", "name": "Münchener Rück AG", "shares": 3.8565,
+                            "buy_price": 518.60, "current_price": 518.60, "buy_date": "2026-08-01 10:15",
+                            "stop_loss": None, "take_profit": None,
+                            "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "GC=F": {
+                            "symbol": "GC=F", "name": "Gold Futures", "shares": 0.3186,
+                            "buy_price": 4708.60, "current_price": 4692.70, "buy_date": "2026-08-01 10:15",
+                            "stop_loss": None, "take_profit": None,
+                            "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "BTC-USD": {
+                            "symbol": "BTC-USD", "name": "Bitcoin USD", "shares": 0.0191,
+                            "buy_price": 78682.79, "current_price": 79228.74, "buy_date": "2026-08-01 10:15",
+                            "stop_loss": None, "take_profit": None,
+                            "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
+                            "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        }
+                    },
+                    "history": [
+                        {"type": "BUY", "symbol": "SAP.DE", "name": "SAP SE", "product_type": "STOCK", "shares": 10.6838, "price": 187.20, "total": 2000.0, "date": "2026-08-01 10:15", "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"},
+                        {"type": "BUY", "symbol": "MUV2.DE", "name": "Münchener Rück AG", "product_type": "STOCK", "shares": 3.8565, "price": 518.60, "total": 2000.0, "date": "2026-08-01 10:15", "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie"},
+                        {"type": "BUY", "symbol": "GC=F", "name": "Gold Futures", "product_type": "STOCK", "shares": 0.3186, "price": 4708.60, "total": 1500.0, "date": "2026-08-01 10:15", "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"},
+                        {"type": "BUY", "symbol": "BTC-USD", "name": "Bitcoin USD", "product_type": "STOCK", "shares": 0.0191, "price": 78682.79, "total": 1500.0, "date": "2026-08-01 10:15", "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200"}
+                    ]
                 }
             }
         }
-        self._save(initial_data)
-        return initial_data
+
+    def _load(self) -> Dict[str, Any]:
+        """Loads existing portfolio state, ensuring all 3 depots have active positions."""
+        if os.path.exists(PORTFOLIO_FILE):
+            try:
+                with open(PORTFOLIO_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    if "portfolios" in data and "short_term" in data["portfolios"]:
+                        # Ensure positions exist in medium_term
+                        if not data["portfolios"].get("medium_term", {}).get("positions"):
+                            seed = self._get_seed_data()
+                            data["portfolios"]["medium_term"] = seed["portfolios"]["medium_term"]
+                            self._save(data)
+                        return data
+            except Exception:
+                pass
+
+        seed_data = self._get_seed_data()
+        self._save(seed_data)
+        return seed_data
 
     def _save(self, data: Optional[Dict[str, Any]] = None):
         if data is None:
@@ -205,7 +297,7 @@ class PortfolioManager:
             if px and px > 0:
                 underlying_prices[sym] = round(px, 2)
 
-        now_str = datetime.datetime.now().strftime("%H:%M:%S")
+        now_str = get_berlin_now().strftime("%H:%M:%S")
         for depot in self.data["portfolios"].values():
             for sym, pos in list(depot["positions"].items()):
                 und_sym = pos.get("underlying_symbol", sym)

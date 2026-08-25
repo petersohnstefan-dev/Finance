@@ -23,6 +23,7 @@ from src.advanced_intelligence import (
     EarningsRevisionEngine, EarningsCallAnalyzer, FREDMacroEngine, CryptoOnChainEngine
 )
 from src.realtime_scanner import RealTimeBreakoutScanner
+from src.market_seasonality import MarketSeasonalityEngine, get_berlin_now
 
 # Page Configuration
 st.set_page_config(
@@ -797,58 +798,108 @@ elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
     </div>
     """, unsafe_allow_html=True)
 
-    # 2. Central Banks Rate Board
-    st.markdown("### 🏛️ Zentralbank-Barometer & Zinspfade")
-    cb_cols = st.columns(4)
-    cb_data = climate_info.get("central_banks", {})
+    # Mode 6 Tabs: Central Banks, Seasonality/Calendar, News Feed
+    m_tab1, m_tab2, m_tab3 = st.tabs([
+        "🏛️ Zentralbanken & Zinspfade",
+        "📅 Saisonalität, Kalender-Anomalien & Makro-Events",
+        "📰 Live-Nachrichten-Ticker"
+    ])
 
-    for idx, (cb_name, cb_vals) in enumerate(cb_data.items()):
-        with cb_cols[idx]:
-            st.markdown(f"""
-            <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
-                <div style="font-weight: bold; color: #38bdf8; font-size: 16px;">{cb_name}</div>
-                <div style="font-size: 24px; font-weight: bold; color: #f59e0b; margin: 4px 0;">{cb_vals['rate']}</div>
-                <div style="font-size: 13px; color: #cbd5e1;"><b>Haltung:</b> {cb_vals['stance']}</div>
-                <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
-                <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Inflation: {cb_vals['current_cpi']} (Ziel: {cb_vals['inflation_target']})</div>
-            </div>
-            """, unsafe_allow_html=True)
+    with m_tab1:
+        st.markdown("### 🏛️ Zentralbank-Barometer & Zinspfade")
+        cb_cols = st.columns(4)
+        cb_data = climate_info.get("central_banks", {})
 
-    # 3. Quality Financial News Feed
-    st.markdown("---")
-    st.markdown("### 📰 Live-Nachrichten-Ticker aus seriösen Wirtschaftsmedien")
-    
-    n_f1, n_f2 = st.columns([1, 2])
-    with n_f1:
-        sources_available = ["Alle"] + sorted(list(set(n["source"] for n in news_items)))
-        selected_source = st.selectbox("Quelle filtern", sources_available)
-    with n_f2:
-        search_query = st.text_input("🔍 Schlagwort / Ticker suchen (z. B. Zinsen, Fed, Gold, Nvidia, Inflation):", value="")
-
-    filtered_news = news_items
-    if selected_source != "Alle":
-        filtered_news = [n for n in filtered_news if n["source"] == selected_source]
-    if search_query.strip():
-        q = search_query.strip().lower()
-        filtered_news = [n for n in filtered_news if q in n["title"].lower() or q in n.get("snippet", "").lower()]
-
-    if filtered_news:
-        for item in filtered_news:
-            source_badge_color = "#38bdf8" if "EZB" in item["source"] or "Fed" in item["source"] else ("#f59e0b" if "Handelsblatt" in item["source"] or "FAZ" in item["source"] else "#a78bfa")
-            st.markdown(f"""
-            <div style="background-color: #1a1e29; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
-                <div style="display: flex; justify-content: space-between; font-size: 12px; color: #94a3b8;">
-                    <span style="font-weight: bold; color: {source_badge_color};">📌 {item['source']} • {item.get('category', '')}</span>
-                    <span>🕒 {item.get('published', '')[:25]}</span>
+        for idx, (cb_name, cb_vals) in enumerate(cb_data.items()):
+            with cb_cols[idx]:
+                st.markdown(f"""
+                <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                    <div style="font-weight: bold; color: #38bdf8; font-size: 16px;">{cb_name}</div>
+                    <div style="font-size: 24px; font-weight: bold; color: #f59e0b; margin: 4px 0;">{cb_vals['rate']}</div>
+                    <div style="font-size: 13px; color: #cbd5e1;"><b>Haltung:</b> {cb_vals['stance']}</div>
+                    <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
+                    <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Inflation: {cb_vals['current_cpi']} (Ziel: {cb_vals['inflation_target']})</div>
                 </div>
-                <h4 style="margin: 6px 0; color: white;">
-                    <a href="{item['link']}" target="_blank" style="color: #f1f5f9; text-decoration: none;">{item['title']}</a>
-                </h4>
-                <p style="margin: 0; font-size: 13px; color: #cbd5e1;">{item.get('snippet', '')}</p>
-            </div>
-            """, unsafe_allow_html=True)
-    else:
-        st.info("Keine Nachrichten für den gewählten Filter gefunden.")
+                """, unsafe_allow_html=True)
+
+    with m_tab2:
+        st.markdown("### 📅 Quantitative Saisonalität, Wochentags-Muster & Event-Risiken")
+        st.caption("Statistische Verhaltensmuster der Marktteilnehmer: Day-of-Week Bias, Freitags-Derisking, Turn-of-the-Month und Zentralbank-Blackout-Phasen.")
+
+        seas = MarketSeasonalityEngine.get_current_seasonality_analysis()
+        
+        # Metric row for current day seasonality
+        s_col1, s_col2, s_col3 = st.columns(3)
+        with s_col1:
+            st.metric("Heutiger Wochentag", f"{seas['weekday']}", delta=seas['day_bias']['status'])
+        with s_col2:
+            st.metric("Turn-of-the-Month (TOM)", "Monatswechsel-Effekt", delta=seas['tom_anomaly']['status'])
+        with s_col3:
+            st.metric("KI-Saisonalitäts-Modifikator", f"{seas['total_score_modifier']:+d} Punkte", delta="Score-Einfluss auf Kauf-Trigger")
+
+        # Current Day Detailed Strategy Card
+        st.markdown(f"""
+        <div style="background-color: #1e293b; border-left: 5px solid #a78bfa; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <h4 style="margin: 0 0 5px 0; color: #a78bfa;">🎯 Heutiges statistisches Marktmuster: {seas['day_bias']['name']}</h4>
+            <p style="margin: 4px 0; color: #e2e8f0; font-size: 14px;">{seas['day_bias']['description']}</p>
+            <div style="margin-top: 8px; font-size: 13px; color: #38bdf8;"><b>🤖 Handelsregel der KI für heute:</b> {seas['day_bias']['trading_rule']}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("#### 📋 Wichtigste Makro- & Kalender-Anomalien im Überblick:")
+        
+        cal_df = pd.DataFrame(seas["events_calendar"])
+        cal_display = pd.DataFrame()
+        cal_display["Makro-Event / Anomalie"] = cal_df["event"]
+        cal_display["Frequenz / Typischer Zeitpunkt"] = cal_df["frequency"]
+        cal_display["Volatilitäts-Impakt"] = cal_df["impact"]
+        cal_display["Handels-Regel der KI"] = cal_df["rule"]
+
+        c_cfg = {
+            "Makro-Event / Anomalie": st.column_config.TextColumn("Event", help="Wirtschafts- oder Zentralbankereignis"),
+            "Frequenz / Typischer Zeitpunkt": st.column_config.TextColumn("Turnus", help="Wann das Ereignis eintritt"),
+            "Volatilitäts-Impakt": st.column_config.TextColumn("Impakt", help="Erwartete Marktschwankung"),
+            "Handels-Regel der KI": st.column_config.TextColumn("KI-Handelsregel", help="Wie die Algorithmen auf das Event reagieren")
+        }
+
+        st.dataframe(cal_display, column_config=c_cfg, use_container_width=True, hide_index=True)
+
+        st.info(f"🌐 **Quartals-Saisonalität:** {seas['seasonal_context']}")
+
+    with m_tab3:
+        st.markdown("### 📰 Live-Nachrichten-Ticker aus seriösen Wirtschaftsmedien")
+        
+        n_f1, n_f2 = st.columns([1, 2])
+        with n_f1:
+            sources_available = ["Alle"] + sorted(list(set(n["source"] for n in news_items)))
+            selected_source = st.selectbox("Quelle filtern", sources_available)
+        with n_f2:
+            search_query = st.text_input("🔍 Schlagwort / Ticker suchen (z. B. Zinsen, Fed, Gold, Nvidia, Inflation):", value="")
+
+        filtered_news = news_items
+        if selected_source != "Alle":
+            filtered_news = [n for n in filtered_news if n["source"] == selected_source]
+        if search_query.strip():
+            q = search_query.strip().lower()
+            filtered_news = [n for n in filtered_news if q in n["title"].lower() or q in n.get("snippet", "").lower()]
+
+        if filtered_news:
+            for item in filtered_news:
+                source_badge_color = "#38bdf8" if "EZB" in item["source"] or "Fed" in item["source"] else ("#f59e0b" if "Handelsblatt" in item["source"] or "FAZ" in item["source"] else "#a78bfa")
+                st.markdown(f"""
+                <div style="background-color: #1a1e29; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #94a3b8;">
+                        <span style="font-weight: bold; color: {source_badge_color};">📌 {item['source']} • {item.get('category', '')}</span>
+                        <span>🕒 {item.get('published', '')[:25]}</span>
+                    </div>
+                    <h4 style="margin: 6px 0; color: white;">
+                        <a href="{item['link']}" target="_blank" style="color: #f1f5f9; text-decoration: none;">{item['title']}</a>
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #cbd5e1;">{item.get('snippet', '')}</p>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.info("Keine Nachrichten für den gewählten Filter gefunden.")
 
 # ==============================================================================
 # MODE 5: MUSTERDEPOTS & LIVE-PERFORMANCE (3 DEPOTS)
@@ -944,17 +995,18 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             st.toast(f"🤖 Autopilot: {', '.join(actions)}", icon="⚡")
 
         summary = pm.get_depot_summary(depot_key)
-        now_time = datetime.datetime.now().strftime("%H:%M:%S")
+        now_time = get_berlin_now().strftime("%H:%M:%S")
+        seas = MarketSeasonalityEngine.get_current_seasonality_analysis()
 
-        # Action Toolbar & Status Bar
-        col_st1, col_st2 = st.columns([2.5, 1])
+        # Action Toolbar & Status Bar with Seasonality Badge
+        col_st1, col_st2 = st.columns([2.8, 1.2])
         with col_st1:
             st.markdown(f"""
             <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 14px; color: #f8fafc;">
-                    🟢 <b>Live-Stream aktiv</b> • Letztes Update: <b style="color: #38bdf8;">{now_time}</b> • Taktung: <b style="color: #34d399;">alle 30 Sekunden</b>
+                <span style="font-size: 13.5px; color: #f8fafc;">
+                    🟢 <b>Live-Stream</b> • Letztes Update: <b style="color: #38bdf8;">{now_time} (MESZ / Berlin)</b> • <span style="color: #a78bfa;">📅 {seas['weekday']}: <b>{seas['day_bias']['name']}</b> ({seas['total_score_modifier']:+d} Pkt.)</span>
                 </span>
-                <span style="font-size: 13px; color: #94a3b8;">Kosten: <b>0,00 €</b> (0 Delay)</span>
+                <span style="font-size: 12.5px; color: #94a3b8;">Taktung: <b style="color: #34d399;">alle 30s</b> (0,00 €)</span>
             </div>
             """, unsafe_allow_html=True)
         with col_st2:
