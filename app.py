@@ -1295,17 +1295,19 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes, Hebel & Shorts)
                 **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung, Leerverkäufer-Fallen & **bearishe Short-Breakdowns**.
 
-                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **📈 Charttechnik & Momentum** | **30 %** | Kurs über/unter EMA 20 & EMA 50, RSI zwischen 50–68 (Long) bzw. < 40 (Short) |
-                | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50 (Long) oder > 1.20 (Bearish Put-Sweeps), Block-Trades |
-                | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % (Squeeze) ODER aggressive BaFin-Netto-Aufstockungen (Short-Signal) |
-                | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish / Extreme Panik) |
-                | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse (Long) oder massive Zuflüsse auf Börsen (Verkaufsdruck) |
+                | **🎯 1. Smart Money & Dark Pools** | **25 %** | Put/Call-Ratio < 0.55 (Call-Sweeps) oder > 1.20 (Put-Hedging), Dark-Pool-Blockshare > 35 % |
+                | **📈 Charttechnik & Intraday-Ticks** | **25 %** | Kurs über EMA 20/50, RSI 50–68 (Long) bzw. Support-Bruch & RSI < 40 (Short) |
+                | **💬 4. Social Sentiment & Buzz** | **20 %** | Relative Erwähnungs-Spitzen auf Reddit WSB & StockTwits (> 150 % Anstieg in 24h) |
+                | **🪤 Leerverkäufer & BaFin-Shorts** | **15 %** | Short Float > 12 % (Squeeze-Falle) ODER aggressive BaFin-Netto-Aufstockungen |
+                | **⛓️ 6. Krypto On-Chain & Derivate**| **15 %** | Krypto-Funding-Rates (+6.8% gesund), Exchange-Netto-Abflüsse (Cold Storage) |
 
-                * **🟢 KAUF-Trigger (Long):** Kurzfrist-Score ≥ **75 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Hebel)**.
+                * **🟢 KAUF-Trigger (Long):** Multi-Source Alpha-Score ≥ **55 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Knock-Out Call)**.
                 * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
-                * **🎯 Dynamischer Trailing-Exit:** Ab +10 % Gewinn Stop-Loss auf Einstand + 3 % nachziehen; ab +18 % greift ein dynamischer Trailing-Stop (6 % Puffer unter dem Zwischenhoch).
+                * **🎯 Dynamischer Trailing-Exit:** Ab +8 % Gewinn Stop-Loss auf Einstand + 3 % nachziehen; ab +18 % greift ein dynamischer Trailing-Stop (6 % Puffer unter dem Zwischenhoch).
+                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) werden dynamisch liquidiert, wenn Cash < 1.500 € ist, um frisches Kapital für neue Leader freizusetzen.
+                * **🛡️ Freitags-Derisking:** Vor dem Wochenende werden gehebelte Knock-Out-Gewinne (ab +10 %) automatisch realisiert, um Wochenend-Gaps zu vermeiden.
                 """)
 
             with h_tab2:
@@ -1313,17 +1315,17 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing, Wachstum & Makro-Hedging)
                 **Ziel:** Reiten starker Aufwärtstrends bei Wachstumsaktien + **aktive Portfolio-Absicherung bei Markt-Korrekturen**.
 
-                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **📈 Earnings-Revisionen (EPS)** | **35 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + EPS-Surprises |
-                | **🎙️ Earnings Call KI-Tonalität** | **25 %** | KI-Sprachscore > 85/100 (Fokus auf Margenwachstum & Auftragsrekorde) |
-                | **📊 Trendfolge über EMA 50** | **20 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
-                | **🐋 Whale- & Kongress-Tracking** | **10 %** | Star-Investoren (Buffett, Druckenmiller) oder Kongressmitglieder kaufen |
-                | **🌐 FRED-Makro & Zinskurve** | **10 %** | Normalisierung der Zinskurve (10Y/2Y) und fallender US-Dollar-Index (DXY) |
+                | **🌊 3. US Netto-Liquidität & FedWatch** | **30 %** | `Fed Balance Sheet − TGA − Reverse Repo` (Expansiv: > 6 Bio. USD) + FedWatch Zinswende |
+                | **📈 Analysten-Revisionen (EPS)** | **25 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + positive EPS-Surprises |
+                | **🏛️ 2. SEC Form 4 & Kongress-Trades** | **20 %** | Vorstands-Käufe (CEO/Director) & US-Kongress-Disclosures (Nancy Pelosi, House Committees) |
+                | **🎙️ Earnings Call KI-Tonalität** | **15 %** | Semantischer NLP-Sprachscore > 80/100 (Fokus auf Margenwachstum & AI-Monetarisierung) |
+                | **📊 Trendfolge über EMA 50** | **10 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
 
-                * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100**.
-                * **🛡️ Makro-Absicherung (Hedge):** Bei marktweiten Abverkäufen (VIX > 28 / Zins-Schock) kauft die KI temporär **Index-Puts (DAX / S&P 500 Short-Hedge)**, um Buchgewinne abzusichern.
-                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) werden dynamisch liquidiert, um frisches Kapital für neue Leader freizusetzen.
+                * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100** bei expansiver US-Netto-Liquidität.
+                * **🛡️ Makro-Absicherung (Hedge):** Bei marktweiten Abverkäufen (VIX > 28 / Liquiditätsabfall) kauft die KI temporär **Index-Puts (DAX / S&P 500 Short-Hedge)**, um Buchgewinne abzusichern.
+                * **🎯 Trailing-Stop:** Ab +10 % Gewinn Stop-Loss auf Einstand + 5 %; ab +20 % Trailing-Stop mit 8 % Puffer unter dem Peak.
                 """)
 
             with h_tab3:
@@ -1331,16 +1333,17 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 #### 🏛️ Langfristiges Investment-Depot (Quality, Gold, Moat & Crash-Schutz)
                 **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold, digitalem Wertspeicher & defensiven Bonus-Zertifikaten.
 
-                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **🏰 Kapitalrendite & Burggraben** | **35 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 % |
-                | **🛡️ Bilanzqualität & Solidität** | **25 %** | Verschuldungsgrad (Debt/Equity) < 1,0, krisensicherer Cash-Bestand |
-                | **🌐 FRED-Makro & Zyklen** | **20 %** | Allokation in Gold & Bitcoin als Währungs- und Inflationsabsicherung |
-                | **🏷️ Bewertung & Sicherheitsmarge** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus mit ≥ 25 % Sicherheitspuffer |
-                | **🎯 Analysten-Upside & Insider** | **10 %** | Konsenskursziel > +15 % + Käufe durch CEOs/Vorstände (*Directors' Dealings*) |
+                | **🏰 5. Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** |
+                | **🏛️ 2. Insider- & Whale-Convictions** | **25 %** | Star-Investoren (Warren Buffett, Bill Ackman) & Directors' Dealings der Vorstände |
+                | **🌐 3. Makro-Zyklen, Gold & BTC** | **20 %** | Allokation in Gold (GC=F) & Bitcoin (BTC-USD) als Währungs- und Inflationsschutz |
+                | **🏰 Kapitalrendite & Burggraben** | **10 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |
+                | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus-Zertifikate mit ≥ 25 % Sicherheitspuffer |
 
                 * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100** ➔ Qualitäts-Compounder oder **🛡️ Bonus-Zertifikat (-25 % Puffer, +14 % Bonusrendite)**.
-                * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Aktien.
+                * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Kernaktien.
+                * **📜 Unveränderlicher Audit-Trail:** Alle Transaktionen werden atomar in der SQLite-Datenbank protokolliert.
                 """)
 
     # Call the fragment
