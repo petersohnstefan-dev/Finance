@@ -95,8 +95,11 @@ class PortfolioDB:
     def record_trade(self, depot_id: str, trade_type: str, symbol: str, name: str, 
                      shares: float, total_amount: float, price: float, 
                      sell_price: Optional[float] = None, pnl: Optional[float] = None, 
-                     pnl_pct: Optional[float] = None, reason: str = ""):
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                     pnl_pct: Optional[float] = None, reason: str = "",
+                     executed_at: Optional[str] = None):
+        now_str = executed_at or datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        buy_p = price if trade_type == "BUY" else price
+        sell_p = sell_price if trade_type == "SELL" else None
         with self._get_conn() as conn:
             cursor = conn.cursor()
             cursor.execute("""
@@ -106,8 +109,7 @@ class PortfolioDB:
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 depot_id, trade_type, symbol, name, shares, 
-                price if trade_type == "BUY" else None,
-                sell_price if trade_type == "SELL" else None,
+                buy_p, sell_p,
                 total_amount, pnl, pnl_pct, now_str, reason
             ))
             conn.commit()
