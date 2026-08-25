@@ -178,7 +178,11 @@ class PortfolioManager:
         return True
 
     def update_live_prices(self):
-        """Fetches fresh live prices for all positions across all 3 depots."""
+        """Fetches fresh live tick prices for all positions across all 3 depots in parallel."""
+        from src.realtime_scanner import RealTimeBreakoutScanner
+        from concurrent.futures import ThreadPoolExecutor
+        scanner = RealTimeBreakoutScanner()
+        
         underlying_prices = {}
         all_symbols = set()
         
@@ -187,20 +191,27 @@ class PortfolioManager:
                 und_sym = pos.get("underlying_symbol", sym)
                 all_symbols.add(und_sym)
 
-        for sym in all_symbols:
+        def fetch_single(sym):
             try:
-                t = yf.Ticker(sym)
-                hist = t.history(period="2d")
-                if not hist.empty:
-                    underlying_prices[sym] = round(hist['Close'].iloc[-1], 2)
+                px = scanner.get_live_tick(sym)
+                return sym, px
             except Exception:
-                pass
+                return sym, None
 
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            results = list(executor.map(fetch_single, list(all_symbols)))
+
+        for sym, px in results:
+            if px and px > 0:
+                underlying_prices[sym] = round(px, 2)
+
+        now_str = datetime.datetime.now().strftime("%H:%M:%S")
         for depot in self.data["portfolios"].values():
             for sym, pos in list(depot["positions"].items()):
                 und_sym = pos.get("underlying_symbol", sym)
                 curr_und_p = underlying_prices.get(und_sym)
                 if curr_und_p:
+                    pos["last_updated"] = now_str
                     if pos.get("derivative_type") in ["KNOCKOUT", "FACTOR", "BONUS"]:
                         DerivativeEngine.update_derivative_price(pos, curr_und_p)
                     else:
@@ -233,6 +244,7 @@ class PortfolioManager:
                 "shares": shares,
                 "buy_price": buy_p,
                 "current_price": curr_p,
+                "last_updated": pos.get("last_updated", "-"),
                 "value": round(pos_val, 2),
                 "pnl": round(pnl, 2),
                 "pnl_pct": round(pnl_pct, 2),

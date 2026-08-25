@@ -930,239 +930,183 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
             """)
 
-    # Action Toolbar & Continuous Autopilot Engine
-    st.markdown("---")
-    col_auto1, col_auto2, col_manual = st.columns([2, 1.2, 1.5])
-    with col_auto1:
-        auto_pilot_enabled = st.toggle("🤖 **Vollautomatischer KI-Autopilot** (100% Kostenlos)", value=True, help="Führt Stop-Loss, Take-Profit & Rebalancing kontinuierlich im Hintergrund aus.")
-    with col_auto2:
-        auto_interval = st.selectbox("Taktung", ["⚡ 15 Sekunden", "🕒 30 Sekunden", "⏱️ 60 Sekunden"], index=1, label_visibility="collapsed")
-    with col_manual:
-        manual_trigger = st.button("⚡ Jetzt sofort prüfen", use_container_width=True, help="Löst den Autopilot-Check sofort manuell aus.")
-
-    # Background Automated Execution Loop
-    interval_secs = 15 if "15" in auto_interval else (30 if "30" in auto_interval else 60)
-    now_ts = time.time()
-    last_check_ts = st.session_state.get("last_auto_check_ts", 0)
-
-    if auto_pilot_enabled:
-        time_since_last = int(now_ts - last_check_ts)
-        next_check_in = max(0, interval_secs - time_since_last)
-        st.caption(f"🟢 **Autopilot läuft permanent**: Nächster automatischer Check in **{next_check_in}s** • Kosten: **0,00 €** (Öffentliche Live-Feeds).")
+    # Define the Auto-Refreshing Live Depot Fragment (Runs every 30s automatically)
+    @st.fragment(run_every=30)
+    def render_live_depot_view(depot_key: str):
+        # 1. Fetch fresh live prices via parallel fast_info / Binance streamer
+        pm.update_live_prices()
         
-        if manual_trigger or (now_ts - last_check_ts >= interval_secs):
-            st.session_state["last_auto_check_ts"] = now_ts
-            with st.spinner("Autopilot prüft Stop-Loss, Take-Profit & Markt-Ausbrüche..."):
-                scan_data = load_cached_market_scan()
-                scan_list = scan_data.get("data", []) if scan_data else []
-                actions = pm.auto_trade_check(scan_list)
-                if actions:
-                    st.success(f"🤖 **Autopilot hat gehandelt:** {', '.join(actions)}")
-                elif manual_trigger:
-                    st.info("Alle Positionen im grünen Bereich (keine Handlungsnotwendigkeit).")
-            if manual_trigger:
+        # 2. Check Stop-Loss / Take-Profit automatically
+        scan_data = load_cached_market_scan()
+        scan_list = scan_data.get("data", []) if scan_data else []
+        actions = pm.auto_trade_check(scan_list)
+        if actions:
+            st.toast(f"🤖 Autopilot: {', '.join(actions)}", icon="⚡")
+
+        summary = pm.get_depot_summary(depot_key)
+        now_time = datetime.datetime.now().strftime("%H:%M:%S")
+
+        # Action Toolbar & Status Bar
+        col_st1, col_st2 = st.columns([2.5, 1])
+        with col_st1:
+            st.markdown(f"""
+            <div style="background-color: #1a1e29; border: 1px solid #334155; border-radius: 8px; padding: 10px 16px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; color: #f8fafc;">
+                    🟢 <b>Live-Stream aktiv</b> • Letztes Update: <b style="color: #38bdf8;">{now_time}</b> • Taktung: <b style="color: #34d399;">alle 30 Sekunden</b>
+                </span>
+                <span style="font-size: 13px; color: #94a3b8;">Kosten: <b>0,00 €</b> (0 Delay)</span>
+            </div>
+            """, unsafe_allow_html=True)
+        with col_st2:
+            st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+            if st.button("⚡ Jetzt sofort aktualisieren", use_container_width=True):
+                pm.update_live_prices()
                 st.rerun()
-    elif manual_trigger:
-        with st.spinner("Prüfe Stop-Loss, Take-Profit und Markt-Top-Picks..."):
-            scan_data = load_cached_market_scan()
-            scan_list = scan_data.get("data", []) if scan_data else []
-            actions = pm.auto_trade_check(scan_list)
-            if actions:
-                st.success(f"Handlungen ausgeführt: {', '.join(actions)}")
+
+        # 4 Metric Cards
+        m1, m2, m3, m4 = st.columns(4)
+        with m1:
+            st.metric(
+                "Depot-Gesamtwert", 
+                f"{summary['total_value']:,.2f} €", 
+                delta=f"{summary['total_pnl']:+,.2f} € ({summary['total_pnl_pct']:+.2f}%)"
+            )
+        with m2:
+            st.metric(
+                "Investiertes Kapital", 
+                f"{summary['invested_value']:,.2f} €",
+                help="Aktueller Marktwert aller offenen Positionen"
+            )
+        with m3:
+            st.metric(
+                "Freies Cash", 
+                f"{summary['cash']:,.2f} €", 
+                delta=f"{summary['cash_ratio_pct']:.1f}% Cash-Quote",
+                help="Verfügbare Liquidität für neue Käufe"
+            )
+        with m4:
+            st.metric(
+                "Offene Positionen", 
+                f"{len(summary['positions'])} Titel",
+                help="Anzahl der aktuell gehaltenen Werte"
+            )
+
+        st.caption(f"🎯 **Strategie:** {summary['strategy']}")
+
+        # Charts & Positions
+        tab_pos, tab_alloc, tab_hist = st.tabs([
+            "📋 Offene Positionen & Buchgewinne (Live-Ticks)",
+            "🥧 Asset Allocation (Gewichtung)",
+            "📜 Transaktions-Historie (Trade Log)"
+        ])
+
+        with tab_pos:
+            if summary["positions"]:
+                pos_df = pd.DataFrame(summary["positions"])
+                
+                for col in ["product_type", "leverage", "distance_to_ko", "last_updated"]:
+                    if col not in pos_df.columns:
+                        pos_df[col] = None
+
+                display_pos = pd.DataFrame()
+                display_pos["Ticker / WKN"] = pos_df["symbol"]
+                display_pos["Instrument / Name"] = pos_df["name"]
+                
+                type_map = {
+                    "STOCK": "Aktie / Krypto",
+                    "KNOCKOUT": "⚡ Knock-Out",
+                    "FACTOR": "🚀 Faktor-Zertifikat",
+                    "BONUS": "🛡️ Bonus-Zertifikat"
+                }
+                display_pos["Produkttyp"] = pos_df["product_type"].map(lambda x: type_map.get(x, x))
+                display_pos["Stück"] = pos_df["shares"]
+                display_pos["Kaufkurs"] = pos_df["buy_price"].apply(lambda x: f"{x:.2f}")
+                display_pos["Aktueller Kurs"] = pos_df["current_price"].apply(lambda x: f"{x:.2f}")
+                display_pos["Stand"] = pos_df["last_updated"].fillna(now_time)
+                display_pos["Marktwert (€)"] = pos_df["value"].apply(lambda x: f"{x:,.2f} €")
+                display_pos["Gewinn (€)"] = pos_df["pnl"].apply(lambda x: f"{x:+,.2f} €")
+                display_pos["Rendite (%)"] = pos_df["pnl_pct"].apply(lambda x: f"{x:+.2f}%")
+                display_pos["Hebel"] = pos_df["leverage"].apply(lambda x: f"{x:.1f}x" if pd.notnull(x) else "-")
+                display_pos["KO-Puffer"] = pos_df["distance_to_ko"].apply(lambda x: f"{x:.1f}%" if pd.notnull(x) else "-")
+                display_pos["Stop-Loss"] = pos_df["stop_loss"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
+                display_pos["Take-Profit"] = pos_df["take_profit"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
+                display_pos["Kaufgrund"] = pos_df["reason"]
+
+                pos_cfg = {
+                    "Ticker / WKN": st.column_config.TextColumn("Ticker / WKN", help="Börsenkürzel oder WKN des Zertifikats"),
+                    "Instrument / Name": st.column_config.TextColumn("Name", help="Name des Unternehmens oder Zertifikats"),
+                    "Produkttyp": st.column_config.TextColumn("Typ", help="Aktie, Krypto, Knock-Out, Faktor- oder Bonus-Zertifikat"),
+                    "Stück": st.column_config.NumberColumn("Stück", help="Anzahl gehaltener Stücke / Zertifikate"),
+                    "Kaufkurs": st.column_config.TextColumn("Kaufkurs", help="Einstandskurs in Euro"),
+                    "Aktueller Kurs": st.column_config.TextColumn("Live-Kurs", help="Sekundengenauer Live-Kurs"),
+                    "Stand": st.column_config.TextColumn("Uhrzeit", help="Zeitstempel des letzten Ticks"),
+                    "Marktwert (€)": st.column_config.TextColumn("Marktwert (€)", help="Gesamtwert der Position"),
+                    "Gewinn (€)": st.column_config.TextColumn("Gewinn (€)", help="Unrealisierter Buchgewinn/-verlust"),
+                    "Rendite (%)": st.column_config.TextColumn("Rendite (%)", help="Prozentuale Rendite"),
+                    "Hebel": st.column_config.TextColumn("Hebel", help="Effektiver Hebel (z. B. 3.5x) bei Derivaten"),
+                    "KO-Puffer": st.column_config.TextColumn("KO-Puffer", help="Prozentualer Abstand zur Knock-Out Schwelle bzw. Barriere"),
+                    "Stop-Loss": st.column_config.TextColumn("Stop-Loss", help="Automatischer Verkaufs-Trigger"),
+                    "Take-Profit": st.column_config.TextColumn("Take-Profit", help="Automatischer Gewinnmitnahme-Trigger"),
+                    "Kaufgrund": st.column_config.TextColumn("Kaufgrund / Signal", help="KI-Analyse & Einstiegsthese")
+                }
+
+                st.dataframe(
+                    display_pos,
+                    column_config=pos_cfg,
+                    use_container_width=True,
+                    hide_index=True
+                )
             else:
-                st.info("Keine Handlungsnotwendigkeit.")
-        st.rerun()
+                st.info("Keine offenen Positionen. Das Depot hält 100% Cash.")
 
-    summary = pm.get_depot_summary(selected_depot_key)
-
-    # 4 Metric Cards
-    st.markdown("---")
-    m1, m2, m3, m4 = st.columns(4)
-    with m1:
-        st.metric(
-            "Depot-Gesamtwert", 
-            f"{summary['total_value']:,.2f} €", 
-            delta=f"{summary['total_pnl']:+,.2f} € ({summary['total_pnl_pct']:+.2f}%)"
-        )
-    with m2:
-        st.metric(
-            "Investiertes Kapital", 
-            f"{summary['invested_value']:,.2f} €",
-            help="Aktueller Marktwert aller offenen Aktienpositionen"
-        )
-    with m3:
-        st.metric(
-            "Freies Cash", 
-            f"{summary['cash']:,.2f} €", 
-            delta=f"{summary['cash_ratio_pct']:.1f}% Cash-Quote",
-            help="Verfügbare Liquidität für neue Käufe"
-        )
-    with m4:
-        st.metric(
-            "Offene Positionen", 
-            f"{len(summary['positions'])} Titel",
-            help="Anzahl der aktuell gehaltenen Aktien"
-        )
-
-    st.caption(f"🎯 **Strategie:** {summary['strategy']}")
-
-    # Charts & Positions
-    tab_pos, tab_alloc, tab_hist = st.tabs([
-        "📋 Offene Positionen & Buchgewinne",
-        "🥧 Asset Allocation (Gewichtung)",
-        "📜 Transaktions-Historie (Trade Log)"
-    ])
-
-    with tab_pos:
-        if summary["positions"]:
-            pos_df = pd.DataFrame(summary["positions"])
+        with tab_alloc:
+            labels = [p["name"] for p in summary["positions"]] + ["Freies Cash"]
+            values = [p["value"] for p in summary["positions"]] + [summary["cash"]]
             
-            for col in ["product_type", "leverage", "distance_to_ko"]:
-                if col not in pos_df.columns:
-                    pos_df[col] = None
-
-            display_pos = pos_df[[
-                "symbol", "name", "product_type", "shares", "buy_price", "current_price", 
-                "value", "pnl", "pnl_pct", "leverage", "distance_to_ko", "stop_loss", "take_profit", "reason"
-            ]].copy()
-
-            display_pos.columns = [
-                "Ticker / WKN", "Instrument / Name", "Produkttyp", "Stück", "Kaufkurs", "Aktuell", 
-                "Marktwert (€)", "Gewinn (€)", "Rendite (%)", "Hebel", "KO-/Puffer-Abstand", "Stop-Loss", "Take-Profit", "Kaufgrund"
-            ]
-
-            type_map = {
-                "STOCK": "Aktie / Krypto",
-                "KNOCKOUT": "⚡ Knock-Out",
-                "FACTOR": "🚀 Faktor-Zertifikat",
-                "BONUS": "🛡️ Bonus-Zertifikat"
-            }
-            display_pos["Produkttyp"] = display_pos["Produkttyp"].map(lambda x: type_map.get(x, x))
-            display_pos["Kaufkurs"] = display_pos["Kaufkurs"].apply(lambda x: f"{x:.2f}")
-            display_pos["Aktuell"] = display_pos["Aktuell"].apply(lambda x: f"{x:.2f}")
-            display_pos["Marktwert (€)"] = display_pos["Marktwert (€)"].apply(lambda x: f"{x:,.2f} €")
-            display_pos["Gewinn (€)"] = display_pos["Gewinn (€)"].apply(lambda x: f"{x:+,.2f} €")
-            display_pos["Rendite (%)"] = display_pos["Rendite (%)"].apply(lambda x: f"{x:+.2f}%")
-            display_pos["Hebel"] = display_pos["Hebel"].apply(lambda x: f"{x:.1f}x" if pd.notnull(x) else "-")
-            display_pos["KO-/Puffer-Abstand"] = display_pos["KO-/Puffer-Abstand"].apply(lambda x: f"{x:.1f}%" if pd.notnull(x) else "-")
-            display_pos["Stop-Loss"] = display_pos["Stop-Loss"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
-            display_pos["Take-Profit"] = display_pos["Take-Profit"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
-
-            pos_cfg = {
-                "Ticker / WKN": st.column_config.TextColumn("Ticker / WKN", help="Börsenkürzel oder WKN des Zertifikats"),
-                "Instrument / Name": st.column_config.TextColumn("Name", help="Name des Unternehmens oder Zertifikats"),
-                "Produkttyp": st.column_config.TextColumn("Typ", help="Aktie, Krypto, Knock-Out, Faktor- oder Bonus-Zertifikat"),
-                "Stück": st.column_config.NumberColumn("Stück", help="Anzahl gehaltener Stücke / Zertifikate"),
-                "Kaufkurs": st.column_config.TextColumn("Kaufkurs", help="Einstandskurs in Euro"),
-                "Aktuell": st.column_config.TextColumn("Aktuell", help="Aktueller Kurs"),
-                "Marktwert (€)": st.column_config.TextColumn("Marktwert (€)", help="Gesamtwert der Position"),
-                "Gewinn (€)": st.column_config.TextColumn("Gewinn (€)", help="Unrealisierter Buchgewinn/-verlust"),
-                "Rendite (%)": st.column_config.TextColumn("Rendite (%)", help="Prozentuale Rendite"),
-                "Hebel": st.column_config.TextColumn("Hebel", help="Effektiver Hebel (z. B. 3.5x) bei Derivaten"),
-                "KO-/Puffer-Abstand": st.column_config.TextColumn("KO-Puffer", help="Prozentualer Abstand zur Knock-Out Schwelle bzw. Barriere"),
-                "Stop-Loss": st.column_config.TextColumn("Stop-Loss", help="Automatischer Verkaufs-Trigger"),
-                "Take-Profit": st.column_config.TextColumn("Take-Profit", help="Automatischer Gewinnmitnahme-Trigger"),
-                "Kaufgrund": st.column_config.TextColumn("Kaufgrund / Signal", help="KI-Analyse & Einstiegsthese")
-            }
-
-            st.dataframe(
-                display_pos,
-                column_config=pos_cfg,
-                use_container_width=True,
-                hide_index=True
+            fig_donut = go.Figure(data=[go.Pie(
+                labels=labels, 
+                values=values, 
+                hole=.45,
+                marker=dict(colors=['#38bdf8', '#a78bfa', '#34d399', '#f59e0b', '#ec4899', '#475569'])
+            )])
+            fig_donut.update_layout(
+                template="plotly_dark",
+                height=400,
+                margin=dict(l=20, r=20, t=30, b=20),
+                legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5)
             )
-        else:
-            st.info("Keine offenen Positionen. Das Depot hält 100% Cash.")
+            st.plotly_chart(fig_donut, use_container_width=True)
 
-    with tab_alloc:
-        labels = [p["name"] for p in summary["positions"]] + ["Freies Cash"]
-        values = [p["value"] for p in summary["positions"]] + [summary["cash"]]
-        
-        fig_donut = go.Figure(data=[go.Pie(
-            labels=labels, 
-            values=values, 
-            hole=.45,
-            marker=dict(colors=['#38bdf8', '#a78bfa', '#34d399', '#f59e0b', '#ec4899', '#475569'])
-        )])
-        fig_donut.update_layout(
-            template="plotly_dark",
-            height=400,
-            margin=dict(l=20, r=20, t=30, b=20),
-            legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5)
-        )
-        st.plotly_chart(fig_donut, use_container_width=True)
+        with tab_hist:
+            st.subheader("📜 Vollständige Transaktions-Historie (Trade Log)")
+            st.caption("Chronologisches Protokoll aller autonomen Käufe, Gewinnmitnahmen und Stop-Loss-Verkäufe.")
 
-    with tab_hist:
-        st.subheader("📜 Vollständige Transaktions-Historie (Trade Log)")
-        st.caption("Chronologisches Protokoll aller autonomen Käufe, Gewinnmitnahmen und Stop-Loss-Verkäufe.")
+            if summary["history"]:
+                hist_list = summary["history"]
+                h_df = pd.DataFrame(hist_list)
+                
+                display_h = pd.DataFrame()
+                display_h["Zeitpunkt"] = h_df.get("date", "-")
+                display_h["Aktion"] = h_df.get("action", "-")
+                display_h["Instrument"] = h_df.get("name", h_df.get("symbol", "-"))
+                display_h["Stück"] = h_df.get("shares", 0)
+                display_h["Kurs"] = h_df.apply(lambda r: f"{r.get('sell_price', r.get('buy_price', 0)):.2f} €", axis=1)
+                display_h["Volumen"] = h_df.get("total", 0).apply(lambda x: f"{x:,.2f} €")
+                display_h["Realisierter P&L"] = h_df.apply(
+                    lambda r: f"{r.get('pnl', 0):+,.2f} € ({r.get('pnl_pct', 0):+.2f}%)" if pd.notnull(r.get("pnl")) and r.get("action") == "SELL" else "-", 
+                    axis=1
+                )
+                display_h["Begründung"] = h_df.get("reason", "-")
 
-        if summary["history"]:
-            hist_list = summary["history"]
-            
-            # Summary Metrics for History
-            buys = sum(1 for h in hist_list if h.get("type") == "BUY")
-            sells = sum(1 for h in hist_list if h.get("type") == "SELL")
-            realized_pnl = sum(h.get("pnl", 0.0) for h in hist_list if h.get("type") == "SELL")
-            winning_trades = sum(1 for h in hist_list if h.get("type") == "SELL" and h.get("pnl", 0) > 0)
-            win_rate = (winning_trades / sells * 100.0) if sells > 0 else 0.0
+                st.dataframe(display_h, use_container_width=True, hide_index=True)
+            else:
+                st.info("Noch keine Transaktionen in der Historie.")
 
-            h_col1, h_col2, h_col3, h_col4 = st.columns(4)
-            with h_col1:
-                st.metric("Ausgeführte Trades", f"{len(hist_list)} Gesamt", help="Summe aller Transaktionen")
-            with h_col2:
-                st.metric("Käufe / Verkäufe", f"{buys} 🟢 / {sells} 🔴")
-            with h_col3:
-                st.metric("Realisierter Gewinn", f"{realized_pnl:+,.2f} €", delta=f"{realized_pnl:+,.2f} €" if sells > 0 else None)
-            with h_col4:
-                st.metric("Trefferquote (Win-Rate)", f"{win_rate:.1f}%" if sells > 0 else "N/A", help="Prozentualer Anteil profitabler Verkäufe")
-
-            st.markdown("---")
-
-            # Formatted History Table
-            hist_df = pd.DataFrame(hist_list)
-            
-            # Ensure columns exist
-            for c in ["type", "symbol", "name", "shares", "price", "sell_price", "total", "pnl", "pnl_pct", "date", "reason"]:
-                if c not in hist_df.columns:
-                    hist_df[c] = None
-
-            display_hist = pd.DataFrame()
-            display_hist["Aktion"] = hist_df["type"].apply(lambda x: "🟢 KAUF" if x == "BUY" else "🔴 VERKAUF")
-            display_hist["Datum"] = hist_df["date"]
-            display_hist["Ticker"] = hist_df["symbol"]
-            display_hist["Unternehmen"] = hist_df["name"]
-            display_hist["Stück"] = hist_df["shares"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
-            display_hist["Kurs"] = hist_df.apply(lambda row: f"{row['price']:.2f}" if row['type'] == 'BUY' else f"{row.get('sell_price', row['price']):.2f}", axis=1)
-            display_hist["Volumen"] = hist_df["total"].apply(lambda x: f"{x:,.2f} €" if pd.notnull(x) else "-")
-            display_hist["Realisierter P&L (€)"] = hist_df.apply(
-                lambda row: f"{row['pnl']:+,.2f} € ({row['pnl_pct']:+.1f}%)" if row['type'] == 'SELL' and pd.notnull(row.get('pnl')) else "-",
-                axis=1
-            )
-            display_hist["Begründung / Signal"] = hist_df["reason"].fillna("-")
-
-            hist_cfg = {
-                "Aktion": st.column_config.TextColumn("Aktion", help="Art der Transaktion (Kauf oder Verkauf)"),
-                "Datum": st.column_config.TextColumn("Datum & Uhrzeit", help="Zeitpunkt der Ausführung"),
-                "Ticker": st.column_config.TextColumn("Ticker", help="Aktien-Symbol"),
-                "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmensname"),
-                "Stück": st.column_config.TextColumn("Stück", help="Anzahl der gehandelten Aktien"),
-                "Kurs": st.column_config.TextColumn("Ausführungskurs", help="Kurs zum Zeitpunkt der Transaktion"),
-                "Volumen": st.column_config.TextColumn("Gesamtbetrag", help="Gesamtes Transaktionsvolumen in Euro"),
-                "Realisierter P&L (€)": st.column_config.TextColumn("Realisierter Gewinn / Verlust", help="Tatsächlich realisierter Gewinn oder Verlust bei Verkauf"),
-                "Begründung / Signal": st.column_config.TextColumn("KI-Begründung / Signal", help="Warum die KI diese Transaktion ausgeführt hat")
-            }
-
-            st.dataframe(
-                display_hist,
-                column_config=hist_cfg,
-                use_container_width=True,
-                hide_index=True
-            )
-        else:
-            st.info("Noch keine Transaktionen ausgeführt.")
+    # Call the fragment
+    render_live_depot_view(selected_depot_key)
 
 # ==============================================================================
-# MODE 4: EINZELAKTIEN-TIEFENANALYSE
+# MODE 8: EINZELAKTIEN-TIEFENANALYSE
 # ==============================================================================
 else:
     st.sidebar.subheader("🔍 Aktie auswählen")
