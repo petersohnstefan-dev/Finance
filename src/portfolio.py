@@ -39,41 +39,41 @@ class PortfolioManager:
                     "cash": 2668.34,
                     "positions": {
                         "MRNA": {
-                            "symbol": "MRNA", "name": "Moderna, Inc.", "shares": 15.0943,
-                            "buy_price": 132.50, "current_price": 141.20, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 129.17, "take_profit": 166.67,
+                            "symbol": "MRNA", "name": "Moderna, Inc.", "shares": 13.7808,
+                            "buy_price": 145.13, "current_price": 141.60, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 134.97, "take_profit": 174.15,
                             "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "RIVN": {
-                            "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "shares": 128.2051,
-                            "buy_price": 15.60, "current_price": 16.79, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 15.44, "take_profit": 19.92,
+                            "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "shares": 117.8550,
+                            "buy_price": 16.97, "current_price": 16.80, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 15.78, "take_profit": 20.36,
                             "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "SOL-USD": {
-                            "symbol": "SOL-USD", "name": "Solana USD", "shares": 15.5666,
-                            "buy_price": 96.36, "current_price": 98.23, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 89.61, "take_profit": 115.63,
+                            "symbol": "SOL-USD", "name": "Solana USD", "shares": 15.2192,
+                            "buy_price": 98.56, "current_price": 98.68, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 91.66, "take_profit": 118.27,
                             "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "BEAM": {
-                            "symbol": "BEAM", "name": "Beam Therapeutics Inc.", "shares": 70.5965,
-                            "buy_price": 28.33, "current_price": 28.72, "buy_date": "2026-08-25 12:30",
-                            "stop_loss": 26.35, "take_profit": 34.00,
+                            "symbol": "BEAM", "name": "Beam Therapeutics Inc.", "shares": 67.2043,
+                            "buy_price": 29.76, "current_price": 28.79, "buy_date": "2026-08-25 12:30",
+                            "stop_loss": 27.67, "take_profit": 35.71,
                             "reason": "Top Momentum & Breakout Score (88/100)",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         }
                     },
                     "history": [
-                        {"type": "BUY", "action": "BUY", "symbol": "BEAM", "name": "Beam Therapeutics Inc.", "product_type": "STOCK", "shares": 70.5965, "price": 28.33, "total": 2000.0, "date": "2026-08-25 12:30:00", "reason": "Top Momentum & Breakout Score (88/100)"},
+                        {"type": "BUY", "action": "BUY", "symbol": "BEAM", "name": "Beam Therapeutics Inc.", "product_type": "STOCK", "shares": 67.2043, "price": 29.76, "total": 2000.0, "date": "2026-08-25 12:30:00", "reason": "Top Momentum & Breakout Score (88/100)"},
                         {"type": "SELL", "action": "SELL", "symbol": "KO256319", "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)", "product_type": "KNOCKOUT", "shares": 182.9826, "buy_price": 10.93, "sell_price": 11.85, "price": 11.85, "total": 2168.34, "pnl": 168.34, "pnl_pct": 8.42, "date": "2026-08-25 12:28:15", "reason": "💡 Opportunitäts-Umschichtung: Gewinn bei +8.4% mitgenommen für neuen Ausbruch BEAM"},
                         {"type": "BUY", "action": "BUY", "symbol": "KO256319", "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)", "product_type": "KNOCKOUT", "shares": 182.9826, "price": 10.93, "total": 2000.0, "date": "2026-08-25 06:40:07", "reason": "🚨 Akuter Ausbruchs-Alarm (Score: 100/100) via 3.5x Hebel"},
-                        {"type": "BUY", "action": "BUY", "symbol": "SOL-USD", "name": "Solana USD", "product_type": "STOCK", "shares": 15.5666, "price": 96.36, "total": 1500.0, "date": "2026-08-24 22:07:09", "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"},
-                        {"type": "BUY", "action": "BUY", "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "product_type": "STOCK", "shares": 128.2051, "price": 15.60, "total": 2000.0, "date": "2026-08-24 22:07:08", "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"},
-                        {"type": "BUY", "action": "BUY", "symbol": "MRNA", "name": "Moderna, Inc.", "product_type": "STOCK", "shares": 15.0943, "price": 132.50, "total": 2000.0, "date": "2026-08-24 22:07:08", "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"}
+                        {"type": "BUY", "action": "BUY", "symbol": "SOL-USD", "name": "Solana USD", "product_type": "STOCK", "shares": 15.2192, "price": 98.56, "total": 1500.0, "date": "2026-08-24 22:07:09", "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"},
+                        {"type": "BUY", "action": "BUY", "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "product_type": "STOCK", "shares": 117.8550, "price": 16.97, "total": 2000.0, "date": "2026-08-24 22:07:08", "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"},
+                        {"type": "BUY", "action": "BUY", "symbol": "MRNA", "name": "Moderna, Inc.", "product_type": "STOCK", "shares": 13.7808, "price": 145.13, "total": 2000.0, "date": "2026-08-24 22:07:08", "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"}
                     ]
                 },
                 "medium_term": {
@@ -83,31 +83,31 @@ class PortfolioManager:
                     "cash": 4000.0,
                     "positions": {
                         "PLTR": {
-                            "symbol": "PLTR", "name": "Palantir Technologies Inc.", "shares": 12.3153,
-                            "buy_price": 162.40, "current_price": 175.21, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 158.30, "take_profit": 237.45,
+                            "symbol": "PLTR", "name": "Palantir Technologies Inc.", "shares": 11.1148,
+                            "buy_price": 179.94, "current_price": 175.30, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 161.95, "take_profit": 242.92,
                             "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "DUOL": {
-                            "symbol": "DUOL", "name": "Duolingo, Inc.", "shares": 14.4404,
-                            "buy_price": 138.50, "current_price": 146.95, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 132.16, "take_profit": 198.23,
+                            "symbol": "DUOL", "name": "Duolingo, Inc.", "shares": 13.6864,
+                            "buy_price": 146.13, "current_price": 145.00, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 131.52, "take_profit": 197.28,
                             "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "NVDA": {
-                            "symbol": "NVDA", "name": "NVIDIA Corporation", "shares": 10.1937,
-                            "buy_price": 196.20, "current_price": 211.08, "buy_date": "2026-08-24 22:07",
-                            "stop_loss": 187.63, "take_profit": 281.45,
+                            "symbol": "NVDA", "name": "NVIDIA Corporation", "shares": 9.3145,
+                            "buy_price": 214.72, "current_price": 211.15, "buy_date": "2026-08-24 22:07",
+                            "stop_loss": 193.25, "take_profit": 289.87,
                             "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         }
                     },
                     "history": [
-                        {"type": "BUY", "action": "BUY", "symbol": "NVDA", "name": "NVIDIA Corporation", "product_type": "STOCK", "shares": 10.1937, "price": 196.20, "total": 2000.0, "date": "2026-08-24 22:07:11", "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"},
-                        {"type": "BUY", "action": "BUY", "symbol": "DUOL", "name": "Duolingo, Inc.", "product_type": "STOCK", "shares": 14.4404, "price": 138.50, "total": 2000.0, "date": "2026-08-24 22:07:10", "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie"},
-                        {"type": "BUY", "action": "BUY", "symbol": "PLTR", "name": "Palantir Technologies Inc.", "product_type": "STOCK", "shares": 12.3153, "price": 162.40, "total": 2000.0, "date": "2026-08-24 22:07:10", "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50"}
+                        {"type": "BUY", "action": "BUY", "symbol": "NVDA", "name": "NVIDIA Corporation", "product_type": "STOCK", "shares": 9.3145, "price": 214.72, "total": 2000.0, "date": "2026-08-24 22:07:11", "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"},
+                        {"type": "BUY", "action": "BUY", "symbol": "DUOL", "name": "Duolingo, Inc.", "product_type": "STOCK", "shares": 13.6864, "price": 146.13, "total": 2000.0, "date": "2026-08-24 22:07:10", "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie"},
+                        {"type": "BUY", "action": "BUY", "symbol": "PLTR", "name": "Palantir Technologies Inc.", "product_type": "STOCK", "shares": 11.1148, "price": 179.94, "total": 2000.0, "date": "2026-08-24 22:07:10", "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50"}
                     ]
                 },
                 "long_term": {
@@ -117,47 +117,47 @@ class PortfolioManager:
                     "cash": 1000.0,
                     "positions": {
                         "SAP.DE": {
-                            "symbol": "SAP.DE", "name": "SAP SE", "shares": 10.6838,
-                            "buy_price": 187.20, "current_price": 183.82, "buy_date": "2026-08-24 22:07",
+                            "symbol": "SAP.DE", "name": "SAP SE", "shares": 10.6315,
+                            "buy_price": 188.12, "current_price": 184.06, "buy_date": "2026-08-24 22:07",
                             "stop_loss": None, "take_profit": None,
                             "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "MUV2.DE": {
-                            "symbol": "MUV2.DE", "name": "Münchener Rück AG", "shares": 3.8565,
-                            "buy_price": 518.60, "current_price": 519.40, "buy_date": "2026-08-24 22:07",
+                            "symbol": "MUV2.DE", "name": "Münchener Rück AG", "shares": 3.8730,
+                            "buy_price": 516.40, "current_price": 520.00, "buy_date": "2026-08-24 22:07",
                             "stop_loss": None, "take_profit": None,
                             "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "GC=F": {
-                            "symbol": "GC=F", "name": "Gold Dec 26", "shares": 0.3186,
-                            "buy_price": 4708.60, "current_price": 4692.20, "buy_date": "2026-08-24 22:07",
+                            "symbol": "GC=F", "name": "Gold Dec 26", "shares": 0.3232,
+                            "buy_price": 4640.80, "current_price": 4694.20, "buy_date": "2026-08-24 22:07",
                             "stop_loss": None, "take_profit": None,
                             "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "BTC-USD": {
-                            "symbol": "BTC-USD", "name": "Bitcoin USD", "shares": 0.0191,
-                            "buy_price": 78682.79, "current_price": 78936.00, "buy_date": "2026-08-24 22:07",
+                            "symbol": "BTC-USD", "name": "Bitcoin USD", "shares": 0.0190,
+                            "buy_price": 78964.48, "current_price": 79072.01, "buy_date": "2026-08-24 22:07",
                             "stop_loss": None, "take_profit": None,
                             "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         },
                         "SMCI": {
-                            "symbol": "SMCI", "name": "Super Micro Computer, Inc.", "shares": 56.8666,
-                            "buy_price": 35.17, "current_price": 36.00, "buy_date": "2026-08-25 12:30",
+                            "symbol": "SMCI", "name": "Super Micro Computer, Inc.", "shares": 53.7057,
+                            "buy_price": 37.24, "current_price": 36.07, "buy_date": "2026-08-25 12:30",
                             "stop_loss": None, "take_profit": None,
                             "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         }
                     },
                     "history": [
-                        {"type": "BUY", "action": "BUY", "symbol": "SMCI", "name": "Super Micro Computer, Inc.", "product_type": "STOCK", "shares": 56.8666, "price": 35.17, "total": 2000.0, "date": "2026-08-25 12:30:00", "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4"},
-                        {"type": "BUY", "action": "BUY", "symbol": "BTC-USD", "name": "Bitcoin USD", "product_type": "STOCK", "shares": 0.0191, "price": 78682.79, "total": 1500.0, "date": "2026-08-24 22:07:13", "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200"},
-                        {"type": "BUY", "action": "BUY", "symbol": "GC=F", "name": "Gold Dec 26", "product_type": "STOCK", "shares": 0.3186, "price": 4708.60, "total": 1500.0, "date": "2026-08-24 22:07:13", "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"},
-                        {"type": "BUY", "action": "BUY", "symbol": "MUV2.DE", "name": "Münchener Rück AG", "product_type": "STOCK", "shares": 3.8565, "price": 518.60, "total": 2000.0, "date": "2026-08-24 22:07:12", "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie"},
-                        {"type": "BUY", "action": "BUY", "symbol": "SAP.DE", "name": "SAP SE", "product_type": "STOCK", "shares": 10.6838, "price": 187.20, "total": 2000.0, "date": "2026-08-24 22:07:11", "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"}
+                        {"type": "BUY", "action": "BUY", "symbol": "SMCI", "name": "Super Micro Computer, Inc.", "product_type": "STOCK", "shares": 53.7057, "price": 37.24, "total": 2000.0, "date": "2026-08-25 12:30:00", "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4"},
+                        {"type": "BUY", "action": "BUY", "symbol": "BTC-USD", "name": "Bitcoin USD", "product_type": "STOCK", "shares": 0.0190, "price": 78964.48, "total": 1500.0, "date": "2026-08-24 22:07:13", "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200"},
+                        {"type": "BUY", "action": "BUY", "symbol": "GC=F", "name": "Gold Dec 26", "product_type": "STOCK", "shares": 0.3232, "price": 4640.80, "total": 1500.0, "date": "2026-08-24 22:07:13", "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"},
+                        {"type": "BUY", "action": "BUY", "symbol": "MUV2.DE", "name": "Münchener Rück AG", "product_type": "STOCK", "shares": 3.8730, "price": 516.40, "total": 2000.0, "date": "2026-08-24 22:07:12", "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie"},
+                        {"type": "BUY", "action": "BUY", "symbol": "SAP.DE", "name": "SAP SE", "product_type": "STOCK", "shares": 10.6315, "price": 188.12, "total": 2000.0, "date": "2026-08-24 22:07:11", "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"}
                     ]
                 }
             }
@@ -289,7 +289,8 @@ class PortfolioManager:
         return True
 
     def update_live_prices(self):
-        """Fetches fresh live tick prices for all positions across all 3 depots in parallel."""
+        """Fetches live prices for all positions across all 3 depots in parallel and writes back."""
+        self.data = self._load()
         from src.realtime_scanner import RealTimeBreakoutScanner
         from concurrent.futures import ThreadPoolExecutor
         scanner = RealTimeBreakoutScanner()
@@ -332,6 +333,7 @@ class PortfolioManager:
 
     def get_depot_summary(self, depot_key: str) -> Dict[str, Any]:
         """Calculates total portfolio value, return, allocation, and open position P&L."""
+        self.data = self._load()
         depot = self.data["portfolios"].get(depot_key, {})
         cash = depot.get("cash", self.initial_capital)
         init_cash = depot.get("initial_cash", self.initial_capital)
