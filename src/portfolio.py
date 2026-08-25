@@ -6,6 +6,7 @@ from typing import Dict, Any, List, Optional
 import yfinance as yf
 from src.db import PortfolioDB
 from src.derivatives import DerivativeEngine
+from src.deep_intelligence import DeepIntelligenceHub
 
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
@@ -24,6 +25,7 @@ class PortfolioManager:
     def __init__(self, initial_capital_per_depot: float = 10000.0):
         self.initial_capital = initial_capital_per_depot
         self.db = PortfolioDB()
+        self.deep_intel = DeepIntelligenceHub()
         self.data = self._load()
 
     def _get_seed_data(self) -> Dict[str, Any]:
@@ -535,15 +537,34 @@ class PortfolioManager:
                 continue
 
         # 1f. Opportunity Check & Intelligent Capital Reallocation
+        # 1f. Multi-Source Opportunity Check & Intelligent Capital Reallocation
         top_st_candidate = None
         if rt_alerts:
-            top_st_candidate = {"symbol": rt_alerts[0]["symbol"], "name": rt_alerts[0].get("name", rt_alerts[0]["symbol"]), 
-                                "price": rt_alerts[0].get("trigger_price"), "reason": f"⚡ Echtzeit-Spike ({rt_alerts[0].get('change_1min_pct', 2.0):+.1f}% in <60s)", "is_realtime": True}
+            sym = rt_alerts[0]["symbol"]
+            intel = self.deep_intel.get_asset_360_intelligence(sym)
+            flow = intel["smart_money_flow"]
+            social = intel["social_sentiment"]
+            spike_reason = f"⚡ Echtzeit-Spike ({rt_alerts[0].get('change_1min_pct', 2.0):+.1f}%) | Dark Pool: {flow['dark_pool_share_pct']}% | Social: +{social['relative_mentions_spike_pct']:.0f}%"
+            top_st_candidate = {"symbol": sym, "name": rt_alerts[0].get("name", sym), 
+                                "price": rt_alerts[0].get("trigger_price"), "reason": spike_reason, "is_realtime": True}
         elif scan_results:
-            cand = max(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)))
-            if (cand.get("breakout_score", 0) + cand.get("short_score", 0)) >= 50:
-                top_st_candidate = {"symbol": cand["symbol"], "name": cand.get("name", cand["symbol"]),
-                                    "price": cand.get("price"), "reason": f"Ausbruchs-Signal ({cand.get('breakout_score')}/100)", "is_realtime": False}
+            # Score candidates with technicals + deep intelligence alpha
+            scored_candidates = []
+            for c in scan_results[:10]:
+                c_sym = c["symbol"]
+                intel = self.deep_intel.get_asset_360_intelligence(c_sym)
+                c_score = (c.get("breakout_score", 0) * 0.4) + (intel.get("composite_alpha_score", 70) * 0.6)
+                scored_candidates.append((c, intel, c_score))
+            
+            if scored_candidates:
+                scored_candidates = sorted(scored_candidates, key=lambda x: x[2], reverse=True)
+                best_cand, best_intel, best_score = scored_candidates[0]
+                if best_score >= 55:
+                    flow = best_intel["smart_money_flow"]
+                    social = best_intel["social_sentiment"]
+                    reason_str = f"🚨 Smart-Money Ausbruch (Alpha {best_score:.0f}/100) | PCR: {flow['put_call_ratio']} | Social: {social['trending_theme']}"
+                    top_st_candidate = {"symbol": best_cand["symbol"], "name": best_cand.get("name", best_cand["symbol"]),
+                                        "price": best_cand.get("price"), "reason": reason_str, "is_realtime": False}
 
         # If we have a great candidate but low cash, intelligently swap the most mature profitable position!
         if top_st_candidate and top_st_candidate["symbol"] not in st_depot["positions"]:
@@ -615,6 +636,7 @@ class PortfolioManager:
         if scan_results:
             top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
             if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
+                cand_intel = self.deep_intel.get_asset_360_intelligence(top_mt_cand["symbol"])
                 if mt_depot["cash"] < 1500.0 and len(mt_depot["positions"]) >= 3:
                     # Check for mature winner to reallocate
                     mt_profs = [(s, p, (p["current_price"] - p["buy_price"])/p["buy_price"]*100.0) for s, p in mt_depot["positions"].items()]
@@ -631,8 +653,9 @@ class PortfolioManager:
                     if p and p > 0:
                         alloc = min(2000.0, mt_depot["cash"] * 0.85)
                         shares = alloc / p
+                        reason_msg = f"📈 Growth & Smart Money (Alpha: {cand_intel['composite_alpha_score']}/100, Sentiment: {cand_intel['social_sentiment']['nlp_sentiment_score']}/100)"
                         self.buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
-                                 reason=f"📈 Starker Trend & Wachstum (Score: {top_mt_cand.get('total_score')}/100)",
+                                 reason=reason_msg,
                                  stop_loss=p*0.90, take_profit=None)  # Dynamic trailing
                         actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
 
@@ -647,17 +670,21 @@ class PortfolioManager:
                 p = cand.get("price")
                 if sym not in lt_depot["positions"] and p and p > 0:
                     alloc = min(2000.0, lt_depot["cash"] * 0.85)
+                    cand_intel = self.deep_intel.get_asset_360_intelligence(sym)
+                    forensic = cand_intel["forensic_quality"]
+                    moat_reason = f"🏰 Burggraben & Bilanz-Audit: {forensic['moat_rating']} | Piotroski: {forensic['piotroski_f_score']}"
+                    
                     if cand.get("long_score", 0) >= 90:
                         bonus = DerivativeEngine.create_bonus_certificate(sym, cand.get("name", sym), p, barrier_pct=25.0, bonus_pct=14.0)
                         shares = alloc / p
                         self.buy("long_term", bonus["wkn"], bonus["name"], shares, p,
-                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus)",
+                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus) | {moat_reason}",
                                  derivative_meta=bonus)
                         actions_taken.append(f"KAUF {bonus['name']} für Langfrist-Depot")
                     else:
                         shares = alloc / p
                         self.buy("long_term", sym, cand.get("name", sym), shares, p,
-                                 reason=f"Qualitäts-Compounder ({cand.get('long_score')}/100)")
+                                 reason=moat_reason)
                         actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
                     break
 
