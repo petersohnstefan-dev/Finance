@@ -68,11 +68,28 @@ st.markdown("""
         font-size: 15px !important;
         font-weight: 500 !important;
         color: #f8fafc !important;
+        line-height: 1.35 !important;
     }
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
     section[data-testid="stSidebar"] h3 {
         color: #38bdf8 !important;
+    }
+
+    /* Radio Buttons: Align circular radio buttons to top with text */
+    div[data-testid="stRadio"] div[role="radiogroup"] label {
+        align-items: flex-start !important;
+        cursor: pointer !important;
+        margin-bottom: 6px !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child {
+        margin-top: 3px !important;
+    }
+    div[data-testid="stRadio"] label {
+        align-items: flex-start !important;
+    }
+    div[data-testid="stRadio"] label > div:first-child {
+        margin-top: 3px !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -922,65 +939,6 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
         horizontal=True
     )[0]
 
-    # Expandable Strategy Handbook & Percentages
-    with st.expander("📖 Strategie-Handbuch: Nach welchen Formeln & Prozenten handelt die KI?"):
-        h_tab1, h_tab2, h_tab3 = st.tabs([
-            "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
-            "📈 2. Mittelfrist-Depot (1–6 Monate)",
-            "🏛️ 3. Langfrist-Depot (1–5+ Jahre)"
-        ])
-
-        with h_tab1:
-            st.markdown("""
-            #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes & Hebel)
-            **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung und Leerverkäufer-Fallen.
-
-            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
-            | :--- | :---: | :--- |
-            | **📈 Charttechnik & Momentum** | **30 %** | Kurs über EMA 20 & EMA 50, RSI zwischen 50–68, MACD Crossover |
-            | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50, ungewöhnliche OTM Call-Sweeps, Dark-Pool-Blöcke |
-            | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % ODER BaFin-Eindeckungen (Short-Squeeze-Gefahr) |
-            | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish) |
-            | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse von Börsen in Cold Wallets (Verknappung) |
-
-            * **🟢 KAUF-Trigger:** Kurzfrist-Score ≥ **75 / 100**.
-            * **🔴 VERKAUFS-Trigger:** Fester **Stop-Loss bei -7 %** (bzw. **-15 %** bei Hebel-Zertifikaten) oder **Take-Profit bei +20 %** (bzw. **+40 %** bei Hebel-Zertifikaten).
-            """)
-
-        with h_tab2:
-            st.markdown("""
-            #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing & Wachstum)
-            **Ziel:** Reiten starker Aufwärtstrends bei Unternehmen mit systematisch steigenden Gewinnschätzungen.
-
-            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
-            | :--- | :---: | :--- |
-            | **📈 Earnings-Revisionen (EPS)** | **35 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + EPS-Surprises |
-            | **🎙️ Earnings Call KI-Tonalität** | **25 %** | KI-Sprachscore > 85/100 (Fokus auf Margenwachstum & Auftragsrekorde) |
-            | **📊 Trendfolge über EMA 50** | **20 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
-            | **🐋 Whale- & Kongress-Tracking** | **10 %** | Star-Investoren (Buffett, Druckenmiller) oder Kongressmitglieder kaufen |
-            | **🌐 FRED-Makro & Zinskurve** | **10 %** | Normalisierung der Zinskurve (10Y/2Y) und fallender US-Dollar-Index (DXY) |
-
-            * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100**.
-            * **🔴 VERKAUFS-Trigger:** **Trailing Stop-Loss bei -10 %** oder **Mittelfrist-Ziel bei +35 %**.
-            """)
-
-        with h_tab3:
-            st.markdown("""
-            #### 🏛️ Langfristiges Investment-Depot (Quality, Gold & Moat)
-            **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold und digitalem Wertspeicher.
-
-            | Faktor | Gewichtung | Kriterien & Schwellenwerte |
-            | :--- | :---: | :--- |
-            | **🏰 Kapitalrendite & Burggraben** | **35 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 % |
-            | **🛡️ Bilanzqualität & Solidität** | **25 %** | Verschuldungsgrad (Debt/Equity) < 1,0, krisensicherer Cash-Bestand |
-            | **🌐 FRED-Makro & Zyklen** | **20 %** | Allokation in Gold & Bitcoin als Währungs- und Inflationsabsicherung |
-            | **🏷️ Bewertung & Sicherheitsmarge** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus mit ≥ 25 % Sicherheitspuffer |
-            | **🎯 Analysten-Upside & Insider** | **10 %** | Konsenskursziel > +15 % + Käufe durch CEOs/Vorstände (*Directors' Dealings*) |
-
-            * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100**.
-            * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
-            """)
-
     # Define the Auto-Refreshing Live Depot Fragment (Runs every 30s automatically)
     @st.fragment(run_every=30)
     def render_live_depot_view(depot_key: str):
@@ -1042,8 +1000,6 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 f"{len(summary['positions'])} Titel",
                 help="Anzahl der aktuell gehaltenen Werte"
             )
-
-        st.caption(f"🎯 **Strategie:** {summary['strategy']}")
 
         # Charts & Positions
         tab_chart, tab_pos, tab_alloc, tab_hist = st.tabs([
@@ -1221,6 +1177,68 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 st.dataframe(display_h, use_container_width=True, hide_index=True)
             else:
                 st.info("Noch keine Transaktionen in der Historie.")
+
+        # Strategy Handbook & Strategy Info (Moved to bottom)
+        st.markdown("---")
+        with st.expander("📖 Strategie-Handbuch & Allokations-Regeln (Nach welchen Formeln handelt die KI?)"):
+            st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
+            st.markdown("---")
+            h_tab1, h_tab2, h_tab3 = st.tabs([
+                "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
+                "📈 2. Mittelfrist-Depot (1–6 Monate)",
+                "🏛️ 3. Langfrist-Depot (1–5+ Jahre)"
+            ])
+
+            with h_tab1:
+                st.markdown("""
+                #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes & Hebel)
+                **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung und Leerverkäufer-Fallen.
+
+                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | :--- | :---: | :--- |
+                | **📈 Charttechnik & Momentum** | **30 %** | Kurs über EMA 20 & EMA 50, RSI zwischen 50–68, MACD Crossover |
+                | **🎯 Optionen-Fluss & Dark Pools** | **25 %** | Put/Call-Ratio < 0.50, ungewöhnliche OTM Call-Sweeps, Dark-Pool-Blöcke |
+                | **🪤 Leerverkäufer & BaFin-Shorts** | **20 %** | Short Float > 12 % ODER BaFin-Eindeckungen (Short-Squeeze-Gefahr) |
+                | **💬 Social Sentiment & Buzz** | **15 %** | Erwähnungsspitzen auf Reddit WSB & StockTwits (> 70 % Bullish) |
+                | **⛓️ Krypto On-Chain-Flows** | **10 %** | Starke Netto-Abflüsse von Börsen in Cold Wallets (Verknappung) |
+
+                * **🟢 KAUF-Trigger:** Kurzfrist-Score ≥ **75 / 100**.
+                * **🔴 VERKAUFS-Trigger:** Fester **Stop-Loss bei -7 %** (bzw. **-15 %** bei Hebel-Zertifikaten) oder **Take-Profit bei +20 %** (bzw. **+40 %** bei Hebel-Zertifikaten).
+                """)
+
+            with h_tab2:
+                st.markdown("""
+                #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing & Wachstum)
+                **Ziel:** Reiten starker Aufwärtstrends bei Unternehmen mit systematisch steigenden Gewinnschätzungen.
+
+                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | :--- | :---: | :--- |
+                | **📈 Earnings-Revisionen (EPS)** | **35 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + EPS-Surprises |
+                | **🎙️ Earnings Call KI-Tonalität** | **25 %** | KI-Sprachscore > 85/100 (Fokus auf Margenwachstum & Auftragsrekorde) |
+                | **📊 Trendfolge über EMA 50** | **20 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
+                | **🐋 Whale- & Kongress-Tracking** | **10 %** | Star-Investoren (Buffett, Druckenmiller) oder Kongressmitglieder kaufen |
+                | **🌐 FRED-Makro & Zinskurve** | **10 %** | Normalisierung der Zinskurve (10Y/2Y) und fallender US-Dollar-Index (DXY) |
+
+                * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100**.
+                * **🔴 VERKAUFS-Trigger:** **Trailing Stop-Loss bei -10 %** oder **Mittelfrist-Ziel bei +35 %**.
+                """)
+
+            with h_tab3:
+                st.markdown("""
+                #### 🏛️ Langfristiges Investment-Depot (Quality, Gold & Moat)
+                **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold und digitalem Wertspeicher.
+
+                | Faktor | Gewichtung | Kriterien & Schwellenwerte |
+                | :--- | :---: | :--- |
+                | **🏰 Kapitalrendite & Burggraben** | **35 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 % |
+                | **🛡️ Bilanzqualität & Solidität** | **25 %** | Verschuldungsgrad (Debt/Equity) < 1,0, krisensicherer Cash-Bestand |
+                | **🌐 FRED-Makro & Zyklen** | **20 %** | Allokation in Gold & Bitcoin als Währungs- und Inflationsabsicherung |
+                | **🏷️ Bewertung & Sicherheitsmarge** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus mit ≥ 25 % Sicherheitspuffer |
+                | **🎯 Analysten-Upside & Insider** | **10 %** | Konsenskursziel > +15 % + Käufe durch CEOs/Vorstände (*Directors' Dealings*) |
+
+                * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100**.
+                * **🔴 VERKAUFS-Trigger:** Nur bei **fundamentalem Bruch der These** (z. B. dauerhafter Verlust des Burggrabens).
+                """)
 
     # Call the fragment
     render_live_depot_view(selected_depot_key)
