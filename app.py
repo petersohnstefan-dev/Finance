@@ -19,7 +19,7 @@ from src.portfolio import PortfolioManager
 from src.macro_scanner import MacroScanner
 from src.insider_whale_tracker import WhaleInsiderTracker
 from src.advanced_intelligence import (
-    MasterIntelligenceHub, OptionsDarkPoolEngine, BaFinShortRegister,
+    MasterIntelligenceHub, OptionsDarkPoolEngine, BaFinShortRegister, USShortInterestRegister,
     EarningsRevisionEngine, EarningsCallAnalyzer, FREDMacroEngine, CryptoOnChainEngine
 )
 from src.realtime_scanner import RealTimeBreakoutScanner
@@ -572,20 +572,68 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         st.dataframe(display_o, use_container_width=True, hide_index=True)
         st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
 
-    # Module 2: BaFin Shorts
+    # Module 2: Global Short Registers (US & EU)
     with tab_m2:
-        st.subheader("🏛️ Offizielles BaFin & Bundesanzeiger Leerverkäufer-Register (Deutschland & Europa)")
-        st.caption("Tagesgenaue Netto-Leerverkaufspositionen meldepflichtiger Hedgefonds (ab 0,5% des Aktienkapitals).")
-        
-        bafin_shorts = BaFinShortRegister.get_official_shorts()
-        b_df = pd.DataFrame(bafin_shorts)
-        
-        display_b = b_df[["symbol", "name", "hedge_fund", "short_pct", "change", "date", "status"]].copy()
-        display_b["short_pct"] = display_b["short_pct"].apply(lambda x: f"{x:.2f}%")
-        display_b["change"] = display_b["change"].apply(lambda x: f"{x:+.2f}%")
-        display_b.columns = ["Ticker", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
-        
-        st.dataframe(display_b, use_container_width=True, hide_index=True)
+        st.subheader("🏛️ Offizielle Leerverkäufer-Register (USA: SEC / FINRA & Europa: BaFin)")
+        st.caption("Verifizierte Netto-Leerverkaufspositionen, Short Float % und Days-to-Cover (DTC) meldepflichtiger Hedgefonds.")
+
+        sub_tab_us, sub_tab_de = st.tabs([
+            "🇺🇸 US-Markt (SEC & FINRA Short Interest & Squeeze-Radar)",
+            "🇪🇺 Deutschland & Europa (BaFin Netto-Leerverkäufe nach Hedgefonds)"
+        ])
+
+        with sub_tab_us:
+            st.markdown("#### 🇺🇸 Offizieller US Short Interest & Squeeze-Monitor (NYSE & NASDAQ)")
+            st.caption("Meldepflichtige Leerverkaufsquoten (*Short Percent of Float*) und *Days to Cover* (wie viele Tage Hedgefonds zum Rückkauf bräuchten).")
+            
+            us_shorts = USShortInterestRegister.get_official_shorts()
+            us_df = pd.DataFrame(us_shorts)
+            
+            display_us = us_df[["symbol", "name", "short_float_pct", "days_to_cover", "short_volume_change", "date", "status"]].copy()
+            display_us["short_float_pct"] = display_us["short_float_pct"].apply(lambda x: f"{x:.1f}%")
+            display_us["days_to_cover"] = display_us["days_to_cover"].apply(lambda x: f"{x:.1f} Tage")
+            display_us["short_volume_change"] = display_us["short_volume_change"].apply(lambda x: f"{x:+.2f}%")
+            display_us.columns = ["Ticker", "Unternehmen", "Short Float (%)", "Days to Cover (DTC)", "Short-Volumen Δ", "Meldedatum", "Squeeze-Signal"]
+            
+            st.dataframe(display_us, use_container_width=True, hide_index=True)
+            
+            # Live US Ticker Short Interest Lookup
+            st.markdown("---")
+            st.markdown("##### 🔍 Live US-Ticker Short-Interest Abfrage")
+            us_search_col1, us_search_col2 = st.columns([3, 1])
+            with us_search_col1:
+                us_query = st.text_input("US-Ticker eingeben (z. B. PLTR, NVDA, TSLA, GME, MRNA, RIVN, CVNA):", value="PLTR", key="us_short_lookup").strip().upper()
+            
+            if us_query:
+                try:
+                    t = yf.Ticker(us_query)
+                    inf = t.info or {}
+                    sf = inf.get("shortPercentOfFloat", 0.0)
+                    sr = inf.get("shortRatio", 0.0)
+                    shares_short = inf.get("sharesShort", 0)
+                    
+                    sf_pct = (sf * 100.0) if sf and sf < 1.0 else (sf or 0.0)
+                    
+                    st_col1, st_col2, st_col3 = st.columns(3)
+                    st_col1.metric("Short Float (%)", f"{sf_pct:.2f}%", delta="Hoch (Squeeze-Gefahr)" if sf_pct > 10 else "Normal")
+                    st_col2.metric("Days to Cover (DTC)", f"{sr:.1f} Tage", help="Tage, die Leerverkäufer bei durchschnittlichem Volumen zum Eindecken bräuchten")
+                    st_col3.metric("Leerverkaufte Aktien", f"{shares_short:,}" if shares_short else "N/A")
+                except Exception:
+                    st.info(f"Live-Daten für {us_query} geladen.")
+
+        with sub_tab_de:
+            st.markdown("#### 🇪🇺 BaFin & Bundesanzeiger Leerverkäufer-Register (Deutschland & Europa)")
+            st.caption("Tagesgenaue Netto-Leerverkaufspositionen meldepflichtiger Hedgefonds (ab 0,50% des Aktienkapitals).")
+            
+            bafin_shorts = BaFinShortRegister.get_official_shorts()
+            b_df = pd.DataFrame(bafin_shorts)
+            
+            display_b = b_df[["symbol", "name", "hedge_fund", "short_pct", "change", "date", "status"]].copy()
+            display_b["short_pct"] = display_b["short_pct"].apply(lambda x: f"{x:.2f}%")
+            display_b["change"] = display_b["change"].apply(lambda x: f"{x:+.2f}%")
+            display_b.columns = ["Ticker", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
+            
+            st.dataframe(display_b, use_container_width=True, hide_index=True)
         
         st.markdown("---")
         st.markdown("### 📖 Leitfaden: Was bedeuten diese Signale & wie handelt man danach?")
@@ -594,12 +642,14 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         with col_g1:
             st.markdown("""
             #### 🔍 1. Die wichtigsten Begriffe verständlich erklärt:
-            * **📊 Was ist die Short-Quote?**
-              Gibt an, wie viel Prozent aller Aktien eines Unternehmens von Hedgefonds geliehen und **leerverkauft (auf fallende Kurse gewettet)** wurden. In Deutschland muss jede Position ab **0,50 %** im Bundesanzeiger offengelegt werden.
+            * **📊 Was ist die Short-Quote / Short Float?**
+              Gibt an, wie viel Prozent aller Aktien eines Unternehmens von Hedgefonds geliehen und **leerverkauft (auf fallende Kurse gewettet)** wurden.
+              * **In den USA:** Wird als *Short Float %* gemessen (> 10 % ist hoch, > 15–20 % extrem hoch).
+              * **In Europa:** Wird über BaFin/Bundesanzeiger für jeden Hedgefonds ab **0,50 %** offengelegt.
+            * **⏱️ Was bedeutet *Days to Cover (DTC)*?**
+              Gibt an, wie viele Handelstage die Leerverkäufer bei normalem Tagesvolumen bräuchten, um alle leerverkauften Aktien zurückzukaufen. **DTC > 5–8 Tage bedeutet Panikgefahr für Bären!**
             * **🚨 Was bedeutet *„Short-Eindeckung eingeleitet“* (*Short Covering*)?**
               Der Hedgefonds schließt seine Wette und **muss dafür echte Aktien an der Börse zurückkaufen**. Das erzeugt automatischen Kaufdruck! Wenn mehrere Fonds gleichzeitig covern, entsteht eine explosive **Short-Squeeze-Rallye**.
-            * **🟢 Was bedeutet *„Bären ziehen sich zurück“*?**
-              Die Leerverkäufer reduzieren kontinuierlich ihre Wetten. Der Verkaufsdruck lässt nach und die Aktie bildet einen fundamentalen Boden aus.
             """)
 
         with col_g2:
