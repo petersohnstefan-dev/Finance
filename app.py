@@ -1163,13 +1163,15 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 
                 display_h = pd.DataFrame()
                 display_h["Zeitpunkt"] = h_df.get("date", "-")
-                display_h["Aktion"] = h_df.get("action", "-")
+                
+                action_map = {"BUY": "🟢 KAUF", "SELL": "🔴 VERKAUF"}
+                display_h["Aktion"] = h_df.apply(lambda r: action_map.get(r.get("action") or r.get("type", "BUY"), r.get("type", "-")), axis=1)
                 display_h["Instrument"] = h_df.get("name", h_df.get("symbol", "-"))
-                display_h["Stück"] = h_df.get("shares", 0)
-                display_h["Kurs"] = h_df.apply(lambda r: f"{r.get('sell_price', r.get('buy_price', 0)):.2f} €", axis=1)
-                display_h["Volumen"] = h_df.get("total", 0).apply(lambda x: f"{x:,.2f} €")
+                display_h["Stück"] = h_df.get("shares", 0).apply(lambda s: f"{s:.4f}" if isinstance(s, (int, float)) else str(s))
+                display_h["Kurs"] = h_df.apply(lambda r: f"{r.get('sell_price') or r.get('buy_price') or r.get('price', 0):.2f} €", axis=1)
+                display_h["Volumen"] = h_df.get("total", 0).apply(lambda x: f"{x:,.2f} €" if pd.notnull(x) and isinstance(x, (int, float)) else str(x))
                 display_h["Realisierter P&L"] = h_df.apply(
-                    lambda r: f"{r.get('pnl', 0):+,.2f} € ({r.get('pnl_pct', 0):+.2f}%)" if pd.notnull(r.get("pnl")) and r.get("action") == "SELL" else "-", 
+                    lambda r: f"{r.get('pnl', 0):+,.2f} € ({r.get('pnl_pct', 0):+.2f}%)" if pd.notnull(r.get("pnl")) and (r.get("action") == "SELL" or r.get("type") == "SELL") else "-", 
                     axis=1
                 )
                 display_h["Begründung"] = h_df.get("reason", "-")

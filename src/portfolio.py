@@ -58,12 +58,24 @@ class PortfolioManager:
                             "stop_loss": 87.61, "take_profit": 113.04,
                             "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
                             "derivative_type": "STOCK", "last_updated": get_berlin_now().strftime("%H:%M:%S")
+                        },
+                        "KO256319": {
+                            "symbol": "KO256319", "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)",
+                            "underlying_symbol": "V", "underlying_name": "Visa Inc.",
+                            "shares": 182.9826, "buy_price": 10.93, "current_price": 10.93,
+                            "initial_underlying_price": 382.41, "current_underlying_price": 382.41,
+                            "direction": "LONG", "leverage": 3.5, "strike": 273.15, "knockout_barrier": 278.61,
+                            "ratio": 0.1, "distance_to_ko_pct": 27.1, "buy_date": "2026-08-25 06:40",
+                            "stop_loss": 9.29, "take_profit": 15.30,
+                            "reason": "🚨 Akuter Ausbruchs-Alarm (Score: 100/100) via 3.5x Hebel",
+                            "derivative_type": "KNOCKOUT", "last_updated": get_berlin_now().strftime("%H:%M:%S")
                         }
                     },
                     "history": [
                         {"type": "BUY", "symbol": "MRNA", "name": "Moderna, Inc.", "product_type": "STOCK", "shares": 15.0943, "price": 132.50, "total": 2000.0, "date": "2026-08-20 15:45", "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"},
                         {"type": "BUY", "symbol": "RIVN", "name": "Rivian Automotive, Inc.", "product_type": "STOCK", "shares": 128.2051, "price": 15.60, "total": 2000.0, "date": "2026-08-21 16:20", "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"},
-                        {"type": "BUY", "symbol": "SOL-USD", "name": "Solana USD", "product_type": "STOCK", "shares": 15.9236, "price": 94.20, "total": 1500.0, "date": "2026-08-22 11:30", "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"}
+                        {"type": "BUY", "symbol": "SOL-USD", "name": "Solana USD", "product_type": "STOCK", "shares": 15.9236, "price": 94.20, "total": 1500.0, "date": "2026-08-22 11:30", "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"},
+                        {"type": "BUY", "symbol": "KO256319", "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)", "product_type": "KNOCKOUT", "shares": 182.9826, "price": 10.93, "total": 2000.0, "date": "2026-08-25 06:40", "reason": "🚨 Akuter Ausbruchs-Alarm (Score: 100/100) via 3.5x Hebel"}
                     ]
                 },
                 "medium_term": {
@@ -360,6 +372,36 @@ class PortfolioManager:
         except Exception:
             pass
 
+        # Immutable audit trade history from SQLite database merged with json history
+        db_trades = self.db.get_trades(depot_key)
+        json_trades = list(reversed(depot.get("history", [])))
+        
+        seen = set()
+        merged_history = []
+        for t in db_trades + json_trades:
+            t_type = t.get("type") or t.get("trade_type") or t.get("action", "BUY")
+            t_sym = t.get("symbol", "")
+            t_date = str(t.get("date") or t.get("executed_at", ""))[:16]
+            key = (t_date, t_sym, t_type)
+            if key not in seen and t_sym:
+                seen.add(key)
+                merged_history.append({
+                    "type": t_type,
+                    "action": t_type,
+                    "symbol": t_sym,
+                    "name": t.get("name", t_sym),
+                    "product_type": t.get("product_type", "STOCK"),
+                    "shares": t.get("shares", 0),
+                    "price": t.get("price") or t.get("buy_price") or t.get("sell_price", 0),
+                    "buy_price": t.get("buy_price"),
+                    "sell_price": t.get("sell_price"),
+                    "total": t.get("total") or t.get("total_amount", 0),
+                    "pnl": t.get("pnl"),
+                    "pnl_pct": t.get("pnl_pct"),
+                    "date": t.get("date") or t.get("executed_at", "-"),
+                    "reason": t.get("reason", "")
+                })
+
         return {
             "name": depot.get("name"),
             "strategy": depot.get("strategy"),
@@ -370,7 +412,7 @@ class PortfolioManager:
             "total_pnl": round(total_pnl, 2),
             "total_pnl_pct": round(total_pnl_pct, 2),
             "positions": positions_list,
-            "history": list(reversed(depot.get("history", [])))
+            "history": merged_history
         }
 
     def get_equity_curve(self, depot_key: str) -> pd.DataFrame:

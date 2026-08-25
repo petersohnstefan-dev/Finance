@@ -142,3 +142,34 @@ class PortfolioDB:
             """, (depot_id,))
             rows = cursor.fetchall()
             return [dict(row) for row in rows]
+
+    def get_trades(self, depot_id: str) -> List[Dict[str, Any]]:
+        with self._get_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT id, depot_id, trade_type, symbol, name, shares, buy_price, sell_price, 
+                   total_amount, pnl, pnl_pct, executed_at, reason
+            FROM trades
+            WHERE depot_id = ?
+            ORDER BY id DESC
+            """, (depot_id,))
+            rows = cursor.fetchall()
+            return [
+                {
+                    "id": r["id"],
+                    "type": r["trade_type"],
+                    "action": r["trade_type"],
+                    "symbol": r["symbol"],
+                    "name": r["name"],
+                    "shares": r["shares"],
+                    "price": r["buy_price"] if r["trade_type"] == "BUY" else r["sell_price"],
+                    "buy_price": r["buy_price"],
+                    "sell_price": r["sell_price"],
+                    "total": r["total_amount"],
+                    "pnl": r["pnl"],
+                    "pnl_pct": r["pnl_pct"],
+                    "date": r["executed_at"],
+                    "reason": r["reason"]
+                }
+                for r in rows
+            ]
