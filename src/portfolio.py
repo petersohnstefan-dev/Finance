@@ -422,98 +422,162 @@ class PortfolioManager:
         return df
 
     def auto_trade_check(self, scan_results: List[Dict[str, Any]]) -> List[str]:
-        """Autonomous 3-Depot AI Trading Engine driven by Real-Time Ticks and Multi-Factor Intelligence."""
+        """Autonomous 3-Depot AI Trading Engine with Dynamic Trailing Profit Protection & Opportunity Rebalancing."""
         actions_taken = []
         self.update_live_prices()
 
         from src.realtime_scanner import RealTimeBreakoutScanner
+        from src.market_seasonality import MarketSeasonalityEngine, get_berlin_now
+        
         rt_alerts = RealTimeBreakoutScanner.get_recent_alerts()
+        seas = MarketSeasonalityEngine.get_current_seasonality_analysis()
+        is_friday_evening = (seas["weekday"] == "Freitag" and get_berlin_now().hour >= 16)
 
-        # 1. Kurzfristiges Trading-Depot (Squeezes, Ausbrüche & Hebel)
+        # ----------------------------------------------------------------------
+        # 1. KURZFRISTIGES TRADING-DEPOT (Tage–Wochen / Squeezes & Hebel)
+        # ----------------------------------------------------------------------
         st_depot = self.data["portfolios"]["short_term"]
         for sym in list(st_depot["positions"].keys()):
             pos = st_depot["positions"][sym]
             curr_p = pos["current_price"]
+            buy_p = pos["buy_price"]
+            gain_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+
+            # 1a. Update Peak Price for Trailing
+            peak_p = max(pos.get("peak_price", buy_p), curr_p)
+            pos["peak_price"] = peak_p
+
+            # 1b. Check Knock-Out
             if pos.get("is_knocked_out"):
                 self.sell("short_term", sym, 0.001, reason="❌ Knock-Out Barriere berührt (Totalverlust)")
                 actions_taken.append(f"KNOCK-OUT {sym}")
                 continue
-            if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
-                self.sell("short_term", sym, curr_p, reason="🚨 Stop-Loss ausgelöst (-7%) zur Verlustbegrenzung")
-                actions_taken.append(f"VERKAUF {sym} (Stop-Loss)")
-            elif pos.get("take_profit") and curr_p >= pos["take_profit"]:
-                self.sell("short_term", sym, curr_p, reason="🎯 Take-Profit erreicht (+20%)")
-                actions_taken.append(f"VERKAUF {sym} (Take-Profit)")
 
-        if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
-            # Priority 1: Instant Real-Time Sub-Minute Alerts
-            bought_from_realtime = False
-            for alert in rt_alerts:
-                sym = alert["symbol"]
-                p = alert.get("trigger_price")
-                if sym not in st_depot["positions"] and p and p > 0:
+            # 1c. Dynamic Profit Ratchet & Trailing Stop
+            if gain_pct >= 8.0:
+                # Ratchet Stop-Loss to Breakeven + 3%
+                lock_sl = round(buy_p * 1.03, 2)
+                if not pos.get("stop_loss") or pos["stop_loss"] < lock_sl:
+                    pos["stop_loss"] = lock_sl
+
+            if gain_pct >= 18.0:
+                # Active Trailing Stop: 6% below peak
+                trail_sl = round(peak_p * 0.94, 2)
+                if not pos.get("stop_loss") or pos["stop_loss"] < trail_sl:
+                    pos["stop_loss"] = trail_sl
+
+            # 1d. Friday Derisking for Leveraged Positions
+            if is_friday_evening and pos.get("derivative_type") == "KNOCKOUT" and gain_pct >= 10.0:
+                self.sell("short_term", sym, curr_p, reason=f"🛡️ Freitags-Derisking: +{gain_pct:.1f}% Gewinn vor Wochenende gesichert")
+                actions_taken.append(f"VERKAUF {sym} (Freitags-Derisking +{gain_pct:.1f}%)")
+                continue
+
+            # 1e. Standard Stop / Trailing Trigger Check
+            if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
+                if curr_p >= buy_p:
+                    self.sell("short_term", sym, curr_p, reason=f"🎯 Trailing Stop-Loss gegriffen (+{gain_pct:.1f}% Gewinn gesichert)")
+                    actions_taken.append(f"VERKAUF {sym} (Trailing Profit +{gain_pct:.1f}%)")
+                else:
+                    self.sell("short_term", sym, curr_p, reason=f"🚨 Stop-Loss ausgelöst ({gain_pct:.1f}%) zur Verlustbegrenzung")
+                    actions_taken.append(f"VERKAUF {sym} (Stop-Loss)")
+                continue
+
+        # 1f. Opportunity Check & Intelligent Capital Reallocation
+        top_st_candidate = None
+        if rt_alerts:
+            top_st_candidate = {"symbol": rt_alerts[0]["symbol"], "name": rt_alerts[0].get("name", rt_alerts[0]["symbol"]), 
+                                "price": rt_alerts[0].get("trigger_price"), "reason": f"⚡ Echtzeit-Spike ({rt_alerts[0].get('change_1min_pct', 2.0):+.1f}% in <60s)", "is_realtime": True}
+        elif scan_results:
+            cand = max(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)))
+            if (cand.get("breakout_score", 0) + cand.get("short_score", 0)) >= 50:
+                top_st_candidate = {"symbol": cand["symbol"], "name": cand.get("name", cand["symbol"]),
+                                    "price": cand.get("price"), "reason": f"Ausbruchs-Signal ({cand.get('breakout_score')}/100)", "is_realtime": False}
+
+        # If we have a great candidate but low cash, intelligently swap the most mature profitable position!
+        if top_st_candidate and top_st_candidate["symbol"] not in st_depot["positions"]:
+            if st_depot["cash"] < 1500.0 and len(st_depot["positions"]) >= 3:
+                # Find best position with at least +5% gain to free up cash
+                profitable_positions = [
+                    (s, p, (p["current_price"] - p["buy_price"]) / p["buy_price"] * 100.0)
+                    for s, p in st_depot["positions"].items()
+                ]
+                profitable_positions = sorted(profitable_positions, key=lambda x: x[2], reverse=True)
+                if profitable_positions and profitable_positions[0][2] >= 5.0:
+                    swap_sym, swap_pos, swap_gain = profitable_positions[0]
+                    self.sell("short_term", swap_sym, swap_pos["current_price"], 
+                              reason=f"💡 Opportunitäts-Umschichtung: Gewinn bei +{swap_gain:.1f}% mitgenommen für neuen Ausbruch {top_st_candidate['symbol']}")
+                    actions_taken.append(f"UMSCHICHTUNG: {swap_sym} (+{swap_gain:.1f}%) ➔ {top_st_candidate['symbol']}")
+
+            # Execute Buy if cash available
+            if st_depot["cash"] >= 1500.0 and len(st_depot["positions"]) < 4:
+                p = top_st_candidate["price"]
+                sym = top_st_candidate["symbol"]
+                if p and p > 0:
                     alloc = min(2000.0, st_depot["cash"] * 0.85)
                     shares = alloc / p
-                    self.buy("short_term", sym, alert.get("name", sym), shares, p,
-                             reason=f"⚡ Echtzeit-Intraday-Spike ({alert.get('change_1min_pct', 2.0):+.1f}% in <60s / {alert.get('urgency', 'Alarm')})",
-                             stop_loss=p*0.93, take_profit=p*1.20)
-                    actions_taken.append(f"KAUF {sym} (⚡ Echtzeit-Spike)")
-                    bought_from_realtime = True
-                    break
+                    self.buy("short_term", sym, top_st_candidate["name"], shares, p,
+                             reason=top_st_candidate["reason"],
+                             stop_loss=p*0.93, take_profit=None)  # Dynamic trailing instead of rigid take_profit!
+                    actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
 
-            # Priority 2: High-Ranked Universe Breakouts
-            if not bought_from_realtime:
-                candidates = sorted(scan_results, key=lambda x: (x.get("breakout_score", 0) + x.get("short_score", 0)), reverse=True)
-                for cand in candidates:
-                    sym = cand["symbol"]
-                    p = cand.get("price")
-                    if sym not in st_depot["positions"] and p and p > 0:
-                        alloc = min(2000.0, st_depot["cash"] * 0.85)
-                        if cand.get("breakout_score", 0) >= 45:
-                            turbo = DerivativeEngine.create_turbo_knockout(sym, cand.get("name", sym), p, direction="LONG", target_leverage=3.5)
-                            cert_price = turbo["cert_price"]
-                            shares = alloc / cert_price
-                            self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
-                                     reason=f"🚨 Akuter Ausbruchs-Alarm ({cand.get('breakout_score')}/100)",
-                                     stop_loss=cert_price*0.85, take_profit=cert_price*1.40, derivative_meta=turbo)
-                            actions_taken.append(f"KAUF {turbo['name']} für Kurzfrist-Depot")
-                        else:
-                            shares = alloc / p
-                            self.buy("short_term", sym, cand.get("name", sym), shares, p,
-                                     reason=f"Kurzfrist-Momentum ({cand.get('short_score')}/100)",
-                                     stop_loss=p*0.93, take_profit=p*1.20)
-                            actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
-                        break
-
-        # 2. Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)
+        # ----------------------------------------------------------------------
+        # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing)
+        # ----------------------------------------------------------------------
         mt_depot = self.data["portfolios"]["medium_term"]
         for sym in list(mt_depot["positions"].keys()):
             pos = mt_depot["positions"][sym]
             curr_p = pos["current_price"]
+            buy_p = pos["buy_price"]
+            gain_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+
+            peak_p = max(pos.get("peak_price", buy_p), curr_p)
+            pos["peak_price"] = peak_p
+
+            # Trailing Profit Ratchet
+            if gain_pct >= 10.0:
+                pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.05, 2))
+            if gain_pct >= 20.0:
+                pos["stop_loss"] = max(pos.get("stop_loss", 0), round(peak_p * 0.92, 2))  # 8% trailing room
+
             if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
-                self.sell("medium_term", sym, curr_p, reason="🚨 Trailing Stop-Loss ausgelöst (-10%)")
-                actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Stop)")
-            elif pos.get("take_profit") and curr_p >= pos["take_profit"]:
-                self.sell("medium_term", sym, curr_p, reason="🎯 Mittelfrist-Kursziel erreicht (+35%)")
-                actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Ziel)")
+                if curr_p >= buy_p:
+                    self.sell("medium_term", sym, curr_p, reason=f"🎯 Mittelfrist-Trailing-Stop gegriffen (+{gain_pct:.1f}% Gewinn gesichert)")
+                    actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Trailing +{gain_pct:.1f}%)")
+                else:
+                    self.sell("medium_term", sym, curr_p, reason=f"🚨 Trailing Stop-Loss ausgelöst ({gain_pct:.1f}%)")
+                    actions_taken.append(f"VERKAUF {sym} (Mittelfrist-Stop)")
+                continue
 
-        if mt_depot["cash"] >= 1500.0 and len(mt_depot["positions"]) < 4:
-            candidates = sorted(scan_results, key=lambda x: (x.get("short_score", 0) * 0.5 + x.get("long_score", 0) * 0.5), reverse=True)
-            for cand in candidates:
-                sym = cand["symbol"]
-                p = cand.get("price")
-                if sym not in mt_depot["positions"] and p and p > 0:
-                    alloc = min(2000.0, mt_depot["cash"] * 0.85)
-                    shares = alloc / p
-                    self.buy("medium_term", sym, cand.get("name", sym), shares, p,
-                             reason=f"📈 Starker mittelfristiger Trend & Wachstum (Gesamt: {cand.get('total_score')}/100)",
-                             stop_loss=p*0.90, take_profit=p*1.35)
-                    actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
-                    break
+        # Mittelfrist Opportunity Reallocation
+        if scan_results:
+            top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
+            if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
+                if mt_depot["cash"] < 1500.0 and len(mt_depot["positions"]) >= 3:
+                    # Check for mature winner to reallocate
+                    mt_profs = [(s, p, (p["current_price"] - p["buy_price"])/p["buy_price"]*100.0) for s, p in mt_depot["positions"].items()]
+                    mt_profs = sorted(mt_profs, key=lambda x: x[2], reverse=True)
+                    if mt_profs and mt_profs[0][2] >= 8.0:
+                        s_sym, s_pos, s_gain = mt_profs[0]
+                        self.sell("medium_term", s_sym, s_pos["current_price"],
+                                  reason=f"💡 Opportunitäts-Umschichtung: Gewinn bei +{s_gain:.1f}% realisiert für neuen Growth-Leader {top_mt_cand['symbol']}")
+                        actions_taken.append(f"UMSCHICHTUNG: {s_sym} (+{s_gain:.1f}%) ➔ {top_mt_cand['symbol']}")
 
-        # 3. Langfristiges Investment-Depot (Jahre / Quality & Moat)
+                if mt_depot["cash"] >= 1500.0 and len(mt_depot["positions"]) < 4:
+                    p = top_mt_cand.get("price")
+                    sym = top_mt_cand["symbol"]
+                    if p and p > 0:
+                        alloc = min(2000.0, mt_depot["cash"] * 0.85)
+                        shares = alloc / p
+                        self.buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
+                                 reason=f"📈 Starker Trend & Wachstum (Score: {top_mt_cand.get('total_score')}/100)",
+                                 stop_loss=p*0.90, take_profit=None)  # Dynamic trailing
+                        actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
+
+        # ----------------------------------------------------------------------
+        # 3. LANGFRISTIGES INVESTMENT-DEPOT (Jahre / Quality & Moat)
+        # ----------------------------------------------------------------------
         lt_depot = self.data["portfolios"]["long_term"]
-        if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4:
+        if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4 and scan_results:
             candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
             for cand in candidates:
                 sym = cand["symbol"]
@@ -534,4 +598,5 @@ class PortfolioManager:
                         actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
                     break
 
+        self._save()
         return actions_taken
