@@ -586,7 +586,33 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         display_b.columns = ["Ticker", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
         
         st.dataframe(display_b, use_container_width=True, hide_index=True)
-        st.warning("🚨 **Squeeze-Signal**: Wenn aggressive Hedgefonds wie Marshall Wace oder Citadel beginnen, Positionen rasch zu reduzieren (negative Veränderung), entsteht oft eine gewaltige Short-Squeeze-Rallye.")
+        
+        st.markdown("---")
+        st.markdown("### 📖 Leitfaden: Was bedeuten diese Signale & wie handelt man danach?")
+        
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            st.markdown("""
+            #### 🔍 1. Die wichtigsten Begriffe verständlich erklärt:
+            * **📊 Was ist die Short-Quote?**
+              Gibt an, wie viel Prozent aller Aktien eines Unternehmens von Hedgefonds geliehen und **leerverkauft (auf fallende Kurse gewettet)** wurden. In Deutschland muss jede Position ab **0,50 %** im Bundesanzeiger offengelegt werden.
+            * **🚨 Was bedeutet *„Short-Eindeckung eingeleitet“* (*Short Covering*)?**
+              Der Hedgefonds schließt seine Wette und **muss dafür echte Aktien an der Börse zurückkaufen**. Das erzeugt automatischen Kaufdruck! Wenn mehrere Fonds gleichzeitig covern, entsteht eine explosive **Short-Squeeze-Rallye**.
+            * **🟢 Was bedeutet *„Bären ziehen sich zurück“*?**
+              Die Leerverkäufer reduzieren kontinuierlich ihre Wetten. Der Verkaufsdruck lässt nach und die Aktie bildet einen fundamentalen Boden aus.
+            """)
+
+        with col_g2:
+            st.markdown("""
+            #### 🚦 2. Ampelsystem & Handlungsempfehlung der KI:
+
+            | Signal / Status | Marktlage | Konkrete Handlung der KI |
+            | :--- | :--- | :--- |
+            | **🚨 Short-Eindeckung (Squeeze-Alarm)** | Hedgefonds kaufen hektisch zurück (Veränderung negativ). | **🔥 Potenziell KAUFEN (Ausbruchs-Chance):** Hohes Squeeze-Potenzial für das **Kurzfrist-Depot** (z. B. Turbo Bull mit engem Stop). |
+            | **🟢 Bären ziehen sich zurück** | Verkaufsdruck ebbt ab, Bodenbildung. | **✅ KAUFENSWERT (Turnaround):** Attraktiver Einstiegszeitpunkt für **Mittelfrist- & Langfrist-Depots**. |
+            | **⚠️ Leerverkauf aufgestockt** | Fonds erhöhen Wetten gegen die Aktie (Veränderung positiv). | **⛔ FINGER WEG (Oder Shorten):** Nicht gegen das Smart Money stellen! Eher Short-Kandidat (**Turbo Bear**). |
+            | **⏸️ Hohe Short-Position stabil** | Bären halten Druck hoch. | **👀 BEOBACHTEN:** Warten, bis die ersten Eindeckungen (Veränderung < 0) gemeldet werden. |
+            """)
 
     # Module 3: Earnings Revisions
     with tab_m3:
