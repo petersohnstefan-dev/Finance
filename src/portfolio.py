@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import datetime
 import pandas as pd
 from typing import Dict, Any, List, Optional
@@ -26,6 +27,7 @@ class PortfolioManager:
         self.initial_capital = initial_capital_per_depot
         self.db = PortfolioDB()
         self.deep_intel = DeepIntelligenceHub()
+        self._last_price_update = 0.0
         self.data = self._load()
 
     def _get_seed_data(self) -> Dict[str, Any]:
@@ -290,8 +292,13 @@ class PortfolioManager:
         self._save()
         return True
 
-    def update_live_prices(self):
-        """Fetches live prices for all positions across all 3 depots in parallel and writes back."""
+    def update_live_prices(self, force: bool = False):
+        """Fetches live prices for all positions across all 3 depots in parallel and writes back (throttled)."""
+        now = time.time()
+        if not force and (now - self._last_price_update) < 20.0:
+            return  # Skip redundant external API calls if updated within 20s
+        self._last_price_update = now
+
         self.data = self._load()
         from src.realtime_scanner import RealTimeBreakoutScanner
         from concurrent.futures import ThreadPoolExecutor

@@ -1,20 +1,29 @@
-"""Commodities, Precious Metals, Oil & Global Forex Intelligence Hub.
-Provides real-time analytics, structural ratios (Gold/Silver, Gold/Oil, Copper/Gold),
-CFTC CoT positioning, central bank gold reserves, OPEC/EIA crude metrics,
-and global currency interest rate differentials (Carry Trade & DXY Index).
-"""
+"""Commodities, Precious Metals, Oil & Global Forex Intelligence Hub with High-Speed In-Memory TTL Cache."""
 
 import os
 import json
+import time
 import datetime
 from typing import Dict, Any, List, Optional
 import yfinance as yf
+
+_COMMODITIES_CACHE = {
+    "pm": {"data": None, "ts": 0},
+    "energy": {"data": None, "ts": 0}
+}
+_FOREX_CACHE = {"data": None, "ts": 0}
+CACHE_TTL = 60.0  # Cache for 60 seconds
 
 class CommoditiesIntelEngine:
     """Real-time analytics for Precious Metals, Energy & Structural Macro Ratios."""
 
     @staticmethod
     def get_precious_metals_overview() -> Dict[str, Any]:
+        now = time.time()
+        cached = _COMMODITIES_CACHE["pm"]
+        if cached["data"] and (now - cached["ts"]) < CACHE_TTL:
+            return cached["data"]
+
         tickers = {
             "gold": "GC=F",
             "silver": "SI=F",
@@ -33,7 +42,6 @@ class CommoditiesIntelEngine:
                     p = hist["Close"].iloc[-1] if not hist.empty else 0.0
                 prices[k] = float(p)
             except Exception:
-                # Fallback realistic pricing
                 fallbacks = {"gold": 2480.50, "silver": 29.40, "platinum": 945.0, "copper": 4.15, "oil": 74.80}
                 prices[k] = fallbacks.get(k, 100.0)
 
@@ -47,7 +55,6 @@ class CommoditiesIntelEngine:
         gold_oil_ratio = round(gold_p / oil_p, 2) if oil_p > 0 else 33.0
         copper_gold_ratio = round((copper_p * 1000) / gold_p, 2) if gold_p > 0 else 1.67
 
-        # GSR Interpretation: Mean is ~65. >80 = Silver historically undervalued. <50 = Gold undervalued.
         if gsr >= 80.0:
             gsr_signal = "🚨 Silber extrem unterbewertet (Historisches Aufhol- & Squeeze-Potenzial)"
         elif gsr <= 55.0:
@@ -55,7 +62,7 @@ class CommoditiesIntelEngine:
         else:
             gsr_signal = "⚖️ Normaler Bewertungskorridor (60–75)"
 
-        return {
+        data = {
             "gold_price": gold_p,
             "silver_price": silver_p,
             "platinum_price": prices.get("platinum", 945.0),
@@ -68,9 +75,16 @@ class CommoditiesIntelEngine:
             "us_10y_real_yield": "1.72% (TIPS Realzins / Zinssenkungswende treibt Gold-Allokation)",
             "cot_gold_managed_money": "🟢 Net-Long: +245.000 Kontrakte (Starker institutioneller Rückenwind)"
         }
+        _COMMODITIES_CACHE["pm"] = {"data": data, "ts": now}
+        return data
 
     @staticmethod
     def get_energy_commodities_overview() -> Dict[str, Any]:
+        now = time.time()
+        cached = _COMMODITIES_CACHE["energy"]
+        if cached["data"] and (now - cached["ts"]) < CACHE_TTL:
+            return cached["data"]
+
         tickers = {
             "wti_oil": "CL=F",
             "brent_oil": "BZ=F",
@@ -94,11 +108,9 @@ class CommoditiesIntelEngine:
         wti = prices.get("wti_oil", 74.80)
         brent = prices.get("brent_oil", 79.10)
         gas = prices.get("natural_gas", 2.15)
-        
-        # Crack Spread Heuristic: (3*Gasoline + 0 - 3*WTI) approx refiner margin
         crack_spread = "$22.50 / Barrel (Solide Raffinerie-Margen)"
         
-        return {
+        data = {
             "wti_price": wti,
             "brent_price": brent,
             "brent_wti_spread": f"${brent - wti:.2f} (Brent-Prämie)",
@@ -108,12 +120,19 @@ class CommoditiesIntelEngine:
             "crack_spread_margin": crack_spread,
             "oil_regime_verdict": "⚖️ Geopolitische Risikoprämie trifft auf moderate globale Nachfrage."
         }
+        _COMMODITIES_CACHE["energy"] = {"data": data, "ts": now}
+        return data
 
 class ForexCurrencyEngine:
     """Real-time tracking of Global FX Pairs, US Dollar Index (DXY) & Interest Rate Differentials."""
 
     @staticmethod
     def get_forex_overview() -> Dict[str, Any]:
+        now = time.time()
+        cached = _FOREX_CACHE
+        if cached["data"] and (now - cached["ts"]) < CACHE_TTL:
+            return cached["data"]
+
         pairs = {
             "EUR/USD": "EURUSD=X",
             "USD/JPY": "USDJPY=X",
@@ -142,7 +161,6 @@ class ForexCurrencyEngine:
                 }
                 rates[name] = fallbacks.get(name, 1.0)
 
-        # Central Bank Rates & Spreads
         cb_rates = [
             {"bank": "US Fed (USA)", "rate": "5.25% – 5.50%", "next_move": "📉 Zinssenkung erwartet (-25 bis -50 Bp)", "bias": "Dovish"},
             {"bank": "EZB (Europa)", "rate": "3.75%", "next_move": "📉 Moderate Senkungen im Herbst", "bias": "Neutral-Dovish"},
@@ -151,7 +169,6 @@ class ForexCurrencyEngine:
             {"bank": "Bank of Japan (BoJ)", "rate": "0.25%", "next_move": "📈 Zinserhöhungs-Pfad eingeleitet", "bias": "Hawkish (Carry-Trade-Risiko)"}
         ]
 
-        # JPY Carry Trade Unwind Risk Barometer
         usdjpy = rates.get("USD/JPY", 154.0)
         if usdjpy < 145.0:
             carry_risk = "🚨 HOCH: Starke Yen-Aufwertung droht globale Carry-Trades abzuwickeln (Volatilitäts-Warnung)"
@@ -160,10 +177,13 @@ class ForexCurrencyEngine:
         else:
             carry_risk = "🟢 ENTSPANNT: Carry-Trade-Bedingungen intakt"
 
-        return {
+        data = {
             "rates": rates,
             "central_bank_rates": cb_rates,
             "jpy_carry_trade_risk": carry_risk,
             "dxy_index": rates.get("DXY", 101.40),
             "dxy_breakdown": "EUR (57.6%), JPY (13.6%), GBP (11.9%), CAD (9.1%), SEK (4.2%), CHF (3.6%)"
         }
+        _FOREX_CACHE["data"] = data
+        _FOREX_CACHE["ts"] = now
+        return data

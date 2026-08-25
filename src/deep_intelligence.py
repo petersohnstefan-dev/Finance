@@ -17,6 +17,13 @@ import yfinance as yf
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 DEEP_INTEL_CACHE_FILE = os.path.join(DATA_DIR, "deep_intelligence_data.json")
 
+import time
+_ASSET_360_CACHE = {}
+_OPTIONS_CACHE = {}
+_MACRO_OVERVIEW_CACHE = {"data": None, "ts": 0}
+INTEL_CACHE_TTL = 60.0
+
+
 # ==============================================================================
 # DIMENSION 1: SMART MONEY, DARK POOL BLOCKS & OPTIONS FLOW
 # ==============================================================================
@@ -25,6 +32,9 @@ class SmartMoneyOptionsEngine:
 
     @staticmethod
     def get_orderflow_metrics(symbol: str) -> Dict[str, Any]:
+        now = time.time()
+        if symbol in _OPTIONS_CACHE and (now - _OPTIONS_CACHE[symbol]["ts"]) < INTEL_CACHE_TTL:
+            return _OPTIONS_CACHE[symbol]["data"]
         clean_sym = symbol.split(".")[0].split("-")[0].upper()
         
         # Real-time options chain parsing via yfinance
@@ -265,6 +275,9 @@ class DeepIntelligenceHub:
 
     def get_asset_360_intelligence(self, symbol: str) -> Dict[str, Any]:
         """Returns the full 360-degree multi-source intelligence profile for any symbol."""
+        now = time.time()
+        if symbol in _ASSET_360_CACHE and (now - _ASSET_360_CACHE[symbol]["ts"]) < INTEL_CACHE_TTL:
+            return _ASSET_360_CACHE[symbol]["data"]
         is_crypto = "-USD" in symbol
         is_gold_or_commodity = any(x in symbol.upper() for x in ["GLD", "GOLD", "SLV", "SILVER", "GC=F", "SI=F", "CL=F", "BZ=F"])
         
@@ -309,7 +322,7 @@ class DeepIntelligenceHub:
         ]
         composite_alpha_score = min(99.0, max(15.0, round(sum(alpha_components), 1)))
 
-        return {
+        result = {
             "symbol": symbol,
             "composite_alpha_score": composite_alpha_score,
             "smart_money_flow": flow,
@@ -318,6 +331,8 @@ class DeepIntelligenceHub:
             "crypto_onchain": crypto_data,
             "macro_currency_boost": macro_boost
         }
+        _ASSET_360_CACHE[symbol] = {"data": result, "ts": now}
+        return result
 
     def get_macro_and_insider_overview(self) -> Dict[str, Any]:
         """Returns global macro liquidity, commodities, bonds, forex, insider trades, and unusual options blocks."""
