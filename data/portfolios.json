@@ -6,23 +6,8 @@
             "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
             "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
             "initial_cash": 10000.0,
-            "cash": 2668.34,
+            "cash": 4725.124400000001,
             "positions": {
-                "MRNA": {
-                    "symbol": "MRNA",
-                    "wkn": "A2N9D9",
-                    "name": "Moderna, Inc.",
-                    "shares": 13.7808,
-                    "buy_price": 145.13,
-                    "current_price": 158.36,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 149.48,
-                    "take_profit": 174.15,
-                    "product_type": "STOCK",
-                    "currency": "USD",
-                    "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
-                    "last_updated": "22:55:00"
-                },
                 "RIVN": {
                     "symbol": "RIVN",
                     "wkn": "A3C47B",
@@ -143,6 +128,18 @@
                     "total": 2000.0,
                     "date": "2026-08-25 12:30",
                     "reason": "Top Momentum & Breakout Score (88/100)"
+                },
+                {
+                    "type": "SELL",
+                    "symbol": "MRNA",
+                    "wkn": "A2N9D9",
+                    "name": "Moderna, Inc.",
+                    "product_type": "STOCK",
+                    "shares": 13.7808,
+                    "price": 149.25,
+                    "total": 2056.7844,
+                    "date": "2026-08-26 10:00",
+                    "reason": "Trailing Stop Loss triggered"
                 }
             ]
         },
