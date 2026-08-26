@@ -90,6 +90,22 @@ class PortfolioDB:
             );
             """)
 
+            # Hourly Performance Snapshots (Starting 24.08.2026)
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS hourly_snapshots (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                depot_id TEXT NOT NULL,
+                snapshot_time TEXT NOT NULL,
+                total_value REAL NOT NULL,
+                cash REAL NOT NULL,
+                invested_value REAL NOT NULL,
+                pnl REAL NOT NULL,
+                pnl_pct REAL NOT NULL,
+                num_positions INTEGER NOT NULL,
+                UNIQUE(snapshot_time, depot_id)
+            );
+            """)
+
             conn.commit()
 
     def record_trade(self, depot_id: str, trade_type: str, symbol: str, name: str, 
@@ -175,3 +191,36 @@ class PortfolioDB:
                 }
                 for r in rows
             ]
+
+    def record_hourly_snapshot(self, depot_id: str, total_value: float, cash: float, 
+                               invested_value: float, pnl: float, pnl_pct: float, num_positions: int,
+                               snapshot_time: Optional[str] = None):
+        now_hour_str = snapshot_time or datetime.datetime.now().strftime("%Y-%m-%d %H:00")
+        with self._get_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            INSERT INTO hourly_snapshots (
+                snapshot_time, depot_id, total_value, cash, invested_value, pnl, pnl_pct, num_positions
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(snapshot_time, depot_id) DO UPDATE SET
+                total_value = excluded.total_value,
+                cash = excluded.cash,
+                invested_value = excluded.invested_value,
+                pnl = excluded.pnl,
+                pnl_pct = excluded.pnl_pct,
+                num_positions = excluded.num_positions
+            """, (now_hour_str, depot_id, total_value, cash, invested_value, pnl, pnl_pct, num_positions))
+            conn.commit()
+
+    def get_hourly_snapshots(self, depot_id: str) -> List[Dict[str, Any]]:
+        with self._get_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT snapshot_time, total_value, cash, invested_value, pnl, pnl_pct, num_positions
+            FROM hourly_snapshots
+            WHERE depot_id = ?
+            ORDER BY snapshot_time ASC
+            """, (depot_id,))
+            rows = cursor.fetchall()
+            return [dict(row) for row in rows]
+

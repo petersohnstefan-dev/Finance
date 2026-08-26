@@ -1486,7 +1486,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
 
         with tab_chart:
             st.markdown("#### 📈 Depot-Wertentwicklung & Gesamtkapitalverlauf (Equity Curve)")
-            st.caption("Verlauf des gesamten Depotwerts (Investiertes Kapital + Cash) im Zeitverlauf gegenüber dem Startkapital von 10.000 €.")
+            st.caption("Stundenweise Entwicklung des gesamten Depotwerts (Investiertes Kapital + Cash) seit Depotstart am 24.08.2026 gegenüber dem Startkapital von 10.000 €.")
             
             eq_df = pm.get_equity_curve(depot_key)
             
@@ -1496,7 +1496,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 shared_xaxes=True, 
                 vertical_spacing=0.08,
                 row_heights=[0.75, 0.25],
-                subplot_titles=("Depot-Gesamtwert (€)", "Täglicher Gewinn / Verlust (€)")
+                subplot_titles=("Depot-Gesamtwert (€)", "Stündlicher Gewinn / Verlust (€)")
             )
 
             # 1. Total Value Line & Area
@@ -1509,7 +1509,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                     line=dict(color="#38bdf8", width=3),
                     fill="tozeroy",
                     fillcolor="rgba(56, 189, 248, 0.12)",
-                    hovertemplate="<b>Datum:</b> %{x}<br><b>Gesamtwert:</b> %{y:,.2f} €<extra></extra>"
+                    hovertemplate="<b>Zeitpunkt:</b> %{x}<br><b>Gesamtwert:</b> %{y:,.2f} €<extra></extra>"
                 ),
                 row=1, col=1
             )
@@ -1535,7 +1535,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                     y=eq_df["pnl"], 
                     name="Gewinn / Verlust (€)",
                     marker_color=bar_colors,
-                    hovertemplate="<b>Datum:</b> %{x}<br><b>P&L:</b> %{y:+,.2f} €<extra></extra>"
+                    hovertemplate="<b>Zeitpunkt:</b> %{x}<br><b>P&L:</b> %{y:+,.2f} €<extra></extra>"
                 ),
                 row=2, col=1
             )
