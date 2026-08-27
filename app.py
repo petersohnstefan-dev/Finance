@@ -1909,7 +1909,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
             st.markdown("---")
             h_tab_dt, h_tab1, h_tab2, h_tab3, h_tab4 = st.tabs([
-                "🔥 Daytrader-Depot (Intraday / 10x)",
+                "🔥 Daytrader-Depot (Intraday / Dynamischer Hebel)",
                 "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
                 "📈 2. Mittelfrist-Depot (1–6 Monate)",
                 "🏛️ 3. Langfrist-Depot (1–5+ Jahre)",
