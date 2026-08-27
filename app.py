@@ -1543,7 +1543,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
     selected_depot_key = st.radio(
         "Wähle das Depot:",
         [
-            ("day_trading", "🔥 Daytrader (Intraday / 10x Hebel / Momentum)"),
+            ("day_trading", "🔥 Daytrader (Intraday / Dynamischer Hebel / Momentum)"),
             ("short_term", "⚡ Kurzfristig (Tage–Wochen / Squeezes & Breakouts)"),
             ("medium_term", "📈 Mittelfristig (1–6 Monate / Growth & Trend)"),
             ("long_term", "🏛️ Langfristig (Jahre / Quality, Gold & Moat)")
@@ -1924,7 +1924,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
                 | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > +1,5 % getrieben durch plötzliche institutionelle Orders. |
-                | **🚀 Derivate & Extrem-Hebel** | **30 %** | Ausschließlich Knock-Out Zertifikate (Long/Short) mit extremem Ziel-Hebel (ca. 10x). |
+                | **🚀 Dynamischer Hebel** | **30 %** | Je nach Signalstärke wählt die KI **dynamisch Hebel von 1x (Direkt-Kauf), 2x, 5x, 10x oder bis zu 30x** (für Extrem-Spikes). |
                 | **🛡️ EOD Derisking** | **20 %** | Verhindert Über-Nacht-Gaps durch automatischen Verkauf profitabler Positionen vor Handelsende. |
 
                 * **🟢 KAUF-Trigger:** Sofortiger Einstieg bei Erkennung eines Sub-Minute-Ausbruchs durch den *RealTimeBreakoutScanner*.
