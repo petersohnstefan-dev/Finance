@@ -173,22 +173,30 @@ with st.sidebar:
     if "nav_app_mode" not in st.session_state:
         st.session_state["nav_app_mode"] = "🏆 Markt-Screener & Top-Rankings"
 
+    menu_opts = [
+        "🏆 Markt-Screener & Top-Rankings", 
+        "🚨 Ausbruchs- & Katalysator-Radar",
+        "⚡ Echtzeit-Intraday-Radar (Live-Ticks)",
+        "🔮 Smart-Money & Makro-Radar (6 Module)",
+        "🐋 Whale- & Insider-Radar",
+        "🌐 Makro-Klima, Zentralbanken & News",
+        "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
+        "💼 Musterdepots & Live-Performance (4x 10.000 €)",
+        "🔍 Einzelaktien-Tiefenanalyse"
+    ]
+    
+    current_idx = menu_opts.index(st.session_state["nav_app_mode"]) if st.session_state["nav_app_mode"] in menu_opts else 0
+
     app_mode = st.radio(
         "Hauptmenü",
-        [
-            "🏆 Markt-Screener & Top-Rankings", 
-            "🚨 Ausbruchs- & Katalysator-Radar",
-            "⚡ Echtzeit-Intraday-Radar (Live-Ticks)",
-            "🔮 Smart-Money & Makro-Radar (6 Module)",
-            "🐋 Whale- & Insider-Radar",
-            "🌐 Makro-Klima, Zentralbanken & News",
-            "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
-            "💼 Musterdepots & Live-Performance (4x 10.000 €)",
-            "🔍 Einzelaktien-Tiefenanalyse"
-        ],
-        key="nav_app_mode",
+        menu_opts,
+        index=current_idx,
         label_visibility="collapsed"
     )
+    
+    if app_mode != st.session_state["nav_app_mode"]:
+        st.session_state["nav_app_mode"] = app_mode
+        st.rerun()
 
     st.markdown("---")
     
@@ -391,8 +399,9 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                 "upside_pct", "rsi", "pe", "action"
             ]].copy()
             
+            display_df["symbol"] = display_df["symbol"].apply(lambda s: get_wkn(s))
             display_df.columns = [
-                "Ticker", "Name", "Kurs", "Währung",
+                "WKN", "Name", "Kurs", "Währung",
                 "Gesamt", "Kurz", "Lang", "Short %",
                 "Ziel %", "RSI", "KGV", "Handlungsempfehlung"
             ]
@@ -404,7 +413,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
             display_df["KGV"] = display_df["KGV"].apply(lambda x: f"{x:.1f}" if pd.notnull(x) else "N/A")
 
             col_cfg = {
-                "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel der Aktie"),
+                "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer (z.B. 710000)"),
                 "Name": st.column_config.TextColumn("Name", help="Name des Unternehmens"),
                 "Kurs": st.column_config.TextColumn("Kurs", help="Aktueller Kurs"),
                 "Währung": st.column_config.TextColumn("Währung", help="Handelswährung"),
