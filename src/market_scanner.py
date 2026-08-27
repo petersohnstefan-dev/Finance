@@ -118,12 +118,51 @@ class MarketScanner:
 
     def run_full_scan(self, max_workers: int = 12, progress_callback=None) -> List[Dict[str, Any]]:
         """Scans forums, then scans all assets (Stocks, Cryptos, Metals, Commodities)."""
+
+        try:
+            from src.db import PortfolioDB
+            pdb = PortfolioDB()
+            top_radars = sorted([r for r in results if r.get("breakout_score", 0) > 0], key=lambda x: x.get("breakout_score", 0), reverse=True)[:5]
+            if top_radars:
+                # Add theme string for the UI
+                for t in top_radars:
+                    t["theme"] = t.get("breakout_status", "Radar Hit")
+                pdb.record_radar_signals(top_radars)
+        except Exception as e:
+            print("Radar record error:", e)
+
         sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 1. Scanne Foren (Reddit r/wallstreetbets, r/CryptoCurrency, etc.)...\n")
         sys.stdout.flush()
         harvester = ForumSentimentHarvester(self.tickers)
         forum_data = harvester.scan_reddit(limit_per_sub=50)
+
+        try:
+            from src.db import PortfolioDB
+            pdb = PortfolioDB()
+            top_radars = sorted([r for r in results if r.get("breakout_score", 0) > 0], key=lambda x: x.get("breakout_score", 0), reverse=True)[:5]
+            if top_radars:
+                # Add theme string for the UI
+                for t in top_radars:
+                    t["theme"] = t.get("breakout_status", "Radar Hit")
+                pdb.record_radar_signals(top_radars)
+        except Exception as e:
+            print("Radar record error:", e)
+
         sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Foren-Scan fertig. Erwaehnungen fuer {len(forum_data)} Ticker erfasst.\n")
         sys.stdout.flush()
+
+
+        try:
+            from src.db import PortfolioDB
+            pdb = PortfolioDB()
+            top_radars = sorted([r for r in results if r.get("breakout_score", 0) > 0], key=lambda x: x.get("breakout_score", 0), reverse=True)[:5]
+            if top_radars:
+                # Add theme string for the UI
+                for t in top_radars:
+                    t["theme"] = t.get("breakout_status", "Radar Hit")
+                pdb.record_radar_signals(top_radars)
+        except Exception as e:
+            print("Radar record error:", e)
 
         sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] 2. Starte Multi-Asset-Analyse fuer {len(self.tickers)} Assets (Aktien, Krypto, Rohstoffe)...\n")
         sys.stdout.flush()
@@ -158,6 +197,19 @@ class MarketScanner:
                 "total_scanned": len(results),
                 "data": results
             }, f, indent=2, ensure_ascii=False)
+
+
+        try:
+            from src.db import PortfolioDB
+            pdb = PortfolioDB()
+            top_radars = sorted([r for r in results if r.get("breakout_score", 0) > 0], key=lambda x: x.get("breakout_score", 0), reverse=True)[:5]
+            if top_radars:
+                # Add theme string for the UI
+                for t in top_radars:
+                    t["theme"] = t.get("breakout_status", "Radar Hit")
+                pdb.record_radar_signals(top_radars)
+        except Exception as e:
+            print("Radar record error:", e)
 
         sys.stdout.write(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Multi-Asset-Scan erfolgreich gespeichert ({len(results)} Assets).\n")
         sys.stdout.flush()
