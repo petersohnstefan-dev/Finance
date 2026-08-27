@@ -1535,11 +1535,11 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
 # ==============================================================================
 elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
     st.title("💼 Autonome Musterdepots (4x 10.000 € Startkapital)")
-    st.markdown("Drei getrennte Echtzeit-Musterdepots: **Kurzfristig (Tage–Wochen)**, **Mittelfristig (1–6 Monate)** und **Langfristig (Jahre)**.")
+    st.markdown("Vier getrennte Echtzeit-Musterdepots: **Daytrader (Intraday)**, **Kurzfristig (Tage–Wochen)**, **Mittelfristig (1–6 Monate)** und **Langfristig (Jahre)**.")
 
     pm = PortfolioManager(initial_capital_per_depot=10000.0)
 
-    # Depot Selector (3 Depots)
+    # Depot Selector (4 Depots)
     selected_depot_key = st.radio(
         "Wähle das Depot:",
         [
