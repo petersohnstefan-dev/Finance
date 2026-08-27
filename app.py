@@ -170,6 +170,9 @@ with st.sidebar:
 
     st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;'>📌 Hauptmenü & Module</p>", unsafe_allow_html=True)
 
+    if "nav_app_mode" not in st.session_state:
+        st.session_state["nav_app_mode"] = "🏆 Markt-Screener & Top-Rankings"
+
     app_mode = st.radio(
         "Hauptmenü",
         [
@@ -183,7 +186,7 @@ with st.sidebar:
             "💼 Musterdepots & Live-Performance (4x 10.000 €)",
             "🔍 Einzelaktien-Tiefenanalyse"
         ],
-        index=0,
+        key="nav_app_mode",
         label_visibility="collapsed"
     )
 
@@ -353,8 +356,9 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                 "rsi", "breakout_status"
             ]].copy()
             
+            display_df["symbol"] = display_df["symbol"].apply(lambda s: get_wkn(s))
             display_df.columns = [
-                "Ticker", "Name", "Kurs", "Währung",
+                "WKN", "Name", "Kurs", "Währung",
                 "Ausbruch", "Short %", "DaysToCover", "Vol-Faktor", "Heute %",
                 "RSI", "Status"
             ]
@@ -367,7 +371,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
             display_df["RSI"] = display_df["RSI"].apply(lambda x: f"{x:.0f}" if pd.notnull(x) else "N/A")
 
             col_cfg = {
-                "Ticker": st.column_config.TextColumn("Ticker", help="Börsenkürzel der Aktie (z. B. MRNA, SDF.DE)"),
+                "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer der Aktie (z. B. 710000)"),
                 "Name": st.column_config.TextColumn("Name", help="Name des Unternehmens"),
                 "Kurs": st.column_config.TextColumn("Kurs", help="Aktueller Kurs in jeweiliger Währung"),
                 "Währung": st.column_config.TextColumn("Währung", help="Handelswährung (USD / EUR / CHF / GBP)"),
@@ -414,13 +418,22 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                 "Handlungsempfehlung": st.column_config.TextColumn("Empfehlung", help="Synthetisierte Handlungsempfehlung der KI")
             }
 
-        st.dataframe(
+        event = st.dataframe(
             display_df,
             column_config=col_cfg,
             use_container_width=True,
             hide_index=True,
-            height=500
+            height=500,
+            on_select="rerun",
+            selection_mode="single-row"
         )
+        
+        if len(event.selection.rows) > 0:
+            selected_idx = event.selection.rows[0]
+            selected_sym = df_scan.iloc[selected_idx]["symbol"]
+            st.session_state["nav_app_mode"] = "🔍 Einzelaktien-Tiefenanalyse"
+            st.session_state["nav_deep_ticker"] = selected_sym
+            st.rerun()
 
         # Expandable Glossary for all metrics
 
@@ -2020,8 +2033,12 @@ else:
     category = st.sidebar.selectbox("Kategorie / Markt", list(CATEGORIZED_UNIVERSES.keys()))
     default_tickers = CATEGORIZED_UNIVERSES[category]
     selected_preset = st.sidebar.selectbox("Favoriten", default_tickers, format_func=lambda s: get_wkn_display(s, s))
-    custom_ticker = st.sidebar.text_input("Oder WKN / Ticker eingeben (z.B. A2N9D9, 865985, 716460, A2QA4J, 918422):", value="")
+    nav_ticker = st.session_state.get("nav_deep_ticker", "")
+    custom_ticker = st.sidebar.text_input("Oder WKN / Ticker eingeben (z.B. A2N9D9, 865985, 716460, A2QA4J, 918422):", value=nav_ticker)
     active_symbol = custom_ticker.strip().upper() if custom_ticker.strip() else selected_preset
+    
+    if nav_ticker:
+        st.session_state["nav_deep_ticker"] = "" # Reset after loading
     chart_period = st.sidebar.selectbox("Chart-Zeitraum", ["3mo", "6mo", "1y", "2y", "5y"], index=2)
 
     @st.cache_data(ttl=300)
