@@ -180,7 +180,7 @@ with st.sidebar:
             "🐋 Whale- & Insider-Radar",
             "🌐 Makro-Klima, Zentralbanken & News",
             "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
-            "💼 Musterdepots & Live-Performance (3x 10.000 €)",
+            "💼 Musterdepots & Live-Performance (4x 10.000 €)",
             "🔍 Einzelaktien-Tiefenanalyse"
         ],
         index=0,
@@ -1475,8 +1475,8 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
 
 # MODE 5: MUSTERDEPOTS & LIVE-PERFORMANCE (3 DEPOTS)
 # ==============================================================================
-elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
-    st.title("💼 Autonome Musterdepots (3x 10.000 € Startkapital)")
+elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
+    st.title("💼 Autonome Musterdepots (4x 10.000 € Startkapital)")
     st.markdown("Drei getrennte Echtzeit-Musterdepots: **Kurzfristig (Tage–Wochen)**, **Mittelfristig (1–6 Monate)** und **Langfristig (Jahre)**.")
 
     pm = PortfolioManager(initial_capital_per_depot=10000.0)
@@ -1485,7 +1485,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
     selected_depot_key = st.radio(
         "Wähle das Depot:",
         [
-            ("short_term", "⚡ Kurzfristig (Tage–Wochen / Squeezes & Hebel)"),
+            ("day_trading", "🔥 Daytrader (Intraday / 10x Hebel / Momentum)"),
+            ("short_term", "⚡ Kurzfristig (Tage–Wochen / Squeezes & Breakouts)"),
             ("medium_term", "📈 Mittelfristig (1–6 Monate / Growth & Trend)"),
             ("long_term", "🏛️ Langfristig (Jahre / Quality, Gold & Moat)")
         ],
