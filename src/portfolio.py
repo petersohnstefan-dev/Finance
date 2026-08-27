@@ -203,8 +203,17 @@ class PortfolioManager:
         if not depot:
             return False
 
-        # Apply a simulated 0.2% Bid/Ask spread penalty on buy (pay more)
-        SPREAD_PCT = 0.002
+        # Dynamische Spread-Berechnung (Bid/Ask Simulation)
+        is_crypto = "-USD" in symbol.upper()
+        is_derivative = derivative_meta is not None or symbol.startswith("KO")
+        
+        if is_derivative:
+            SPREAD_PCT = 0.015  # 1.5% Spread für Hebelprodukte (wg. Emittenten-Risiko/Aufschlag)
+        elif is_crypto:
+            SPREAD_PCT = 0.005  # 0.5% Spread für Krypto-Börsen
+        else:
+            SPREAD_PCT = 0.002  # 0.2% für reguläre Aktien
+
         effective_price = price * (1.0 + SPREAD_PCT)
 
         cost = shares * effective_price
@@ -265,8 +274,17 @@ class PortfolioManager:
         pos = depot["positions"][symbol]
         shares = pos["shares"]
         
-        # Apply a simulated 0.2% Bid/Ask spread penalty on sell (receive less)
-        SPREAD_PCT = 0.002
+        # Dynamische Spread-Berechnung (Bid/Ask Simulation)
+        is_crypto = "-USD" in symbol.upper()
+        is_derivative = pos.get("derivative_meta") is not None or symbol.startswith("KO")
+        
+        if is_derivative:
+            SPREAD_PCT = 0.015  # 1.5% 
+        elif is_crypto:
+            SPREAD_PCT = 0.005  # 0.5% 
+        else:
+            SPREAD_PCT = 0.002  # 0.2% 
+            
         effective_price = price * (1.0 - SPREAD_PCT)
         
         revenue = shares * effective_price
