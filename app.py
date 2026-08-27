@@ -1919,7 +1919,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             with h_tab_dt:
                 st.markdown('''
                 #### 🔥 Daytrader-Depot (Aggressives Intraday-Trading & Momentum)
-                **Ziel:** Sekunden- & Minuten-Ausbrüche blitzschnell reiten, maximaler Fokus auf Echtzeit-Volumen und große Hebel, kein Risiko über Nacht.
+                **Ziel:** Sekunden- & Minuten-Ausbrüche blitzschnell reiten, maximaler Fokus auf Echtzeit-Volumen. Der Hebel wird dabei dynamisch an die Stärke des Ausbruchs angepasst (1x Direktkauf bis 30x Turbo). Kein Risiko über Nacht.
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
