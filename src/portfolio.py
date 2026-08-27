@@ -428,6 +428,18 @@ class PortfolioManager:
         # Sort strictly descending: newest trades on top, oldest at the bottom
         merged_history.sort(key=lambda x: str(x.get("date", "")), reverse=True)
 
+        prev_close = None
+        try:
+            prev_close = self.db.get_previous_daily_close(depot_key)
+        except Exception:
+            pass
+        
+        today_pnl = 0.0
+        today_pnl_pct = 0.0
+        if prev_close and prev_close > 0:
+            today_pnl = total_value - prev_close
+            today_pnl_pct = (today_pnl / prev_close) * 100.0
+
         return {
             "name": depot.get("name"),
             "strategy": depot.get("strategy"),
@@ -437,6 +449,8 @@ class PortfolioManager:
             "cash_ratio_pct": round((cash / total_value * 100.0) if total_value > 0 else 100.0, 1),
             "total_pnl": round(total_pnl, 2),
             "total_pnl_pct": round(total_pnl_pct, 2),
+            "today_pnl": round(today_pnl, 2),
+            "today_pnl_pct": round(today_pnl_pct, 2),
             "positions": positions_list,
             "history": merged_history
         }
@@ -756,4 +770,19 @@ class PortfolioManager:
                     break
 
         self._save()
+
+        # Record hourly snapshots after bot runs to keep equity curves updated
+        try:
+            curr_hour_str = get_berlin_now().strftime("%Y-%m-%d %H:00")
+            for k in ["short_term", "medium_term", "long_term"]:
+                sm = self.get_depot_summary(k)
+                self.db.record_hourly_snapshot(
+                    depot_id=k, total_value=sm["total_value"], cash=sm["cash"],
+                    invested_value=sm["invested_value"], pnl=sm["total_pnl"],
+                    pnl_pct=sm["total_pnl_pct"], num_positions=len(sm["positions"]),
+                    snapshot_time=curr_hour_str
+                )
+        except Exception:
+            pass
+
         return actions_taken

@@ -1527,13 +1527,19 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
                 pm.update_live_prices()
                 st.rerun()
 
-        # 4 Metric Cards
-        m1, m2, m3, m4 = st.columns(4)
+        # 5 Metric Cards
+        m1, m1b, m2, m3, m4 = st.columns(5)
         with m1:
             st.metric(
                 "Depot-Gesamtwert", 
                 f"{summary['total_value']:,.2f} €", 
-                delta=f"{summary['total_pnl']:+,.2f} € ({summary['total_pnl_pct']:+.2f}%)"
+                delta=f"{summary['total_pnl']:+,.2f} € ({summary['total_pnl_pct']:+.2f}%) Gesamt"
+            )
+        with m1b:
+            st.metric(
+                "Tages-Performance", 
+                f"{summary.get('today_pnl', 0.0):+,.2f} €", 
+                delta=f"{summary.get('today_pnl_pct', 0.0):+.2f}% Heute"
             )
         with m2:
             st.metric(
@@ -1569,6 +1575,11 @@ elif app_mode == "💼 Musterdepots & Live-Performance (3x 10.000 €)":
             st.caption("Stundenweise Entwicklung des gesamten Depotwerts (Investiertes Kapital + Cash) seit Depotstart am 24.08.2026 gegenüber dem Startkapital von 10.000 €.")
             
             eq_df = pm.get_equity_curve(depot_key)
+            
+            # 🟢 HIER WIRD DIE NACHT GEFILTERT (Kein Handel zwischen 22:00 und 07:00)
+            if not eq_df.empty:
+                eq_df["hour_check"] = pd.to_datetime(eq_df["date"]).dt.hour
+                eq_df = eq_df[(eq_df["hour_check"] >= 7) & (eq_df["hour_check"] <= 22)]
             
             # High-legibility Plotly Equity Chart
             fig_eq = make_subplots(

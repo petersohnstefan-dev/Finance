@@ -149,6 +149,21 @@ class PortfolioDB:
             """, (today_str, depot_id, total_value, cash, invested_value, pnl, pnl_pct, num_positions))
             conn.commit()
 
+    def get_previous_daily_close(self, depot_id: str) -> float:
+        import datetime
+        today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        with self._get_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT total_value FROM daily_snapshots 
+                WHERE depot_id = ? AND snapshot_date < ? 
+                ORDER BY snapshot_date DESC LIMIT 1
+            """, (depot_id, today_str))
+            row = cursor.fetchone()
+            if row:
+                return row[0]
+            return None
+
     def get_snapshots(self, depot_id: str) -> List[Dict[str, Any]]:
         with self._get_conn() as conn:
             cursor = conn.cursor()
