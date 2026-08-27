@@ -203,10 +203,14 @@ class PortfolioManager:
         if not depot:
             return False
 
-        cost = shares * price
+        # Apply a simulated 0.2% Bid/Ask spread penalty on buy (pay more)
+        SPREAD_PCT = 0.002
+        effective_price = price * (1.0 + SPREAD_PCT)
+
+        cost = shares * effective_price
         if cost > depot["cash"]:
-            shares = depot["cash"] / price
-            cost = shares * price
+            shares = depot["cash"] / effective_price
+            cost = shares * effective_price
 
         if shares <= 0 or cost <= 0:
             return False
@@ -218,8 +222,8 @@ class PortfolioManager:
             "symbol": symbol,
             "name": name,
             "shares": round(shares, 4),
-            "buy_price": round(price, 2),
-            "current_price": round(price, 2),
+            "buy_price": round(effective_price, 4),
+            "current_price": round(price, 4),  # Current market price is still mid
             "buy_date": now_str,
             "stop_loss": round(stop_loss, 2) if stop_loss else None,
             "take_profit": round(take_profit, 2) if take_profit else None,
@@ -260,9 +264,14 @@ class PortfolioManager:
 
         pos = depot["positions"][symbol]
         shares = pos["shares"]
-        revenue = shares * price
-        pnl = (price - pos["buy_price"]) * shares
-        pnl_pct = ((price - pos["buy_price"]) / pos["buy_price"]) * 100.0 if pos["buy_price"] > 0 else 0.0
+        
+        # Apply a simulated 0.2% Bid/Ask spread penalty on sell (receive less)
+        SPREAD_PCT = 0.002
+        effective_price = price * (1.0 - SPREAD_PCT)
+        
+        revenue = shares * effective_price
+        pnl = (effective_price - pos["buy_price"]) * shares
+        pnl_pct = ((effective_price - pos["buy_price"]) / pos["buy_price"]) * 100.0 if pos["buy_price"] > 0 else 0.0
 
         depot["cash"] += revenue
         now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -273,8 +282,8 @@ class PortfolioManager:
             "name": pos["name"],
             "product_type": pos.get("derivative_type", "STOCK"),
             "shares": round(shares, 4),
-            "buy_price": round(pos["buy_price"], 2),
-            "sell_price": round(price, 2),
+            "buy_price": round(pos["buy_price"], 4),
+            "sell_price": round(effective_price, 4),
             "total": round(revenue, 2),
             "pnl": round(pnl, 2),
             "pnl_pct": round(pnl_pct, 2),
