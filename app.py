@@ -1014,27 +1014,21 @@ elif app_mode == "🐋 Whale- & Insider-Radar":
         insiders = WhaleInsiderTracker.get_insider_buys()
         display_i = pd.DataFrame()
         
-        display_i["WKN"] = [get_wkn(item.get("symbol", "-")) for item in insiders]
-        display_i["Unternehmen"] = [item.get("name", "-") for item in insiders]
-        display_i["Führungskraft / Insider"] = [item.get("insider", "-") for item in insiders]
-        display_i["Position / Rolle"] = [item.get("role", "-") for item in insiders]
+        display_i["Unternehmen (WKN)"] = [f"{item.get('name', '-')} ({get_wkn(item.get('symbol', '-'))})" for item in insiders]
+        display_i["Insider & Rolle"] = [f"{item.get('insider', '-')} ({item.get('role', '-')})" for item in insiders]
         display_i["Kaufvolumen"] = [item.get("amount", "-") for item in insiders]
-        display_i["Geschätztes Vermögen"] = [item.get("net_worth_est", "-") for item in insiders]
-        display_i["Anteil am Vermögen (%)"] = [item.get("wealth_pct", "-") for item in insiders]
-        display_i["Skin-in-the-Game Stufe"] = [item.get("skin_in_game", "🟢 Hoch") for item in insiders]
+        display_i["Relativer Anteil"] = [f"{item.get('wealth_pct', '-')} vom Vermögen ({item.get('net_worth_est', '-')})" for item in insiders]
+        display_i["Skin-in-the-Game"] = [item.get("skin_in_game", "🟢 Hoch") for item in insiders]
         display_i["Datum"] = [item.get("date", "-") for item in insiders]
         display_i["KI-Signal"] = [item.get("signal", "🟢 KAUF") for item in insiders]
 
         i_cfg = {
-            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
-            "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
-            "Führungskraft / Insider": st.column_config.TextColumn("Insider", help="Name des Käufers"),
-            "Position / Rolle": st.column_config.TextColumn("Rolle", help="CEO, CFO, Gründer oder Aufsichtsrat"),
+            "Unternehmen (WKN)": st.column_config.TextColumn("Firma (WKN)"),
+            "Insider & Rolle": st.column_config.TextColumn("Insider & Rolle"),
             "Kaufvolumen": st.column_config.TextColumn("Kaufsumme", help="Investiertes Eigenkapital"),
-            "Geschätztes Vermögen": st.column_config.TextColumn("Privatvermögen", help="Geschätztes Nettovermögen des Insiders"),
-            "Anteil am Vermögen (%)": st.column_config.TextColumn("Vermögensanteil", help="Prozentualer Anteil der Transaktion am geschätzten Gesamtvermögen"),
-            "Skin-in-the-Game Stufe": st.column_config.TextColumn("Skin-in-the-Game", help="Signalstärke basierend auf relativem Vermögensanteil"),
-            "Datum": st.column_config.TextColumn("Kaufdatum", help="Datum der Transaktion"),
+            "Relativer Anteil": st.column_config.TextColumn("Anteil am Privatvermögen", help="Prozentualer Anteil der Transaktion am geschätzten Gesamtvermögen"),
+            "Skin-in-the-Game": st.column_config.TextColumn("Skin-in-the-Game", help="Signalstärke"),
+            "Datum": st.column_config.TextColumn("Kaufdatum"),
             "KI-Signal": st.column_config.TextColumn("Signal", help="Einstufung des Signals")
         }
 
