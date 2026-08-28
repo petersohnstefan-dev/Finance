@@ -810,6 +810,12 @@ class PortfolioManager:
                 peak_p = max(pos.get("peak_price", buy_p), curr_p)
                 pos["peak_price"] = peak_p
 
+                # Check Knock-Out
+                if pos.get("is_knocked_out"):
+                    self.sell("day_trading", sym, 0.001, reason="❌ Knock-Out Barriere berührt (Totalverlust)")
+                    actions_taken.append(f"KNOCK-OUT {sym}")
+                    continue
+
                 # Very tight Trailing Profit Ratchet
                 if gain_pct >= 5.0:
                     pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.02, 2))
@@ -840,14 +846,46 @@ class PortfolioManager:
                 name = top_alert.get("name", sym)
                 p = top_alert.get("trigger_price", 10.0)
                 
-                # Check if we already have it
+                # 1. Check if we already hold a position for this underlying
                 has_it = False
-                for existing_sym in dt_depot["positions"]:
-                    if sym in existing_sym:
+                for existing_sym, pos in dt_depot["positions"].items():
+                    if existing_sym == sym or pos.get("underlying_symbol") == sym:
                         has_it = True
                         break
                 
-                if not has_it and p > 0:
+                # 2. Check if we already traded it today (prevent revenge trading / infinite loop)
+                recently_traded = False
+                try:
+                    today_str = get_berlin_now().strftime("%Y-%m-%d")
+                    recent_trades = self.db.get_trades("day_trading")
+                    if not recent_trades:
+                        recent_trades = reversed(dt_depot.get("history", []))
+                    for t in recent_trades:
+                        t_date = t.get("executed_at") or t.get("date", "")
+                        if not t_date.startswith(today_str):
+                            continue
+                        t_sym = t.get("symbol", "")
+                        t_name = t.get("name", "")
+                        t_ticker = t.get("ticker", "")
+                        if t_sym == sym or sym in t_name or sym in t_ticker:
+                            recently_traded = True
+                            break
+                except:
+                    pass
+
+                # 3. Check if alert is fresh (< 5 mins old)
+                is_fresh = True
+                alert_ts = top_alert.get("timestamp")
+                if alert_ts:
+                    try:
+                        import datetime
+                        atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
+                        if (datetime.datetime.now() - atime).total_seconds() > 300:
+                            is_fresh = False
+                    except:
+                        pass
+                
+                if not has_it and not recently_traded and is_fresh and p > 0:
                     is_bearish = top_alert.get("direction") == "SHORT"
                     dir_str = "SHORT" if is_bearish else "LONG"
                     
