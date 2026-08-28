@@ -2424,7 +2424,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                     except:
                         pass
                         
-                    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=sys_prompt)
+                    model = genai.GenerativeModel('gemini-1.5-flash-latest', system_instruction=sys_prompt)
                     
                     gemini_messages = []
                     for m in st.session_state.chat_messages:

@@ -26,7 +26,7 @@ class AIJournalEngine:
         self.api_key = api_key
         if self.api_key:
             genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel('gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
+            self.model = genai.GenerativeModel('gemini-1.5-flash-latest', generation_config={"response_mime_type": "application/json"})
 
     def get_todays_trades(self, today_str: str) -> List[Dict[str, Any]]:
         conn = sqlite3.connect(DB_FILE)
