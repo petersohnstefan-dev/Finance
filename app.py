@@ -2424,47 +2424,46 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                     except:
                         pass
                         
-
-                        response = None
-                        last_err = None
+                    response = None
+                    last_err = None
+                    
+                    try:
+                        available_models = []
+                        for m in genai.list_models():
+                            if 'generateContent' in m.supported_generation_methods:
+                                available_models.append(m.name)
+                    except Exception as e:
+                        st.error(f"Konnte Modell-Liste nicht abrufen. API-Key ungültig? Fehler: {e}")
+                        st.stop()
                         
+                    if not available_models:
+                        st.error("Dein API-Key hat Zugriff auf 0 Modelle, die Text generieren können.")
+                        st.stop()
+                        
+                    available_models.sort(key=lambda x: '1.5' in x, reverse=True)
+                    
+                    for m_name in available_models:
                         try:
-                            available_models = []
-                            for m in genai.list_models():
-                                if 'generateContent' in m.supported_generation_methods:
-                                    available_models.append(m.name)
+                            if '1.5' not in m_name:
+                                model = genai.GenerativeModel(m_name)
+                            else:
+                                model = genai.GenerativeModel(m_name, system_instruction=sys_prompt)
+                            
+                            gemini_messages = []
+                            for m in st.session_state.chat_history:
+                                r = "model" if m["role"] == "assistant" else "user"
+                                gemini_messages.append({"role": r, "parts": [m["content"]]})
+                            
+                            response = model.generate_content(gemini_messages, stream=True)
+                            if response:
+                                break
                         except Exception as e:
-                            st.error(f"Konnte Modell-Liste nicht abrufen. API-Key ungültig? Fehler: {e}")
-                            st.stop()
+                            last_err = e
+                            response = None
                             
-                        if not available_models:
-                            st.error("Dein API-Key hat Zugriff auf 0 Modelle, die Text generieren können.")
-                            st.stop()
-                            
-                        available_models.sort(key=lambda x: '1.5' in x, reverse=True)
-                        
-                        for m_name in available_models:
-                            try:
-                                if '1.5' not in m_name:
-                                    model = genai.GenerativeModel(m_name)
-                                else:
-                                    model = genai.GenerativeModel(m_name, system_instruction=sys_prompt)
-                                
-                                gemini_messages = []
-                                for m in st.session_state.chat_history:
-                                    r = "model" if m["role"] == "assistant" else "user"
-                                    gemini_messages.append({"role": r, "parts": [m["content"]]})
-                                
-                                response = model.generate_content(gemini_messages, stream=True)
-                                if response:
-                                    break
-                            except Exception as e:
-                                last_err = e
-                                response = None
-                                
-                        if not response:
-                            st.error(f"Fehler bei allen Modellen (versucht: {len(available_models)}). Letzter Fehler: {last_err}")
-                            st.stop()
+                    if not response:
+                        st.error(f"Fehler bei allen Modellen (versucht: {len(available_models)}). Letzter Fehler: {last_err}")
+                        st.stop()
                     
                     full_response = ""
                     for chunk in response:
