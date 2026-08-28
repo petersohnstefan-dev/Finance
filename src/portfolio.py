@@ -852,16 +852,16 @@ class PortfolioManager:
                     dir_str = "SHORT" if is_bearish else "LONG"
                     
                     spike = top_alert.get('change_1min_pct', 2.0)
-                    if spike > 3.5:
+                    if spike >= 2.0:
                         chosen_lev = 30.0
-                    elif spike > 2.5:
+                    elif spike >= 1.2:
+                        chosen_lev = 15.0
+                    elif spike >= 0.8:
                         chosen_lev = 10.0
-                    elif spike > 1.5:
+                    elif spike >= 0.5:
                         chosen_lev = 5.0
-                    elif spike > 0.8:
-                        chosen_lev = 2.0
                     else:
-                        chosen_lev = 1.0 # Ohne Hebel
+                        chosen_lev = 2.0 # Minimum 2x Hebel für Daytrader
                     
                     alloc = min(1500.0, dt_depot["cash"] * 0.9)
                     

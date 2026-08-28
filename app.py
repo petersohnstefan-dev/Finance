@@ -177,7 +177,12 @@ with st.sidebar:
     st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;'>📌 Hauptmenü & Module</p>", unsafe_allow_html=True)
 
     if "nav_app_mode" not in st.session_state:
-        st.session_state["nav_app_mode"] = "🏆 Markt-Screener & Top-Rankings"
+        # Load mode from URL query parameters if available
+        qp_mode = st.query_params.get("mode")
+        if qp_mode:
+            st.session_state["nav_app_mode"] = qp_mode
+        else:
+            st.session_state["nav_app_mode"] = "🏆 Markt-Screener & Top-Rankings"
 
     menu_opts = [
         "🏆 Markt-Screener & Top-Rankings", 
@@ -202,6 +207,8 @@ with st.sidebar:
     
     if app_mode != st.session_state["nav_app_mode"]:
         st.session_state["nav_app_mode"] = app_mode
+        # Update URL so user can refresh without losing their place
+        st.query_params["mode"] = app_mode
         st.rerun()
 
     st.markdown("---")
@@ -447,6 +454,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
             selected_idx = event.selection.rows[0]
             selected_sym = df_scan.iloc[selected_idx]["symbol"]
             st.session_state["nav_app_mode"] = "🔍 Einzelaktien-Tiefenanalyse"
+            st.query_params["mode"] = "🔍 Einzelaktien-Tiefenanalyse"
             st.session_state["nav_deep_ticker"] = selected_sym
             st.rerun()
 
@@ -569,7 +577,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
     with s2:
         st.metric("Live-Stream Status", "🟢 Aktiv (0 Delay)", help="Parallele Multi-Thread Abfrage in < 2 Sekunden")
     with s3:
-        st.metric("Intraday-Spike-Schwelle", "≥ +0.6% in < 60 Sek.", help="Erkennt explosionsartige Kursanstiege vor dem Massenmarkt")
+        st.metric("Intraday-Spike-Schwelle", "≥ ±0.35% in < 60 Sek.", help="Erkennt explosionsartige Kursanstiege vor dem Massenmarkt")
 
     # 1. Live Ticks Board & Filter
     st.markdown(f"### 📊 Live-Preise: {selected_cat}")
@@ -1955,8 +1963,8 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > +0,6 % getrieben durch plötzliche institutionelle Orders. |
-                | **🚀 Dynamischer Hebel** | **30 %** | Je nach Signalstärke wählt die KI **dynamisch Hebel von 1x (Direkt-Kauf), 2x, 5x, 10x oder bis zu 30x** (für Extrem-Spikes). |
+                | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > ±0,35 % (Long/Short) getrieben durch plötzliche institutionelle Orders. |
+                | **🚀 Dynamischer Hebel** | **30 %** | Je nach Signalstärke wählt die KI **dynamisch Hebel von 2x, 5x, 10x, 15x oder bis zu 30x** (für Extrem-Spikes). |
                 | **🛡️ EOD Derisking** | **20 %** | Verhindert Über-Nacht-Gaps durch automatischen Verkauf profitabler Positionen vor Handelsende. |
 
                 * **🟢 KAUF-Trigger:** Sofortiger Einstieg bei Erkennung eines Sub-Minute-Ausbruchs durch den *RealTimeBreakoutScanner*.

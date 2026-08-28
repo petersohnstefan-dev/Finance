@@ -116,15 +116,19 @@ class RealTimeBreakoutScanner:
                 old_p = one_min_ago_ticks[0]["price"]
                 change_pct = ((px - old_p) / old_p) * 100.0
 
-                if change_pct >= 0.6:
+                if abs(change_pct) >= 0.35:
+                    direction = "LONG" if change_pct > 0 else "SHORT"
+                    msg = f"🚨 {sym} explodiert um {change_pct:+.2f}% in <60 Sek.! Short-Squeeze-Druck aktiv." if direction == "LONG" else f"🚨 {sym} stürzt um {change_pct:+.2f}% ab! Panik-Verkauf aktiv."
+                    
                     alert = {
                         "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
                         "time_str": now.strftime("%H:%M:%S"),
                         "symbol": sym,
+                        "direction": direction,
                         "trigger_price": round(px, 2),
-                        "change_1min_pct": round(change_pct, 2),
+                        "change_1min_pct": round(abs(change_pct), 2),
                         "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-                        "message": f"🚨 {sym} explodiert um {change_pct:+.2f}% in <60 Sek.! Short-Squeeze-Druck aktiv."
+                        "message": msg
                     }
                     new_alerts.append(alert)
                     self._record_alert(alert)
