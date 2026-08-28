@@ -36,6 +36,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+@st.cache_resource
+def get_global_rt_scanner():
+    return RealTimeBreakoutScanner()
+
+rt_scanner = get_global_rt_scanner()
+
 # Clean, High-Legibility Light Theme Styling (Weißer Hintergrund)
 st.markdown("""
 <style>
@@ -536,7 +542,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
     st.title("⚡ Echtzeit-Intraday-Radar (160+ Multi-Asset Live-Stream)")
     st.markdown("Überwacht **Sekunden-Preisticks** und **1-Minuten-Volumenschocks** über **160+ Werte** *(SDAX, MDAX, DAX, US-Biotech & Growth, Krypto, Rohstoffe)* ohne teure API-Kosten.")
 
-    rt_scanner = RealTimeBreakoutScanner()
+    # rt_scanner is now global
     categories = rt_scanner.get_categories()
 
     # Category Selector & Scan Control
