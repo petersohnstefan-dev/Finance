@@ -26,7 +26,24 @@ class AIJournalEngine:
         self.api_key = api_key
         if self.api_key:
             genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel('gemini-1.5-flash-latest', generation_config={"response_mime_type": "application/json"})
+            # Find an available model
+            model_name = 'gemini-1.5-flash'
+            try:
+                available = [m.name for m in genai.list_models()]
+                if 'models/gemini-1.5-flash' in available:
+                    model_name = 'gemini-1.5-flash'
+                elif 'models/gemini-1.5-flash-latest' in available:
+                    model_name = 'gemini-1.5-flash-latest'
+                elif 'models/gemini-1.5-pro-latest' in available:
+                    model_name = 'gemini-1.5-pro-latest'
+                elif 'models/gemini-pro' in available:
+                    model_name = 'gemini-pro'
+            except:
+                pass
+            if '1.5' in model_name:
+                self.model = genai.GenerativeModel(model_name, generation_config={"response_mime_type": "application/json"})
+            else:
+                self.model = genai.GenerativeModel(model_name)
 
     def get_todays_trades(self, today_str: str) -> List[Dict[str, Any]]:
         conn = sqlite3.connect(DB_FILE)
