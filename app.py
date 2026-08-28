@@ -2382,19 +2382,19 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
     
     api_key = ""
     try:
-        api_key = st.secrets.get("OPENAI_API_KEY", "")
+        api_key = st.secrets.get("GEMINI_API_KEY", "")
     except:
         pass
         
     if not api_key:
-        api_key = st.text_input("OpenAI API Key (wird nicht gespeichert)", type="password")
+        api_key = st.text_input("Google Gemini API Key (wird nicht gespeichert)", type="password")
         
     if not api_key:
-        st.warning("Bitte gib einen OpenAI API Key ein oder konfiguriere ihn in den Streamlit Secrets (`.streamlit/secrets.toml`), um den Chat zu nutzen.")
+        st.warning("Bitte gib einen Gemini API Key ein oder konfiguriere ihn in den Streamlit Secrets (`.streamlit/secrets.toml` als `GEMINI_API_KEY`), um den Chat zu nutzen.")
     else:
         try:
-            from openai import OpenAI
-            client = OpenAI(api_key=api_key)
+            import google.generativeai as genai
+            genai.configure(api_key=api_key)
             
             if "chat_messages" not in st.session_state:
                 st.session_state.chat_messages = [
@@ -2423,25 +2423,26 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                     except:
                         pass
                         
-                    api_messages = [{"role": "system", "content": sys_prompt}] + [
-                        {"role": m["role"], "content": m["content"]} for m in st.session_state.chat_messages
-                    ]
+                    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=sys_prompt)
                     
-                    stream = client.chat.completions.create(
-                        model="gpt-4o",
-                        messages=api_messages,
-                        stream=True,
-                    )
+                    gemini_messages = []
+                    for m in st.session_state.chat_messages:
+                        role = "user" if m["role"] == "user" else "model"
+                        gemini_messages.append({"role": role, "parts": [m["content"]]})
+                    
+                    # Call generate_content (streaming)
+                    response = model.generate_content(gemini_messages, stream=True)
+                    
                     full_response = ""
-                    for chunk in stream:
-                        if chunk.choices[0].delta.content is not None:
-                            full_response += chunk.choices[0].delta.content
+                    for chunk in response:
+                        if chunk.text:
+                            full_response += chunk.text
                             message_placeholder.markdown(full_response + "▌")
                     message_placeholder.markdown(full_response)
                 
                 st.session_state.chat_messages.append({"role": "assistant", "content": full_response})
                 
         except ImportError:
-            st.error("Das 'openai' Python-Paket ist nicht installiert. Bitte füge 'openai' zu deiner requirements.txt hinzu.")
+            st.error("Das 'google-generativeai' Python-Paket ist nicht installiert. Bitte überprüfe die requirements.txt.")
         except Exception as e:
             st.error(f"Fehler bei der KI-Anfrage: {e}")
