@@ -2450,7 +2450,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                                 model = genai.GenerativeModel(m_name, system_instruction=sys_prompt)
                             
                             gemini_messages = []
-                            for m in st.session_state.chat_history:
+                            for m in st.session_state.chat_messages:
                                 r = "model" if m["role"] == "assistant" else "user"
                                 gemini_messages.append({"role": r, "parts": [m["content"]]})
                             
