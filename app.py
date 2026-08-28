@@ -2424,15 +2424,32 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                     except:
                         pass
                         
-                    model = genai.GenerativeModel('gemini-1.5-flash-latest', system_instruction=sys_prompt)
-                    
-                    gemini_messages = []
-                    for m in st.session_state.chat_messages:
-                        role = "user" if m["role"] == "user" else "model"
-                        gemini_messages.append({"role": role, "parts": [m["content"]]})
-                    
-                    # Call generate_content (streaming)
-                    response = model.generate_content(gemini_messages, stream=True)
+
+                        models_to_try = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-1.5-pro', 'gemini-1.5-pro-latest', 'gemini-pro']
+                        response = None
+                        last_err = None
+                        
+                        for m_name in models_to_try:
+                            try:
+                                if m_name == 'gemini-pro':
+                                    model = genai.GenerativeModel(m_name)
+                                else:
+                                    model = genai.GenerativeModel(m_name, system_instruction=sys_prompt)
+                                
+                                gemini_messages = []
+                                for m in st.session_state.chat_history:
+                                    r = "model" if m["role"] == "assistant" else "user"
+                                    gemini_messages.append({"role": r, "parts": [m["content"]]})
+                                
+                                response = model.generate_content(gemini_messages, stream=True)
+                                break
+                            except Exception as e:
+                                last_err = e
+                                response = None
+                                
+                        if not response:
+                            st.error(f"Fehler: Kein passendes Modell gefunden. Letzter Fehler: {last_err}")
+                            st.stop()
                     
                     full_response = ""
                     for chunk in response:
