@@ -69,9 +69,9 @@ class RealTimeBreakoutScanner:
                 return px
         return self.fetch_stock_live_price(symbol)
 
-    def scan_category(self, category_name: str = "🔥 Hot-Momentum & Squeeze-Radar") -> Dict[str, Any]:
+    def scan_category(self, category_name: str = "🔥 Hot-Momentum & Squeeze-Radar (Top Picks)") -> Dict[str, Any]:
         """Scans all assets in a selected category in parallel."""
-        tickers = WATCHLIST_CATEGORIES.get(category_name, WATCHLIST_CATEGORIES["🔥 Hot-Momentum & Squeeze-Radar"])
+        tickers = WATCHLIST_CATEGORIES.get(category_name, WATCHLIST_CATEGORIES["🔥 Hot-Momentum & Squeeze-Radar (Top Picks)"])
         now = datetime.datetime.now()
         now_ts = now.timestamp()
         new_alerts = []

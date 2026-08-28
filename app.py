@@ -1587,7 +1587,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         pm.update_live_prices()
         
         # 1b. Generiere kontinuierlich neue Intraday-Ausbruchs-Signale für das Daytrader-Depot
-        rt_scanner.scan_category("🔥 Hot-Momentum & Squeeze-Radar")
+        rt_scanner.scan_category("🔥 Hot-Momentum & Squeeze-Radar (Top Picks)")
         
         # 2. Check Stop-Loss / Take-Profit automatically
         scan_data = load_cached_market_scan()
