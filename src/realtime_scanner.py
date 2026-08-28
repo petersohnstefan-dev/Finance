@@ -2,6 +2,13 @@
 
 import os
 import time
+from zoneinfo import ZoneInfo
+BERLIN_TZ = ZoneInfo("Europe/Berlin")
+def get_berlin_now() -> datetime.datetime:
+    try:
+        return datetime.datetime.now(BERLIN_TZ)
+    except Exception:
+        return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 import json
 import datetime
 import urllib.request
@@ -79,7 +86,7 @@ class RealTimeBreakoutScanner:
             category_name = keys[0]
             
         tickers = WATCHLIST_CATEGORIES[category_name]
-        now = datetime.datetime.now()
+        now = get_berlin_now()
         now_ts = now.timestamp()
         new_alerts = []
         live_ticks = {}

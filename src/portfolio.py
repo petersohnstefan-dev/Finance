@@ -225,7 +225,7 @@ class PortfolioManager:
             return False
 
         depot["cash"] -= cost
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M")
 
         pos_dict = {
             "symbol": symbol,
@@ -292,7 +292,7 @@ class PortfolioManager:
         pnl_pct = ((effective_price - pos["buy_price"]) / pos["buy_price"]) * 100.0 if pos["buy_price"] > 0 else 0.0
 
         depot["cash"] += revenue
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M")
 
         trade_record = {
             "type": "SELL",
@@ -880,7 +880,7 @@ class PortfolioManager:
                     try:
                         import datetime
                         atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
-                        if (datetime.datetime.now() - atime).total_seconds() > 300:
+                        if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 300:
                             is_fresh = False
                     except:
                         pass

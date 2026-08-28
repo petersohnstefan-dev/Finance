@@ -3,6 +3,14 @@ import os
 import json
 import datetime
 from typing import Dict, Any, List, Optional
+from zoneinfo import ZoneInfo
+
+BERLIN_TZ = ZoneInfo("Europe/Berlin")
+def get_berlin_now() -> datetime.datetime:
+    try:
+        return datetime.datetime.now(BERLIN_TZ)
+    except Exception:
+        return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
 DB_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolio.db")
 
@@ -125,7 +133,7 @@ class PortfolioDB:
                      sell_price: Optional[float] = None, pnl: Optional[float] = None, 
                      pnl_pct: Optional[float] = None, reason: str = "",
                      executed_at: Optional[str] = None):
-        now_str = executed_at or datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        now_str = executed_at or get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
         buy_p = price if trade_type == "BUY" else price
         sell_p = sell_price if trade_type == "SELL" else None
         with self._get_conn() as conn:
@@ -144,7 +152,7 @@ class PortfolioDB:
 
     def record_daily_snapshot(self, depot_id: str, total_value: float, cash: float, 
                               invested_value: float, pnl: float, pnl_pct: float, num_positions: int):
-        today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        today_str = get_berlin_now().strftime("%Y-%m-%d")
         with self._get_conn() as conn:
             cursor = conn.cursor()
             cursor.execute("""
@@ -163,7 +171,7 @@ class PortfolioDB:
 
     def get_previous_daily_close(self, depot_id: str) -> float:
         import datetime
-        today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        today_str = get_berlin_now().strftime("%Y-%m-%d")
         with self._get_conn() as conn:
             cursor = conn.cursor()
             cursor.execute("""
@@ -179,7 +187,7 @@ class PortfolioDB:
 
     def record_radar_signals(self, signals: list):
         import datetime
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M")
         with self._get_conn() as conn:
             cursor = conn.cursor()
             for s in signals:
@@ -255,7 +263,7 @@ class PortfolioDB:
     def record_hourly_snapshot(self, depot_id: str, total_value: float, cash: float, 
                                invested_value: float, pnl: float, pnl_pct: float, num_positions: int,
                                snapshot_time: Optional[str] = None):
-        now_hour_str = snapshot_time or datetime.datetime.now().strftime("%Y-%m-%d %H:00")
+        now_hour_str = snapshot_time or get_berlin_now().strftime("%Y-%m-%d %H:00")
         with self._get_conn() as conn:
             cursor = conn.cursor()
             cursor.execute("""
