@@ -563,7 +563,7 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
     with s2:
         st.metric("Live-Stream Status", "🟢 Aktiv (0 Delay)", help="Parallele Multi-Thread Abfrage in < 2 Sekunden")
     with s3:
-        st.metric("Intraday-Spike-Schwelle", "≥ +1.5% in < 60 Sek.", help="Erkennt explosionsartige Kursanstiege vor dem Massenmarkt")
+        st.metric("Intraday-Spike-Schwelle", "≥ +0.6% in < 60 Sek.", help="Erkennt explosionsartige Kursanstiege vor dem Massenmarkt")
 
     # 1. Live Ticks Board & Filter
     st.markdown(f"### 📊 Live-Preise: {selected_cat}")
@@ -1580,6 +1580,9 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         # 1. Fetch fresh live prices via parallel fast_info / Binance streamer
         pm.update_live_prices()
         
+        # 1b. Generiere kontinuierlich neue Intraday-Ausbruchs-Signale für das Daytrader-Depot
+        rt_scanner.scan_category("🔥 Hot-Momentum & Squeeze-Radar")
+        
         # 2. Check Stop-Loss / Take-Profit automatically
         scan_data = load_cached_market_scan()
         scan_list = scan_data.get("data", []) if scan_data else []
@@ -1945,7 +1948,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > +1,5 % getrieben durch plötzliche institutionelle Orders. |
+                | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > +0,6 % getrieben durch plötzliche institutionelle Orders. |
                 | **🚀 Dynamischer Hebel** | **30 %** | Je nach Signalstärke wählt die KI **dynamisch Hebel von 1x (Direkt-Kauf), 2x, 5x, 10x oder bis zu 30x** (für Extrem-Spikes). |
                 | **🛡️ EOD Derisking** | **20 %** | Verhindert Über-Nacht-Gaps durch automatischen Verkauf profitabler Positionen vor Handelsende. |
 

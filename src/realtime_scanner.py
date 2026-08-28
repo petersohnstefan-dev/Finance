@@ -109,7 +109,7 @@ class RealTimeBreakoutScanner:
                 old_p = one_min_ago_ticks[0]["price"]
                 change_pct = ((px - old_p) / old_p) * 100.0
 
-                if change_pct >= 1.5:
+                if change_pct >= 0.6:
                     alert = {
                         "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
                         "time_str": now.strftime("%H:%M:%S"),
