@@ -21,6 +21,25 @@ def get_berlin_now() -> datetime.datetime:
     except Exception:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
+def _migrate_ai_journal_db():
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+    # Check if 'mode' column exists
+    cursor.execute("PRAGMA table_info(ai_journal)")
+    columns = [info[1] for info in cursor.fetchall()]
+    if "mode" not in columns and "win_rate" in columns:
+        try:
+            cursor.execute('ALTER TABLE ai_journal ADD COLUMN mode TEXT DEFAULT "daily"')
+            cursor.execute('ALTER TABLE ai_journal ADD COLUMN param_updates TEXT DEFAULT "{}"')
+            conn.commit()
+        except Exception as e:
+            pass
+    conn.close()
+
+# Run migration on import
+_migrate_ai_journal_db()
+
+
 class AIJournalEngine:
     def __init__(self, api_key: str):
         self.api_key = api_key
