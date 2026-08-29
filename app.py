@@ -1677,10 +1677,10 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             
             eq_df = pm.get_equity_curve(depot_key)
             
-            # 🟢 HIER WIRD DIE NACHT GEFILTERT (Kein Handel zwischen 22:00 und 07:00)
+            # 🟢 HIER WIRD DIE NACHT GEFILTERT (Kein Handel zwischen 22:00 und 06:00)
             if not eq_df.empty:
                 eq_df["hour_check"] = pd.to_datetime(eq_df["date"]).dt.hour
-                eq_df = eq_df[(eq_df["hour_check"] >= 7) & (eq_df["hour_check"] <= 22)]
+                eq_df = eq_df[(eq_df["hour_check"] >= 6) & (eq_df["hour_check"] <= 22)]
             
             # High-legibility Plotly Equity Chart
             fig_eq = make_subplots(
@@ -1739,6 +1739,9 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
                 hovermode="x unified"
             )
+            # Nutze Kategorie-Achse, damit fehlende Stunden (Lücken) einfach ignoriert und die Balken zusammengerückt werden
+            fig_eq.update_xaxes(type="category", nticks=15)
+            
             fig_eq.update_yaxes(title_text="Euro (€)", row=1, col=1)
             fig_eq.update_yaxes(title_text="P&L (€)", row=2, col=1)
             st.plotly_chart(fig_eq, use_container_width=True)
