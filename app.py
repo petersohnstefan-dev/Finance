@@ -2418,7 +2418,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                 with st.chat_message("assistant"):
                     message_placeholder = st.empty()
                     
-                    sys_prompt = "Du bist ein professioneller KI-Trading-Assistent einer hochentwickelten Finanz-App. Erkläre Finanzkonzepte, Zinsentwicklungen, Short-Squeeze-Mechaniken und warum bestimmte Trades in bestimmten Marktsituationen sinnvoll sind. Antworte präzise, auf Deutsch und fachlich fundiert. Vermeide Floskeln."
+                    sys_prompt = "Du bist ein professioneller KI-Trading-Assistent einer hochentwickelten Finanz-App. Erkläre Finanzkonzepte, Zinsentwicklungen, Short-Squeeze-Mechaniken und warum bestimmte Trades in bestimmten Marktsituationen sinnvoll sind. Antworte präzise, auf Deutsch und fachlich fundiert. WICHTIGE REGEL: Behaupte NIEMALS, dass du keine aktuellen Daten hast. Dir werden am Ende dieses Prompts die ECHTEN, AKTUELLEN LIVE-DATEN aus dem System übergeben! Nutze AUSSCHLIESSLICH diese bereitgestellten Daten, um Fragen nach dem aktuellen Marktstand oder den letzten 7 Tagen zu beantworten. Vermeide Floskeln."
                     try:
                         import json
                         with open("data/portfolios.json", "r", encoding="utf-8") as f:
@@ -2435,7 +2435,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                         b_hist_df = BondYieldsIntelEngine.get_historical_bond_chart_data(period="1mo")
                         hist_text = "Keine Daten"
                         if not b_hist_df.empty:
-                            hist_text = str(b_hist_df.tail(7)['us_10y_yield'].to_dict())
+                            hist_text = str(b_hist_df.tail(7).set_index('date')['us_10y_yield'].to_dict())
                         sys_prompt += "\n\nLIVE MARKT-DATEN:\n"
                         sys_prompt += f"- US 10-Jahres-Rendite: {b_data['us_10y_yield']:.2f}%\n"
                         sys_prompt += f"- Historie 10Y Rendite (letzte 7 Tage): {hist_text}\n"
