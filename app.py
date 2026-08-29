@@ -1590,6 +1590,20 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         horizontal=True
     )[0]
 
+
+    @st.cache_data(ttl=3600)
+    def fetch_index_benchmarks(start_date: str):
+        try:
+            import yfinance as yf
+            tickers = {"DAX": "^GDAXI", "Nasdaq": "^IXIC", "Dow": "^DJI", "S&P 500": "^GSPC"}
+            # Fetch daily data
+            idx_data = yf.download(list(tickers.values()), start=start_date, progress=False)['Close']
+            # Make sure index is string YYYY-MM-DD
+            idx_data.index = pd.to_datetime(idx_data.index).strftime("%Y-%m-%d")
+            return idx_data, tickers
+        except Exception as e:
+            return None, None
+
     # Define the Auto-Refreshing Live Depot Fragment (Runs every 30s automatically)
     @st.fragment(run_every=30)
     def render_live_depot_view(depot_key: str):
@@ -1718,6 +1732,35 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 ),
                 row=1, col=1
             )
+            
+            # 2.5 Index Benchmarks
+            try:
+                start_date_str = pd.to_datetime(eq_df["date"].iloc[0]).strftime("%Y-%m-%d")
+                idx_data, tickers = fetch_index_benchmarks(start_date_str)
+                if idx_data is not None:
+                    eq_df["date_only"] = pd.to_datetime(eq_df["date"]).dt.strftime("%Y-%m-%d")
+                    colors = {"DAX": "#facc15", "Nasdaq": "#a855f7", "S&P 500": "#ec4899", "Dow": "#22d3ee"}
+                    
+                    for t_name, ticker in tickers.items():
+                        s = idx_data[ticker].dropna()
+                        if not s.empty:
+                            base_val = s.iloc[0]
+                            mapped = eq_df["date_only"].map(s).ffill()
+                            norm_vals = (mapped / base_val) * 10000.0
+                            
+                            fig_eq.add_trace(
+                                go.Scatter(
+                                    x=eq_df["date"], 
+                                    y=norm_vals, 
+                                    name=f"{t_name} (normiert)", 
+                                    mode="lines",
+                                    line=dict(color=colors[t_name], width=1.5, dash="dot"),
+                                    hovertemplate=f"<b>{t_name}:</b> %{{y:,.2f}} €<extra></extra>"
+                                ),
+                                row=1, col=1
+                            )
+            except Exception as e:
+                pass
 
             # 3. PnL Bar in row 2
             bar_colors = ["#22c55e" if p >= 0 else "#ef4444" for p in eq_df["pnl"]]
