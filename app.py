@@ -2424,6 +2424,8 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                         with open("data/portfolios.json", "r", encoding="utf-8") as f:
                             pf_data = json.load(f)
                         sys_prompt += "\n\nHier ist der aktuelle Zustand der Musterdepots und die Transaktionshistorie (Käufe/Verkäufe) als JSON, damit du konkrete Fragen zu ausgeführten Trades beantworten kannst:\n" + json.dumps(pf_data)
+                    except:
+                        pass
 
                     try:
                         from src.bonds_yields_radar import BondYieldsIntelEngine
@@ -2442,8 +2444,6 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                         sys_prompt += f"- Goldpreis: ${pm_data['gold_price']:.2f}\n"
                         sys_prompt += f"- Silberpreis: ${pm_data['silver_price']:.2f}\n"
                     except Exception as e:
-                        pass
-                    except:
                         pass
                         
                     response = None
