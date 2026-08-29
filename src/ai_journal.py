@@ -198,16 +198,22 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
                 "lesson": "Fehler beim Generieren."
             }
 
+        def _safe_str(val):
+            if isinstance(val, (dict, list)):
+                import json
+                return json.dumps(val, ensure_ascii=False)
+            return str(val) if val else ""
+
         journal_entry = {
             "date": date_label,
             "mode": mode,
             "win_rate": round(win_rate, 2),
             "best_trade": best_trade if total_closed > 0 else "-",
             "worst_trade": worst_trade if total_closed > 0 else "-",
-            "reflection": res_json.get("reflection", ""),
-            "missed_opportunities": res_json.get("missed_opportunities", ""),
-            "lesson": res_json.get("lesson", ""),
-            "param_updates": json.dumps(res_json.get("parameters_update", {}))
+            "reflection": _safe_str(res_json.get("reflection", "")),
+            "missed_opportunities": _safe_str(res_json.get("missed_opportunities", "")),
+            "lesson": _safe_str(res_json.get("lesson", "")),
+            "param_updates": _safe_str(res_json.get("parameters_update", {}))
         }
 
         self.save_journal_entry(journal_entry)
