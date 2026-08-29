@@ -30,6 +30,24 @@ class PortfolioManager:
         self.deep_intel = DeepIntelligenceHub()
         self._last_price_update = 0.0
         self.data = self._load()
+        self.strategy = self._load_strategy()
+
+    def _load_strategy(self) -> Dict[str, Any]:
+        strat_file = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
+        default_strat = {
+            "daytrade_max_leverage": 30.0,
+            "daytrade_stop_loss_pct": 0.25,
+            "short_term_trailing_start_pct": 8.0,
+            "short_term_stop_loss_pct": 0.15
+        }
+        if os.path.exists(strat_file):
+            try:
+                with open(strat_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    default_strat.update(data)
+            except:
+                pass
+        return default_strat
 
     def _get_seed_data(self) -> Dict[str, Any]:
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
@@ -890,16 +908,17 @@ class PortfolioManager:
                     dir_str = "SHORT" if is_bearish else "LONG"
                     
                     spike = top_alert.get('change_1min_pct', 2.0)
+                    max_lev = self.strategy.get("daytrade_max_leverage", 30.0)
                     if spike >= 2.0:
-                        chosen_lev = 30.0
+                        chosen_lev = min(30.0, max_lev)
                     elif spike >= 1.2:
-                        chosen_lev = 15.0
+                        chosen_lev = min(15.0, max_lev)
                     elif spike >= 0.8:
-                        chosen_lev = 10.0
+                        chosen_lev = min(10.0, max_lev)
                     elif spike >= 0.5:
-                        chosen_lev = 5.0
+                        chosen_lev = min(5.0, max_lev)
                     else:
-                        chosen_lev = 2.0 # Minimum 2x Hebel für Daytrader
+                        chosen_lev = min(2.0, max_lev) # Minimum 2x Hebel für Daytrader
                     
                     alloc = min(1500.0, dt_depot["cash"] * 0.9)
                     
@@ -908,7 +927,8 @@ class PortfolioManager:
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
                         reason_msg = f"⚡ Daytrade Momentum ({spike:+.1f}% Spike) | {chosen_lev}x Hebel"
-                        sl_price = cert_price * 0.75 # 25% Stop-Loss auf das Derivat
+                        sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.25)
+                        sl_price = cert_price * (1.0 - sl_pct) # Dynamischer Stop-Loss durch KI-Tagebuch
                         
                         self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=reason_msg,

@@ -27,11 +27,20 @@ class AIJournalEngine:
         if self.api_key:
             genai.configure(api_key=self.api_key)
 
-    def get_todays_trades(self, today_str: str) -> List[Dict[str, Any]]:
+    def get_trades(self, date_prefix: str) -> List[Dict[str, Any]]:
         conn = sqlite3.connect(DB_FILE)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM trades WHERE executed_at LIKE ? ORDER BY executed_at ASC", (f"{today_str}%",))
+        cursor.execute("SELECT * FROM trades WHERE executed_at LIKE ? ORDER BY executed_at ASC", (f"{date_prefix}%",))
+        trades = [dict(row) for row in cursor.fetchall()]
+        conn.close()
+        return trades
+        
+    def get_weekly_trades(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+        conn = sqlite3.connect(DB_FILE)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM trades WHERE executed_at >= ? AND executed_at <= ? ORDER BY executed_at ASC", (start_date, end_date + " 23:59:59"))
         trades = [dict(row) for row in cursor.fetchall()]
         conn.close()
         return trades
@@ -53,15 +62,26 @@ class AIJournalEngine:
         except Exception:
             return []
 
-    def generate_daily_retrospective(self) -> Dict[str, Any]:
+    def generate_retrospective(self, mode="daily") -> Dict[str, Any]:
         if not self.api_key:
             raise ValueError("Kein Gemini API Key vorhanden.")
             
-        today_str = get_berlin_now().strftime("%Y-%m-%d")
-        trades = self.get_todays_trades(today_str)
+        now = get_berlin_now()
+        today_str = now.strftime("%Y-%m-%d")
         
-        traded_symbols = set([t.get("symbol") for t in trades])
-        missed_alerts = self.get_todays_missed_alerts(today_str, traded_symbols)
+        if mode == "weekly":
+            start_date = (now - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+            trades = self.get_weekly_trades(start_date, today_str)
+            traded_symbols = set([t.get("symbol") for t in trades])
+            missed_alerts = [] # Keep prompt small for weekly
+            date_label = f"{start_date} bis {today_str}"
+            time_context = "Es ist das Ende der Handelswoche."
+        else:
+            trades = self.get_trades(today_str)
+            traded_symbols = set([t.get("symbol") for t in trades])
+            missed_alerts = self.get_todays_missed_alerts(today_str, traded_symbols)
+            date_label = today_str
+            time_context = "Es ist Ende des heutigen Handelstages." 
 
         # Calculate basic stats
         wins = 0
@@ -146,6 +166,12 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
             
         try:
             res_json = json.loads(response.text.strip().removeprefix('```json').removesuffix('```').strip())
+            
+            # Apply strategy update
+            if "parameters_update" in res_json and isinstance(res_json["parameters_update"], dict):
+                curr_strat.update(res_json["parameters_update"])
+                with open(strat_file, "w", encoding="utf-8") as f:
+                    json.dump(curr_strat, f, indent=4)
         except:
             res_json = {
                 "reflection": "Fehler beim Generieren der Reflexion.",
@@ -154,13 +180,15 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
             }
 
         journal_entry = {
-            "date": today_str,
+            "date": date_label,
+            "mode": mode,
             "win_rate": round(win_rate, 2),
             "best_trade": best_trade if total_closed > 0 else "-",
             "worst_trade": worst_trade if total_closed > 0 else "-",
             "reflection": res_json.get("reflection", ""),
             "missed_opportunities": res_json.get("missed_opportunities", ""),
-            "lesson": res_json.get("lesson", "")
+            "lesson": res_json.get("lesson", ""),
+            "param_updates": json.dumps(res_json.get("parameters_update", {}))
         }
 
         self.save_journal_entry(journal_entry)
@@ -170,18 +198,20 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
         cursor.execute('''
-            INSERT INTO ai_journal (date, win_rate, best_trade, worst_trade, reflection, lesson, missed_opportunities)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO ai_journal (date, mode, win_rate, best_trade, worst_trade, reflection, lesson, missed_opportunities, param_updates)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(date) DO UPDATE SET
+                mode=excluded.mode,
                 win_rate=excluded.win_rate,
                 best_trade=excluded.best_trade,
                 worst_trade=excluded.worst_trade,
                 reflection=excluded.reflection,
                 lesson=excluded.lesson,
-                missed_opportunities=excluded.missed_opportunities
+                missed_opportunities=excluded.missed_opportunities,
+                param_updates=excluded.param_updates
         ''', (
-            entry["date"], entry["win_rate"], entry["best_trade"], entry["worst_trade"],
-            entry["reflection"], entry["lesson"], entry["missed_opportunities"]
+            entry["date"], entry.get("mode", "daily"), entry["win_rate"], entry["best_trade"], entry["worst_trade"],
+            entry["reflection"], entry["lesson"], entry["missed_opportunities"], entry.get("param_updates", "{}")
         ))
         conn.commit()
         conn.close()
