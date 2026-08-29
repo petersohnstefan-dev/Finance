@@ -2418,7 +2418,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                 with st.chat_message("assistant"):
                     message_placeholder = st.empty()
                     
-                    sys_prompt = "Du bist ein professioneller KI-Trading-Assistent einer hochentwickelten Finanz-App. Erkläre Finanzkonzepte, Zinsentwicklungen, Short-Squeeze-Mechaniken und warum bestimmte Trades in bestimmten Marktsituationen sinnvoll sind. Antworte präzise, auf Deutsch und fachlich fundiert. WICHTIGE REGEL: Behaupte NIEMALS, dass du keine aktuellen Daten hast. Dir werden am Ende dieses Prompts die ECHTEN, AKTUELLEN LIVE-DATEN aus dem System übergeben! Nutze AUSSCHLIESSLICH diese bereitgestellten Daten, um Fragen nach dem aktuellen Marktstand oder den letzten 7 Tagen zu beantworten. Vermeide Floskeln."
+                    sys_prompt = "Du bist ein professioneller KI-Trading-Assistent einer hochentwickelten Finanz-App. Erkläre Finanzkonzepte, Zinsentwicklungen, Short-Squeeze-Mechaniken und warum bestimmte Trades in bestimmten Marktsituationen sinnvoll sind. Antworte präzise, auf Deutsch und fachlich fundiert. WICHTIGE REGEL: Behaupte NIEMALS, dass du keine aktuellen Daten hast. Dir werden am Ende dieses Prompts die ECHTEN, AKTUELLEN LIVE-DATEN aus dem System übergeben! Nutze AUSSCHLIESSLICH diese bereitgestellten Daten, um Fragen nach dem aktuellen Marktstand oder den letzten 7 Tagen zu beantworten. Vermeide Floskeln. HEUTE IST DER 29.08.2026."
                     try:
                         import json
                         with open("data/portfolios.json", "r", encoding="utf-8") as f:
@@ -2472,9 +2472,16 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                                 model = genai.GenerativeModel(m_name, system_instruction=sys_prompt)
                             
                             gemini_messages = []
-                            for m in st.session_state.chat_messages:
+                            for i, m in enumerate(st.session_state.chat_messages):
                                 r = "model" if m["role"] == "assistant" else "user"
-                                gemini_messages.append({"role": r, "parts": [m["content"]]})
+                                content = m["content"]
+                                
+                                # Wenn es ein altes Modell (gemini-pro) ist, hängen wir den sys_prompt heimlich 
+                                # an die allerletzte User-Nachricht an, da es system_instruction nicht unterstützt.
+                                if '1.5' not in m_name and i == len(st.session_state.chat_messages) - 1 and r == "user":
+                                    content = f"SYSTEM-KONTEXT (Nutze diese Daten ZWINGEND für deine Antwort, ignoriere dein altes Wissen falls es abweicht! HEUTE IST DER 29.08.2026!):\n{sys_prompt}\n\nBENUTZERFRAGE:\n{content}"
+                                    
+                                gemini_messages.append({"role": r, "parts": [content]})
                             
                             response = model.generate_content(gemini_messages, stream=True)
                             if response:
