@@ -1785,7 +1785,21 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             # Nutze Kategorie-Achse, damit fehlende Stunden (Lücken) einfach ignoriert und die Balken zusammengerückt werden
             fig_eq.update_xaxes(type="category", nticks=15)
             
-            fig_eq.update_yaxes(title_text="Euro (€)", row=1, col=1)
+                        # Berechne dynamische Y-Achsen-Grenzen, damit fill='tozeroy' den Chart nicht plattdrückt
+            try:
+                min_val = eq_df["total_value"].min()
+                max_val = eq_df["total_value"].max()
+                
+                # Falls die Benchmarks da sind, beachte auch deren min/max grob (wir nehmen +/- 10% zur Sicherheit)
+                padding = max((max_val - min_val) * 0.5, 300) # Mindestens 300 Euro Abstand nach oben und unten
+                
+                # Hard-Cap für den Start (z.B. +/- 1000 vom Baseline)
+                y_bottom = min(min_val, 10000.0) - padding
+                y_top = max(max_val, 10000.0) + padding
+                
+                fig_eq.update_yaxes(title_text="Euro (€)", range=[y_bottom, y_top], row=1, col=1)
+            except:
+                fig_eq.update_yaxes(title_text="Euro (€)", row=1, col=1)
             fig_eq.update_yaxes(title_text="P&L (€)", row=2, col=1)
             st.plotly_chart(fig_eq, use_container_width=True)
 
