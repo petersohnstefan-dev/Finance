@@ -2583,7 +2583,7 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
             
     with col2:
         st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
-        if st.button("🔄 Tages-Retrospektive (EOD)"):
+        if st.button("🔄 Tages-Retro (Daytrader & Kurzfristig)"):
             if not api_key:
                 st.error("Bitte gib zuerst deinen API Key ein.")
             else:
@@ -2601,7 +2601,7 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                         
     with col3:
         st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
-        if st.button("📅 Wochen-Retrospektive (Freitag)"):
+        if st.button("📅 Wochen-Retro (Mittel- & Langfristig)"):
             if not api_key:
                 st.error("Bitte gib zuerst deinen API Key ein.")
             else:
