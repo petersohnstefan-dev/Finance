@@ -1,0 +1,56 @@
+name: 🧠 AI Lerntagebuch (Daily/Weekly)
+
+on:
+  schedule:
+    # Jeden Tag um 20:30 UTC (22:30 CEST) für die Daily-Retrospektive
+    - cron: '30 20 * * 1-5'
+    # Jeden Freitag um 21:00 UTC (23:00 CEST) für die Weekly-Retrospektive
+    - cron: '0 21 * * 5'
+  workflow_dispatch: # Erlaubt manuellen Start via GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-journal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Code auschecken
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 3.12 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Abhängigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 📝 Tägliche Retrospektive generieren (Mo-Fr)
+        if: github.event.schedule == '30 20 * * 1-5' || github.event_name == 'workflow_dispatch'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python run_ai_journal.py
+
+      - name: 📅 Wöchentliche Retrospektive generieren (Fr)
+        if: github.event.schedule == '0 21 * * 5' || github.event_name == 'workflow_dispatch'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python run_ai_journal.py --weekly
+
+      - name: 💾 Datenbank zurückpushen
+        run: |
+          git config --global user.name 'Finance AI Bot'
+          git config --global user.email 'bot@antigravity.ai'
+          git add data/portfolio.db
+          if git diff --staged --quiet; then
+            echo 'Keine neuen Einträge.'
+          else
+            git commit -m '🧠 Automatisches KI-Lerntagebuch generiert [skip ci]'
+            git push
+          fi
