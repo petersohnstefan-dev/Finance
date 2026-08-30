@@ -289,12 +289,33 @@ TICKER_TO_WKN: Dict[str, str] = {
 
     # --- Anleihen & ETFs ---
     "TLT": "A0B63A",        # iShares 20+ Year Treasury Bond ETF
+    "IEF": "A0B63B",        # iShares 7-10 Year Treasury Bond ETF
+    "SHY": "A0B63C",        # iShares 1-3 Year Treasury Bond ETF
     "HYG": "A0M623",        # iShares iBoxx $ High Yield Corporate Bond
     "LQD": "A0DK61",        # iShares iBoxx $ Investment Grade Corporate
     "BND": "A0NCFQ",        # Vanguard Total Bond Market ETF
+    "AGG": "A0B63D",        # iShares Core US Aggregate Bond ETF
     "SPY": "A0AET0",        # SPDR S&P 500 ETF Trust
     "QQQ": "A0NER2",        # Invesco QQQ Trust (Nasdaq 100)
     "IWM": "592736",        # iShares Russell 2000 ETF
+    "VTI": "A0B63E",        # Vanguard Total Stock Market ETF
+    "VOO": "A0B63F",        # Vanguard S&P 500 ETF
+    
+    # --- Krypto & Sektor ETFs ---
+    "IBIT": "A40J1P",       # iShares Bitcoin Trust
+    "FBTC": "A40J1Q",       # Fidelity Wise Origin Bitcoin
+    "ARKB": "A40J1R",       # ARK 21Shares Bitcoin ETF
+    "BITB": "A40J1S",       # Bitwise Bitcoin ETF
+    "ETHA": "A40J1T",       # iShares Ethereum Trust
+    "SMH": "A0X86P",        # VanEck Semiconductor ETF
+    "SOXX": "A2PTQ4",       # iShares Semiconductor ETF
+    "ARKK": "A2QC5Q",       # ARK Innovation ETF
+    "XLK": "A142N1",        # Technology Select Sector SPDR
+    "XLF": "A142N2",        # Financial Select Sector SPDR
+    "XLE": "A142N3",        # Energy Select Sector SPDR
+    "XLV": "A142N4",        # Health Care Select Sector SPDR
+    "GDX": "A0MMMZ",        # VanEck Gold Miners ETF
+    "URA": "A1C3R6",        # Global X Uranium ETF
 
     # --- Edelmetalle & Rohstoffe ---
     "GC=F": "A0S9GB",       # Xetra-Gold / Gold Spot

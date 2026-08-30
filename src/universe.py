@@ -1,4 +1,4 @@
-﻿"""Constituents for Market Scanning across 500+ Stocks, Cryptocurrencies, Precious Metals, and Commodities."""
+"""Constituents for Market Scanning across 500+ Stocks, Cryptocurrencies, Precious Metals, and Commodities."""
 
 # 🪙 1. KRYPTOWÄHRUNGEN (Top 40 Coins & High Beta Ecosystems)
 UNIVERSE_CRYPTO = [
@@ -10,7 +10,20 @@ UNIVERSE_CRYPTO = [
     "JUP-USD", "STRK-USD", "WLD-USD", "PENDLE-USD", "HBAR-USD"
 ]
 
-# 🥇 2. EDELMETALLE & ROHSTOFFE (Futures & Energie)
+# 🇺🇸 2. ETFs (Crypto, Broad Market, Tech)
+UNIVERSE_ETFS = [
+    # Krypto ETFs (Bitcoin & Ethereum Spot ETFs)
+    "IBIT", "FBTC", "ARKB", "BITB", "HODL", "BRRR", "EZBC", "BTCW", "ETHA", "FETH", "ETHW",
+    # Broad Market & Index ETFs
+    "SPY", "QQQ", "DIA", "IWM", "VTI", "VOO", "URTH", "EFA", "EEM",
+    # Sektor & Thematische ETFs
+    "SMH", "SOXX", "XLK", "XLF", "XLE", "XLV", "XLP", "XLU", "XLI", "XLB", "XLY", "XLRE",
+    "ARKK", "ARKG", "ARKF", "ARKW", "ARKQ", "TAN", "ICLN", "URA", "COPX", "GDX", "GDXJ",
+    # Anleihen & Fixed Income ETFs
+    "TLT", "IEF", "SHY", "LQD", "HYG", "BND", "AGG"
+]
+
+# 🛢️ 3. EDELMETALLE & ROHSTOFFE (Futures & Energie)
 UNIVERSE_METALS = [
     "GC=F",   # Gold
     "SI=F",   # Silber
@@ -98,12 +111,13 @@ UNIVERSE_EU_MID_GROWTH = [
 CATEGORIZED_UNIVERSES = {
     "🔥 Hot-Momentum & Squeeze-Radar (Top Picks)": [
         "MRNA", "RIVN", "PLTR", "SOL-USD", "NVDA", "MSTR", "COIN", "ASTS", "SMCI", 
-        "BTC-USD", "SDF.DE", "EVT.DE", "HFG.DE", "GC=F", "HIMS", "DUOL", "RDDT", "ARM",
+        "BTC-USD", "IBIT", "SDF.DE", "EVT.DE", "HFG.DE", "GC=F", "HIMS", "DUOL", "RDDT", "ARM",
         "APP", "CELH", "CAVA", "IONQ", "RKLB", "VKTX", "BNTX", "TEM", "ALAB", "TAO-USD"
     ],
-    "🪙 Kryptowährungen (Top 40 Coins)": UNIVERSE_CRYPTO,
-    "🥇 Edelmetalle & Rohstoffe": UNIVERSE_METALS + UNIVERSE_COMMODITIES,
-    "🔥 US Biotech, AI & High-Growth Mid-Caps (100 Werte)": UNIVERSE_US_GROWTH_MIDCAPS,
+    "₿ Kryptowährungen (Top 40 Coins)": UNIVERSE_CRYPTO,
+    "📈 ETFs (Crypto, Broad, Sektor & Anleihen)": UNIVERSE_ETFS,
+    "🛢️ Edelmetalle & Rohstoffe": UNIVERSE_METALS + UNIVERSE_COMMODITIES,
+    "🧬 US Biotech, AI & High-Growth Mid-Caps (100 Werte)": UNIVERSE_US_GROWTH_MIDCAPS,
     "🇺🇸 US Mega-Cap & S&P Leaders (80 Werte)": UNIVERSE_US_LEADERS,
     "🇩🇪 Deutschland: SDAX & Tech-Nebenwerte (70 Werte)": UNIVERSE_DE_SDAX,
     "🇩🇪 Deutschland: MDAX (50 Werte)": UNIVERSE_DE_MDAX,
@@ -112,7 +126,7 @@ CATEGORIZED_UNIVERSES = {
 }
 
 FULL_MARKET_UNIVERSE = list(dict.fromkeys(
-    UNIVERSE_CRYPTO + UNIVERSE_METALS + UNIVERSE_COMMODITIES +
+    UNIVERSE_CRYPTO + UNIVERSE_ETFS + UNIVERSE_METALS + UNIVERSE_COMMODITIES +
     UNIVERSE_US_GROWTH_MIDCAPS + UNIVERSE_DE_SDAX + UNIVERSE_DE_MDAX + 
     UNIVERSE_EU_MID_GROWTH + UNIVERSE_DE_DAX + UNIVERSE_US_LEADERS
 ))
