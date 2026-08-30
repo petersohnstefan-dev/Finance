@@ -2591,8 +2591,9 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                     from src.ai_journal import AIJournalEngine
                     engine = AIJournalEngine(api_key)
                     try:
-                        engine.generate_retrospective(mode="daily")
-                        st.success("Tages-Eintrag generiert!")
+                        for depot in ["day_trading", "short_term"]:
+                            engine.generate_retrospective(depot_id=depot, mode="daily")
+                        st.success("Tages-Einträge für Daytrader und Kurzfristig generiert!")
                         import time; time.sleep(1)
                         st.rerun()
                     except Exception as e:
@@ -2608,8 +2609,9 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                     from src.ai_journal import AIJournalEngine
                     engine = AIJournalEngine(api_key)
                     try:
-                        engine.generate_retrospective(mode="weekly")
-                        st.success("Wochen-Eintrag generiert!")
+                        for depot in ["medium_term", "long_term"]:
+                            engine.generate_retrospective(depot_id=depot, mode="weekly")
+                        st.success("Wochen-Einträge für Mittelfristig und Langfristig generiert!")
                         import time; time.sleep(1)
                         st.rerun()
                     except Exception as e:
@@ -2623,9 +2625,16 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
     if not journals:
         st.info("Noch keine Tagebucheinträge vorhanden. Klicke auf 'Tages-Retrospektive', um den ersten Eintrag zu erstellen!")
     else:
+        depot_names = {
+            "short_term": "Kurzfristig",
+            "medium_term": "Mittelfristig",
+            "long_term": "Langfristig",
+            "day_trading": "Daytrader"
+        }
         for j in journals:
             mode_icon = "📅 Woche" if j.get("mode") == "weekly" else "📆 Tag"
-            with st.expander(f"{mode_icon}: {j['date']} | Win-Rate: {j['win_rate']}%", expanded=(j == journals[0])):
+            depot_label = depot_names.get(j.get('depot_id', ''), j.get('depot_id', 'Unknown'))
+            with st.expander(f"{mode_icon} [{depot_label}]: {j['date']} | Win-Rate: {j['win_rate']}%", expanded=(j == journals[0])):
                 c1, c2, c3 = st.columns(3)
                 c1.metric("Win-Rate", f"{j['win_rate']}%")
                 c2.metric("Bester Trade", j['best_trade'] or "-")

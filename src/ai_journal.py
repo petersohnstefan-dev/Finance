@@ -24,16 +24,27 @@ def get_berlin_now() -> datetime.datetime:
 def _migrate_ai_journal_db():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
-    # Check if 'mode' column exists
     cursor.execute("PRAGMA table_info(ai_journal)")
     columns = [info[1] for info in cursor.fetchall()]
-    if "mode" not in columns and "win_rate" in columns:
-        try:
-            cursor.execute('ALTER TABLE ai_journal ADD COLUMN mode TEXT DEFAULT "daily"')
-            cursor.execute('ALTER TABLE ai_journal ADD COLUMN param_updates TEXT DEFAULT "{}"')
-            conn.commit()
-        except Exception as e:
-            pass
+    
+    if not columns:
+        cursor.execute('''
+            CREATE TABLE ai_journal (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                depot_id TEXT NOT NULL,
+                date TEXT NOT NULL,
+                mode TEXT DEFAULT "daily",
+                win_rate REAL,
+                best_trade TEXT,
+                worst_trade TEXT,
+                reflection TEXT,
+                lesson TEXT,
+                missed_opportunities TEXT,
+                param_updates TEXT,
+                UNIQUE(depot_id, date, mode)
+            )
+        ''')
+        conn.commit()
     conn.close()
 
 # Run migration on import
@@ -46,20 +57,20 @@ class AIJournalEngine:
         if self.api_key:
             genai.configure(api_key=self.api_key)
 
-    def get_trades(self, date_prefix: str) -> List[Dict[str, Any]]:
+    def get_trades(self, depot_id: str, date_prefix: str) -> List[Dict[str, Any]]:
         conn = sqlite3.connect(DB_FILE)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM trades WHERE executed_at LIKE ? ORDER BY executed_at ASC", (f"{date_prefix}%",))
+        cursor.execute("SELECT * FROM trades WHERE depot_id = ? AND executed_at LIKE ? ORDER BY executed_at ASC", (depot_id, f"{date_prefix}%"))
         trades = [dict(row) for row in cursor.fetchall()]
         conn.close()
         return trades
         
-    def get_weekly_trades(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+    def get_weekly_trades(self, depot_id: str, start_date: str, end_date: str) -> List[Dict[str, Any]]:
         conn = sqlite3.connect(DB_FILE)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM trades WHERE executed_at >= ? AND executed_at <= ? ORDER BY executed_at ASC", (start_date, end_date + " 23:59:59"))
+        cursor.execute("SELECT * FROM trades WHERE depot_id = ? AND executed_at >= ? AND executed_at <= ? ORDER BY executed_at ASC", (depot_id, start_date, end_date + " 23:59:59"))
         trades = [dict(row) for row in cursor.fetchall()]
         conn.close()
         return trades
@@ -81,7 +92,7 @@ class AIJournalEngine:
         except Exception:
             return []
 
-    def generate_retrospective(self, mode="daily") -> Dict[str, Any]:
+    def generate_retrospective(self, depot_id: str, mode="daily") -> Dict[str, Any]:
         if not self.api_key:
             raise ValueError("Kein Gemini API Key vorhanden.")
             
@@ -90,13 +101,13 @@ class AIJournalEngine:
         
         if mode == "weekly":
             start_date = (now - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
-            trades = self.get_weekly_trades(start_date, today_str)
+            trades = self.get_weekly_trades(depot_id, start_date, today_str)
             traded_symbols = set([t.get("symbol") for t in trades])
             missed_alerts = [] # Keep prompt small for weekly
             date_label = f"{start_date} bis {today_str}"
             time_context = "Es ist das Ende der Handelswoche."
         else:
-            trades = self.get_trades(today_str)
+            trades = self.get_trades(depot_id, today_str)
             traded_symbols = set([t.get("symbol") for t in trades])
             missed_alerts = self.get_todays_missed_alerts(today_str, traded_symbols)
             date_label = today_str
@@ -185,12 +196,6 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
             
         try:
             res_json = json.loads(response.text.strip().removeprefix('```json').removesuffix('```').strip())
-            
-            # Apply strategy update
-            if "parameters_update" in res_json and isinstance(res_json["parameters_update"], dict):
-                curr_strat.update(res_json["parameters_update"])
-                with open(strat_file, "w", encoding="utf-8") as f:
-                    json.dump(curr_strat, f, indent=4)
         except:
             res_json = {
                 "reflection": "Fehler beim Generieren der Reflexion.",
@@ -205,6 +210,7 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
             return str(val) if val else ""
 
         journal_entry = {
+            "depot_id": depot_id,
             "date": date_label,
             "mode": mode,
             "win_rate": round(win_rate, 2),
@@ -223,10 +229,9 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
         cursor.execute('''
-            INSERT INTO ai_journal (date, mode, win_rate, best_trade, worst_trade, reflection, lesson, missed_opportunities, param_updates)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(date) DO UPDATE SET
-                mode=excluded.mode,
+            INSERT INTO ai_journal (depot_id, date, mode, win_rate, best_trade, worst_trade, reflection, lesson, missed_opportunities, param_updates)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(depot_id, date, mode) DO UPDATE SET
                 win_rate=excluded.win_rate,
                 best_trade=excluded.best_trade,
                 worst_trade=excluded.worst_trade,
@@ -235,7 +240,7 @@ Antworte ZWINGEND im folgenden reinen JSON-Format (keine Markdown-Blöcke drumhe
                 missed_opportunities=excluded.missed_opportunities,
                 param_updates=excluded.param_updates
         ''', (
-            entry["date"], entry.get("mode", "daily"), entry["win_rate"], entry["best_trade"], entry["worst_trade"],
+            entry["depot_id"], entry["date"], entry.get("mode", "daily"), entry["win_rate"], entry["best_trade"], entry["worst_trade"],
             entry["reflection"], entry["lesson"], entry["missed_opportunities"], entry.get("param_updates", "{}")
         ))
         conn.commit()
