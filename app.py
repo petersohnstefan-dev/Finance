@@ -194,6 +194,7 @@ with st.sidebar:
         "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
         "💼 Musterdepots & Live-Performance (4x 10.000 €)",
         "🔍 Einzelaktien-Tiefenanalyse",
+        "⚖️ KI-Tribunal (Handelsentscheidungen)",
         "💬 KI-Chatbot (Strategie & Analyse)",
         "🧠 KI-Lerntagebuch (Retrospektive)"
     ]
@@ -2436,7 +2437,29 @@ elif app_mode == "🔍 Einzelaktien-Tiefenanalyse":
     except Exception as e:
         st.error(f"Fehler beim Laden der Daten für {active_symbol}: {str(e)}")
 
-# MODE 9: KI CHATBOT
+elif app_mode == "⚖️ KI-Tribunal (Handelsentscheidungen)":
+    st.header("⚖️ KI-Tribunal (Handelsentscheidungen)")
+    st.markdown("Bevor ein Trade in einem der Musterdepots ausgeführt wird, wird der Kandidat vom **KI-Tribunal** verhandelt. Ein Bär sucht nach Risiken, ein Bulle nach Chancen, und der Judge entscheidet knallhart, ob der Trade genehmigt oder blockiert wird.")
+    
+    from src.tribunal import AITribunalManager
+    logs = AITribunalManager.get_latest_logs(20)
+    
+    if not logs:
+        st.info("Noch keine Tribunal-Entscheidungen aufgezeichnet.")
+    else:
+        for log in logs:
+            action_color = "green" if log["action"] == "BUY" else "red"
+            icon = "✅" if log["action"] == "BUY" else "❌"
+            with st.expander(f"{log['timestamp']} | {log['symbol']} ({log['depot_id']}) - {icon} {log['action']}"):
+                st.markdown(f"**Urteilsbegründung (Judge):** <span style='color: {action_color}; font-weight: bold;'>{log['judge_decision']}</span>", unsafe_allow_html=True)
+                
+                c1, c2 = st.columns(2)
+                with c1:
+                    st.info(f"🐂 **Der Bulle (Chancen):**\n\n{log['bull_case']}")
+                with c2:
+                    st.error(f"🐻 **Der Bär (Risiken):**\n\n{log['bear_case']}")
+                    
+# MODE 10: KI CHATBOT
 elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
     st.header("💬 KI-Chatbot (Strategie & Analyse)")
     st.markdown("Frage die KI nach Erklärungen zu Trades im Musterdepot, der Entwicklung von Zinsen, Leerverkäufen, Makro-Daten oder Insider-Aktivitäten.")

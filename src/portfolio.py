@@ -3,12 +3,13 @@ import os
 import time
 import datetime
 import pandas as pd
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 import yfinance as yf
 from src.db import PortfolioDB
 from src.derivatives import DerivativeEngine
 from src.deep_intelligence import DeepIntelligenceHub
 from src.wkn_mapping import get_wkn, get_wkn_display
+from src.tribunal import AITribunalManager
 
 PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
 
@@ -28,9 +29,24 @@ class PortfolioManager:
         self.initial_capital = initial_capital_per_depot
         self.db = PortfolioDB()
         self.deep_intel = DeepIntelligenceHub()
+        self.tribunal = AITribunalManager()
         self._last_price_update = 0.0
         self.data = self._load()
         self.strategy = self._load_strategy()
+
+    def _tribunal_approved_buy(self, depot_id: str, sym: str, name: str, shares: float, price: float, reason: str, stop_loss: float, take_profit: float, derivative_meta=None) -> Tuple[bool, str]:
+        candidate = {"symbol": sym, "name": name, "price": price, "reason": reason}
+        depot = self.data["portfolios"][depot_id]
+        
+        # Run Tribunal Debate
+        action, judge_reasoning, debate_log = self.tribunal.decide_trade(depot_id, candidate, depot["cash"])
+        
+        if action == "BUY":
+            full_reason = f"{reason} | ⚖️ Tribunal (BUY): {judge_reasoning}"
+            self.buy(depot_id, sym, name, shares, price, reason=full_reason, stop_loss=stop_loss, take_profit=take_profit, derivative_meta=derivative_meta)
+            return True, full_reason
+        else:
+            return False, f"VETO vom Tribunal: {judge_reasoning}"
 
     def _load_strategy(self) -> Dict[str, Any]:
         strat_file = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
@@ -683,16 +699,22 @@ class PortfolioManager:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
-                        self.buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
+                        approved, msg = self._tribunal_approved_buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
                                  stop_loss=cert_price*0.85, take_profit=None, derivative_meta=turbo)
-                        actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
+                        if approved:
+                            actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
+                        else:
+                            actions_taken.append(f"VETO (Short-Term): {turbo['name']} ({msg})")
                     else:
                         shares = alloc / p
-                        self.buy("short_term", sym, top_st_candidate["name"], shares, p,
+                        approved, msg = self._tribunal_approved_buy("short_term", sym, top_st_candidate["name"], shares, p,
                                  reason=top_st_candidate["reason"],
                                  stop_loss=p*0.93, take_profit=None)  # Dynamic trailing
-                        actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
+                        if approved:
+                            actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
+                        else:
+                            actions_taken.append(f"VETO (Short-Term): {sym} ({msg})")
 
         # ----------------------------------------------------------------------
         # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing & Hedge)
@@ -767,10 +789,13 @@ class PortfolioManager:
                         alloc = min(2000.0, mt_depot["cash"] * 0.85)
                         shares = alloc / p
                         reason_msg = f"📈 Growth & Smart Money (Alpha: {cand_intel['composite_alpha_score']}/100, Sentiment: {cand_intel['social_sentiment']['nlp_sentiment_score']}/100)"
-                        self.buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
+                        approved, msg = self._tribunal_approved_buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
                                  reason=reason_msg,
                                  stop_loss=p*0.90, take_profit=None)  # Dynamic trailing
-                        actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
+                        if approved:
+                            actions_taken.append(f"KAUF {sym} für Mittelfrist-Depot")
+                        else:
+                            actions_taken.append(f"VETO (Medium-Term): {sym} ({msg})")
 
         # ----------------------------------------------------------------------
         # 3. LANGFRISTIGES INVESTMENT-DEPOT (Jahre / Quality, Moat & Macro-Hedge)
@@ -803,15 +828,21 @@ class PortfolioManager:
                     if cand.get("long_score", 0) >= 90:
                         bonus = DerivativeEngine.create_bonus_certificate(sym, cand.get("name", sym), p, barrier_pct=25.0, bonus_pct=14.0)
                         shares = alloc / p
-                        self.buy("long_term", bonus["wkn"], bonus["name"], shares, p,
-                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus) | {moat_reason}",
+                        approved, msg = self._tribunal_approved_buy("long_term", bonus["wkn"], bonus["name"], shares, p,
+                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus) | {moat_reason}", stop_loss=0, take_profit=0,
                                  derivative_meta=bonus)
-                        actions_taken.append(f"KAUF {bonus['name']} für Langfrist-Depot")
+                        if approved:
+                            actions_taken.append(f"KAUF {bonus['name']} für Langfrist-Depot")
+                        else:
+                            actions_taken.append(f"VETO (Long-Term): {bonus['name']} ({msg})")
                     else:
                         shares = alloc / p
-                        self.buy("long_term", sym, cand.get("name", sym), shares, p,
-                                 reason=moat_reason)
-                        actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
+                        approved, msg = self._tribunal_approved_buy("long_term", sym, cand.get("name", sym), shares, p,
+                                 reason=moat_reason, stop_loss=0, take_profit=0)
+                        if approved:
+                            actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
+                        else:
+                            actions_taken.append(f"VETO (Long-Term): {sym} ({msg})")
                     break
 
         # ----------------------------------------------------------------------
@@ -930,20 +961,26 @@ class PortfolioManager:
                         sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.25)
                         sl_price = cert_price * (1.0 - sl_pct) # Dynamischer Stop-Loss durch KI-Tagebuch
                         
-                        self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
+                        approved, msg = self._tribunal_approved_buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None, derivative_meta=turbo)
-                        actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str})")
+                        if approved:
+                            actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str})")
+                        else:
+                            actions_taken.append(f"VETO (Daytrade): {turbo['name']} ({msg})")
                     else:
                         # 1x Direktkauf der Aktie (Ohne Hebel)
                         shares = alloc / p
                         reason_msg = f"⚡ Daytrade Momentum ({spike:+.1f}% Spike) | 1x Direkt-Kauf (Aktie)"
                         sl_price = p * 0.98 # 2% Stop-Loss auf die Aktie (sehr eng beim Daytrading)
                         
-                        self.buy("day_trading", sym, name, shares, p,
+                        approved, msg = self._tribunal_approved_buy("day_trading", sym, name, shares, p,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None)
-                        actions_taken.append(f"KAUF {sym} (1x Direkt-Kauf)")
+                        if approved:
+                            actions_taken.append(f"KAUF {sym} (1x Direkt-Kauf)")
+                        else:
+                            actions_taken.append(f"VETO (Daytrade): {sym} ({msg})")
 
         self._save()
 

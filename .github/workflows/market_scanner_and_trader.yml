@@ -1,4 +1,4 @@
-﻿name: 24/7 AI Market Scanner & Portfolio Trader
+name: 24/7 AI Market Scanner & Portfolio Trader
 
 on:
   schedule:
@@ -36,6 +36,8 @@ jobs:
           python -m src.market_scanner
 
       - name: 💼 2. Musterdepots aktualisieren & Handels-Check ausführen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python -c "
           import json
