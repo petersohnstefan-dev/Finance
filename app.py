@@ -2483,6 +2483,16 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                         sys_prompt += "\n\nHier ist der aktuelle Zustand der Musterdepots und die Transaktionshistorie (Käufe/Verkäufe) als JSON, damit du konkrete Fragen zu ausgeführten Trades beantworten kannst:\n" + json.dumps(pf_data)
                     except:
                         pass
+                        
+                    try:
+                        from src.universe import CATEGORIZED_UNIVERSES
+                        sys_prompt += "\n\nWICHTIGE INFORMATION ZU DEINEM ANLAGEUNIVERSUM:\n"
+                        sys_prompt += "Du hast Zugriff auf ein massives Scanner-Universum (Hunderte Werte). Die Transaktionshistorie zeigt NUR die KÜRZLICH GEHANDELTEN Werte. Hier ist dein gesamtes Anlageuniversum, auf das du Zugriff hast und welches du scannen/kaufen kannst:\n"
+                        for cat, symbols in CATEGORIZED_UNIVERSES.items():
+                            sys_prompt += f"- {cat}: {', '.join(symbols)}\n"
+                        sys_prompt += "Wenn der Nutzer fragt, auf welche oder wie viele Wertpapiere du zugreifen kannst, zähle unbedingt diese Kategorien auf und mache klar, dass du nicht nur auf die kleine Historie beschränkt bist!\n"
+                    except:
+                        pass
 
                     try:
                         from src.bonds_yields_radar import BondYieldsIntelEngine
