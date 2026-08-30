@@ -65,6 +65,43 @@ class PortfolioManager:
                 pass
         return default_strat
 
+    def _get_market_regime(self) -> str:
+        """Determines if the market is Risk-On (Bull) or Risk-Off (Bear) using SPY 200 SMA."""
+        try:
+            spy = yf.Ticker("SPY").history(period="1y")
+            if len(spy) > 200:
+                sma_200 = spy['Close'].rolling(window=200).mean().iloc[-1]
+                current = spy['Close'].iloc[-1]
+                if current < sma_200:
+                    return "BEAR"
+            return "BULL"
+        except:
+            return "BULL"
+
+    def _calculate_volatility_factor(self, symbol: str) -> float:
+        """Calculates a position sizing factor based on 30-day volatility (ATR equivalent)."""
+        try:
+            if "-USD" in symbol:
+                return 0.5  # Fixed lower sizing for crypto
+            if "KO" in symbol:
+                return 0.4  # Knock-outs get smaller sizing
+            hist = yf.Ticker(symbol).history(period="1mo")
+            if len(hist) < 10:
+                return 1.0
+            daily_returns = hist['Close'].pct_change().dropna()
+            vol = daily_returns.std() * (252 ** 0.5)  # Annualized volatility
+            
+            # Base benchmark is SPY ~15-20% vol.
+            if vol < 0.10:
+                return 1.5  # Very safe, larger size
+            elif vol > 0.40:
+                return 0.6  # High vol, smaller size
+            elif vol > 0.60:
+                return 0.3  # Extreme vol
+            return 1.0
+        except:
+            return 1.0
+
     def _get_seed_data(self) -> Dict[str, Any]:
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
         return {
@@ -299,14 +336,21 @@ class PortfolioManager:
         self._save()
         return True
 
-    def sell(self, depot_key: str, symbol: str, price: float, reason: str = "") -> bool:
-        """Sells an entire open position and records realized gain/loss."""
+    def sell(self, depot_key: str, symbol: str, price: float, reason: str = "", shares_to_sell: Optional[float] = None) -> bool:
+        """Sells an entire or partial open position and records realized gain/loss."""
         depot = self.data["portfolios"].get(depot_key)
         if not depot or symbol not in depot["positions"]:
             return False
 
         pos = depot["positions"][symbol]
-        shares = pos["shares"]
+        total_shares = pos["shares"]
+        
+        if shares_to_sell is None or shares_to_sell >= total_shares:
+            shares = total_shares
+            is_partial = False
+        else:
+            shares = shares_to_sell
+            is_partial = True
         
         # Dynamische Spread-Berechnung (Bid/Ask Simulation)
         is_crypto = "-USD" in symbol.upper()
@@ -350,7 +394,13 @@ class PortfolioManager:
         except Exception:
             pass
 
-        del depot["positions"][symbol]
+        if is_partial:
+            pos["shares"] -= shares
+            if "scaled_out" not in pos:
+                pos["scaled_out"] = True
+        else:
+            del depot["positions"][symbol]
+            
         self._save()
         return True
 
@@ -592,7 +642,12 @@ class PortfolioManager:
                 actions_taken.append(f"KNOCK-OUT {sym}")
                 continue
 
-            # 1c. Dynamic Profit Ratchet & Trailing Stop
+            # 1c. Dynamic Profit Ratchet & Trailing Stop & Scaling Out
+            if gain_pct >= 25.0 and not pos.get("scaled_out"):
+                # Scale out 50% to secure massive profits
+                self.sell("short_term", sym, curr_p, reason=f"💰 Scaling Out: +{gain_pct:.1f}% erreicht, 50% der Position gesichert", shares_to_sell=pos["shares"]/2.0)
+                actions_taken.append(f"TEILVERKAUF {sym} (+{gain_pct:.1f}%)")
+
             if gain_pct >= 8.0:
                 # Ratchet Stop-Loss to Breakeven + 3%
                 lock_sl = round(buy_p * 1.03, 2)
@@ -693,7 +748,13 @@ class PortfolioManager:
                 p = top_st_candidate["price"]
                 sym = top_st_candidate["symbol"]
                 if p and p > 0:
-                    alloc = min(2000.0, st_depot["cash"] * 0.85)
+                    vol_factor = self._calculate_volatility_factor(sym)
+                    regime = self._get_market_regime()
+                    base_alloc = 2000.0
+                    if regime == "BEAR":
+                        base_alloc = 1200.0  # Reduce risk
+                    
+                    alloc = min(base_alloc * vol_factor, st_depot["cash"] * 0.85)
                     is_bearish = top_st_candidate.get("direction") == "SHORT" or "Absturz" in top_st_candidate["reason"] or "Breakdown" in top_st_candidate["reason"]
                     if is_bearish:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
@@ -729,7 +790,11 @@ class PortfolioManager:
             peak_p = max(pos.get("peak_price", buy_p), curr_p)
             pos["peak_price"] = peak_p
 
-            # Trailing Profit Ratchet
+            # Trailing Profit Ratchet & Scaling Out
+            if gain_pct >= 35.0 and not pos.get("scaled_out"):
+                self.sell("medium_term", sym, curr_p, reason=f"💰 Scaling Out: +{gain_pct:.1f}% erreicht, 50% der Position gesichert", shares_to_sell=pos["shares"]/2.0)
+                actions_taken.append(f"TEILVERKAUF {sym} (+{gain_pct:.1f}%)")
+
             if gain_pct >= 10.0:
                 pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.05, 2))
             if gain_pct >= 20.0:
@@ -786,7 +851,13 @@ class PortfolioManager:
                     p = top_mt_cand.get("price")
                     sym = top_mt_cand["symbol"]
                     if p and p > 0:
-                        alloc = min(2000.0, mt_depot["cash"] * 0.85)
+                        vol_factor = self._calculate_volatility_factor(sym)
+                        regime = self._get_market_regime()
+                        base_alloc = 2000.0
+                        if regime == "BEAR":
+                            base_alloc = 1000.0  # Defensive in bear market
+                        
+                        alloc = min(base_alloc * vol_factor, mt_depot["cash"] * 0.85)
                         shares = alloc / p
                         reason_msg = f"📈 Growth & Smart Money (Alpha: {cand_intel['composite_alpha_score']}/100, Sentiment: {cand_intel['social_sentiment']['nlp_sentiment_score']}/100)"
                         approved, msg = self._tribunal_approved_buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
@@ -820,7 +891,14 @@ class PortfolioManager:
                 sym = cand["symbol"]
                 p = cand.get("price")
                 if sym not in lt_depot["positions"] and p and p > 0:
-                    alloc = min(2000.0, lt_depot["cash"] * 0.85)
+                    vol_factor = self._calculate_volatility_factor(sym)
+                    regime = self._get_market_regime()
+                    base_alloc = 2000.0
+                    if regime == "BEAR" and sym not in ["GC=F", "SHY", "TLT", "IEF", "LQD"]:
+                        # Halve allocation to standard stocks in a bear market
+                        base_alloc = 1000.0
+                        
+                    alloc = min(base_alloc * vol_factor, lt_depot["cash"] * 0.85)
                     cand_intel = self.deep_intel.get_asset_360_intelligence(sym)
                     forensic = cand_intel["forensic_quality"]
                     moat_reason = f"🏰 Burggraben & Bilanz-Audit: {forensic['moat_rating']} | Piotroski: {forensic['piotroski_f_score']}"
@@ -951,7 +1029,14 @@ class PortfolioManager:
                     else:
                         chosen_lev = min(2.0, max_lev) # Minimum 2x Hebel für Daytrader
                     
-                    alloc = min(1500.0, dt_depot["cash"] * 0.9)
+                    vol_factor = self._calculate_volatility_factor(sym)
+                    regime = self._get_market_regime()
+                    base_alloc = 1500.0
+                    if regime == "BEAR" and not is_bearish:
+                        # Don't daytrade long strongly in a bear market
+                        base_alloc = 750.0
+                        
+                    alloc = min(base_alloc * vol_factor, dt_depot["cash"] * 0.9)
                     
                     if chosen_lev > 1.0:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, name, p, direction=dir_str, target_leverage=chosen_lev)
