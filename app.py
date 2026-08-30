@@ -196,7 +196,8 @@ with st.sidebar:
         "🔍 Einzelaktien-Tiefenanalyse",
         "⚖️ KI-Tribunal (Handelsentscheidungen)",
         "💬 KI-Chatbot (Strategie & Analyse)",
-        "🧠 KI-Lerntagebuch (Retrospektive)"
+        "🧠 KI-Lerntagebuch (Retrospektive)",
+        "📖 Handelsstrategie & System-Logik"
     ]
     
     current_idx = menu_opts.index(st.session_state["nav_app_mode"]) if st.session_state["nav_app_mode"] in menu_opts else 0
@@ -2688,3 +2689,14 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                 if param_updates and param_updates != "{}" and param_updates != "null":
                     st.markdown("### ⚙️ Automatisch angepasste Strategie-Parameter")
                     st.code(param_updates, language="json")
+
+elif app_mode == "📖 Handelsstrategie & System-Logik":
+    st.header("📖 Handelsstrategie & System-Logik")
+    
+    strat_path = "HANDELSSTRATEGIE.md"
+    if os.path.exists(strat_path):
+        with open(strat_path, "r", encoding="utf-8") as f:
+            strat_content = f.read()
+        st.markdown(strat_content)
+    else:
+        st.error(f"Die Dokumentation {strat_path} konnte nicht gefunden werden.")
