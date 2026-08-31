@@ -89,13 +89,22 @@ class AITribunalManager:
         
         def call_llm(prompt: str, is_judge: bool = False) -> str:
             try:
-                model = genai.GenerativeModel(model_name, system_instruction=sys_prompt_base if not is_judge else None)
+                # system_instruction is only supported on 1.5+ models
+                kwargs = {}
+                if "1.5" in model_name or "flash" in model_name or "2.0" in model_name:
+                    if not is_judge:
+                        kwargs["system_instruction"] = sys_prompt_base
+                else:
+                    if not is_judge:
+                        prompt = sys_prompt_base + "\n\n" + prompt
+                        
+                model = genai.GenerativeModel(model_name, **kwargs)
                 resp = model.generate_content(prompt)
                 return resp.text.strip()
             except Exception as e:
                 # If dynamic model name failed, try fallback
                 try:
-                    fallback_model = "models/gemini-1.5-flash"
+                    fallback_model = "models/gemini-1.5-flash-latest"
                     model = genai.GenerativeModel(fallback_model, system_instruction=sys_prompt_base if not is_judge else None)
                     resp = model.generate_content(prompt)
                     return resp.text.strip()
@@ -125,7 +134,13 @@ Antworte im JSON Format:
 """
         
         try:
-            judge_model = genai.GenerativeModel(model_name, system_instruction="Du bist der Judge. Antworte IMMER nur mit validem JSON.")
+            kwargs = {}
+            if "1.5" in model_name or "flash" in model_name or "2.0" in model_name:
+                kwargs["system_instruction"] = "Du bist der Judge. Antworte IMMER nur mit validem JSON."
+            else:
+                judge_prompt = "Du bist der Judge. Antworte IMMER nur mit validem JSON.\n\n" + judge_prompt
+                
+            judge_model = genai.GenerativeModel(model_name, **kwargs)
             judge_resp = judge_model.generate_content(judge_prompt, generation_config={"response_mime_type": "application/json"})
             res_json = json.loads(judge_resp.text.strip().removeprefix('```json').removesuffix('```').strip())
             
@@ -137,7 +152,7 @@ Antworte im JSON Format:
         except Exception as e:
             try:
                 # Try fallback
-                fallback_model = "models/gemini-1.5-flash"
+                fallback_model = "models/gemini-1.5-flash-latest"
                 judge_model = genai.GenerativeModel(fallback_model, system_instruction="Du bist der Judge. Antworte IMMER nur mit validem JSON.")
                 judge_resp = judge_model.generate_content(judge_prompt, generation_config={"response_mime_type": "application/json"})
                 res_json = json.loads(judge_resp.text.strip().removeprefix('```json').removesuffix('```').strip())
