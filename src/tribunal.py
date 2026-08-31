@@ -53,6 +53,20 @@ class AITribunalManager:
         conn.commit()
         conn.close()
 
+    def _get_fastest_model_name(self) -> str:
+        if not hasattr(self, "_cached_model"):
+            try:
+                available = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+                if available:
+                    # Prefer 1.5 flash if available, else take the first one
+                    flash_models = [m for m in available if 'flash' in m.lower()]
+                    self._cached_model = flash_models[0] if flash_models else available[0]
+                else:
+                    self._cached_model = "gemini-1.5-flash"
+            except Exception:
+                self._cached_model = "gemini-1.5-flash"
+        return self._cached_model
+
     def decide_trade(self, depot_id: str, candidate: Dict[str, Any], current_cash: float) -> Tuple[str, str, Dict[str, str]]:
         """
         Runs the tribunal debate.
@@ -65,21 +79,28 @@ class AITribunalManager:
         reason = candidate.get("reason", "")
         price = candidate.get("price", 0.0)
         
-        # Fastest available flash model
-        model_name = "gemini-1.5-flash"
+        # Fastest available model dynamically resolved
+        model_name = self._get_fastest_model_name()
         
         sys_prompt_base = "Du bist ein Top-Analyst in einem Hedgefonds. Antworte in 1-2 extrem präzisen Sätzen auf Deutsch. Komm direkt zur Sache, keine Höflichkeitsfloskeln."
         
         bull_prompt = f"Scanner meldet Kaufsignal für {sym} bei {price}€. Grund: {reason}. Bringe das stärkste bullische Argument vor, warum wir den Trade JETZT machen müssen (Upside, Momentum)."
         bear_prompt = f"Scanner meldet Kaufsignal für {sym} bei {price}€. Grund: {reason}. Dein Job: Zerstöre dieses Signal. Finde die Schwachstellen, Makro-Risiken oder zeige auf, warum es eine Bullenfalle ist."
         
-        def call_llm(prompt: str) -> str:
+        def call_llm(prompt: str, is_judge: bool = False) -> str:
             try:
-                model = genai.GenerativeModel(model_name, system_instruction=sys_prompt_base)
+                model = genai.GenerativeModel(model_name, system_instruction=sys_prompt_base if not is_judge else None)
                 resp = model.generate_content(prompt)
                 return resp.text.strip()
             except Exception as e:
-                return f"Fehler bei Analyse: {e}"
+                # If dynamic model name failed, try fallback
+                try:
+                    fallback_model = "models/gemini-1.5-flash"
+                    model = genai.GenerativeModel(fallback_model, system_instruction=sys_prompt_base if not is_judge else None)
+                    resp = model.generate_content(prompt)
+                    return resp.text.strip()
+                except Exception as inner_e:
+                    return f"Fehler bei Analyse: {e}"
 
         # Run Bull and Bear in parallel
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
@@ -114,8 +135,19 @@ Antworte im JSON Format:
             judge_reasoning = res_json.get("reasoning", "Keine Begründung geliefert.")
             
         except Exception as e:
-            action = "REJECT"
-            judge_reasoning = f"Fehler bei Tribunal-Urteil: {e}"
+            try:
+                # Try fallback
+                fallback_model = "models/gemini-1.5-flash"
+                judge_model = genai.GenerativeModel(fallback_model, system_instruction="Du bist der Judge. Antworte IMMER nur mit validem JSON.")
+                judge_resp = judge_model.generate_content(judge_prompt, generation_config={"response_mime_type": "application/json"})
+                res_json = json.loads(judge_resp.text.strip().removeprefix('```json').removesuffix('```').strip())
+                action = res_json.get("action", "REJECT").upper()
+                if action not in ["BUY", "REJECT"]:
+                    action = "REJECT"
+                judge_reasoning = res_json.get("reasoning", "Keine Begründung geliefert.")
+            except Exception as inner_e:
+                action = "REJECT"
+                judge_reasoning = f"Fehler bei Tribunal-Urteil: {e}"
             
         self._log_to_db(sym, depot_id, bull_case, bear_case, judge_reasoning, action)
         
