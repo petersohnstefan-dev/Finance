@@ -471,15 +471,40 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
             with st.expander("📊 Track-Record der Top-Signale der letzten Tage ansehen"):
                 from src.db import PortfolioDB
                 pdb = PortfolioDB()
-                history_signals = pdb.get_recent_radar_signals(limit=30)
+                history_signals = pdb.get_recent_radar_signals(limit=500)
                 
                 if not history_signals:
                     st.info("Noch keine Radar-Historie vorhanden. Ab dem nächsten Scan werden hier die Verläufe der Top-Signale getrackt.")
                 else:
-                    st.write("Die folgende Tabelle zeigt die Performance der Top-Ausbruchs-Signale der vergangenen Scans ab dem Zeitpunkt ihrer Erkennung:")
+                    st.write("Die folgende Tabelle zeigt die akkumulierte Performance der Top-Ausbruchs-Signale. Werte mit vielen Treffern wurden vom Scanner mehrfach bestätigt.")
                     
                     hist_data = []
-                    unique_syms = list(set([s["symbol"] for s in history_signals]))
+                    
+                    # Aggregate by symbol
+                    aggregated = {}
+                    for s in history_signals:
+                        sym = s["symbol"]
+                        if sym not in aggregated:
+                            aggregated[sym] = {
+                                "Erstes Datum": s["detected_at"],
+                                "Letztes Datum": s["detected_at"],
+                                "Ticker": sym,
+                                "Name": s["name"],
+                                "Erster_Signal_Kurs": s["signal_price"], # SQLite returns DESC, so first we see is actually the LATEST. We will update this.
+                                "Score": s.get("score", 0.0),
+                                "Treffer": 1
+                            }
+                        else:
+                            aggregated[sym]["Treffer"] += 1
+                            # Update earliest date and earliest price
+                            if s["detected_at"] < aggregated[sym]["Erstes Datum"]:
+                                aggregated[sym]["Erstes Datum"] = s["detected_at"]
+                                aggregated[sym]["Erster_Signal_Kurs"] = s["signal_price"]
+                            if s["detected_at"] > aggregated[sym]["Letztes Datum"]:
+                                aggregated[sym]["Letztes Datum"] = s["detected_at"]
+                                aggregated[sym]["Score"] = max(aggregated[sym]["Score"], s.get("score", 0.0))
+
+                    unique_syms = list(aggregated.keys())
                     import yfinance as yf
                     live_prices = {}
                     try:
@@ -491,21 +516,25 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                     except Exception:
                         pass
                         
-                    for s in history_signals:
-                        sym = s["symbol"]
-                        sig_p = s["signal_price"]
+                    for sym, data in aggregated.items():
+                        sig_p = data["Erster_Signal_Kurs"]
                         curr_p = live_prices.get(sym, sig_p)
                         ret_pct = ((curr_p - sig_p) / sig_p * 100.0) if sig_p > 0 else 0.0
                         
                         hist_data.append({
-                            "Datum": s["detected_at"],
+                            "Erstes Datum": data["Erstes Datum"],
+                            "Letztes Datum": data["Letztes Datum"],
+                            "Treffer": data["Treffer"],
                             "Ticker": sym,
-                            "Name": s["name"],
-                            "Signal-Kurs": f"{sig_p:.2f}",
+                            "Name": data["Name"],
+                            "Signal-Kurs (Init)": f"{sig_p:.2f}",
                             "Aktueller Kurs": f"{curr_p:.2f}",
                             "Performance": ret_pct,
-                            "Score": s.get("score", 0.0)
+                            "Score (Max)": data["Score"]
                         })
+                    
+                    # Sort by hits and then by date
+                    hist_data.sort(key=lambda x: (x["Treffer"], x["Letztes Datum"]), reverse=True)
                     
                     import pandas as pd
                     df_hist = pd.DataFrame(hist_data)
@@ -522,7 +551,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
                         return ""
 
                     st.dataframe(
-                        df_hist[["Datum", "Ticker", "Name", "Score", "Signal-Kurs", "Aktueller Kurs", "Performance (str)"]].style.map(color_ret, subset=["Performance (str)"]),
+                        df_hist[["Treffer", "Erstes Datum", "Letztes Datum", "Ticker", "Name", "Score (Max)", "Signal-Kurs (Init)", "Aktueller Kurs", "Performance (str)"]].style.map(color_ret, subset=["Performance (str)"]),
                         use_container_width=True,
                         hide_index=True
                     )

@@ -2,6 +2,7 @@
 
 import os
 import time
+import datetime
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 def get_berlin_now() -> datetime.datetime:
@@ -10,7 +11,6 @@ def get_berlin_now() -> datetime.datetime:
     except Exception:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 import json
-import datetime
 import urllib.request
 import pandas as pd
 from typing import Dict, Any, List, Optional
