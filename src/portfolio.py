@@ -1046,26 +1046,20 @@ class PortfolioManager:
                         sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.25)
                         sl_price = cert_price * (1.0 - sl_pct) # Dynamischer Stop-Loss durch KI-Tagebuch
                         
-                        approved, msg = self._tribunal_approved_buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
+                        self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None, derivative_meta=turbo)
-                        if approved:
-                            actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str})")
-                        else:
-                            actions_taken.append(f"VETO (Daytrade): {turbo['name']} ({msg})")
+                        actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str})")
                     else:
                         # 1x Direktkauf der Aktie (Ohne Hebel)
                         shares = alloc / p
                         reason_msg = f"⚡ Daytrade Momentum ({spike:+.1f}% Spike) | 1x Direkt-Kauf (Aktie)"
                         sl_price = p * 0.98 # 2% Stop-Loss auf die Aktie (sehr eng beim Daytrading)
                         
-                        approved, msg = self._tribunal_approved_buy("day_trading", sym, name, shares, p,
+                        self.buy("day_trading", sym, name, shares, p,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None)
-                        if approved:
-                            actions_taken.append(f"KAUF {sym} (1x Direkt-Kauf)")
-                        else:
-                            actions_taken.append(f"VETO (Daytrade): {sym} ({msg})")
+                        actions_taken.append(f"KAUF {sym} (1x Direkt-Kauf)")
 
         self._save()
 

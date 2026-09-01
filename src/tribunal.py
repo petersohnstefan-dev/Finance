@@ -82,68 +82,38 @@ class AITribunalManager:
         # Fastest available model dynamically resolved
         model_name = self._get_fastest_model_name()
         
-        sys_prompt_base = "Du bist ein Top-Analyst in einem Hedgefonds. Antworte in 1-2 extrem präzisen Sätzen auf Deutsch. Komm direkt zur Sache, keine Höflichkeitsfloskeln."
+        sys_prompt = "Du bist ein erfahrenes KI-Tribunal eines quantitativen Hedgefonds. Antworte IMMER nur mit validem JSON."
         
-        bull_prompt = f"Scanner meldet Kaufsignal für {sym} bei {price}€. Grund: {reason}. Bringe das stärkste bullische Argument vor, warum wir den Trade JETZT machen müssen (Upside, Momentum)."
-        bear_prompt = f"Scanner meldet Kaufsignal für {sym} bei {price}€. Grund: {reason}. Dein Job: Zerstöre dieses Signal. Finde die Schwachstellen, Makro-Risiken oder zeige auf, warum es eine Bullenfalle ist."
-        
-        def call_llm(prompt: str, is_judge: bool = False) -> str:
-            try:
-                # system_instruction is only supported on 1.5+ models
-                kwargs = {}
-                if "1.5" in model_name or "flash" in model_name or "2.0" in model_name:
-                    if not is_judge:
-                        kwargs["system_instruction"] = sys_prompt_base
-                else:
-                    if not is_judge:
-                        prompt = sys_prompt_base + "\n\n" + prompt
-                        
-                model = genai.GenerativeModel(model_name, **kwargs)
-                resp = model.generate_content(prompt)
-                return resp.text.strip()
-            except Exception as e:
-                # If dynamic model name failed, try fallback
-                try:
-                    fallback_model = "models/gemini-1.5-flash-latest"
-                    model = genai.GenerativeModel(fallback_model, system_instruction=sys_prompt_base if not is_judge else None)
-                    resp = model.generate_content(prompt)
-                    return resp.text.strip()
-                except Exception as inner_e:
-                    return f"Fehler bei Analyse: {e}"
+        prompt = f"""Kandidat: {sym} für Depot '{depot_id}'. Aktuelles Cash: {current_cash}€.
+Signal vom Scanner: {reason} (Preis: {price}€)
 
-        # Run Bull and Bear in parallel
-        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-            bull_future = executor.submit(call_llm, bull_prompt)
-            bear_future = executor.submit(call_llm, bear_prompt)
-            bull_case = bull_future.result()
-            bear_case = bear_future.result()
-            
-        judge_prompt = f"""Du bist der Chief Risk Officer (Judge).
-Kandidat: {sym} für Depot '{depot_id}'. Aktuelles Cash: {current_cash}€. 
-Signal: {reason}
+Führe eine interne Debatte durch und fälle ein Urteil. 
+- Formuliere in 1-2 Sätzen das stärkste bullische Argument (Chancen).
+- Formuliere in 1-2 Sätzen das stärkste bärische Argument (Risiken).
+- Triff eine Entscheidung (BUY oder REJECT) als Chief Risk Officer.
+- Erlaube Trades mit gutem Momentum oder fundamentaler Stärke (sei nicht zu restriktiv). Lehne nur ab, wenn offensichtliche Red Flags vorliegen.
 
-Argument BULL:
-{bull_case}
-
-Argument BEAR:
-{bear_case}
-
-Entscheide knallhart: KAUFEN (BUY) oder ABLEHNEN (REJECT)? Bist du unsicher, lehne ab!
-Antworte im JSON Format:
-{{"action": "BUY" oder "REJECT", "reasoning": "Deine 1-Satz-Begründung"}}
-"""
+Antworte EXAKT in folgendem JSON-Format:
+{{
+  "bull_case": "...",
+  "bear_case": "...",
+  "action": "BUY",
+  "reasoning": "..."
+}}"""
         
         try:
             kwargs = {}
             if "1.5" in model_name or "flash" in model_name or "2.0" in model_name:
-                kwargs["system_instruction"] = "Du bist der Judge. Antworte IMMER nur mit validem JSON."
+                kwargs["system_instruction"] = sys_prompt
             else:
-                judge_prompt = "Du bist der Judge. Antworte IMMER nur mit validem JSON.\n\n" + judge_prompt
+                prompt = sys_prompt + "\n\n" + prompt
                 
-            judge_model = genai.GenerativeModel(model_name, **kwargs)
-            judge_resp = judge_model.generate_content(judge_prompt, generation_config={"response_mime_type": "application/json"})
-            res_json = json.loads(judge_resp.text.strip().removeprefix('```json').removesuffix('```').strip())
+            model = genai.GenerativeModel(model_name, **kwargs)
+            resp = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+            res_json = json.loads(resp.text.strip().removeprefix('```json').removesuffix('```').strip())
             
+            bull_case = res_json.get("bull_case", "Kein Bull Case generiert.")
+            bear_case = res_json.get("bear_case", "Kein Bear Case generiert.")
             action = res_json.get("action", "REJECT").upper()
             if action not in ["BUY", "REJECT"]:
                 action = "REJECT"
@@ -153,17 +123,22 @@ Antworte im JSON Format:
             try:
                 # Try fallback
                 fallback_model = "models/gemini-1.5-flash-latest"
-                judge_model = genai.GenerativeModel(fallback_model, system_instruction="Du bist der Judge. Antworte IMMER nur mit validem JSON.")
-                judge_resp = judge_model.generate_content(judge_prompt, generation_config={"response_mime_type": "application/json"})
-                res_json = json.loads(judge_resp.text.strip().removeprefix('```json').removesuffix('```').strip())
+                model = genai.GenerativeModel(fallback_model, system_instruction=sys_prompt)
+                resp = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+                res_json = json.loads(resp.text.strip().removeprefix('```json').removesuffix('```').strip())
+                
+                bull_case = res_json.get("bull_case", "Kein Bull Case generiert.")
+                bear_case = res_json.get("bear_case", "Kein Bear Case generiert.")
                 action = res_json.get("action", "REJECT").upper()
                 if action not in ["BUY", "REJECT"]:
                     action = "REJECT"
                 judge_reasoning = res_json.get("reasoning", "Keine Begründung geliefert.")
             except Exception as inner_e:
+                bull_case = f"Fehler bei Analyse: {e}"
+                bear_case = f"Fehler bei Analyse: {e}"
                 action = "REJECT"
                 judge_reasoning = f"Fehler bei Tribunal-Urteil: {e}"
-            
+        
         self._log_to_db(sym, depot_id, bull_case, bear_case, judge_reasoning, action)
         
         debate_log = {
