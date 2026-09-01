@@ -58,9 +58,16 @@ class AITribunalManager:
             try:
                 available = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
                 if available:
-                    # Prefer 1.5 flash if available, else take the first one
+                    # Prefer 1.5 flash specifically because it has 1500 RPM limit on free tier, 
+                    # whereas 2.5 flash often has a strict 20 RPM limit.
+                    flash_15_models = [m for m in available if '1.5-flash' in m.lower()]
                     flash_models = [m for m in available if 'flash' in m.lower()]
-                    self._cached_model = flash_models[0] if flash_models else available[0]
+                    if flash_15_models:
+                        self._cached_model = flash_15_models[0]
+                    elif flash_models:
+                        self._cached_model = flash_models[0]
+                    else:
+                        self._cached_model = available[0]
                 else:
                     self._cached_model = "gemini-1.5-flash"
             except Exception:
