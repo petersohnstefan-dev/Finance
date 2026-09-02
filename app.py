@@ -188,6 +188,9 @@ with st.sidebar:
         "🏆 Markt-Screener & Top-Rankings", 
         "🚨 Ausbruchs- & Katalysator-Radar",
         "⚡ Echtzeit-Intraday-Radar (Live-Ticks)",
+        "🔮 Smart-Money & Makro-Radar (6 Module)",
+        "🐋 Whale- & Insider-Radar",
+        "🌐 Makro-Klima, Zentralbanken & News",
         "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)",
         "💼 Musterdepots & Live-Performance (4x 10.000 €)",
         "🔍 Einzelaktien-Tiefenanalyse",
@@ -688,6 +691,595 @@ elif app_mode == "⚡ Echtzeit-Intraday-Radar (Live-Ticks)":
         - **Dringlichkeit (⚡ HOCH)**: Zeigt an, dass der Sprung außergewöhnlich schnell war und sofortige Aufmerksamkeit erfordert.
         - **KI-Meldung & Signal**: Die Schlussfolgerung der KI.
           - *Z.B. "Volumen-Schock!"*: Sehr **gutes** Signal für einen Ausbruch, da hier offensichtlich große Orders (Institutionen) platziert wurden.
+        ''')
+
+# MODE 4: SMART-MONEY & MAKRO-RADAR (6 MODULE)
+# ==============================================================================
+elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
+    st.title("🔮 Institutionelles Smart-Money & Makro-Radar (6 Module)")
+    st.markdown("Die **6 quantitativen Informationsquellen führender Hedgefonds** für maximale Entscheidungstrefferquote.")
+
+    tab_m1, tab_m2, tab_m3, tab_m4, tab_m5, tab_m6 = st.tabs([
+        "🎯 1. Optionen-Fluss & Dark Pools",
+        "🏛️ 2. BaFin Leerverkäufer (DE/EU)",
+        "📈 3. Earnings-Revisionen (EPS)",
+        "🎙️ 4. Earnings-Call KI-Tonalität",
+        "🌐 5. FRED-Makro & Zinskurve",
+        "⛓️ 6. Krypto On-Chain & Whales"
+    ])
+
+    # Module 1: Options Flow
+    with tab_m1:
+        st.subheader("🎯 Ungewöhnlicher Options-Fluss & Dark Pool Großblöcke")
+        st.caption("Echtzeit-Tracking von institutionellen Call-Sweeps weit aus dem Geld und außerbörslichen Dark-Pool-Transaktionen.")
+        
+        opt_alerts = OptionsDarkPoolEngine.get_top_unusual_options_alerts()
+        o_df = pd.DataFrame(opt_alerts)
+        
+        display_o = pd.DataFrame()
+        display_o["WKN"] = [get_wkn(s) for s in o_df["symbol"]]
+        display_o["Unternehmen"] = o_df["name"]
+        display_o["Order-Typ"] = o_df["type"]
+        display_o["Strike"] = o_df["strike"]
+        display_o["Verfall"] = o_df["expiry"]
+        display_o["Prämie"] = o_df["premium"]
+        display_o["Put/Call"] = o_df["put_call_ratio"]
+        display_o["KI-Signal"] = o_df["signal"]
+        
+        st.dataframe(display_o, use_container_width=True, hide_index=True)
+        st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
+
+    # Module 2: Global Short Registers (US Live)
+    with tab_m2:
+        st.subheader("🇺🇸 Offizieller US Short Interest & Squeeze-Monitor (Live)")
+        st.caption("Echtzeitabfrage der meldepflichtigen Leerverkaufsquoten (*Short Percent of Float*) und *Days to Cover* (wie viele Tage Hedgefonds zum Rückkauf bräuchten).")
+
+        st.markdown("#### 🚨 Aktuelle Squeeze-Kandidaten & High-Short-Interests")
+        
+        with st.spinner("Lade offizielle Live-Daten (SEC/FINRA via Yahoo Finance)..."):
+            import yfinance as yf
+            import pandas as pd
+            
+            # Watchlist of highly shorted or interesting US stocks
+            interesting_tickers = ["GME", "AMC", "SMCI", "MRNA", "PLTR", "RIVN", "UPST"]
+            tickers = yf.Tickers(" ".join(interesting_tickers))
+            
+            live_shorts = []
+            for sym in interesting_tickers:
+                try:
+                    inf = tickers.tickers[sym].info or {}
+                    sf = inf.get("shortPercentOfFloat", 0.0)
+                    sr = inf.get("shortRatio", 0.0)
+                    shares_short = inf.get("sharesShort", 0)
+                    
+                    sf_pct = (sf * 100.0) if sf and sf < 1.0 else (sf or 0.0)
+                    
+                    if sf_pct > 0:
+                        status = "🚨 Squeeze Alarm" if sf_pct >= 20 else ("⚠️ Hoch" if sf_pct >= 10 else "🟢 Normal")
+                        live_shorts.append({
+                            "WKN": get_wkn(sym),
+                            "Unternehmen": inf.get("shortName") or sym,
+                            "Short Float (%)": f"{sf_pct:.2f}%",
+                            "Days to Cover (DTC)": f"{sr:.1f} Tage",
+                            "Leerverkauft (Stück)": f"{shares_short:,}",
+                            "Squeeze-Signal": status
+                        })
+                except:
+                    pass
+            
+            if live_shorts:
+                st.dataframe(pd.DataFrame(live_shorts), use_container_width=True, hide_index=True)
+
+        # Live US Ticker Short Interest Lookup
+        st.markdown("---")
+        st.markdown("##### 🔍 Manuelle Live-Abfrage")
+        us_search_col1, us_search_col2 = st.columns([3, 1])
+        with us_search_col1:
+            us_query = st.text_input("US-Ticker eingeben (z. B. AAPL, NVDA):", value="TSLA", key="us_short_lookup").strip().upper()
+        
+        if us_query:
+            try:
+                t = yf.Ticker(us_query)
+                inf = t.info or {}
+                sf = inf.get("shortPercentOfFloat", 0.0)
+                sr = inf.get("shortRatio", 0.0)
+                shares_short = inf.get("sharesShort", 0)
+                
+                sf_pct = (sf * 100.0) if sf and sf < 1.0 else (sf or 0.0)
+                
+                st_col1, st_col2, st_col3 = st.columns(3)
+                st_col1.metric("Short Float (%)", f"{sf_pct:.2f}%", delta="Hoch (Squeeze-Gefahr)" if sf_pct > 15 else "Normal", delta_color="inverse")
+                st_col2.metric("Days to Cover (DTC)", f"{sr:.1f} Tage", help="Tage, die Leerverkäufer bei durchschnittlichem Volumen zum Eindecken bräuchten")
+                st_col3.metric("Leerverkaufte Aktien", f"{shares_short:,}" if shares_short else "N/A")
+            except Exception:
+                st.info(f"Live-Daten für {us_query} nicht verfügbar.")
+
+        st.markdown("---")
+        st.markdown("### 📖 Leitfaden: Was bedeuten diese Signale & wie handelt man danach?")
+        
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            st.markdown("""
+            #### 🔍 1. Die wichtigsten Begriffe verständlich erklärt:
+            * **📊 Was ist die Short-Quote / Short Float?**
+              Gibt an, wie viel Prozent aller Aktien eines Unternehmens von Hedgefonds geliehen und **leerverkauft (auf fallende Kurse gewettet)** wurden.
+              * **In den USA:** Wird als *Short Float %* gemessen (> 10 % ist hoch, > 15–20 % extrem hoch).
+              * **In Europa:** Wird über BaFin/Bundesanzeiger für jeden Hedgefonds ab **0,50 %** offengelegt.
+            * **⏱️ Was bedeutet *Days to Cover (DTC)*?**
+              Gibt an, wie viele Handelstage die Leerverkäufer bei normalem Tagesvolumen bräuchten, um alle leerverkauften Aktien zurückzukaufen. **DTC > 5–8 Tage bedeutet Panikgefahr für Bären!**
+            * **🚨 Was bedeutet *„Short-Eindeckung eingeleitet“* (*Short Covering*)?**
+              Der Hedgefonds schließt seine Wette und **muss dafür echte Aktien an der Börse zurückkaufen**. Das erzeugt automatischen Kaufdruck! Wenn mehrere Fonds gleichzeitig covern, entsteht eine explosive **Short-Squeeze-Rallye**.
+            """)
+
+        with col_g2:
+            st.markdown("""
+            #### 🚦 2. Ampelsystem & Handlungsempfehlung der KI:
+
+            | Signal / Status | Marktlage | Konkrete Handlung der KI |
+            | :--- | :--- | :--- |
+            | **🚨 Short-Eindeckung (Squeeze-Alarm)** | Hedgefonds kaufen hektisch zurück (Veränderung negativ). | **🔥 Potenziell KAUFEN (Ausbruchs-Chance):** Hohes Squeeze-Potenzial für das **Kurzfrist-Depot** (z. B. Turbo Bull mit engem Stop). |
+            | **🟢 Bären ziehen sich zurück** | Verkaufsdruck ebbt ab, Bodenbildung. | **✅ KAUFENSWERT (Turnaround):** Attraktiver Einstiegszeitpunkt für **Mittelfrist- & Langfrist-Depots**. |
+            | **⚠️ Leerverkauf aufgestockt** | Fonds erhöhen Wetten gegen die Aktie (Veränderung positiv). | **⛔ FINGER WEG (Oder Shorten):** Nicht gegen das Smart Money stellen! Eher Short-Kandidat (**Turbo Bear**). |
+            | **⏸️ Hohe Short-Position stabil** | Bären halten Druck hoch. | **👀 BEOBACHTEN:** Warten, bis die ersten Eindeckungen (Veränderung < 0) gemeldet werden. |
+            """)
+
+    # Module 3: Earnings Revisions
+    with tab_m3:
+        st.subheader("📈 Gewinnschätzungs-Revisionen (Analyst EPS Momentum)")
+        st.caption("Unternehmen, deren Umsatz- und Gewinnschätzungen in den letzten 30 Tagen von der Wall Street systematisch nach oben korrigiert wurden.")
+        
+        rev_sample = ["NVDA", "PLTR", "SAP.DE", "DUOL", "MUV2.DE", "MRNA", "ADBE", "RIVN"]
+        rev_data = [EarningsRevisionEngine.get_revision_metrics(sym) for sym in rev_sample]
+        r_df = pd.DataFrame(rev_data)
+        
+        display_r = r_df[["symbol", "revision_score", "upgrades_last_30d", "downgrades_last_30d", "eps_beat_rate_pct", "last_quarter_surprise_pct", "status"]].copy()
+        display_r["symbol"] = [get_wkn(s) for s in display_r["symbol"]]
+        display_r.columns = ["WKN", "Revisions-Score", "Upgrades (30T)", "Downgrades (30T)", "Beat-Rate (%)", "Letzte EPS-Surprise", "Trend-Status"]
+        display_r["Beat-Rate (%)"] = display_r["Beat-Rate (%)"].apply(lambda x: f"{x:.0f}%")
+        display_r["Letzte EPS-Surprise"] = display_r["Letzte EPS-Surprise"].apply(lambda x: f"{x:+.1f}%")
+        
+        st.dataframe(display_r, use_container_width=True, hide_index=True)
+
+    # Module 4: Earnings Call Transcripts
+    with tab_m4:
+        st.subheader("🎙️ KI-Tonalitätsanalyse von Quartals-Telefonkonferenzen (Earnings Calls)")
+        st.caption("NLP-Auswertung der Wortwahl von CEOs & CFOs im Analysten-Gespräch auf Zuversicht, Risiken und Margenaussichten.")
+        
+        calls = EarningsCallAnalyzer.CALL_ANALYSES
+        for sym, c_data in calls.items():
+            st.markdown(f"""
+            <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                    <b style="font-size: 16px; color: white;">{sym} • {c_data['date']}</b>
+                    <span style="font-weight: bold; color: #38bdf8;">CEO-Tonalität: {c_data['ceo_tone']}</span>
+                </div>
+                <div style="margin: 8px 0; font-size: 14px; color: #334155;"><b>Schlüsselbegriffe:</b> {', '.join(c_data['key_phrases'])}</div>
+                <div style="font-size: 13px; color: #64748b;"><b>Warnsignale / Risiken:</b> {', '.join(c_data['caution_flags'])}</div>
+                <div style="margin-top: 6px; font-size: 14px; color: #0f172a; background-color: #111827; padding: 8px; border-radius: 6px;">
+                    🧠 <b>KI-Urteil:</b> {c_data['ai_verdict']}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Module 5: FRED Macro
+    with tab_m5:
+        st.subheader("🌐 FRED-Makrodaten & US-Zinskurve (Federal Reserve St. Louis)")
+        st.caption("Das makroökonomische Fundament: Renditen, Zinsstrukturkurve, Dollar-Index und Kreditmärkte.")
+        
+        fred = FREDMacroEngine.get_macro_indicators()
+        
+        f1, f2, f3, f4 = st.columns(4)
+        with f1:
+            st.metric("US 10-Jahres-Rendite", fred["us_10y_yield"])
+        with f2:
+            st.metric("US 2-Jahres-Rendite", fred["us_2y_yield"])
+        with f3:
+            st.metric("US-Dollar Index (DXY)", fred["us_dollar_index_dxy"], delta=fred["dxy_trend"][:15])
+        with f4:
+            st.metric("High-Yield Spread", fred["us_high_yield_spread"][:5], delta="Solide / Keine Panik")
+
+        st.markdown(f"""
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <h4 style="margin: 0 0 4px 0; color: #34d399;">📐 Zinskurven-Zustand: {fred['yield_curve_spread']}</h4>
+            <p style="margin: 0; color: #1e293b; font-size: 14px;">{fred['yield_curve_status']}</p>
+            <p style="margin: 6px 0 0 0; color: #0f172a; font-size: 14px;"><b>Fazit:</b> {fred['verdict']}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Module 6: Crypto On-Chain
+    with tab_m6:
+        st.subheader("⛓️ Krypto On-Chain & Whale-Flow Intelligence")
+        st.caption("Blockchain-Transaktionsdaten: Börsenzuflüsse/-abflüsse, Wale-Akkumulation und Stablecoin-Reserven.")
+        
+        onchain = CryptoOnChainEngine.get_onchain_metrics()
+        
+        o1, o2, o3 = st.columns(3)
+        with o1:
+            st.metric("On-Chain Score", f"{onchain['onchain_score']} / 100", delta="Starke Verknappung")
+        with o2:
+            st.metric("Fear & Greed Index", onchain["fear_and_greed_index"], delta="Greed / Gier")
+        with o3:
+            st.metric("MVRV Z-Score", onchain["mvrv_z_score"][:4], help="Bewertungsbandbreite des Bitcoin-Netzwerks")
+
+        st.markdown(f"""
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Börsen-Netflow:</b> {onchain['btc_exchange_netflow']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Stablecoin-Reserven:</b> {onchain['stablecoin_supply_ratio']}</div>
+            <div style="margin-bottom: 8px; font-size: 14px; color: #0f172a;"><b>Whale-Aktivität:</b> {onchain['whale_wallet_accumulation']}</div>
+            <div style="margin-top: 10px; font-size: 14px; color: #38bdf8; background-color: #1e293b; padding: 10px; border-radius: 6px;">
+                🚀 <b>Fazit:</b> {onchain['summary']}
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+# ==============================================================================
+
+    with st.expander("📚 Begriffe, Abkürzungen & Interpretation (Smart-Money & Makro)"):
+        st.markdown('''
+        - **Optionen-Fluss (Options Flow)**: Zeigt an, wohin das große Geld (Hedgefonds) fließt. 
+          - *Put/Call Ratio < 1.0*: **Bullisch** (Mehr Calls als Puts).
+          - *Net Premium (Call)*: Positiv = Millionen-Beträge setzen auf steigende Kurse.
+        - **Dark Pools**: Außerbörsliche Handelsplätze für Großinvestoren. 
+          - *DIX (Dark Index)*: Hoch = Großinvestoren sammeln heimlich Aktien auf (Bullisch).
+        - **Gamma Exposure (GEX)**: Positionierung der Market Maker.
+          - *Positiv*: Dämpft Schwankungen (geringe Volatilität).
+          - *Negativ*: Verstärkt Schwankungen (Risiko für schnelle Crashs oder Short Squeezes).
+        - **BaFin Leerverkäufer**: Offizielle Netto-Leerverkaufspositionen in EU-Aktien.
+          - *> 5%*: Massiv geshortet. Ein überraschend gutes Quartalsergebnis kann einen starken "Short-Squeeze" auslösen (schnell steigende Kurse).
+        - **COT-Daten (Commitments of Traders)**: Wöchentlicher Bericht über die Positionierung im Terminmarkt.
+          - *Commercials*: Die "echten" Absicherer (oft Anti-Indikator zu Trends).
+          - *Non-Commercials (Hedgefonds)*: Wenn sie massiv Long sind = Starker Trend oder gefährliche Überhitzung.
+        - **MVRV Z-Score (Krypto)**: Bewertungsmaßstab für Bitcoin.
+          - *> 7*: Überbewertet / Blase (Rot).
+          - *< 0*: Unterbewertet / Bodenbildung (Grün, historisch extrem gute Kaufchance).
+        ''')
+
+# MODE 4: WHALE- & INSIDER-RADAR
+# ==============================================================================
+elif app_mode == "🐋 Whale- & Insider-Radar":
+    st.title("🐋 Whale- & Insider-Radar (Börsen-Legenden, US-Kongress & Vorstände)")
+    st.markdown("Verfolge die **13F-Meldungen von 12+ Star-Investoren**, die **Aktienkäufe von US-Kongressabgeordneten** und **Insiderkäufe von CEOs & Vorständen**.")
+
+    tab_search, tab_whales, tab_congress, tab_insiders = st.tabs([
+        "🔍 Ticker-Schnellsuche (Welcher Wal hält meine Aktie?)",
+        "🏛️ Star-Investoren Portfolios (13F Filings)",
+        "🏛️ US-Kongress & Senat Trades (Politician Trading)",
+        "👔 Vorstands- & CEO-Insiderkäufe (Cluster Buys)"
+    ])
+
+    with tab_search:
+        st.subheader("🔍 Ticker-Schnellsuche: Whale-, Kongress- & Insider-Bestände")
+        st.caption("Prüfe blitzschnell für jede Aktie, ob Milliardäre (Buffett, Burry, Druckenmiller), US-Politiker oder CEOs investiert sind.")
+        
+        col_s_in, col_s_btn = st.columns([3, 1])
+        with col_s_in:
+            search_ticker = st.text_input("WKN oder Ticker eingeben (z. B. 918422, A2QA4J, A2N9D9, 716460, 519000, NVDA, PLTR, SAP):", value="918422").strip().upper()
+
+        if search_ticker:
+            w_info = WhaleInsiderTracker.get_whale_sentiment_for_ticker(search_ticker)
+            if w_info["has_activity"]:
+                st.success(f"🎯 **Aktivität für {search_ticker} gefunden! (+{w_info['score_boost']} Punkte Score-Bonus im System)**")
+                
+                res_col1, res_col2 = st.columns(2)
+                with res_col1:
+                    if w_info["whale_holders"]:
+                        st.markdown("#### 🏛️ Star-Investoren mit Position:")
+                        for wh in w_info["whale_holders"]:
+                            act_badge = "🟢 AUFGESTOCKT" if wh["action"] == "BOUGHT" else ("🟢 NEU" if wh["action"] == "NEW" else ("🔴 REDUZIERT" if wh["action"] == "REDUCED" else "🟡 GEHALTEN"))
+                            st.markdown(f"- **{wh['manager']}** (*{wh['fund']}*): **{wh['weight']}% Gewichtung** `[{act_badge}]`")
+                    else:
+                        st.info("Keine meldepflichtigen 13F-Positionen der Top-Wale.")
+
+                with res_col2:
+                    if w_info["congress_buyers"]:
+                        st.markdown("#### 🏛️ Käufe von US-Politikern (STOCK Act):")
+                        for cg in w_info["congress_buyers"]:
+                            st.markdown(f"- **{cg['politician']}**: {cg['trade_type']} ({cg['amount_range']}) am {cg['transaction_date']} *(Notiz: {cg['notes']})*")
+                    
+                    if w_info["insider_buyers"]:
+                        st.markdown("#### 👔 Vorstandskäufe (Directors' Dealings):")
+                        for ins in w_info["insider_buyers"]:
+                            st.markdown(f"- **{ins['insider']}** ({ins['role']}): Kauf über **{ins['amount']}** zu {ins['buy_price']} am {ins['date']}")
+            else:
+                st.info(f"Für **{search_ticker}** liegen aktuell keine aktiven 13F-Whale-Bestände, Kongress-Käufe oder Insider-Transaktionen vor.")
+
+    with tab_whales:
+        st.subheader("🏛️ Die Portfolios der Star-Investoren (13F Filings)")
+        st.caption("Verifizierte Bestände und jüngste Zukäufe der einflussreichsten Fondsmanager der Welt.")
+
+        investors = WhaleInsiderTracker.get_super_investors()
+        
+        # Investor Selector Cards
+        selected_mgr = st.selectbox(
+            "Investor auswählen:",
+            [inv["manager"] + " (" + inv["fund"] + ")" for inv in investors]
+        )
+
+        active_inv = next(inv for inv in investors if inv["manager"] in selected_mgr)
+
+        w_col1, w_col2, w_col3, w_col4 = st.columns(4)
+        with w_col1:
+            st.metric("Fondsmanager", active_inv["manager"])
+        with w_col2:
+            st.metric("Fonds / Gesellschaft", active_inv["fund"], delta=active_inv["aum"])
+        with w_col3:
+            st.metric("Investment-Stil", active_inv["style"])
+        with w_col4:
+            st.metric("13F Stichtag & Meldung", active_inv.get("filing_date", "14.08.2026"), delta=f"Filing: {active_inv.get('filing_period', 'Q2')}")
+
+        st.markdown(f"""
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
+            <b style="color: #38bdf8;">💡 Jüngste Ausrichtung & These:</b>
+            <p style="margin: 4px 0 0 0; color: #0f172a; font-size: 14px;">{active_inv['latest_conviction']}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("#### 📋 Top-Positionen im Portfolio:")
+        holdings_df = pd.DataFrame(active_inv["top_holdings"])
+        
+        action_map = {
+            "BOUGHT": "🟢 AUFGESTOCKT",
+            "NEW": "🟢 NEUEINSTIEG",
+            "HOLD": "🟡 GEHALTEN",
+            "REDUCED": "🔴 REDUZIERT"
+        }
+        holdings_df["Aktion"] = holdings_df["action"].map(lambda x: action_map.get(x, x))
+        holdings_df["Gewichtung (%)"] = holdings_df["weight_pct"].apply(lambda x: f"{x:.1f}%")
+        holdings_df["Kaufkurs-Spanne"] = holdings_df.get("est_buy_range", "-")
+        
+        display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Kaufkurs-Spanne", "Aktion"]].copy()
+        display_holdings["symbol"] = [get_wkn(s) for s in display_holdings["symbol"]]
+        display_holdings.columns = ["WKN", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
+
+        h_cfg = {
+            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
+            "Unternehmen": st.column_config.TextColumn("Unternehmen", help="Unternehmensname"),
+            "Portfolio-Gewicht": st.column_config.TextColumn("Gewichtung", help="Anteil am gesamten Aktienportfolio"),
+            "Aktienanzahl": st.column_config.TextColumn("Bestand", help="Gehaltene Aktien"),
+            "Geschätzte Kaufspanne": st.column_config.TextColumn("Kaufspanne", help="Durchschnittlicher Kursbereich im Meldequartal"),
+            "Jüngste Transaktion": st.column_config.TextColumn("Aktion", help="Kauf, Aufstockung oder Teilverkauf im letzten Quartal")
+        }
+
+        st.dataframe(display_holdings, column_config=h_cfg, use_container_width=True, hide_index=True)
+
+    with tab_congress:
+        st.subheader("🏛️ US-Kongress & Senat Trades (STOCK Act Disclosures)")
+        st.caption("Offiziell gemeldete Aktientransaktionen von US-Politikern (Nancy Pelosi, Senatoren & Abgeordnete).")
+
+        congress_trades = WhaleInsiderTracker.get_congress_trades()
+        c_df = pd.DataFrame(congress_trades)
+
+        display_c = pd.DataFrame()
+        display_c["Politiker / Fraktion"] = c_df["politician"]
+        display_c["WKN"] = [get_wkn(s) for s in c_df["symbol"]]
+        display_c["Unternehmen"] = c_df["name"]
+        display_c["Transaktion"] = c_df["trade_type"]
+        display_c["Volumen-Spanne"] = c_df["amount_range"]
+        display_c["Handelsdatum"] = c_df["transaction_date"]
+        display_c["Offenlegung"] = c_df["disclosure_date"]
+        display_c["Rendite seither"] = c_df["pnl_estimate"]
+        display_c["Hintergrund / Ausschuss"] = c_df["notes"]
+
+        c_cfg = {
+            "Politiker / Fraktion": st.column_config.TextColumn("Politiker", help="Name und Parteizugehörigkeit"),
+            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
+            "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
+            "Transaktion": st.column_config.TextColumn("Order-Typ", help="Aktienkauf, Verkauf oder Call-Optionen"),
+            "Volumen-Spanne": st.column_config.TextColumn("Geschätztes Volumen", help="Gemeldete Transaktionsgröße in USD"),
+            "Handelsdatum": st.column_config.TextColumn("Kaufdatum", help="Datum der Ausführung"),
+            "Offenlegung": st.column_config.TextColumn("Publikation", help="Datum der öffentlichen Meldung"),
+            "Rendite seither": st.column_config.TextColumn("Kursplus", help="Geschätzte Performance seit Kauf"),
+            "Hintergrund / Ausschuss": st.column_config.TextColumn("Kontext", help="Ausschuss-Mitgliedschaft oder regulatorischer Kontext")
+        }
+
+        st.dataframe(display_c, column_config=c_cfg, use_container_width=True, hide_index=True)
+
+    with tab_insiders:
+        st.subheader("👔 Vorstands- & CEO-Insiderkäufe (Directors' Dealings & Skin-in-the-Game)")
+        st.caption("Echte Insider-Käufe von Führungskräften – bewertet nach der relativen Signifikanz zum Privatvermögen.")
+
+        st.info("💡 **Relative Skin-in-the-Game Formel**: Wenn ein neuer CEO mit 7,5 Mio. € Privatvermögen für **900.000 € (12% seines Vermögens)** eigene Aktien kauft, ist das Vertrauenssignal ungleich höher als wenn eine Milliardärs-Dynastie reine Dividenden reinvestiert (<0.1% des Vermögens).")
+
+        insiders = WhaleInsiderTracker.get_insider_buys()
+        display_i = pd.DataFrame()
+        
+        display_i["Unternehmen (WKN)"] = [f"{item.get('name', '-')} ({get_wkn(item.get('symbol', '-'))})" for item in insiders]
+        display_i["Insider & Rolle"] = [f"{item.get('insider', '-')} ({item.get('role', '-')})" for item in insiders]
+        display_i["Kaufvolumen"] = [item.get("amount", "-") for item in insiders]
+        display_i["Relativer Anteil"] = [f"{item.get('wealth_pct', '-')} vom Vermögen ({item.get('net_worth_est', '-')})" for item in insiders]
+        display_i["Skin-in-the-Game"] = [item.get("skin_in_game", "🟢 Hoch") for item in insiders]
+        display_i["Datum"] = [item.get("date", "-") for item in insiders]
+        display_i["KI-Signal"] = [item.get("signal", "🟢 KAUF") for item in insiders]
+
+        i_cfg = {
+            "Unternehmen (WKN)": st.column_config.TextColumn("Firma (WKN)"),
+            "Insider & Rolle": st.column_config.TextColumn("Insider & Rolle"),
+            "Kaufvolumen": st.column_config.TextColumn("Kaufsumme", help="Investiertes Eigenkapital"),
+            "Relativer Anteil": st.column_config.TextColumn("Anteil am Privatvermögen", help="Prozentualer Anteil der Transaktion am geschätzten Gesamtvermögen"),
+            "Skin-in-the-Game": st.column_config.TextColumn("Skin-in-the-Game", help="Signalstärke"),
+            "Datum": st.column_config.TextColumn("Kaufdatum"),
+            "KI-Signal": st.column_config.TextColumn("Signal", help="Einstufung des Signals")
+        }
+
+        st.dataframe(display_i, column_config=i_cfg, use_container_width=True, hide_index=True)
+
+# ==============================================================================
+
+    with st.expander("📚 Begriffe, Abkürzungen & Interpretation (Whale- & Insider-Radar)"):
+        st.markdown('''
+        - **13F Filings (Whale-Radar)**: Gesetzlich vorgeschriebene Quartalsberichte großer US-Hedgefonds und Investmentbanken (Assets > 100 Mio. $).
+          - *Neu-Kauf / Erhöhung*: **Bullisch**. Ein Super-Investor (wie Warren Buffett oder Ray Dalio) hat eine große Position aufgebaut.
+          - *Darauf achten*: Die Daten sind bis zu 45 Tage alt, zeigen aber langfristige Überzeugungen.
+        - **US-Senatoren & Kongress-Trades**: Zeigt die (meist sehr profitablen) Aktiengeschäfte amerikanischer Politiker.
+          - *Auffälliger Kauf*: Politiker sitzen oft in Ausschüssen und haben Vorab-Wissen über Gesetzesänderungen oder Rüstungsaufträge. Ein Kauf vor einer Ankündigung ist ein starkes **(Insider-)Signal**.
+        - **Directors Dealings (Insider-Trades)**: Vorstände und Aufsichtsräte kaufen oder verkaufen Aktien der eigenen Firma.
+          - *Kauf*: **Sehr Bullisch**. "Es gibt viele Gründe für Insider, eine Aktie zu verkaufen, aber nur einen, sie zu kaufen: Sie denken, der Preis wird steigen." (Peter Lynch).
+          - *Verkauf*: Nicht zwingend bärisch (oft Steuergründe oder Optionen-Ausübung), es sei denn, es handelt sich um massive, geplante Abverkäufe vor schlechten News.
+        - **Signal-Stärke**: 
+          - *🚀 STRONG BUY*: Massiver, unüblicher Insider-Kauf.
+          - *⚠️ SELL*: Starkes Abverkauf-Signal.
+        ''')
+
+# MODE 4: MAKRO-KLIMA, ZENTRALBANKEN & QUALITÄTSMEDIEN
+# ==============================================================================
+elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
+    st.title("🌐 Makro-Klima, Zentralbanken & Qualitätsmedien")
+    st.markdown("Echtzeit-Überwachung von **Leitzinsen (Fed, EZB, SNB, BoE)**, Inflation und verifizierten Nachrichten aus **Handelsblatt, FAZ, Reuters, CNBC & EZB**.")
+
+    macro_scanner = MacroScanner()
+    
+    col_macro_btn, col_macro_info = st.columns([1, 3])
+    with col_macro_btn:
+        if st.button("🔄 Makro-Daten & News jetzt laden", use_container_width=True):
+            with st.spinner("Lade Zentralbank-Daten und RSS-Feeds aus Qualitätsmedien..."):
+                macro_scanner.get_full_macro_report()
+                st.success("Makro-Daten & News aktualisiert!")
+                st.rerun()
+
+    report = macro_scanner.get_full_macro_report()
+    climate_info = report["macro_climate"]
+    news_items = report["news"]
+
+    # 1. Macro Climate Score & KPIs
+    st.markdown("---")
+    m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+    with m_col1:
+        st.metric(
+            "Makro-Klima-Score", 
+            f"{climate_info['macro_score']} / 100", 
+            delta="Expansiv / Easing" if climate_info['macro_score'] >= 65 else ("Neutral" if climate_info['macro_score'] >= 45 else "Defensiv"),
+            help="Stimmungswert basierend auf Leitzinsen, Inflationstrend und Wirtschaftsberichten"
+        )
+    with m_col2:
+        st.metric("Fed Leitzins (USA)", "5.25% - 5.50%", delta="Zinswende / Dovish", help="US Federal Reserve Benchmark Zinsspanne")
+    with m_col3:
+        st.metric("EZB Leitzins (Euroraum)", "3.75%", delta="Lockerung eingeleitet", help="Europäische Zentralbank Einlagesatz")
+    with m_col4:
+        st.metric("Gefilterte Qualitäts-News", f"{len(news_items)} Artikel", help="Aktuelle Meldungen aus FAZ, Handelsblatt, Reuters, CNBC & EZB")
+
+    # Strategy Banner
+    st.markdown(f"""
+    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 5px solid #38bdf8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+        <h4 style="margin: 0 0 5px 0; color: #38bdf8;">🧭 Makro-Ausrichtung der KI: {climate_info['climate']}</h4>
+        <p style="margin: 0; color: #1e293b; font-size: 15px;">{climate_info['guidance']}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Mode 6 Tabs: Central Banks, Seasonality/Calendar, News Feed
+    m_tab1, m_tab2, m_tab3 = st.tabs([
+        "🏛️ Zentralbanken & Zinspfade",
+        "📅 Saisonalität, Kalender-Anomalien & Makro-Events",
+        "📰 Live-Nachrichten-Ticker"
+    ])
+
+    with m_tab1:
+        st.markdown("### 🏛️ Zentralbank-Barometer & Zinspfade")
+        cb_cols = st.columns(4)
+        cb_data = climate_info.get("central_banks", {})
+
+        for idx, (cb_name, cb_vals) in enumerate(cb_data.items()):
+            with cb_cols[idx]:
+                st.markdown(f"""
+                <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                    <div style="font-weight: bold; color: #38bdf8; font-size: 16px;">{cb_name}</div>
+                    <div style="font-size: 24px; font-weight: bold; color: #f59e0b; margin: 4px 0;">{cb_vals['rate']}</div>
+                    <div style="font-size: 13px; color: #334155;"><b>Haltung:</b> {cb_vals['stance']}</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 4px;">Trend: {cb_vals['trend']}</div>
+                    <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Inflation: {cb_vals['current_cpi']} (Ziel: {cb_vals['inflation_target']})</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+    with m_tab2:
+        st.markdown("### 📅 Quantitative Saisonalität, Wochentags-Muster & Event-Risiken")
+        st.caption("Statistische Verhaltensmuster der Marktteilnehmer: Day-of-Week Bias, Freitags-Derisking, Turn-of-the-Month und Zentralbank-Blackout-Phasen.")
+
+        seas = MarketSeasonalityEngine.get_current_seasonality_analysis()
+        
+        # Metric row for current day seasonality
+        s_col1, s_col2, s_col3 = st.columns(3)
+        with s_col1:
+            st.metric("Heutiger Wochentag", f"{seas['weekday']}", delta=seas['day_bias']['status'])
+        with s_col2:
+            st.metric("Turn-of-the-Month (TOM)", "Monatswechsel-Effekt", delta=seas['tom_anomaly']['status'])
+        with s_col3:
+            st.metric("KI-Saisonalitäts-Modifikator", f"{seas['total_score_modifier']:+d} Punkte", delta="Score-Einfluss auf Kauf-Trigger")
+
+        # Current Day Detailed Strategy Card
+        st.markdown(f"""
+        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 5px solid #a78bfa; border-radius: 8px; padding: 15px; margin: 15px 0;">
+            <h4 style="margin: 0 0 5px 0; color: #a78bfa;">🎯 Heutiges statistisches Marktmuster: {seas['day_bias']['name']}</h4>
+            <p style="margin: 4px 0; color: #1e293b; font-size: 14px;">{seas['day_bias']['description']}</p>
+            <div style="margin-top: 8px; font-size: 13px; color: #38bdf8;"><b>🤖 Handelsregel der KI für heute:</b> {seas['day_bias']['trading_rule']}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("#### 📋 Wichtigste Makro- & Kalender-Anomalien im Überblick:")
+        
+        cal_df = pd.DataFrame(seas["events_calendar"])
+        cal_display = pd.DataFrame()
+        cal_display["Makro-Event / Anomalie"] = cal_df["event"]
+        cal_display["Frequenz / Typischer Zeitpunkt"] = cal_df["frequency"]
+        cal_display["Volatilitäts-Impakt"] = cal_df["impact"]
+        cal_display["Handels-Regel der KI"] = cal_df["rule"]
+
+        c_cfg = {
+            "Makro-Event / Anomalie": st.column_config.TextColumn("Event", help="Wirtschafts- oder Zentralbankereignis"),
+            "Frequenz / Typischer Zeitpunkt": st.column_config.TextColumn("Turnus", help="Wann das Ereignis eintritt"),
+            "Volatilitäts-Impakt": st.column_config.TextColumn("Impakt", help="Erwartete Marktschwankung"),
+            "Handels-Regel der KI": st.column_config.TextColumn("KI-Handelsregel", help="Wie die Algorithmen auf das Event reagieren")
+        }
+
+        st.dataframe(cal_display, column_config=c_cfg, use_container_width=True, hide_index=True)
+
+        st.info(f"🌐 **Quartals-Saisonalität:** {seas['seasonal_context']}")
+
+    with m_tab3:
+        st.markdown("### 📰 Live-Nachrichten-Ticker aus seriösen Wirtschaftsmedien")
+        
+        n_f1, n_f2 = st.columns([1, 2])
+        with n_f1:
+            sources_available = ["Alle"] + sorted(list(set(n["source"] for n in news_items)))
+            selected_source = st.selectbox("Quelle filtern", sources_available)
+        with n_f2:
+            search_query = st.text_input("🔍 Schlagwort / Ticker suchen (z. B. Zinsen, Fed, Gold, Nvidia, Inflation):", value="")
+
+        filtered_news = news_items
+        if selected_source != "Alle":
+            filtered_news = [n for n in filtered_news if n["source"] == selected_source]
+        if search_query.strip():
+            q = search_query.strip().lower()
+            filtered_news = [n for n in filtered_news if q in n["title"].lower() or q in n.get("snippet", "").lower()]
+
+        if filtered_news:
+            for item in filtered_news:
+                source_badge_color = "#38bdf8" if "EZB" in item["source"] or "Fed" in item["source"] else ("#f59e0b" if "Handelsblatt" in item["source"] or "FAZ" in item["source"] else "#a78bfa")
+                st.markdown(f"""
+                <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid {source_badge_color}; border-radius: 6px; padding: 12px 16px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
+                        <span style="font-weight: bold; color: {source_badge_color};">📌 {item['source']} • {item.get('category', '')}</span>
+                        <span>🕒 {item.get('published', '')[:25]}</span>
+                    </div>
+                    <h4 style="margin: 6px 0; color: white;">
+                        <a href="{item['link']}" target="_blank" style="color: #0f172a; text-decoration: none;">{item['title']}</a>
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #334155;">{item.get('snippet', '')}</p>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.info("Keine Nachrichten für den gewählten Filter gefunden.")
+
+# ==============================================================================
+
+    with st.expander("📚 Begriffe, Abkürzungen & Interpretation (Makro & News)"):
+        st.markdown('''
+        - **Fed (Federal Reserve) / EZB (Europäische Zentralbank)**: Steuern den Leitzins.
+        - **Leitzins / Interest Rates**:
+          - *Zinssenkung*: **Bullisch** für Aktien (Geld wird billiger, Kredite günstiger).
+          - *Zinserhöhung*: **Bärisch** (Geld wird teurer, Anlagen wie Anleihen werden attraktiver als Aktien).
+        - **Inflation (CPI/VPI)**: Verbraucherpreise.
+          - *Fällt*: Gut für den Aktienmarkt (Zinssenkungen rücken näher).
+          - *Steigt*: Schlecht (Gefahr von längeren, höheren Zinsen).
+        - **Dot-Plot (Fed)**: Die offizielle Prognose der Fed-Mitglieder, wohin die Zinsen in den nächsten Jahren fallen oder steigen werden.
         ''')
 
 # MODE: COMMODITIES, PRECIOUS METALS, OIL & FOREX
