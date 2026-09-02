@@ -729,71 +729,71 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         st.dataframe(display_o, use_container_width=True, hide_index=True)
         st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
 
-    # Module 2: Global Short Registers (US & EU)
+    # Module 2: Global Short Registers (US Live)
     with tab_m2:
-        st.subheader("🏛️ Offizielle Leerverkäufer-Register (USA: SEC / FINRA & Europa: BaFin)")
-        st.caption("Verifizierte Netto-Leerverkaufspositionen, Short Float % und Days-to-Cover (DTC) meldepflichtiger Hedgefonds.")
+        st.subheader("🇺🇸 Offizieller US Short Interest & Squeeze-Monitor (Live)")
+        st.caption("Echtzeitabfrage der meldepflichtigen Leerverkaufsquoten (*Short Percent of Float*) und *Days to Cover* (wie viele Tage Hedgefonds zum Rückkauf bräuchten).")
 
-        sub_tab_us, sub_tab_de = st.tabs([
-            "🇺🇸 US-Markt (SEC & FINRA Short Interest & Squeeze-Radar)",
-            "🇪🇺 Deutschland & Europa (BaFin Netto-Leerverkäufe nach Hedgefonds)"
-        ])
-
-        with sub_tab_us:
-            st.markdown("#### 🇺🇸 Offizieller US Short Interest & Squeeze-Monitor (NYSE & NASDAQ)")
-            st.caption("Meldepflichtige Leerverkaufsquoten (*Short Percent of Float*) und *Days to Cover* (wie viele Tage Hedgefonds zum Rückkauf bräuchten).")
+        st.markdown("#### 🚨 Aktuelle Squeeze-Kandidaten & High-Short-Interests")
+        
+        with st.spinner("Lade offizielle Live-Daten (SEC/FINRA via Yahoo Finance)..."):
+            import yfinance as yf
+            import pandas as pd
             
-            us_shorts = USShortInterestRegister.get_official_shorts()
-            us_df = pd.DataFrame(us_shorts)
+            # Watchlist of highly shorted or interesting US stocks
+            interesting_tickers = ["GME", "AMC", "SMCI", "MRNA", "PLTR", "RIVN", "UPST"]
+            tickers = yf.Tickers(" ".join(interesting_tickers))
             
-            display_us = us_df[["symbol", "name", "short_float_pct", "days_to_cover", "short_volume_change", "date", "status"]].copy()
-            display_us["short_float_pct"] = display_us["short_float_pct"].apply(lambda x: f"{x:.1f}%")
-            display_us["days_to_cover"] = display_us["days_to_cover"].apply(lambda x: f"{x:.1f} Tage")
-            display_us["short_volume_change"] = display_us["short_volume_change"].apply(lambda x: f"{x:+.2f}%")
-            display_us["symbol"] = [get_wkn(s) for s in display_us["symbol"]]
-            display_us.columns = ["WKN", "Unternehmen", "Short Float (%)", "Days to Cover (DTC)", "Short-Volumen Δ", "Meldedatum", "Squeeze-Signal"]
-            
-            st.dataframe(display_us, use_container_width=True, hide_index=True)
-            
-            # Live US Ticker Short Interest Lookup
-            st.markdown("---")
-            st.markdown("##### 🔍 Live US-Ticker Short-Interest Abfrage")
-            us_search_col1, us_search_col2 = st.columns([3, 1])
-            with us_search_col1:
-                us_query = st.text_input("WKN oder US-Ticker eingeben (z. B. A2QA4J, 918422, A1CX3T, A2N9D9, PLTR, NVDA):", value="A2QA4J", key="us_short_lookup").strip().upper()
-            
-            if us_query:
+            live_shorts = []
+            for sym in interesting_tickers:
                 try:
-                    t = yf.Ticker(us_query)
-                    inf = t.info or {}
+                    inf = tickers.tickers[sym].info or {}
                     sf = inf.get("shortPercentOfFloat", 0.0)
                     sr = inf.get("shortRatio", 0.0)
                     shares_short = inf.get("sharesShort", 0)
                     
                     sf_pct = (sf * 100.0) if sf and sf < 1.0 else (sf or 0.0)
                     
-                    st_col1, st_col2, st_col3 = st.columns(3)
-                    st_col1.metric("Short Float (%)", f"{sf_pct:.2f}%", delta="Hoch (Squeeze-Gefahr)" if sf_pct > 10 else "Normal")
-                    st_col2.metric("Days to Cover (DTC)", f"{sr:.1f} Tage", help="Tage, die Leerverkäufer bei durchschnittlichem Volumen zum Eindecken bräuchten")
-                    st_col3.metric("Leerverkaufte Aktien", f"{shares_short:,}" if shares_short else "N/A")
-                except Exception:
-                    st.info(f"Live-Daten für {us_query} geladen.")
+                    if sf_pct > 0:
+                        status = "🚨 Squeeze Alarm" if sf_pct >= 20 else ("⚠️ Hoch" if sf_pct >= 10 else "🟢 Normal")
+                        live_shorts.append({
+                            "WKN": get_wkn(sym),
+                            "Unternehmen": inf.get("shortName") or sym,
+                            "Short Float (%)": f"{sf_pct:.2f}%",
+                            "Days to Cover (DTC)": f"{sr:.1f} Tage",
+                            "Leerverkauft (Stück)": f"{shares_short:,}",
+                            "Squeeze-Signal": status
+                        })
+                except:
+                    pass
+            
+            if live_shorts:
+                st.dataframe(pd.DataFrame(live_shorts), use_container_width=True, hide_index=True)
 
-        with sub_tab_de:
-            st.markdown("#### 🇪🇺 BaFin & Bundesanzeiger Leerverkäufer-Register (Deutschland & Europa)")
-            st.caption("Tagesgenaue Netto-Leerverkaufspositionen meldepflichtiger Hedgefonds (ab 0,50% des Aktienkapitals).")
-            
-            bafin_shorts = BaFinShortRegister.get_official_shorts()
-            b_df = pd.DataFrame(bafin_shorts)
-            
-            display_b = b_df[["symbol", "name", "hedge_fund", "short_pct", "change", "date", "status"]].copy()
-            display_b["short_pct"] = display_b["short_pct"].apply(lambda x: f"{x:.2f}%")
-            display_b["change"] = display_b["change"].apply(lambda x: f"{x:+.2f}%")
-            display_b["symbol"] = [get_wkn(s) for s in display_b["symbol"]]
-            display_b.columns = ["WKN", "Unternehmen", "Hedgefonds", "Aktuelle Short-Quote", "Veränderung", "Meldedatum", "Squeeze-Status"]
-            
-            st.dataframe(display_b, use_container_width=True, hide_index=True)
+        # Live US Ticker Short Interest Lookup
+        st.markdown("---")
+        st.markdown("##### 🔍 Manuelle Live-Abfrage")
+        us_search_col1, us_search_col2 = st.columns([3, 1])
+        with us_search_col1:
+            us_query = st.text_input("US-Ticker eingeben (z. B. AAPL, NVDA):", value="TSLA", key="us_short_lookup").strip().upper()
         
+        if us_query:
+            try:
+                t = yf.Ticker(us_query)
+                inf = t.info or {}
+                sf = inf.get("shortPercentOfFloat", 0.0)
+                sr = inf.get("shortRatio", 0.0)
+                shares_short = inf.get("sharesShort", 0)
+                
+                sf_pct = (sf * 100.0) if sf and sf < 1.0 else (sf or 0.0)
+                
+                st_col1, st_col2, st_col3 = st.columns(3)
+                st_col1.metric("Short Float (%)", f"{sf_pct:.2f}%", delta="Hoch (Squeeze-Gefahr)" if sf_pct > 15 else "Normal", delta_color="inverse")
+                st_col2.metric("Days to Cover (DTC)", f"{sr:.1f} Tage", help="Tage, die Leerverkäufer bei durchschnittlichem Volumen zum Eindecken bräuchten")
+                st_col3.metric("Leerverkaufte Aktien", f"{shares_short:,}" if shares_short else "N/A")
+            except Exception:
+                st.info(f"Live-Daten für {us_query} nicht verfügbar.")
+
         st.markdown("---")
         st.markdown("### 📖 Leitfaden: Was bedeuten diese Signale & wie handelt man danach?")
         
