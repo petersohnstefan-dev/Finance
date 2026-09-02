@@ -1046,19 +1046,11 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
     # Define the Auto-Refreshing Live Depot Fragment (Runs every 30s automatically)
     @st.fragment(run_every=30)
     def render_live_depot_view(depot_key: str):
-        # 1. Fetch fresh live prices via parallel fast_info / Binance streamer
+        # 1. Fetch fresh live prices (Nur Read-Only für das Dashboard)
+        # HINWEIS: Das Frontend führt hier absichtlich KEINE Trades mehr aus (pm.auto_trade_check entfernt).
+        # Alle Käufe/Verkäufe passieren exklusiv durch den GitHub Action Bot im Hintergrund (alle 15 Min), 
+        # um den flüchtigen Cloud-Speicher von Streamlit zu umgehen.
         pm.update_live_prices()
-        
-        # 1b. Generiere kontinuierlich neue Intraday-Ausbruchs-Signale für das Daytrader-Depot
-        default_cat = rt_scanner.get_categories()[0]
-        rt_scanner.scan_category(default_cat)
-        
-        # 2. Check Stop-Loss / Take-Profit automatically
-        scan_data = load_cached_market_scan()
-        scan_list = scan_data.get("data", []) if scan_data else []
-        actions = pm.auto_trade_check(scan_list)
-        if actions:
-            st.toast(f"🤖 Autopilot: {', '.join(actions)}", icon="⚡")
 
         summary = pm.get_depot_summary(depot_key)
         now_time = get_berlin_now().strftime("%H:%M:%S")
