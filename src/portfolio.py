@@ -35,6 +35,21 @@ class PortfolioManager:
         self.strategy = self._load_strategy()
 
     def _tribunal_approved_buy(self, depot_id: str, sym: str, name: str, shares: float, price: float, reason: str, stop_loss: float, take_profit: float, derivative_meta=None) -> Tuple[bool, str]:
+        # Cooldown check
+        if "cooldowns" not in self.data:
+            self.data["cooldowns"] = {}
+            
+        cooldown_key = f"{depot_id}_{sym}"
+        now = get_berlin_now()
+        
+        if cooldown_key in self.data["cooldowns"]:
+            try:
+                cd_time = datetime.datetime.fromisoformat(self.data["cooldowns"][cooldown_key])
+                if now < cd_time:
+                    return False, f"VETO (Tribunal Cooldown aktiv bis {cd_time.strftime('%H:%M')})"
+            except:
+                pass
+
         candidate = {"symbol": sym, "name": name, "price": price, "reason": reason}
         depot = self.data["portfolios"][depot_id]
         
@@ -44,8 +59,16 @@ class PortfolioManager:
         if action == "BUY":
             full_reason = f"{reason} | ⚖️ Tribunal (BUY): {judge_reasoning}"
             self.buy(depot_id, sym, name, shares, price, reason=full_reason, stop_loss=stop_loss, take_profit=take_profit, derivative_meta=derivative_meta)
+            # Remove cooldown if it existed
+            if cooldown_key in self.data["cooldowns"]:
+                del self.data["cooldowns"][cooldown_key]
+                self._save()
             return True, full_reason
         else:
+            # Set a 4-hour cooldown for this symbol to prevent API spam
+            cd_expiry = now + datetime.timedelta(hours=4)
+            self.data["cooldowns"][cooldown_key] = cd_expiry.isoformat()
+            self._save()
             return False, f"VETO vom Tribunal: {judge_reasoning}"
 
     def _load_strategy(self) -> Dict[str, Any]:
