@@ -1866,7 +1866,10 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 display_pos["Take-Profit"] = pos_df["take_profit"].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "-")
                 display_pos["Kaufgrund"] = pos_df["reason"]
 
+                display_pos["symbol"] = pos_df["symbol"] # Hidden column for jump logic
+
                 pos_cfg = {
+                    "symbol": None, # Hide this column
                     "WKN": st.column_config.TextColumn("WKN", help="Offizielle deutsche Wertpapierkennnummer (WKZ)"),
                     "Instrument / Name": st.column_config.TextColumn("Name", help="Name des Unternehmens oder Zertifikats"),
                     "Produkttyp": st.column_config.TextColumn("Typ", help="Aktie, Krypto, Knock-Out, Faktor- oder Bonus-Zertifikat"),
@@ -1884,12 +1887,24 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                     "Kaufgrund": st.column_config.TextColumn("Kaufgrund / Signal", help="KI-Analyse & Einstiegsthese")
                 }
 
-                st.dataframe(
+                st.markdown("💡 *Tipp: Klicke auf eine Zeile, um direkt in die **Einzelaktien-Tiefenanalyse** zu springen.*")
+                
+                pos_event = st.dataframe(
                     display_pos,
                     column_config=pos_cfg,
                     use_container_width=True,
-                    hide_index=True
+                    hide_index=True,
+                    on_select="rerun",
+                    selection_mode="single-row"
                 )
+                
+                if len(pos_event.selection.rows) > 0:
+                    selected_idx = pos_event.selection.rows[0]
+                    selected_sym = display_pos.iloc[selected_idx]["symbol"]
+                    st.session_state["nav_app_mode"] = "🔍 Einzelaktien-Tiefenanalyse"
+                    st.query_params["mode"] = "🔍 Einzelaktien-Tiefenanalyse"
+                    st.session_state["nav_deep_ticker"] = selected_sym
+                    st.rerun()
             else:
                 st.info("Keine offenen Positionen. Das Depot hält 100% Cash.")
 
@@ -2694,10 +2709,16 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
             "long_term": "Langfristig",
             "day_trading": "Daytrader"
         }
-        for j in journals:
+        
+        tab_daily, tab_weekly = st.tabs(["📅 Tages-Retrospektiven", "🗓️ Wochen-Retrospektiven"])
+        
+        daily_journals = [j for j in journals if j.get("mode") != "weekly"]
+        weekly_journals = [j for j in journals if j.get("mode") == "weekly"]
+        
+        def render_journal(j, is_first):
             mode_icon = "📅 Woche" if j.get("mode") == "weekly" else "📆 Tag"
             depot_label = depot_names.get(j.get('depot_id', ''), j.get('depot_id', 'Unknown'))
-            with st.expander(f"{mode_icon} [{depot_label}]: {j['date']} | Win-Rate: {j['win_rate']}%", expanded=(j == journals[0])):
+            with st.expander(f"{mode_icon} [{depot_label}]: {j['date']} | Win-Rate: {j['win_rate']}%", expanded=is_first):
                 c1, c2, c3 = st.columns(3)
                 c1.metric("Win-Rate", f"{j['win_rate']}%")
                 c2.metric("Bester Trade", j['best_trade'] or "-")
@@ -2718,6 +2739,20 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                 if param_updates and param_updates != "{}" and param_updates != "null":
                     st.markdown("### ⚙️ Automatisch angepasste Strategie-Parameter")
                     st.code(param_updates, language="json")
+
+        with tab_daily:
+            if not daily_journals:
+                st.info("Keine Tages-Retrospektiven vorhanden.")
+            else:
+                for idx, j in enumerate(daily_journals):
+                    render_journal(j, is_first=(idx == 0))
+                    
+        with tab_weekly:
+            if not weekly_journals:
+                st.info("Keine Wochen-Retrospektiven vorhanden.")
+            else:
+                for idx, j in enumerate(weekly_journals):
+                    render_journal(j, is_first=(idx == 0))
 
 elif app_mode == "📖 Handelsstrategie & System-Logik":
     st.header("📖 Handelsstrategie & System-Logik")
