@@ -65,13 +65,25 @@ class LiveInsiderWhaleTracker:
                 if holders is not None and not holders.empty:
                     top_whales = holders.head(2).copy()
                     for idx, row in top_whales.iterrows():
+                        
+                        pct_held = row.get("pctHeld", 0)
+                        if pd.isna(pct_held): pct_held = 0
+                        
+                        pct_change = row.get("pctChange", 0)
+                        if pd.isna(pct_change): pct_change = 0
+
+                        val = row.get("Value", 0)
+                        if pd.isna(val): val = 0
+
                         all_holders.append({
                             "Aktie (Ticker)": ticker,
                             "Unternehmen": TICKER_NAMES.get(ticker, ticker),
                             "Großaktionär (Fonds)": row.get("Holder", "Unknown"),
-                            "Stichtag der Meldung": str(row.get("Date Reported", ""))[:10],
+                            "Anteil am Unternehmen": f"{pct_held * 100:.2f} %",
+                            "Veränderung (Quartal)": f"{pct_change * 100:+.2f} %",
                             "Aktien im Besitz": row.get("Shares", 0),
-                            "Gesamtwert (USD)": row.get("Value", 0),
+                            "Gesamtwert (USD)": f"${val:,.0f}",
+                            "Stichtag": str(row.get("Date Reported", ""))[:10],
                         })
             except Exception as e:
                 print(f"Error fetching whale data for {ticker}: {e}")
