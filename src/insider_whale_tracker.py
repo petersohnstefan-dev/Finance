@@ -76,3 +76,58 @@ if __name__ == "__main__":
     print(tracker.get_live_insider_transactions())
     print("\nFetching live whales...")
     print(tracker.get_live_whale_holders())
+
+class WhaleInsiderTracker(LiveInsiderWhaleTracker):
+    @staticmethod
+    def get_whale_sentiment_for_ticker(symbol: str) -> Dict[str, Any]:
+        has_activity = False
+        score_boost = 0
+        whale_holders = []
+        insider_buyers = []
+        
+        try:
+            stock = yf.Ticker(symbol)
+            # Fetch Whales
+            holders = stock.institutional_holders
+            if holders is not None and not holders.empty:
+                for idx, row in holders.head(3).iterrows():
+                    # Safely handle missing columns
+                    pct = 0
+                    if 'pctHeld' in holders.columns:
+                        pct_val = row['pctHeld']
+                        if not pd.isna(pct_val):
+                            pct = pct_val * 100
+                    
+                    whale_holders.append({
+                        'manager': str(row.get('Holder', 'Unknown')),
+                        'fund': 'Institution',
+                        'weight': f'{pct:.2f}',
+                        'action': 'Aktiv'
+                    })
+                    has_activity = True
+                    score_boost += 5
+                    
+            # Fetch Insiders
+            insiders = stock.insider_transactions
+            if insiders is not None and not insiders.empty:
+                for idx, row in insiders.head(3).iterrows():
+                    insider_buyers.append({
+                        'insider': str(row.get('Insider Purchases', row.get('Insider', 'Unknown'))),
+                        'role': 'Insider',
+                        'amount': f"{row.get('Shares', 0)} shares",
+                        'buy_price': '-',
+                        'date': str(row.get('Start Date', row.get('Transaction Start Date', '')))[0:10],
+                        'signal': 'SEC Form 4'
+                    })
+                    has_activity = True
+                    score_boost += 10
+        except Exception as e:
+            print(f'Error fetching single ticker whale data: {e}')
+            
+        return {
+            'has_activity': has_activity,
+            'score_boost': min(25, score_boost),
+            'whale_holders': whale_holders,
+            'congress_buyers': [],  # No live congress data available
+            'insider_buyers': insider_buyers
+        }
