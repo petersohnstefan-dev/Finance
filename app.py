@@ -937,191 +937,36 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
 # MODE 4: WHALE- & INSIDER-RADAR
 # ==============================================================================
 elif app_mode == "🐋 Whale- & Insider-Radar":
-    st.title("🐋 Whale- & Insider-Radar (Börsen-Legenden, US-Kongress & Vorstände)")
-    st.markdown("Verfolge die **13F-Meldungen von 12+ Star-Investoren**, die **Aktienkäufe von US-Kongressabgeordneten** und **Insiderkäufe von CEOs & Vorständen**.")
+    st.title("🐋 Live Whale- & Insider-Radar (100% Echte Daten via Yahoo Finance)")
+    st.markdown("Verfolge die **echten institutionellen Großaktionäre (Whales)** und die aktuellsten **Vorstands-Insiderkäufe** einer Watchlist aus Top-Tech & Krypto Aktien.")
 
-    tab_search, tab_whales, tab_congress, tab_insiders = st.tabs([
-        "🔍 Ticker-Schnellsuche (Welcher Wal hält meine Aktie?)",
-        "🏛️ Star-Investoren Portfolios (13F Filings)",
-        "🏛️ US-Kongress & Senat Trades (Politician Trading)",
-        "👔 Vorstands- & CEO-Insiderkäufe (Cluster Buys)"
+    tab_insiders, tab_whales = st.tabs([
+        "👔 Echte Insiderkäufe (SEC Form 4)",
+        "🏛️ Institutionelle Großaktionäre (Whales)"
     ])
-
-    with tab_search:
-        st.subheader("🔍 Ticker-Schnellsuche: Whale-, Kongress- & Insider-Bestände")
-        st.caption("Prüfe blitzschnell für jede Aktie, ob Milliardäre (Buffett, Burry, Druckenmiller), US-Politiker oder CEOs investiert sind.")
-        
-        col_s_in, col_s_btn = st.columns([3, 1])
-        with col_s_in:
-            search_ticker = st.text_input("WKN oder Ticker eingeben (z. B. 918422, A2QA4J, A2N9D9, 716460, 519000, NVDA, PLTR, SAP):", value="918422").strip().upper()
-
-        if search_ticker:
-            w_info = WhaleInsiderTracker.get_whale_sentiment_for_ticker(search_ticker)
-            if w_info["has_activity"]:
-                st.success(f"🎯 **Aktivität für {search_ticker} gefunden! (+{w_info['score_boost']} Punkte Score-Bonus im System)**")
-                
-                res_col1, res_col2 = st.columns(2)
-                with res_col1:
-                    if w_info["whale_holders"]:
-                        st.markdown("#### 🏛️ Star-Investoren mit Position:")
-                        for wh in w_info["whale_holders"]:
-                            act_badge = "🟢 AUFGESTOCKT" if wh["action"] == "BOUGHT" else ("🟢 NEU" if wh["action"] == "NEW" else ("🔴 REDUZIERT" if wh["action"] == "REDUCED" else "🟡 GEHALTEN"))
-                            st.markdown(f"- **{wh['manager']}** (*{wh['fund']}*): **{wh['weight']}% Gewichtung** `[{act_badge}]`")
-                    else:
-                        st.info("Keine meldepflichtigen 13F-Positionen der Top-Wale.")
-
-                with res_col2:
-                    if w_info["congress_buyers"]:
-                        st.markdown("#### 🏛️ Käufe von US-Politikern (STOCK Act):")
-                        for cg in w_info["congress_buyers"]:
-                            st.markdown(f"- **{cg['politician']}**: {cg['trade_type']} ({cg['amount_range']}) am {cg['transaction_date']} *(Notiz: {cg['notes']})*")
-                    
-                    if w_info["insider_buyers"]:
-                        st.markdown("#### 👔 Vorstandskäufe (Directors' Dealings):")
-                        for ins in w_info["insider_buyers"]:
-                            st.markdown(f"- **{ins['insider']}** ({ins['role']}): Kauf über **{ins['amount']}** zu {ins['buy_price']} am {ins['date']}")
-            else:
-                st.info(f"Für **{search_ticker}** liegen aktuell keine aktiven 13F-Whale-Bestände, Kongress-Käufe oder Insider-Transaktionen vor.")
-
-    with tab_whales:
-        st.subheader("🏛️ Die Portfolios der Star-Investoren (13F Filings)")
-        st.caption("Verifizierte Bestände und jüngste Zukäufe der einflussreichsten Fondsmanager der Welt.")
-
-        investors = WhaleInsiderTracker.get_super_investors()
-        
-        # Investor Selector Cards
-        selected_mgr = st.selectbox(
-            "Investor auswählen:",
-            [inv["manager"] + " (" + inv["fund"] + ")" for inv in investors]
-        )
-
-        active_inv = next(inv for inv in investors if inv["manager"] in selected_mgr)
-
-        w_col1, w_col2, w_col3, w_col4 = st.columns(4)
-        with w_col1:
-            st.metric("Fondsmanager", active_inv["manager"])
-        with w_col2:
-            st.metric("Fonds / Gesellschaft", active_inv["fund"], delta=active_inv["aum"])
-        with w_col3:
-            st.metric("Investment-Stil", active_inv["style"])
-        with w_col4:
-            st.metric("13F Stichtag & Meldung", active_inv.get("filing_date", "14.08.2026"), delta=f"Filing: {active_inv.get('filing_period', 'Q2')}")
-
-        st.markdown(f"""
-        <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 6px; padding: 12px 16px; margin: 15px 0;">
-            <b style="color: #38bdf8;">💡 Jüngste Ausrichtung & These:</b>
-            <p style="margin: 4px 0 0 0; color: #0f172a; font-size: 14px;">{active_inv['latest_conviction']}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        st.markdown("#### 📋 Top-Positionen im Portfolio:")
-        holdings_df = pd.DataFrame(active_inv["top_holdings"])
-        
-        action_map = {
-            "BOUGHT": "🟢 AUFGESTOCKT",
-            "NEW": "🟢 NEUEINSTIEG",
-            "HOLD": "🟡 GEHALTEN",
-            "REDUCED": "🔴 REDUZIERT"
-        }
-        holdings_df["Aktion"] = holdings_df["action"].map(lambda x: action_map.get(x, x))
-        holdings_df["Gewichtung (%)"] = holdings_df["weight_pct"].apply(lambda x: f"{x:.1f}%")
-        holdings_df["Kaufkurs-Spanne"] = holdings_df.get("est_buy_range", "-")
-        
-        display_holdings = holdings_df[["symbol", "name", "Gewichtung (%)", "shares", "Kaufkurs-Spanne", "Aktion"]].copy()
-        display_holdings["symbol"] = [get_wkn(s) for s in display_holdings["symbol"]]
-        display_holdings.columns = ["WKN", "Unternehmen", "Portfolio-Gewicht", "Aktienanzahl", "Geschätzte Kaufspanne", "Jüngste Transaktion"]
-
-        h_cfg = {
-            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
-            "Unternehmen": st.column_config.TextColumn("Unternehmen", help="Unternehmensname"),
-            "Portfolio-Gewicht": st.column_config.TextColumn("Gewichtung", help="Anteil am gesamten Aktienportfolio"),
-            "Aktienanzahl": st.column_config.TextColumn("Bestand", help="Gehaltene Aktien"),
-            "Geschätzte Kaufspanne": st.column_config.TextColumn("Kaufspanne", help="Durchschnittlicher Kursbereich im Meldequartal"),
-            "Jüngste Transaktion": st.column_config.TextColumn("Aktion", help="Kauf, Aufstockung oder Teilverkauf im letzten Quartal")
-        }
-
-        st.dataframe(display_holdings, column_config=h_cfg, use_container_width=True, hide_index=True)
-
-    with tab_congress:
-        st.subheader("🏛️ US-Kongress & Senat Trades (STOCK Act Disclosures)")
-        st.caption("Offiziell gemeldete Aktientransaktionen von US-Politikern (Nancy Pelosi, Senatoren & Abgeordnete).")
-
-        congress_trades = WhaleInsiderTracker.get_congress_trades()
-        c_df = pd.DataFrame(congress_trades)
-
-        display_c = pd.DataFrame()
-        display_c["Politiker / Fraktion"] = c_df["politician"]
-        display_c["WKN"] = [get_wkn(s) for s in c_df["symbol"]]
-        display_c["Unternehmen"] = c_df["name"]
-        display_c["Transaktion"] = c_df["trade_type"]
-        display_c["Volumen-Spanne"] = c_df["amount_range"]
-        display_c["Handelsdatum"] = c_df["transaction_date"]
-        display_c["Offenlegung"] = c_df["disclosure_date"]
-        display_c["Rendite seither"] = c_df["pnl_estimate"]
-        display_c["Hintergrund / Ausschuss"] = c_df["notes"]
-
-        c_cfg = {
-            "Politiker / Fraktion": st.column_config.TextColumn("Politiker", help="Name und Parteizugehörigkeit"),
-            "WKN": st.column_config.TextColumn("WKN", help="Wertpapierkennnummer"),
-            "Unternehmen": st.column_config.TextColumn("Name", help="Unternehmen"),
-            "Transaktion": st.column_config.TextColumn("Order-Typ", help="Aktienkauf, Verkauf oder Call-Optionen"),
-            "Volumen-Spanne": st.column_config.TextColumn("Geschätztes Volumen", help="Gemeldete Transaktionsgröße in USD"),
-            "Handelsdatum": st.column_config.TextColumn("Kaufdatum", help="Datum der Ausführung"),
-            "Offenlegung": st.column_config.TextColumn("Publikation", help="Datum der öffentlichen Meldung"),
-            "Rendite seither": st.column_config.TextColumn("Kursplus", help="Geschätzte Performance seit Kauf"),
-            "Hintergrund / Ausschuss": st.column_config.TextColumn("Kontext", help="Ausschuss-Mitgliedschaft oder regulatorischer Kontext")
-        }
-
-        st.dataframe(display_c, column_config=c_cfg, use_container_width=True, hide_index=True)
-
+    
+    from src.insider_whale_tracker import LiveInsiderWhaleTracker
+    
     with tab_insiders:
-        st.subheader("👔 Vorstands- & CEO-Insiderkäufe (Directors' Dealings & Skin-in-the-Game)")
-        st.caption("Echte Insider-Käufe von Führungskräften – bewertet nach der relativen Signifikanz zum Privatvermögen.")
+        st.subheader("👔 Jüngste Vorstands- & CEO-Insiderkäufe")
+        st.caption("Live-Daten der SEC Form 4 Meldungen für Top-Tickers (NVDA, TSLA, AAPL, PLTR, Krypto-Miner).")
+        with st.spinner("Lade Insider-Daten von Yahoo Finance..."):
+            df_insiders = LiveInsiderWhaleTracker.get_live_insider_transactions()
+            if not df_insiders.empty:
+                st.dataframe(df_insiders, use_container_width=True, hide_index=True)
+            else:
+                st.info("Keine aktuellen Insider-Daten gefunden.")
+                
+    with tab_whales:
+        st.subheader("🏛️ Die größten institutionellen Wal-Positionen")
+        st.caption("Die Top 2 Großaktionäre der wichtigsten Tech-Werte (BlackRock, Vanguard, etc.).")
+        with st.spinner("Lade Whale-Daten von Yahoo Finance..."):
+            df_whales = LiveInsiderWhaleTracker.get_live_whale_holders()
+            if not df_whales.empty:
+                st.dataframe(df_whales, use_container_width=True, hide_index=True)
+            else:
+                st.info("Keine aktuellen Whale-Daten gefunden.")
 
-        st.info("💡 **Relative Skin-in-the-Game Formel**: Wenn ein neuer CEO mit 7,5 Mio. € Privatvermögen für **900.000 € (12% seines Vermögens)** eigene Aktien kauft, ist das Vertrauenssignal ungleich höher als wenn eine Milliardärs-Dynastie reine Dividenden reinvestiert (<0.1% des Vermögens).")
-
-        insiders = WhaleInsiderTracker.get_insider_buys()
-        display_i = pd.DataFrame()
-        
-        display_i["Unternehmen (WKN)"] = [f"{item.get('name', '-')} ({get_wkn(item.get('symbol', '-'))})" for item in insiders]
-        display_i["Insider & Rolle"] = [f"{item.get('insider', '-')} ({item.get('role', '-')})" for item in insiders]
-        display_i["Kaufvolumen"] = [item.get("amount", "-") for item in insiders]
-        display_i["Relativer Anteil"] = [f"{item.get('wealth_pct', '-')} vom Vermögen ({item.get('net_worth_est', '-')})" for item in insiders]
-        display_i["Skin-in-the-Game"] = [item.get("skin_in_game", "🟢 Hoch") for item in insiders]
-        display_i["Datum"] = [item.get("date", "-") for item in insiders]
-        display_i["KI-Signal"] = [item.get("signal", "🟢 KAUF") for item in insiders]
-
-        i_cfg = {
-            "Unternehmen (WKN)": st.column_config.TextColumn("Firma (WKN)"),
-            "Insider & Rolle": st.column_config.TextColumn("Insider & Rolle"),
-            "Kaufvolumen": st.column_config.TextColumn("Kaufsumme", help="Investiertes Eigenkapital"),
-            "Relativer Anteil": st.column_config.TextColumn("Anteil am Privatvermögen", help="Prozentualer Anteil der Transaktion am geschätzten Gesamtvermögen"),
-            "Skin-in-the-Game": st.column_config.TextColumn("Skin-in-the-Game", help="Signalstärke"),
-            "Datum": st.column_config.TextColumn("Kaufdatum"),
-            "KI-Signal": st.column_config.TextColumn("Signal", help="Einstufung des Signals")
-        }
-
-        st.dataframe(display_i, column_config=i_cfg, use_container_width=True, hide_index=True)
-
-# ==============================================================================
-
-    with st.expander("📚 Begriffe, Abkürzungen & Interpretation (Whale- & Insider-Radar)"):
-        st.markdown('''
-        - **13F Filings (Whale-Radar)**: Gesetzlich vorgeschriebene Quartalsberichte großer US-Hedgefonds und Investmentbanken (Assets > 100 Mio. $).
-          - *Neu-Kauf / Erhöhung*: **Bullisch**. Ein Super-Investor (wie Warren Buffett oder Ray Dalio) hat eine große Position aufgebaut.
-          - *Darauf achten*: Die Daten sind bis zu 45 Tage alt, zeigen aber langfristige Überzeugungen.
-        - **US-Senatoren & Kongress-Trades**: Zeigt die (meist sehr profitablen) Aktiengeschäfte amerikanischer Politiker.
-          - *Auffälliger Kauf*: Politiker sitzen oft in Ausschüssen und haben Vorab-Wissen über Gesetzesänderungen oder Rüstungsaufträge. Ein Kauf vor einer Ankündigung ist ein starkes **(Insider-)Signal**.
-        - **Directors Dealings (Insider-Trades)**: Vorstände und Aufsichtsräte kaufen oder verkaufen Aktien der eigenen Firma.
-          - *Kauf*: **Sehr Bullisch**. "Es gibt viele Gründe für Insider, eine Aktie zu verkaufen, aber nur einen, sie zu kaufen: Sie denken, der Preis wird steigen." (Peter Lynch).
-          - *Verkauf*: Nicht zwingend bärisch (oft Steuergründe oder Optionen-Ausübung), es sei denn, es handelt sich um massive, geplante Abverkäufe vor schlechten News.
-        - **Signal-Stärke**: 
-          - *🚀 STRONG BUY*: Massiver, unüblicher Insider-Kauf.
-          - *⚠️ SELL*: Starkes Abverkauf-Signal.
-        ''')
-
-# MODE 4: MAKRO-KLIMA, ZENTRALBANKEN & QUALITÄTSMEDIEN
-# ==============================================================================
 elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
     st.title("🌐 Makro-Klima, Zentralbanken & Qualitätsmedien")
     st.markdown("Echtzeit-Überwachung von **Leitzinsen (Fed, EZB, SNB, BoE)**, Inflation und verifizierten Nachrichten aus **Handelsblatt, FAZ, Reuters, CNBC & EZB**.")
