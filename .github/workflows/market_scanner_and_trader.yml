@@ -2,8 +2,8 @@ name: 24/7 AI Market Scanner & Portfolio Trader
 
 on:
   schedule:
-    # Scannt alle 15 Minuten während der Kern-Marktphasen (07:00 - 22:00 CEST -> 05:00 - 20:00 UTC) Mo-Fr
-    - cron: '*/15 5-20 * * 1-5'
+    # Scannt alle 5 Minuten während der Kern-Marktphasen (07:00 - 22:00 CEST -> 05:00 - 20:00 UTC) Mo-Fr
+    - cron: '*/5 5-20 * * 1-5'
   workflow_dispatch: # Ermöglicht manuelles Starten per Klick in GitHub
 
 permissions:
