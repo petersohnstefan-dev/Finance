@@ -3,32 +3,44 @@ import pandas as pd
 from typing import Dict, List, Any
 import datetime
 
-# A watchlist of highly traded/relevant stocks to scan for live insider and whale data
 WATCHLIST = [
     "NVDA", "AAPL", "MSFT", "TSLA", "PLTR", 
     "AMZN", "META", "GOOGL", "AMD", "SMCI",
     "CRWD", "PANW", "COIN", "MARA", "MSTR"
 ]
 
-class LiveInsiderWhaleTracker:
-    """Fetches 100% real live insider transactions and institutional holders via Yahoo Finance."""
+TICKER_NAMES = {
+    "NVDA": "NVIDIA Corp.",
+    "AAPL": "Apple Inc.",
+    "MSFT": "Microsoft Corp.",
+    "TSLA": "Tesla Inc.",
+    "PLTR": "Palantir Tech.",
+    "AMZN": "Amazon.com",
+    "META": "Meta Platforms",
+    "GOOGL": "Alphabet Inc.",
+    "AMD": "Advanced Micro Devices",
+    "SMCI": "Super Micro Comp.",
+    "CRWD": "CrowdStrike",
+    "PANW": "Palo Alto Networks",
+    "COIN": "Coinbase Global",
+    "MARA": "Marathon Digital",
+    "MSTR": "MicroStrategy"
+}
 
+class LiveInsiderWhaleTracker:
     @staticmethod
     def get_live_insider_transactions() -> pd.DataFrame:
-        """Fetches the latest real insider transactions (SEC Form 4) for the watchlist."""
         all_trades = []
         for ticker in WATCHLIST:
             try:
                 stock = yf.Ticker(ticker)
                 insiders = stock.insider_transactions
                 if insiders is not None and not insiders.empty:
-                    # Filter for actual buys/sells (usually 'P' for Purchase, 'S' for Sale)
-                    # We just take the top 3 most recent transactions per ticker to keep it clean
                     recent = insiders.head(3).copy()
-                    recent["Ticker"] = ticker
                     for idx, row in recent.iterrows():
                         all_trades.append({
                             "Aktie (Ticker)": ticker,
+                            "Unternehmen": TICKER_NAMES.get(ticker, ticker),
                             "Käufer / Vorstand": str(row.get("Insider Purchases", row.get("Insider", "Unknown"))),
                             "Datum der SEC-Meldung": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
                             "Anzahl Aktien": row.get("Shares", 0),
@@ -39,25 +51,23 @@ class LiveInsiderWhaleTracker:
                 
         if all_trades:
             df = pd.DataFrame(all_trades)
-            # Sort by Date descending
             df = df.sort_values(by="Datum der SEC-Meldung", ascending=False).head(30)
             return df
         return pd.DataFrame()
 
     @staticmethod
     def get_live_whale_holders() -> pd.DataFrame:
-        """Fetches the top institutional holders (Whales) for the watchlist."""
         all_holders = []
         for ticker in WATCHLIST:
             try:
                 stock = yf.Ticker(ticker)
                 holders = stock.institutional_holders
                 if holders is not None and not holders.empty:
-                    # Take the top 2 whales for each stock
                     top_whales = holders.head(2).copy()
                     for idx, row in top_whales.iterrows():
                         all_holders.append({
                             "Aktie (Ticker)": ticker,
+                            "Unternehmen": TICKER_NAMES.get(ticker, ticker),
                             "Großaktionär (Fonds)": row.get("Holder", "Unknown"),
                             "Stichtag der Meldung": str(row.get("Date Reported", ""))[:10],
                             "Aktien im Besitz": row.get("Shares", 0),
@@ -70,13 +80,6 @@ class LiveInsiderWhaleTracker:
             return pd.DataFrame(all_holders)
         return pd.DataFrame()
 
-if __name__ == "__main__":
-    tracker = LiveInsiderWhaleTracker()
-    print("Fetching live insiders...")
-    print(tracker.get_live_insider_transactions())
-    print("\nFetching live whales...")
-    print(tracker.get_live_whale_holders())
-
 class WhaleInsiderTracker(LiveInsiderWhaleTracker):
     @staticmethod
     def get_whale_sentiment_for_ticker(symbol: str) -> Dict[str, Any]:
@@ -87,11 +90,9 @@ class WhaleInsiderTracker(LiveInsiderWhaleTracker):
         
         try:
             stock = yf.Ticker(symbol)
-            # Fetch Whales
             holders = stock.institutional_holders
             if holders is not None and not holders.empty:
                 for idx, row in holders.head(3).iterrows():
-                    # Safely handle missing columns
                     pct = 0
                     if 'pctHeld' in holders.columns:
                         pct_val = row['pctHeld']
@@ -107,7 +108,6 @@ class WhaleInsiderTracker(LiveInsiderWhaleTracker):
                     has_activity = True
                     score_boost += 5
                     
-            # Fetch Insiders
             insiders = stock.insider_transactions
             if insiders is not None and not insiders.empty:
                 for idx, row in insiders.head(3).iterrows():
