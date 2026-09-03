@@ -1878,6 +1878,10 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 display_h["Stück"] = h_df.get("shares", 0).apply(lambda s: f"{s:.4f}" if isinstance(s, (int, float)) else str(s))
                 display_h["Kurs"] = h_df.apply(lambda r: f"{r.get('sell_price') or r.get('buy_price') or r.get('price', 0):.2f} €", axis=1)
                 display_h["Volumen"] = h_df.get("total", 0).apply(lambda x: f"{x:,.2f} €" if pd.notnull(x) and isinstance(x, (int, float)) else str(x))
+                if "fees" in h_df.columns:
+                    display_h["Slippage/Gebühr"] = h_df["fees"].apply(lambda x: f"{x:,.2f} €" if pd.notnull(x) and isinstance(x, (int, float)) else "0.00 €")
+                else:
+                    display_h["Slippage/Gebühr"] = "0.00 €"
                 display_h["Realisierter P&L"] = h_df.apply(
                     lambda r: f"{r.get('pnl', 0):+,.2f} € ({r.get('pnl_pct', 0):+.2f}%)" if pd.notnull(r.get("pnl")) and (r.get("action") == "SELL" or r.get("type") == "SELL") else "-", 
                     axis=1

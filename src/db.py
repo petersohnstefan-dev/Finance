@@ -142,7 +142,7 @@ class PortfolioDB:
             INSERT INTO trades (
                 depot_id, trade_type, symbol, name, shares, buy_price, sell_price, 
                 total_amount, pnl, pnl_pct, executed_at, reason
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 depot_id, trade_type, symbol, name, shares, 
                 buy_p, sell_p,

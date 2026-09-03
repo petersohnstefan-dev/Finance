@@ -359,7 +359,7 @@ class PortfolioManager:
         self._save()
         return True
 
-    def sell(self, depot_key: str, symbol: str, price: float, reason: str = "", shares_to_sell: Optional[float] = None) -> bool:
+    def sell(self, depot_key: str, symbol: str, price: float, reason: str = "", shares_to_sell: Optional[float] = None, fee: float = 1.00) -> bool:
         """Sells an entire or partial open position and records realized gain/loss."""
         depot = self.data["portfolios"].get(depot_key)
         if not depot or symbol not in depot["positions"]:
