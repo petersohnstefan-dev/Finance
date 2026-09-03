@@ -28,11 +28,11 @@ class LiveInsiderWhaleTracker:
                     recent["Ticker"] = ticker
                     for idx, row in recent.iterrows():
                         all_trades.append({
-                            "Ticker": ticker,
-                            "Insider/Role": str(row.get("Insider Purchases", row.get("Insider", "Unknown"))),
-                            "Date": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
-                            "Shares": row.get("Shares", 0),
-                            "Value ($)": row.get("Value", 0),
+                            "Aktie (Ticker)": ticker,
+                            "Käufer / Vorstand": str(row.get("Insider Purchases", row.get("Insider", "Unknown"))),
+                            "Datum der SEC-Meldung": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
+                            "Anzahl Aktien": row.get("Shares", 0),
+                            "Transaktionswert (USD)": row.get("Value", 0),
                         })
             except Exception as e:
                 print(f"Error fetching insider data for {ticker}: {e}")
@@ -40,7 +40,7 @@ class LiveInsiderWhaleTracker:
         if all_trades:
             df = pd.DataFrame(all_trades)
             # Sort by Date descending
-            df = df.sort_values(by="Date", ascending=False).head(30)
+            df = df.sort_values(by="Datum der SEC-Meldung", ascending=False).head(30)
             return df
         return pd.DataFrame()
 
@@ -57,11 +57,11 @@ class LiveInsiderWhaleTracker:
                     top_whales = holders.head(2).copy()
                     for idx, row in top_whales.iterrows():
                         all_holders.append({
-                            "Ticker": ticker,
-                            "Whale / Institution": row.get("Holder", "Unknown"),
-                            "Reported Date": str(row.get("Date Reported", ""))[:10],
-                            "Shares Held": row.get("Shares", 0),
-                            "Position Value ($)": row.get("Value", 0),
+                            "Aktie (Ticker)": ticker,
+                            "Großaktionär (Fonds)": row.get("Holder", "Unknown"),
+                            "Stichtag der Meldung": str(row.get("Date Reported", ""))[:10],
+                            "Aktien im Besitz": row.get("Shares", 0),
+                            "Gesamtwert (USD)": row.get("Value", 0),
                         })
             except Exception as e:
                 print(f"Error fetching whale data for {ticker}: {e}")
