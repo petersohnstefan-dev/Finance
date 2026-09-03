@@ -39,12 +39,14 @@ class LiveInsiderWhaleTracker:
                     recent = insiders.head(3).copy()
                     for idx, row in recent.iterrows():
                         all_trades.append({
+                            
                             "Aktie (Ticker)": ticker,
                             "Unternehmen": TICKER_NAMES.get(ticker, ticker),
-                            "Käufer / Vorstand": str(row.get("Insider Purchases", row.get("Insider", "Unknown"))),
-                            "Datum der SEC-Meldung": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
+                            "Insider / Person": str(row.get("Insider Purchases", row.get("Insider", "Unknown"))),
+                            "Titel (Rolle)": str(row.get("Position", "-")),
+                            "Details zur Transaktion": str(row.get("Text", "-")),
                             "Anzahl Aktien": row.get("Shares", 0),
-                            "Transaktionswert (USD)": row.get("Value", 0),
+                            "Datum der SEC-Meldung": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
                         })
             except Exception as e:
                 print(f"Error fetching insider data for {ticker}: {e}")
