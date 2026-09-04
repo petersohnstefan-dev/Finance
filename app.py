@@ -2336,7 +2336,8 @@ elif app_mode == "⚖️ KI-Tribunal (Handelsentscheidungen)":
         for log in logs:
             action_color = "green" if log["action"] == "BUY" else "red"
             icon = "✅" if log["action"] == "BUY" else "❌"
-            with st.expander(f"{log['timestamp']} | {log['symbol']} ({log['depot_id']}) - {icon} {log['action']}"):
+            name_str = log.get("name", "-")
+            with st.expander(f"{log['timestamp']} | {log['symbol']} - {name_str} ({log['depot_id']}) - {icon} {log['action']}"):
                 st.markdown(f"**Urteilsbegründung (Judge):** <span style='color: {action_color}; font-weight: bold;'>{log['judge_decision']}</span>", unsafe_allow_html=True)
                 
                 c1, c2 = st.columns(2)

@@ -318,7 +318,7 @@ class PortfolioManager:
         if shares <= 0 or cost <= 0:
             return False
 
-        depot["cash"] -= cost
+        depot["cash"] -= (cost + 1.00)
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M")
 
         pos_dict = {
@@ -352,7 +352,7 @@ class PortfolioManager:
         depot["history"].append(trade_record)
 
         try:
-            self.db.record_trade(depot_key, "BUY", symbol, name, shares, cost, price, reason=reason)
+            fee = cost * SPREAD_PCT + 1.00; self.db.record_trade(depot_key, "BUY", symbol, name, shares, cost, price, reason=reason, fees=fee)
         except Exception:
             pass
 
@@ -392,7 +392,7 @@ class PortfolioManager:
         pnl = (effective_price - pos["buy_price"]) * shares
         pnl_pct = ((effective_price - pos["buy_price"]) / pos["buy_price"]) * 100.0 if pos["buy_price"] > 0 else 0.0
 
-        depot["cash"] += revenue
+        depot["cash"] += (revenue - 1.00)
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M")
 
         trade_record = {

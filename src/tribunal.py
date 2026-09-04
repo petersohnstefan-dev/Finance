@@ -146,7 +146,7 @@ Antworte EXAKT in folgendem JSON-Format:
                 action = "REJECT"
                 judge_reasoning = f"Fehler bei Tribunal-Urteil: {e}"
         
-        self._log_to_db(sym, depot_id, bull_case, bear_case, judge_reasoning, action)
+        self._log_to_db(sym, candidate.get("name", sym), depot_id, bull_case, bear_case, judge_reasoning, action)
         
         debate_log = {
             "bull": bull_case,
@@ -156,15 +156,15 @@ Antworte EXAKT in folgendem JSON-Format:
         
         return action, judge_reasoning, debate_log
 
-    def _log_to_db(self, symbol, depot_id, bull, bear, judge, action):
+    def _log_to_db(self, symbol, name, depot_id, bull, bear, judge, action):
         db_path = os.path.join(os.path.dirname(__file__), "..", "data", "portfolio.db")
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
         cursor.execute('''
-            INSERT INTO tribunal_logs (timestamp, symbol, depot_id, bull_case, bear_case, judge_decision, action)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (now_str, symbol, depot_id, bull, bear, judge, action))
+            INSERT INTO tribunal_logs (timestamp, symbol, name, depot_id, bull_case, bear_case, judge_decision, action)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (now_str, symbol, name, depot_id, bull, bear, judge, action))
         conn.commit()
         conn.close()
         
