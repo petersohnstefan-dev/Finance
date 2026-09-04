@@ -29,6 +29,7 @@ jobs:
 
       - name: 🔍 1. Markt & Foren vollständig scannen
         run: |
+          python -m src.realtime_scanner
           python -m src.market_scanner
 
       - name: 💼 2. Musterdepots aktualisieren & Handels-Check ausführen
