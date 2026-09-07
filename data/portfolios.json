@@ -1,442 +1,442 @@
 {
-    "created_at": "2026-09-03 23:11:23",
-    "currency": "EUR",
-    "portfolios": {
-        "short_term": {
-            "name": "\u26a1 Kurzfristiges Trading-Depot (Tage\u2013Wochen / Squeezes & Hebel)",
-            "strategy": "Aggressives Swing-Trading auf akute Ausbr\u00fcche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
-            "initial_cash": 10000.0,
-            "cash": 3319.6200103999995,
-            "positions": {
-                "MRNA": {
-                    "symbol": "MRNA",
-                    "name": "Moderna, Inc.",
-                    "shares": 13.7808,
-                    "buy_price": 145.13,
-                    "current_price": 145.0,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 134.97,
-                    "take_profit": 174.15,
-                    "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 156.37
-                },
-                "SOL-USD": {
-                    "symbol": "SOL-USD",
-                    "name": "Solana USD",
-                    "shares": 15.2192,
-                    "buy_price": 98.56,
-                    "current_price": 103.83,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 91.66,
-                    "take_profit": 118.27,
-                    "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 105.79
-                },
-                "BEAM": {
-                    "symbol": "BEAM",
-                    "name": "Beam Therapeutics Inc.",
-                    "shares": 67.2043,
-                    "buy_price": 29.76,
-                    "current_price": 30.35,
-                    "buy_date": "2026-08-25 12:30",
-                    "stop_loss": 27.67,
-                    "take_profit": 35.71,
-                    "reason": "Top Momentum & Breakout Score (88/100)",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 30.35
-                },
-                "VKTX": {
-                    "symbol": "VKTX",
-                    "name": "Viking Therapeutics, Inc.",
-                    "shares": 35.1597,
-                    "buy_price": 34.1983,
-                    "current_price": 34.86,
-                    "buy_date": "2026-09-04 15:31",
-                    "stop_loss": 31.74,
-                    "take_profit": null,
-                    "reason": "\ud83d\udea8 Smart-Money Ausbruch (Alpha 64/100) | PCR: 0.64 | Social: Stabile Marktpr\u00e4senz | \u2696\ufe0f Tribunal (BUY): Das starke 'Smart-Money Ausbruch'-Signal mit einem Alpha von 64/100 und der positive PCR von 0.64 deuten auf erhebliches kurzfristiges Aufw\u00e4rtspotenzial hin. Es liegen keine offensichtlichen roten Flaggen vor, die gegen einen Einstieg sprechen w\u00fcrden. Dies entspricht unserer Strategie, Trades mit gutem Momentum zu nutzen, auch wenn eine engmaschige \u00dcberwachung aufgrund der kurzfristigen Natur des Depots erforderlich ist.",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 34.93
-                }
-            },
-            "history": [
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "BEAM",
-                    "name": "Beam Therapeutics Inc.",
-                    "product_type": "STOCK",
-                    "shares": 67.2043,
-                    "price": 29.76,
-                    "total": 2000.0,
-                    "date": "2026-08-25 12:30:00",
-                    "reason": "Top Momentum & Breakout Score (88/100)"
-                },
-                {
-                    "type": "SELL",
-                    "action": "SELL",
-                    "symbol": "KO256319",
-                    "name": "\u26a1 Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)",
-                    "product_type": "KNOCKOUT",
-                    "shares": 182.9826,
-                    "buy_price": 10.93,
-                    "sell_price": 11.85,
-                    "price": 11.85,
-                    "total": 2168.34,
-                    "pnl": 168.34,
-                    "pnl_pct": 8.42,
-                    "date": "2026-08-25 12:28:15",
-                    "reason": "\ud83d\udca1 Opportunit\u00e4ts-Umschichtung: Gewinn bei +8.4% mitgenommen f\u00fcr neuen Ausbruch BEAM"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "KO256319",
-                    "name": "\u26a1 Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)",
-                    "product_type": "KNOCKOUT",
-                    "shares": 182.9826,
-                    "price": 10.93,
-                    "total": 2000.0,
-                    "date": "2026-08-25 06:40:07",
-                    "reason": "\ud83d\udea8 Akuter Ausbruchs-Alarm (Score: 100/100) via 3.5x Hebel"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "SOL-USD",
-                    "name": "Solana USD",
-                    "product_type": "STOCK",
-                    "shares": 15.2192,
-                    "price": 98.56,
-                    "total": 1500.0,
-                    "date": "2026-08-24 22:07:09",
-                    "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "RIVN",
-                    "name": "Rivian Automotive, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 117.855,
-                    "price": 16.97,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:08",
-                    "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "MRNA",
-                    "name": "Moderna, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 13.7808,
-                    "price": 145.13,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:08",
-                    "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"
-                },
-                {
-                    "type": "SELL",
-                    "symbol": "RIVN",
-                    "name": "Rivian Automotive, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 117.855,
-                    "buy_price": 16.97,
-                    "sell_price": 15.7285,
-                    "total": 1853.68,
-                    "pnl": -146.32,
-                    "pnl_pct": -7.32,
-                    "date": "2026-09-04 15:31",
-                    "reason": "\ud83d\udea8 Stop-Loss ausgel\u00f6st (-7.1%) zur Verlustbegrenzung"
-                },
-                {
-                    "type": "BUY",
-                    "symbol": "VKTX",
-                    "name": "Viking Therapeutics, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 35.1597,
-                    "price": 34.13,
-                    "total": 1202.4,
-                    "date": "2026-09-04 15:31",
-                    "reason": "\ud83d\udea8 Smart-Money Ausbruch (Alpha 64/100) | PCR: 0.64 | Social: Stabile Marktpr\u00e4senz | \u2696\ufe0f Tribunal (BUY): Das starke 'Smart-Money Ausbruch'-Signal mit einem Alpha von 64/100 und der positive PCR von 0.64 deuten auf erhebliches kurzfristiges Aufw\u00e4rtspotenzial hin. Es liegen keine offensichtlichen roten Flaggen vor, die gegen einen Einstieg sprechen w\u00fcrden. Dies entspricht unserer Strategie, Trades mit gutem Momentum zu nutzen, auch wenn eine engmaschige \u00dcberwachung aufgrund der kurzfristigen Natur des Depots erforderlich ist."
-                }
-            ]
+  "created_at": "2026-09-03 23:11:23",
+  "currency": "EUR",
+  "portfolios": {
+    "short_term": {
+      "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
+      "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
+      "initial_cash": 10000.0,
+      "cash": 3319.6200103999995,
+      "positions": {
+        "MRNA": {
+          "symbol": "MRNA",
+          "name": "Moderna, Inc.",
+          "shares": 13.7808,
+          "buy_price": 145.13,
+          "current_price": 145.0,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 134.97,
+          "take_profit": 174.15,
+          "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 156.37
         },
-        "medium_term": {
-            "name": "\ud83d\udcc8 Mittelfristiges Trend- & Growth-Depot (1\u20136 Monate / Swing)",
-            "strategy": "Mittelfristige Trendfolge auf f\u00fchrende Wachstumsaktien & KI-Leader \u00fcber der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
-            "initial_cash": 10000.0,
-            "cash": 4000.0,
-            "positions": {
-                "PLTR": {
-                    "symbol": "PLTR",
-                    "name": "Palantir Technologies Inc.",
-                    "shares": 11.1148,
-                    "buy_price": 179.94,
-                    "current_price": 174.43,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 161.95,
-                    "take_profit": 242.92,
-                    "reason": "KI-Enterprise-Wachstum & Trendfolge \u00fcber EMA 50",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 182.49
-                },
-                "DUOL": {
-                    "symbol": "DUOL",
-                    "name": "Duolingo, Inc.",
-                    "shares": 13.6864,
-                    "buy_price": 146.13,
-                    "current_price": 154.61,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 131.52,
-                    "take_profit": 197.28,
-                    "reason": "Stabiles Umsatzwachstum & Ausbruch \u00fcber 200-Tage-Linie",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 159.19
-                },
-                "NVDA": {
-                    "symbol": "NVDA",
-                    "name": "NVIDIA Corporation",
-                    "shares": 9.3145,
-                    "buy_price": 214.72,
-                    "current_price": 229.5,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": 193.25,
-                    "take_profit": 289.87,
-                    "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34",
-                    "peak_price": 234.64
-                }
-            },
-            "history": [
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "NVDA",
-                    "name": "NVIDIA Corporation",
-                    "product_type": "STOCK",
-                    "shares": 9.3145,
-                    "price": 214.72,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:11",
-                    "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "DUOL",
-                    "name": "Duolingo, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 13.6864,
-                    "price": 146.13,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:10",
-                    "reason": "Stabiles Umsatzwachstum & Ausbruch \u00fcber 200-Tage-Linie"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "PLTR",
-                    "name": "Palantir Technologies Inc.",
-                    "product_type": "STOCK",
-                    "shares": 11.1148,
-                    "price": 179.94,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:10",
-                    "reason": "KI-Enterprise-Wachstum & Trendfolge \u00fcber EMA 50"
-                }
-            ]
+        "SOL-USD": {
+          "symbol": "SOL-USD",
+          "name": "Solana USD",
+          "shares": 15.2192,
+          "buy_price": 98.56,
+          "current_price": 103.83,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 91.66,
+          "take_profit": 118.27,
+          "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 105.79
         },
-        "long_term": {
-            "name": "\ud83c\udfdb\ufe0f Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
-            "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
-            "initial_cash": 10000.0,
-            "cash": 1000.0,
-            "positions": {
-                "SAP.DE": {
-                    "symbol": "SAP.DE",
-                    "name": "SAP SE",
-                    "shares": 10.6315,
-                    "buy_price": 188.12,
-                    "current_price": 182.8,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": null,
-                    "take_profit": null,
-                    "reason": "Europ\u00e4ischer Software-Monopolist, ROE 18.3%, solide Bilanz",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34"
-                },
-                "MUV2.DE": {
-                    "symbol": "MUV2.DE",
-                    "name": "M\u00fcnchener R\u00fcck AG",
-                    "shares": 3.873,
-                    "buy_price": 516.4,
-                    "current_price": 513.0,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": null,
-                    "take_profit": null,
-                    "reason": "M\u00fcnchener R\u00fcck: KGV unter 10, exzellente Dividendenhistorie",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34"
-                },
-                "GC=F": {
-                    "symbol": "GC=F",
-                    "name": "Gold Dec 26",
-                    "shares": 0.3232,
-                    "buy_price": 4640.8,
-                    "current_price": 4476.6,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": null,
-                    "take_profit": null,
-                    "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34"
-                },
-                "BTC-USD": {
-                    "symbol": "BTC-USD",
-                    "name": "Bitcoin USD",
-                    "shares": 0.019,
-                    "buy_price": 78964.48,
-                    "current_price": 79146.62,
-                    "buy_date": "2026-08-24 22:07",
-                    "stop_loss": null,
-                    "take_profit": null,
-                    "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend \u00fcber SMA200",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34"
-                },
-                "SMCI": {
-                    "symbol": "SMCI",
-                    "name": "Super Micro Computer, Inc.",
-                    "shares": 53.7057,
-                    "buy_price": 37.24,
-                    "current_price": 39.54,
-                    "buy_date": "2026-08-25 12:30",
-                    "stop_loss": null,
-                    "take_profit": null,
-                    "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4",
-                    "derivative_type": "STOCK",
-                    "last_updated": "21:11:34"
-                }
-            },
-            "history": [
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "SMCI",
-                    "name": "Super Micro Computer, Inc.",
-                    "product_type": "STOCK",
-                    "shares": 53.7057,
-                    "price": 37.24,
-                    "total": 2000.0,
-                    "date": "2026-08-25 12:30:00",
-                    "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "BTC-USD",
-                    "name": "Bitcoin USD",
-                    "product_type": "STOCK",
-                    "shares": 0.019,
-                    "price": 78964.48,
-                    "total": 1500.0,
-                    "date": "2026-08-24 22:07:13",
-                    "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend \u00fcber SMA200"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "GC=F",
-                    "name": "Gold Dec 26",
-                    "product_type": "STOCK",
-                    "shares": 0.3232,
-                    "price": 4640.8,
-                    "total": 1500.0,
-                    "date": "2026-08-24 22:07:13",
-                    "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "MUV2.DE",
-                    "name": "M\u00fcnchener R\u00fcck AG",
-                    "product_type": "STOCK",
-                    "shares": 3.873,
-                    "price": 516.4,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:12",
-                    "reason": "M\u00fcnchener R\u00fcck: KGV unter 10, exzellente Dividendenhistorie"
-                },
-                {
-                    "type": "BUY",
-                    "action": "BUY",
-                    "symbol": "SAP.DE",
-                    "name": "SAP SE",
-                    "product_type": "STOCK",
-                    "shares": 10.6315,
-                    "price": 188.12,
-                    "total": 2000.0,
-                    "date": "2026-08-24 22:07:11",
-                    "reason": "Europ\u00e4ischer Software-Monopolist, ROE 18.3%, solide Bilanz"
-                }
-            ]
+        "BEAM": {
+          "symbol": "BEAM",
+          "name": "Beam Therapeutics Inc.",
+          "shares": 67.2043,
+          "buy_price": 29.76,
+          "current_price": 30.35,
+          "buy_date": "2026-08-25 12:30",
+          "stop_loss": 27.67,
+          "take_profit": 35.71,
+          "reason": "Top Momentum & Breakout Score (88/100)",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 30.35
         },
-        "day_trading": {
-            "cash": 8476.5,
-            "positions": {
-                "KO652333": {
-                    "symbol": "KO652333",
-                    "name": "\u26a1 Turbo Bull 5.0x auf Duke Energy Corp (KO: 98.85)",
-                    "shares": 619.8347,
-                    "buy_price": 2.4563,
-                    "current_price": 2.42,
-                    "buy_date": "2026-09-07 21:12",
-                    "stop_loss": 1.81,
-                    "take_profit": null,
-                    "reason": "\u26a1 Daytrade Momentum (+0.7% Spike) | 5.0x Hebel",
-                    "derivative_type": "KNOCKOUT",
-                    "type": "KNOCKOUT",
-                    "wkn": "KO652333",
-                    "underlying_symbol": "DUK",
-                    "underlying_name": "Duke Energy Corp",
-                    "direction": "LONG",
-                    "ratio": 0.1,
-                    "strike": 96.91,
-                    "knockout_barrier": 98.85,
-                    "initial_underlying_price": 121.14,
-                    "current_underlying_price": 121.14,
-                    "cert_price": 2.42,
-                    "leverage": 5.0,
-                    "distance_to_ko_pct": 18.4,
-                    "is_knocked_out": false,
-                    "peak_price": 2.4563
-                }
-            },
-            "history": [
-                {
-                    "type": "BUY",
-                    "symbol": "KO652333",
-                    "name": "\u26a1 Turbo Bull 5.0x auf Duke Energy Corp (KO: 98.85)",
-                    "product_type": "KNOCKOUT",
-                    "shares": 619.8347,
-                    "price": 2.42,
-                    "total": 1522.5,
-                    "date": "2026-09-07 21:12",
-                    "reason": "\u26a1 Daytrade Momentum (+0.7% Spike) | 5.0x Hebel"
-                }
-            ]
+        "VKTX": {
+          "symbol": "VKTX",
+          "name": "Viking Therapeutics, Inc.",
+          "shares": 35.1597,
+          "buy_price": 34.1983,
+          "current_price": 34.86,
+          "buy_date": "2026-09-04 15:31",
+          "stop_loss": 31.74,
+          "take_profit": null,
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 64/100) | PCR: 0.64 | Social: Stabile Marktpräsenz | ⚖️ Tribunal (BUY): Das starke 'Smart-Money Ausbruch'-Signal mit einem Alpha von 64/100 und der positive PCR von 0.64 deuten auf erhebliches kurzfristiges Aufwärtspotenzial hin. Es liegen keine offensichtlichen roten Flaggen vor, die gegen einen Einstieg sprechen würden. Dies entspricht unserer Strategie, Trades mit gutem Momentum zu nutzen, auch wenn eine engmaschige Überwachung aufgrund der kurzfristigen Natur des Depots erforderlich ist.",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 34.93
         }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "BEAM",
+          "name": "Beam Therapeutics Inc.",
+          "product_type": "STOCK",
+          "shares": 67.2043,
+          "price": 29.76,
+          "total": 2000.0,
+          "date": "2026-08-25 12:30:00",
+          "reason": "Top Momentum & Breakout Score (88/100)"
+        },
+        {
+          "type": "SELL",
+          "action": "SELL",
+          "symbol": "KO256319",
+          "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)",
+          "product_type": "KNOCKOUT",
+          "shares": 182.9826,
+          "buy_price": 10.93,
+          "sell_price": 11.85,
+          "price": 11.85,
+          "total": 2168.34,
+          "pnl": 168.34,
+          "pnl_pct": 8.42,
+          "date": "2026-08-25 12:28:15",
+          "reason": "💡 Opportunitäts-Umschichtung: Gewinn bei +8.4% mitgenommen für neuen Ausbruch BEAM"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "KO256319",
+          "name": "⚡ Turbo Bull 3.5x auf Visa Inc. (KO: 278.61)",
+          "product_type": "KNOCKOUT",
+          "shares": 182.9826,
+          "price": 10.93,
+          "total": 2000.0,
+          "date": "2026-08-25 06:40:07",
+          "reason": "🚨 Akuter Ausbruchs-Alarm (Score: 100/100) via 3.5x Hebel"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "SOL-USD",
+          "name": "Solana USD",
+          "product_type": "STOCK",
+          "shares": 15.2192,
+          "price": 98.56,
+          "total": 1500.0,
+          "date": "2026-08-24 22:07:09",
+          "reason": "High-Beta Krypto-Momentum mit bullischem MACD-Setup"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "RIVN",
+          "name": "Rivian Automotive, Inc.",
+          "product_type": "STOCK",
+          "shares": 117.855,
+          "price": 16.97,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:08",
+          "reason": "Top Kurzfrist-Momentum (95/100) & CEO-Insiderkauf"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "MRNA",
+          "name": "Moderna, Inc.",
+          "product_type": "STOCK",
+          "shares": 13.7808,
+          "price": 145.13,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:08",
+          "reason": "Akuter Biotech-Ausbruch & hoher Short Float (15.2%)"
+        },
+        {
+          "type": "SELL",
+          "symbol": "RIVN",
+          "name": "Rivian Automotive, Inc.",
+          "product_type": "STOCK",
+          "shares": 117.855,
+          "buy_price": 16.97,
+          "sell_price": 15.7285,
+          "total": 1853.68,
+          "pnl": -146.32,
+          "pnl_pct": -7.32,
+          "date": "2026-09-04 15:31",
+          "reason": "🚨 Stop-Loss ausgelöst (-7.1%) zur Verlustbegrenzung"
+        },
+        {
+          "type": "BUY",
+          "symbol": "VKTX",
+          "name": "Viking Therapeutics, Inc.",
+          "product_type": "STOCK",
+          "shares": 35.1597,
+          "price": 34.13,
+          "total": 1202.4,
+          "date": "2026-09-04 15:31",
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 64/100) | PCR: 0.64 | Social: Stabile Marktpräsenz | ⚖️ Tribunal (BUY): Das starke 'Smart-Money Ausbruch'-Signal mit einem Alpha von 64/100 und der positive PCR von 0.64 deuten auf erhebliches kurzfristiges Aufwärtspotenzial hin. Es liegen keine offensichtlichen roten Flaggen vor, die gegen einen Einstieg sprechen würden. Dies entspricht unserer Strategie, Trades mit gutem Momentum zu nutzen, auch wenn eine engmaschige Überwachung aufgrund der kurzfristigen Natur des Depots erforderlich ist."
+        }
+      ]
     },
-    "cooldowns": {}
+    "medium_term": {
+      "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
+      "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
+      "initial_cash": 10000.0,
+      "cash": 4000.0,
+      "positions": {
+        "PLTR": {
+          "symbol": "PLTR",
+          "name": "Palantir Technologies Inc.",
+          "shares": 11.1148,
+          "buy_price": 179.94,
+          "current_price": 174.43,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 161.95,
+          "take_profit": 242.92,
+          "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 182.49
+        },
+        "DUOL": {
+          "symbol": "DUOL",
+          "name": "Duolingo, Inc.",
+          "shares": 13.6864,
+          "buy_price": 146.13,
+          "current_price": 154.61,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 131.52,
+          "take_profit": 197.28,
+          "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 159.19
+        },
+        "NVDA": {
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "shares": 9.3145,
+          "buy_price": 214.72,
+          "current_price": 229.5,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": 193.25,
+          "take_profit": 289.87,
+          "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34",
+          "peak_price": 234.64
+        }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "product_type": "STOCK",
+          "shares": 9.3145,
+          "price": 214.72,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:11",
+          "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "DUOL",
+          "name": "Duolingo, Inc.",
+          "product_type": "STOCK",
+          "shares": 13.6864,
+          "price": 146.13,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:10",
+          "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "PLTR",
+          "name": "Palantir Technologies Inc.",
+          "product_type": "STOCK",
+          "shares": 11.1148,
+          "price": 179.94,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:10",
+          "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50"
+        }
+      ]
+    },
+    "long_term": {
+      "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
+      "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
+      "initial_cash": 10000.0,
+      "cash": 1000.0,
+      "positions": {
+        "SAP.DE": {
+          "symbol": "SAP.DE",
+          "name": "SAP SE",
+          "shares": 10.6315,
+          "buy_price": 188.12,
+          "current_price": 182.8,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34"
+        },
+        "MUV2.DE": {
+          "symbol": "MUV2.DE",
+          "name": "Münchener Rück AG",
+          "shares": 3.873,
+          "buy_price": 516.4,
+          "current_price": 513.0,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34"
+        },
+        "GC=F": {
+          "symbol": "GC=F",
+          "name": "Gold Dec 26",
+          "shares": 0.3232,
+          "buy_price": 4640.8,
+          "current_price": 4476.6,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34"
+        },
+        "BTC-USD": {
+          "symbol": "BTC-USD",
+          "name": "Bitcoin USD",
+          "shares": 0.019,
+          "buy_price": 78964.48,
+          "current_price": 79146.62,
+          "buy_date": "2026-08-24 22:07",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34"
+        },
+        "SMCI": {
+          "symbol": "SMCI",
+          "name": "Super Micro Computer, Inc.",
+          "shares": 53.7057,
+          "buy_price": 37.24,
+          "current_price": 39.54,
+          "buy_date": "2026-08-25 12:30",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4",
+          "derivative_type": "STOCK",
+          "last_updated": "21:11:34"
+        }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "SMCI",
+          "name": "Super Micro Computer, Inc.",
+          "product_type": "STOCK",
+          "shares": 53.7057,
+          "price": 37.24,
+          "total": 2000.0,
+          "date": "2026-08-25 12:30:00",
+          "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "BTC-USD",
+          "name": "Bitcoin USD",
+          "product_type": "STOCK",
+          "shares": 0.019,
+          "price": 78964.48,
+          "total": 1500.0,
+          "date": "2026-08-24 22:07:13",
+          "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "GC=F",
+          "name": "Gold Dec 26",
+          "product_type": "STOCK",
+          "shares": 0.3232,
+          "price": 4640.8,
+          "total": 1500.0,
+          "date": "2026-08-24 22:07:13",
+          "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "MUV2.DE",
+          "name": "Münchener Rück AG",
+          "product_type": "STOCK",
+          "shares": 3.873,
+          "price": 516.4,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:12",
+          "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie"
+        },
+        {
+          "type": "BUY",
+          "action": "BUY",
+          "symbol": "SAP.DE",
+          "name": "SAP SE",
+          "product_type": "STOCK",
+          "shares": 10.6315,
+          "price": 188.12,
+          "total": 2000.0,
+          "date": "2026-08-24 22:07:11",
+          "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"
+        }
+      ]
+    },
+    "day_trading": {
+      "cash": 8476.5,
+      "positions": {
+        "KO652333": {
+          "symbol": "KO652333",
+          "name": "⚡ Turbo Bull 5.0x auf Duke Energy Corp (KO: 98.85)",
+          "shares": 619.8347,
+          "buy_price": 2.4563,
+          "current_price": 2.42,
+          "buy_date": "2026-09-07 21:12",
+          "stop_loss": 1.81,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO652333",
+          "underlying_symbol": "DUK",
+          "underlying_name": "Duke Energy Corp",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 96.91,
+          "knockout_barrier": 98.85,
+          "initial_underlying_price": 121.14,
+          "current_underlying_price": 121.14,
+          "cert_price": 2.42,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false,
+          "peak_price": 2.4563
+        }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "symbol": "KO652333",
+          "name": "⚡ Turbo Bull 5.0x auf Duke Energy Corp (KO: 98.85)",
+          "product_type": "KNOCKOUT",
+          "shares": 619.8347,
+          "price": 2.42,
+          "total": 1522.5,
+          "date": "2026-09-07 21:12",
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel"
+        }
+      ]
+    }
+  },
+  "cooldowns": {}
 }
