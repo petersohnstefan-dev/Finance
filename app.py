@@ -706,6 +706,7 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         "🎙️ 4. Earnings-Call KI-Tonalität",
         "🌐 5. FRED-Makro & Zinskurve",
         "⛓️ 6. Krypto On-Chain & Whales"
+                | ** 7. Live SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren substanziell eigenes Geld. Stock Grants ($0) werden herausgefiltert! |
     ])
 
     # Module 1: Options Flow
@@ -1936,6 +1937,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | **💬 4. Social Sentiment & Buzz** | **20 %** | Relative Erwähnungs-Spitzen auf Reddit WSB & StockTwits (> 150 % Anstieg in 24h) |
                 | **🪤 Leerverkäufer & BaFin-Shorts** | **15 %** | Short Float > 12 % (Squeeze-Falle) ODER aggressive BaFin-Netto-Aufstockungen |
                 | **⛓️ 6. Krypto On-Chain & Derivate**| **15 %** | Krypto-Funding-Rates (+6.8% gesund), Exchange-Netto-Abflüsse (Cold Storage) |
+                | ** 7. Live SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren substanziell eigenes Geld. Stock Grants ($0) werden herausgefiltert! |
 
                 * **🟢 KAUF-Trigger (Long):** Multi-Source Alpha-Score ≥ **55 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Knock-Out Call)**.
                 * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
@@ -1954,7 +1956,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | :--- | :---: | :--- |
                 | **🌊 3. US Netto-Liquidität & FedWatch** | **30 %** | `Fed Balance Sheet − TGA − Reverse Repo` (Expansiv: > 6 Bio. USD) + FedWatch Zinswende |
                 | **📈 Analysten-Revisionen (EPS)** | **25 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + positive EPS-Surprises |
-                | **🏛️ 2. SEC Form 4 & Kongress-Trades** | **20 %** | Vorstands-Käufe (CEO/Director) & US-Kongress-Disclosures (Nancy Pelosi, House Committees) |
+                | ** 2. SEC Form 4 & Kongress-Trades** | **20 % (Live Boost)** | Direkter Score-Boost bei harten Cash-Käufen durch das C-Level. Ausschluss von Null-Dollar-Vergütungen! |
                 | **🎙️ Earnings Call KI-Tonalität** | **15 %** | Semantischer NLP-Sprachscore > 80/100 (Fokus auf Margenwachstum & AI-Monetarisierung) |
                 | **📊 Trendfolge über EMA 50** | **10 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
 
@@ -1973,7 +1975,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
                 | **🏰 5. Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** |
-                | **🏛️ 2. Insider- & Whale-Convictions** | **25 %** | Star-Investoren (Warren Buffett, Bill Ackman) & Directors' Dealings der Vorstände |
+                | ** 2. Insider- & Whale-Convictions** | **25 % (Live Boost)** | Star-Investoren & Director's Dealings. Wenn CEOs mit Eigenkapital einsteigen, schlägt der Scanner aggressiver an. |
                 | **🌐 3. Makro-Zyklen, Gold & BTC** | **20 %** | Allokation in Gold (GC=F) & Bitcoin (BTC-USD) als Währungs- und Inflationsschutz |
                 | **🏰 Kapitalrendite & Burggraben** | **10 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |
                 | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus-Zertifikate mit ≥ 25 % Sicherheitspuffer |
