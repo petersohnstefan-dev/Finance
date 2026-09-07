@@ -993,7 +993,8 @@ class PortfolioManager:
             if dt_depot["cash"] >= 1000.0 and len(dt_depot["positions"]) < 5 and rt_alerts:
                 top_alert = rt_alerts[0]
                 sym = top_alert["symbol"]
-                name = top_alert.get("name", sym)
+                real_name = next((r.get("name", sym) for r in scan_results if r["symbol"] == sym), sym)
+                name = top_alert.get("name", real_name)
                 p = top_alert.get("trigger_price", 10.0)
                 
                 # 1. Check if we already hold a position for this underlying
