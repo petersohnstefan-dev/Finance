@@ -706,7 +706,6 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         "🎙️ 4. Earnings-Call KI-Tonalität",
         "🌐 5. FRED-Makro & Zinskurve",
         "⛓️ 6. Krypto On-Chain & Whales"
-                | ** 7. Live SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren substanziell eigenes Geld. Stock Grants ($0) werden herausgefiltert! |
     ])
 
     # Module 1: Options Flow
@@ -1937,7 +1936,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | **💬 4. Social Sentiment & Buzz** | **20 %** | Relative Erwähnungs-Spitzen auf Reddit WSB & StockTwits (> 150 % Anstieg in 24h) |
                 | **🪤 Leerverkäufer & BaFin-Shorts** | **15 %** | Short Float > 12 % (Squeeze-Falle) ODER aggressive BaFin-Netto-Aufstockungen |
                 | **⛓️ 6. Krypto On-Chain & Derivate**| **15 %** | Krypto-Funding-Rates (+6.8% gesund), Exchange-Netto-Abflüsse (Cold Storage) |
-                | ** 7. Live SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren substanziell eigenes Geld. Stock Grants ($0) werden herausgefiltert! |
+                | ** 7. SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren eigenes Geld. Stock Grants () werden ignoriert. |
 
                 * **🟢 KAUF-Trigger (Long):** Multi-Source Alpha-Score ≥ **55 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Knock-Out Call)**.
                 * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
@@ -1956,7 +1955,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | :--- | :---: | :--- |
                 | **🌊 3. US Netto-Liquidität & FedWatch** | **30 %** | `Fed Balance Sheet − TGA − Reverse Repo` (Expansiv: > 6 Bio. USD) + FedWatch Zinswende |
                 | **📈 Analysten-Revisionen (EPS)** | **25 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + positive EPS-Surprises |
-                | ** 2. SEC Form 4 & Kongress-Trades** | **20 % (Live Boost)** | Direkter Score-Boost bei harten Cash-Käufen durch das C-Level. Ausschluss von Null-Dollar-Vergütungen! |
+                | ** 2. SEC Form 4 & Kongress-Trades** | **20 % (Live Boost)** | Direkter Score-Boost bei Cash-Käufen durch das C-Level. Ausschluss von Null-Dollar-Vergütungen! |
                 | **🎙️ Earnings Call KI-Tonalität** | **15 %** | Semantischer NLP-Sprachscore > 80/100 (Fokus auf Margenwachstum & AI-Monetarisierung) |
                 | **📊 Trendfolge über EMA 50** | **10 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
 
