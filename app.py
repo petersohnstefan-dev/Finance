@@ -471,7 +471,7 @@ if app_mode in ["🏆 Markt-Screener & Top-Rankings", "🚨 Ausbruchs- & Katalys
             with st.expander("📊 Track-Record der Top-Signale der letzten Tage ansehen"):
                 from src.db import PortfolioDB
                 pdb = PortfolioDB()
-                history_signals = pdb.get_recent_radar_signals(limit=500)
+                history_signals = pdb.get_recent_radar_signals(limit=50000)
                 
                 if not history_signals:
                     st.info("Noch keine Radar-Historie vorhanden. Ab dem nächsten Scan werden hier die Verläufe der Top-Signale getrackt.")
