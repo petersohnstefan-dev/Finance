@@ -391,6 +391,50 @@
           "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"
         }
       ]
+    },
+    "day_trading": {
+      "cash": 8476.5,
+      "positions": {
+        "KO652333": {
+          "symbol": "KO652333",
+          "name": "⚡ Turbo Bull 5.0x auf DUK (KO: 98.85)",
+          "shares": 619.8347,
+          "buy_price": 2.4563,
+          "current_price": 2.42,
+          "buy_date": "2026-09-07 21:12",
+          "stop_loss": 1.81,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO652333",
+          "underlying_symbol": "DUK",
+          "underlying_name": "DUK",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 96.91,
+          "knockout_barrier": 98.85,
+          "initial_underlying_price": 121.14,
+          "current_underlying_price": 121.14,
+          "cert_price": 2.42,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false
+        }
+      },
+      "history": [
+        {
+          "type": "BUY",
+          "symbol": "KO652333",
+          "name": "⚡ Turbo Bull 5.0x auf DUK (KO: 98.85)",
+          "product_type": "KNOCKOUT",
+          "shares": 619.8347,
+          "price": 2.42,
+          "total": 1522.5,
+          "date": "2026-09-07 21:12",
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel"
+        }
+      ]
     }
   },
   "cooldowns": {}

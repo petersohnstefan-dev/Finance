@@ -1030,7 +1030,7 @@ class PortfolioManager:
                     try:
                         import datetime
                         atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
-                        if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 300:
+                        if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 900:
                             is_fresh = False
                     except:
                         pass

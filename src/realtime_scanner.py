@@ -1,5 +1,3 @@
-"""Free Real-Time Intraday Momentum & Breakout Engine across 160+ Multi-Asset Watchlists."""
-
 import os
 import time
 import datetime
@@ -16,19 +14,15 @@ import pandas as pd
 from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
-from src.universe import CATEGORIZED_UNIVERSES, FULL_MARKET_UNIVERSE
+from src.universe import FULL_MARKET_UNIVERSE
 
 ALERTS_LOG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "realtime_alerts.json")
 LIVE_PRICES_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "live_ticks.json")
 
-# 500+ Assets categorized
-WATCHLIST_CATEGORIES = CATEGORIZED_UNIVERSES
-
 class RealTimeBreakoutScanner:
-    """Monitors live price ticks and volume spikes in real-time across 500+ assets without paid APIs."""
+    """Monitors live price ticks and volume spikes in real-time across 500+ assets statelessly."""
 
     def __init__(self):
-        self.price_history = {}  # {symbol: [{"time": ts, "price": px}]}
         self._load_state()
 
     def _load_state(self):
@@ -37,128 +31,70 @@ class RealTimeBreakoutScanner:
             with open(ALERTS_LOG_FILE, "w", encoding="utf-8") as f:
                 json.dump([], f)
 
-    def fetch_crypto_live_price(self, symbol: str) -> Optional[float]:
-        """Free 0-latency live crypto prices via public Binance API."""
-        clean_base = symbol.split("-")[0].upper()
-        pair = f"{clean_base}USDT"
-        try:
-            url = f"https://api.binance.com/api/v3/ticker/price?symbol={pair}"
-            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            with urllib.request.urlopen(req, timeout=2.5) as resp:
-                data = json.loads(resp.read().decode())
-                return float(data["price"])
-        except Exception:
-            return None
-
-    def fetch_stock_live_price(self, symbol: str) -> Optional[float]:
-        """Free real-time stock, ETF & futures quotes with pre/post-market live streaming support."""
-        try:
-            t = yf.Ticker(symbol)
-            # Try ultra-fast 1-day 1-minute pre/post-market tick first for active US/EU tickers
-            try:
-                df = t.history(period="1d", interval="1m", prepost=True)
-                if not df.empty and pd.notnull(df["Close"].iloc[-1]):
-                    return round(float(df["Close"].iloc[-1]), 2)
-            except Exception:
-                pass
-
-            # Fallback to fast_info
-            fi = t.fast_info
-            px = getattr(fi, 'last_price', None) or getattr(fi, 'regular_market_previous_close', None)
-            return round(float(px), 2) if px else None
-        except Exception:
-            return None
-
-    def get_live_tick(self, symbol: str) -> Optional[float]:
-        if "-USD" in symbol:
-            px = self.fetch_crypto_live_price(symbol)
-            if px:
-                return px
-        return self.fetch_stock_live_price(symbol)
-
-    def scan_category(self, category_name: str = None) -> Dict[str, Any]:
-        """Scans all assets in a selected category in parallel."""
-        keys = list(WATCHLIST_CATEGORIES.keys())
-        if not keys:
-            return {"count": 0, "alerts": [], "ticks": {}, "category": "Empty"}
-            
-        if not category_name or category_name not in WATCHLIST_CATEGORIES:
-            category_name = keys[0]
-            
-        tickers = WATCHLIST_CATEGORIES[category_name]
+    def fetch_stateless_spike(self, symbol: str) -> Optional[Dict[str, Any]]:
+        """Fetches 5-minute price history and detects spikes statelessly (perfect for GH Actions)."""
         now = get_berlin_now()
-        now_ts = now.timestamp()
-        new_alerts = []
-        live_ticks = {}
+        is_crypto = "-USD" in symbol
+        
+        try:
+            # 1. Fetch live ticks using 1m interval
+            t = yf.Ticker(symbol)
+            df = t.history(period="1d", interval="1m", prepost=True)
+            
+            if df.empty or len(df) < 5:
+                return None
+                
+            current_price = float(df["Close"].iloc[-1])
+            five_mins_ago_price = float(df["Close"].iloc[-5])
+            
+            if five_mins_ago_price <= 0:
+                return None
+                
+            change_pct = ((current_price - five_mins_ago_price) / five_mins_ago_price) * 100.0
+            
+            # Threshold: > 0.5% in 5 minutes for stocks, > 1.0% for crypto
+            threshold = 1.0 if is_crypto else 0.5
+            
+            if abs(change_pct) >= threshold:
+                direction = "LONG" if change_pct > 0 else "SHORT"
+                msg = f"🚨 {symbol} explodiert um {change_pct:+.2f}% in 5 Min.! Momentum aktiv." if direction == "LONG" else f"🚨 {symbol} stürzt um {change_pct:+.2f}% in 5 Min. ab! Panik-Verkauf aktiv."
+                
+                return {
+                    "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
+                    "time_str": now.strftime("%H:%M:%S"),
+                    "symbol": symbol,
+                    "direction": direction,
+                    "trigger_price": round(current_price, 2),
+                    "change_1min_pct": round(abs(change_pct), 2),  # Used for leverage calc
+                    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+                    "message": msg
+                }
+            return None
+        except Exception:
+            return None
 
+    def scan_all_stateless(self) -> Dict[str, Any]:
+        """Scans ALL 500+ assets in FULL_MARKET_UNIVERSE."""
+        tickers = FULL_MARKET_UNIVERSE
+        now = get_berlin_now()
+        new_alerts = []
+        
         def fetch_single(sym):
             try:
-                px = self.get_live_tick(sym)
-                return sym, px
+                return self.fetch_stateless_spike(sym)
             except Exception:
-                return sym, None
+                return None
 
-        with ThreadPoolExecutor(max_workers=20) as executor:
+        with ThreadPoolExecutor(max_workers=30) as executor:
             results = list(executor.map(fetch_single, tickers))
 
-        for sym, px in results:
-            if not px or px <= 0:
-                continue
-
-            live_ticks[sym] = {
-                "symbol": sym,
-                "price": round(px, 2),
-                "type": "CRYPTO" if "-USD" in sym else ("COMMODITY" if "=F" in sym else "STOCK"),
-                "time": now.strftime("%H:%M:%S")
-            }
-
-            if sym not in self.price_history:
-                self.price_history[sym] = []
-
-            self.price_history[sym].append({"time": now_ts, "price": px})
-            self.price_history[sym] = [p for p in self.price_history[sym] if now_ts - p["time"] <= 300]
-
-            one_min_ago_ticks = [p for p in self.price_history[sym] if now_ts - p["time"] >= 45]
-            if one_min_ago_ticks:
-                old_p = one_min_ago_ticks[0]["price"]
-                change_pct = ((px - old_p) / old_p) * 100.0
-
-                if abs(change_pct) >= 0.35:
-                    direction = "LONG" if change_pct > 0 else "SHORT"
-                    msg = f"🚨 {sym} explodiert um {change_pct:+.2f}% in <60 Sek.! Short-Squeeze-Druck aktiv." if direction == "LONG" else f"🚨 {sym} stürzt um {change_pct:+.2f}% ab! Panik-Verkauf aktiv."
-                    
-                    alert = {
-                        "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
-                        "time_str": now.strftime("%H:%M:%S"),
-                        "symbol": sym,
-                        "direction": direction,
-                        "trigger_price": round(px, 2),
-                        "change_1min_pct": round(abs(change_pct), 2),
-                        "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-                        "message": msg
-                    }
-                    new_alerts.append(alert)
-                    self._record_alert(alert)
-
-        # Merge with existing live ticks file
-        existing_ticks = {}
-        if os.path.exists(LIVE_PRICES_FILE):
-            try:
-                with open(LIVE_PRICES_FILE, "r", encoding="utf-8") as f:
-                    existing_ticks = json.load(f)
-            except Exception:
-                pass
-        existing_ticks.update(live_ticks)
-        try:
-            with open(LIVE_PRICES_FILE, "w", encoding="utf-8") as f:
-                json.dump(existing_ticks, f, indent=2)
-        except Exception:
-            pass
+        for res in results:
+            if res:
+                new_alerts.append(res)
+                self._record_alert(res)
 
         return {
-            "category": category_name,
-            "count": len(live_ticks),
-            "ticks": live_ticks,
+            "count": len(tickers),
             "alerts": new_alerts
         }
 
@@ -168,16 +104,20 @@ class RealTimeBreakoutScanner:
             if os.path.exists(ALERTS_LOG_FILE):
                 with open(ALERTS_LOG_FILE, "r", encoding="utf-8") as f:
                     alerts = json.load(f)
+            
+            # Prevent duplicate alerts for same symbol within 30 minutes
+            recent = [a for a in alerts if a["symbol"] == alert["symbol"]]
+            if recent:
+                last_time = datetime.datetime.strptime(recent[0]["timestamp"], "%Y-%m-%d %H:%M:%S")
+                if (datetime.datetime.now() - last_time).total_seconds() < 1800:
+                    return
+
             alerts.insert(0, alert)
             alerts = alerts[:50]
             with open(ALERTS_LOG_FILE, "w", encoding="utf-8") as f:
                 json.dump(alerts, f, indent=2, ensure_ascii=False)
         except Exception:
             pass
-
-    @staticmethod
-    def get_categories() -> List[str]:
-        return list(WATCHLIST_CATEGORIES.keys())
 
     @staticmethod
     def get_recent_alerts() -> List[Dict[str, Any]]:
@@ -189,18 +129,8 @@ class RealTimeBreakoutScanner:
                 pass
         return []
 
-    @staticmethod
-    def get_live_ticks_snapshot() -> Dict[str, Any]:
-        if os.path.exists(LIVE_PRICES_FILE):
-            try:
-                with open(LIVE_PRICES_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                pass
-        return {}
-
 if __name__ == "__main__":
     scanner = RealTimeBreakoutScanner()
-    print("Starte erweiterten Multi-Asset Real-Time-Scan...")
-    res = scanner.scan_category()
-    print(f"Erfolgreich {res['count']} Assets in Real-Time gescannt.")
+    print("Starte ZUSTANDSLOSEN Multi-Asset Real-Time-Scan fr GitHub Actions...")
+    res = scanner.scan_all_stateless()
+    print(f"Erfolgreich {res['count']} Assets in Real-Time gescannt. {len(res['alerts'])} neue Alarme.")
