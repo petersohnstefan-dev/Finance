@@ -46,13 +46,32 @@ class LiveInsiderWhaleTracker:
                             "Titel (Rolle)": str(row.get("Position", "-")),
                             "Details zur Transaktion": str(row.get("Text", "-")),
                             "Anzahl Aktien": row.get("Shares", 0),
+                            "Transaktionswert ($)": row.get("Value", 0),
                             "Datum der SEC-Meldung": str(row.get("Start Date", row.get("Transaction Start Date", "")))[:10],
                         })
             except Exception as e:
                 print(f"Error fetching insider data for {ticker}: {e}")
                 
         if all_trades:
+            import math
             df = pd.DataFrame(all_trades)
+            
+            def format_value(val):
+                if isinstance(val, (int, float)) and not math.isnan(val) and val > 0:
+                    return f"${val:,.2f}"
+                return "$0.00"
+            
+            def format_text(txt):
+                if isinstance(txt, str) and "0.00 per share" in txt:
+                    return txt + " (Praktisch geschenkt erhalten!)"
+                return txt
+                
+            if "Transaktionswert ($)" in df.columns:
+                df["Transaktionswert ($)"] = df["Transaktionswert ($)"].apply(format_value)
+            
+            if "Details zur Transaktion" in df.columns:
+                df["Details zur Transaktion"] = df["Details zur Transaktion"].apply(format_text)
+                
             df = df.sort_values(by="Datum der SEC-Meldung", ascending=False).head(30)
             return df
         return pd.DataFrame()
