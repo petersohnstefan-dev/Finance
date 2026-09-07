@@ -49,6 +49,17 @@ class MarketScanner:
             long_res = self.long_engine.evaluate(fundamentals, consensus)
             synth = self.synthesizer.synthesize(short_res, long_res, fundamentals, consensus)
             breakout_res = self.breakout_radar.analyze_breakout_potential(df_with_ind, fundamentals, mentions)
+            # Fetch and apply insider sentiment
+            insider_data = fetcher.get_insider_sentiment()
+            if insider_data['insider_score'] > 0:
+                synth["total_score"] += insider_data['insider_score']
+                breakout_res["breakout_score"] += insider_data['insider_score']
+                if "triggers" not in breakout_res:
+                    breakout_res["triggers"] = []
+                breakout_res["triggers"].append({
+                    "title": f"Insider Kauf (Wert: ${insider_data['recent_buy_value']:,.0f})",
+                    "desc": f"Insgesamt {insider_data['recent_buys']} aktuelle Kaeufe von Insidern registriert."
+                })
 
             # Determine Asset Class & Region
             if "-USD" in ticker or "-EUR" in ticker:
@@ -109,6 +120,8 @@ class MarketScanner:
                 "forum_mentions": mentions,
                 "forum_sentiment": f_info.get("forum_sentiment_score", 50) if mentions > 0 else None,
                 "sample_forum_posts": f_info.get("sample_titles", []),
+                "insider_score": insider_data.get("insider_score", 0),
+                "recent_insider_buys": insider_data.get("recent_buys", 0),
                 "short_signals": [s["title"] for s in short_res.get("signals", [])],
                 "long_signals": [s["title"] for s in long_res.get("signals", [])],
                 "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
