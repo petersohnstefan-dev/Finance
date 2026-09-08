@@ -418,7 +418,7 @@
       ]
     },
     "day_trading": {
-      "cash": 2325.504520360499,
+      "cash": 2407.219246428499,
       "positions": {
         "KO652333": {
           "symbol": "KO652333",
@@ -446,34 +446,6 @@
           "distance_to_ko_pct": 18.7,
           "is_knocked_out": false,
           "peak_price": 2.4659999999999997,
-          "last_updated": "20:46:48"
-        },
-        "KO137678": {
-          "symbol": "KO137678",
-          "name": "⚡ Turbo Bull 5.0x auf VOLKSWAGEN AG                 V (KO: 66.68)",
-          "shares": 920.2454,
-          "buy_price": 1.6544,
-          "current_price": 1.772,
-          "buy_date": "2026-09-08 10:02",
-          "stop_loss": 1.69,
-          "take_profit": null,
-          "reason": "⚡ Daytrade Momentum (+0.6% Spike) | 5.0x Hebel",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "wkn": "KO137678",
-          "underlying_symbol": "VOW3.DE",
-          "underlying_name": "VOW3.DE",
-          "direction": "LONG",
-          "ratio": 0.1,
-          "strike": 65.38,
-          "knockout_barrier": 66.68,
-          "initial_underlying_price": 81.72,
-          "current_underlying_price": 81.72,
-          "cert_price": 1.63,
-          "leverage": 5.0,
-          "distance_to_ko_pct": 19.8,
-          "is_knocked_out": false,
-          "peak_price": 1.8040000000000007,
           "last_updated": "20:46:48"
         },
         "KO215398": {
@@ -559,6 +531,32 @@
           "is_knocked_out": false,
           "peak_price": 1.4413,
           "last_updated": "20:46:48"
+        },
+        "KO621341": {
+          "symbol": "KO621341",
+          "name": "🔻 Turbo Bear 5.0x auf Platinum Oct 26 (KO: 2160.43)",
+          "shares": 40.8274,
+          "buy_price": 37.2911,
+          "current_price": 36.74,
+          "buy_date": "2026-09-08 21:01",
+          "stop_loss": 27.55,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO621341",
+          "underlying_symbol": "PL=F",
+          "underlying_name": "Platinum Oct 26",
+          "direction": "SHORT",
+          "ratio": 0.1,
+          "strike": 2204.52,
+          "knockout_barrier": 2160.43,
+          "initial_underlying_price": 1837.1,
+          "current_underlying_price": 1837.1,
+          "cert_price": 36.74,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 17.6,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -666,6 +664,31 @@
           "total": 1522.5,
           "date": "2026-09-08 20:21",
           "reason": "⚡ Daytrade Momentum (+0.6% Spike) | 5.0x Hebel"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO137678",
+          "name": "⚡ Turbo Bull 5.0x auf VOLKSWAGEN AG                 V (KO: 66.68)",
+          "product_type": "KNOCKOUT",
+          "shares": 920.2454,
+          "buy_price": 1.6544,
+          "sell_price": 1.7454,
+          "total": 1606.21,
+          "pnl": 83.76,
+          "pnl_pct": 5.5,
+          "date": "2026-09-08 21:01",
+          "reason": "🛡️ Intraday EOD-Derisking (+7.1%)"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO621341",
+          "name": "🔻 Turbo Bear 5.0x auf Platinum Oct 26 (KO: 2160.43)",
+          "product_type": "KNOCKOUT",
+          "shares": 40.8274,
+          "price": 36.74,
+          "total": 1522.5,
+          "date": "2026-09-08 21:01",
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel"
         }
       ]
     }
