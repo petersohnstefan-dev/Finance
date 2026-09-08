@@ -1,5 +1,75 @@
 [
   {
+    "timestamp": "2026-09-08 12:56:01",
+    "time_str": "12:56:01",
+    "symbol": "FRE.DE",
+    "direction": "SHORT",
+    "trigger_price": 44.94,
+    "change_1min_pct": 0.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FRE.DE stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:59",
+    "time_str": "12:55:59",
+    "symbol": "SIX2.DE",
+    "direction": "SHORT",
+    "trigger_price": 71.0,
+    "change_1min_pct": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SIX2.DE stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:59",
+    "time_str": "12:55:59",
+    "symbol": "GYC.DE",
+    "direction": "LONG",
+    "trigger_price": 9.21,
+    "change_1min_pct": 0.66,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GYC.DE explodiert um +0.66% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:57",
+    "time_str": "12:55:57",
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 5.62,
+    "change_1min_pct": 1.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -1.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:55",
+    "time_str": "12:55:55",
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.61,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:55",
+    "time_str": "12:55:55",
+    "symbol": "ROIV",
+    "direction": "LONG",
+    "trigger_price": 43.65,
+    "change_1min_pct": 1.23,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ROIV explodiert um +1.23% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 12:55:55",
+    "time_str": "12:55:55",
+    "symbol": "BEAM",
+    "direction": "SHORT",
+    "trigger_price": 31.02,
+    "change_1min_pct": 0.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-08 12:51:05",
     "time_str": "12:51:05",
     "symbol": "LMT",
@@ -428,75 +498,5 @@
     "change_1min_pct": 1.52,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARRY stürzt um -1.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:21:01",
-    "time_str": "12:21:01",
-    "symbol": "BKSY",
-    "direction": "LONG",
-    "trigger_price": 20.87,
-    "change_1min_pct": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:21:00",
-    "time_str": "12:21:00",
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 306.0,
-    "change_1min_pct": 0.76,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +0.76% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:21:00",
-    "time_str": "12:21:00",
-    "symbol": "FTNT",
-    "direction": "LONG",
-    "trigger_price": 155.96,
-    "change_1min_pct": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:20:59",
-    "time_str": "12:20:59",
-    "symbol": "HIMS",
-    "direction": "LONG",
-    "trigger_price": 27.95,
-    "change_1min_pct": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:20:59",
-    "time_str": "12:20:59",
-    "symbol": "MSTR",
-    "direction": "LONG",
-    "trigger_price": 140.61,
-    "change_1min_pct": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:20:58",
-    "time_str": "12:20:58",
-    "symbol": "GDXJ",
-    "direction": "LONG",
-    "trigger_price": 127.9,
-    "change_1min_pct": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GDXJ explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 12:16:08",
-    "time_str": "12:16:08",
-    "symbol": "EVT.DE",
-    "direction": "LONG",
-    "trigger_price": 3.18,
-    "change_1min_pct": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 EVT.DE explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
