@@ -450,6 +450,14 @@ class PortfolioManager:
         def fetch_single(sym):
             try:
                 import yfinance as yf
+                # Robust fallback for GitHub Actions IPs
+                try:
+                    data = yf.download(sym, period="1d", interval="1m", progress=False)
+                    if not data.empty:
+                        return sym, float(data['Close'].iloc[-1])
+                except:
+                    pass
+                # Fallback to fast_info
                 info = yf.Ticker(sym).fast_info
                 px = info.last_price
                 return sym, px
