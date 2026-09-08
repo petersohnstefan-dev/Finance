@@ -393,7 +393,7 @@
       ]
     },
     "day_trading": {
-      "cash": 6953.0,
+      "cash": 5429.5,
       "positions": {
         "KO652333": {
           "symbol": "KO652333",
@@ -446,6 +446,33 @@
           "cert_price": 1.63,
           "leverage": 5.0,
           "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false,
+          "peak_price": 1.6544
+        },
+        "KO215398": {
+          "symbol": "KO215398",
+          "name": "🔻 Turbo Bear 5.0x auf AMAT (KO: 535.93)",
+          "shares": 164.6542,
+          "buy_price": 9.2466,
+          "current_price": 9.11,
+          "buy_date": "2026-09-08 10:06",
+          "stop_loss": 6.83,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.8% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO215398",
+          "underlying_symbol": "AMAT",
+          "underlying_name": "AMAT",
+          "direction": "SHORT",
+          "ratio": 0.1,
+          "strike": 546.86,
+          "knockout_barrier": 535.93,
+          "initial_underlying_price": 455.72,
+          "current_underlying_price": 455.72,
+          "cert_price": 9.11,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 17.6,
           "is_knocked_out": false
         }
       },
@@ -471,6 +498,17 @@
           "total": 1522.5,
           "date": "2026-09-08 10:02",
           "reason": "⚡ Daytrade Momentum (+0.6% Spike) | 5.0x Hebel"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO215398",
+          "name": "🔻 Turbo Bear 5.0x auf AMAT (KO: 535.93)",
+          "product_type": "KNOCKOUT",
+          "shares": 164.6542,
+          "price": 9.11,
+          "total": 1522.5,
+          "date": "2026-09-08 10:06",
+          "reason": "⚡ Daytrade Momentum (+0.8% Spike) | 5.0x Hebel"
         }
       ]
     }
