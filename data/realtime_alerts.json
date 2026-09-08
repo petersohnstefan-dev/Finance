@@ -1,5 +1,75 @@
 [
   {
+    "timestamp": "2026-09-08 10:16:04",
+    "time_str": "10:16:04",
+    "symbol": "ORCL",
+    "direction": "LONG",
+    "trigger_price": 163.6,
+    "change_1min_pct": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:16:00",
+    "time_str": "10:16:00",
+    "symbol": "GFT.DE",
+    "direction": "LONG",
+    "trigger_price": 25.6,
+    "change_1min_pct": 1.19,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GFT.DE explodiert um +1.19% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:16:00",
+    "time_str": "10:16:00",
+    "symbol": "KRN.DE",
+    "direction": "SHORT",
+    "trigger_price": 115.0,
+    "change_1min_pct": 0.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KRN.DE stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:15:58",
+    "time_str": "10:15:58",
+    "symbol": "FSLR",
+    "direction": "SHORT",
+    "trigger_price": 205.43,
+    "change_1min_pct": 0.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FSLR stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:15:58",
+    "time_str": "10:15:58",
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 9.86,
+    "change_1min_pct": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:15:58",
+    "time_str": "10:15:58",
+    "symbol": "PL",
+    "direction": "SHORT",
+    "trigger_price": 17.91,
+    "change_1min_pct": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 10:15:56",
+    "time_str": "10:15:56",
+    "symbol": "GDX",
+    "direction": "SHORT",
+    "trigger_price": 98.2,
+    "change_1min_pct": 0.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GDX stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-08 10:11:12",
     "time_str": "10:11:12",
     "symbol": "LMT",
@@ -428,75 +498,5 @@
     "change_1min_pct": 1.98,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADP stürzt um -1.98% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:03",
-    "time_str": "09:56:03",
-    "symbol": "BA",
-    "direction": "LONG",
-    "trigger_price": 212.0,
-    "change_1min_pct": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BA explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:03",
-    "time_str": "09:56:03",
-    "symbol": "SYK",
-    "direction": "LONG",
-    "trigger_price": 308.37,
-    "change_1min_pct": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYK explodiert um +1.00% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:03",
-    "time_str": "09:56:03",
-    "symbol": "BLK",
-    "direction": "SHORT",
-    "trigger_price": 1121.73,
-    "change_1min_pct": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLK stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:02",
-    "time_str": "09:56:02",
-    "symbol": "AXP",
-    "direction": "SHORT",
-    "trigger_price": 326.5,
-    "change_1min_pct": 1.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AXP stürzt um -1.16% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:02",
-    "time_str": "09:56:02",
-    "symbol": "LOW",
-    "direction": "SHORT",
-    "trigger_price": 202.12,
-    "change_1min_pct": 1.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LOW stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:02",
-    "time_str": "09:56:02",
-    "symbol": "UNP",
-    "direction": "LONG",
-    "trigger_price": 291.47,
-    "change_1min_pct": 0.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 UNP explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 09:56:02",
-    "time_str": "09:56:02",
-    "symbol": "COP",
-    "direction": "SHORT",
-    "trigger_price": 134.5,
-    "change_1min_pct": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COP stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
