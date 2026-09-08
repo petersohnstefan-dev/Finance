@@ -418,7 +418,7 @@
       ]
     },
     "day_trading": {
-      "cash": 4098.4818158535,
+      "cash": 2574.9818158535,
       "positions": {
         "KO652333": {
           "symbol": "KO652333",
@@ -528,6 +528,33 @@
           "cert_price": 2.6,
           "leverage": 5.0,
           "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false,
+          "peak_price": 2.639
+        },
+        "KO381176": {
+          "symbol": "KO381176",
+          "name": "⚡ Turbo Bull 5.0x auf MDLZ (KO: 50.54)",
+          "shares": 1209.6774,
+          "buy_price": 1.2586,
+          "current_price": 1.24,
+          "buy_date": "2026-09-08 22:26",
+          "stop_loss": 0.93,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO381176",
+          "underlying_symbol": "MDLZ",
+          "underlying_name": "MDLZ",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 49.55,
+          "knockout_barrier": 50.54,
+          "initial_underlying_price": 61.94,
+          "current_underlying_price": 61.94,
+          "cert_price": 1.24,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 18.4,
           "is_knocked_out": false
         }
       },
@@ -624,6 +651,17 @@
           "price": 2.6,
           "total": 1522.5,
           "date": "2026-09-08 22:21",
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO381176",
+          "name": "⚡ Turbo Bull 5.0x auf MDLZ (KO: 50.54)",
+          "product_type": "KNOCKOUT",
+          "shares": 1209.6774,
+          "price": 1.24,
+          "total": 1522.5,
+          "date": "2026-09-08 22:26",
           "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel"
         }
       ]
