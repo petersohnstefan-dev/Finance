@@ -996,7 +996,14 @@ class PortfolioManager:
                 top_alert = rt_alerts[0]
                 sym = top_alert["symbol"]
                 real_name = next((r.get("name", sym) for r in scan_results if r["symbol"] == sym), sym)
-                name = top_alert.get("name", real_name)
+                if real_name == sym:
+                    try:
+                        import yfinance as yf
+                        info = yf.Ticker(sym).info
+                        real_name = info.get('shortName') or info.get('longName') or sym
+                    except:
+                        pass
+                name = top_alert.get("name") or real_name
                 p = top_alert.get("trigger_price", 10.0)
                 
                 # 1. Check if we already hold a position for this underlying
