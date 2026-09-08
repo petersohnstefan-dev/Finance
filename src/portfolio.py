@@ -449,7 +449,9 @@ class PortfolioManager:
 
         def fetch_single(sym):
             try:
-                px = scanner.get_live_tick(sym)
+                import yfinance as yf
+                info = yf.Ticker(sym).fast_info
+                px = info.last_price
                 return sym, px
             except Exception:
                 return sym, None
