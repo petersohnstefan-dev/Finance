@@ -40,13 +40,13 @@ class LiveInsiderWhaleTracker:
                     for idx, row in recent.iterrows():
                         text = str(row.get("Text", "-"))
                         
-                        trade_type = "UNBEKANNT"
+                        trade_type = "🟠 UNBEKANNT"
                         if "Purchase" in text or "Buy" in text:
-                            trade_type = " KAUF"
+                            trade_type = "🟩 KAUF"
                         elif "Sale" in text or "Sell" in text:
-                            trade_type = " VERKAUF"
+                            trade_type = "🔴 VERKAUF"
                         elif "Grant" in text or "Award" in text or "Gift" in text or "0.00 per share" in text:
-                            trade_type = " ZUTEILUNG (GESCHENK)"
+                            trade_type = "🟨 ZUTEILUNG (GESCHENK)"
                             
                         shares = row.get("Shares", 0)
                         
