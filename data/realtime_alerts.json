@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-08 19:21:00",
+    "time_str": "19:21:00",
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 4.74,
+    "change_1min_pct": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 19:21:00",
+    "time_str": "19:21:00",
+    "symbol": "DUOL",
+    "direction": "SHORT",
+    "trigger_price": 143.59,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-08 19:21:00",
+    "time_str": "19:21:00",
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.49,
+    "change_1min_pct": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-08 19:15:54",
     "time_str": "19:15:54",
     "symbol": "CRSP",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARM stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 18:01:28",
-    "time_str": "18:01:28",
-    "symbol": "STO3.DE",
-    "direction": "LONG",
-    "trigger_price": 100.0,
-    "change_1min_pct": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STO3.DE explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 18:01:27",
-    "time_str": "18:01:27",
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.53,
-    "change_1min_pct": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-08 18:01:27",
-    "time_str": "18:01:27",
-    "symbol": "IOT",
-    "direction": "LONG",
-    "trigger_price": 39.81,
-    "change_1min_pct": 0.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IOT explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
