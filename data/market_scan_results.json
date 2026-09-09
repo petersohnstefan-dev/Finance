@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-09-09 09:06:29",
-  "total_scanned": 218,
+  "scan_time": "2026-09-09 09:11:29",
+  "total_scanned": 221,
   "data": [
     {
       "symbol": "ENPH",
@@ -35,7 +35,7 @@
       "forward_pe": 17.073536,
       "peg": 0.78,
       "roe": 12.995999999999999,
-      "fcf_yield": 1.5304212161463338,
+      "fcf_yield": 1.5264090989370205,
       "dividend_yield": null,
       "debt_to_equity": 0.5189900000000001,
       "upside_pct": 37.09330414627866,
@@ -60,7 +60,68 @@
         "Konservative Verschuldung (0.52)",
         "Analysten-Kurspotenzial +37.1%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:26"
+    },
+    {
+      "symbol": "BLNK",
+      "name": "Blink Charging Co.",
+      "region": "USA",
+      "sector": "Industrials",
+      "industry": "Engineering & Construction",
+      "price": 0.574,
+      "currency": "USD",
+      "total_score": 87,
+      "short_score": 68,
+      "long_score": 35,
+      "breakout_score": 65,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "⚠️ Erhöhte Short-Quote (10.1%)",
+        "⏳ Hohe Eindeckungsdauer (Days to Cover: 11.2 Tage)",
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)",
+        "Insider Kauf (Wert: $75,392)"
+      ],
+      "vol_ratio": 0.94,
+      "daily_return_pct": -2.55,
+      "short_float": 10.13,
+      "short_ratio": 11.24,
+      "squeeze_score": 60.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
+      "rsi": 52.78,
+      "pe": null,
+      "forward_pe": -2.4848485,
+      "peg": null,
+      "roe": -85.481,
+      "fcf_yield": 22.601617619865387,
+      "dividend_yield": null,
+      "debt_to_equity": 9.351,
+      "upside_pct": 183.10104529616729,
+      "target_mean_price": 1.625,
+      "analyst_rec": null,
+      "analyst_count": 4,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 25,
+      "recent_insider_buys": 2,
+      "short_signals": [
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (52.8)",
+        "Positives MACD-Momentum",
+        "Social Sentiment Sehr Bullish (93%)"
+      ],
+      "long_signals": [
+        "Niedrige Eigenkapitalrendite (-85.5%)",
+        "Unprofitabel / Verlust",
+        "Hohe Verschuldung (9.35)",
+        "Starke Free-Cashflow-Rendite (22.6%)",
+        "Analysten-Kurspotenzial +183.1%"
+      ],
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "CELH",
@@ -117,7 +178,7 @@
         "Analysten-Kurspotenzial +43.1%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "ONON",
@@ -153,8 +214,8 @@
       "fcf_yield": 3.1653102239499797,
       "dividend_yield": null,
       "debt_to_equity": 0.29429,
-      "upside_pct": 61.562207554088744,
-      "target_mean_price": 44.058014,
+      "upside_pct": 61.50634396773012,
+      "target_mean_price": 44.04278,
       "analyst_rec": 1.72414,
       "analyst_count": 28,
       "forum_mentions": 0,
@@ -172,10 +233,10 @@
         "Attraktives PEG-Ratio (0.46)",
         "Exzellente Eigenkapitalrendite (24.0%)",
         "Konservative Verschuldung (0.29)",
-        "Analysten-Kurspotenzial +61.6%",
+        "Analysten-Kurspotenzial +61.5%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "FOUR",
@@ -234,7 +295,7 @@
         "Starke Free-Cashflow-Rendite (10.6%)",
         "Analysten-Kurspotenzial +31.2%"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "VKTX",
@@ -295,7 +356,7 @@
         "Analysten-Kurspotenzial +174.3%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "MNTS",
@@ -354,7 +415,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +88.2%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "ASTS",
@@ -411,7 +472,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +20.4%"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "GTLB",
@@ -466,68 +527,7 @@
         "Niedrige Eigenkapitalrendite (-5.7%)",
         "Unprofitabel / Verlust"
       ],
-      "last_updated": "2026-09-09 09:06:24"
-    },
-    {
-      "symbol": "BLNK",
-      "name": "Blink Charging Co.",
-      "region": "USA",
-      "sector": "Industrials",
-      "industry": "Engineering & Construction",
-      "price": 0.574,
-      "currency": "USD",
-      "total_score": 77,
-      "short_score": 68,
-      "long_score": 35,
-      "breakout_score": 55,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "⚠️ Erhöhte Short-Quote (10.1%)",
-        "⏳ Hohe Eindeckungsdauer (Days to Cover: 11.2 Tage)",
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)",
-        "Insider Kauf (Wert: $25,000)"
-      ],
-      "vol_ratio": 0.94,
-      "daily_return_pct": -2.55,
-      "short_float": 10.13,
-      "short_ratio": 11.24,
-      "squeeze_score": 60.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
-      "rsi": 52.78,
-      "pe": null,
-      "forward_pe": -2.4848485,
-      "peg": null,
-      "roe": -85.481,
-      "fcf_yield": 22.601617619865387,
-      "dividend_yield": null,
-      "debt_to_equity": 9.351,
-      "upside_pct": 183.10104529616729,
-      "target_mean_price": 1.625,
-      "analyst_rec": null,
-      "analyst_count": 4,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 15,
-      "recent_insider_buys": 1,
-      "short_signals": [
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (52.8)",
-        "Positives MACD-Momentum",
-        "Social Sentiment Sehr Bullish (93%)"
-      ],
-      "long_signals": [
-        "Niedrige Eigenkapitalrendite (-85.5%)",
-        "Unprofitabel / Verlust",
-        "Hohe Verschuldung (9.35)",
-        "Starke Free-Cashflow-Rendite (22.6%)",
-        "Analysten-Kurspotenzial +183.1%"
-      ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "HUBS",
@@ -562,7 +562,7 @@
       "forward_pe": 14.478509,
       "peg": 0.3,
       "roe": 7.892,
-      "fcf_yield": 5.560600488065991,
+      "fcf_yield": 5.416725463352553,
       "dividend_yield": null,
       "debt_to_equity": 0.14300000000000002,
       "upside_pct": 1.7819648947674898,
@@ -584,9 +584,9 @@
         "Hohes KGV (85.9)",
         "Attraktives PEG-Ratio (0.30)",
         "Konservative Verschuldung (0.14)",
-        "Starke Free-Cashflow-Rendite (5.6%)"
+        "Starke Free-Cashflow-Rendite (5.4%)"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "SOFI",
@@ -641,7 +641,7 @@
         "Attraktives PEG-Ratio (0.66)",
         "Konservative Verschuldung (0.31)"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "SMCI",
@@ -675,7 +675,7 @@
       "forward_pe": 7.559257,
       "peg": 0.91,
       "roe": 21.465999,
-      "fcf_yield": -31.673577841962807,
+      "fcf_yield": -31.18700714330071,
       "dividend_yield": null,
       "debt_to_equity": 0.63951,
       "upside_pct": 5.253353204172882,
@@ -701,7 +701,7 @@
         "Konservative Verschuldung (0.64)",
         "Negativer Free Cashflow"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "RDWR",
@@ -760,7 +760,7 @@
         "Niedrige Eigenkapitalrendite (4.7%)",
         "Hohe Verschuldung (4.48)"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "DUOL",
@@ -793,7 +793,7 @@
       "forward_pe": 19.163378,
       "peg": null,
       "roe": 34.42,
-      "fcf_yield": 4.383065828862674,
+      "fcf_yield": 4.401235973282607,
       "dividend_yield": null,
       "debt_to_equity": 6.11,
       "upside_pct": -8.264840494569292,
@@ -818,7 +818,7 @@
         "Hohe Nettomarge (35.9%)",
         "Hohe Verschuldung (6.11)"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "NVAX",
@@ -874,7 +874,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "PATH",
@@ -933,7 +933,7 @@
         "Starke Free-Cashflow-Rendite (6.7%)",
         "Analysten-Kurspotenzial +20.3%"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "BNB-USD",
@@ -941,7 +941,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 756.65,
+      "price": 756.49,
       "currency": "USD",
       "total_score": 68,
       "short_score": 93,
@@ -949,8 +949,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.95,
-      "daily_return_pct": 0.56,
+      "vol_ratio": 0.94,
+      "daily_return_pct": 0.54,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -959,7 +959,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 63.23,
+      "rsi": 63.2,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -986,7 +986,7 @@
         "Über 200-Tage-Trendlinie",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "ARKG",
@@ -1039,7 +1039,7 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Hoch"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "HG=F",
@@ -1047,19 +1047,20 @@
       "region": "🥇 Edelmetalle",
       "sector": "Edelmetall / Rohstoff",
       "industry": "N/A",
-      "price": 6.773,
+      "price": 6.7655,
       "currency": "USD",
       "total_score": 68,
       "short_score": 85,
       "long_score": 90,
-      "breakout_score": 55,
-      "breakout_status": "⚡ ERHÖHTE AUSBRUCHS-CHANCE (Lauerstellung)",
+      "breakout_score": 70,
+      "breakout_status": "🚨 AKUTER AUSBRUCH / SQUEEZE-DYNAMIK",
       "breakout_triggers": [
         "🚨 Extremer Volumen-Schock (4.1x)",
-        "💥 Ausbruch über oberes Bollinger Band"
+        "💥 Ausbruch über oberes Bollinger Band",
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
-      "vol_ratio": 4.09,
-      "daily_return_pct": 0.5,
+      "vol_ratio": 4.15,
+      "daily_return_pct": 0.39,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1068,7 +1069,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 67.4,
+      "rsi": 67.1,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1096,15 +1097,15 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Hoch"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "CT=F",
-      "name": "Cotton Mar 26",
+      "name": "CT=F",
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 87.71,
+      "price": 86.45,
       "currency": "USX",
       "total_score": 68,
       "short_score": 87,
@@ -1151,7 +1152,7 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Hoch"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "SRPT",
@@ -1211,7 +1212,7 @@
         "Unprofitabel / Verlust",
         "Konservative Verschuldung (0.70)"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "CAVA",
@@ -1268,7 +1269,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +41.0%"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "FSLR",
@@ -1299,7 +1300,7 @@
       "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
       "rsi": 43.68,
       "pe": 13.15546,
-      "forward_pe": 9.226438,
+      "forward_pe": 9.203473,
       "peg": 0.38,
       "roe": 18.509,
       "fcf_yield": 6.9756936460788665,
@@ -1328,59 +1329,7 @@
         "Starke Free-Cashflow-Rendite (7.0%)",
         "Analysten-Kurspotenzial +28.9%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
-    },
-    {
-      "symbol": "ZW=F",
-      "name": "Chicago SRW Wheat Futures,Dec-2",
-      "region": "🛢️ Rohstoffe",
-      "sector": "Energie & Agrar",
-      "industry": "N/A",
-      "price": 749.75,
-      "currency": "USX",
-      "total_score": 67,
-      "short_score": 83,
-      "long_score": 90,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.21,
-      "daily_return_pct": 2.67,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 68.39,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Hoch"
-      ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "SB=F",
@@ -1388,7 +1337,7 @@
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 19.22,
+      "price": 19.24,
       "currency": "USX",
       "total_score": 67,
       "short_score": 82,
@@ -1397,10 +1346,10 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
         "💥 Ausbruch über oberes Bollinger Band",
-        "🚀 Momentum-Zündung (RSI 66.7)"
+        "🚀 Momentum-Zündung (RSI 66.8)"
       ],
-      "vol_ratio": 0.09,
-      "daily_return_pct": 6.19,
+      "vol_ratio": 0.1,
+      "daily_return_pct": 6.3,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1409,7 +1358,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 66.67,
+      "rsi": 66.8,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1436,7 +1385,7 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Hoch"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "HALO",
@@ -1494,7 +1443,7 @@
         "Hohe Verschuldung (15.18)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "ARGX",
@@ -1525,7 +1474,7 @@
       "forward_pe": 25.619083,
       "peg": 1.25,
       "roe": 23.635,
-      "fcf_yield": 1.2090938505356865,
+      "fcf_yield": 1.2163502789291913,
       "dividend_yield": null,
       "debt_to_equity": 0.558,
       "upside_pct": 17.14568997189867,
@@ -1550,7 +1499,59 @@
         "Konservative Verschuldung (0.56)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
+    },
+    {
+      "symbol": "ZW=F",
+      "name": "Chicago SRW Wheat Futures,Dec-2",
+      "region": "🛢️ Rohstoffe",
+      "sector": "Energie & Agrar",
+      "industry": "N/A",
+      "price": 751.75,
+      "currency": "USX",
+      "total_score": 67,
+      "short_score": 83,
+      "long_score": 90,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.22,
+      "daily_return_pct": 2.94,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
+      "rsi": 68.72,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Hoch"
+      ],
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "AFRM",
@@ -1606,7 +1607,7 @@
         "Analysten-Kurspotenzial +37.9%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "NDX1.DE",
@@ -1614,7 +1615,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Specialty Industrial Machinery",
-      "price": 39.9,
+      "price": 40.0,
       "currency": "EUR",
       "total_score": 67,
       "short_score": 78,
@@ -1623,7 +1624,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.08,
-      "daily_return_pct": -1.48,
+      "daily_return_pct": -1.23,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1632,15 +1633,15 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
-      "rsi": 54.14,
-      "pe": 24.32927,
-      "forward_pe": 15.941571,
+      "rsi": 54.75,
+      "pe": 24.390244,
+      "forward_pe": 15.981524,
       "peg": 1.5,
       "roe": 32.355000000000004,
-      "fcf_yield": 4.76724388481297,
+      "fcf_yield": 4.7553263109306405,
       "dividend_yield": null,
       "debt_to_equity": 0.34446,
-      "upside_pct": 23.575614035087717,
+      "upside_pct": 23.266674999999992,
       "target_mean_price": 49.30667,
       "analyst_rec": 1.86667,
       "analyst_count": 15,
@@ -1651,16 +1652,16 @@
       "recent_insider_buys": 0,
       "short_signals": [
         "Über 200-Tage-Linie",
-        "Gesunder RSI (54.1)",
+        "Gesunder RSI (54.8)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
-        "Faires KGV (24.3)",
+        "Faires KGV (24.4)",
         "Exzellente Eigenkapitalrendite (32.4%)",
         "Konservative Verschuldung (0.34)",
-        "Analysten-Kurspotenzial +23.6%"
+        "Analysten-Kurspotenzial +23.3%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "WAC.DE",
@@ -1668,7 +1669,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Farm & Heavy Construction Machinery",
-      "price": 24.2,
+      "price": 24.25,
       "currency": "EUR",
       "total_score": 67,
       "short_score": 78,
@@ -1676,8 +1677,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.44,
-      "daily_return_pct": -1.43,
+      "vol_ratio": 0.45,
+      "daily_return_pct": -1.22,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1686,15 +1687,15 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
-      "rsi": 78.15,
-      "pe": 13.908047,
-      "forward_pe": 11.691556,
+      "rsi": 78.81,
+      "pe": 13.936782,
+      "forward_pe": 11.715712,
       "peg": 0.39,
       "roe": 7.829999999999999,
-      "fcf_yield": 8.676487467951812,
+      "fcf_yield": 8.658598134880949,
       "dividend_yield": 2.95,
       "debt_to_equity": 0.21116,
-      "upside_pct": -1.5151652892561949,
+      "upside_pct": -1.7182268041237108,
       "target_mean_price": 23.83333,
       "analyst_rec": 3.0,
       "analyst_count": 3,
@@ -1706,7 +1707,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "RSI Stark Überkauft (78.2)",
+        "RSI Stark Überkauft (78.8)",
         "Positives MACD-Momentum",
         "Social Sentiment Sehr Bullish (92%)"
       ],
@@ -1717,7 +1718,7 @@
         "Starke Free-Cashflow-Rendite (8.7%)",
         "Dividendenrendite: 2.95%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "DOGE-USD",
@@ -1725,7 +1726,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.09127,
+      "price": 0.09104,
       "currency": "USD",
       "total_score": 66,
       "short_score": 93,
@@ -1734,7 +1735,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.82,
-      "daily_return_pct": 1.42,
+      "daily_return_pct": 1.16,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1743,7 +1744,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 56.37,
+      "rsi": 56.01,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1763,7 +1764,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (56.4)",
+        "Gesunder RSI (56.0)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
@@ -1771,7 +1772,7 @@
         "In Nähe 52-Wochen-Tief",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "LINK-USD",
@@ -1779,7 +1780,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 12.487,
+      "price": 12.444,
       "currency": "USD",
       "total_score": 66,
       "short_score": 93,
@@ -1788,7 +1789,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.78,
-      "daily_return_pct": -0.23,
+      "daily_return_pct": -0.58,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1797,7 +1798,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 59.09,
+      "rsi": 58.56,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1817,13 +1818,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (59.1)",
+        "Gesunder RSI (58.6)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "SHIB-USD",
@@ -1831,7 +1832,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 5.48e-06,
+      "price": 5.45e-06,
       "currency": "USD",
       "total_score": 66,
       "short_score": 100,
@@ -1839,10 +1840,10 @@
       "breakout_score": 10,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
-        "🚀 Momentum-Zündung (RSI 59.3)"
+        "🚀 Momentum-Zündung (RSI 58.8)"
       ],
       "vol_ratio": 0.7,
-      "daily_return_pct": 9.6,
+      "daily_return_pct": 9.0,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1851,7 +1852,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 59.34,
+      "rsi": 58.85,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1871,14 +1872,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (59.3)",
+        "Gesunder RSI (58.8)",
         "MACD Kaufsignal (Bullish Cross)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "RUNE-USD",
@@ -1886,7 +1887,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.49619246,
+      "price": 0.49584877,
       "currency": "USD",
       "total_score": 66,
       "short_score": 100,
@@ -1895,7 +1896,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.76,
-      "daily_return_pct": 2.01,
+      "daily_return_pct": 1.94,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -1904,7 +1905,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 53.81,
+      "rsi": 53.72,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -1924,14 +1925,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (53.8)",
+        "Gesunder RSI (53.7)",
         "MACD Kaufsignal (Bullish Cross)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "JUP-USD",
@@ -1986,7 +1987,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "FBTC",
@@ -2038,7 +2039,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "ARKB",
@@ -2090,7 +2091,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "BITB",
@@ -2142,59 +2143,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
-    },
-    {
-      "symbol": "HODL",
-      "name": "VanEck Bitcoin Trust",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 22.18,
-      "currency": "USD",
-      "total_score": 66,
-      "short_score": 93,
-      "long_score": 70,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.66,
-      "daily_return_pct": -1.77,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 73.53,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 0.0,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Positives MACD-Momentum",
-        "Social Sentiment Sehr Bullish (83%)"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie"
-      ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "BRRR",
@@ -2246,7 +2195,59 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
+    },
+    {
+      "symbol": "HODL",
+      "name": "VanEck Bitcoin Trust",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 22.18,
+      "currency": "USD",
+      "total_score": 66,
+      "short_score": 93,
+      "long_score": 70,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.66,
+      "daily_return_pct": -1.77,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
+      "rsi": 73.53,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 0.0,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Positives MACD-Momentum",
+        "Social Sentiment Sehr Bullish (83%)"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie"
+      ],
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "XLK",
@@ -2301,7 +2302,7 @@
       "long_signals": [
         "Dividendenrendite: 43.00%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "ARKF",
@@ -2354,7 +2355,7 @@
       "long_signals": [
         "Dividendenrendite: 9.00%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "ARKW",
@@ -2409,7 +2410,7 @@
       "long_signals": [
         "Dividendenrendite: 1.49%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "CRSP",
@@ -2466,7 +2467,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +59.8%"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "IONS",
@@ -2529,7 +2530,7 @@
         "Analysten-Kurspotenzial +48.5%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "RXRX",
@@ -2589,7 +2590,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +109.8%"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "INCY",
@@ -2646,7 +2647,7 @@
         "Hohe Nettomarge (27.7%)",
         "Konservative Verschuldung (0.60)"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "CART",
@@ -2702,7 +2703,7 @@
         "Solide Eigenkapitalrendite (16.0%)",
         "Starke Free-Cashflow-Rendite (8.3%)"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "DRW3.DE",
@@ -2710,7 +2711,7 @@
       "region": "Deutschland",
       "sector": "Healthcare",
       "industry": "Medical Devices",
-      "price": 110.2,
+      "price": 110.4,
       "currency": "EUR",
       "total_score": 66,
       "short_score": 77,
@@ -2720,7 +2721,7 @@
       "breakout_triggers": [
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
-      "vol_ratio": 0.16,
+      "vol_ratio": 0.17,
       "daily_return_pct": 0.18,
       "short_float": null,
       "short_ratio": null,
@@ -2738,7 +2739,7 @@
       "fcf_yield": 5.5463717901177345,
       "dividend_yield": 2.05,
       "debt_to_equity": 0.23370000000000002,
-      "upside_pct": -1.0889292196007285,
+      "upside_pct": -1.2681159420289907,
       "target_mean_price": 109.0,
       "analyst_rec": 2.0,
       "analyst_count": 4,
@@ -2758,7 +2759,7 @@
         "Starke Free-Cashflow-Rendite (5.5%)",
         "Dividendenrendite: 2.05%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "BTC-USD",
@@ -2766,7 +2767,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 79598.35,
+      "price": 79474.14,
       "currency": "USD",
       "total_score": 65,
       "short_score": 77,
@@ -2774,8 +2775,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.83,
-      "daily_return_pct": 1.48,
+      "vol_ratio": 0.82,
+      "daily_return_pct": 1.32,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -2784,7 +2785,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 51.77,
+      "rsi": 51.4,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -2804,13 +2805,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (51.8)"
+        "Gesunder RSI (51.4)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "ETH-USD",
@@ -2818,16 +2819,18 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2517.09,
+      "price": 2510.96,
       "currency": "USD",
       "total_score": 65,
       "short_score": 77,
       "long_score": 80,
-      "breakout_score": 0,
+      "breakout_score": 15,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
       "vol_ratio": 0.83,
-      "daily_return_pct": 1.29,
+      "daily_return_pct": 1.05,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -2836,7 +2839,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 51.0,
+      "rsi": 50.44,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -2856,13 +2859,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (51.0)"
+        "Gesunder RSI (50.4)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "ADA-USD",
@@ -2870,7 +2873,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.22154,
+      "price": 0.22097,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -2879,7 +2882,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.17,
-      "daily_return_pct": 1.02,
+      "daily_return_pct": 0.76,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -2888,7 +2891,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 55.5,
+      "rsi": 55.18,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -2908,14 +2911,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (55.5)",
+        "Gesunder RSI (55.2)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "LDO-USD",
@@ -2923,7 +2926,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.3929,
+      "price": 0.39037,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -2934,7 +2937,7 @@
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
       "vol_ratio": 0.77,
-      "daily_return_pct": 1.84,
+      "daily_return_pct": 1.18,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -2943,7 +2946,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 60.15,
+      "rsi": 59.43,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -2963,14 +2966,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (60.1)",
+        "Gesunder RSI (59.4)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "TIA-USD",
@@ -2978,7 +2981,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.4108,
+      "price": 0.4092,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -2987,7 +2990,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.02,
-      "daily_return_pct": 0.21,
+      "daily_return_pct": -0.18,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -2996,7 +2999,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 61.61,
+      "rsi": 61.25,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3016,14 +3019,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (61.6)",
+        "Gesunder RSI (61.3)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "INJ-USD",
@@ -3031,7 +3034,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 6.368,
+      "price": 6.336,
       "currency": "USD",
       "total_score": 65,
       "short_score": 85,
@@ -3042,7 +3045,7 @@
         "💥 Ausbruch über oberes Bollinger Band"
       ],
       "vol_ratio": 1.31,
-      "daily_return_pct": -0.78,
+      "daily_return_pct": -1.28,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -3051,7 +3054,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 64.17,
+      "rsi": 63.46,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3071,14 +3074,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (64.2)",
+        "Gesunder RSI (63.5)",
         "Positives MACD-Momentum",
         "Am oberen Bollinger Band"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "ONDO-USD",
@@ -3086,7 +3089,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.37963,
+      "price": 0.37759,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -3097,7 +3100,7 @@
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
       "vol_ratio": 0.82,
-      "daily_return_pct": 1.3,
+      "daily_return_pct": 0.76,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -3106,7 +3109,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 51.91,
+      "rsi": 51.05,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3126,14 +3129,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (51.9)",
+        "Gesunder RSI (51.0)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "PYTH-USD",
@@ -3141,7 +3144,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.05507,
+      "price": 0.05504,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -3149,10 +3152,10 @@
       "breakout_score": 10,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
-        "🚀 Momentum-Zündung (RSI 61.1)"
+        "🚀 Momentum-Zündung (RSI 61.0)"
       ],
       "vol_ratio": 0.1,
-      "daily_return_pct": 3.14,
+      "daily_return_pct": 3.08,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -3161,7 +3164,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 61.08,
+      "rsi": 61.03,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3181,14 +3184,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (61.1)",
+        "Gesunder RSI (61.0)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "PENDLE-USD",
@@ -3196,7 +3199,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2.1331,
+      "price": 2.1341,
       "currency": "USD",
       "total_score": 65,
       "short_score": 83,
@@ -3205,7 +3208,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.9,
-      "daily_return_pct": 0.17,
+      "daily_return_pct": 0.22,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -3214,7 +3217,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 72.04,
+      "rsi": 72.07,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3239,7 +3242,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "WLD-USD",
@@ -3247,7 +3250,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.4559,
+      "price": 0.4536,
       "currency": "USD",
       "total_score": 65,
       "short_score": 93,
@@ -3256,7 +3259,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.2,
-      "daily_return_pct": 0.67,
+      "daily_return_pct": 0.16,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -3265,7 +3268,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 58.94,
+      "rsi": 58.52,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -3285,14 +3288,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (58.9)",
+        "Gesunder RSI (58.5)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "EZBC",
@@ -3343,7 +3346,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "BTCW",
@@ -3396,7 +3399,117 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
+    },
+    {
+      "symbol": "URTH",
+      "name": "iShares MSCI World ETF",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 208.63,
+      "currency": "USD",
+      "total_score": 65,
+      "short_score": 87,
+      "long_score": 58,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.74,
+      "daily_return_pct": -0.57,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "⚖️ Fair bewertet / Halteposition",
+      "rsi": 49.6,
+      "pe": 22.872393,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 1.36,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (49.6)",
+        "Am unteren Bollinger Band"
+      ],
+      "long_signals": [
+        "Faires KGV (22.9)",
+        "Dividendenrendite: 1.36%"
+      ],
+      "last_updated": "2026-09-09 09:11:17"
+    },
+    {
+      "symbol": "EFA",
+      "name": "iShares MSCI EAFE ETF",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 107.76,
+      "currency": "USD",
+      "total_score": 65,
+      "short_score": 87,
+      "long_score": 58,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.96,
+      "daily_return_pct": -0.54,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "⚖️ Fair bewertet / Halteposition",
+      "rsi": 53.33,
+      "pe": 18.719015,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 3.14,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (53.3)",
+        "Am unteren Bollinger Band"
+      ],
+      "long_signals": [
+        "Faires KGV (18.7)",
+        "Dividendenrendite: 3.14%"
+      ],
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "EEM",
@@ -3453,117 +3566,7 @@
         "Günstiges KGV (14.6)",
         "Dividendenrendite: 1.66%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
-    },
-    {
-      "symbol": "URTH",
-      "name": "iShares MSCI World ETF",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 208.63,
-      "currency": "USD",
-      "total_score": 65,
-      "short_score": 87,
-      "long_score": 58,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.74,
-      "daily_return_pct": -0.57,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 49.6,
-      "pe": 22.872393,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 1.36,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (49.6)",
-        "Am unteren Bollinger Band"
-      ],
-      "long_signals": [
-        "Faires KGV (22.9)",
-        "Dividendenrendite: 1.36%"
-      ],
-      "last_updated": "2026-09-09 09:06:16"
-    },
-    {
-      "symbol": "EFA",
-      "name": "iShares MSCI EAFE ETF",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 107.76,
-      "currency": "USD",
-      "total_score": 65,
-      "short_score": 87,
-      "long_score": 58,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.96,
-      "daily_return_pct": -0.54,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 53.33,
-      "pe": 18.719015,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 3.14,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (53.3)",
-        "Am unteren Bollinger Band"
-      ],
-      "long_signals": [
-        "Faires KGV (18.7)",
-        "Dividendenrendite: 3.14%"
-      ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "SOXX",
@@ -3617,7 +3620,60 @@
       "long_signals": [
         "Dividendenrendite: 29.00%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
+    },
+    {
+      "symbol": "GDX",
+      "name": "VanEck Gold Miners ETF",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 98.41,
+      "currency": "USD",
+      "total_score": 65,
+      "short_score": 87,
+      "long_score": 65,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.5,
+      "daily_return_pct": -0.86,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "✅ Solides Langfrist-Investment",
+      "rsi": 61.87,
+      "pe": 12.630337,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 64.0,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (61.9)",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Günstiges KGV (12.6)",
+        "Dividendenrendite: 64.00%"
+      ],
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "COPX",
@@ -3672,7 +3728,7 @@
         "Faires KGV (17.4)",
         "Dividendenrendite: 2.07%"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "GDXJ",
@@ -3725,60 +3781,7 @@
         "Günstiges KGV (12.6)",
         "Dividendenrendite: 2.07%"
       ],
-      "last_updated": "2026-09-09 09:06:18"
-    },
-    {
-      "symbol": "GDX",
-      "name": "VanEck Gold Miners ETF",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 98.41,
-      "currency": "USD",
-      "total_score": 65,
-      "short_score": 87,
-      "long_score": 65,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.5,
-      "daily_return_pct": -0.86,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "✅ Solides Langfrist-Investment",
-      "rsi": 61.87,
-      "pe": 12.630337,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 64.0,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (61.9)",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Günstiges KGV (12.6)",
-        "Dividendenrendite: 64.00%"
-      ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "ROIV",
@@ -3840,7 +3843,7 @@
         "Negativer Free Cashflow",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "ARM",
@@ -3898,7 +3901,7 @@
         "Hohe Nettomarge (20.2%)",
         "Hohe Verschuldung (5.62)"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "HOOD",
@@ -3954,7 +3957,7 @@
         "Hohe Verschuldung (2.40)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "ESTC",
@@ -4011,7 +4014,7 @@
         "Starke Free-Cashflow-Rendite (5.4%)",
         "Analysten-Kurspotenzial +21.2%"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "FNTN.DE",
@@ -4071,7 +4074,7 @@
         "Starke Free-Cashflow-Rendite (20.6%)",
         "Dividendenrendite: 8.48%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "JEN.DE",
@@ -4089,7 +4092,7 @@
       "breakout_triggers": [
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
-      "vol_ratio": 0.13,
+      "vol_ratio": 0.14,
       "daily_return_pct": -2.03,
       "short_float": null,
       "short_ratio": null,
@@ -4127,7 +4130,7 @@
         "Analysten-Konsens: KAUFEN",
         "Dividendenrendite: 98.00%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "SBS.DE",
@@ -4184,7 +4187,7 @@
         "Analysten-Konsens: KAUFEN",
         "Dividendenrendite: 2.44%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "STO3.DE",
@@ -4200,8 +4203,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.28,
-      "daily_return_pct": -0.5,
+      "vol_ratio": 0.33,
+      "daily_return_pct": 0.4,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4210,7 +4213,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
-      "rsi": 58.69,
+      "rsi": 60.47,
       "pe": 15.491421,
       "forward_pe": 9.484241,
       "peg": null,
@@ -4230,7 +4233,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (58.7)",
+        "Gesunder RSI (60.5)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
@@ -4240,7 +4243,7 @@
         "Analysten-Kurspotenzial +46.0%",
         "Dividendenrendite: 31.00%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "NEAR-USD",
@@ -4248,7 +4251,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2.4716,
+      "price": 2.4631,
       "currency": "USD",
       "total_score": 64,
       "short_score": 75,
@@ -4257,10 +4260,10 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
         "💥 Ausbruch über oberes Bollinger Band",
-        "🚀 Momentum-Zündung (RSI 74.0)"
+        "🚀 Momentum-Zündung (RSI 73.8)"
       ],
-      "vol_ratio": 1.32,
-      "daily_return_pct": 6.71,
+      "vol_ratio": 1.33,
+      "daily_return_pct": 6.35,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4269,7 +4272,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 74.0,
+      "rsi": 73.81,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -4295,7 +4298,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "KAS-USD",
@@ -4303,7 +4306,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.03612252,
+      "price": 0.036151763,
       "currency": "USD",
       "total_score": 64,
       "short_score": 75,
@@ -4314,7 +4317,7 @@
         "💥 Ausbruch über oberes Bollinger Band"
       ],
       "vol_ratio": 1.29,
-      "daily_return_pct": 1.93,
+      "daily_return_pct": 2.02,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4323,7 +4326,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 73.94,
+      "rsi": 73.99,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -4349,7 +4352,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "AAVE-USD",
@@ -4357,7 +4360,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 130.92,
+      "price": 130.54,
       "currency": "USD",
       "total_score": 64,
       "short_score": 77,
@@ -4368,7 +4371,7 @@
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
       "vol_ratio": 0.52,
-      "daily_return_pct": 1.64,
+      "daily_return_pct": 1.35,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4377,7 +4380,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 54.29,
+      "rsi": 53.9,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -4397,12 +4400,12 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (54.3)"
+        "Gesunder RSI (53.9)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "FETH",
@@ -4455,7 +4458,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "ETHA",
@@ -4508,7 +4511,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "XLF",
@@ -4563,7 +4566,7 @@
         "Faires KGV (16.2)",
         "Dividendenrendite: 1.40%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "SMH",
@@ -4617,7 +4620,7 @@
       "long_signals": [
         "Dividendenrendite: 20.00%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "XLB",
@@ -4672,7 +4675,7 @@
         "Faires KGV (24.2)",
         "Dividendenrendite: 1.61%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "CL=F",
@@ -4680,71 +4683,18 @@
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 94.6,
+      "price": 94.93,
       "currency": "USD",
       "total_score": 64,
       "short_score": 75,
       "long_score": 70,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.24,
-      "daily_return_pct": 1.69,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 71.68,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Positives MACD-Momentum",
-        "Am oberen Bollinger Band"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie"
-      ],
-      "last_updated": "2026-09-09 09:06:19"
-    },
-    {
-      "symbol": "BZ=F",
-      "name": "Brent Crude Oil Last Day Financ",
-      "region": "🛢️ Rohstoffe",
-      "sector": "Energie & Agrar",
-      "industry": "N/A",
-      "price": 100.0,
-      "currency": "USD",
-      "total_score": 64,
-      "short_score": 75,
-      "long_score": 70,
-      "breakout_score": 35,
+      "breakout_score": 20,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
-        "💥 Ausbruch über oberes Bollinger Band",
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+        "💥 Ausbruch über oberes Bollinger Band"
       ],
-      "vol_ratio": 0.43,
-      "daily_return_pct": 2.12,
+      "vol_ratio": 0.25,
+      "daily_return_pct": 2.04,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4753,7 +4703,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 68.64,
+      "rsi": 72.13,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -4779,60 +4729,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:19"
-    },
-    {
-      "symbol": "ZS=F",
-      "name": "Soybean Futures,Nov-2026",
-      "region": "🛢️ Rohstoffe",
-      "sector": "Energie & Agrar",
-      "industry": "N/A",
-      "price": 1317.75,
-      "currency": "USX",
-      "total_score": 64,
-      "short_score": 68,
-      "long_score": 90,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 1.29,
-      "daily_return_pct": 1.17,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 81.11,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "RSI Stark Überkauft (81.1)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Hoch"
-      ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "ZC=F",
@@ -4840,7 +4737,7 @@
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 532.75,
+      "price": 533.0,
       "currency": "USX",
       "total_score": 64,
       "short_score": 68,
@@ -4849,7 +4746,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.35,
-      "daily_return_pct": 4.26,
+      "daily_return_pct": 4.31,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -4858,7 +4755,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 83.85,
+      "rsi": 83.9,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -4885,7 +4782,115 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Hoch"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
+    },
+    {
+      "symbol": "BZ=F",
+      "name": "Brent Crude Oil Last Day Financ",
+      "region": "🛢️ Rohstoffe",
+      "sector": "Energie & Agrar",
+      "industry": "N/A",
+      "price": 100.38,
+      "currency": "USD",
+      "total_score": 64,
+      "short_score": 75,
+      "long_score": 70,
+      "breakout_score": 35,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "💥 Ausbruch über oberes Bollinger Band",
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.45,
+      "daily_return_pct": 2.51,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
+      "rsi": 69.16,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Positives MACD-Momentum",
+        "Am oberen Bollinger Band"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie"
+      ],
+      "last_updated": "2026-09-09 09:11:20"
+    },
+    {
+      "symbol": "ZS=F",
+      "name": "Soybean Futures,Nov-2026",
+      "region": "🛢️ Rohstoffe",
+      "sector": "Energie & Agrar",
+      "industry": "N/A",
+      "price": 1318.0,
+      "currency": "USX",
+      "total_score": 64,
+      "short_score": 68,
+      "long_score": 90,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 1.3,
+      "daily_return_pct": 1.19,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
+      "rsi": 81.14,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "RSI Stark Überkauft (81.1)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Hoch"
+      ],
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "OKTA",
@@ -4940,7 +4945,7 @@
         "Konservative Verschuldung (0.76)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "IOT",
@@ -4999,7 +5004,7 @@
         "Analysten-Kurspotenzial +30.7%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "KWS.DE",
@@ -5053,7 +5058,62 @@
         "Konservative Verschuldung (0.30)",
         "Dividendenrendite: 1.59%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
+    },
+    {
+      "symbol": "AIXA.DE",
+      "name": "AIXTRON SE                    N",
+      "region": "Deutschland",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "price": 37.61,
+      "currency": "EUR",
+      "total_score": 64,
+      "short_score": 78,
+      "long_score": 70,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.08,
+      "daily_return_pct": -1.93,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "✅ Solides Langfrist-Investment",
+      "rsi": 51.67,
+      "pe": 72.32693,
+      "forward_pe": 27.7319,
+      "peg": 2.08,
+      "roe": 6.3149999999999995,
+      "fcf_yield": 6.006201467136444,
+      "dividend_yield": 38.0,
+      "debt_to_equity": 0.35430999999999996,
+      "upside_pct": 30.12496676415846,
+      "target_mean_price": 48.94,
+      "analyst_rec": null,
+      "analyst_count": 15,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (51.7)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Hohes KGV (72.3)",
+        "Konservative Verschuldung (0.35)",
+        "Starke Free-Cashflow-Rendite (6.0%)",
+        "Analysten-Kurspotenzial +30.1%",
+        "Dividendenrendite: 38.00%"
+      ],
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "SOL-USD",
@@ -5061,7 +5121,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 104.7,
+      "price": 104.49,
       "currency": "USD",
       "total_score": 63,
       "short_score": 77,
@@ -5070,7 +5130,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.62,
-      "daily_return_pct": 1.33,
+      "daily_return_pct": 1.13,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -5079,7 +5139,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 53.46,
+      "rsi": 53.19,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -5099,14 +5159,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (53.5)"
+        "Gesunder RSI (53.2)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "XRP-USD",
@@ -5114,7 +5174,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 1.4357,
+      "price": 1.4325,
       "currency": "USD",
       "total_score": 63,
       "short_score": 77,
@@ -5123,7 +5183,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.68,
-      "daily_return_pct": 1.37,
+      "daily_return_pct": 1.15,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -5132,7 +5192,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 51.51,
+      "rsi": 51.15,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -5152,14 +5212,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (51.5)"
+        "Gesunder RSI (51.2)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief",
         "Hohe Marktliquidität"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "ICP-USD",
@@ -5167,7 +5227,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2.882,
+      "price": 2.8756,
       "currency": "USD",
       "total_score": 63,
       "short_score": 83,
@@ -5176,7 +5236,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.17,
-      "daily_return_pct": -2.02,
+      "daily_return_pct": -2.23,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -5185,7 +5245,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 69.39,
+      "rsi": 69.03,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -5211,59 +5271,7 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
-    },
-    {
-      "symbol": "WIF-USD",
-      "name": "dogwifhat USD",
-      "region": "🪙 Krypto",
-      "sector": "Kryptowährung",
-      "industry": "N/A",
-      "price": 0.21793,
-      "currency": "USD",
-      "total_score": 63,
-      "short_score": 77,
-      "long_score": 55,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.74,
-      "daily_return_pct": 2.67,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 52.87,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (52.9)"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Tief"
-      ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "AR-USD",
@@ -5271,7 +5279,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2.8515582,
+      "price": 2.8528202,
       "currency": "USD",
       "total_score": 63,
       "short_score": 83,
@@ -5280,7 +5288,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.77,
-      "daily_return_pct": -0.0,
+      "daily_return_pct": 0.04,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -5289,7 +5297,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 72.69,
+      "rsi": 72.72,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -5315,33 +5323,33 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
-      "symbol": "CRV-USD",
-      "name": "Curve DAO Token USD",
+      "symbol": "WIF-USD",
+      "name": "dogwifhat USD",
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.3648,
+      "price": 0.21649,
       "currency": "USD",
       "total_score": 63,
-      "short_score": 70,
-      "long_score": 70,
+      "short_score": 77,
+      "long_score": 55,
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.38,
-      "daily_return_pct": 0.48,
+      "vol_ratio": 0.74,
+      "daily_return_pct": 1.99,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
       "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
       "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
       "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "🚀 Starker Krypto-Makrotrend",
-      "rsi": 62.32,
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "⚖️ Neutraler Krypto-Trend",
+      "rsi": 52.17,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -5361,13 +5369,65 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "Gesunder RSI (62.3)",
+        "Gesunder RSI (52.2)"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:14"
+    },
+    {
+      "symbol": "CRV-USD",
+      "name": "Curve DAO Token USD",
+      "region": "🪙 Krypto",
+      "sector": "Kryptowährung",
+      "industry": "N/A",
+      "price": 0.363,
+      "currency": "USD",
+      "total_score": 63,
+      "short_score": 70,
+      "long_score": 70,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.38,
+      "daily_return_pct": -0.01,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "🚀 Starker Krypto-Makrotrend",
+      "rsi": 61.96,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (62.0)",
         "MACD Verkaufssignal (Bearish Cross)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "IBIT",
@@ -5419,7 +5479,7 @@
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "XLE",
@@ -5475,7 +5535,7 @@
         "Faires KGV (18.0)",
         "Dividendenrendite: 2.37%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "NVCR",
@@ -5532,7 +5592,7 @@
         "Konservative Verschuldung (0.69)",
         "Analysten-Kurspotenzial +61.1%"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "COIN",
@@ -5590,7 +5650,7 @@
         "Konservative Verschuldung (0.51)",
         "Starke Free-Cashflow-Rendite (5.7%)"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "TOST",
@@ -5643,7 +5703,7 @@
         "Attraktives PEG-Ratio (0.23)",
         "Exzellente Eigenkapitalrendite (25.2%)"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "INH.DE",
@@ -5697,7 +5757,7 @@
         "Solide Eigenkapitalrendite (14.2%)",
         "Dividendenrendite: 3.42%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "MLP.DE",
@@ -5749,64 +5809,7 @@
         "Günstiges KGV (14.2)",
         "Dividendenrendite: 3.97%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
-    },
-    {
-      "symbol": "SGL.DE",
-      "name": "SGL CARBON SE                 I",
-      "region": "Deutschland",
-      "sector": "Basic Materials",
-      "industry": "Chemicals",
-      "price": 4.205,
-      "currency": "EUR",
-      "total_score": 63,
-      "short_score": 88,
-      "long_score": 45,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.79,
-      "daily_return_pct": -1.29,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 55.71,
-      "pe": null,
-      "forward_pe": 15.094949,
-      "peg": 1.51,
-      "roe": -7.093000000000001,
-      "fcf_yield": 12.214347641806242,
-      "dividend_yield": null,
-      "debt_to_equity": 0.52598,
-      "upside_pct": 9.69084423305588,
-      "target_mean_price": 4.6125,
-      "analyst_rec": null,
-      "analyst_count": 4,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (55.7)",
-        "Positives MACD-Momentum",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Niedrige Eigenkapitalrendite (-7.1%)",
-        "Unprofitabel / Verlust",
-        "Konservative Verschuldung (0.53)",
-        "Starke Free-Cashflow-Rendite (12.2%)"
-      ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "WUW.DE",
@@ -5861,118 +5864,7 @@
         "Analysten-Kurspotenzial +38.1%",
         "Dividendenrendite: 4.48%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
-    },
-    {
-      "symbol": "WCH.DE",
-      "name": "Wacker Chemie AG              I",
-      "region": "Deutschland",
-      "sector": "Basic Materials",
-      "industry": "Specialty Chemicals",
-      "price": 92.6,
-      "currency": "EUR",
-      "total_score": 63,
-      "short_score": 93,
-      "long_score": 37,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.06,
-      "daily_return_pct": 0.54,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Stark Bullish / Kauf-Setup",
-      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
-      "rsi": 51.11,
-      "pe": null,
-      "forward_pe": 36.86012,
-      "peg": 5.17,
-      "roe": -9.616999,
-      "fcf_yield": 10.633005041109197,
-      "dividend_yield": 2.67,
-      "debt_to_equity": 0.54966,
-      "upside_pct": -2.0338336933045364,
-      "target_mean_price": 90.71667,
-      "analyst_rec": 2.91667,
-      "analyst_count": 12,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (51.1)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Erhöhtes PEG-Ratio (5.17)",
-        "Niedrige Eigenkapitalrendite (-9.6%)",
-        "Unprofitabel / Verlust",
-        "Konservative Verschuldung (0.55)",
-        "Starke Free-Cashflow-Rendite (10.6%)",
-        "Dividendenrendite: 2.67%"
-      ],
-      "last_updated": "2026-09-09 09:06:28"
-    },
-    {
-      "symbol": "ETHW",
-      "name": "Bitwise Ethereum ETF",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 17.74,
-      "currency": "USD",
-      "total_score": 62,
-      "short_score": 68,
-      "long_score": 70,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.69,
-      "daily_return_pct": 1.03,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 77.61,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 0.0,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Über 200-Tage-Linie",
-        "RSI Stark Überkauft (77.6)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Über 200-Tage-Trendlinie"
-      ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "QQQ",
@@ -6025,7 +5917,59 @@
       "long_signals": [
         "Dividendenrendite: 42.00%"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
+    },
+    {
+      "symbol": "ETHW",
+      "name": "Bitwise Ethereum ETF",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 17.74,
+      "currency": "USD",
+      "total_score": 62,
+      "short_score": 68,
+      "long_score": 70,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.69,
+      "daily_return_pct": 1.03,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
+      "rsi": 77.61,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 0.0,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "RSI Stark Überkauft (77.6)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Über 200-Tage-Trendlinie"
+      ],
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "URA",
@@ -6081,61 +6025,7 @@
       "long_signals": [
         "Dividendenrendite: 4.57%"
       ],
-      "last_updated": "2026-09-09 09:06:18"
-    },
-    {
-      "symbol": "HYG",
-      "name": "iShares iBoxx $ High Yield Corp",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 79.12,
-      "currency": "USD",
-      "total_score": 62,
-      "short_score": 72,
-      "long_score": 65,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.91,
-      "daily_return_pct": -0.05,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "✅ Solides Langfrist-Investment",
-      "rsi": 50.83,
-      "pe": 10.87909,
-      "forward_pe": 1318.6667,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 5.88,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Über 200-Tage-Linie",
-        "Gesunder RSI (50.8)",
-        "Am unteren Bollinger Band"
-      ],
-      "long_signals": [
-        "Günstiges KGV (10.9)",
-        "Dividendenrendite: 5.88%"
-      ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "BMRN",
@@ -6190,7 +6080,7 @@
         "Analysten-Kurspotenzial +41.5%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "CRWD",
@@ -6247,7 +6137,7 @@
         "Konservative Verschuldung (0.16)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "MSTR",
@@ -6306,7 +6196,7 @@
         "Analysten-Kurspotenzial +65.7%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "TEM",
@@ -6363,7 +6253,7 @@
         "Hohe Verschuldung (3.25)",
         "Negativer Free Cashflow"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "RDDT",
@@ -6421,7 +6311,120 @@
         "Konservative Verschuldung (0.64)",
         "Analysten-Kurspotenzial +42.7%"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
+    },
+    {
+      "symbol": "BILL",
+      "name": "BILL Holdings, Inc.",
+      "region": "USA",
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "price": 47.6,
+      "currency": "USD",
+      "total_score": 62,
+      "short_score": 52,
+      "long_score": 69,
+      "breakout_score": 40,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🪤 Hohe Leerverkaufsquote (16.9% Short Float)",
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.79,
+      "daily_return_pct": -3.17,
+      "short_float": 16.93,
+      "short_ratio": 4.36,
+      "squeeze_score": 50.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "✅ Solides Langfrist-Investment",
+      "rsi": 44.69,
+      "pe": null,
+      "forward_pe": 10.947083,
+      "peg": 0.48,
+      "roe": -0.302,
+      "fcf_yield": 5.489708742070586,
+      "dividend_yield": null,
+      "debt_to_equity": 0.5374300000000001,
+      "upside_pct": 20.378151260504193,
+      "target_mean_price": 57.3,
+      "analyst_rec": 1.95455,
+      "analyst_count": 20,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie"
+      ],
+      "long_signals": [
+        "Attraktives PEG-Ratio (0.48)",
+        "Niedrige Eigenkapitalrendite (-0.3%)",
+        "Unprofitabel / Verlust",
+        "Konservative Verschuldung (0.54)",
+        "Starke Free-Cashflow-Rendite (5.5%)",
+        "Analysten-Kurspotenzial +20.4%"
+      ],
+      "last_updated": "2026-09-09 09:11:24"
+    },
+    {
+      "symbol": "SGL.DE",
+      "name": "SGL CARBON SE                 I",
+      "region": "Deutschland",
+      "sector": "Basic Materials",
+      "industry": "Chemicals",
+      "price": 4.22,
+      "currency": "EUR",
+      "total_score": 62,
+      "short_score": 88,
+      "long_score": 35,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.88,
+      "daily_return_pct": -0.94,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
+      "rsi": 56.93,
+      "pe": null,
+      "forward_pe": 15.148795,
+      "peg": 1.51,
+      "roe": -7.093000000000001,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": 0.52598,
+      "upside_pct": 9.30094786729858,
+      "target_mean_price": 4.6125,
+      "analyst_rec": null,
+      "analyst_count": 4,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (56.9)",
+        "Positives MACD-Momentum",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Niedrige Eigenkapitalrendite (-7.1%)",
+        "Unprofitabel / Verlust",
+        "Konservative Verschuldung (0.53)"
+      ],
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "TTK.DE",
@@ -6459,7 +6462,7 @@
       "debt_to_equity": 0.41239,
       "upside_pct": 35.566188197767154,
       "target_mean_price": 4.25,
-      "analyst_rec": 2.0,
+      "analyst_rec": null,
       "analyst_count": 2,
       "forum_mentions": 0,
       "forum_sentiment": null,
@@ -6480,7 +6483,65 @@
         "Analysten-Kurspotenzial +35.6%",
         "Dividendenrendite: 22.14%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:28"
+    },
+    {
+      "symbol": "WCH.DE",
+      "name": "Wacker Chemie AG              I",
+      "region": "Deutschland",
+      "sector": "Basic Materials",
+      "industry": "Specialty Chemicals",
+      "price": 92.75,
+      "currency": "EUR",
+      "total_score": 62,
+      "short_score": 93,
+      "long_score": 27,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.06,
+      "daily_return_pct": 0.71,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "❌ Fundamental ungeeignet für Buy & Hold",
+      "rsi": 51.52,
+      "pe": null,
+      "forward_pe": 36.91983,
+      "peg": 5.17,
+      "roe": -9.616999,
+      "fcf_yield": null,
+      "dividend_yield": 2.67,
+      "debt_to_equity": 0.54966,
+      "upside_pct": -2.1922695417789826,
+      "target_mean_price": 90.71667,
+      "analyst_rec": 2.91667,
+      "analyst_count": 12,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (51.5)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Erhöhtes PEG-Ratio (5.17)",
+        "Niedrige Eigenkapitalrendite (-9.6%)",
+        "Unprofitabel / Verlust",
+        "Konservative Verschuldung (0.55)",
+        "Dividendenrendite: 2.67%"
+      ],
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "AOF.DE",
@@ -6535,7 +6596,7 @@
         "Analysten-Konsens: KAUFEN",
         "Dividendenrendite: 2.35%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "VOO",
@@ -6588,7 +6649,7 @@
       "long_signals": [
         "Dividendenrendite: 1.04%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "ARKK",
@@ -6643,7 +6704,7 @@
       "long_signals": [
         "Hohes KGV (55.6)"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "CC=F",
@@ -6651,7 +6712,7 @@
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 5885.0,
+      "price": 5838.0,
       "currency": "USD",
       "total_score": 61,
       "short_score": 62,
@@ -6659,8 +6720,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.03,
-      "daily_return_pct": -0.02,
+      "vol_ratio": 0.1,
+      "daily_return_pct": -0.78,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -6669,7 +6730,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "🚀 Starker Rohstoff/Edelmetall-Makrotrend",
-      "rsi": 46.12,
+      "rsi": 45.15,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -6688,12 +6749,12 @@
       "recent_insider_buys": 0,
       "short_signals": [
         "Über 200-Tage-Linie",
-        "Gesunder RSI (46.1)"
+        "Gesunder RSI (45.1)"
       ],
       "long_signals": [
         "Über 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "PACB",
@@ -6752,7 +6813,7 @@
         "Starke Free-Cashflow-Rendite (71.1%)",
         "Analysten-Kurspotenzial +73.6%"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "ALNY",
@@ -6808,7 +6869,7 @@
         "Analysten-Kurspotenzial +42.8%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "SNOW",
@@ -6863,7 +6924,7 @@
         "Analysten-Kurspotenzial +23.2%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "APP",
@@ -6896,7 +6957,7 @@
       "forward_pe": 14.87406,
       "peg": 0.69,
       "roe": 2.03686,
-      "fcf_yield": 3.045517503370499,
+      "fcf_yield": 3.033831935050788,
       "dividend_yield": null,
       "debt_to_equity": 1.1113,
       "upside_pct": 62.939360917919295,
@@ -6923,7 +6984,7 @@
         "Analysten-Kurspotenzial +62.9%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "ELF",
@@ -6980,7 +7041,7 @@
         "Konservative Verschuldung (0.80)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "SYM",
@@ -7041,7 +7102,61 @@
         "Hohe Verschuldung (2.28)",
         "Analysten-Kurspotenzial +47.6%"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:23"
+    },
+    {
+      "symbol": "MDB",
+      "name": "MongoDB, Inc.",
+      "region": "USA",
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "price": 356.0,
+      "currency": "USD",
+      "total_score": 61,
+      "short_score": 72,
+      "long_score": 48,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 1.26,
+      "daily_return_pct": -3.46,
+      "short_float": 3.6199997999999995,
+      "short_ratio": 1.91,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "⚖️ Fair bewertet / Halteposition",
+      "rsi": 32.97,
+      "pe": 508.57144,
+      "forward_pe": 45.842438,
+      "peg": 1.67,
+      "roe": 1.989,
+      "fcf_yield": 1.960469419900008,
+      "dividend_yield": null,
+      "debt_to_equity": 1.846,
+      "upside_pct": 27.730337078651697,
+      "target_mean_price": 454.72,
+      "analyst_rec": 1.63415,
+      "analyst_count": 37,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie",
+        "Am unteren Bollinger Band",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Hohes KGV (508.6)",
+        "Niedrige Eigenkapitalrendite (2.0%)",
+        "Analysten-Kurspotenzial +27.7%",
+        "Analysten-Konsens: KAUFEN"
+      ],
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "FTNT",
@@ -7095,117 +7210,7 @@
         "Hohe Nettomarge (28.2%)",
         "Konservative Verschuldung (0.36)"
       ],
-      "last_updated": "2026-09-09 09:06:23"
-    },
-    {
-      "symbol": "MDB",
-      "name": "MongoDB, Inc.",
-      "region": "USA",
-      "sector": "Technology",
-      "industry": "Software - Infrastructure",
-      "price": 356.0,
-      "currency": "USD",
-      "total_score": 61,
-      "short_score": 72,
-      "long_score": 48,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 1.26,
-      "daily_return_pct": -3.46,
-      "short_float": 3.6199997999999995,
-      "short_ratio": 1.91,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 32.97,
-      "pe": 508.57144,
-      "forward_pe": 45.842438,
-      "peg": 1.67,
-      "roe": 1.989,
-      "fcf_yield": 1.9574415544915582,
-      "dividend_yield": null,
-      "debt_to_equity": 1.846,
-      "upside_pct": 27.730337078651697,
-      "target_mean_price": 454.72,
-      "analyst_rec": 1.63415,
-      "analyst_count": 37,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Über 200-Tage-Linie",
-        "Am unteren Bollinger Band",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Hohes KGV (508.6)",
-        "Niedrige Eigenkapitalrendite (2.0%)",
-        "Analysten-Kurspotenzial +27.7%",
-        "Analysten-Konsens: KAUFEN"
-      ],
-      "last_updated": "2026-09-09 09:06:23"
-    },
-    {
-      "symbol": "BILL",
-      "name": "BILL Holdings, Inc.",
-      "region": "USA",
-      "sector": "Technology",
-      "industry": "Software - Application",
-      "price": 47.6,
-      "currency": "USD",
-      "total_score": 61,
-      "short_score": 52,
-      "long_score": 59,
-      "breakout_score": 40,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🪤 Hohe Leerverkaufsquote (16.9% Short Float)",
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 0.79,
-      "daily_return_pct": -3.17,
-      "short_float": 16.93,
-      "short_ratio": 4.36,
-      "squeeze_score": 50.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Neutral / Konsolidierung",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 44.69,
-      "pe": null,
-      "forward_pe": 10.947083,
-      "peg": 0.48,
-      "roe": -0.302,
-      "fcf_yield": 4.700402621319369,
-      "dividend_yield": null,
-      "debt_to_equity": 0.5374300000000001,
-      "upside_pct": 20.378151260504193,
-      "target_mean_price": 57.3,
-      "analyst_rec": 1.95455,
-      "analyst_count": 20,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Über 200-Tage-Linie"
-      ],
-      "long_signals": [
-        "Attraktives PEG-Ratio (0.48)",
-        "Niedrige Eigenkapitalrendite (-0.3%)",
-        "Unprofitabel / Verlust",
-        "Konservative Verschuldung (0.54)",
-        "Analysten-Kurspotenzial +20.4%"
-      ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "KVYO",
@@ -7238,7 +7243,7 @@
       "forward_pe": 16.914537,
       "peg": null,
       "roe": 0.658,
-      "fcf_yield": 5.5880284921481795,
+      "fcf_yield": 5.316312274815471,
       "dividend_yield": null,
       "debt_to_equity": 0.11781000000000001,
       "upside_pct": 48.965902738960295,
@@ -7260,11 +7265,11 @@
         "Hohes KGV (596.3)",
         "Niedrige Eigenkapitalrendite (0.7%)",
         "Konservative Verschuldung (0.12)",
-        "Starke Free-Cashflow-Rendite (5.6%)",
+        "Starke Free-Cashflow-Rendite (5.3%)",
         "Analysten-Kurspotenzial +49.0%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "ENVX",
@@ -7324,68 +7329,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +227.1%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
-    },
-    {
-      "symbol": "RUN",
-      "name": "Sunrun Inc.",
-      "region": "USA",
-      "sector": "Technology",
-      "industry": "Solar",
-      "price": 9.22,
-      "currency": "USD",
-      "total_score": 61,
-      "short_score": 53,
-      "long_score": 39,
-      "breakout_score": 40,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🪤 Hohe Leerverkaufsquote (32.3% Short Float)",
-        "⏳ Hohe Eindeckungsdauer (Days to Cover: 6.8 Tage)"
-      ],
-      "vol_ratio": 1.0,
-      "daily_return_pct": 3.71,
-      "short_float": 32.34,
-      "short_ratio": 6.82,
-      "squeeze_score": 75.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Neutral / Konsolidierung",
-      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
-      "rsi": 49.43,
-      "pe": 6.272109,
-      "forward_pe": 9.085445,
-      "peg": 3.07,
-      "roe": -19.856001,
-      "fcf_yield": -88.76572109074496,
-      "dividend_yield": null,
-      "debt_to_equity": 2.92511,
-      "upside_pct": 73.25032537960952,
-      "target_mean_price": 15.97368,
-      "analyst_rec": 2.0,
-      "analyst_count": 19,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Abwärtstrend",
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (49.4)",
-        "Positives MACD-Momentum",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Günstiges KGV (6.3)",
-        "Erhöhtes PEG-Ratio (3.07)",
-        "Niedrige Eigenkapitalrendite (-19.9%)",
-        "Hohe Verschuldung (2.93)",
-        "Negativer Free Cashflow",
-        "Analysten-Kurspotenzial +73.3%"
-      ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "SHLS",
@@ -7443,7 +7387,68 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +52.5%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:26"
+    },
+    {
+      "symbol": "RUN",
+      "name": "Sunrun Inc.",
+      "region": "USA",
+      "sector": "Technology",
+      "industry": "Solar",
+      "price": 9.22,
+      "currency": "USD",
+      "total_score": 61,
+      "short_score": 53,
+      "long_score": 39,
+      "breakout_score": 40,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🪤 Hohe Leerverkaufsquote (32.3% Short Float)",
+        "⏳ Hohe Eindeckungsdauer (Days to Cover: 6.8 Tage)"
+      ],
+      "vol_ratio": 1.0,
+      "daily_return_pct": 3.71,
+      "short_float": 32.34,
+      "short_ratio": 6.82,
+      "squeeze_score": 75.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
+      "rsi": 49.43,
+      "pe": 6.272109,
+      "forward_pe": 9.085445,
+      "peg": 3.07,
+      "roe": -19.856001,
+      "fcf_yield": -89.62070892842718,
+      "dividend_yield": null,
+      "debt_to_equity": 2.92511,
+      "upside_pct": 73.25032537960952,
+      "target_mean_price": 15.97368,
+      "analyst_rec": 2.0,
+      "analyst_count": 19,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Abwärtstrend",
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (49.4)",
+        "Positives MACD-Momentum",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Günstiges KGV (6.3)",
+        "Erhöhtes PEG-Ratio (3.07)",
+        "Niedrige Eigenkapitalrendite (-19.9%)",
+        "Hohe Verschuldung (2.93)",
+        "Negativer Free Cashflow",
+        "Analysten-Kurspotenzial +73.3%"
+      ],
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "HAG.DE",
@@ -7451,7 +7456,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Aerospace & Defense",
-      "price": 79.82,
+      "price": 79.9,
       "currency": "EUR",
       "total_score": 61,
       "short_score": 67,
@@ -7460,7 +7465,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.11,
-      "daily_return_pct": -2.06,
+      "daily_return_pct": -1.96,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -7469,15 +7474,15 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 19.4,
-      "pe": 76.75,
-      "forward_pe": 32.207043,
+      "rsi": 19.48,
+      "pe": 76.82693,
+      "forward_pe": 32.239323,
       "peg": 1.01,
       "roe": 12.931999999999999,
-      "fcf_yield": 3.297462495008683,
+      "fcf_yield": 3.2941610655294773,
       "dividend_yield": 69.0,
       "debt_to_equity": 1.72802,
-      "upside_pct": 16.05278125783013,
+      "upside_pct": 15.93658322903629,
       "target_mean_price": 92.63333,
       "analyst_rec": 2.26667,
       "analyst_count": 15,
@@ -7488,7 +7493,7 @@
       "recent_insider_buys": 0,
       "short_signals": [
         "Über 200-Tage-Linie",
-        "RSI Überverkauft (19.4)"
+        "RSI Überverkauft (19.5)"
       ],
       "long_signals": [
         "Hohes KGV (76.8)",
@@ -7496,65 +7501,7 @@
         "Solide Eigenkapitalrendite (12.9%)",
         "Dividendenrendite: 69.00%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
-    },
-    {
-      "symbol": "EUZ.DE",
-      "name": "Eckert & Ziegler SE           I",
-      "region": "Deutschland",
-      "sector": "Healthcare",
-      "industry": "Medical Devices",
-      "price": 12.61,
-      "currency": "EUR",
-      "total_score": 61,
-      "short_score": 42,
-      "long_score": 100,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.05,
-      "daily_return_pct": 0.0,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🔵 LANGFRISTIGER QUALITY-BUY (Tranchen-Einstieg)",
-      "action_desc": "Hervorragende fundamentale Qualität und krisenfeste Bilanz bei temporärem Rücksetzer. Ideal für Buy-and-Hold.",
-      "color": "blue",
-      "short_status": "?? Vorsicht / Schwächetendenz",
-      "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
-      "rsi": 29.59,
-      "pe": 15.7625,
-      "forward_pe": 14.620459,
-      "peg": 0.91,
-      "roe": 20.141001,
-      "fcf_yield": 1.5784322780349291,
-      "dividend_yield": 1.75,
-      "debt_to_equity": 0.15164,
-      "upside_pct": 71.29262490087235,
-      "target_mean_price": 21.6,
-      "analyst_rec": 1.0,
-      "analyst_count": 3,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Abwärtstrend",
-        "Unter 200-Tage-Linie",
-        "RSI Überverkauft (29.6)",
-        "Am unteren Bollinger Band"
-      ],
-      "long_signals": [
-        "Faires KGV (15.8)",
-        "Attraktives PEG-Ratio (0.91)",
-        "Exzellente Eigenkapitalrendite (20.1%)",
-        "Konservative Verschuldung (0.15)",
-        "Analysten-Kurspotenzial +71.3%",
-        "Analysten-Konsens: KAUFEN",
-        "Dividendenrendite: 1.75%"
-      ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "LPK.DE",
@@ -7611,7 +7558,7 @@
         "Starke Free-Cashflow-Rendite (6.2%)",
         "Analysten-Kurspotenzial +69.8%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "VOS.DE",
@@ -7619,7 +7566,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Railroads",
-      "price": 61.15,
+      "price": 61.05,
       "currency": "EUR",
       "total_score": 61,
       "short_score": 58,
@@ -7628,7 +7575,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.3,
-      "daily_return_pct": -0.81,
+      "daily_return_pct": -0.97,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -7637,15 +7584,15 @@
       "color": "gray",
       "short_status": "?? Neutral / Konsolidierung",
       "long_status": "✅ Solides Langfrist-Investment",
-      "rsi": 63.41,
-      "pe": 33.233696,
-      "forward_pe": 14.677997,
+      "rsi": 62.95,
+      "pe": 33.179348,
+      "forward_pe": 14.653993,
       "peg": 1.98,
       "roe": 6.9239999999999995,
-      "fcf_yield": 5.381079164469601,
+      "fcf_yield": 5.38989325469649,
       "dividend_yield": 1.91,
       "debt_to_equity": 0.83249,
-      "upside_pct": 28.95689288634506,
+      "upside_pct": 29.168124488124498,
       "target_mean_price": 78.85714,
       "analyst_rec": null,
       "analyst_count": 7,
@@ -7656,15 +7603,15 @@
       "recent_insider_buys": 0,
       "short_signals": [
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (63.4)",
+        "Gesunder RSI (62.9)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Starke Free-Cashflow-Rendite (5.4%)",
-        "Analysten-Kurspotenzial +29.0%",
+        "Analysten-Kurspotenzial +29.2%",
         "Dividendenrendite: 1.91%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "EVK.DE",
@@ -7720,7 +7667,61 @@
         "Starke Free-Cashflow-Rendite (12.2%)",
         "Dividendenrendite: 5.47%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
+    },
+    {
+      "symbol": "NEM.DE",
+      "name": "Nemetschek SE                 I",
+      "region": "Deutschland",
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "price": 61.85,
+      "currency": "EUR",
+      "total_score": 61,
+      "short_score": 52,
+      "long_score": 87,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.09,
+      "daily_return_pct": 0.41,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
+      "rsi": 48.68,
+      "pe": 29.037556,
+      "forward_pe": 21.252396,
+      "peg": 1.26,
+      "roe": 26.342,
+      "fcf_yield": 4.536352492046751,
+      "dividend_yield": 1.06,
+      "debt_to_equity": 0.52065,
+      "upside_pct": 39.16496362166532,
+      "target_mean_price": 86.07353,
+      "analyst_rec": 1.83333,
+      "analyst_count": 17,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (48.7)",
+        "Social Sentiment Sehr Bullish (89%)"
+      ],
+      "long_signals": [
+        "Exzellente Eigenkapitalrendite (26.3%)",
+        "Konservative Verschuldung (0.52)",
+        "Analysten-Kurspotenzial +39.2%",
+        "Dividendenrendite: 1.06%"
+      ],
+      "last_updated": "2026-09-09 09:11:29"
     },
     {
       "symbol": "SPY",
@@ -7775,7 +7776,7 @@
         "Faires KGV (24.7)",
         "Dividendenrendite: 98.00%"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:16"
     },
     {
       "symbol": "DIA",
@@ -7828,7 +7829,7 @@
         "Faires KGV (21.4)",
         "Dividendenrendite: 1.38%"
       ],
-      "last_updated": "2026-09-09 09:06:15"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "XLP",
@@ -7881,7 +7882,7 @@
         "Faires KGV (24.9)",
         "Dividendenrendite: 2.59%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "TAN",
@@ -7934,7 +7935,7 @@
       "long_signals": [
         "Faires KGV (21.4)"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "ICLN",
@@ -7990,61 +7991,7 @@
       "long_signals": [
         "Unter 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:17"
-    },
-    {
-      "symbol": "SHY",
-      "name": "iShares 1-3 Year Treasury Bond ",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 81.66,
-      "currency": "USD",
-      "total_score": 60,
-      "short_score": 72,
-      "long_score": 38,
-      "breakout_score": 15,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
-      ],
-      "vol_ratio": 1.19,
-      "daily_return_pct": -0.04,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
-      "rsi": 40.28,
-      "pe": 3711.8184,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 3.63,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Über 200-Tage-Linie",
-        "Am unteren Bollinger Band",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Hohes KGV (3711.8)",
-        "Dividendenrendite: 3.63%"
-      ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "BNTX",
@@ -8078,8 +8025,8 @@
       "fcf_yield": -1.006957229845351,
       "dividend_yield": null,
       "debt_to_equity": 1.78,
-      "upside_pct": 20.92924184066492,
-      "target_mean_price": 119.30879,
+      "upside_pct": 20.915183458341787,
+      "target_mean_price": 119.29492,
       "analyst_rec": 1.6,
       "analyst_count": 20,
       "forum_mentions": 0,
@@ -8099,7 +8046,7 @@
         "Analysten-Kurspotenzial +20.9%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "RIVN",
@@ -8157,7 +8104,7 @@
         "Unprofitabel / Verlust",
         "Negativer Free Cashflow"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "ALAB",
@@ -8217,7 +8164,7 @@
         "Hohe Verschuldung (2.57)",
         "Analysten-Kurspotenzial +35.0%"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "SES",
@@ -8278,7 +8225,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +347.8%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "SEDG",
@@ -8338,7 +8285,7 @@
         "Unprofitabel / Verlust",
         "Starke Free-Cashflow-Rendite (5.1%)"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "MVV1.DE",
@@ -8394,7 +8341,7 @@
         "Negativer Free Cashflow",
         "Dividendenrendite: 4.29%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "XLV",
@@ -8446,59 +8393,7 @@
       "long_signals": [
         "Dividendenrendite: 1.49%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
-    },
-    {
-      "symbol": "XLU",
-      "name": "State Street Utilities Select S",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 43.45,
-      "currency": "USD",
-      "total_score": 59,
-      "short_score": 58,
-      "long_score": 58,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.99,
-      "daily_return_pct": 0.86,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Neutral / Konsolidierung",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 43.65,
-      "pe": 19.564354,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 2.83,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Unter 200-Tage-Linie",
-        "Positives MACD-Momentum",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Faires KGV (19.6)",
-        "Dividendenrendite: 2.83%"
-      ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "XLI",
@@ -8550,7 +8445,59 @@
       "long_signals": [
         "Dividendenrendite: 1.18%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:17"
+    },
+    {
+      "symbol": "XLU",
+      "name": "State Street Utilities Select S",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 43.45,
+      "currency": "USD",
+      "total_score": 59,
+      "short_score": 58,
+      "long_score": 58,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.99,
+      "daily_return_pct": 0.86,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "⚖️ Fair bewertet / Halteposition",
+      "rsi": 43.65,
+      "pe": 19.564354,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 2.83,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Unter 200-Tage-Linie",
+        "Positives MACD-Momentum",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Faires KGV (19.6)",
+        "Dividendenrendite: 2.83%"
+      ],
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "ARKQ",
@@ -8602,7 +8549,7 @@
       "long_signals": [
         "Dividendenrendite: 25.00%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "GC=F",
@@ -8610,7 +8557,7 @@
       "region": "🥇 Edelmetalle",
       "sector": "Edelmetall / Rohstoff",
       "industry": "N/A",
-      "price": 4447.4,
+      "price": 4444.9,
       "currency": "USD",
       "total_score": 59,
       "short_score": 67,
@@ -8618,10 +8565,10 @@
       "breakout_score": 35,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [
-        "🚨 Extremer Volumen-Schock (14.5x)"
+        "🚨 Extremer Volumen-Schock (14.6x)"
       ],
-      "vol_ratio": 14.54,
-      "daily_return_pct": 1.22,
+      "vol_ratio": 14.56,
+      "daily_return_pct": 1.16,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -8630,7 +8577,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
-      "rsi": 47.24,
+      "rsi": 47.07,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -8650,13 +8597,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (47.2)",
-        "Hohes Kaufvolumen (14.5x)"
+        "Gesunder RSI (47.1)",
+        "Hohes Kaufvolumen (14.6x)"
       ],
       "long_signals": [
         "Unter 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "SI=F",
@@ -8664,7 +8611,7 @@
       "region": "🥇 Edelmetalle",
       "sector": "Edelmetall / Rohstoff",
       "industry": "N/A",
-      "price": 67.325,
+      "price": 67.27,
       "currency": "USD",
       "total_score": 59,
       "short_score": 67,
@@ -8675,8 +8622,8 @@
         "🚨 Extremer Volumen-Schock (4.6x)",
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
-      "vol_ratio": 4.61,
-      "daily_return_pct": 1.55,
+      "vol_ratio": 4.63,
+      "daily_return_pct": 1.47,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -8685,7 +8632,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
-      "rsi": 54.91,
+      "rsi": 54.75,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -8705,13 +8652,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (54.9)",
+        "Gesunder RSI (54.8)",
         "Hohes Kaufvolumen (4.6x)"
       ],
       "long_signals": [
         "Unter 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "PL=F",
@@ -8765,7 +8712,7 @@
       "long_signals": [
         "Unter 200-Tage-Trendlinie"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "PA=F",
@@ -8773,7 +8720,7 @@
       "region": "🥇 Edelmetalle",
       "sector": "Edelmetall / Rohstoff",
       "industry": "N/A",
-      "price": 1370.5,
+      "price": 1369.5,
       "currency": "USD",
       "total_score": 59,
       "short_score": 83,
@@ -8783,8 +8730,8 @@
       "breakout_triggers": [
         "🚨 Extremer Volumen-Schock (6.1x)"
       ],
-      "vol_ratio": 6.1,
-      "daily_return_pct": 1.1,
+      "vol_ratio": 6.11,
+      "daily_return_pct": 1.03,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -8793,7 +8740,7 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
-      "rsi": 54.06,
+      "rsi": 53.96,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -8813,7 +8760,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (54.1)",
+        "Gesunder RSI (54.0)",
         "Positives MACD-Momentum",
         "Hohes Kaufvolumen (6.1x)"
       ],
@@ -8821,7 +8768,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "MRNA",
@@ -8879,7 +8826,7 @@
         "Konservative Verschuldung (0.19)",
         "Kurs über Analystenziel (-17.0%)"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "PLTR",
@@ -8934,7 +8881,7 @@
         "Hohe Nettomarge (49.0%)",
         "Hohe Verschuldung (2.14)"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "DDOG",
@@ -8990,7 +8937,7 @@
         "Analysten-Kurspotenzial +35.7%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "LUNR",
@@ -9049,7 +8996,7 @@
         "Analysten-Kurspotenzial +88.1%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "LHA.DE",
@@ -9057,7 +9004,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Airlines",
-      "price": 7.718,
+      "price": 7.72,
       "currency": "EUR",
       "total_score": 59,
       "short_score": 43,
@@ -9068,7 +9015,7 @@
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
       "vol_ratio": 0.1,
-      "daily_return_pct": -1.13,
+      "daily_return_pct": -1.1,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -9077,15 +9024,15 @@
       "color": "gray",
       "short_status": "?? Vorsicht / Schwächetendenz",
       "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
-      "rsi": 45.5,
-      "pe": 13.782143,
-      "forward_pe": 5.9049907,
+      "rsi": 45.56,
+      "pe": 13.785714,
+      "forward_pe": 5.906521,
       "peg": 0.57,
       "roe": 6.2010000000000005,
-      "fcf_yield": -38.04676709905641,
+      "fcf_yield": -38.03587266900699,
       "dividend_yield": 4.23,
       "debt_to_equity": 1.21939,
-      "upside_pct": 25.140321326768582,
+      "upside_pct": 25.107901554404144,
       "target_mean_price": 9.65833,
       "analyst_rec": 2.94444,
       "analyst_count": 18,
@@ -9097,7 +9044,7 @@
       "short_signals": [
         "Abwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (45.5)",
+        "Gesunder RSI (45.6)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
@@ -9107,7 +9054,7 @@
         "Analysten-Kurspotenzial +25.1%",
         "Dividendenrendite: 4.23%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "TKA.DE",
@@ -9115,7 +9062,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Conglomerates",
-      "price": 15.475,
+      "price": 15.495,
       "currency": "EUR",
       "total_score": 59,
       "short_score": 83,
@@ -9124,7 +9071,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.09,
-      "daily_return_pct": -0.61,
+      "daily_return_pct": -0.48,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -9133,15 +9080,15 @@
       "color": "gray",
       "short_status": "?? Stark Bullish / Kauf-Setup",
       "long_status": "❌ Fundamental ungeeignet für Buy & Hold",
-      "rsi": 74.39,
-      "pe": 33.641304,
-      "forward_pe": 12.2327175,
+      "rsi": 74.68,
+      "pe": 33.68478,
+      "forward_pe": 12.248528,
       "peg": 119.85,
       "roe": 3.2980002,
-      "fcf_yield": -9.362986478688258,
+      "fcf_yield": -9.350901131289351,
       "dividend_yield": 96.0,
       "debt_to_equity": 7.098,
-      "upside_pct": 5.815831987075931,
+      "upside_pct": 5.679251371410138,
       "target_mean_price": 16.375,
       "analyst_rec": 1.75,
       "analyst_count": 8,
@@ -9163,60 +9110,7 @@
         "Analysten-Konsens: KAUFEN",
         "Dividendenrendite: 96.00%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
-    },
-    {
-      "symbol": "RENDER-USD",
-      "name": "Render USD",
-      "region": "🪙 Krypto",
-      "sector": "Kryptowährung",
-      "industry": "N/A",
-      "price": 1.5341,
-      "currency": "USD",
-      "total_score": 58,
-      "short_score": 73,
-      "long_score": 20,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.95,
-      "daily_return_pct": 1.96,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 49.82,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (49.8)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Unter 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Tief"
-      ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "AVAX-USD",
@@ -9224,7 +9118,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 8.024,
+      "price": 8.003,
       "currency": "USD",
       "total_score": 58,
       "short_score": 73,
@@ -9233,7 +9127,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.13,
-      "daily_return_pct": 0.24,
+      "daily_return_pct": -0.03,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -9242,7 +9136,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 64.62,
+      "rsi": 64.21,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -9262,14 +9156,67 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (64.6)",
+        "Gesunder RSI (64.2)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:13"
+    },
+    {
+      "symbol": "RENDER-USD",
+      "name": "Render USD",
+      "region": "🪙 Krypto",
+      "sector": "Kryptowährung",
+      "industry": "N/A",
+      "price": 1.528,
+      "currency": "USD",
+      "total_score": 58,
+      "short_score": 73,
+      "long_score": 20,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.96,
+      "daily_return_pct": 1.55,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "📉 Schwacher Krypto-Zyklus",
+      "rsi": 49.22,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (49.2)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:13"
     },
     {
       "symbol": "FET-USD",
@@ -9277,7 +9224,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.17921,
+      "price": 0.17813,
       "currency": "USD",
       "total_score": 58,
       "short_score": 73,
@@ -9286,7 +9233,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.98,
-      "daily_return_pct": 0.04,
+      "daily_return_pct": -0.56,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -9295,7 +9242,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 57.31,
+      "rsi": 56.45,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -9315,14 +9262,14 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (57.3)",
+        "Gesunder RSI (56.5)",
         "Positives MACD-Momentum"
       ],
       "long_signals": [
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:12"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "DOT-USD",
@@ -9330,7 +9277,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 1.1878,
+      "price": 1.1859,
       "currency": "USD",
       "total_score": 58,
       "short_score": 50,
@@ -9342,7 +9289,7 @@
         "💥 Ausbruch über oberes Bollinger Band"
       ],
       "vol_ratio": 2.79,
-      "daily_return_pct": -4.84,
+      "daily_return_pct": -4.99,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -9351,7 +9298,7 @@
       "color": "gray",
       "short_status": "?? Neutral / Konsolidierung",
       "long_status": "⚖️ Neutraler Krypto-Trend",
-      "rsi": 77.34,
+      "rsi": 77.08,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -9371,7 +9318,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Über 200-Tage-Linie",
-        "RSI Stark Überkauft (77.3)",
+        "RSI Stark Überkauft (77.1)",
         "Positives MACD-Momentum",
         "Am oberen Bollinger Band",
         "Hohes Abgabevolumen (2.8x)"
@@ -9380,60 +9327,7 @@
         "Über 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
-    },
-    {
-      "symbol": "HBAR-USD",
-      "name": "Hedera USD",
-      "region": "🪙 Krypto",
-      "sector": "Kryptowährung",
-      "industry": "N/A",
-      "price": 0.07988,
-      "currency": "USD",
-      "total_score": 58,
-      "short_score": 73,
-      "long_score": 20,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.73,
-      "daily_return_pct": 1.03,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Moderat Bullish / Trendfolge",
-      "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 53.25,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Starker Aufwärtstrend",
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (53.2)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Unter 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Tief"
-      ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "STRK-USD",
@@ -9441,7 +9335,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.031165728,
+      "price": 0.031165548,
       "currency": "USD",
       "total_score": 58,
       "short_score": 73,
@@ -9488,7 +9382,60 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
+    },
+    {
+      "symbol": "HBAR-USD",
+      "name": "Hedera USD",
+      "region": "🪙 Krypto",
+      "sector": "Kryptowährung",
+      "industry": "N/A",
+      "price": 0.07958,
+      "currency": "USD",
+      "total_score": 58,
+      "short_score": 73,
+      "long_score": 20,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.73,
+      "daily_return_pct": 0.65,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "📉 Schwacher Krypto-Zyklus",
+      "rsi": 52.52,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (52.5)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "IWM",
@@ -9538,7 +9485,7 @@
         "Faires KGV (17.3)",
         "Dividendenrendite: 90.00%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "XLRE",
@@ -9590,7 +9537,115 @@
       "long_signals": [
         "Dividendenrendite: 3.19%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
+    },
+    {
+      "symbol": "SHY",
+      "name": "iShares 1-3 Year Treasury Bond ",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 81.66,
+      "currency": "USD",
+      "total_score": 58,
+      "short_score": 72,
+      "long_score": 20,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 1.19,
+      "daily_return_pct": -0.04,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
+      "rsi": 40.28,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 3.63,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie",
+        "Am unteren Bollinger Band",
+        "Social Sentiment Sehr Bullish (100%)"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:19"
+    },
+    {
+      "symbol": "HYG",
+      "name": "iShares iBoxx $ High Yield Corp",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 79.12,
+      "currency": "USD",
+      "total_score": 58,
+      "short_score": 72,
+      "long_score": 20,
+      "breakout_score": 15,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
+      ],
+      "vol_ratio": 0.91,
+      "daily_return_pct": -0.05,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Moderat Bullish / Trendfolge",
+      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
+      "rsi": 50.83,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 5.88,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (50.8)",
+        "Am unteren Bollinger Band"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "ARVN",
@@ -9621,7 +9676,7 @@
       "forward_pe": -2.9487126,
       "peg": null,
       "roe": 1.5879999999999999,
-      "fcf_yield": -15.916952275742169,
+      "fcf_yield": -16.130340525314494,
       "dividend_yield": null,
       "debt_to_equity": 1.423,
       "upside_pct": 53.39834801762115,
@@ -9643,7 +9698,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +53.4%"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "JOBY",
@@ -9700,7 +9755,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +56.1%"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "ACHR",
@@ -9756,7 +9811,7 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +82.0%"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "S",
@@ -9808,7 +9863,7 @@
         "Unprofitabel / Verlust",
         "Analysten-Kurspotenzial +24.3%"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "QUBT",
@@ -9868,7 +9923,7 @@
         "Analysten-Kurspotenzial +127.1%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "CHPT",
@@ -9930,7 +9985,7 @@
         "Starke Free-Cashflow-Rendite (13.0%)",
         "Kurs über Analystenziel (-22.1%)"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "ARRY",
@@ -9964,7 +10019,7 @@
       "forward_pe": 5.2309985,
       "peg": 0.48,
       "roe": -25.976,
-      "fcf_yield": 18.26286876853458,
+      "fcf_yield": 18.28439467540084,
       "dividend_yield": null,
       "debt_to_equity": 2.54273,
       "upside_pct": 89.7968085106383,
@@ -9990,7 +10045,7 @@
         "Starke Free-Cashflow-Rendite (18.3%)",
         "Analysten-Kurspotenzial +89.8%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "SZU.DE",
@@ -10046,7 +10101,65 @@
         "Kurs über Analystenziel (-10.3%)",
         "Dividendenrendite: 1.69%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:28"
+    },
+    {
+      "symbol": "GXI.DE",
+      "name": "Gerresheimer AG               I",
+      "region": "Deutschland",
+      "sector": "Healthcare",
+      "industry": "Medical Instruments & Supplies",
+      "price": 29.1,
+      "currency": "EUR",
+      "total_score": 58,
+      "short_score": 85,
+      "long_score": 0,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.08,
+      "daily_return_pct": 2.25,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bullish / Kauf-Setup",
+      "long_status": "❌ Fundamental ungeeignet für Buy & Hold",
+      "rsi": 58.93,
+      "pe": null,
+      "forward_pe": 9.190306,
+      "peg": 1.23,
+      "roe": -24.406,
+      "fcf_yield": -42.3162322652552,
+      "dividend_yield": 15.0,
+      "debt_to_equity": 2.07977,
+      "upside_pct": -5.9278350515463964,
+      "target_mean_price": 27.375,
+      "analyst_rec": 3.23077,
+      "analyst_count": 12,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Starker Aufwärtstrend",
+        "Über 200-Tage-Linie",
+        "Gesunder RSI (58.9)",
+        "Positives MACD-Momentum",
+        "Am oberen Bollinger Band"
+      ],
+      "long_signals": [
+        "Niedrige Eigenkapitalrendite (-24.4%)",
+        "Unprofitabel / Verlust",
+        "Hohe Verschuldung (2.08)",
+        "Negativer Free Cashflow",
+        "Analysten-Konsens: Halten / Verkaufen",
+        "Dividendenrendite: 15.00%"
+      ],
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "SEI-USD",
@@ -10054,7 +10167,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 0.05054,
+      "price": 0.05046,
       "currency": "USD",
       "total_score": 57,
       "short_score": 65,
@@ -10063,7 +10176,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 1.39,
-      "daily_return_pct": 2.03,
+      "daily_return_pct": 1.87,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -10072,7 +10185,7 @@
       "color": "gray",
       "short_status": "?? Moderat Bullish / Trendfolge",
       "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 59.86,
+      "rsi": 59.68,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -10092,7 +10205,7 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (59.9)",
+        "Gesunder RSI (59.7)",
         "Positives MACD-Momentum",
         "Am oberen Bollinger Band"
       ],
@@ -10100,7 +10213,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:13"
+      "last_updated": "2026-09-09 09:11:14"
     },
     {
       "symbol": "VTI",
@@ -10155,7 +10268,7 @@
       "long_signals": [
         "Dividendenrendite: 1.03%"
       ],
-      "last_updated": "2026-09-09 09:06:16"
+      "last_updated": "2026-09-09 09:11:17"
     },
     {
       "symbol": "BEAM",
@@ -10218,7 +10331,7 @@
         "Analysten-Kurspotenzial +94.4%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "PANW",
@@ -10271,7 +10384,7 @@
         "Hohe Verschuldung (9.09)",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "RGTI",
@@ -10327,7 +10440,7 @@
         "Niedrige Eigenkapitalrendite (-43.8%)",
         "Analysten-Kurspotenzial +82.2%"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "QBTS",
@@ -10386,7 +10499,7 @@
         "Analysten-Kurspotenzial +99.4%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "BKSY",
@@ -10444,7 +10557,63 @@
         "Negativer Free Cashflow",
         "Analysten-Kurspotenzial +74.0%"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
+    },
+    {
+      "symbol": "EUZ.DE",
+      "name": "Eckert & Ziegler SE           I",
+      "region": "Deutschland",
+      "sector": "Healthcare",
+      "industry": "Medical Devices",
+      "price": 12.63,
+      "currency": "EUR",
+      "total_score": 57,
+      "short_score": 17,
+      "long_score": 100,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.05,
+      "daily_return_pct": 0.16,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🔵 LANGFRISTIGER QUALITY-BUY (Tranchen-Einstieg)",
+      "action_desc": "Hervorragende fundamentale Qualität und krisenfeste Bilanz bei temporärem Rücksetzer. Ideal für Buy-and-Hold.",
+      "color": "blue",
+      "short_status": "?? Stark Bearish / Meiden",
+      "long_status": "🏆 Erstklassiger Qualitäts-/Value-Wert",
+      "rsi": 30.3,
+      "pe": 15.7875,
+      "forward_pe": 14.643648,
+      "peg": 0.91,
+      "roe": 20.141001,
+      "fcf_yield": 1.5759326742886073,
+      "dividend_yield": 1.75,
+      "debt_to_equity": 0.15164,
+      "upside_pct": 71.02137767220903,
+      "target_mean_price": 21.6,
+      "analyst_rec": 1.0,
+      "analyst_count": 3,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Abwärtstrend",
+        "Unter 200-Tage-Linie"
+      ],
+      "long_signals": [
+        "Faires KGV (15.8)",
+        "Attraktives PEG-Ratio (0.91)",
+        "Exzellente Eigenkapitalrendite (20.1%)",
+        "Konservative Verschuldung (0.15)",
+        "Analysten-Kurspotenzial +71.0%",
+        "Analysten-Konsens: KAUFEN",
+        "Dividendenrendite: 1.75%"
+      ],
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "HAW.DE",
@@ -10497,118 +10666,7 @@
         "Starke Free-Cashflow-Rendite (25.1%)",
         "Dividendenrendite: 6.04%"
       ],
-      "last_updated": "2026-09-09 09:06:26"
-    },
-    {
-      "symbol": "PUM.DE",
-      "name": "PUMA SE                       I",
-      "region": "Deutschland",
-      "sector": "Consumer Cyclical",
-      "industry": "Footwear & Accessories",
-      "price": 23.02,
-      "currency": "EUR",
-      "total_score": 57,
-      "short_score": 42,
-      "long_score": 59,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.15,
-      "daily_return_pct": -0.48,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Vorsicht / Schwächetendenz",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 26.28,
-      "pe": null,
-      "forward_pe": 68.17913,
-      "peg": 0.38,
-      "roe": -22.573999999999998,
-      "fcf_yield": 7.964959551425207,
-      "dividend_yield": 2.24,
-      "debt_to_equity": 1.4536699999999998,
-      "upside_pct": 27.353040834057335,
-      "target_mean_price": 29.31667,
-      "analyst_rec": 2.36842,
-      "analyst_count": 18,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Abwärtstrend",
-        "Unter 200-Tage-Linie",
-        "RSI Überverkauft (26.3)",
-        "Am unteren Bollinger Band"
-      ],
-      "long_signals": [
-        "Attraktives PEG-Ratio (0.38)",
-        "Niedrige Eigenkapitalrendite (-22.6%)",
-        "Unprofitabel / Verlust",
-        "Starke Free-Cashflow-Rendite (8.0%)",
-        "Analysten-Kurspotenzial +27.4%",
-        "Dividendenrendite: 2.24%"
-      ],
-      "last_updated": "2026-09-09 09:06:28"
-    },
-    {
-      "symbol": "AGG",
-      "name": "iShares Core U.S. Aggregate Bon",
-      "region": "USA",
-      "sector": "N/A",
-      "industry": "N/A",
-      "price": 96.9,
-      "currency": "USD",
-      "total_score": 56,
-      "short_score": 47,
-      "long_score": 38,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.78,
-      "daily_return_pct": -0.1,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Neutral / Konsolidierung",
-      "long_status": "⚠️ Schwächere Fundamentaldaten / Vorsicht",
-      "rsi": 48.0,
-      "pe": 123.59695,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": 4.05,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Abwärtstrend",
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (48.0)",
-        "Am unteren Bollinger Band",
-        "Social Sentiment Sehr Bullish (100%)"
-      ],
-      "long_signals": [
-        "Hohes KGV (123.6)",
-        "Dividendenrendite: 4.05%"
-      ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:26"
     },
     {
       "symbol": "IONQ",
@@ -10667,7 +10725,7 @@
         "Analysten-Kurspotenzial +70.1%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "ZS",
@@ -10723,7 +10781,7 @@
         "Analysten-Kurspotenzial +27.9%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:24"
     },
     {
       "symbol": "STEM",
@@ -10779,7 +10837,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:25"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "OHB.DE",
@@ -10787,7 +10845,7 @@
       "region": "Deutschland",
       "sector": "Industrials",
       "industry": "Aerospace & Defense",
-      "price": 181.6,
+      "price": 181.4,
       "currency": "EUR",
       "total_score": 56,
       "short_score": 32,
@@ -10796,7 +10854,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.12,
-      "daily_return_pct": -1.94,
+      "daily_return_pct": -2.05,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -10805,15 +10863,15 @@
       "color": "gray",
       "short_status": "?? Vorsicht / Schwächetendenz",
       "long_status": "✅ Solides Langfrist-Investment",
-      "rsi": 22.53,
-      "pe": 80.71111,
-      "forward_pe": 35.80597,
+      "rsi": 22.48,
+      "pe": 80.62222,
+      "forward_pe": 35.766533,
       "peg": 1.08,
       "roe": 6.4670000000000005,
-      "fcf_yield": -3.786412888718388,
+      "fcf_yield": -3.79058775917144,
       "dividend_yield": 31.0,
       "debt_to_equity": 0.41329,
-      "upside_pct": 65.99362885462557,
+      "upside_pct": 66.17664277839029,
       "target_mean_price": 301.44443,
       "analyst_rec": 1.33333,
       "analyst_count": 9,
@@ -10828,15 +10886,15 @@
         "RSI Überverkauft (22.5)"
       ],
       "long_signals": [
-        "Hohes KGV (80.7)",
+        "Hohes KGV (80.6)",
         "Attraktives PEG-Ratio (1.08)",
         "Konservative Verschuldung (0.41)",
         "Negativer Free Cashflow",
-        "Analysten-Kurspotenzial +66.0%",
+        "Analysten-Kurspotenzial +66.2%",
         "Analysten-Konsens: KAUFEN",
         "Dividendenrendite: 31.00%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "RHK.DE",
@@ -10894,7 +10952,63 @@
         "Kurs über Analystenziel (-14.4%)",
         "Dividendenrendite: 1.37%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
+    },
+    {
+      "symbol": "PUM.DE",
+      "name": "PUMA SE                       I",
+      "region": "Deutschland",
+      "sector": "Consumer Cyclical",
+      "industry": "Footwear & Accessories",
+      "price": 22.99,
+      "currency": "EUR",
+      "total_score": 56,
+      "short_score": 42,
+      "long_score": 49,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.15,
+      "daily_return_pct": -0.61,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Vorsicht / Schwächetendenz",
+      "long_status": "⚖️ Fair bewertet / Halteposition",
+      "rsi": 26.13,
+      "pe": null,
+      "forward_pe": 68.09028,
+      "peg": 0.38,
+      "roe": -22.573999999999998,
+      "fcf_yield": null,
+      "dividend_yield": 2.24,
+      "debt_to_equity": 1.4536699999999998,
+      "upside_pct": 27.519225750326232,
+      "target_mean_price": 29.31667,
+      "analyst_rec": 2.36842,
+      "analyst_count": 18,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Abwärtstrend",
+        "Unter 200-Tage-Linie",
+        "RSI Überverkauft (26.1)",
+        "Am unteren Bollinger Band"
+      ],
+      "long_signals": [
+        "Attraktives PEG-Ratio (0.38)",
+        "Niedrige Eigenkapitalrendite (-22.6%)",
+        "Unprofitabel / Verlust",
+        "Analysten-Kurspotenzial +27.5%",
+        "Dividendenrendite: 2.24%"
+      ],
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
       "symbol": "FLOKI-USD",
@@ -10902,7 +11016,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 2.644e-05,
+      "price": 2.633e-05,
       "currency": "USD",
       "total_score": 55,
       "short_score": 57,
@@ -10911,7 +11025,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.68,
-      "daily_return_pct": 1.69,
+      "daily_return_pct": 1.27,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -10920,7 +11034,7 @@
       "color": "gray",
       "short_status": "?? Neutral / Konsolidierung",
       "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 46.15,
+      "rsi": 45.34,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -10940,65 +11054,13 @@
       "short_signals": [
         "Starker Aufwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (46.1)"
+        "Gesunder RSI (45.3)"
       ],
       "long_signals": [
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:14"
-    },
-    {
-      "symbol": "NG=F",
-      "name": "Natural Gas Oct 26",
-      "region": "🛢️ Rohstoffe",
-      "sector": "Energie & Agrar",
-      "industry": "N/A",
-      "price": 2.888,
-      "currency": "USD",
-      "total_score": 55,
-      "short_score": 58,
-      "long_score": 20,
-      "breakout_score": 0,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [],
-      "vol_ratio": 0.08,
-      "daily_return_pct": -0.96,
-      "short_float": null,
-      "short_ratio": null,
-      "squeeze_score": 10.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Neutral / Konsolidierung",
-      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
-      "rsi": 55.97,
-      "pe": null,
-      "forward_pe": null,
-      "peg": null,
-      "roe": null,
-      "fcf_yield": null,
-      "dividend_yield": null,
-      "debt_to_equity": null,
-      "upside_pct": null,
-      "target_mean_price": null,
-      "analyst_rec": null,
-      "analyst_count": null,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Unter 200-Tage-Linie",
-        "Gesunder RSI (56.0)",
-        "Positives MACD-Momentum"
-      ],
-      "long_signals": [
-        "Unter 200-Tage-Trendlinie",
-        "In Nähe 52-Wochen-Tief"
-      ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:15"
     },
     {
       "symbol": "KC=F",
@@ -11006,7 +11068,7 @@
       "region": "🛢️ Rohstoffe",
       "sector": "Energie & Agrar",
       "industry": "N/A",
-      "price": 288.55,
+      "price": 288.1,
       "currency": "USX",
       "total_score": 55,
       "short_score": 57,
@@ -11014,8 +11076,8 @@
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.36,
-      "daily_return_pct": -9.39,
+      "vol_ratio": 0.37,
+      "daily_return_pct": -9.53,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -11024,7 +11086,7 @@
       "color": "gray",
       "short_status": "?? Neutral / Konsolidierung",
       "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
-      "rsi": 21.63,
+      "rsi": 21.55,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -11050,7 +11112,59 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:19"
+      "last_updated": "2026-09-09 09:11:20"
+    },
+    {
+      "symbol": "NG=F",
+      "name": "Natural Gas Oct 26",
+      "region": "🛢️ Rohstoffe",
+      "sector": "Energie & Agrar",
+      "industry": "N/A",
+      "price": 2.886,
+      "currency": "USD",
+      "total_score": 55,
+      "short_score": 58,
+      "long_score": 20,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.09,
+      "daily_return_pct": -1.03,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
+      "rsi": 55.79,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": null,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (55.8)",
+        "Positives MACD-Momentum"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:20"
     },
     {
       "symbol": "RKLB",
@@ -11108,7 +11222,7 @@
         "Analysten-Kurspotenzial +68.5%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:21"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "HIMS",
@@ -11166,7 +11280,7 @@
         "Hohe Verschuldung (4.77)",
         "Starke Free-Cashflow-Rendite (12.9%)"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
     },
     {
       "symbol": "DKNG",
@@ -11226,7 +11340,63 @@
         "Analysten-Kurspotenzial +47.5%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:22"
+      "last_updated": "2026-09-09 09:11:22"
+    },
+    {
+      "symbol": "LCID",
+      "name": "Lucid Group, Inc.",
+      "region": "USA",
+      "sector": "Consumer Cyclical",
+      "industry": "Auto Manufacturers",
+      "price": 4.63,
+      "currency": "USD",
+      "total_score": 55,
+      "short_score": 32,
+      "long_score": 29,
+      "breakout_score": 25,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [
+        "🪤 Hohe Leerverkaufsquote (34.1% Short Float)"
+      ],
+      "vol_ratio": 0.77,
+      "daily_return_pct": -1.07,
+      "short_float": 34.089999999999996,
+      "short_ratio": 2.43,
+      "squeeze_score": 55.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Vorsicht / Schwächetendenz",
+      "long_status": "❌ Fundamental ungeeignet für Buy & Hold",
+      "rsi": 27.56,
+      "pe": null,
+      "forward_pe": -0.8964182,
+      "peg": null,
+      "roe": -1.25992,
+      "fcf_yield": -184.38831290890855,
+      "dividend_yield": null,
+      "debt_to_equity": 1.9784,
+      "upside_pct": 75.18596112311016,
+      "target_mean_price": 8.11111,
+      "analyst_rec": 3.18182,
+      "analyst_count": 9,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Abwärtstrend",
+        "Unter 200-Tage-Linie",
+        "RSI Überverkauft (27.6)"
+      ],
+      "long_signals": [
+        "Niedrige Eigenkapitalrendite (-1.3%)",
+        "Unprofitabel / Verlust",
+        "Negativer Free Cashflow",
+        "Analysten-Kurspotenzial +75.2%"
+      ],
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "NET",
@@ -11278,63 +11448,7 @@
         "Unprofitabel / Verlust",
         "Hohe Verschuldung (2.18)"
       ],
-      "last_updated": "2026-09-09 09:06:23"
-    },
-    {
-      "symbol": "LCID",
-      "name": "Lucid Group, Inc.",
-      "region": "USA",
-      "sector": "Consumer Cyclical",
-      "industry": "Auto Manufacturers",
-      "price": 4.63,
-      "currency": "USD",
-      "total_score": 55,
-      "short_score": 32,
-      "long_score": 29,
-      "breakout_score": 25,
-      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
-      "breakout_triggers": [
-        "🪤 Hohe Leerverkaufsquote (34.1% Short Float)"
-      ],
-      "vol_ratio": 0.77,
-      "daily_return_pct": -1.07,
-      "short_float": 34.089999999999996,
-      "short_ratio": 2.43,
-      "squeeze_score": 55.0,
-      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
-      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
-      "color": "gray",
-      "short_status": "?? Vorsicht / Schwächetendenz",
-      "long_status": "❌ Fundamental ungeeignet für Buy & Hold",
-      "rsi": 27.56,
-      "pe": null,
-      "forward_pe": -0.8964182,
-      "peg": null,
-      "roe": -1.25992,
-      "fcf_yield": -186.19004200882085,
-      "dividend_yield": null,
-      "debt_to_equity": 1.9784,
-      "upside_pct": 75.18596112311016,
-      "target_mean_price": 8.11111,
-      "analyst_rec": 3.18182,
-      "analyst_count": 9,
-      "forum_mentions": 0,
-      "forum_sentiment": null,
-      "sample_forum_posts": [],
-      "insider_score": 0,
-      "recent_insider_buys": 0,
-      "short_signals": [
-        "Abwärtstrend",
-        "Unter 200-Tage-Linie",
-        "RSI Überverkauft (27.6)"
-      ],
-      "long_signals": [
-        "Niedrige Eigenkapitalrendite (-1.3%)",
-        "Unprofitabel / Verlust",
-        "Negativer Free Cashflow",
-        "Analysten-Kurspotenzial +75.2%"
-      ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "PL",
@@ -11393,7 +11507,7 @@
         "Analysten-Kurspotenzial +90.9%",
         "Analysten-Konsens: KAUFEN"
       ],
-      "last_updated": "2026-09-09 09:06:24"
+      "last_updated": "2026-09-09 09:11:25"
     },
     {
       "symbol": "PWO.DE",
@@ -11450,7 +11564,7 @@
         "Analysten-Kurspotenzial +60.6%",
         "Dividendenrendite: 7.43%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "XLY",
@@ -11504,7 +11618,7 @@
         "Faires KGV (24.9)",
         "Dividendenrendite: 77.00%"
       ],
-      "last_updated": "2026-09-09 09:06:17"
+      "last_updated": "2026-09-09 09:11:18"
     },
     {
       "symbol": "DNA",
@@ -11562,7 +11676,7 @@
         "Negativer Free Cashflow",
         "Analysten-Konsens: Halten / Verkaufen"
       ],
-      "last_updated": "2026-09-09 09:06:20"
+      "last_updated": "2026-09-09 09:11:21"
     },
     {
       "symbol": "QS",
@@ -11618,7 +11732,7 @@
         "Hohe Verschuldung (6.41)",
         "Negativer Free Cashflow"
       ],
-      "last_updated": "2026-09-09 09:06:23"
+      "last_updated": "2026-09-09 09:11:23"
     },
     {
       "symbol": "PNE3.DE",
@@ -11675,7 +11789,7 @@
         "Analysten-Kurspotenzial +44.2%",
         "Dividendenrendite: 54.00%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "PSM.DE",
@@ -11711,9 +11825,9 @@
       "fcf_yield": -4.651264763060517,
       "dividend_yield": 1.36,
       "debt_to_equity": 1.6594499999999999,
-      "upside_pct": 33.30668523676881,
-      "target_mean_price": 4.78571,
-      "analyst_rec": null,
+      "upside_pct": 32.11309192200558,
+      "target_mean_price": 4.74286,
+      "analyst_rec": 2.75,
       "analyst_count": 7,
       "forum_mentions": 0,
       "forum_sentiment": null,
@@ -11728,10 +11842,10 @@
         "Niedrige Eigenkapitalrendite (-7.0%)",
         "Unprofitabel / Verlust",
         "Negativer Free Cashflow",
-        "Analysten-Kurspotenzial +33.3%",
+        "Analysten-Kurspotenzial +32.1%",
         "Dividendenrendite: 1.36%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "HFG.DE",
@@ -11739,7 +11853,7 @@
       "region": "Deutschland",
       "sector": "Consumer Defensive",
       "industry": "Grocery Stores",
-      "price": 2.792,
+      "price": 2.797,
       "currency": "EUR",
       "total_score": 54,
       "short_score": 33,
@@ -11748,7 +11862,7 @@
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
       "vol_ratio": 0.27,
-      "daily_return_pct": 1.82,
+      "daily_return_pct": 2.01,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -11757,15 +11871,15 @@
       "color": "gray",
       "short_status": "?? Vorsicht / Schwächetendenz",
       "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 40.94,
+      "rsi": 41.33,
       "pe": null,
-      "forward_pe": 6.1102114,
+      "forward_pe": 6.121154,
       "peg": null,
       "roe": -5.329,
-      "fcf_yield": 18.528192926779244,
+      "fcf_yield": 18.495072249548407,
       "dividend_yield": null,
       "debt_to_equity": 1.19102,
-      "upside_pct": 77.8592406876791,
+      "upside_pct": 77.54129424383268,
       "target_mean_price": 4.96583,
       "analyst_rec": 2.92308,
       "analyst_count": 12,
@@ -11783,41 +11897,41 @@
         "Niedrige Eigenkapitalrendite (-5.3%)",
         "Unprofitabel / Verlust",
         "Starke Free-Cashflow-Rendite (18.5%)",
-        "Analysten-Kurspotenzial +77.9%"
+        "Analysten-Kurspotenzial +77.5%"
       ],
-      "last_updated": "2026-09-09 09:06:28"
+      "last_updated": "2026-09-09 09:11:28"
     },
     {
-      "symbol": "LQD",
-      "name": "iShares iBoxx $ Investment Grad",
+      "symbol": "AGG",
+      "name": "iShares Core U.S. Aggregate Bon",
       "region": "USA",
       "sector": "N/A",
       "industry": "N/A",
-      "price": 105.48,
+      "price": 96.9,
       "currency": "USD",
       "total_score": 53,
-      "short_score": 27,
-      "long_score": 50,
+      "short_score": 47,
+      "long_score": 20,
       "breakout_score": 0,
       "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
       "breakout_triggers": [],
-      "vol_ratio": 0.75,
-      "daily_return_pct": 0.0,
+      "vol_ratio": 0.78,
+      "daily_return_pct": -0.1,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
       "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
       "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
       "color": "gray",
-      "short_status": "?? Stark Bearish / Meiden",
-      "long_status": "⚖️ Fair bewertet / Halteposition",
-      "rsi": 51.08,
-      "pe": 31.89598,
+      "short_status": "?? Neutral / Konsolidierung",
+      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
+      "rsi": 48.0,
+      "pe": null,
       "forward_pe": null,
       "peg": null,
       "roe": null,
       "fcf_yield": null,
-      "dividend_yield": 4.67,
+      "dividend_yield": 4.05,
       "debt_to_equity": null,
       "upside_pct": null,
       "target_mean_price": null,
@@ -11831,14 +11945,15 @@
       "short_signals": [
         "Abwärtstrend",
         "Unter 200-Tage-Linie",
-        "Gesunder RSI (51.1)",
+        "Gesunder RSI (48.0)",
         "Am unteren Bollinger Band",
-        "Social Sentiment Bearish (0%)"
+        "Social Sentiment Sehr Bullish (100%)"
       ],
       "long_signals": [
-        "Dividendenrendite: 4.67%"
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "TLT",
@@ -11893,7 +12008,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "BND",
@@ -11946,7 +12061,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "BONK-USD",
@@ -11954,7 +12069,7 @@
       "region": "🪙 Krypto",
       "sector": "Kryptowährung",
       "industry": "N/A",
-      "price": 3.08e-06,
+      "price": 3.07e-06,
       "currency": "USD",
       "total_score": 50,
       "short_score": 25,
@@ -11966,7 +12081,7 @@
         "🌀 Volatilitäts-Kompression (Bollinger Squeeze)"
       ],
       "vol_ratio": 0.54,
-      "daily_return_pct": 2.67,
+      "daily_return_pct": 2.33,
       "short_float": null,
       "short_ratio": null,
       "squeeze_score": 10.0,
@@ -11975,7 +12090,7 @@
       "color": "gray",
       "short_status": "?? Stark Bearish / Meiden",
       "long_status": "📉 Schwacher Krypto-Zyklus",
-      "rsi": 85.11,
+      "rsi": 83.33,
       "pe": null,
       "forward_pe": null,
       "peg": null,
@@ -11994,7 +12109,7 @@
       "recent_insider_buys": 0,
       "short_signals": [
         "Unter 200-Tage-Linie",
-        "RSI Stark Überkauft (85.1)",
+        "RSI Stark Überkauft (83.3)",
         "Positives MACD-Momentum",
         "Am oberen Bollinger Band"
       ],
@@ -12002,7 +12117,61 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:14"
+      "last_updated": "2026-09-09 09:11:15"
+    },
+    {
+      "symbol": "LQD",
+      "name": "iShares iBoxx $ Investment Grad",
+      "region": "USA",
+      "sector": "N/A",
+      "industry": "N/A",
+      "price": 105.48,
+      "currency": "USD",
+      "total_score": 50,
+      "short_score": 27,
+      "long_score": 20,
+      "breakout_score": 0,
+      "breakout_status": "😴 Normale Schwankung / Kein Squeeze",
+      "breakout_triggers": [],
+      "vol_ratio": 0.75,
+      "daily_return_pct": 0.0,
+      "short_float": null,
+      "short_ratio": null,
+      "squeeze_score": 10.0,
+      "action": "🟡 BEOBACHTEN / HALTEN (Neutral)",
+      "action_desc": "Ausgeglichenes Chance-Risiko-Verhältnis. Warten auf nächste Quartalszahlen oder Ausbruchssignal.",
+      "color": "gray",
+      "short_status": "?? Stark Bearish / Meiden",
+      "long_status": "📉 Schwacher Rohstoff/Edelmetall-Zyklus",
+      "rsi": 51.08,
+      "pe": null,
+      "forward_pe": null,
+      "peg": null,
+      "roe": null,
+      "fcf_yield": null,
+      "dividend_yield": 4.67,
+      "debt_to_equity": null,
+      "upside_pct": null,
+      "target_mean_price": null,
+      "analyst_rec": null,
+      "analyst_count": null,
+      "forum_mentions": 0,
+      "forum_sentiment": null,
+      "sample_forum_posts": [],
+      "insider_score": 0,
+      "recent_insider_buys": 0,
+      "short_signals": [
+        "Abwärtstrend",
+        "Unter 200-Tage-Linie",
+        "Gesunder RSI (51.1)",
+        "Am unteren Bollinger Band",
+        "Social Sentiment Bearish (0%)"
+      ],
+      "long_signals": [
+        "Unter 200-Tage-Trendlinie",
+        "In Nähe 52-Wochen-Tief"
+      ],
+      "last_updated": "2026-09-09 09:11:19"
     },
     {
       "symbol": "PBB.DE",
@@ -12055,7 +12224,7 @@
         "Unprofitabel / Verlust",
         "Dividendenrendite: 4.55%"
       ],
-      "last_updated": "2026-09-09 09:06:27"
+      "last_updated": "2026-09-09 09:11:27"
     },
     {
       "symbol": "IEF",
@@ -12108,7 +12277,7 @@
         "Unter 200-Tage-Trendlinie",
         "In Nähe 52-Wochen-Tief"
       ],
-      "last_updated": "2026-09-09 09:06:18"
+      "last_updated": "2026-09-09 09:11:19"
     }
   ]
 }
