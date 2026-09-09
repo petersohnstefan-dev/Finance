@@ -1,5 +1,45 @@
 [
   {
+    "timestamp": "2026-09-09 10:11:11",
+    "time_str": "10:11:11",
+    "symbol": "SAP.DE",
+    "direction": "LONG",
+    "trigger_price": 186.5,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SAP.DE explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 10:11:10",
+    "time_str": "10:11:10",
+    "symbol": "S92.DE",
+    "direction": "SHORT",
+    "trigger_price": 63.1,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S92.DE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 10:11:09",
+    "time_str": "10:11:09",
+    "symbol": "AOF.DE",
+    "direction": "LONG",
+    "trigger_price": 94.0,
+    "change_1min_pct": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AOF.DE explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 10:11:07",
+    "time_str": "10:11:07",
+    "symbol": "RKLB",
+    "direction": "LONG",
+    "trigger_price": 68.72,
+    "change_1min_pct": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RKLB explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-09 10:06:03",
     "time_str": "10:06:03",
     "symbol": "AMGN",
@@ -458,45 +498,5 @@
     "change_1min_pct": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ESTC explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 09:31:14",
-    "time_str": "09:31:14",
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 169.5,
-    "change_1min_pct": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 09:31:13",
-    "time_str": "09:31:13",
-    "symbol": "DUOL",
-    "direction": "SHORT",
-    "trigger_price": 145.89,
-    "change_1min_pct": 1.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DUOL stürzt um -1.43% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 09:31:13",
-    "time_str": "09:31:13",
-    "symbol": "ARGX",
-    "direction": "SHORT",
-    "trigger_price": 1000.0,
-    "change_1min_pct": 0.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARGX stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 09:31:13",
-    "time_str": "09:31:13",
-    "symbol": "BMRN",
-    "direction": "LONG",
-    "trigger_price": 65.15,
-    "change_1min_pct": 0.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BMRN explodiert um +0.80% in 5 Min.! Momentum aktiv."
   }
 ]
