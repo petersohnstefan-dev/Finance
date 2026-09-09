@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-09 11:21:02",
+    "time_str": "11:21:02",
+    "symbol": "S92.DE",
+    "direction": "LONG",
+    "trigger_price": 62.5,
+    "change_1min_pct": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S92.DE explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 11:21:02",
+    "time_str": "11:21:02",
+    "symbol": "DUE.DE",
+    "direction": "SHORT",
+    "trigger_price": 17.58,
+    "change_1min_pct": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUE.DE stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 11:21:01",
+    "time_str": "11:21:01",
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 4.22,
+    "change_1min_pct": 0.69,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-09 11:15:59",
     "time_str": "11:15:59",
     "symbol": "DRW3.DE",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HYQ.DE explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 10:16:02",
-    "time_str": "10:16:02",
-    "symbol": "SZG.DE",
-    "direction": "LONG",
-    "trigger_price": 60.85,
-    "change_1min_pct": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SZG.DE explodiert um +0.66% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 10:16:00",
-    "time_str": "10:16:00",
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 161.96,
-    "change_1min_pct": 0.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 10:16:00",
-    "time_str": "10:16:00",
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 4.66,
-    "change_1min_pct": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
