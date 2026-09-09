@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-09 19:31:14",
+    "time_str": "19:31:14",
+    "symbol": "IFX.DE",
+    "direction": "LONG",
+    "trigger_price": 56.95,
+    "change_1min_pct": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IFX.DE explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 19:31:11",
+    "time_str": "19:31:11",
+    "symbol": "PWO.DE",
+    "direction": "SHORT",
+    "trigger_price": 22.2,
+    "change_1min_pct": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PWO.DE stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-09 19:31:08",
+    "time_str": "19:31:08",
+    "symbol": "BEAM",
+    "direction": "LONG",
+    "trigger_price": 25.62,
+    "change_1min_pct": 1.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM explodiert um +1.04% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-09 19:15:57",
     "time_str": "19:15:57",
     "symbol": "SRPT",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SYM explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 18:31:18",
-    "time_str": "18:31:18",
-    "symbol": "BRRR",
-    "direction": "SHORT",
-    "trigger_price": 22.16,
-    "change_1min_pct": 1.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BRRR stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 18:26:09",
-    "time_str": "18:26:09",
-    "symbol": "IFX.DE",
-    "direction": "LONG",
-    "trigger_price": 56.95,
-    "change_1min_pct": 0.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IFX.DE explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-09 18:26:05",
-    "time_str": "18:26:05",
-    "symbol": "PWO.DE",
-    "direction": "SHORT",
-    "trigger_price": 22.2,
-    "change_1min_pct": 0.89,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PWO.DE stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
