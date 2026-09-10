@@ -1,5 +1,25 @@
 [
   {
+    "timestamp": "2026-09-10 10:11:12",
+    "time_str": "10:11:12",
+    "symbol": "SIX2.DE",
+    "direction": "LONG",
+    "trigger_price": 68.4,
+    "change_1min_pct": 0.66,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SIX2.DE explodiert um +0.66% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 10:11:09",
+    "time_str": "10:11:09",
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.28,
+    "change_1min_pct": 0.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-10 10:05:50",
     "time_str": "10:05:50",
     "symbol": "RGTI",
@@ -478,25 +498,5 @@
     "change_1min_pct": 0.5,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DUOL explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 09:31:15",
-    "time_str": "09:31:15",
-    "symbol": "INCY",
-    "direction": "LONG",
-    "trigger_price": 129.0,
-    "change_1min_pct": 2.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INCY explodiert um +2.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 09:31:15",
-    "time_str": "09:31:15",
-    "symbol": "DNA",
-    "direction": "SHORT",
-    "trigger_price": 6.8,
-    "change_1min_pct": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
