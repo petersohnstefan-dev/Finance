@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-10 11:11:11",
+    "time_str": "11:11:11",
+    "symbol": "LIN",
+    "direction": "SHORT",
+    "trigger_price": 467.23,
+    "change_1min_pct": 0.94,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LIN stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 11:11:07",
+    "time_str": "11:11:07",
+    "symbol": "FPE.DE",
+    "direction": "SHORT",
+    "trigger_price": 36.2,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FPE.DE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 11:11:04",
+    "time_str": "11:11:04",
+    "symbol": "SYM",
+    "direction": "SHORT",
+    "trigger_price": 42.5,
+    "change_1min_pct": 0.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-10 11:05:54",
     "time_str": "11:05:54",
     "symbol": "FNTN.DE",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.97,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S92.DE stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 09:41:09",
-    "time_str": "09:41:09",
-    "symbol": "PNE3.DE",
-    "direction": "LONG",
-    "trigger_price": 7.28,
-    "change_1min_pct": 2.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PNE3.DE explodiert um +2.39% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 09:41:09",
-    "time_str": "09:41:09",
-    "symbol": "EUZ.DE",
-    "direction": "LONG",
-    "trigger_price": 12.49,
-    "change_1min_pct": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 EUZ.DE explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 09:36:00",
-    "time_str": "09:36:00",
-    "symbol": "ASM.AS",
-    "direction": "LONG",
-    "trigger_price": 842.0,
-    "change_1min_pct": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASM.AS explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
