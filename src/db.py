@@ -292,3 +292,60 @@ class PortfolioDB:
             rows = cursor.fetchall()
             return [dict(row) for row in rows]
 
+    def get_daytrading_stats(self) -> Dict[str, Any]:
+        """Calculates running expectancy and key stats for the daytrader depot."""
+        trades = self.get_trades('day_trading')
+        sells = [t for t in trades if t['type'] == 'SELL']
+        
+        if not sells:
+            return {'total_trades': 0, 'win_rate': 0, 'avg_win': 0, 'avg_loss': 0,
+                    'expectancy': 0, 'profit_factor': 0, 'max_consecutive_losses': 0}
+        
+        wins = [t for t in sells if (t.get('pnl') or 0) > 0]
+        losses = [t for t in sells if (t.get('pnl') or 0) <= 0]
+        
+        win_rate = len(wins) / len(sells) if sells else 0
+        avg_win = sum(t['pnl'] for t in wins) / len(wins) if wins else 0
+        avg_loss = abs(sum(t['pnl'] for t in losses) / len(losses)) if losses else 1
+        
+        # Expectancy = (Win% x Avg Win) - (Loss% x Avg Loss)
+        expectancy = (win_rate * avg_win) - ((1 - win_rate) * avg_loss)
+        
+        # Profit Factor = Gross Profits / Gross Losses
+        gross_profit = sum(t['pnl'] for t in wins) if wins else 0
+        gross_loss = abs(sum(t['pnl'] for t in losses)) if losses else 1
+        profit_factor = gross_profit / gross_loss if gross_loss > 0 else 0
+        
+        # Max consecutive losses
+        max_streak = 0
+        current_streak = 0
+        for t in reversed(sells):  # chronological order
+            if (t.get('pnl') or 0) <= 0:
+                current_streak += 1
+                max_streak = max(max_streak, current_streak)
+            else:
+                current_streak = 0
+        
+        return {
+            'total_trades': len(sells),
+            'win_rate': round(win_rate * 100, 1),
+            'avg_win': round(avg_win, 2),
+            'avg_loss': round(avg_loss, 2),
+            'expectancy': round(expectancy, 2),
+            'profit_factor': round(profit_factor, 2),
+            'max_consecutive_losses': max_streak
+        }
+
+    def get_today_pnl(self, depot_id: str) -> float:
+        """Returns the total realized P&L for the current trading day."""
+        today_str = get_berlin_now().strftime("%Y-%m-%d")
+        trades = self.get_trades(depot_id)
+        today_sells = [t for t in trades if t['type'] == 'SELL' 
+                       and (t.get('date') or '').startswith(today_str)]
+        return sum(t.get('pnl') or 0 for t in today_sells)
+
+    def get_today_trade_count(self, depot_id: str) -> int:
+        """Returns the number of trades executed today."""
+        today_str = get_berlin_now().strftime("%Y-%m-%d")
+        trades = self.get_trades(depot_id)
+        return len([t for t in trades if (t.get('date') or '').startswith(today_str)])

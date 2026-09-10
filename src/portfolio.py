@@ -74,8 +74,21 @@ class PortfolioManager:
     def _load_strategy(self) -> Dict[str, Any]:
         strat_file = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
         default_strat = {
-            "daytrade_max_leverage": 30.0,
-            "daytrade_stop_loss_pct": 0.25,
+            "daytrade_max_leverage": 10.0,
+            "daytrade_stop_loss_pct": 0.15,
+            "daytrade_max_risk_per_trade_pct": 0.02,
+            "daytrade_min_risk_reward_ratio": 2.0,
+            "daytrade_max_daily_loss_pct": 0.05,
+            "daytrade_max_daily_trades": 5,
+            "daytrade_max_correlated_positions": 2,
+            "daytrade_eod_close_all": True,
+            "daytrade_eod_time_hour": 21,
+            "daytrade_min_entry_score": 65,
+            "daytrade_trailing_breakeven_pct": 0.03,
+            "daytrade_trailing_lock_pct": 0.05,
+            "daytrade_trailing_aggressive_pct": 0.10,
+            "daytrade_vix_defensive_threshold": 25.0,
+            "daytrade_vix_pause_threshold": 35.0,
             "short_term_trailing_start_pct": 8.0,
             "short_term_stop_loss_pct": 0.15
         }
@@ -124,6 +137,170 @@ class PortfolioManager:
             return 1.0
         except:
             return 1.0
+
+    # ------------------------------------------------------------------
+    # PROFESSIONAL DAYTRADING ENGINE — Helper Methods
+    # ------------------------------------------------------------------
+
+    def _get_vix(self) -> float:
+        """Fetches the current VIX (CBOE Volatility Index) to gauge market fear."""
+        try:
+            vix = yf.Ticker("^VIX").history(period="1d")
+            if not vix.empty:
+                return float(vix['Close'].iloc[-1])
+        except:
+            pass
+        return 18.0  # Default: normal market conditions
+
+    def _get_trading_mode(self) -> str:
+        """Determines trading mode based on VIX: NORMAL / DEFENSIVE / PAUSE."""
+        vix = self._get_vix()
+        pause_threshold = self.strategy.get("daytrade_vix_pause_threshold", 35.0)
+        defensive_threshold = self.strategy.get("daytrade_vix_defensive_threshold", 25.0)
+        if vix >= pause_threshold:
+            return "PAUSE"       # No trading — market too chaotic
+        elif vix >= defensive_threshold:
+            return "DEFENSIVE"   # Half position size, only A+ setups
+        return "NORMAL"
+
+    def _get_sector(self, symbol: str) -> str:
+        """Returns the sector/asset class for correlation checking."""
+        # Fast lookup for known tickers
+        SECTOR_MAP = {
+            'NVDA': 'tech_chips', 'AMD': 'tech_chips', 'INTC': 'tech_chips', 'AVGO': 'tech_chips', 'SMCI': 'tech_chips',
+            'AAPL': 'tech_mega', 'MSFT': 'tech_mega', 'GOOGL': 'tech_mega', 'META': 'tech_mega', 'AMZN': 'tech_mega',
+            'TSLA': 'ev', 'RIVN': 'ev', 'NIO': 'ev', 'LCID': 'ev',
+            'BTC-USD': 'crypto', 'ETH-USD': 'crypto', 'SOL-USD': 'crypto', 'DOGE-USD': 'crypto',
+            'MRNA': 'biotech', 'BNTX': 'biotech', 'NVAX': 'biotech', 'VKTX': 'biotech', 'BEAM': 'biotech',
+            'GC=F': 'commodities', '4GLD.DE': 'commodities', 'SI=F': 'commodities',
+            'JPM': 'finance', 'GS': 'finance', 'BAC': 'finance',
+        }
+        if symbol in SECTOR_MAP:
+            return SECTOR_MAP[symbol]
+        if '-USD' in symbol:
+            return 'crypto'
+        if 'KO' in symbol and len(symbol) > 4:
+            return 'derivative'  # KO-Zertifikate
+        try:
+            info = yf.Ticker(symbol).info
+            return info.get('sector', 'unknown').lower().replace(' ', '_')
+        except:
+            return 'unknown'
+
+    def _check_correlation(self, symbol: str, depot: Dict) -> bool:
+        """Returns True if the position passes the correlation check (max N in same sector)."""
+        max_correlated = self.strategy.get("daytrade_max_correlated_positions", 2)
+        new_sector = self._get_sector(symbol)
+        if new_sector in ('unknown', 'derivative'):
+            return True  # Can't determine sector, allow
+        same_sector_count = 0
+        for s, p in depot.get("positions", {}).items():
+            underlying = p.get("underlying_symbol", s)
+            if self._get_sector(underlying) == new_sector:
+                same_sector_count += 1
+        return same_sector_count < max_correlated
+
+    def _check_daily_loss_limit(self, depot_value: float) -> bool:
+        """Returns True if the daily loss limit has NOT been reached (trading allowed)."""
+        max_loss_pct = self.strategy.get("daytrade_max_daily_loss_pct", 0.05)
+        max_loss = depot_value * max_loss_pct
+        today_pnl = self.db.get_today_pnl("day_trading")
+        return today_pnl > -max_loss  # True = can still trade
+
+    def _check_daily_trade_count(self) -> bool:
+        """Returns True if max daily trades not reached."""
+        max_trades = self.strategy.get("daytrade_max_daily_trades", 5)
+        today_count = self.db.get_today_trade_count("day_trading")
+        return today_count < max_trades
+
+    def _calculate_entry_quality(self, alert: Dict, sym: str) -> int:
+        """Calculates a multi-factor entry quality score (0-100) for professional daytrading."""
+        score = 0
+
+        # 1. Volume Confirmation (25 points)
+        vol_ratio = alert.get('vol_ratio', 1.0)
+        if vol_ratio >= 3.0:
+            score += 25
+        elif vol_ratio >= 1.8:
+            score += 15
+        elif vol_ratio >= 1.2:
+            score += 5
+
+        # 2. Trend Conformity (20 points) — only trade WITH the trend
+        try:
+            hist = yf.Ticker(sym).history(period="3mo")
+            if len(hist) >= 50:
+                ema_50 = hist['Close'].ewm(span=50).mean().iloc[-1]
+                price = hist['Close'].iloc[-1]
+                direction = alert.get("direction", "LONG")
+                if direction == "LONG" and price > ema_50:
+                    score += 20  # Long in uptrend
+                elif direction == "SHORT" and price < ema_50:
+                    score += 20  # Short in downtrend
+                elif direction == "LONG" and price > hist['Close'].ewm(span=20).mean().iloc[-1]:
+                    score += 10  # At least above EMA20
+        except:
+            score += 5  # Benefit of the doubt
+
+        # 3. Spike Strength (20 points) — stronger spike = higher conviction
+        spike = alert.get('change_1min_pct', 0)
+        if spike >= 2.0:
+            score += 20
+        elif spike >= 1.2:
+            score += 15
+        elif spike >= 0.8:
+            score += 10
+        elif spike >= 0.5:
+            score += 5
+
+        # 4. RRR Potential (20 points) — estimated from ATR
+        try:
+            hist = yf.Ticker(sym).history(period="1mo")
+            if len(hist) >= 14:
+                atr = hist['High'].sub(hist['Low']).rolling(14).mean().iloc[-1]
+                price = alert.get("trigger_price", hist['Close'].iloc[-1])
+                sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.15)
+                risk = price * sl_pct
+                reward = atr * 2  # Expect 2x ATR move on breakout
+                if risk > 0 and reward / risk >= 2.0:
+                    score += 20
+                elif risk > 0 and reward / risk >= 1.5:
+                    score += 10
+        except:
+            pass
+
+        # 5. Market Context (15 points) — VIX calm + no macro event
+        trading_mode = self._get_trading_mode()
+        if trading_mode == "NORMAL":
+            score += 15
+        elif trading_mode == "DEFENSIVE":
+            score += 5
+        # PAUSE mode: 0 points (but entry is blocked elsewhere anyway)
+
+        return min(100, score)
+
+    def _calculate_risk_based_position_size(self, depot_value: float, entry_price: float,
+                                             stop_loss_pct: float, trading_mode: str,
+                                             is_bearish: bool, regime: str) -> float:
+        """Calculates position size based on max 2% risk per trade (Kelly-inspired)."""
+        max_risk_pct = self.strategy.get("daytrade_max_risk_per_trade_pct", 0.02)
+        risk_amount = depot_value * max_risk_pct  # e.g. 10000 * 0.02 = 200€
+
+        # In DEFENSIVE mode: halve the risk
+        if trading_mode == "DEFENSIVE":
+            risk_amount *= 0.5
+
+        # In BEAR market for LONG trades: halve again
+        if regime == "BEAR" and not is_bearish:
+            risk_amount *= 0.5
+
+        # Position size = risk / stop-loss distance
+        if stop_loss_pct > 0:
+            position_size = risk_amount / stop_loss_pct
+        else:
+            position_size = risk_amount / 0.15  # Fallback
+
+        return position_size
 
     def _get_seed_data(self) -> Dict[str, Any]:
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
@@ -969,11 +1146,19 @@ class PortfolioManager:
                             actions_taken.append(f"VETO (Long-Term): {sym} ({msg})")
                     break
 
-        # ----------------------------------------------------------------------
-        # 4. DAYTRADER DEPOT (Intraday / High Leverage / Momentum)
-        # ----------------------------------------------------------------------
+        # ======================================================================
+        # 4. DAYTRADER DEPOT — Professional Risk-Managed Intraday System
+        #    Principles: 2% max risk/trade, RRR ≥ 2:1, daily loss limit,
+        #    correlation check, VIX-adaptive modes, multi-factor entry score
+        # ======================================================================
         dt_depot = self.data["portfolios"].get("day_trading")
         if dt_depot:
+            trading_mode = self._get_trading_mode()
+            eod_hour = self.strategy.get("daytrade_eod_time_hour", 21)
+            eod_close_all = self.strategy.get("daytrade_eod_close_all", True)
+            hour = get_berlin_now().hour
+
+            # --- EXIT LOGIC (always runs, even in PAUSE mode) ---
             for sym in list(dt_depot["positions"].keys()):
                 pos = dt_depot["positions"][sym]
                 curr_p = pos["current_price"]
@@ -983,58 +1168,81 @@ class PortfolioManager:
                 peak_p = max(pos.get("peak_price", buy_p), curr_p)
                 pos["peak_price"] = peak_p
 
-                # Check Knock-Out
+                # 4a. Check Knock-Out Barrier
                 if pos.get("is_knocked_out"):
                     self.sell("day_trading", sym, 0.001, reason="❌ Knock-Out Barriere berührt (Totalverlust)")
                     actions_taken.append(f"KNOCK-OUT {sym}")
                     continue
 
-                # Very tight Trailing Profit Ratchet
-                if gain_pct >= 5.0:
-                    pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.02, 2))
-                if gain_pct >= 10.0:
-                    pos["stop_loss"] = max(pos.get("stop_loss", 0), round(peak_p * 0.95, 2))  # 5% trailing room
+                # 4b. Professional Trailing Stop System (3 stages)
+                breakeven_pct = self.strategy.get("daytrade_trailing_breakeven_pct", 0.03) * 100
+                lock_pct = self.strategy.get("daytrade_trailing_lock_pct", 0.05) * 100
+                aggressive_pct = self.strategy.get("daytrade_trailing_aggressive_pct", 0.10) * 100
 
-                # Intraday strict stop-loss
+                if gain_pct >= aggressive_pct:
+                    # Stage 3: Trail 5% below peak (aggressive profit protection)
+                    pos["stop_loss"] = max(pos.get("stop_loss", 0), round(peak_p * 0.95, 2))
+                elif gain_pct >= lock_pct:
+                    # Stage 2: Lock in +2% profit minimum
+                    pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.02, 2))
+                elif gain_pct >= breakeven_pct:
+                    # Stage 1: Move stop to breakeven (no loss possible)
+                    pos["stop_loss"] = max(pos.get("stop_loss", 0), round(buy_p * 1.001, 2))
+
+                # 4c. Strict stop-loss execution
                 if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
                     if curr_p >= buy_p:
-                        self.sell("day_trading", sym, curr_p, reason=f"🎯 Daytrade-Trailing-Stop gegriffen (+{gain_pct:.1f}%)")
-                        actions_taken.append(f"VERKAUF {sym} (Daytrade-Profit +{gain_pct:.1f}%)")
+                        self.sell("day_trading", sym, curr_p, reason=f"🎯 Trailing-Stop gesichert (+{gain_pct:.1f}%)")
+                        actions_taken.append(f"VERKAUF {sym} (Trailing-Profit +{gain_pct:.1f}%)")
                     else:
-                        self.sell("day_trading", sym, curr_p, reason=f"🚨 Daytrade Notbremse (Stop-Loss {gain_pct:.1f}%)")
-                        actions_taken.append(f"VERKAUF {sym} (Daytrade-Stop)")
+                        self.sell("day_trading", sym, curr_p, reason=f"🚨 Stop-Loss Disziplin ({gain_pct:.1f}%) — Verlust akzeptiert")
+                        actions_taken.append(f"VERKAUF {sym} (Stop-Loss {gain_pct:.1f}%)")
                     continue
 
-                # Automatic End-of-Day Derisking (if >21:00 and in profit)
-                hour = get_berlin_now().hour
-                if hour >= 21 and gain_pct > 2.0:
-                    self.sell("day_trading", sym, curr_p, reason=f"🛡️ Intraday EOD-Derisking (+{gain_pct:.1f}%)")
-                    actions_taken.append(f"VERKAUF {sym} (EOD +{gain_pct:.1f}%)")
+                # 4d. EOD: Close ALL positions (kein Übernacht-Risiko!)
+                if hour >= eod_hour and eod_close_all:
+                    reason = f"🛡️ EOD Pflichtverkauf ({gain_pct:+.1f}%) — Kein Übernacht-Risiko"
+                    self.sell("day_trading", sym, curr_p, reason=reason)
+                    actions_taken.append(f"VERKAUF {sym} (EOD {gain_pct:+.1f}%)")
                     continue
 
-            # Buy new highly leveraged positions
-            if dt_depot["cash"] >= 1000.0 and len(dt_depot["positions"]) < 5 and rt_alerts:
+            # --- ENTRY LOGIC (blocked in PAUSE mode) ---
+
+            # Gate 0: VIX-Pause — no new trades when market is too chaotic
+            if trading_mode == "PAUSE":
+                actions_taken.append("⏸️ Daytrader PAUSE (VIX ≥ 35 — Markt zu chaotisch)")
+
+            # Gate 1: Check daily loss limit
+            elif not self._check_daily_loss_limit(dt_depot.get("cash", 0) + sum(
+                    p["current_price"] * p["shares"] for p in dt_depot.get("positions", {}).values())):
+                actions_taken.append("🛑 Daytrader GESPERRT (Tages-Verlustlimit -5% erreicht)")
+
+            # Gate 2: Check daily trade count
+            elif not self._check_daily_trade_count():
+                actions_taken.append("🛑 Daytrader GESPERRT (Max. Trades pro Tag erreicht)")
+
+            # Gate 3: Basic prerequisites
+            elif dt_depot["cash"] >= 500.0 and len(dt_depot["positions"]) < 3 and rt_alerts:
                 top_alert = rt_alerts[0]
                 sym = top_alert["symbol"]
                 real_name = next((r.get("name", sym) for r in scan_results if r["symbol"] == sym), sym)
                 if real_name == sym:
                     try:
-                        import yfinance as yf
                         info = yf.Ticker(sym).info
                         real_name = info.get('shortName') or info.get('longName') or sym
                     except:
                         pass
                 name = top_alert.get("name") or real_name
                 p = top_alert.get("trigger_price", 10.0)
-                
-                # 1. Check if we already hold a position for this underlying
+
+                # Gate 4: No duplicate positions on same underlying
                 has_it = False
                 for existing_sym, pos in dt_depot["positions"].items():
                     if existing_sym == sym or pos.get("underlying_symbol") == sym:
                         has_it = True
                         break
-                
-                # 2. Check if we already traded it today (prevent revenge trading / infinite loop)
+
+                # Gate 5: No revenge trading (same symbol today)
                 recently_traded = False
                 try:
                     today_str = get_berlin_now().strftime("%Y-%m-%d")
@@ -1054,66 +1262,79 @@ class PortfolioManager:
                 except:
                     pass
 
-                # 3. Check if alert is fresh (< 5 mins old)
+                # Gate 6: Alert freshness (< 15 min old)
                 is_fresh = True
                 alert_ts = top_alert.get("timestamp")
                 if alert_ts:
                     try:
-                        import datetime
                         atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
                         if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 900:
                             is_fresh = False
                     except:
                         pass
-                
-                if not has_it and not recently_traded and is_fresh and p > 0:
+
+                # Gate 7: Correlation check (max 2 in same sector)
+                passes_correlation = self._check_correlation(sym, dt_depot)
+
+                # Gate 8: Multi-factor entry quality score
+                entry_score = self._calculate_entry_quality(top_alert, sym)
+                min_score = self.strategy.get("daytrade_min_entry_score", 65)
+                # In DEFENSIVE mode, require higher score
+                if trading_mode == "DEFENSIVE":
+                    min_score = 80
+
+                if (not has_it and not recently_traded and is_fresh and p > 0
+                        and passes_correlation and entry_score >= min_score):
+
                     is_bearish = top_alert.get("direction") == "SHORT"
                     dir_str = "SHORT" if is_bearish else "LONG"
-                    
-                    spike = top_alert.get('change_1min_pct', 2.0)
-                    max_lev = self.strategy.get("daytrade_max_leverage", 30.0)
+
+                    # Conservative leverage scaling (max 10x, not 30x)
+                    spike = top_alert.get('change_1min_pct', 0.5)
+                    max_lev = self.strategy.get("daytrade_max_leverage", 10.0)
                     if spike >= 2.0:
-                        chosen_lev = min(30.0, max_lev)
-                    elif spike >= 1.2:
-                        chosen_lev = min(15.0, max_lev)
-                    elif spike >= 0.8:
                         chosen_lev = min(10.0, max_lev)
-                    elif spike >= 0.5:
+                    elif spike >= 1.2:
+                        chosen_lev = min(7.0, max_lev)
+                    elif spike >= 0.8:
                         chosen_lev = min(5.0, max_lev)
+                    elif spike >= 0.5:
+                        chosen_lev = min(3.0, max_lev)
                     else:
-                        chosen_lev = min(2.0, max_lev) # Minimum 2x Hebel für Daytrader
-                    
-                    vol_factor = self._calculate_volatility_factor(sym)
+                        chosen_lev = 1.0  # Direct stock purchase for weak signals
+
+                    # Risk-based position sizing (max 2% risk per trade)
                     regime = self._get_market_regime()
-                    base_alloc = 1500.0
-                    if regime == "BEAR" and not is_bearish:
-                        # Don't daytrade long strongly in a bear market
-                        base_alloc = 750.0
-                        
-                    alloc = min(base_alloc * vol_factor, dt_depot["cash"] * 0.9)
-                    
+                    sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.15)
+                    depot_value = dt_depot.get("cash", 10000) + sum(
+                        pos["current_price"] * pos["shares"] for pos in dt_depot.get("positions", {}).values()
+                    )
+                    alloc = self._calculate_risk_based_position_size(
+                        depot_value, p, sl_pct, trading_mode, is_bearish, regime
+                    )
+                    alloc = min(alloc, dt_depot["cash"] * 0.9)  # Never exceed 90% of cash
+
                     if chosen_lev > 1.0:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, name, p, direction=dir_str, target_leverage=chosen_lev)
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
-                        reason_msg = f"⚡ Daytrade Momentum ({spike:+.1f}% Spike) | {chosen_lev}x Hebel"
-                        sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.25)
-                        sl_price = cert_price * (1.0 - sl_pct) # Dynamischer Stop-Loss durch KI-Tagebuch
-                        
+                        reason_msg = f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100) | {chosen_lev}x Hebel | Risiko {sl_pct*100:.0f}%"
+                        sl_price = cert_price * (1.0 - sl_pct)
+
                         self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None, derivative_meta=turbo)
-                        actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str})")
+                        actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str}, Score {entry_score})")
                     else:
-                        # 1x Direktkauf der Aktie (Ohne Hebel)
+                        # Direct stock purchase (no leverage for weak signals)
                         shares = alloc / p
-                        reason_msg = f"⚡ Daytrade Momentum ({spike:+.1f}% Spike) | 1x Direkt-Kauf (Aktie)"
-                        sl_price = p * 0.98 # 2% Stop-Loss auf die Aktie (sehr eng beim Daytrading)
-                        
+                        reason_msg = f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100) | 1x Aktie | Risiko {sl_pct*100:.0f}%"
+                        sl_price = p * (1.0 - sl_pct)
+
                         self.buy("day_trading", sym, name, shares, p,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None)
-                        actions_taken.append(f"KAUF {sym} (1x Direkt-Kauf)")
+                        actions_taken.append(f"KAUF {sym} (1x Direkt, Score {entry_score})")
 
         self._save()
 

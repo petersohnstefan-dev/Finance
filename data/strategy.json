@@ -1,6 +1,19 @@
 {
-    "daytrade_max_leverage": 30.0,
-    "daytrade_stop_loss_pct": 0.25,
+    "daytrade_max_leverage": 10.0,
+    "daytrade_stop_loss_pct": 0.15,
+    "daytrade_max_risk_per_trade_pct": 0.02,
+    "daytrade_min_risk_reward_ratio": 2.0,
+    "daytrade_max_daily_loss_pct": 0.05,
+    "daytrade_max_daily_trades": 5,
+    "daytrade_max_correlated_positions": 2,
+    "daytrade_eod_close_all": true,
+    "daytrade_eod_time_hour": 21,
+    "daytrade_min_entry_score": 65,
+    "daytrade_trailing_breakeven_pct": 0.03,
+    "daytrade_trailing_lock_pct": 0.05,
+    "daytrade_trailing_aggressive_pct": 0.10,
+    "daytrade_vix_defensive_threshold": 25.0,
+    "daytrade_vix_pause_threshold": 35.0,
     "short_term_trailing_start_pct": 8.0,
     "short_term_stop_loss_pct": 0.15
 }

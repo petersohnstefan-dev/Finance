@@ -1,4 +1,4 @@
-﻿import pandas as pd
+import pandas as pd
 import numpy as np
 from typing import Dict, Any, List, Optional
 
@@ -147,4 +147,36 @@ class BreakoutRadar:
             "short_ratio": short_ratio,
             "squeeze_score": squeeze_score,
             "triggers": triggers
+        }
+
+    def find_key_levels(self, df: pd.DataFrame, lookback: int = 60) -> Dict[str, Any]:
+        """Finds Support/Resistance levels via pivot point analysis for RRR calculation."""
+        if df.empty or len(df) < 20:
+            return {'support': [], 'resistance': [], 'nearest_support': 0, 'nearest_resistance': 0}
+        
+        recent = df.tail(lookback)
+        close = recent['Close'].iloc[-1]
+        
+        # Find local highs (resistance) and lows (support) using rolling windows
+        window = 5
+        highs = recent['High'].rolling(window=window, center=True).max()
+        lows = recent['Low'].rolling(window=window, center=True).min()
+        
+        # Resistance: points where High equals the rolling max (local peaks)
+        resistance_mask = recent['High'] == highs
+        resistance_levels = recent.loc[resistance_mask, 'High'].drop_duplicates().sort_values(ascending=False).head(5).tolist()
+        
+        # Support: points where Low equals the rolling min (local troughs)
+        support_mask = recent['Low'] == lows
+        support_levels = recent.loc[support_mask, 'Low'].drop_duplicates().sort_values(ascending=True).head(5).tolist()
+        
+        # Find nearest levels above and below current price
+        nearest_resistance = min([r for r in resistance_levels if r > close], default=close * 1.05)
+        nearest_support = max([s for s in support_levels if s < close], default=close * 0.95)
+        
+        return {
+            'support': [round(s, 2) for s in support_levels],
+            'resistance': [round(r, 2) for r in resistance_levels],
+            'nearest_support': round(nearest_support, 2),
+            'nearest_resistance': round(nearest_resistance, 2)
         }
