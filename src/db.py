@@ -132,7 +132,7 @@ class PortfolioDB:
                      shares: float, total_amount: float, price: float, 
                      sell_price: Optional[float] = None, pnl: Optional[float] = None, 
                      pnl_pct: Optional[float] = None, reason: str = "",
-                     executed_at: Optional[str] = None):
+                     executed_at: Optional[str] = None, fees: float = 0.0):
         now_str = executed_at or get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
         buy_p = price if trade_type == "BUY" else price
         sell_p = sell_price if trade_type == "SELL" else None
@@ -141,12 +141,12 @@ class PortfolioDB:
             cursor.execute("""
             INSERT INTO trades (
                 depot_id, trade_type, symbol, name, shares, buy_price, sell_price, 
-                total_amount, pnl, pnl_pct, executed_at, reason
+                total_amount, pnl, pnl_pct, executed_at, reason, fees
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 depot_id, trade_type, symbol, name, shares, 
                 buy_p, sell_p,
-                total_amount, pnl, pnl_pct, now_str, reason
+                total_amount, pnl, pnl_pct, now_str, reason, fees
             ))
             conn.commit()
 
