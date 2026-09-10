@@ -418,7 +418,7 @@
       ]
     },
     "day_trading": {
-      "cash": 2382.5,
+      "cash": 4098.4818158535,
       "positions": {
         "KO652333": {
           "symbol": "KO652333",
@@ -446,34 +446,6 @@
           "distance_to_ko_pct": 18.6,
           "is_knocked_out": false,
           "peak_price": 2.4563,
-          "last_updated": "21:24:22"
-        },
-        "KO137678": {
-          "symbol": "KO137678",
-          "name": "⚡ Turbo Bull 5.0x auf VOLKSWAGEN AG                 V (KO: 66.68)",
-          "shares": 920.2454,
-          "buy_price": 1.6544,
-          "current_price": 1.772,
-          "buy_date": "2026-09-08 10:02",
-          "stop_loss": 1.69,
-          "take_profit": null,
-          "reason": "⚡ Daytrade Momentum (+0.6% Spike) | 5.0x Hebel",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "wkn": "KO137678",
-          "underlying_symbol": "VOW3.DE",
-          "underlying_name": "VOW3.DE",
-          "direction": "LONG",
-          "ratio": 0.1,
-          "strike": 65.38,
-          "knockout_barrier": 66.68,
-          "initial_underlying_price": 81.72,
-          "current_underlying_price": 81.72,
-          "cert_price": 1.63,
-          "leverage": 5.0,
-          "distance_to_ko_pct": 19.8,
-          "is_knocked_out": false,
-          "peak_price": 1.8040000000000007,
           "last_updated": "21:24:22"
         },
         "KO215398": {
@@ -504,34 +476,6 @@
           "peak_price": 9.2466,
           "last_updated": "21:24:22"
         },
-        "KO669329": {
-          "symbol": "KO669329",
-          "name": "⚡ Turbo Bull 10.0x auf Lockheed Martin Corporation (KO: 487.67)",
-          "shares": 282.4859,
-          "buy_price": 5.3896,
-          "current_price": 5.876999999999999,
-          "buy_date": "2026-09-08 10:11",
-          "stop_loss": 5.96,
-          "take_profit": null,
-          "reason": "⚡ Daytrade Momentum (+1.1% Spike) | 10.0x Hebel",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "wkn": "KO669329",
-          "underlying_symbol": "LMT",
-          "underlying_name": "LMT",
-          "direction": "LONG",
-          "ratio": 0.1,
-          "strike": 478.11,
-          "knockout_barrier": 487.67,
-          "initial_underlying_price": 531.23,
-          "current_underlying_price": 531.23,
-          "cert_price": 5.31,
-          "leverage": 10.0,
-          "distance_to_ko_pct": 9.2,
-          "is_knocked_out": false,
-          "peak_price": 6.275,
-          "last_updated": "21:24:22"
-        },
         "KO330450": {
           "symbol": "KO330450",
           "name": "⚡ Turbo Bull 5.0x auf Oracle Corporation (KO: 133.50)",
@@ -559,6 +503,32 @@
           "is_knocked_out": false,
           "peak_price": 3.3870000000000005,
           "last_updated": "21:24:22"
+        },
+        "KO810574": {
+          "symbol": "KO810574",
+          "name": "⚡ Turbo Bull 5.0x auf Novavax, Inc. (KO: 7.64)",
+          "shares": 7894.7368,
+          "buy_price": 0.1928,
+          "current_price": 0.19,
+          "buy_date": "2026-09-10 21:41",
+          "stop_loss": 0.14,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO810574",
+          "underlying_symbol": "NVAX",
+          "underlying_name": "Novavax, Inc.",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 7.49,
+          "knockout_barrier": 7.64,
+          "initial_underlying_price": 9.36,
+          "current_underlying_price": 9.36,
+          "cert_price": 0.19,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -616,6 +586,45 @@
           "total": 1522.5,
           "date": "2026-09-08 10:16",
           "reason": "⚡ Daytrade Momentum (+0.6% Spike) | 5.0x Hebel"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO137678",
+          "name": "⚡ Turbo Bull 5.0x auf VOLKSWAGEN AG                 V (KO: 66.68)",
+          "product_type": "KNOCKOUT",
+          "shares": 920.2454,
+          "buy_price": 1.6544,
+          "sell_price": 1.7454,
+          "total": 1606.21,
+          "pnl": 83.76,
+          "pnl_pct": 5.5,
+          "date": "2026-09-10 21:41",
+          "reason": "🛡️ Intraday EOD-Derisking (+7.1%)"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO669329",
+          "name": "⚡ Turbo Bull 10.0x auf Lockheed Martin Corporation (KO: 487.67)",
+          "product_type": "KNOCKOUT",
+          "shares": 282.4859,
+          "buy_price": 5.3896,
+          "sell_price": 5.7888,
+          "total": 1635.27,
+          "pnl": 112.78,
+          "pnl_pct": 7.41,
+          "date": "2026-09-10 21:41",
+          "reason": "🎯 Daytrade-Trailing-Stop gegriffen (+9.0%)"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO810574",
+          "name": "⚡ Turbo Bull 5.0x auf Novavax, Inc. (KO: 7.64)",
+          "product_type": "KNOCKOUT",
+          "shares": 7894.7368,
+          "price": 0.19,
+          "total": 1522.5,
+          "date": "2026-09-10 21:41",
+          "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel"
         }
       ]
     }
