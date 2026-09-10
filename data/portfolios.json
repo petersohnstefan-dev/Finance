@@ -6,7 +6,7 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
       "initial_cash": 10000.0,
-      "cash": 5661.00181116,
+      "cash": 3656.00181116,
       "positions": {
         "SOL-USD": {
           "symbol": "SOL-USD",
@@ -49,6 +49,18 @@
           "derivative_type": "STOCK",
           "peak_price": 164.75,
           "last_updated": "18:21:24"
+        },
+        "SZG.DE": {
+          "symbol": "SZG.DE",
+          "name": "SZG.DE",
+          "shares": 35.9066,
+          "buy_price": 55.8114,
+          "current_price": 55.7,
+          "buy_date": "2026-09-10 18:26",
+          "stop_loss": 51.8,
+          "take_profit": null,
+          "reason": "⚡ Echtzeit-Spike (+0.9%) | Dark Pool: 36.5% | Social: +15% | ⚖️ Tribunal (BUY): Trotz der inhärenten Risiken von Momentum-Trades überwiegen die bullischen Signale für ein 'short_term'-Depot. Die Konvergenz von Echtzeit-Spike, signifikanter Dark Pool-Präsenz und starkem sozialen Interesse deutet auf eine erhöhte Aufmerksamkeit und potenzielle Liquiditätsströme hin, die kurzfristig positive Preisbewegungen treiben könnten. Es liegen keine offensichtlichen Red Flags vor, die einen sofortigen Ausschluss rechtfertigen würden.",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -216,6 +228,17 @@
           "pnl_pct": -0.92,
           "date": "2026-09-10 18:21",
           "reason": "🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: 58/100, PCR: 2.34) ➔ Vorzeitiger Ausstieg"
+        },
+        {
+          "type": "BUY",
+          "symbol": "SZG.DE",
+          "name": "SZG.DE",
+          "product_type": "STOCK",
+          "shares": 35.9066,
+          "price": 55.7,
+          "total": 2004.0,
+          "date": "2026-09-10 18:26",
+          "reason": "⚡ Echtzeit-Spike (+0.9%) | Dark Pool: 36.5% | Social: +15% | ⚖️ Tribunal (BUY): Trotz der inhärenten Risiken von Momentum-Trades überwiegen die bullischen Signale für ein 'short_term'-Depot. Die Konvergenz von Echtzeit-Spike, signifikanter Dark Pool-Präsenz und starkem sozialen Interesse deutet auf eine erhöhte Aufmerksamkeit und potenzielle Liquiditätsströme hin, die kurzfristig positive Preisbewegungen treiben könnten. Es liegen keine offensichtlichen Red Flags vor, die einen sofortigen Ausschluss rechtfertigen würden."
         }
       ]
     },
@@ -450,7 +473,7 @@
           "name": "⚡ Turbo Bull 5.0x auf Duke Energy Corporation (Holdin (KO: 98.85)",
           "shares": 619.8347,
           "buy_price": 2.4563,
-          "current_price": 2.2659999999999996,
+          "current_price": 2.2630000000000012,
           "buy_date": "2026-09-07 21:12",
           "stop_loss": 1.81,
           "take_profit": null,
@@ -471,7 +494,7 @@
           "distance_to_ko_pct": 17.3,
           "is_knocked_out": false,
           "peak_price": 2.4563,
-          "last_updated": "18:21:24"
+          "last_updated": "18:26:31"
         },
         "KO215398": {
           "symbol": "KO215398",
