@@ -418,7 +418,7 @@
       ]
     },
     "day_trading": {
-      "cash": 4098.4818158535,
+      "cash": 2574.9818158535,
       "positions": {
         "KO652333": {
           "symbol": "KO652333",
@@ -528,6 +528,33 @@
           "cert_price": 0.19,
           "leverage": 5.0,
           "distance_to_ko_pct": 18.4,
+          "is_knocked_out": false,
+          "peak_price": 0.1928
+        },
+        "KO216195": {
+          "symbol": "KO216195",
+          "name": "⚡ Turbo Bull 5.0x auf Intuitive Machines, Inc. (KO: 11.93)",
+          "shares": 5172.4138,
+          "buy_price": 0.2943,
+          "current_price": 0.29,
+          "buy_date": "2026-09-10 21:46",
+          "stop_loss": 0.22,
+          "take_profit": null,
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO216195",
+          "underlying_symbol": "LUNR",
+          "underlying_name": "Intuitive Machines, Inc.",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 11.7,
+          "knockout_barrier": 11.93,
+          "initial_underlying_price": 14.62,
+          "current_underlying_price": 14.62,
+          "cert_price": 0.29,
+          "leverage": 5.0,
+          "distance_to_ko_pct": 18.4,
           "is_knocked_out": false
         }
       },
@@ -625,6 +652,17 @@
           "total": 1522.5,
           "date": "2026-09-10 21:41",
           "reason": "⚡ Daytrade Momentum (+0.5% Spike) | 5.0x Hebel"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO216195",
+          "name": "⚡ Turbo Bull 5.0x auf Intuitive Machines, Inc. (KO: 11.93)",
+          "product_type": "KNOCKOUT",
+          "shares": 5172.4138,
+          "price": 0.29,
+          "total": 1522.5,
+          "date": "2026-09-10 21:46",
+          "reason": "⚡ Daytrade Momentum (+0.7% Spike) | 5.0x Hebel"
         }
       ]
     }
