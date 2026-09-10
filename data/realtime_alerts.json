@@ -1,5 +1,25 @@
 [
   {
+    "timestamp": "2026-09-10 12:36:00",
+    "time_str": "12:36:00",
+    "symbol": "SIX2.DE",
+    "direction": "LONG",
+    "trigger_price": 69.3,
+    "change_1min_pct": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SIX2.DE explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 12:35:55",
+    "time_str": "12:35:55",
+    "symbol": "GDX",
+    "direction": "SHORT",
+    "trigger_price": 98.32,
+    "change_1min_pct": 0.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GDX stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-10 12:31:35",
     "time_str": "12:31:35",
     "symbol": "NOW",
@@ -478,25 +498,5 @@
     "change_1min_pct": 0.5,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OHB.DE explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 11:31:14",
-    "time_str": "11:31:14",
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 15.05,
-    "change_1min_pct": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 11:21:10",
-    "time_str": "11:21:10",
-    "symbol": "INTU",
-    "direction": "LONG",
-    "trigger_price": 314.96,
-    "change_1min_pct": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
