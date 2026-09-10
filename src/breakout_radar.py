@@ -5,7 +5,7 @@ from typing import Dict, Any, List, Optional
 class BreakoutRadar:
     """Detects early signals of explosive moves, volatility breakouts, and short squeezes (like Moderna MRNA)."""
 
-    def analyze_breakout_potential(self, df: pd.DataFrame, fundamentals: Dict[str, Any], forum_mentions: int = 0) -> Dict[str, Any]:
+    def analyze_breakout_potential(self, df: pd.DataFrame, fundamentals: Dict[str, Any], forum_mentions: int = 0, news_sentiment: Dict[str, Any] = None) -> Dict[str, Any]:
         if df.empty or len(df) < 25:
             return {"breakout_score": 0, "status": "Zu wenige Daten", "triggers": []}
 
@@ -107,7 +107,29 @@ class BreakoutRadar:
                 "desc": "Starke Diskussionen auf Reddit / StockTwits. Treibstoff für spekulatives Momentum."
             })
 
+
+        # 7. Live-News & Earnings Sentiment
+        if news_sentiment:
+            n_score = news_sentiment.get("score", 0)
+            if n_score > 0:
+                score += min(20, n_score * 2)
+                bulls = ", ".join(news_sentiment.get("bullish_keywords", []))
+                triggers.append({
+                    "type": "catalyst",
+                    "title": f" Bullische Nachrichtenlage (+{n_score})",
+                    "desc": f"Positive Signale in aktuellen News/Quartalszahlen. Keywords: {bulls}"
+                })
+            elif n_score < 0:
+                score -= min(20, abs(n_score) * 2)
+                bears = ", ".join(news_sentiment.get("bearish_keywords", []))
+                triggers.append({
+                    "type": "bearish_catalyst",
+                    "title": f" Bearische Nachrichtenlage ({n_score})",
+                    "desc": f"Negative Signale in aktuellen News. Keywords: {bears}"
+                })
+
         final_score = min(100, round(score))
+
 
         if final_score >= 70:
             status = "🚨 AKUTER AUSBRUCH / SQUEEZE-DYNAMIK"
