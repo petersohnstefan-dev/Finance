@@ -141,12 +141,12 @@ class PortfolioDB:
             cursor.execute("""
             INSERT INTO trades (
                 depot_id, trade_type, symbol, name, shares, buy_price, sell_price, 
-                total_amount, pnl, pnl_pct, executed_at, reason, fees
+                total_amount, pnl, pnl_pct, executed_at, reason
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 depot_id, trade_type, symbol, name, shares, 
                 buy_p, sell_p,
-                total_amount, pnl, pnl_pct, now_str, reason, fees
+                total_amount, pnl, pnl_pct, now_str, reason
             ))
             conn.commit()
 
