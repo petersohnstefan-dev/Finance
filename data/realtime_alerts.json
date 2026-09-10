@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-10 11:46:06",
+    "time_str": "11:46:06",
+    "symbol": "SZU.DE",
+    "direction": "LONG",
+    "trigger_price": 13.0,
+    "change_1min_pct": 0.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SZU.DE explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 11:46:06",
+    "time_str": "11:46:06",
+    "symbol": "SBS.DE",
+    "direction": "SHORT",
+    "trigger_price": 24.95,
+    "change_1min_pct": 1.19,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SBS.DE stürzt um -1.19% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-10 11:46:04",
+    "time_str": "11:46:04",
+    "symbol": "DUOL",
+    "direction": "SHORT",
+    "trigger_price": 138.42,
+    "change_1min_pct": 0.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-10 11:40:52",
     "time_str": "11:40:52",
     "symbol": "HFG.DE",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COK.DE explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 10:16:02",
-    "time_str": "10:16:02",
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 17.16,
-    "change_1min_pct": 0.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 10:16:02",
-    "time_str": "10:16:02",
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 295.18,
-    "change_1min_pct": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-10 10:16:00",
-    "time_str": "10:16:00",
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 137.9,
-    "change_1min_pct": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.75% in 5 Min.! Momentum aktiv."
   }
 ]
