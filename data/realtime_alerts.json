@@ -1,5 +1,65 @@
 [
   {
+    "timestamp": "2026-09-11 11:56:34",
+    "time_str": "11:56:34",
+    "symbol": "S92.DE",
+    "direction": "SHORT",
+    "trigger_price": 59.2,
+    "change_1min_pct": 0.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S92.DE stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 11:56:33",
+    "time_str": "11:56:33",
+    "symbol": "STO3.DE",
+    "direction": "LONG",
+    "trigger_price": 102.2,
+    "change_1min_pct": 0.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STO3.DE explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 11:56:32",
+    "time_str": "11:56:32",
+    "symbol": "RDDT",
+    "direction": "LONG",
+    "trigger_price": 156.15,
+    "change_1min_pct": 0.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 11:56:31",
+    "time_str": "11:56:31",
+    "symbol": "ROIV",
+    "direction": "LONG",
+    "trigger_price": 41.52,
+    "change_1min_pct": 1.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ROIV explodiert um +1.24% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 11:56:30",
+    "time_str": "11:56:30",
+    "symbol": "BEAM",
+    "direction": "LONG",
+    "trigger_price": 24.6,
+    "change_1min_pct": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 11:56:29",
+    "time_str": "11:56:29",
+    "symbol": "FBTC",
+    "direction": "SHORT",
+    "trigger_price": 66.98,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FBTC stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-11 11:50:57",
     "time_str": "11:50:57",
     "symbol": "HFG.DE",
@@ -438,65 +498,5 @@
     "change_1min_pct": 0.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHW explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:55",
-    "time_str": "10:35:55",
-    "symbol": "SIX2.DE",
-    "direction": "SHORT",
-    "trigger_price": 68.0,
-    "change_1min_pct": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SIX2.DE stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:55",
-    "time_str": "10:35:55",
-    "symbol": "S92.DE",
-    "direction": "LONG",
-    "trigger_price": 58.7,
-    "change_1min_pct": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S92.DE explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:55",
-    "time_str": "10:35:55",
-    "symbol": "GXI.DE",
-    "direction": "SHORT",
-    "trigger_price": 28.92,
-    "change_1min_pct": 0.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GXI.DE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:54",
-    "time_str": "10:35:54",
-    "symbol": "SZU.DE",
-    "direction": "LONG",
-    "trigger_price": 12.86,
-    "change_1min_pct": 0.78,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SZU.DE explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:54",
-    "time_str": "10:35:54",
-    "symbol": "STO3.DE",
-    "direction": "LONG",
-    "trigger_price": 102.2,
-    "change_1min_pct": 0.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STO3.DE explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:35:54",
-    "time_str": "10:35:54",
-    "symbol": "PBB.DE",
-    "direction": "SHORT",
-    "trigger_price": 3.32,
-    "change_1min_pct": 0.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PBB.DE stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
