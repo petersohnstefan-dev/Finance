@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-11 20:41:07",
+    "time_str": "20:41:07",
+    "symbol": "PUM.DE",
+    "direction": "LONG",
+    "trigger_price": 21.69,
+    "change_1min_pct": 0.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PUM.DE explodiert um +0.84% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 20:41:07",
+    "time_str": "20:41:07",
+    "symbol": "TTK.DE",
+    "direction": "SHORT",
+    "trigger_price": 3.15,
+    "change_1min_pct": 3.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TTK.DE stürzt um -3.37% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 20:41:03",
+    "time_str": "20:41:03",
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 147.77,
+    "change_1min_pct": 0.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-11 20:35:58",
     "time_str": "20:35:58",
     "symbol": "BKSY",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.73,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 18:56:00",
-    "time_str": "18:56:00",
-    "symbol": "ADBE",
-    "direction": "LONG",
-    "trigger_price": 252.62,
-    "change_1min_pct": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADBE explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 18:55:57",
-    "time_str": "18:55:57",
-    "symbol": "PUM.DE",
-    "direction": "LONG",
-    "trigger_price": 21.69,
-    "change_1min_pct": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PUM.DE explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 18:55:56",
-    "time_str": "18:55:56",
-    "symbol": "TTK.DE",
-    "direction": "SHORT",
-    "trigger_price": 3.15,
-    "change_1min_pct": 3.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TTK.DE stürzt um -3.37% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
