@@ -1,5 +1,25 @@
 [
   {
+    "timestamp": "2026-09-11 12:01:23",
+    "time_str": "12:01:23",
+    "symbol": "TTK.DE",
+    "direction": "SHORT",
+    "trigger_price": 3.27,
+    "change_1min_pct": 0.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TTK.DE stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 12:01:19",
+    "time_str": "12:01:19",
+    "symbol": "BITB",
+    "direction": "SHORT",
+    "trigger_price": 41.73,
+    "change_1min_pct": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BITB stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-11 11:56:34",
     "time_str": "11:56:34",
     "symbol": "S92.DE",
@@ -478,25 +498,5 @@
     "change_1min_pct": 0.53,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INH.DE explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:40:59",
-    "time_str": "10:40:59",
-    "symbol": "EEM",
-    "direction": "LONG",
-    "trigger_price": 67.8,
-    "change_1min_pct": 0.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 EEM explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 10:40:58",
-    "time_str": "10:40:58",
-    "symbol": "ETHW",
-    "direction": "LONG",
-    "trigger_price": 17.69,
-    "change_1min_pct": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHW explodiert um +0.68% in 5 Min.! Momentum aktiv."
   }
 ]
