@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-09-11 09:55:52",
+    "time_str": "09:55:52",
+    "symbol": "SDF.DE",
+    "direction": "SHORT",
+    "trigger_price": 17.26,
+    "change_1min_pct": 0.69,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SDF.DE stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 09:55:51",
+    "time_str": "09:55:51",
+    "symbol": "NDX1.DE",
+    "direction": "SHORT",
+    "trigger_price": 39.42,
+    "change_1min_pct": 0.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NDX1.DE stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-11 09:55:51",
+    "time_str": "09:55:51",
+    "symbol": "DRW3.DE",
+    "direction": "LONG",
+    "trigger_price": 112.6,
+    "change_1min_pct": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DRW3.DE explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-11 09:51:09",
     "time_str": "09:51:09",
     "symbol": "SIX2.DE",
@@ -468,35 +498,5 @@
     "change_1min_pct": 0.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BAYN.DE stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 09:21:05",
-    "time_str": "09:21:05",
-    "symbol": "ENR.DE",
-    "direction": "LONG",
-    "trigger_price": 142.56,
-    "change_1min_pct": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENR.DE explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 09:21:05",
-    "time_str": "09:21:05",
-    "symbol": "BAS.DE",
-    "direction": "SHORT",
-    "trigger_price": 52.78,
-    "change_1min_pct": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BAS.DE stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-11 09:21:04",
-    "time_str": "09:21:04",
-    "symbol": "AZN.L",
-    "direction": "SHORT",
-    "trigger_price": 11749.88,
-    "change_1min_pct": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AZN.L stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
