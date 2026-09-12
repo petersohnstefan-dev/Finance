@@ -1,0 +1,42 @@
+                                aggregated[sym]["Score"] = max(aggregated[sym]["Score"], s.get("score", 0.0))
+
+                    unique_syms = list(aggregated.keys())
+                    import yfinance as yf
+                    live_prices = {}
+                    try:
+                        tickers = yf.Tickers(" ".join(unique_syms))
+                        for sym in unique_syms:
+                            info = tickers.tickers[sym].fast_info
+                            if hasattr(info, 'last_price') and info.last_price is not None:
+                                live_prices[sym] = info.last_price
+                    except Exception:
+                        pass
+                        
+                    for sym, data in aggregated.items():
+                        sig_p = data["Erster_Signal_Kurs"]
+                        curr_p = live_prices.get(sym, sig_p)
+                        ret_pct = ((curr_p - sig_p) / sig_p * 100.0) if sig_p > 0 else 0.0
+                        
+                        hist_data.append({
+                            "Erstes Datum": data["Erstes Datum"],
+                            "Letztes Datum": data["Letztes Datum"],
+                            "Treffer": data["Treffer"],
+                            "Ticker": sym,
+                            "Name": data["Name"],
+                            "Signal-Kurs (Init)": f"{sig_p:.2f}",
+                            "Aktueller Kurs": f"{curr_p:.2f}",
+                            "Performance": ret_pct,
+                            "Score (Max)": data["Score"]
+                        })
+                    
+                    # Sort by hits and then by date
+                    hist_data.sort(key=lambda x: (x["Treffer"], x["Letztes Datum"]), reverse=True)
+                    
+                    import pandas as pd
+                    df_hist = pd.DataFrame(hist_data)
+                    df_hist["Performance (str)"] = df_hist["Performance"].apply(lambda x: f"{x:+.2f}%")
+                    
+                    def color_ret(val):
+                        if isinstance(val, str) and "%" in val:
+                            try:
+                                num = float(val.replace("%", ""))

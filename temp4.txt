@@ -1,0 +1,24 @@
+def get_recent_alerts() -> List[Dict[str, Any]]:
+        if os.path.exists(ALERTS_LOG_FILE):
+            try:
+                with open(ALERTS_LOG_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return []
+
+    @staticmethod
+    def get_live_ticks_snapshot() -> Dict[str, Any]:
+        if os.path.exists(LIVE_PRICES_FILE):
+            try:
+                with open(LIVE_PRICES_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {}
+
+if __name__ == "__main__":
+    scanner = RealTimeBreakoutScanner()
+    print("Starte erweiterten Multi-Asset Real-Time-Scan...")
+    res = scanner.scan_category()
+    print(f"Erfolgreich {res['count']} Assets in Real-Time gescannt.")

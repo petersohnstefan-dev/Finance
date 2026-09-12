@@ -1,0 +1,42 @@
+        if is_breakout_mode:
+            st.markdown("---")
+            st.subheader("🕰️ Radar-Historie (Was wurde aus vergangenen Signalen?)")
+            
+            with st.expander("📊 Track-Record der Top-Signale der letzten Tage ansehen"):
+                from src.db import PortfolioDB
+                pdb = PortfolioDB()
+                history_signals = pdb.get_recent_radar_signals(limit=500)
+                
+                if not history_signals:
+                    st.info("Noch keine Radar-Historie vorhanden. Ab dem nächsten Scan werden hier die Verläufe der Top-Signale getrackt.")
+                else:
+                    st.write("Die folgende Tabelle zeigt die akkumulierte Performance der Top-Ausbruchs-Signale. Werte mit vielen Treffern wurden vom Scanner mehrfach bestätigt.")
+                    
+                    hist_data = []
+                    
+                    # Aggregate by symbol
+                    aggregated = {}
+                    for s in history_signals:
+                        sym = s["symbol"]
+                        if sym not in aggregated:
+                            aggregated[sym] = {
+                                "Erstes Datum": s["detected_at"],
+                                "Letztes Datum": s["detected_at"],
+                                "Ticker": sym,
+                                "Name": s["name"],
+                                "Erster_Signal_Kurs": s["signal_price"], # SQLite returns DESC, so first we see is actually the LATEST. We will update this.
+                                "Score": s.get("score", 0.0),
+                                "Treffer": 1
+                            }
+                        else:
+                            aggregated[sym]["Treffer"] += 1
+                            # Update earliest date and earliest price
+                            if s["detected_at"] < aggregated[sym]["Erstes Datum"]:
+                                aggregated[sym]["Erstes Datum"] = s["detected_at"]
+                                aggregated[sym]["Erster_Signal_Kurs"] = s["signal_price"]
+                            if s["detected_at"] > aggregated[sym]["Letztes Datum"]:
+                                aggregated[sym]["Letztes Datum"] = s["detected_at"]
+                                aggregated[sym]["Score"] = max(aggregated[sym]["Score"], s.get("score", 0.0))
+
+                    unique_syms = list(aggregated.keys())
+                    import yfinance as yf

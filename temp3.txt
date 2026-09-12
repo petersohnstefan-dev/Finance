@@ -1,0 +1,20 @@
+
+        # Charts, Positions & Multi-Source Deep Intelligence
+        tab_chart, tab_pos, tab_intel, tab_alloc, tab_hist = st.tabs([
+            "📈 Depot-Wertentwicklung (Equity Curve)",
+            "📋 Offene Positionen & Buchgewinne (Live-Ticks)",
+            "🧠 Deep-Intelligence & Multi-Source Audit (6 Dimensionen)",
+            "🥧 Asset Allocation (Gewichtung)",
+            "📜 Transaktions-Historie (Trade Log)"
+        ])
+
+        with tab_chart:
+            st.markdown("#### 📈 Depot-Wertentwicklung & Gesamtkapitalverlauf (Equity Curve)")
+            st.caption("Stundenweise Entwicklung des gesamten Depotwerts (Investiertes Kapital + Cash) seit Depotstart am 24.08.2026 gegenüber dem Startkapital von 10.000 €.")
+            
+            eq_df = pm.get_equity_curve(depot_key)
+            
+            # 🟢 HIER WIRD DIE NACHT GEFILTERT (Kein Handel zwischen 22:00 und 06:00)
+            if not eq_df.empty:
+                eq_df["hour_check"] = pd.to_datetime(eq_df["date"]).dt.hour
+                eq_df = eq_df[(eq_df["hour_check"] >= 6) & (eq_df["hour_check"] <= 22)]

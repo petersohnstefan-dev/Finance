@@ -1,0 +1,20 @@
+
+        # Strategy Handbook & Strategy Info (Moved to bottom)
+        st.markdown("---")
+        with st.expander("📖 Strategie-Handbuch & Allokations-Regeln (Nach welchen Formeln handelt die KI?)"):
+            st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
+            st.markdown("---")
+            h_tab_dt, h_tab1, h_tab2, h_tab3, h_tab4 = st.tabs([
+                "🔥 Daytrader-Depot (Intraday / Dynamischer Hebel)",
+                "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
+                "📈 2. Mittelfrist-Depot (1–6 Monate)",
+                "🏛️ 3. Langfrist-Depot (1–5+ Jahre)",
+                "🪙 4. Rohstoff-, Anleihen- & FX-Regeln (GSR, Zinskurve, DXY & Carry-Trade)"
+            ])
+
+            with h_tab_dt:
+                st.markdown('''
+                #### 🔥 Daytrader-Depot (Aggressives Intraday-Trading & Momentum)
+                **Ziel:** Sekunden- & Minuten-Ausbrüche blitzschnell reiten, maximaler Fokus auf Echtzeit-Volumen. Der Hebel wird dabei dynamisch an die Stärke des Ausbruchs angepasst (1x Direktkauf bis 30x Turbo). Kein Risiko über Nacht.
+
+                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |

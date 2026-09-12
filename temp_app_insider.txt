@@ -1,0 +1,32 @@
+    
+    with tab_insiders:
+        st.subheader("👔 Jüngste Vorstands- & CEO-Insiderkäufe")
+        st.caption("Live-Daten der SEC Form 4 Meldungen für Top-Tickers (NVDA, TSLA, AAPL, PLTR, Krypto-Miner).")
+        with st.spinner("Lade Insider-Daten von Yahoo Finance..."):
+            df_insiders = LiveInsiderWhaleTracker.get_live_insider_transactions()
+            if not df_insiders.empty:
+                st.dataframe(df_insiders, use_container_width=True, hide_index=True)
+            else:
+                st.info("Keine aktuellen Insider-Daten gefunden.")
+                
+    with tab_whales:
+        st.subheader("🏛️ Die größten institutionellen Wal-Positionen")
+        st.caption("Die Top 2 Großaktionäre der wichtigsten Tech-Werte (BlackRock, Vanguard, etc.).")
+        with st.spinner("Lade Whale-Daten von Yahoo Finance..."):
+            df_whales = LiveInsiderWhaleTracker.get_live_whale_holders()
+            if not df_whales.empty:
+                st.dataframe(df_whales, use_container_width=True, hide_index=True)
+            else:
+                st.info("Keine aktuellen Whale-Daten gefunden.")
+
+elif app_mode == "🌐 Makro-Klima, Zentralbanken & News":
+    st.title("🌐 Makro-Klima, Zentralbanken & Qualitätsmedien")
+    st.markdown("Echtzeit-Überwachung von **Leitzinsen (Fed, EZB, SNB, BoE)**, Inflation und verifizierten Nachrichten aus **Handelsblatt, FAZ, Reuters, CNBC & EZB**.")
+
+    macro_scanner = MacroScanner()
+    
+    col_macro_btn, col_macro_info = st.columns([1, 3])
+    with col_macro_btn:
+        if st.button("🔄 Makro-Daten & News jetzt laden", use_container_width=True):
+            with st.spinner("Lade Zentralbank-Daten und RSS-Feeds aus Qualitätsmedien..."):
+                macro_scanner.get_full_macro_report()

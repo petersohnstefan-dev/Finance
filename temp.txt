@@ -1,0 +1,100 @@
+    def get_depot_summary(self, depot_key: str) -> Dict[str, Any]:
+        """Calculates total portfolio value, return, allocation, and open position P&L."""
+        self.data = self._load()
+        depot = self.data["portfolios"].get(depot_key, {})
+        cash = depot.get("cash", self.initial_capital)
+        init_cash = depot.get("initial_cash", self.initial_capital)
+
+        positions_list = []
+        invested_value = 0.0
+
+        for sym, pos in depot.get("positions", {}).items():
+            curr_p = pos.get("current_price", pos["buy_price"])
+            buy_p = pos["buy_price"]
+            shares = pos["shares"]
+            pos_val = shares * curr_p
+            pnl = (curr_p - buy_p) * shares
+            pnl_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+            wkn_code = get_wkn(sym)
+
+            invested_value += pos_val
+            positions_list.append({
+                "wkn": wkn_code,
+                "symbol": wkn_code,
+                "ticker": sym,
+                "name": pos.get("name", sym),
+                "product_type": pos.get("derivative_type", "STOCK"),
+                "shares": shares,
+                "buy_price": buy_p,
+                "current_price": curr_p,
+                "last_updated": pos.get("last_updated", "-"),
+                "value": round(pos_val, 2),
+                "pnl": round(pnl, 2),
+                "pnl_pct": round(pnl_pct, 2),
+                "stop_loss": pos.get("stop_loss"),
+                "take_profit": pos.get("take_profit"),
+                "distance_to_ko": pos.get("distance_to_ko_pct") or pos.get("distance_to_barrier_pct"),
+                "leverage": pos.get("leverage"),
+                "buy_date": pos.get("buy_date"),
+                "reason": pos.get("reason", "")
+            })
+
+        total_value = cash + invested_value
+        total_pnl = total_value - init_cash
+        total_pnl_pct = (total_pnl / init_cash) * 100.0
+
+        try:
+            self.db.record_daily_snapshot(
+                depot_key, total_value, cash, invested_value, total_pnl, total_pnl_pct, len(positions_list)
+            )
+        except Exception:
+            pass
+
+        # Immutable audit trade history directly from SQLite database with fallback to json
+        db_trades = self.db.get_trades(depot_key)
+        if db_trades:
+            raw_history = db_trades
+        else:
+            raw_history = list(reversed(depot.get("history", [])))
+
+        merged_history = []
+        for t in raw_history:
+            t_type = t.get("type") or t.get("trade_type") or t.get("action", "BUY")
+            t_sym = t.get("symbol", "")
+            if t_sym:
+                wkn_code = get_wkn(t_sym)
+                merged_history.append({
+                    "wkn": wkn_code,
+                    "type": t_type,
+                    "action": t_type,
+                    "symbol": wkn_code,
+                    "ticker": t_sym,
+                    "name": t.get("name", t_sym),
+                    "product_type": t.get("product_type", "STOCK"),
+                    "shares": t.get("shares", 0),
+                    "price": t.get("price") or t.get("buy_price") or t.get("sell_price", 0),
+                    "buy_price": t.get("buy_price"),
+                    "sell_price": t.get("sell_price"),
+                    "total": t.get("total") or t.get("total_amount", 0),
+                    "pnl": t.get("pnl"),
+                    "pnl_pct": t.get("pnl_pct"),
+                    "date": t.get("date") or t.get("executed_at", "-"),
+                    "reason": t.get("reason", "")
+                })
+
+        # Sort strictly descending: newest trades on top, oldest at the bottom
+        merged_history.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+
+        prev_close = None
+        try:
+            prev_close = self.db.get_previous_daily_close(depot_key)
+        except Exception:
+            pass
+        
+        today_pnl = 0.0
+        today_pnl_pct = 0.0
+        if prev_close and prev_close > 0:
+            today_pnl = total_value - prev_close
+            today_pnl_pct = (today_pnl / prev_close) * 100.0
+
+        return {

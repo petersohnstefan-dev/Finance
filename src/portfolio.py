@@ -1212,6 +1212,10 @@ class PortfolioManager:
             if trading_mode == "PAUSE":
                 actions_taken.append("⏸️ Daytrader PAUSE (VIX ≥ 35 — Markt zu chaotisch)")
 
+            # Gate 0b: No entries outside active trading hours (8:00 - EOD)
+            elif hour < 8 or hour >= eod_hour:
+                pass  # Silent — no log spam, just skip entry
+
             # Gate 1: Check daily loss limit
             elif not self._check_daily_loss_limit(dt_depot.get("cash", 0) + sum(
                     p["current_price"] * p["shares"] for p in dt_depot.get("positions", {}).values())):
