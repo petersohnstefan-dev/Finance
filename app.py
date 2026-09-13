@@ -1385,8 +1385,9 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
         st.markdown("---")
         st.markdown("#### 🌐 Globale Staatsanleihen im Vergleich (Sovereign Yields)")
         sov_df = pd.DataFrame(b_data["sovereign_yields"])
-        sov_df.columns = ["Staat / Anleihe", "10-Jahres-Rendite", "Spread zu Dt. Bund", "Markt-Rolle"]
+        sov_df.columns = ["Staat / Anleihe", "10-Jahres-Rendite", "Spread zu Dt. Bund", "Markt-Rolle / Datum"]
         st.dataframe(sov_df, use_container_width=True, hide_index=True)
+        st.info("ℹ️ **Hinweis zum Charting:** Eine historische Chart-Entwicklung ist in diesem Dashboard derzeit exklusiv für US-Staatsanleihen (den Weltzins) verfügbar, da die kostenfreie Live-Schnittstelle (Yahoo Finance) für die globalen Benchmark-Anleihen Europas und Asiens keine durchgehenden Zeitreihen ohne institutionelle API-Schlüssel liefert.")
 
 
     with tab_forex:

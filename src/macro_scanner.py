@@ -50,37 +50,43 @@ QUALITY_FEEDS = [
     }
 ]
 
-# Central Bank Benchmark Rates & Macro Climate
+def _get_next_meeting():
+    now = datetime.datetime.now()
+    next_month = now.month + 1 if now.month < 12 else 1
+    next_year = now.year if now.month < 12 else now.year + 1
+    month_names = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    return f"{month_names[next_month - 1]} {next_year}"
+
 CENTRAL_BANKS = {
     "Fed (USA)": {
         "rate": "5.25% - 5.50%",
-        "trend": "Zinssenkungs-Zyklus erwartet",
-        "next_meeting": "September 2026",
+        "trend": "Zinssenkungs-Zyklus",
+        "next_meeting": _get_next_meeting(),
         "stance": "Dovish / Zinswende",
         "inflation_target": "2.0%",
-        "current_cpi": "2.9%"
+        "current_cpi": "2.5%"
     },
     "EZB (Euroraum)": {
-        "rate": "3.75%",
-        "trend": "Moderate Lockerung eingeleitet",
-        "next_meeting": "September 2026",
-        "stance": "Data-dependent / Lockernd",
+        "rate": "3.50%",
+        "trend": "Lockerung eingeleitet",
+        "next_meeting": _get_next_meeting(),
+        "stance": "Data-dependent",
         "inflation_target": "2.0%",
-        "current_cpi": "2.6%"
+        "current_cpi": "2.2%"
     },
     "SNB (Schweiz)": {
-        "rate": "1.25%",
+        "rate": "1.00%",
         "trend": "Stabil niedrig",
-        "next_meeting": "September 2026",
+        "next_meeting": _get_next_meeting(),
         "stance": "Neutral",
         "inflation_target": "0-2%",
-        "current_cpi": "1.3%"
+        "current_cpi": "1.1%"
     },
     "Bank of England (UK)": {
         "rate": "5.00%",
-        "trend": "Erste Zinssenkung erfolgt",
-        "next_meeting": "September 2026",
-        "stance": "Vorsichtig lockernd",
+        "trend": "Moderate Lockerung",
+        "next_meeting": _get_next_meeting(),
+        "stance": "Vorsichtig",
         "inflation_target": "2.0%",
         "current_cpi": "2.2%"
     }

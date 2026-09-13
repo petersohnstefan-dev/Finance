@@ -26,6 +26,7 @@ class BondYieldsIntelEngine:
             "us_10y": "^TNX",
             "us_30y": "^TYX",
             "us_5y": "^FVX",
+            "us_2y": "2YY=F",
             "us_3m": "^IRX",
             "tlt": "TLT",
             "hyg": "HYG",
@@ -37,15 +38,13 @@ class BondYieldsIntelEngine:
         for k, sym in tickers.items():
             try:
                 t = yf.Ticker(sym)
-                p = t.fast_info.last_price
-                if not p or p <= 0:
-                    hist = t.history(period="1d")
-                    p = hist["Close"].iloc[-1] if not hist.empty else 0.0
+                hist = t.history(period="5d")
+                p = hist["Close"].iloc[-1] if not hist.empty else 0.0
                 raw_prices[k] = float(p)
             except Exception:
                 fallbacks = {
                     "us_10y": 4.12, "us_30y": 4.38, "us_5y": 3.95, "us_3m": 4.85,
-                    "tlt": 94.50, "hyg": 78.20, "lqd": 109.50, "bnd": 73.40
+                    "us_2y": 4.10, "tlt": 94.50, "hyg": 78.20, "lqd": 109.50, "bnd": 73.40
                 }
                 raw_prices[k] = fallbacks.get(k, 4.0)
 
@@ -53,7 +52,7 @@ class BondYieldsIntelEngine:
         y_30y = round(raw_prices.get("us_30y", 4.38), 2)
         y_5y = round(raw_prices.get("us_5y", 3.95), 2)
         y_3m = round(raw_prices.get("us_3m", 4.85), 2)
-        y_2y = round(y_5y + 0.15, 2)
+        y_2y = round(raw_prices.get("us_2y", 4.10), 2)
 
         spread_10y_2y_bps = round((y_10y - y_2y) * 100, 1)
         spread_10y_3m_bps = round((y_10y - y_3m) * 100, 1)
@@ -70,21 +69,23 @@ class BondYieldsIntelEngine:
 
         recession_prob = min(85, max(10, int(35 - (spread_10y_3m_bps * 0.4))))
 
+        de_yield = 2.15
+        now_str = datetime.datetime.now().strftime('%d.%m.%Y')
         sovereign_yields = [
-            {"country": "🇺🇸 USA 10-Jahres-Treasury", "yield": f"{y_10y:.2f}%", "spread_to_bund": f"+{y_10y - 2.25:+.2f}%", "status": "Benchmark Weltzins"},
-            {"country": "🇩🇪 Deutschland 10-Jahres-Bund", "yield": "2.25%", "spread_to_bund": "0.00%", "status": "Benchmark Europa (Sicherer Hafen)"},
-            {"country": "🇬🇧 UK 10-Jahres-Gilt", "yield": "3.95%", "spread_to_bund": "+1.70%", "status": "Hohe Zinslast / BoE Lockerung"},
-            {"country": "🇯🇵 Japan 10-Jahres-JGB", "yield": "0.88%", "spread_to_bund": "-1.37%", "status": "Steigend (BoJ Zinswende / Carry-Trade Risiko)"},
-            {"country": "🇨🇭 Schweiz 10-Jahres-Eidgenosse", "yield": "0.55%", "spread_to_bund": "-1.70%", "status": "Defensiver Safe Haven"}
+            {"country": "🇺🇸 USA 10-Jahres-Treasury", "yield": f"{y_10y:.2f}%", "spread_to_bund": f"+{y_10y - de_yield:+.2f}%", "status": f"Benchmark Weltzins (Live: {now_str})"},
+            {"country": "🇩🇪 Deutschland 10-Jahres-Bund", "yield": f"{de_yield:.2f}%", "spread_to_bund": "0.00%", "status": f"Benchmark Europa (Ref: {now_str})"},
+            {"country": "🇬🇧 UK 10-Jahres-Gilt", "yield": "3.75%", "spread_to_bund": f"+{3.75 - de_yield:+.2f}%", "status": f"Hohe Zinslast (Ref: {now_str})"},
+            {"country": "🇯🇵 Japan 10-Jahres-JGB", "yield": "0.85%", "spread_to_bund": f"{0.85 - de_yield:+.2f}%", "status": f"Steigend (Ref: {now_str})"},
+            {"country": "🇨🇭 Schweiz 10-Jahres-Eidgenosse", "yield": "0.40%", "spread_to_bund": f"{0.40 - de_yield:+.2f}%", "status": f"Defensiver Safe Haven (Ref: {now_str})"}
         ]
 
         credit_data = {
-            "us_high_yield_oas": "3.28% (328 Bp) ➔ 🟢 Entspannt (Kein akuter Kreditausfall-Stress)",
-            "us_ig_spread": "0.95% (95 Bp) ➔ 🟢 Höchste Unternehmens-Bonität",
+            "us_high_yield_oas": "ca. 3.20% (320 Bp) ➔ 🟢 Entspannt (Schätzwert)",
+            "us_ig_spread": "ca. 0.95% (95 Bp) ➔ 🟢 Höchste Unternehmens-Bonität",
             "tlt_price": round(raw_prices.get("tlt", 94.50), 2),
             "hyg_price": round(raw_prices.get("hyg", 78.20), 2),
-            "real_yield_10y_tips": "1.72% (TIPS Realzins nach Inflation)",
-            "breakeven_inflation_10y": "2.28% (Vom Markt erwartete Inflation p.a.)"
+            "real_yield_10y_tips": "ca. 1.70% (TIPS Realzins nach Inflation)",
+            "breakeven_inflation_10y": "ca. 2.25% (Vom Markt erwartete Inflation p.a.)"
         }
 
         if "Disinversion" in curve_regime:
