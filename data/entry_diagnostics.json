@@ -1,25 +1,25 @@
 {
   "2026-09-14": {
     "short_term": {
-      "runs": 1,
-      "scored": 10,
+      "runs": 2,
+      "scored": 20,
       "entries": 0,
       "best_score": 70.6,
-      "above_threshold": 9,
+      "above_threshold": 18,
       "threshold": 55.0,
       "blocks": {
-        "depot_voll": 1
+        "depot_voll": 2
       }
     },
     "day_trading": {
-      "runs": 1,
+      "runs": 2,
       "scored": 0,
       "entries": 0,
       "best_score": null,
       "above_threshold": 0,
       "threshold": 65.0,
       "blocks": {
-        "ausserhalb_handelszeit": 1
+        "ausserhalb_handelszeit": 2
       }
     }
   }
