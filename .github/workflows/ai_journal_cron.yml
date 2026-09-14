@@ -50,7 +50,22 @@ jobs:
           git add data/portfolio.db data/strategy.json
           if git diff --staged --quiet; then
             echo 'Keine neuen Einträge.'
-          else
-            git commit -m '🧠 KI-Lerntagebuch: Retrospektive + Strategie-Optimierung [skip ci]'
-            git push
+            exit 0
           fi
+          git commit -m '🧠 KI-Lerntagebuch: Retrospektive + Strategie-Optimierung [skip ci]'
+          # Der Scanner-Bot pusht alle 5 Minuten und trifft diese Minute regelmäßig.
+          # Ohne Retry gingen die optimierten Parameter still verloren.
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push erfolgreich (Versuch $i)."
+              exit 0
+            fi
+            echo "Push abgelehnt - Bot war schneller. Rebase und Versuch $i von 3..."
+            if ! git pull --rebase; then
+              git rebase --abort || true
+              echo "::error::Rebase fehlgeschlagen (vermutlich Konflikt in data/portfolio.db)."
+              exit 1
+            fi
+          done
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen."
+          exit 1

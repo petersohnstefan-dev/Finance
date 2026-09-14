@@ -2,6 +2,7 @@ import sqlite3
 import json
 import datetime
 import os
+import re
 from typing import Dict, Any, List, Optional
 
 try:
@@ -12,6 +13,7 @@ except ImportError:
 DB_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolio.db")
 ALERTS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "realtime_alerts.json")
 STRATEGY_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
+ENTRY_DIAG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "entry_diagnostics.json")
 
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
@@ -60,13 +62,25 @@ PARAM_SAFETY_BOUNDS = {
     "daytrade_max_daily_loss_pct":    {"min": 0.02,  "max": 0.10,  "step": 0.01},
     "daytrade_max_daily_trades":      {"min": 2,     "max": 10,    "step": 1},
     "daytrade_min_entry_score":       {"min": 40,    "max": 90,    "step": 5},
+    "daytrade_max_correlated_positions":{"min": 1,  "max": 4,     "step": 1},
     "daytrade_trailing_breakeven_pct":{"min": 0.02,  "max": 0.08,  "step": 0.01},
     "daytrade_trailing_lock_pct":     {"min": 0.03,  "max": 0.15,  "step": 0.01},
     "daytrade_trailing_aggressive_pct":{"min": 0.05, "max": 0.25,  "step": 0.01},
     "daytrade_vix_defensive_threshold":{"min": 18.0, "max": 35.0,  "step": 1.0},
     "daytrade_vix_pause_threshold":   {"min": 25.0,  "max": 45.0,  "step": 1.0},
-    "short_term_trailing_start_pct":  {"min": 3.0,   "max": 15.0,  "step": 1.0},
+    "daytrade_max_candidates_scored": {"min": 3,     "max": 20,    "step": 1},
+    # short_term_trailing_start_pct was removed: the fixed +8% ratchet it fed no
+    # longer exists, so tuning it would have optimised into the void.
     "short_term_stop_loss_pct":       {"min": 0.05,  "max": 0.25,  "step": 0.01},
+    "short_term_stop_atr_mult":       {"min": 1.5,   "max": 4.0,   "step": 0.25},
+    "short_term_trail_atr_mult":      {"min": 1.5,   "max": 4.0,   "step": 0.25},
+    "short_term_breakeven_trigger_atr":{"min": 0.5,  "max": 3.0,   "step": 0.25},
+    "short_term_stop_min_pct":        {"min": 0.03,  "max": 0.12,  "step": 0.01},
+    "short_term_stop_max_pct":        {"min": 0.15,  "max": 0.40,  "step": 0.05},
+    "short_term_max_risk_per_trade_pct":{"min": 0.005, "max": 0.03, "step": 0.005},
+    "short_term_min_alpha_score":     {"min": 40,    "max": 85,    "step": 5},
+    "short_term_min_spike_pct":       {"min": 0.5,   "max": 5.0,   "step": 0.25},
+    "short_term_max_candidates_scored":{"min": 5,    "max": 25,    "step": 1},
 }
 
 
@@ -196,6 +210,67 @@ class AIJournalEngine:
         except Exception:
             return []
 
+    @staticmethod
+    def _extract_entry_score(reason: str) -> Optional[float]:
+        """Pulls the entry score out of a buy reason. The engines write it as
+        'Score 95/100' (daytrader) or 'Alpha 66/100' (short-term)."""
+        if not reason:
+            return None
+        m = re.search(r"(?:Score|Alpha)\s+(\d+(?:\.\d+)?)\s*/\s*100", reason)
+        return float(m.group(1)) if m else None
+
+    def _get_entry_score_analysis(self, trades: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Pairs each SELL with the BUY that opened it and reports how the entry score
+        related to the outcome. This is the calibration signal: if winners and losers
+        score the same, the threshold is not separating anything."""
+        open_buys: Dict[str, List[Optional[float]]] = {}
+        paired = []
+        for t in sorted(trades, key=lambda x: x.get("executed_at") or ""):
+            sym = t.get("symbol")
+            if t.get("trade_type") == "BUY":
+                open_buys.setdefault(sym, []).append(self._extract_entry_score(t.get("reason", "")))
+            elif t.get("trade_type") == "SELL" and t.get("pnl") is not None:
+                queue = open_buys.get(sym) or []
+                score = queue.pop(0) if queue else None
+                if score is not None:
+                    paired.append({"symbol": sym, "score": score,
+                                   "pnl": float(t["pnl"]),
+                                   "pnl_pct": float(t.get("pnl_pct") or 0)})
+
+        if not paired:
+            unscored = sum(1 for t in trades if t.get("trade_type") == "BUY"
+                           and self._extract_entry_score(t.get("reason", "")) is None)
+            return {"paired_trades": 0, "note":
+                    f"Keine abgeschlossenen Trades mit Entry-Score im Zeitraum "
+                    f"({unscored} Kaeufe ohne Score-Angabe)."}
+
+        wins = [p for p in paired if p["pnl"] > 0]
+        losses = [p for p in paired if p["pnl"] <= 0]
+        avg = lambda xs: round(sum(x["score"] for x in xs) / len(xs), 1) if xs else None
+        return {
+            "paired_trades": len(paired),
+            "avg_score_winners": avg(wins),
+            "avg_score_losers": avg(losses),
+            "separation": (round(avg(wins) - avg(losses), 1)
+                           if wins and losses else None),
+            "detail": sorted(paired, key=lambda p: -p["score"])[:15]
+        }
+
+    @staticmethod
+    def _load_entry_diagnostics(depot_id: str, days: int = 1) -> Dict[str, Any]:
+        """Entry-gate telemetry written by the trading engine on every run."""
+        try:
+            with open(ENTRY_DIAG_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            return {}
+        out = {}
+        for day in sorted(data.keys())[-days:]:
+            slot = data[day].get(depot_id)
+            if slot:
+                out[day] = slot
+        return out
+
     def _apply_param_updates(self, updates: Dict[str, Any]) -> Dict[str, Any]:
         """Validates and applies parameter updates from the AI within safety bounds.
         Returns a dict of what was actually changed."""
@@ -212,11 +287,13 @@ class AIJournalEngine:
             bounds = PARAM_SAFETY_BOUNDS[param_name]
             old_value = current.get(param_name)
             
-            if old_value is None:
-                continue
+            # A parameter that only lives in the engine defaults and has never been
+            # written to strategy.json must still be tunable - otherwise every newly
+            # introduced knob is silently inert. Fall back to the bounds own type.
+            cast_to = type(old_value) if old_value is not None else type(bounds["min"])
 
             try:
-                new_value = type(old_value)(new_value)  # Cast to same type as current
+                new_value = cast_to(new_value)
             except (ValueError, TypeError):
                 continue
 
@@ -261,6 +338,12 @@ class AIJournalEngine:
         # 3. Get missed alerts (daily only)
         traded_symbols = set(t.get("symbol") for t in stats["trades"])
         missed_alerts = self.get_todays_missed_alerts(today_str, traded_symbols) if mode == "daily" else []
+
+        # 3b. Entry-score calibration and gate telemetry
+        # Deliberately all-time: a daily window would miss the BUY that opened a
+        # position sold today, and one day is never a sample for calibration anyway.
+        score_analysis = self._get_entry_score_analysis(alltime_stats["trades"])
+        gate_diag = self._load_entry_diagnostics(depot_id, days=7 if mode == "weekly" else 1)
 
         # 4. Build the bounds description for the prompt
         bounds_desc = "\n".join([
@@ -309,6 +392,15 @@ eines algorithmischen Trading-Systems und schlägst KONKRETE Parameteränderunge
 ### Verpasste Signale (nicht gehandelt):
 {json.dumps(missed_alerts[:10], indent=2, ensure_ascii=False) if missed_alerts else "Keine verpassten Signale."}
 
+### Entry-Score-Kalibrierung seit Depotstart (Score beim Kauf vs. Ergebnis):
+{json.dumps(score_analysis, indent=2, ensure_ascii=False)}
+
+### Entry-Gate-Telemetrie (warum wurde gehandelt bzw. NICHT gehandelt):
+{json.dumps(gate_diag, indent=2, ensure_ascii=False) if gate_diag else "Keine Telemetrie vorhanden."}
+Lesehilfe: "runs" = Bot-Durchlaeufe, "scored" = bewertete Kandidaten, "best_score" =
+bester an diesem Tag erreichter Score, "above_threshold" = wie oft die Huerde
+uebersprungen wurde, "blocks" = welches Gate wie oft blockiert hat.
+
 ## Deine Aufgabe:
 1. Analysiere die Performance-Daten. Was sind die konkreten Schwachstellen?
 2. Schlage KONKRETE Parameteränderungen vor, die die Expectancy verbessern.
@@ -316,8 +408,19 @@ eines algorithmischen Trading-Systems und schlägst KONKRETE Parameteränderunge
    - Wenn die Verluste zu groß sind: Senke den stop_loss_pct oder den max_leverage.
    - Wenn zu wenig gehandelt wird: Senke den min_entry_score oder erhöhe max_daily_trades.
    - Wenn der Profit Factor < 1.0: Die Strategie verliert Geld — aggressive Anpassung nötig.
-3. Wenn keine Trades stattfanden: Analysiere WARUM und ob der min_entry_score zu hoch ist.
-4. Ändere Parameter NUR wenn du eine klare datengetriebene Begründung hast. Wenn alles gut läuft, ändere NICHTS.
+3. Wenn keine Trades stattfanden: Nutze die Entry-Gate-Telemetrie, um das zu erklaeren.
+   - "above_threshold": 0 bei vielen "scored" heisst: die Huerde ist zu hoch angesetzt.
+   - Liegt "best_score" ueber viele Durchlaeufe DAUERHAFT unter "threshold", ist die
+     Huerde strukturell unerreichbar. Das ist ein Defekt, kein Marktzustand - melde es
+     deutlich in "reflection" und senke die Huerde Richtung des beobachteten best_score.
+   - Dominiert ein einzelner Eintrag in "blocks", nenne ihn explizit beim Namen.
+4. Pruefe die Entry-Score-Kalibrierung:
+   - "separation" deutlich > 0 heisst, der Score trennt Gewinner von Verlierern - dann
+     lohnt es, die Huerde anzuheben.
+   - "separation" um 0 oder negativ heisst, der Score sagt nichts vorher. Dann bringt
+     eine hoehere Huerde NICHTS ausser weniger Trades; setze stattdessen an Stop- und
+     Risikoparametern an und weise in "lesson" darauf hin.
+5. Ändere Parameter NUR wenn du eine klare datengetriebene Begründung hast. Wenn alles gut läuft, ändere NICHTS.
 
 Antworte AUSSCHLIESSLICH im folgenden JSON-Format (keine Markdown-Blöcke):
 {{

@@ -22,6 +22,9 @@ def get_berlin_now() -> datetime.datetime:
     except Exception:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
+ENTRY_DIAG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "entry_diagnostics.json")
+
+
 class PortfolioManager:
     """Manages 3 distinct paper trading portfolios (Short-Term, Medium-Term, Long-Term)."""
 
@@ -91,7 +94,6 @@ class PortfolioManager:
             "daytrade_trailing_aggressive_pct": 0.10,
             "daytrade_vix_defensive_threshold": 25.0,
             "daytrade_vix_pause_threshold": 35.0,
-            "short_term_trailing_start_pct": 8.0,
             "short_term_stop_loss_pct": 0.15,
             "short_term_stop_atr_mult": 2.5,
             "short_term_trail_atr_mult": 2.5,
@@ -223,6 +225,44 @@ class PortfolioManager:
         max_trades = self.strategy.get("daytrade_max_daily_trades", 5)
         today_count = self.db.get_today_trade_count("day_trading")
         return today_count < max_trades
+
+    def _record_entry_diagnostic(self, depot_id: str, scores: List[float], threshold: float,
+                                 entered: bool, blocked: str = "") -> None:
+        """Per-day entry-gate telemetry. Without it the journal cannot tell 'no signal
+        today' apart from 'the gate is set so high that nothing can ever pass it' -
+        the exact failure that kept the daytrader idle for two trading days."""
+        try:
+            day = get_berlin_now().strftime("%Y-%m-%d")
+            data = {}
+            if os.path.exists(ENTRY_DIAG_FILE):
+                with open(ENTRY_DIAG_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+            slot = data.setdefault(day, {}).setdefault(depot_id, {
+                "runs": 0, "scored": 0, "entries": 0, "best_score": None,
+                "above_threshold": 0, "threshold": threshold, "blocks": {}
+            })
+            slot["runs"] += 1
+            slot["threshold"] = threshold
+            slot["scored"] += len(scores)
+            if scores:
+                best = round(max(scores), 1)
+                slot["best_score"] = best if slot["best_score"] is None else max(slot["best_score"], best)
+                slot["above_threshold"] += sum(1 for s in scores if s >= threshold)
+            if entered:
+                slot["entries"] += 1
+            if blocked:
+                slot["blocks"][blocked] = slot["blocks"].get(blocked, 0) + 1
+
+            # Keep the file small - the journal only ever looks back a week
+            for old_day in sorted(data.keys())[:-14]:
+                data.pop(old_day, None)
+
+            os.makedirs(os.path.dirname(ENTRY_DIAG_FILE), exist_ok=True)
+            with open(ENTRY_DIAG_FILE, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass  # Telemetry must never break trading
 
     def _get_atr_pct(self, symbol: str) -> float:
         """14-day ATR as a fraction of price. Cached per instance because the bot
@@ -1026,6 +1066,8 @@ class PortfolioManager:
             scored_candidates.append((c_score, source, c_sym, payload, intel))
 
         scored_candidates.sort(key=lambda x: x[0], reverse=True)
+        st_scores = [x[0] for x in scored_candidates]
+        st_entered = False
         if scored_candidates and scored_candidates[0][0] >= min_alpha:
             best_score, source, c_sym, payload, intel = scored_candidates[0]
             flow = intel["smart_money_flow"]
@@ -1101,6 +1143,7 @@ class PortfolioManager:
                                  reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
                                  stop_loss=cert_price*(1.0 - cert_sl_pct), take_profit=None, derivative_meta=turbo)
                         if approved:
+                            st_entered = True
                             actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
                         else:
                             actions_taken.append(f"VETO (Short-Term): {turbo['name']} ({msg})")
@@ -1110,9 +1153,26 @@ class PortfolioManager:
                                  reason=top_st_candidate["reason"],
                                  stop_loss=p*(1.0 - sl_pct), take_profit=None)  # ATR-scaled, then trailed
                         if approved:
+                            st_entered = True
                             actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
                         else:
                             actions_taken.append(f"VETO (Short-Term): {sym} ({msg})")
+
+        if not st_entered:
+            if not st_scores:
+                st_block = "keine_kandidaten"
+            elif st_scores[0] < min_alpha:
+                st_block = "unter_min_alpha_score"
+            elif st_depot["cash"] < 1500.0:
+                st_block = "zu_wenig_cash"
+            elif len(st_depot["positions"]) >= 4:
+                st_block = "depot_voll"
+            else:
+                st_block = "tribunal_veto_oder_kein_preis"
+        else:
+            st_block = ""
+        self._record_entry_diagnostic("short_term", st_scores, float(min_alpha),
+                                      st_entered, st_block)
 
         # ----------------------------------------------------------------------
         # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing & Hedge)
@@ -1321,22 +1381,27 @@ class PortfolioManager:
                     continue
 
             # --- ENTRY LOGIC (blocked in PAUSE mode) ---
+            dt_scores, dt_entered, dt_block = [], False, ""
+            dt_threshold = self.strategy.get("daytrade_min_entry_score", 65)
 
             # Gate 0: VIX-Pause — no new trades when market is too chaotic
             if trading_mode == "PAUSE":
+                dt_block = "vix_pause"
                 actions_taken.append("⏸️ Daytrader PAUSE (VIX ≥ 35 — Markt zu chaotisch)")
 
             # Gate 0b: No entries outside active trading hours (8:00 - EOD)
             elif hour < 8 or hour >= eod_hour:
-                pass  # Silent — no log spam, just skip entry
+                dt_block = "ausserhalb_handelszeit"  # Silent - no log spam
 
             # Gate 1: Check daily loss limit
             elif not self._check_daily_loss_limit(dt_depot.get("cash", 0) + sum(
                     p["current_price"] * p["shares"] for p in dt_depot.get("positions", {}).values())):
+                dt_block = "tages_verlustlimit"
                 actions_taken.append("🛑 Daytrader GESPERRT (Tages-Verlustlimit -5% erreicht)")
 
             # Gate 2: Check daily trade count
             elif not self._check_daily_trade_count():
+                dt_block = "max_trades_pro_tag"
                 actions_taken.append("🛑 Daytrader GESPERRT (Max. Trades pro Tag erreicht)")
 
             # Gate 3: Basic prerequisites
@@ -1400,8 +1465,15 @@ class PortfolioManager:
                 top_alert, entry_score = None, 0
                 for alert in candidates[:max_scored]:
                     score = self._calculate_entry_quality(alert, alert["symbol"])
+                    dt_scores.append(score)
                     if score > entry_score:
                         top_alert, entry_score = alert, score
+
+                dt_threshold = min_score
+                if not candidates:
+                    dt_block = "keine_kandidaten_nach_gates"
+                elif not (top_alert and entry_score >= min_score):
+                    dt_block = "unter_min_entry_score"
 
                 if top_alert and entry_score >= min_score:
                     sym = top_alert["symbol"]
@@ -1443,6 +1515,7 @@ class PortfolioManager:
                         self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None, derivative_meta=turbo)
+                        dt_entered = True
                         actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str}, Score {entry_score})")
                     else:
                         # Direct stock purchase (no leverage for weak signals)
@@ -1453,7 +1526,13 @@ class PortfolioManager:
                         self.buy("day_trading", sym, name, shares, p,
                                  reason=reason_msg,
                                  stop_loss=sl_price, take_profit=None)
+                        dt_entered = True
                         actions_taken.append(f"KAUF {sym} (1x Direkt, Score {entry_score})")
+
+            if not dt_entered and not dt_block:
+                dt_block = "kein_cash_oder_slot_frei"
+            self._record_entry_diagnostic("day_trading", dt_scores, float(dt_threshold),
+                                          dt_entered, dt_block)
 
         self._save()
 
