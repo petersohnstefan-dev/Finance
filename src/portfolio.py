@@ -84,6 +84,7 @@ class PortfolioManager:
             "daytrade_eod_close_all": True,
             "daytrade_eod_time_hour": 21,
             "daytrade_min_entry_score": 65,
+            "daytrade_max_candidates_scored": 8,
             "daytrade_trailing_breakeven_pct": 0.03,
             "daytrade_trailing_lock_pct": 0.05,
             "daytrade_trailing_aggressive_pct": 0.10,
@@ -213,6 +214,20 @@ class PortfolioManager:
         today_count = self.db.get_today_trade_count("day_trading")
         return today_count < max_trades
 
+    def _choose_leverage(self, spike: float) -> float:
+        """Maps an intraday spike to the certificate leverage. Shared by scoring and entry
+        so the RRR estimate uses the same stop distance the trade will actually get."""
+        max_lev = self.strategy.get("daytrade_max_leverage", 10.0)
+        if spike >= 2.0:
+            return min(10.0, max_lev)
+        if spike >= 1.2:
+            return min(7.0, max_lev)
+        if spike >= 0.8:
+            return min(5.0, max_lev)
+        if spike >= 0.5:
+            return min(3.0, max_lev)
+        return 1.0  # Direct stock purchase for weak signals
+
     def _calculate_entry_quality(self, alert: Dict, sym: str) -> int:
         """Calculates a multi-factor entry quality score (0-100) for professional daytrading."""
         score = 0
@@ -259,8 +274,12 @@ class PortfolioManager:
             if len(hist) >= 14:
                 atr = hist['High'].sub(hist['Low']).rolling(14).mean().iloc[-1]
                 price = alert.get("trigger_price", hist['Close'].iloc[-1])
+                # sl_pct is the stop on the leveraged certificate. On the underlying
+                # the same stop sits sl_pct/leverage away, which is what the ATR
+                # reward has to be compared against.
                 sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.15)
-                risk = price * sl_pct
+                lev = self._choose_leverage(alert.get('change_1min_pct', 0))
+                risk = price * sl_pct / max(lev, 1.0)
                 reward = atr * 2  # Expect 2x ATR move on breakout
                 if risk > 0 and reward / risk >= 2.0:
                     score += 20
@@ -1227,85 +1246,86 @@ class PortfolioManager:
 
             # Gate 3: Basic prerequisites
             elif dt_depot["cash"] >= 500.0 and len(dt_depot["positions"]) < 3 and rt_alerts:
-                top_alert = rt_alerts[0]
-                sym = top_alert["symbol"]
-                real_name = next((r.get("name", sym) for r in scan_results if r["symbol"] == sym), sym)
-                if real_name == sym:
-                    try:
-                        info = yf.Ticker(sym).info
-                        real_name = info.get('shortName') or info.get('longName') or sym
-                    except:
-                        pass
-                name = top_alert.get("name") or real_name
-                p = top_alert.get("trigger_price", 10.0)
-
-                # Gate 4: No duplicate positions on same underlying
-                has_it = False
-                for existing_sym, pos in dt_depot["positions"].items():
-                    if existing_sym == sym or pos.get("underlying_symbol") == sym:
-                        has_it = True
-                        break
-
-                # Gate 5: No revenge trading (same symbol today)
-                recently_traded = False
-                try:
-                    today_str = get_berlin_now().strftime("%Y-%m-%d")
-                    recent_trades = self.db.get_trades("day_trading")
-                    if not recent_trades:
-                        recent_trades = reversed(dt_depot.get("history", []))
-                    for t in recent_trades:
-                        t_date = t.get("executed_at") or t.get("date", "")
-                        if not t_date.startswith(today_str):
-                            continue
-                        t_sym = t.get("symbol", "")
-                        t_name = t.get("name", "")
-                        t_ticker = t.get("ticker", "")
-                        if t_sym == sym or sym in t_name or sym in t_ticker:
-                            recently_traded = True
-                            break
-                except:
-                    pass
-
-                # Gate 6: Alert freshness (< 15 min old)
-                is_fresh = True
-                alert_ts = top_alert.get("timestamp")
-                if alert_ts:
-                    try:
-                        atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
-                        if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 900:
-                            is_fresh = False
-                    except:
-                        pass
-
-                # Gate 7: Correlation check (max 2 in same sector)
-                passes_correlation = self._check_correlation(sym, dt_depot)
-
-                # Gate 8: Multi-factor entry quality score
-                entry_score = self._calculate_entry_quality(top_alert, sym)
                 min_score = self.strategy.get("daytrade_min_entry_score", 65)
                 # In DEFENSIVE mode, require higher score
                 if trading_mode == "DEFENSIVE":
                     min_score = 80
 
-                if (not has_it and not recently_traded and is_fresh and p > 0
-                        and passes_correlation and entry_score >= min_score):
+                # Today's trades, fetched once instead of per candidate (Gate 5).
+                today_str = get_berlin_now().strftime("%Y-%m-%d")
+                try:
+                    recent_trades = self.db.get_trades("day_trading")
+                    if not recent_trades:
+                        recent_trades = list(reversed(dt_depot.get("history", [])))
+                except Exception:
+                    recent_trades = []
+                todays_trades = [t for t in recent_trades
+                                 if (t.get("executed_at") or t.get("date", "")).startswith(today_str)]
+
+                # Gates 4-7 are local and cheap, so pre-filter every pending alert
+                # before spending yfinance calls on the quality score.
+                candidates = []
+                for alert in rt_alerts:
+                    sym = alert["symbol"]
+                    p = alert.get("trigger_price", 10.0)
+                    if p <= 0:
+                        continue
+
+                    # Gate 4: No duplicate positions on same underlying
+                    if any(existing_sym == sym or pos.get("underlying_symbol") == sym
+                           for existing_sym, pos in dt_depot["positions"].items()):
+                        continue
+
+                    # Gate 5: No revenge trading (same symbol today)
+                    if any(t.get("symbol", "") == sym or sym in t.get("name", "")
+                           or sym in t.get("ticker", "") for t in todays_trades):
+                        continue
+
+                    # Gate 6: Alert freshness (< 15 min old)
+                    alert_ts = alert.get("timestamp")
+                    if alert_ts:
+                        try:
+                            atime = datetime.datetime.strptime(alert_ts, "%Y-%m-%d %H:%M:%S")
+                            if (get_berlin_now().replace(tzinfo=None) - atime).total_seconds() > 900:
+                                continue
+                        except Exception:
+                            pass
+
+                    # Gate 7: Correlation check (max 2 in same sector)
+                    if not self._check_correlation(sym, dt_depot):
+                        continue
+
+                    candidates.append(alert)
+
+                # Gate 8: Score the strongest survivors and keep the best one.
+                # Capped because every score costs two yfinance calls.
+                max_scored = self.strategy.get("daytrade_max_candidates_scored", 8)
+                candidates.sort(key=lambda a: a.get("change_1min_pct", 0), reverse=True)
+
+                top_alert, entry_score = None, 0
+                for alert in candidates[:max_scored]:
+                    score = self._calculate_entry_quality(alert, alert["symbol"])
+                    if score > entry_score:
+                        top_alert, entry_score = alert, score
+
+                if top_alert and entry_score >= min_score:
+                    sym = top_alert["symbol"]
+                    p = top_alert.get("trigger_price", 10.0)
+                    real_name = next((r.get("name", sym) for r in scan_results if r["symbol"] == sym), sym)
+                    if real_name == sym:
+                        try:
+                            info = yf.Ticker(sym).info
+                            real_name = info.get('shortName') or info.get('longName') or sym
+                        except:
+                            pass
+                    name = top_alert.get("name") or real_name
 
                     is_bearish = top_alert.get("direction") == "SHORT"
                     dir_str = "SHORT" if is_bearish else "LONG"
 
                     # Conservative leverage scaling (max 10x, not 30x)
                     spike = top_alert.get('change_1min_pct', 0.5)
-                    max_lev = self.strategy.get("daytrade_max_leverage", 10.0)
-                    if spike >= 2.0:
-                        chosen_lev = min(10.0, max_lev)
-                    elif spike >= 1.2:
-                        chosen_lev = min(7.0, max_lev)
-                    elif spike >= 0.8:
-                        chosen_lev = min(5.0, max_lev)
-                    elif spike >= 0.5:
-                        chosen_lev = min(3.0, max_lev)
-                    else:
-                        chosen_lev = 1.0  # Direct stock purchase for weak signals
+                    chosen_lev = self._choose_leverage(spike)
 
                     # Risk-based position sizing (max 2% risk per trade)
                     regime = self._get_market_regime()

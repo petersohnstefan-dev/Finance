@@ -59,6 +59,18 @@ class RealTimeBreakoutScanner:
                 direction = "LONG" if change_pct > 0 else "SHORT"
                 msg = f"🚨 {symbol} explodiert um {change_pct:+.2f}% in 5 Min.! Momentum aktiv." if direction == "LONG" else f"🚨 {symbol} stürzt um {change_pct:+.2f}% in 5 Min. ab! Panik-Verkauf aktiv."
                 
+                # Volume confirmation: the 5 spike bars against the 20 bars before them.
+                # Same idea as the daily Vol_Ratio in indicators.py, but intraday.
+                vol_ratio = 1.0
+                try:
+                    if "Volume" in df.columns and len(df) >= 25:
+                        base_vol = float(df["Volume"].iloc[-25:-5].mean())
+                        spike_vol = float(df["Volume"].iloc[-5:].mean())
+                        if base_vol > 0 and spike_vol > 0:
+                            vol_ratio = round(spike_vol / base_vol, 2)
+                except Exception:
+                    vol_ratio = 1.0
+
                 return {
                     "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
                     "time_str": now.strftime("%H:%M:%S"),
@@ -66,6 +78,7 @@ class RealTimeBreakoutScanner:
                     "direction": direction,
                     "trigger_price": round(current_price, 2),
                     "change_1min_pct": round(abs(change_pct), 2),  # Used for leverage calc
+                    "vol_ratio": vol_ratio,  # Used by the daytrade entry score
                     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
                     "message": msg
                 }
@@ -109,7 +122,7 @@ class RealTimeBreakoutScanner:
             recent = [a for a in alerts if a["symbol"] == alert["symbol"]]
             if recent:
                 last_time = datetime.datetime.strptime(recent[0]["timestamp"], "%Y-%m-%d %H:%M:%S")
-                if (datetime.datetime.now() - last_time).total_seconds() < 1800:
+                if (get_berlin_now().replace(tzinfo=None) - last_time).total_seconds() < 1800:
                     return
 
             alerts.insert(0, alert)
