@@ -27,6 +27,12 @@ INTEL_CACHE_TTL = 60.0
 # ==============================================================================
 # DIMENSION 1: SMART MONEY, DARK POOL BLOCKS & OPTIONS FLOW
 # ==============================================================================
+from src.fundamentals import get_fundamental_scores
+
+_NEWS_CACHE: Dict[str, Dict[str, Any]] = {}
+NEWS_CACHE_TTL = 1800.0  # Headlines move far slower than prices
+
+
 class SmartMoneyOptionsEngine:
     """Tracks institutional dark pool prints, Put/Call ratios, and Gamma squeezes."""
 
@@ -36,7 +42,7 @@ class SmartMoneyOptionsEngine:
         if symbol in _OPTIONS_CACHE and (now - _OPTIONS_CACHE[symbol]["ts"]) < INTEL_CACHE_TTL:
             return _OPTIONS_CACHE[symbol]["data"]
         clean_sym = symbol.split(".")[0].split("-")[0].upper()
-        
+
         # Real-time options chain parsing via yfinance
         try:
             t = yf.Ticker(symbol)
@@ -48,12 +54,11 @@ class SmartMoneyOptionsEngine:
                 total_vol = max(1, c_vol + p_vol)
                 pc_ratio = round(p_vol / c_vol, 2) if c_vol > 0 else 0.8
                 call_oi = int(chain.calls['openInterest'].sum()) if 'openInterest' in chain.calls else 1000
-                
+
                 is_unusual_call = c_vol > (call_oi * 0.4) and c_vol > 3000
-                dark_pool_pct = round(min(58.0, 28.0 + (c_vol % 25)), 1)
-                
+
                 score = min(98, max(20, int(75 - (pc_ratio * 25) + (15 if is_unusual_call else 0))))
-                
+
                 sentiment = "🟢 Stark Bullisch (Call-Dominanz)" if pc_ratio < 0.55 else (
                     "🔴 Bärisch / Put-Hedging" if pc_ratio > 1.15 else "⚖️ Neutral"
                 )
@@ -62,8 +67,8 @@ class SmartMoneyOptionsEngine:
                     "put_call_ratio": pc_ratio,
                     "calls_volume": c_vol,
                     "puts_volume": p_vol,
-                    "dark_pool_share_pct": dark_pool_pct,
                     "unusual_sweep_alert": is_unusual_call,
+                    "available": True,
                     "gamma_squeeze_potential": "⚡ HOCH (Market Maker Delta-Kaufzwang)" if is_unusual_call and pc_ratio < 0.4 else "Normal",
                     "sentiment": sentiment,
                     "smart_money_score": score
@@ -71,17 +76,19 @@ class SmartMoneyOptionsEngine:
         except Exception:
             pass
 
-        # Institutional calibrated fallback
+        # No options chain (most EU listings, crypto, futures). Say so instead of
+        # returning a constant that reads like a measurement.
         return {
             "symbol": symbol,
-            "put_call_ratio": 0.62,
-            "calls_volume": 14500,
-            "puts_volume": 8900,
-            "dark_pool_share_pct": 36.5,
+            "put_call_ratio": None,
+            "calls_volume": None,
+            "puts_volume": None,
             "unusual_sweep_alert": False,
-            "gamma_squeeze_potential": "Moderat",
-            "sentiment": "🟢 Bullisch (Moderate Call-Akkumulation)",
-            "smart_money_score": 74
+            "gamma_squeeze_potential": "—",
+            "sentiment": "ℹ️ Keine Optionskette verfügbar",
+            "smart_money_score": None,
+            "available": False,
+            "reason": "Kein Optionsmarkt für dieses Instrument bei yfinance"
         }
 
     @staticmethod
@@ -135,12 +142,12 @@ class MacroLiquidityEngine:
         # Formel: Fed Balance Sheet (~7.15 Bio) - TGA (~780 Mrd) - RRP (~320 Mrd) = 6.05 Bio USD Net Liquidity
         net_liquidity_bio = 6.05
         liquidity_30d_delta = "+85 Mrd. USD (Expansiv)"
-        
+
         fed_rate_cut_prob_sep = 88.5  # 88.5% Probability of 25-50 bps cut
         fed_rate_cut_prob_nov = 96.2
-        
+
         regime = "🟢 EXPANSIV / RISK-ON (Liquiditäts-Rückenwind für Tech, Gold & Krypto)"
-        
+
         return {
             "us_net_liquidity": f"${net_liquidity_bio:.2f} Billionen USD",
             "net_liquidity_delta_30d": liquidity_30d_delta,
@@ -159,10 +166,97 @@ class MacroLiquidityEngine:
 class SocialSentimentEngine:
     """Tracks Relative Mentions Spikes, News NLP Sentiment, and Search Interest."""
 
+    BULLISH_TERMS = [
+        "beat", "beats", "raise", "raises", "upgrade", "record", "surge", "surges",
+        "jump", "soar", "rally", "profit", "growth", "expansion", "demand", "win",
+        "approval", "breakthrough", "partnership", "dividend", "buyback", "outperform"
+    ]
+    BEARISH_TERMS = [
+        "miss", "misses", "cut", "cuts", "downgrade", "plunge", "slump", "drop",
+        "fall", "falls", "loss", "losses", "lawsuit", "probe", "investigation",
+        "warn", "warns", "recall", "delay", "layoff", "halt", "fraud", "underperform"
+    ]
+
     @staticmethod
     def get_social_spike_score(symbol: str) -> Dict[str, Any]:
-        clean_sym = symbol.split(".")[0].split("-")[0].upper()
-        
+        """Headline sentiment from the yfinance news feed.
+
+        This used to be a hardcoded table of six tickers plus a constant 65 for
+        everything else - a quarter of the alpha score that never moved. Reddit
+        and StockTwits, which the handbook named as sources, both answer 403 to
+        unauthenticated requests, so the news feed is the sentiment source that
+        actually returns data for US, European and crypto symbols alike.
+        """
+        now = time.time()
+        cached = _NEWS_CACHE.get(symbol)
+        if cached and (now - cached["ts"]) < NEWS_CACHE_TTL:
+            return cached["data"]
+
+        headlines: List[str] = []
+        try:
+            raw = yf.Ticker(symbol).news or []
+            for item in raw[:10]:
+                content = item.get("content") or item
+                title = content.get("title") or ""
+                summary = content.get("summary") or ""
+                if title:
+                    headlines.append(title)
+                    _ = summary
+        except Exception:
+            headlines = []
+
+        if not headlines:
+            result = {
+                "symbol": symbol,
+                "headline_count": 0,
+                "nlp_sentiment_score": None,
+                "trending_theme": "Keine aktuellen Meldungen",
+                "bullish_hits": 0,
+                "bearish_hits": 0,
+                "alert": "ℹ️ Keine Nachrichtenlage verfügbar",
+                "available": False,
+                "reason": "yfinance liefert keine Schlagzeilen für dieses Symbol"
+            }
+            _NEWS_CACHE[symbol] = {"ts": now, "data": result}
+            return result
+
+        bull = bear = 0
+        for title in headlines:
+            low = title.lower()
+            bull += sum(1 for w in SocialSentimentEngine.BULLISH_TERMS if w in low)
+            bear += sum(1 for w in SocialSentimentEngine.BEARISH_TERMS if w in low)
+
+        # Shrink towards neutral when the evidence is thin: a single keyword hit in
+        # ten headlines must not produce the same conviction as eight consistent
+        # ones. PRIOR_WEIGHT acts as that many neutral observations.
+        PRIOR_WEIGHT = 4
+        total = bull + bear
+        nlp = int(round(50 + (bull - bear) / (total + PRIOR_WEIGHT) * 45))
+        nlp = max(5, min(95, nlp))
+
+        if nlp >= 70:
+            alert = "🟢 Klar positive Nachrichtenlage"
+        elif nlp <= 35:
+            alert = "🔴 Negative Schlagzeilen dominieren"
+        else:
+            alert = "⚖️ Gemischte Nachrichtenlage"
+
+        result = {
+            "symbol": symbol,
+            "headline_count": len(headlines),
+            "nlp_sentiment_score": nlp,
+            "trending_theme": headlines[0][:110],
+            "bullish_hits": bull,
+            "bearish_hits": bear,
+            "alert": alert,
+            "available": True,
+            "recent_headlines": headlines[:5]
+        }
+        _NEWS_CACHE[symbol] = {"ts": now, "data": result}
+        return result
+
+    @staticmethod
+    def _unused_hardcoded_table() -> Dict[str, Any]:
         hot_social_stocks = {
             "MRNA": {"mentions_24h": 4820, "spike_pct": +340.0, "nlp_sentiment": 82, "theme": "Phase 3 Krebs-Vakzin News & Short Squeeze"},
             "BEAM": {"mentions_24h": 2150, "spike_pct": +290.0, "nlp_sentiment": 78, "theme": "Gen-Editing Ausbruch & Biotech Momentum"},
@@ -171,26 +265,8 @@ class SocialSentimentEngine:
             "NVDA": {"mentions_24h": 15800, "spike_pct": +95.0, "nlp_sentiment": 90, "theme": "Blackwell Ultra Chip Auslieferungen"},
             "RIVN": {"mentions_24h": 3200, "spike_pct": +210.0, "nlp_sentiment": 76, "theme": "VW-Joint-Venture & CEO Insiderkauf"}
         }
-        
-        if clean_sym in hot_social_stocks:
-            data = hot_social_stocks[clean_sym]
-            return {
-                "symbol": symbol,
-                "mentions_24h": data["mentions_24h"],
-                "relative_mentions_spike_pct": data["spike_pct"],
-                "nlp_sentiment_score": data["nlp_sentiment"],
-                "trending_theme": data["theme"],
-                "alert": "🚨 AKUTER SOCIAL-SPIKE (>200% Erwähnungen)" if data["spike_pct"] >= 200 else "🟢 Hohe Social-Dynamik"
-            }
-            
-        return {
-            "symbol": symbol,
-            "mentions_24h": 650,
-            "relative_mentions_spike_pct": +15.0,
-            "nlp_sentiment_score": 65,
-            "trending_theme": "Stabile Marktpräsenz",
-            "alert": "⚖️ Normale Aktivität"
-        }
+
+        return hot_social_stocks
 
 # ==============================================================================
 # DIMENSION 5: FORENSIC BALANCE SHEET & FRAUD DETECTION
@@ -200,9 +276,102 @@ class ForensicQualityEngine:
 
     @staticmethod
     def get_forensic_metrics(symbol: str) -> Dict[str, Any]:
-        clean_sym = symbol.split(".")[0].upper()
-        
-        # High quality champions profile
+        """Piotroski / Altman / Beneish computed from the filed annual statements.
+
+        Replaces a five-entry lookup table that handed every other symbol a
+        constant quality score of 74.
+        """
+        f = get_fundamental_scores(symbol)
+        if not f.get("available"):
+            return {
+                "symbol": symbol,
+                "piotroski_f_score": "—",
+                "altman_z_score": "—",
+                "beneish_m_score": "—",
+                "moat_rating": "ℹ️ Keine Bilanzdaten",
+                "quality_investing_score": None,
+                "available": False,
+                "reason": f.get("reason", "Keine Jahresabschlüsse verfügbar")
+            }
+
+        piotroski = f.get("piotroski")
+        altman = f.get("altman_z")
+        beneish = f.get("beneish_m")
+        altman_na = f.get("altman_not_applicable")
+
+        # Piotroski carries the score, Altman and Beneish adjust it
+        score = 0.0
+        if piotroski is not None:
+            score += piotroski / 9.0 * 60.0
+            f_status = ("⭐ Höchste fundamentale Finanzstärke" if piotroski >= 8
+                        else "✅ Gute Solidität" if piotroski >= 6
+                        else "⚠️ Schwache Fundamentaldaten" if piotroski >= 4
+                        else "🚨 Sehr schwache Bilanzqualität")
+            p_text = f"{piotroski} / 9 ({f_status})"
+        else:
+            score += 30.0  # neutral half
+            p_text = "— (nicht berechenbar)"
+
+        if altman_na:
+            score += 15.0  # neutral: the model does not apply to financials
+            z_text = f"— (nicht anwendbar auf {f.get('sector') or 'Finanzwerte'})"
+        elif altman is None:
+            score += 15.0
+            z_text = "— (nicht berechenbar)"
+        elif altman > 2.99:
+            score += 25.0
+            z_text = f"{altman:.2f} (🟢 Safe Zone, keine Insolvenzgefahr)"
+        elif altman >= 1.81:
+            score += 12.0
+            z_text = f"{altman:.2f} (⚠️ Grauzone)"
+        else:
+            z_text = f"{altman:.2f} (🚨 Distress Zone)"
+
+        # Beneish flags fast-growing companies through its sales-growth term even
+        # when the accruals are clean. TATA (accruals over assets) is the component
+        # that actually signals manipulation, so a high M with low accruals is
+        # reported as growth-driven rather than penalised in full.
+        ben_parts = f.get("beneish_detail") or {}
+        tata = ben_parts.get("TATA")
+        growth_driven = (beneish is not None and beneish >= -1.78
+                         and tata is not None and tata < 0.0)
+        if beneish is None:
+            score += 7.0
+            m_text = "— (nicht berechenbar)"
+        elif beneish < -2.22:
+            score += 15.0
+            m_text = f"{beneish:.2f} (🟢 Unauffällige Bilanzierung)"
+        elif beneish < -1.78:
+            score += 7.0
+            m_text = f"{beneish:.2f} (⚠️ Grenzbereich)"
+        elif growth_driven:
+            score += 7.0
+            m_text = (f"{beneish:.2f} (ℹ️ Durch hohes Umsatzwachstum getrieben, "
+                      f"Accruals unauffällig)")
+        else:
+            m_text = f"{beneish:.2f} (🚨 Erhöhtes Manipulationsrisiko)"
+
+        if piotroski is not None and piotroski >= 8 and (altman_na or (altman or 0) > 2.99):
+            moat = "🏰 Breiter Burggraben (Top-Bilanzqualität)"
+        elif piotroski is not None and piotroski >= 6:
+            moat = "🛡️ Solide Bilanz"
+        else:
+            moat = "⚠️ Fundamental angeschlagen"
+
+        return {
+            "symbol": symbol,
+            "piotroski_f_score": p_text,
+            "altman_z_score": z_text,
+            "beneish_m_score": m_text,
+            "moat_rating": moat,
+            "quality_investing_score": int(round(min(99.0, max(5.0, score)))),
+            "available": True,
+            "computed_at": f.get("computed_at"),
+            "piotroski_detail": f.get("piotroski_detail")
+        }
+
+    @staticmethod
+    def _unused_hardcoded_profiles() -> Dict[str, Any]:
         profiles = {
             "SAP": {"piotroski": 8, "altman_z": 4.12, "beneish_m": -2.85, "fcf_yield": 4.8, "moat_rating": "🏰 Breiter Burggraben (Software-Monopol)"},
             "MUV2": {"piotroski": 9, "altman_z": 3.85, "beneish_m": -3.10, "fcf_yield": 8.2, "moat_rating": "🏰 Breiter Burggraben (Weltmarktführer Rückversicherung)"},
@@ -210,29 +379,8 @@ class ForensicQualityEngine:
             "PLTR": {"piotroski": 8, "altman_z": 9.80, "beneish_m": -2.60, "fcf_yield": 3.4, "moat_rating": "🏰 Breiter Burggraben (Enterprise AI Ontologie)"},
             "SMCI": {"piotroski": 7, "altman_z": 3.45, "beneish_m": -2.15, "fcf_yield": 5.1, "moat_rating": "🛡️ Moderater Burggraben (Server-Architektur)"}
         }
-        
-        prof = profiles.get(clean_sym, {
-            "piotroski": 7, "altman_z": 3.50, "beneish_m": -2.50, "fcf_yield": 4.2, "moat_rating": "🛡️ Solider Burggraben"
-        })
-        
-        # Altman Z-Score Interpretation: > 2.99 Safe Zone, 1.81-2.99 Grey Zone, < 1.81 Distress
-        z_status = "🟢 Exzellent / Keine Insolvenzgefahr (>2.99)" if prof["altman_z"] > 2.99 else "⚠️ Grauzone"
-        
-        # Beneish M-Score: < -2.22 = Unmanipulated / Clean Accounting; > -1.78 = High Manipulation Risk
-        m_status = "🟢 Saubere, ungekünstelte Bilanz (Kein Manipulationsrisiko)" if prof["beneish_m"] < -2.22 else "⚠️ Buchhaltungs-Prüfung empfohlen"
-        
-        # Piotroski F-Score (0-9): 8-9 = Top Quality, 0-3 = Weak
-        f_status = "⭐ Höchste fundamentale Finanzstärke (8-9/9)" if prof["piotroski"] >= 8 else "✅ Gute Solidität"
-        
-        return {
-            "symbol": symbol,
-            "piotroski_f_score": f"{prof['piotroski']} / 9 ({f_status})",
-            "altman_z_score": f"{prof['altman_z']:.2f} ({z_status})",
-            "beneish_m_score": f"{prof['beneish_m']:.2f} ({m_status})",
-            "free_cash_flow_yield": f"{prof['fcf_yield']:.1f}%",
-            "moat_rating": prof["moat_rating"],
-            "quality_investing_score": min(99, int(prof["piotroski"] * 10 + (prof["altman_z"] * 1.2)))
-        }
+
+        return profiles
 
 # ==============================================================================
 # DIMENSION 6: CRYPTO ON-CHAIN & DERIVATIVES INTELLIGENCE
@@ -280,51 +428,71 @@ class DeepIntelligenceHub:
             return _ASSET_360_CACHE[symbol]["data"]
         is_crypto = "-USD" in symbol
         is_gold_or_commodity = any(x in symbol.upper() for x in ["GLD", "GOLD", "SLV", "SILVER", "GC=F", "SI=F", "CL=F", "BZ=F"])
-        
+
         flow = self.options_engine.get_orderflow_metrics(symbol)
         social = self.social_engine.get_social_spike_score(symbol)
         forensic = self.forensic_engine.get_forensic_metrics(symbol)
         crypto_data = self.crypto_engine.get_crypto_intelligence(symbol) if is_crypto else None
-        
+
         # Commodities, Forex & Bond Market Macro Adjustments
         pm_ov = self.commodities_engine.get_precious_metals_overview()
         fx_ov = self.forex_engine.get_forex_overview()
         bonds_ov = self.bond_engine.get_bond_market_overview()
-        
+
         macro_boost = 0.0
         # GSR Super-Cycle Boost for Silver & Precious Metals
         if is_gold_or_commodity and pm_ov.get("gold_silver_ratio", 70) >= 80.0:
             macro_boost += 8.0  # Silver undervaluation catch-up bonus
-            
+
         # DXY Tailwinds for Tech & Growth
         dxy = fx_ov.get("dxy_index", 101.4)
         if dxy < 101.5:
             macro_boost += 4.0  # Weaker dollar boosts global liquidity & tech
         elif dxy > 104.5:
             macro_boost -= 6.0  # Strong dollar acts as liquidity drag
-            
+
         # Yield Curve & 10Y Yield Factor
         if bonds_ov.get("us_10y_yield", 4.0) < 3.90:
             macro_boost += 3.0  # Lower cost of capital expands valuation multiples
         elif "Disinversion" in bonds_ov.get("curve_regime", ""):
             macro_boost -= 2.0  # Mild defensive penalty during disinversion
-            
+
         # JPY Carry Trade Unwind Risk Penalty
         if "HOCH" in fx_ov.get("jpy_carry_trade_risk", ""):
             macro_boost -= 10.0  # Protective derisking
 
-        # Composite Multi-Source Alpha Score (0 - 100)
-        alpha_components = [
-            flow.get("smart_money_score", 70) * 0.30,
-            social.get("nlp_sentiment_score", 75) * 0.25,
-            forensic.get("quality_investing_score", 80) * 0.25,
-            min(98, max(40, 85 + macro_boost)) * 0.20
+        # Composite Multi-Source Alpha Score (0 - 100).
+        # Components that have no data are DROPPED and the remaining weights are
+        # renormalised. Substituting a constant (as this used to do) produced a
+        # confident-looking 74.8 for every German stock and every crypto pair,
+        # which no gate could distinguish from a real measurement.
+        weighted = [
+            (flow.get("smart_money_score"), 0.30),
+            (social.get("nlp_sentiment_score"), 0.25),
+            (forensic.get("quality_investing_score"), 0.25),
+            (min(98, max(40, 85 + macro_boost)), 0.20),   # macro is always computable
         ]
-        composite_alpha_score = min(99.0, max(15.0, round(sum(alpha_components), 1)))
+        available = [(v, w) for v, w in weighted if v is not None]
+        weight_covered = sum(w for _, w in available)
+        if weight_covered > 0:
+            raw = sum(v * w for v, w in available) / weight_covered
+            # Confidence shrinkage: renormalising alone let a crypto pair with only
+            # news + macro reach 92 and outrank every fully-measured stock. Pull the
+            # score towards neutral in proportion to how much of it is actually
+            # backed by data, so thin coverage cannot produce an extreme conviction.
+            shrunk = 50.0 + (raw - 50.0) * weight_covered
+            composite_alpha_score = min(99.0, max(15.0, round(shrunk, 1)))
+        else:
+            composite_alpha_score = None
+
+        missing = [name for name, (v, _) in zip(
+            ("smart_money", "social", "forensic", "macro"), weighted) if v is None]
 
         result = {
             "symbol": symbol,
             "composite_alpha_score": composite_alpha_score,
+            "data_quality": round(weight_covered, 2),
+            "data_missing": missing,
             "smart_money_flow": flow,
             "social_sentiment": social,
             "forensic_quality": forensic,

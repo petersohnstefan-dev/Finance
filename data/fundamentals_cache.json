@@ -1,0 +1,518 @@
+{
+ "NVDA": {
+  "fetched_ts": 1789415266.4791317,
+  "scores": {
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 66.9,
+   "altman_detail": {
+    "X1": 0.452,
+    "X2": 0.711,
+    "X3": 0.685,
+    "X4": 103.436,
+    "X5": 1.044
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -1.27,
+   "beneish_detail": {
+    "DSRI": 1.008,
+    "GMI": 1.055,
+    "AQI": 1.232,
+    "SGI": 1.655,
+    "DEPI": 1.061,
+    "SGAI": 0.793,
+    "LVGI": 0.807,
+    "TATA": 0.084
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "BAC": {
+  "fetched_ts": 1789415273.9514265,
+  "scores": {
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": null,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": null,
+   "altman_detail": null,
+   "altman_not_applicable": true,
+   "sector": "Financial Services",
+   "beneish_m": null,
+   "beneish_detail": {
+    "DSRI": 1.1173619962366614,
+    "GMI": null,
+    "AQI": null,
+    "SGI": 1.068404247279323,
+    "DEPI": 0.977146897826862,
+    "SGAI": 0.9854496143893381,
+    "LVGI": null,
+    "TATA": 0.00524542036932496
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "ENPH": {
+  "fetched_ts": 1789415276.7706304,
+  "scores": {
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.2,
+   "altman_detail": {
+    "X1": 0.383,
+    "X2": -0.058,
+    "X3": 0.06,
+    "X4": 2.016,
+    "X5": 0.42
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.54,
+   "beneish_detail": {
+    "DSRI": 0.928,
+    "GMI": 1.014,
+    "AQI": 0.527,
+    "SGI": 1.107,
+    "DEPI": 0.959,
+    "SGAI": 0.892,
+    "LVGI": 0.913,
+    "TATA": 0.01
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "VKTX": {
+  "fetched_ts": 1789415279.5921218,
+  "scores": {
+   "available": true,
+   "piotroski": 2,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 26.3,
+   "altman_detail": {
+    "X1": 0.893,
+    "X2": -1.184,
+    "X3": -0.55,
+    "X4": 47.83,
+    "X5": 0.0
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": null,
+   "beneish_detail": {
+    "DSRI": null,
+    "GMI": null,
+    "AQI": 0.782291466018386,
+    "SGI": null,
+    "DEPI": 0.30706942841565205,
+    "SGAI": null,
+    "LVGI": 3.469562683736595,
+    "TATA": -0.11310705588288304
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "SRT3.DE": {
+  "fetched_ts": 1789415282.6678236,
+  "scores": {
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.13,
+   "altman_detail": {
+    "X1": -0.021,
+    "X2": null,
+    "X3": 0.053,
+    "X4": 2.69,
+    "X5": 0.364
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": -2.98,
+   "beneish_detail": {
+    "DSRI": 0.719,
+    "GMI": 0.975,
+    "AQI": 1.015,
+    "SGI": 1.047,
+    "DEPI": 1.031,
+    "SGAI": 0.969,
+    "LVGI": 0.98,
+    "TATA": -0.062
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "GYC.DE": {
+  "fetched_ts": 1789415285.4289355,
+  "scores": {
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": null,
+   "altman_detail": null,
+   "altman_not_applicable": true,
+   "sector": "Real Estate",
+   "beneish_m": -2.32,
+   "beneish_detail": {
+    "DSRI": 1.013,
+    "GMI": 0.981,
+    "AQI": 1.029,
+    "SGI": 1.014,
+    "DEPI": 0.945,
+    "SGAI": 0.973,
+    "LVGI": 0.962,
+    "TATA": 0.027
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "SZG.DE": {
+  "fetched_ts": 1789415288.3930085,
+  "scores": {
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 2.09,
+   "altman_detail": {
+    "X1": 0.283,
+    "X2": 0.416,
+    "X3": 0.01,
+    "X4": 0.465,
+    "X5": 0.857
+   },
+   "altman_not_applicable": false,
+   "sector": "Basic Materials",
+   "beneish_m": -2.71,
+   "beneish_detail": {
+    "DSRI": 1.093,
+    "GMI": 0.917,
+    "AQI": 1.002,
+    "SGI": 0.897,
+    "DEPI": 1.888,
+    "SGAI": 1.017,
+    "LVGI": 1.077,
+    "TATA": -0.055
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "SOL-USD": {
+  "fetched_ts": 1789415288.828047,
+  "scores": {
+   "available": false,
+   "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
+  }
+ },
+ "XRP-USD": {
+  "fetched_ts": 1789415289.1853259,
+  "scores": {
+   "available": false,
+   "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
+  }
+ },
+ "SAP.DE": {
+  "fetched_ts": 1789415291.8785214,
+  "scores": {
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 7.12,
+   "altman_detail": {
+    "X1": 0.04,
+    "X2": 0.673,
+    "X3": 0.153,
+    "X4": 8.501,
+    "X5": 0.523
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.63,
+   "beneish_detail": {
+    "DSRI": 0.863,
+    "GMI": 1.001,
+    "AQI": 0.982,
+    "SGI": 1.077,
+    "DEPI": 0.982,
+    "SGAI": 0.928,
+    "LVGI": 0.935,
+    "TATA": -0.026
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "MUV2.DE": {
+  "fetched_ts": 1789415294.7965083,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": null,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": null,
+   "altman_detail": null,
+   "altman_not_applicable": true,
+   "sector": "Financial Services",
+   "beneish_m": null,
+   "beneish_detail": {
+    "DSRI": null,
+    "GMI": null,
+    "AQI": null,
+    "SGI": 0.9672171861418105,
+    "DEPI": 1.1970093820590637,
+    "SGAI": 1.0756278525411933,
+    "LVGI": null,
+    "TATA": 0.004340308787071238
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "RKLB": {
+  "fetched_ts": 1789415315.9145017,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 39.58,
+   "altman_detail": {
+    "X1": 0.444,
+    "X2": -0.435,
+    "X3": -0.086,
+    "X4": 66.134,
+    "X5": 0.259
+   },
+   "altman_not_applicable": false,
+   "sector": "Industrials",
+   "beneish_m": -2.13,
+   "beneish_detail": {
+    "DSRI": 0.776,
+    "GMI": 0.773,
+    "AQI": 1.373,
+    "SGI": 1.38,
+    "DEPI": 1.208,
+    "SGAI": 0.911,
+    "LVGI": 0.341,
+    "TATA": -0.014
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "SO": {
+  "fetched_ts": 1789415318.6994624,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 0.96,
+   "altman_detail": {
+    "X1": -0.038,
+    "X2": 0.095,
+    "X3": 0.053,
+    "X4": 0.854,
+    "X5": 0.19
+   },
+   "altman_not_applicable": false,
+   "sector": "Utilities",
+   "beneish_m": -2.65,
+   "beneish_detail": {
+    "DSRI": 0.914,
+    "GMI": 1.032,
+    "AQI": 0.953,
+    "SGI": 1.106,
+    "DEPI": 0.955,
+    "SGAI": null,
+    "LVGI": 1.029,
+    "TATA": -0.036
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "PLTR": {
+  "fetched_ts": 1789415322.2164602,
+  "scores": {
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 179.17,
+   "altman_detail": {
+    "X1": 0.807,
+    "X2": -0.4,
+    "X3": 0.159,
+    "X4": 296.218,
+    "X5": 0.503
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -1.85,
+   "beneish_detail": {
+    "DSRI": 1.16,
+    "GMI": 0.974,
+    "AQI": 1.313,
+    "SGI": 1.562,
+    "DEPI": 1.236,
+    "SGAI": 0.741,
+    "LVGI": 0.813,
+    "TATA": -0.056
+   },
+   "computed_at": "2026-09-14"
+  }
+ },
+ "DUOL": {
+  "fetched_ts": 1789415325.2602117,
+  "scores": {
+   "available": true,
+   "piotroski": 3,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 8.07,
+   "altman_detail": {
+    "X1": 0.444,
+    "X2": 0.145,
+    "X3": 0.068,
+    "X4": 10.987,
+    "X5": 0.521
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -1.72,
+   "beneish_detail": {
+    "DSRI": 0.911,
+    "GMI": 1.008,
+    "AQI": 1.852,
+    "SGI": 1.387,
+    "DEPI": 1.279,
+    "SGAI": 0.9,
+    "LVGI": 0.884,
+    "TATA": 0.013
+   },
+   "computed_at": "2026-09-14"
+  }
+ }
+}

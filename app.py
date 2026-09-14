@@ -1786,7 +1786,9 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                     "WKN": get_wkn(sym),
                     "Name": p["name"][:20],
                     "Alpha-Score": f"⭐ {p_intel['composite_alpha_score']}/100",
-                    "Dark Pool Anteil": f"{flow['dark_pool_share_pct']}%",
+                    "Put/Call-Ratio": (f"{flow['put_call_ratio']:.2f}"
+                                       if flow.get('put_call_ratio') is not None
+                                       else "— keine Optionsdaten"),
                     "Put/Call Ratio": f"{flow['put_call_ratio']:.2f}",
                     "Piotroski F-Score": forensic["piotroski_f_score"].split("(")[0].strip(),
                     "Altman Z-Score": forensic["altman_z_score"].split("(")[0].strip(),
@@ -1960,10 +1962,12 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 | Bestandteil des Alpha-Scores | Gewichtung | Datenquelle |
                 | :--- | :---: | :--- |
-                | **🎯 Smart Money & Dark Pools** | **30 %** | Put/Call-Ratio, Dark-Pool-Blockshare, Options-Orderflow |
-                | **💬 Social Sentiment & Buzz** | **25 %** | NLP-Score aus Reddit WSB & StockTwits |
-                | **🏰 Forensische Qualität** | **25 %** | Piotroski F-Score, Altman Z, Beneish M |
+                | **🎯 Smart Money (Optionen)** | **30 %** | Put/Call-Ratio und Call-Sweeps aus der Optionskette. **Nur für US-Werte verfügbar** – EU-Titel, Krypto und Futures haben keine. |
+                | **📰 Nachrichten-Sentiment** | **25 %** | Schlagzeilen-Analyse der letzten 10 Meldungen (yfinance-News). Funktioniert für US, EU und Krypto. |
+                | **🏰 Forensische Qualität** | **25 %** | **Piotroski F-Score, Altman Z und Beneish M**, berechnet aus den testierten Jahresabschlüssen. Nur für bilanzierende Unternehmen. |
                 | **🌐 Makro-Umfeld** | **20 %** | GSR, DXY, 10J-Rendite, JPY-Carry-Risiko (siehe Makro-Tab) |
+
+                **⚖️ Umgang mit fehlenden Daten:** Ein Baustein ohne Datengrundlage wird **aus der Gewichtung entfernt**, nicht durch einen Schätzwert ersetzt. Anschließend wird der Score in Richtung 50 geschrumpft – im Verhältnis dazu, wie viel Gewicht tatsächlich durch Messungen gedeckt ist (`data_quality`). Eine dünne Datenlage kann so keine hohe Überzeugung mehr erzeugen. Der **Thesen-Ausstieg ist ausgesetzt**, solange weniger als 45 % des Scores gedeckt sind.
 
                 * **🟢 KAUF-Trigger (Long):** Auswahl-Score ≥ **55 / 100** ➔ **Direktkauf der Aktie** (kein Hebel auf der Long-Seite).
                 * **🔻 SHORT-Trigger:** Abwärts-Breakdown ➔ **🔻 Turbo Bear (3,5x Knock-Out Put)**.
@@ -2006,7 +2010,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **🏰 Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** |
+                | **🏰 Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** – aus den Jahresabschlüssen berechnet. Altman wird bei Banken, Versicherern und Immobilienwerten übersprungen (dort nicht aussagekräftig), Beneish bei hohem Umsatzwachstum mit sauberen Accruals entschärft. |
                 | **📋 Insider- & Whale-Convictions** | **25 %** | Star-Investoren & Director's Dealings mit echtem Eigenkapital-Einsatz |
                 | **🌐 Makro-Zyklen, Gold & BTC** | **20 %** | Allokation in Gold (GC=F) & Bitcoin (BTC-USD) als Währungs- und Inflationsschutz |
                 | **🏰 Kapitalrendite & Burggraben** | **10 %** | ROE > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |

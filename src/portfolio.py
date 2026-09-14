@@ -110,7 +110,8 @@ class PortfolioManager:
             "medium_term_hedge_pct": 0.20,
             "medium_term_hedge_leverage": 3.0,
             "medium_term_hedge_symbol": "SPY",
-            "long_term_min_score": 75
+            "long_term_min_score": 75,
+            "min_data_quality_for_thesis_exit": 0.45
         }
         if os.path.exists(strat_file):
             try:
@@ -1044,11 +1045,19 @@ class PortfolioManager:
 
             # 1f. Laufendes Thesen-Audit (Thesis Invalidation / Momentum-Erosion)
             pos_intel = self.deep_intel.get_asset_360_intelligence(sym)
-            pos_alpha = pos_intel.get("composite_alpha_score", 70)
+            pos_alpha = pos_intel.get("composite_alpha_score")
             flow = pos_intel.get("smart_money_flow", {})
-            if pos_alpha < 42 or flow.get("put_call_ratio", 0.8) > 1.35:
+            pos_pcr = flow.get("put_call_ratio")
+            # Only act on a thesis break when enough of the score is actually backed
+            # by data. Previously a missing alpha defaulted to 70 and a missing
+            # put/call ratio to 0.8, so this exit silently never fired for German
+            # stocks or crypto - it looked active and protected nothing.
+            min_dq = self.strategy.get("min_data_quality_for_thesis_exit", 0.45)
+            thesis_reliable = (pos_alpha is not None
+                               and pos_intel.get("data_quality", 0) >= min_dq)
+            if thesis_reliable and (pos_alpha < 42 or (pos_pcr is not None and pos_pcr > 1.35)):
                 self.sell("short_term", sym, curr_p, 
-                          reason=f"🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: {pos_alpha:.0f}/100, PCR: {flow.get('put_call_ratio', 1.0):.2f}) ➔ Vorzeitiger Ausstieg")
+                          reason=f"🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: {pos_alpha:.0f}/100, PCR: {pos_pcr if pos_pcr is not None else 'o. A.'}) ➔ Vorzeitiger Ausstieg")
                 actions_taken.append(f"THESEN-AUSSTIEG {sym} (Alpha {pos_alpha:.0f}/100)")
                 continue
 
@@ -1084,7 +1093,9 @@ class PortfolioManager:
         scored_candidates = []
         for source, c_sym, payload in raw_candidates[:max_cands]:
             intel = self.deep_intel.get_asset_360_intelligence(c_sym)
-            alpha = intel.get("composite_alpha_score", 70)
+            alpha = intel.get("composite_alpha_score")
+            if alpha is None:
+                continue  # No data at all - never buy on a substituted constant
             # Identical blend for both sources. A symbol the scanner has no read on
             # gets a NEUTRAL 50, not a free pass - otherwise missing data would score
             # better than a measured weak breakout.
@@ -1100,13 +1111,19 @@ class PortfolioManager:
             flow = intel["smart_money_flow"]
             social = intel["social_sentiment"]
             if source == "realtime":
+                pcr = flow.get("put_call_ratio")
+                news_note = (f"News {social['nlp_sentiment_score']}/100"
+                             if social.get("nlp_sentiment_score") is not None else "News o. A.")
                 reason_str = (f"⚡ Echtzeit-Spike ({payload.get('change_1min_pct', 0):+.1f}%, "
-                              f"Alpha {best_score:.0f}/100) | Dark Pool: {flow['dark_pool_share_pct']}% "
-                              f"| Social: +{social['relative_mentions_spike_pct']:.0f}%")
+                              f"Alpha {best_score:.0f}/100) | "
+                              f"{'PCR ' + format(pcr, '.2f') if pcr is not None else 'keine Optionsdaten'} "
+                              f"| {news_note}")
                 c_price = payload.get("trigger_price")
             else:
+                pcr = flow.get("put_call_ratio")
                 reason_str = (f"🚨 Smart-Money Ausbruch (Alpha {best_score:.0f}/100) "
-                              f"| PCR: {flow['put_call_ratio']} | Social: {social['trending_theme']}")
+                              f"| {'PCR: ' + format(pcr, '.2f') if pcr is not None else 'keine Optionsdaten'} "
+                              f"| {social.get('trending_theme', 'keine Meldungen')}")
                 c_price = payload.get("price")
             top_st_candidate = {"symbol": c_sym, "name": payload.get("name", c_sym),
                                 "price": c_price, "reason": reason_str,
@@ -1279,8 +1296,11 @@ class PortfolioManager:
 
             # 2e. Laufendes Wachstums- & Trend-Audit (Thesen-Bruch)
             mt_pos_intel = self.deep_intel.get_asset_360_intelligence(sym)
-            mt_alpha = mt_pos_intel.get("composite_alpha_score", 70)
-            if mt_alpha < 45:
+            mt_alpha = mt_pos_intel.get("composite_alpha_score")
+            mt_min_dq = self.strategy.get("min_data_quality_for_thesis_exit", 0.45)
+            if (mt_alpha is not None
+                    and mt_pos_intel.get("data_quality", 0) >= mt_min_dq
+                    and mt_alpha < 45):
                 self.sell("medium_term", sym, curr_p,
                           reason=f"⚠️ Thesen-Bruch: Mittelfristiges Wachstums-Rating unter 45 gefallen (Alpha: {mt_alpha:.0f}/100) ➔ Vorzeitiger Ausstieg")
                 actions_taken.append(f"THESEN-AUSSTIEG {sym} (Alpha {mt_alpha:.0f}/100)")
