@@ -11,7 +11,7 @@ Ein umfassendes, datengestütztes Analyse- und Entscheidungssystem für Aktienm�
 2. **🚨 Ausbruchs- & Katalysator-Radar (Biotech / Squeezes / Mid-Caps)**:
    - Filtert den Markt nach **Volumen-Explosionen (> 2x–3x Schnitt)**, **Bollinger-Squeezes** und **Leerverkäufer-Quoten (Short Float % / Days to Cover)** (nach dem *Moderna*-Muster).
 3. **💼 Zwei autonome Musterdepots (je 10.000 € Startkapital)**:
-   - **⚡ Kurz-/Mittelfristiges Trading-Depot**: Aktives Swing-Trading mit festem **Stop-Loss (-7%)** und **Take-Profit (+20%)**.
+   - **⚡ Kurz-/Mittelfristiges Trading-Depot**: Trendfolgendes Swing-Trading mit **volatilitätsskaliertem Stop-Loss (2,5x ATR, 6-25%)** und **Chandelier-Trailing statt festem Take-Profit** – Verlierer werden eng begrenzt, Gewinner dürfen laufen.
    - **🏛️ Langfristiges Investment-Depot**: Qualitätswerte mit starkem Burggraben (ROE > 15%), gesunder Bilanz und fairem KGV.
    - **Lückenloses Trade-Log**: Detaillierte Transaktions-Historie mit Zeitstempel, Einstandspreis, realisiertem Gewinn/Verlust und KI-Begründung.
 4. **🔍 Einzelaktien-Tiefenanalyse**:

@@ -31,6 +31,7 @@ class PortfolioManager:
         self.deep_intel = DeepIntelligenceHub()
         self.tribunal = AITribunalManager()
         self._last_price_update = 0.0
+        self._atr_cache: Dict[str, float] = {}
         self.data = self._load()
         self.strategy = self._load_strategy()
 
@@ -91,7 +92,16 @@ class PortfolioManager:
             "daytrade_vix_defensive_threshold": 25.0,
             "daytrade_vix_pause_threshold": 35.0,
             "short_term_trailing_start_pct": 8.0,
-            "short_term_stop_loss_pct": 0.15
+            "short_term_stop_loss_pct": 0.15,
+            "short_term_stop_atr_mult": 2.5,
+            "short_term_trail_atr_mult": 2.5,
+            "short_term_breakeven_trigger_atr": 1.0,
+            "short_term_stop_min_pct": 0.06,
+            "short_term_stop_max_pct": 0.25,
+            "short_term_max_risk_per_trade_pct": 0.015,
+            "short_term_min_alpha_score": 55,
+            "short_term_min_spike_pct": 1.5,
+            "short_term_max_candidates_scored": 12
         }
         if os.path.exists(strat_file):
             try:
@@ -213,6 +223,50 @@ class PortfolioManager:
         max_trades = self.strategy.get("daytrade_max_daily_trades", 5)
         today_count = self.db.get_today_trade_count("day_trading")
         return today_count < max_trades
+
+    def _get_atr_pct(self, symbol: str) -> float:
+        """14-day ATR as a fraction of price. Cached per instance because the bot
+        re-runs every 5 minutes and every position would otherwise refetch."""
+        if symbol in self._atr_cache:
+            return self._atr_cache[symbol]
+        atr_pct = 0.0
+        try:
+            hist = yf.Ticker(symbol).history(period="2mo")
+            if len(hist) >= 15:
+                atr = float(hist['High'].sub(hist['Low']).rolling(14).mean().iloc[-1])
+                price = float(hist['Close'].iloc[-1])
+                if price > 0 and atr > 0:
+                    atr_pct = atr / price
+        except Exception:
+            pass
+        self._atr_cache[symbol] = atr_pct
+        return atr_pct
+
+    def _position_atr_pct(self, sym: str, pos: Dict) -> float:
+        """ATR% as it applies to the traded instrument. A knock-out moves with the
+        underlying's ATR amplified by its leverage."""
+        underlying = pos.get("underlying_symbol", sym)
+        atr_pct = self._get_atr_pct(underlying)
+        if atr_pct <= 0:
+            return 0.0
+        try:
+            lev = max(float(pos.get("leverage", 1.0) or 1.0), 1.0)
+        except (TypeError, ValueError):
+            lev = 1.0
+        return atr_pct * lev
+
+    def _short_term_stop_pct(self, symbol: str) -> float:
+        """Initial stop distance for the short-term depot, scaled to the symbol's own
+        volatility instead of a flat percentage. short_term_stop_loss_pct is the
+        fallback for symbols where no ATR can be read."""
+        atr_pct = self._get_atr_pct(symbol)
+        if atr_pct > 0:
+            sl_pct = self.strategy.get("short_term_stop_atr_mult", 2.5) * atr_pct
+        else:
+            sl_pct = self.strategy.get("short_term_stop_loss_pct", 0.15)
+        lo = self.strategy.get("short_term_stop_min_pct", 0.06)
+        hi = self.strategy.get("short_term_stop_max_pct", 0.25)
+        return min(max(sl_pct, lo), hi)
 
     def _choose_leverage(self, spike: float) -> float:
         """Maps an intraday spike to the certificate leverage. Shared by scoring and entry
@@ -884,22 +938,25 @@ class PortfolioManager:
                 actions_taken.append(f"KNOCK-OUT {sym}")
                 continue
 
-            # 1c. Dynamic Profit Ratchet & Trailing Stop & Scaling Out
-            if gain_pct >= 25.0 and not pos.get("scaled_out"):
-                # Scale out 50% to secure massive profits
-                self.sell("short_term", sym, curr_p, reason=f"💰 Scaling Out: +{gain_pct:.1f}% erreicht, 50% der Position gesichert", shares_to_sell=pos["shares"]/2.0)
-                actions_taken.append(f"TEILVERKAUF {sym} (+{gain_pct:.1f}%)")
+            # 1c. Trend-following exit: breakeven guard, then ATR chandelier trail.
+            #     No profit target and no fixed ratchet - the old +8% -> +3% lock
+            #     capped the upside at 3% while the downside ran to the full stop.
+            #     Stops only ever ratchet up, never down.
+            pos_atr_pct = self._position_atr_pct(sym, pos)
+            if pos_atr_pct > 0:
+                be_trigger = self.strategy.get("short_term_breakeven_trigger_atr", 1.0)
+                trail_mult = self.strategy.get("short_term_trail_atr_mult", 2.5)
 
-            if gain_pct >= 8.0:
-                # Ratchet Stop-Loss to Breakeven + 3%
-                lock_sl = round(buy_p * 1.03, 2)
-                if not pos.get("stop_loss") or pos["stop_loss"] < lock_sl:
-                    pos["stop_loss"] = lock_sl
+                # Once the trade has earned one ATR of room, it may no longer lose
+                if gain_pct >= be_trigger * pos_atr_pct * 100.0:
+                    be_sl = round(buy_p * 1.001, 2)
+                    if not pos.get("stop_loss") or pos["stop_loss"] < be_sl:
+                        pos["stop_loss"] = be_sl
 
-            if gain_pct >= 18.0:
-                # Active Trailing Stop: 6% below peak
-                trail_sl = round(peak_p * 0.94, 2)
-                if not pos.get("stop_loss") or pos["stop_loss"] < trail_sl:
+                # Chandelier trail at the same ATR distance as the initial stop.
+                # Never placed below entry, so it cannot turn a winner into a loser.
+                trail_sl = round(peak_p * (1.0 - trail_mult * pos_atr_pct), 2)
+                if trail_sl > buy_p and (not pos.get("stop_loss") or pos["stop_loss"] < trail_sl):
                     pos["stop_loss"] = trail_sl
 
             # 1d. Friday Derisking for Leveraged Positions
@@ -931,33 +988,60 @@ class PortfolioManager:
         # 1g. Multi-Source Opportunity Check & Intelligent Capital Reallocation
         top_st_candidate = None
         best_score = 50
-        if rt_alerts:
-            sym = rt_alerts[0]["symbol"]
-            intel = self.deep_intel.get_asset_360_intelligence(sym)
+
+        # Both sources feed ONE scored list. Previously `if rt_alerts:` short-circuited
+        # the whole block, so the depot bought the NEWEST realtime alert with no quality
+        # bar at all, and the scored scan path below was effectively dead code.
+        min_alpha = self.strategy.get("short_term_min_alpha_score", 55)
+        min_spike = self.strategy.get("short_term_min_spike_pct", 1.5)
+        max_cands = self.strategy.get("short_term_max_candidates_scored", 12)
+        scan_by_sym = {c["symbol"]: c for c in scan_results}
+
+        raw_candidates, seen = [], set()
+        # Realtime alerts, strongest first. The scanner alerts from 0.5% because that is
+        # a daytrade trigger; a multi-day swing entry needs a lot more than that.
+        for a in sorted(rt_alerts, key=lambda x: x.get("change_1min_pct", 0), reverse=True):
+            a_sym = a["symbol"]
+            if a_sym in seen or not a.get("trigger_price"):
+                continue
+            if a.get("change_1min_pct", 0) < min_spike:
+                continue
+            seen.add(a_sym)
+            raw_candidates.append(("realtime", a_sym, a))
+        for c in scan_results[:10]:
+            if c["symbol"] in seen:
+                continue
+            seen.add(c["symbol"])
+            raw_candidates.append(("scan", c["symbol"], c))
+
+        scored_candidates = []
+        for source, c_sym, payload in raw_candidates[:max_cands]:
+            intel = self.deep_intel.get_asset_360_intelligence(c_sym)
+            alpha = intel.get("composite_alpha_score", 70)
+            # Identical blend for both sources. A symbol the scanner has no read on
+            # gets a NEUTRAL 50, not a free pass - otherwise missing data would score
+            # better than a measured weak breakout.
+            breakout = scan_by_sym.get(c_sym, {}).get("breakout_score", 50)
+            c_score = breakout * 0.4 + alpha * 0.6
+            scored_candidates.append((c_score, source, c_sym, payload, intel))
+
+        scored_candidates.sort(key=lambda x: x[0], reverse=True)
+        if scored_candidates and scored_candidates[0][0] >= min_alpha:
+            best_score, source, c_sym, payload, intel = scored_candidates[0]
             flow = intel["smart_money_flow"]
             social = intel["social_sentiment"]
-            best_score = intel.get("composite_alpha_score", 75)
-            spike_reason = f"⚡ Echtzeit-Spike ({rt_alerts[0].get('change_1min_pct', 2.0):+.1f}%) | Dark Pool: {flow['dark_pool_share_pct']}% | Social: +{social['relative_mentions_spike_pct']:.0f}%"
-            top_st_candidate = {"symbol": sym, "name": rt_alerts[0].get("name", sym), 
-                                "price": rt_alerts[0].get("trigger_price"), "reason": spike_reason, "is_realtime": True}
-        elif scan_results:
-            # Score candidates with technicals + deep intelligence alpha
-            scored_candidates = []
-            for c in scan_results[:10]:
-                c_sym = c["symbol"]
-                intel = self.deep_intel.get_asset_360_intelligence(c_sym)
-                c_score = (c.get("breakout_score", 0) * 0.4) + (intel.get("composite_alpha_score", 70) * 0.6)
-                scored_candidates.append((c, intel, c_score))
-            
-            if scored_candidates:
-                scored_candidates = sorted(scored_candidates, key=lambda x: x[2], reverse=True)
-                best_cand, best_intel, best_score = scored_candidates[0]
-                if best_score >= 55:
-                    flow = best_intel["smart_money_flow"]
-                    social = best_intel["social_sentiment"]
-                    reason_str = f"🚨 Smart-Money Ausbruch (Alpha {best_score:.0f}/100) | PCR: {flow['put_call_ratio']} | Social: {social['trending_theme']}"
-                    top_st_candidate = {"symbol": best_cand["symbol"], "name": best_cand.get("name", best_cand["symbol"]),
-                                        "price": best_cand.get("price"), "reason": reason_str, "is_realtime": False}
+            if source == "realtime":
+                reason_str = (f"⚡ Echtzeit-Spike ({payload.get('change_1min_pct', 0):+.1f}%, "
+                              f"Alpha {best_score:.0f}/100) | Dark Pool: {flow['dark_pool_share_pct']}% "
+                              f"| Social: +{social['relative_mentions_spike_pct']:.0f}%")
+                c_price = payload.get("trigger_price")
+            else:
+                reason_str = (f"🚨 Smart-Money Ausbruch (Alpha {best_score:.0f}/100) "
+                              f"| PCR: {flow['put_call_ratio']} | Social: {social['trending_theme']}")
+                c_price = payload.get("price")
+            top_st_candidate = {"symbol": c_sym, "name": payload.get("name", c_sym),
+                                "price": c_price, "reason": reason_str,
+                                "is_realtime": source == "realtime"}
 
         # If we have a great candidate but low cash, intelligently swap the most mature profitable or weakest dead-money position!
         if top_st_candidate and top_st_candidate["symbol"] not in st_depot["positions"]:
@@ -996,15 +1080,26 @@ class PortfolioManager:
                     if regime == "BEAR":
                         base_alloc = 1200.0  # Reduce risk
                     
-                    alloc = min(base_alloc * vol_factor, st_depot["cash"] * 0.85)
+                    # Volatility-scaled stop. Widening the stop without touching the
+                    # position size would silently raise the risk per trade, so the
+                    # allocation is capped at a fixed risk budget instead.
+                    sl_pct = self._short_term_stop_pct(sym)
+                    depot_value = st_depot["cash"] + sum(
+                        x["current_price"] * x["shares"] for x in st_depot["positions"].values())
+                    risk_budget = depot_value * self.strategy.get("short_term_max_risk_per_trade_pct", 0.015)
+                    risk_cap = risk_budget / sl_pct if sl_pct > 0 else base_alloc
+
+                    alloc = min(base_alloc * vol_factor, risk_cap, st_depot["cash"] * 0.85)
                     is_bearish = top_st_candidate.get("direction") == "SHORT" or "Absturz" in top_st_candidate["reason"] or "Breakdown" in top_st_candidate["reason"]
                     if is_bearish:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
+                        # Same underlying stop distance, expressed on the certificate
+                        cert_sl_pct = min(sl_pct * max(turbo.get("leverage", 1.0), 1.0), 0.5)
                         approved, msg = self._tribunal_approved_buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
                                  reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
-                                 stop_loss=cert_price*0.85, take_profit=None, derivative_meta=turbo)
+                                 stop_loss=cert_price*(1.0 - cert_sl_pct), take_profit=None, derivative_meta=turbo)
                         if approved:
                             actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
                         else:
@@ -1013,7 +1108,7 @@ class PortfolioManager:
                         shares = alloc / p
                         approved, msg = self._tribunal_approved_buy("short_term", sym, top_st_candidate["name"], shares, p,
                                  reason=top_st_candidate["reason"],
-                                 stop_loss=p*0.93, take_profit=None)  # Dynamic trailing
+                                 stop_loss=p*(1.0 - sl_pct), take_profit=None)  # ATR-scaled, then trailed
                         if approved:
                             actions_taken.append(f"KAUF {sym} für Kurzfrist-Depot")
                         else:
