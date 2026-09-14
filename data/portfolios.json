@@ -6,7 +6,7 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
       "initial_cash": 10000.0,
-      "cash": 3386.3616198500004,
+      "cash": 2490.589622034,
       "positions": {
         "SOL-USD": {
           "symbol": "SOL-USD",
@@ -21,20 +21,6 @@
           "derivative_type": "STOCK",
           "last_updated": "15:46:36",
           "peak_price": 105.79
-        },
-        "VKTX": {
-          "symbol": "VKTX",
-          "name": "Viking Therapeutics, Inc.",
-          "shares": 35.1597,
-          "buy_price": 34.1983,
-          "current_price": 32.08,
-          "buy_date": "2026-09-04 15:31",
-          "stop_loss": 31.74,
-          "take_profit": null,
-          "reason": "🚨 Smart-Money Ausbruch (Alpha 64/100) | PCR: 0.64 | Social: Stabile Marktpräsenz | ⚖️ Tribunal (BUY): Das starke 'Smart-Money Ausbruch'-Signal mit einem Alpha von 64/100 und der positive PCR von 0.64 deuten auf erhebliches kurzfristiges Aufwärtspotenzial hin. Es liegen keine offensichtlichen roten Flaggen vor, die gegen einen Einstieg sprechen würden. Dies entspricht unserer Strategie, Trades mit gutem Momentum zu nutzen, auch wenn eine engmaschige Überwachung aufgrund der kurzfristigen Natur des Depots erforderlich ist.",
-          "derivative_type": "STOCK",
-          "last_updated": "15:46:36",
-          "peak_price": 34.93
         },
         "RKLB": {
           "symbol": "RKLB",
@@ -63,6 +49,18 @@
           "derivative_type": "STOCK",
           "peak_price": 87.76,
           "last_updated": "15:46:36"
+        },
+        "SRT3.DE": {
+          "symbol": "SRT3.DE",
+          "name": "SRT3.DE",
+          "shares": 8.7912,
+          "buy_price": 227.955,
+          "current_price": 227.5,
+          "buy_date": "2026-09-14 16:36",
+          "stop_loss": 211.58,
+          "take_profit": null,
+          "reason": "⚡ Echtzeit-Spike (+0.7%) | Dark Pool: 36.5% | Social: +15% | ⚖️ Tribunal (BUY): Trotz der inhärenten Risiken von Momentum-Trades überwiegen die bullischen Signale – Echtzeit-Spike, hohes Dark Pool-Volumen und positives Social-Sentiment – für unser 'short_term'-Depot. Es gibt keine offensichtlichen Red Flags, die eine Ablehnung rechtfertigen würden, und das Setup passt zum Mandat, gute Momentum-Setups zu nutzen.",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -316,6 +314,31 @@
           "total": 2004.0,
           "date": "2026-09-14 14:36",
           "reason": "⚡ Echtzeit-Spike (+0.7%) | Dark Pool: 49.0% | Social: +15% | ⚖️ Tribunal (BUY): Die Kombination aus einem klaren Echtzeit-Spike, starkem positivem Social-Momentum und einer hohen Dark Pool-Beteiligung indiziert ein aussichtsreiches kurzfristiges Momentum. Obwohl die Risiken einer Überhitzung bestehen, überwiegen die bullischen Signale; es liegen keine offensichtlichen Red Flags vor, die gegen eine spekulative Position sprechen, die auf Momentum basiert."
+        },
+        {
+          "type": "SELL",
+          "symbol": "VKTX",
+          "name": "Viking Therapeutics, Inc.",
+          "product_type": "STOCK",
+          "shares": 35.1597,
+          "buy_price": 34.1983,
+          "sell_price": 31.5767,
+          "total": 1110.23,
+          "pnl": -92.17,
+          "pnl_pct": -7.67,
+          "date": "2026-09-14 16:36",
+          "reason": "🚨 Stop-Loss ausgelöst (-7.5%) zur Verlustbegrenzung"
+        },
+        {
+          "type": "BUY",
+          "symbol": "SRT3.DE",
+          "name": "SRT3.DE",
+          "product_type": "STOCK",
+          "shares": 8.7912,
+          "price": 227.5,
+          "total": 2004.0,
+          "date": "2026-09-14 16:36",
+          "reason": "⚡ Echtzeit-Spike (+0.7%) | Dark Pool: 36.5% | Social: +15% | ⚖️ Tribunal (BUY): Trotz der inhärenten Risiken von Momentum-Trades überwiegen die bullischen Signale – Echtzeit-Spike, hohes Dark Pool-Volumen und positives Social-Sentiment – für unser 'short_term'-Depot. Es gibt keine offensichtlichen Red Flags, die eine Ablehnung rechtfertigen würden, und das Setup passt zum Mandat, gute Momentum-Setups zu nutzen."
         }
       ]
     },
