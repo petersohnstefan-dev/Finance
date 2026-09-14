@@ -1914,64 +1914,89 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             ])
 
             with h_tab_dt:
-                st.markdown('''
-                #### 🔥 Daytrader-Depot (Aggressives Intraday-Trading & Momentum)
-                **Ziel:** Sekunden- & Minuten-Ausbrüche blitzschnell reiten, maximaler Fokus auf Echtzeit-Volumen. Der Hebel wird dabei dynamisch an die Stärke des Ausbruchs angepasst (1x Direktkauf bis 30x Turbo). Kein Risiko über Nacht.
+                st.markdown("""
+                #### 🔥 Daytrader-Depot (Intraday-Momentum mit Risiko-Budget)
+                **Ziel:** Intraday-Ausbrüche mit gehebelten Turbos reiten — aber nur solche, die eine mehrstufige Qualitätsprüfung bestehen. Kein Risiko über Nacht.
 
-                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
+                **Signalquelle:** *RealTimeBreakoutScanner* über 500+ Werte. Ein Alarm entsteht ab **±0,5 % (Aktien) bzw. ±1,0 % (Krypto) in 5 Minuten**.
+
+                | Faktor im Einstiegs-Score | Punkte | Kriterium |
                 | :--- | :---: | :--- |
-                | **⚡ Echtzeit-Volumen-Spikes** | **50 %** | 1-Minuten Kurssprünge > ±0,35 % (Long/Short) getrieben durch plötzliche institutionelle Orders. |
-                | **🚀 Dynamischer Hebel** | **30 %** | Je nach Signalstärke wählt die KI **dynamisch Hebel von 2x, 5x, 10x, 15x oder bis zu 30x** (für Extrem-Spikes). |
-                | **🛡️ EOD Derisking** | **20 %** | Verhindert Über-Nacht-Gaps durch automatischen Verkauf profitabler Positionen vor Handelsende. |
+                | **📊 Volumen-Bestätigung** | **25** | Volumen der 5 Ausbruchs-Minuten gegen die 20 Minuten davor: ≥ 3,0x → 25 P., ≥ 1,8x → 15 P., ≥ 1,2x → 5 P. |
+                | **📈 Trend-Konformität** | **20** | Nur mit dem Trend: Long über EMA 50, Short darunter (20 P.); Long nur über EMA 20 → 10 P. |
+                | **⚡ Spike-Stärke** | **20** | ≥ 2,0 % → 20 P., ≥ 1,2 % → 15 P., ≥ 0,8 % → 10 P., ≥ 0,5 % → 5 P. |
+                | **🎯 Chance-Risiko (CRV)** | **20** | 2× ATR des Basiswerts gegen den Stopabstand (Zertifikats-Stop ÷ Hebel): ≥ 2,0 → 20 P., ≥ 1,5 → 10 P. |
+                | **🌡️ Marktumfeld** | **15** | VIX-Modus NORMAL → 15 P., DEFENSIVE → 5 P. |
 
-                * **🟢 KAUF-Trigger:** Sofortiger Einstieg bei Erkennung eines Sub-Minute-Ausbruchs durch den *RealTimeBreakoutScanner*.
-                * **💰 Positionsgröße:** Maximal 1.500 € pro Trade (kleinere Allokation aufgrund des hohen Hebels).
-                * **🎯 Aggressives Profit-Ratcheting:** Ab +5 % Gewinn wird der Stop-Loss sofort auf +2 % (über Einstand) nachgezogen. Ab +10 % Gewinn greift ein extrem enger Trailing-Stop (nur noch 5 % Puffer zum Top).
-                * **🚨 Intraday Notbremse:** Strenger initialer Knock-Out/Stop-Loss, um Totalverluste beim Daytrading abzufedern (max. -20 %).
-                * **🛡️ End-of-Day (EOD) Derisking:** Befindet sich ein Trade nach 21:00 Uhr mit >2 % im Plus, wird er **zwingend verkauft**, um "Overnight-Risiko" (Gap-Downs am nächsten Morgen) vollständig auszuschließen.
-                ''')
+                * **🟢 KAUF-Trigger:** Score ≥ **65 / 100** (`daytrade_min_entry_score`). Im DEFENSIVE-Modus sind **80** nötig. Bewertet werden die **8 stärksten** Kandidaten, gekauft wird der **beste** — nicht der neueste Alarm.
+                * **🚀 Hebel:** Nach Spike-Stärke **1x / 3x / 5x / 7x / 10x**, hart gedeckelt durch `daytrade_max_leverage` (aktuell **10x**). Unter 0,5 % Spike wird die Aktie direkt gekauft.
+                * **💰 Positionsgröße:** Risikobasiert — maximal **2 % des Depotwerts** Verlust pro Trade (`daytrade_max_risk_per_trade_pct`), geteilt durch den Stopabstand. Nie mehr als 90 % des Cash.
+                * **🚨 Stop-Loss:** **15 %** auf das Zertifikat (`daytrade_stop_loss_pct`). Bei Knock-Out-Berührung Totalverlust.
+                * **🎯 Dreistufiges Trailing:** ab **+3 %** Stop auf Einstand · ab **+5 %** Stop auf +2 % · ab **+10 %** Trailing 5 % unter dem Zwischenhoch.
+                * **🛡️ EOD-Zwangsverkauf:** Ab **21:00 Uhr werden ALLE Positionen geschlossen** — unabhängig von Gewinn oder Verlust (`daytrade_eod_close_all`).
+
+                ##### 🛑 Risiko-Sperren (jede blockiert neue Einstiege)
+                | Sperre | Schwelle |
+                | :--- | :--- |
+                | **VIX-Modus** | ≥ 25 → DEFENSIVE (halbes Risiko, Score-Hürde 80) · ≥ 35 → **PAUSE**, gar keine Einstiege |
+                | **Tages-Verlustlimit** | −5 % des Depotwerts → gesperrt bis zum nächsten Tag |
+                | **Trade-Limit** | max. **5 Trades pro Tag** |
+                | **Klumpenrisiko** | max. **2 Positionen im selben Sektor** |
+                | **Kein Revenge-Trading** | dasselbe Symbol wird an einem Tag nur einmal gehandelt |
+                | **Signal-Frische** | Alarm muss **jünger als 15 Minuten** sein |
+                | **Handelsfenster** | Einstiege nur zwischen **8:00 und 21:00 Uhr** |
+                | **Depot-Grenzen** | max. **3 Positionen**, mindestens **500 € Cash** |
+                """)
 
 
             with h_tab1:
                 st.markdown("""
-                #### ⚡ Kurzfristiges Trading-Depot (Momentum, Squeezes, Hebel & Shorts)
-                **Ziel:** Schnelle Gewinne bei akuten Ausbrüchen, Smart-Money-Positionierung, Leerverkäufer-Fallen & **bearishe Short-Breakdowns**.
+                #### ⚡ Kurzfristiges Trading-Depot (Trendfolge, Smart Money & Shorts)
+                **Ziel:** Ausbrüche über Tage bis Wochen begleiten. Verluste werden eng begrenzt, **Gewinner dürfen laufen** — es gibt kein festes Kursziel.
 
-                | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
+                **Kandidaten:** Echtzeit-Alarme **ab 1,5 % Spike** (`short_term_min_spike_pct`) *plus* die Top 10 des Markt-Scans. Beide Quellen laufen durch **dieselbe** Bewertung.
+
+                **Auswahl-Score = Breakout-Score × 0,4 + Alpha-Score × 0,6** (max. 12 Kandidaten pro Lauf). Werte ohne Breakout-Messung bekommen neutrale 50 Punkte, damit fehlende Daten kein Vorteil sind.
+
+                | Bestandteil des Alpha-Scores | Gewichtung | Datenquelle |
                 | :--- | :---: | :--- |
-                | **🎯 1. Smart Money & Dark Pools** | **25 %** | Put/Call-Ratio < 0.55 (Call-Sweeps) oder > 1.20 (Put-Hedging), Dark-Pool-Blockshare > 35 % |
-                | **📈 Charttechnik & Intraday-Ticks** | **25 %** | Kurs über EMA 20/50, RSI 50–68 (Long) bzw. Support-Bruch & RSI < 40 (Short) |
-                | **💬 4. Social Sentiment & Buzz** | **20 %** | Relative Erwähnungs-Spitzen auf Reddit WSB & StockTwits (> 150 % Anstieg in 24h) |
-                | **🪤 Leerverkäufer & BaFin-Shorts** | **15 %** | Short Float > 12 % (Squeeze-Falle) ODER aggressive BaFin-Netto-Aufstockungen |
-                | **⛓️ 6. Krypto On-Chain & Derivate**| **15 %** | Krypto-Funding-Rates (+6.8% gesund), Exchange-Netto-Abflüsse (Cold Storage) |
-                | ** 7. SEC Form 4 (Insider-Boost)**| **+15 bis +25 Punkte** | Form 4 Filings: Vorstände/CEOs investieren eigenes Geld. Stock Grants () werden ignoriert. |
+                | **🎯 Smart Money & Dark Pools** | **30 %** | Put/Call-Ratio, Dark-Pool-Blockshare, Options-Orderflow |
+                | **💬 Social Sentiment & Buzz** | **25 %** | NLP-Score aus Reddit WSB & StockTwits |
+                | **🏰 Forensische Qualität** | **25 %** | Piotroski F-Score, Altman Z, Beneish M |
+                | **🌐 Makro-Umfeld** | **20 %** | GSR, DXY, 10J-Rendite, JPY-Carry-Risiko (siehe Makro-Tab) |
 
-                * **🟢 KAUF-Trigger (Long):** Multi-Source Alpha-Score ≥ **55 / 100** ➔ Long-Aktie oder **⚡ Turbo Bull (3.5x Knock-Out Call)**.
-                * **🔻 SHORT-Trigger (Bearish):** Abwärts-Breakdown / Support-Bruch ➔ **🔻 Turbo Bear (3.5x Knock-Out Put)**, um an fallenden Kursen zu profitieren.
-                * **🎯 Dynamischer Trailing-Exit:** Ab +8 % Gewinn Stop-Loss auf Einstand + 3 % nachziehen; ab +18 % greift ein dynamischer Trailing-Stop (6 % Puffer unter dem Zwischenhoch).
-                * **🛡️ Laufendes Thesen-Audit (Thesen-Bruch):** Fällt der Alpha-Score eines gehaltenen Werts unter **42 / 100** oder dreht der Optionenfluss bärisch (Put/Call > 1.35), wird die Position **sofort vorzeitig abgestoßen** – auch wenn der Stop-Loss noch nicht berührt wurde!
-                * **💡 Opportunitäts-Tausch (Dead-Money-Schutz):** Wenn ein Wert seitwärts dümpelt und ein neuer Kandidat mit einem um **≥ 25 Punkte höheren Alpha-Score** auftaucht, wird die schwächste Position automatisch für den neuen Leader liquidiert.
-                * **🛡️ Freitags-Derisking:** Vor dem Wochenende werden gehebelte Knock-Out-Gewinne (ab +10 %) automatisch realisiert, um Wochenend-Gaps zu vermeiden.
+                * **🟢 KAUF-Trigger (Long):** Auswahl-Score ≥ **55 / 100** ➔ **Direktkauf der Aktie** (kein Hebel auf der Long-Seite).
+                * **🔻 SHORT-Trigger:** Abwärts-Breakdown ➔ **🔻 Turbo Bear (3,5x Knock-Out Put)**.
+                * **🚨 Stop-Loss:** **2,5 × ATR** des Werts, geklammert auf **6 – 25 %**. Ein volatiler Biotech bekommt so mehr Luft als ein Versorger — ein pauschaler Prozentsatz wurde bei hoher Volatilität zwangsläufig von normalem Rauschen getroffen.
+                * **💰 Positionsgröße:** 2.000 € × Volatilitätsfaktor, **gedeckelt auf 1,5 % Depotrisiko** pro Trade (`short_term_max_risk_per_trade_pct`) und 85 % des Cash. Ein weiterer Stop führt so zu einer kleineren Position, nicht zu mehr Risiko.
+                * **🎯 Trendfolge-Exit:** Nach **1 ATR Gewinn** wandert der Stop auf Einstand — ab da ist kein Verlust mehr möglich. Danach **Chandelier-Trailing 2,5 × ATR unter dem Zwischenhoch**, nie unter den Einstand.
+                * **🛡️ Thesen-Audit:** Alpha-Score < **42 / 100** oder Put/Call > **1,35** ➔ sofortiger Ausstieg, auch ohne Stop-Berührung.
+                * **💡 Opportunitäts-Tausch:** Neuer Kandidat mit **≥ 25 Punkten** mehr Alpha ➔ schwächste Position wird liquidiert.
+                * **🛡️ Freitags-Derisking:** Gehebelte Knock-Out-Gewinne ab **+10 %** werden vor dem Wochenende realisiert.
+                * **🚨 Carry-Unwind-Schutz:** Bei **USD/JPY < 145** werden keine neuen Longs eröffnet (Shorts bleiben erlaubt) und alle Positionen im Plus auf Einstand nachgezogen.
+                * **Depot-Grenzen:** max. **4 Positionen**, mindestens **1.500 € Cash** für einen Neueinstieg.
                 """)
 
             with h_tab2:
                 st.markdown("""
                 #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing, Wachstum & Makro-Hedging)
-                **Ziel:** Reiten starker Aufwärtstrends bei Wachstumsaktien + **aktive Portfolio-Absicherung bei Markt-Korrekturen**.
+                **Ziel:** Starke Aufwärtstrends reiten und das Buch bei Marktstress aktiv absichern.
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **🌊 3. US Netto-Liquidität & FedWatch** | **30 %** | `Fed Balance Sheet − TGA − Reverse Repo` (Expansiv: > 6 Bio. USD) + FedWatch Zinswende |
+                | **🌊 US Netto-Liquidität & FedWatch** | **30 %** | `Fed Balance Sheet − TGA − Reverse Repo` (Expansiv: > 6 Bio. USD) + FedWatch Zinswende |
                 | **📈 Analysten-Revisionen (EPS)** | **25 %** | Mindestens 3x mehr Upgrades als Downgrades in 30 Tagen + positive EPS-Surprises |
-                | ** 2. SEC Form 4 & Kongress-Trades** | **20 % (Live Boost)** | Direkter Score-Boost bei Cash-Käufen durch das C-Level. Ausschluss von Null-Dollar-Vergütungen! |
-                | **🎙️ Earnings Call KI-Tonalität** | **15 %** | Semantischer NLP-Sprachscore > 80/100 (Fokus auf Margenwachstum & AI-Monetarisierung) |
-                | **📊 Trendfolge über EMA 50** | **10 %** | Kurs notiert stabil über dem EMA 50 und steigender 200-Tage-Linie |
+                | **📋 SEC Form 4 & Kongress-Trades** | **20 %** | Score-Boost bei Cash-Käufen des C-Levels. Null-Dollar-Vergütungen werden ignoriert. |
+                | **🎙️ Earnings Call KI-Tonalität** | **15 %** | Semantischer NLP-Sprachscore > 80/100 |
+                | **📊 Trendfolge über EMA 50** | **10 %** | Kurs stabil über EMA 50 bei steigender 200-Tage-Linie |
 
-                * **🟢 KAUF-Trigger:** Mittelfrist-Score ≥ **70 / 100** bei expansiver US-Netto-Liquidität.
-                * **🛡️ Makro-Absicherung (Hedge):** Bei marktweiten Abverkäufen (VIX > 28 / Liquiditätsabfall) kauft die KI temporär **Index-Puts (DAX / S&P 500 Short-Hedge)**, um Buchgewinne abzusichern.
-                * **🎯 Trailing-Stop:** Ab +10 % Gewinn Stop-Loss auf Einstand + 5 %; ab +20 % Trailing-Stop mit 8 % Puffer unter dem Peak.
-                * **🛡️ Laufendes Wachstums-Audit:** Bricht die Trendlinie (EMA 50) oder stürzt das Analysten-Sentiment ab (Score < 45), erfolgt ein **vorzeitiger Thesen-Ausstieg**, um kein totes Kapital mitzuschleppen.
-                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner (+8 % bis +15 %) oder stagnierende Titel werden bei Verfügbarkeit neuer Top-Growth-Leader (Alpha-Vorteil ≥ 20 Punkte) umgeschichtet.
+                * **🟢 KAUF-Trigger:** **Gesamt-Score ≥ 75 / 100**. Gereiht wird nach `Kurzfrist-Score × 0,4 + Langfrist-Score × 0,6`.
+                * **🚨 Stop-Loss:** **10 %** unter Einstand beim Kauf.
+                * **🎯 Trailing:** ab **+10 %** Stop auf Einstand + 5 % · ab **+20 %** Trailing 8 % unter dem Zwischenhoch · ab **+35 %** werden **50 % der Position** verkauft.
+                * **🛡️ Makro-Absicherung (aktiv):** Steigt der **VIX auf ≥ 28**, kauft das System einen **Turbo Bear 3x auf den S&P 500** im Volumen von **20 % des Buchwerts** (gedeckelt auf die Hälfte des Cash). Der Hedge belegt **keinen** der 4 regulären Plätze, ist von der Trendfolge-Logik ausgenommen und wird erst bei **VIX < 22** wieder aufgelöst.
+                * **🛡️ Wachstums-Audit:** Alpha-Score < **45** ➔ vorzeitiger Thesen-Ausstieg.
+                * **💡 Opportunitäts-Umschichtung:** Reife Gewinner oder stagnierende Titel weichen neuen Growth-Leadern (Alpha-Vorteil ≥ 20 Punkte).
+                * **Depot-Grenzen:** max. **4 Kernpositionen**, mindestens **1.500 € Cash**.
                 """)
 
             with h_tab3:
@@ -1981,30 +2006,34 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 | Dimension / Faktor | Gewichtung | Kriterien, Datenquellen & Schwellenwerte |
                 | :--- | :---: | :--- |
-                | **🏰 5. Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** |
-                | ** 2. Insider- & Whale-Convictions** | **25 % (Live Boost)** | Star-Investoren & Director's Dealings. Wenn CEOs mit Eigenkapital einsteigen, schlägt der Scanner aggressiver an. |
-                | **🌐 3. Makro-Zyklen, Gold & BTC** | **20 %** | Allokation in Gold (GC=F) & Bitcoin (BTC-USD) als Währungs- und Inflationsschutz |
-                | **🏰 Kapitalrendite & Burggraben** | **10 %** | Eigenkapitalrendite (ROE) > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |
-                | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2; Capped Bonus-Zertifikate mit ≥ 25 % Sicherheitspuffer |
+                | **🏰 Forensische Bilanz-Qualität** | **35 %** | **Piotroski F-Score ≥ 7/9**, **Altman Z-Score > 2.99 (Safe Zone)**, **Beneish M-Score < -2.22** |
+                | **📋 Insider- & Whale-Convictions** | **25 %** | Star-Investoren & Director's Dealings mit echtem Eigenkapital-Einsatz |
+                | **🌐 Makro-Zyklen, Gold & BTC** | **20 %** | Allokation in Gold (GC=F) & Bitcoin (BTC-USD) als Währungs- und Inflationsschutz |
+                | **🏰 Kapitalrendite & Burggraben** | **10 %** | ROE > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |
+                | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2 |
 
-                * **🟢 KAUF-Trigger:** Langfrist-Score ≥ **75 / 100** ➔ Qualitäts-Compounder oder **🛡️ Bonus-Zertifikat (-25 % Puffer, +14 % Bonusrendite)**.
-                * **🛡️ Fortlaufendes Bilanz- & Burggraben-Audit:** Verschlechtert sich die Bonität (Piotroski < 5 oder Altman Z droht in Notlage abzurutschen), trennt sich das System vom Titel, um das Langfrist-Portfolio vor Value Traps zu schützen.
-                * **🛡️ Gold & Krypto als natürlicher Hedge:** Absicherung gegen Geldentwertung und geopolitische Krisen ohne Zwangsverkäufe von Kernaktien.
-                * **📜 Unveränderlicher Audit-Trail:** Alle Transaktionen werden atomar in der SQLite-Datenbank protokolliert.
+                * **🟢 KAUF-Trigger:** **Langfrist-Score ≥ 75 / 100** (`long_term_min_score`). Wird die Hürde von keinem Kandidaten erreicht, **bleibt das Depot in Cash** statt den am wenigsten schlechten Wert zu kaufen.
+                * **🛡️ Ab Score ≥ 90** wird statt der Aktie ein **Bonus-Zertifikat** gekauft (−25 % Sicherheitspuffer, +14 % Bonusrendite).
+                * **🛡️ Bilanz- & Burggraben-Audit:** Verschlechtert sich die Bonität (Piotroski < 5, Altman Z Richtung Notlage), trennt sich das System vom Titel, um Value Traps zu vermeiden.
+                * **🛡️ Gold & Krypto als natürlicher Hedge** gegen Geldentwertung und geopolitische Krisen.
+                * **⚖️ Bärenmarkt-Regel:** Notiert der S&P 500 unter seiner 200-Tage-Linie, wird die Allokation je Neukauf halbiert — ausgenommen Gold und Anleihen-ETFs.
+                * **Depot-Grenzen:** max. **4 Positionen**, mindestens **1.500 € Cash**.
                 """)
 
             with h_tab4:
                 st.markdown("""
-                #### 🪙 Rohstoff-, Edelmetall- & Devisen-Filter in der Entscheidungs-Engine
-                **Wie fließen Gold, Silber, Rohöl und Devisen in Kauf- und Verkaufsentscheidungen ein?**
+                #### 🪙 Makro-Filter in der Entscheidungs-Engine
+                **Diese vier Kennzahlen verändern den Alpha-Score jedes Werts** (Makro-Block = 20 % des Alpha-Scores):
 
-                | Indikator / Makro-Kennzahl | Schwellenwert | Auswirkung auf Kauf- & Verkaufsanalyse |
+                | Indikator / Makro-Kennzahl | Schwellenwert | Wirkung |
                 | :--- | :---: | :--- |
-                | **📊 Gold/Silber-Ratio (GSR)** | **> 80.0** | **🚨 Silber-Superzyklus (+15 Punkte Alpha):** Silber & Minenaktien (PAAS, FSM) werden massiv übergewichtet (historische Aufholrallye). Bei **< 55.0** wird Gold im Langfrist-Depot bevorzugt. |
-                | **💵 US Dollar Index (DXY)** | **< 101.50** | **🌊 Globaler Liquiditäts-Rückenwind (+4 Punkte Alpha):** Schwacher Dollar beflügelt Gold, Rohstoffe, Tech-Growth & Krypto. Bei **> 104.50** defensiver Risikoabschlag (-6 Punkte). |
-                | **🚨 JPY Carry-Trade Unwind Risk** | **USD/JPY < 145** | **🛑 Notfall-Schutzventil (-10 Punkte Alpha):** Pausiert sofort neue gehebelte Long-Einstiege im Kurzfrist-Depot und zieht Trailing-Stops auf Einstand nach, um Liquiditätsschocks abzufedern. |
-                | **🏛️ Zentralbank-Goldkäufe & TIPS** | **Realzins < 1.8 %** | **👑 Gold-Allokation freigegeben:** Physische Gold-ETCs (4GLD.DE) im Langfrist-Depot als Inflations- und Geldentwertungsschutz gegen US-Schuldenwachstum. |
-                | **🛢️ EIA Öl-Lager & Crack Spread** | **Marge > $20/bbl** | **🏭 Konjunktur-Freigabe:** Hohe Raffinerie-Margen und Lagerabbau bestätigen reale Nachfrage ➔ Freigabe für Industrie-, Chemie- & Energieaktien im Mittelfrist-Depot. |
+                | **📊 Gold/Silber-Ratio (GSR)** | **≥ 80.0** | **+8 Punkte** auf Edelmetalle & Rohstoffwerte (historische Aufholrallye des Silbers). |
+                | **💵 US Dollar Index (DXY)** | **< 101.50** | **+4 Punkte:** Schwacher Dollar beflügelt Gold, Rohstoffe, Tech-Growth & Krypto. Bei **> 104.50** dagegen **−6 Punkte** Risikoabschlag. |
+                | **🏛️ US 10-Jahres-Rendite** | **< 3.90 %** | **+3 Punkte:** Sinkende Kapitalkosten weiten Bewertungsmultiplikatoren. Bei Zinskurven-**Disinversion** dagegen **−2 Punkte**. |
+                | **🚨 JPY Carry-Trade Unwind** | **USD/JPY < 145** | **−10 Punkte** *und* aktives Schutzventil: keine neuen Longs im Kurzfrist-Depot, alle Positionen im Plus werden auf Einstand nachgezogen. |
+
+                ---
+                ℹ️ **Nur zur Anzeige, ohne Einfluss auf Kaufentscheidungen:** Crack-Spread, TIPS-Realzins, EIA-Lagerbestände und die Zentralbank-Leitzinsen im Makro-Radar sind derzeit informative Kennzahlen — sie fließen **nicht** in die Scores ein.
                 """)
 
     # Call the fragment

@@ -103,7 +103,14 @@ class PortfolioManager:
             "short_term_max_risk_per_trade_pct": 0.015,
             "short_term_min_alpha_score": 55,
             "short_term_min_spike_pct": 1.5,
-            "short_term_max_candidates_scored": 12
+            "short_term_max_candidates_scored": 12,
+            "carry_unwind_usdjpy_threshold": 145.0,
+            "medium_term_hedge_vix_threshold": 28.0,
+            "medium_term_hedge_exit_vix": 22.0,
+            "medium_term_hedge_pct": 0.20,
+            "medium_term_hedge_leverage": 3.0,
+            "medium_term_hedge_symbol": "SPY",
+            "long_term_min_score": 75
         }
         if os.path.exists(strat_file):
             try:
@@ -961,6 +968,19 @@ class PortfolioManager:
         # ----------------------------------------------------------------------
         # 1. KURZFRISTIGES TRADING-DEPOT (Tage–Wochen / Squeezes & Hebel)
         # ----------------------------------------------------------------------
+        # JPY carry-trade unwind guard. A sharp yen appreciation forces global
+        # carry positions to be closed, which hits risk assets first. The metric
+        # existed in commodities_forex_radar but nothing ever acted on it.
+        carry_unwind, usdjpy = False, None
+        try:
+            fx = self.deep_intel.forex_engine.get_forex_overview()
+            usdjpy = float(fx.get("rates", {}).get("USD/JPY", 154.0))
+            carry_unwind = usdjpy < self.strategy.get("carry_unwind_usdjpy_threshold", 145.0)
+        except Exception:
+            carry_unwind = False
+        if carry_unwind:
+            actions_taken.append(f"🛑 Carry-Unwind-Schutz aktiv (USD/JPY {usdjpy:.1f}) — keine neuen Longs")
+
         st_depot = self.data["portfolios"]["short_term"]
         for sym in list(st_depot["positions"].keys()):
             pos = st_depot["positions"][sym]
@@ -998,6 +1018,13 @@ class PortfolioManager:
                 trail_sl = round(peak_p * (1.0 - trail_mult * pos_atr_pct), 2)
                 if trail_sl > buy_p and (not pos.get("stop_loss") or pos["stop_loss"] < trail_sl):
                     pos["stop_loss"] = trail_sl
+
+            # Carry unwind: every position already in profit is pulled to breakeven
+            # so a liquidity shock cannot turn a winner into a loser.
+            if carry_unwind and curr_p > buy_p:
+                be_sl = round(buy_p * 1.001, 2)
+                if not pos.get("stop_loss") or pos["stop_loss"] < be_sl:
+                    pos["stop_loss"] = be_sl
 
             # 1d. Friday Derisking for Leveraged Positions
             if is_friday_evening and pos.get("derivative_type") == "KNOCKOUT" and gain_pct >= 10.0:
@@ -1133,7 +1160,10 @@ class PortfolioManager:
 
                     alloc = min(base_alloc * vol_factor, risk_cap, st_depot["cash"] * 0.85)
                     is_bearish = top_st_candidate.get("direction") == "SHORT" or "Absturz" in top_st_candidate["reason"] or "Breakdown" in top_st_candidate["reason"]
-                    if is_bearish:
+                    if carry_unwind and not is_bearish:
+                        # Shorts stay allowed - they profit from exactly this move
+                        actions_taken.append(f"⏸️ Kurzfrist-Long {sym} pausiert (Carry-Unwind)")
+                    elif is_bearish:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
@@ -1178,8 +1208,49 @@ class PortfolioManager:
         # 2. MITTELFRISTIGES TREND- & GROWTH-DEPOT (1–6 Monate / Swing & Hedge)
         # ----------------------------------------------------------------------
         mt_depot = self.data["portfolios"]["medium_term"]
+
+        # 2a. Makro-Absicherung: index short while the market is in risk-off stress.
+        #     Opened outside the normal position budget and exempt from the trend
+        #     exits below - a hedge is supposed to lose money when the book wins.
+        hedge_on = self.strategy.get("medium_term_hedge_vix_threshold", 28.0)
+        hedge_off = self.strategy.get("medium_term_hedge_exit_vix", 22.0)
+        hedge_sym = self.strategy.get("medium_term_hedge_symbol", "SPY")
+        vix_now = self._get_vix()
+        open_hedges = [s for s, hp in mt_depot["positions"].items() if hp.get("is_macro_hedge")]
+
+        if open_hedges and vix_now < hedge_off:
+            for h_sym in open_hedges:
+                hp = mt_depot["positions"][h_sym]
+                self.sell("medium_term", h_sym, hp["current_price"],
+                          reason=f"🛡️ Makro-Hedge aufgelöst (VIX {vix_now:.1f} < {hedge_off}) — Marktstress abgeklungen")
+                actions_taken.append(f"HEDGE GESCHLOSSEN {h_sym} (VIX {vix_now:.1f})")
+        elif not open_hedges and vix_now >= hedge_on:
+            mt_invested = sum(hp["current_price"] * hp["shares"] for hp in mt_depot["positions"].values())
+            hedge_alloc = min(mt_invested * self.strategy.get("medium_term_hedge_pct", 0.20),
+                              mt_depot["cash"] * 0.5)
+            if hedge_alloc >= 200.0:
+                idx_price = 0.0
+                try:
+                    idx_hist = yf.Ticker(hedge_sym).history(period="1d")
+                    if not idx_hist.empty:
+                        idx_price = float(idx_hist["Close"].iloc[-1])
+                except Exception:
+                    idx_price = 0.0
+                if idx_price > 0:
+                    h_turbo = DerivativeEngine.create_turbo_knockout(
+                        hedge_sym, f"{hedge_sym} Index", idx_price, direction="SHORT",
+                        target_leverage=self.strategy.get("medium_term_hedge_leverage", 3.0))
+                    h_turbo["is_macro_hedge"] = True
+                    h_shares = hedge_alloc / h_turbo["cert_price"]
+                    self.buy("medium_term", h_turbo["wkn"], h_turbo["name"], h_shares, h_turbo["cert_price"],
+                             reason=f"🛡️ Makro-Absicherung: VIX {vix_now:.1f} ≥ {hedge_on} — {hedge_alloc:.0f}€ Buchwert gegen Korrektur gehedgt",
+                             stop_loss=None, take_profit=None, derivative_meta=h_turbo)
+                    actions_taken.append(f"HEDGE ERÖFFNET ({hedge_sym} Short {vix_now:.1f} VIX)")
+
         for sym in list(mt_depot["positions"].keys()):
             pos = mt_depot["positions"][sym]
+            if pos.get("is_macro_hedge"):
+                continue  # Exits handled by the VIX rule above, not by trend logic
             curr_p = pos["current_price"]
             buy_p = pos["buy_price"]
             gain_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
@@ -1244,7 +1315,9 @@ class PortfolioManager:
                                       reason=f"💡 Opportunitäts-Tausch: Stagnierenden Titel ({w_sym}, Alpha {w_alpha:.0f}) gegen stärkeren Growth-Leader ({top_mt_cand['symbol']}, Alpha {cand_alpha:.0f}) getauscht")
                             actions_taken.append(f"OPPORTUNITÄTS-TAUSCH: {w_sym} ➔ {top_mt_cand['symbol']}")
 
-                if mt_depot["cash"] >= 1500.0 and len(mt_depot["positions"]) < 4:
+                mt_core_count = sum(1 for hp in mt_depot["positions"].values()
+                                    if not hp.get("is_macro_hedge"))
+                if mt_depot["cash"] >= 1500.0 and mt_core_count < 4:
                     p = top_mt_cand.get("price")
                     sym = top_mt_cand["symbol"]
                     if p and p > 0:
@@ -1284,9 +1357,17 @@ class PortfolioManager:
                 continue
         if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4 and scan_results:
             candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
+            lt_min_score = self.strategy.get("long_term_min_score", 75)
             for cand in candidates:
                 sym = cand["symbol"]
                 p = cand.get("price")
+                # There used to be NO minimum here: the depot bought the best
+                # available candidate no matter how weak, so in a poor market it
+                # was forced into the least bad name instead of holding cash.
+                if cand.get("long_score", 0) < lt_min_score:
+                    actions_taken.append(
+                        f"⏸️ Langfrist wartet (bester Score {cand.get('long_score', 0):.0f} < {lt_min_score})")
+                    break  # sorted descending - nothing below will qualify either
                 if sym not in lt_depot["positions"] and p and p > 0:
                     vol_factor = self._calculate_volatility_factor(sym)
                     regime = self._get_market_regime()
