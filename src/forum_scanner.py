@@ -1,20 +1,68 @@
-﻿import re
+﻿import os
+import re
+import time
 import requests
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional, Tuple
 from collections import defaultdict
 import datetime
+
+# Reddit blocks the anonymous www.reddit.com/*.json endpoints from most IPs and
+# returns 403; old.reddit.com answers 200 but with an HTML interstitial, not JSON.
+# The OAuth API still works and is free, so credentials - when present - are the
+# only path that actually returns posts.
+REDDIT_TOKEN_URL = "https://www.reddit.com/api/v1/access_token"
+REDDIT_API_BASE = "https://oauth.reddit.com"
+REDDIT_USER_AGENT = os.environ.get(
+    "REDDIT_USER_AGENT", "finance-dashboard/1.0 (autonomous market scanner)")
+
+_token_cache: Dict[str, Any] = {"token": None, "expires_at": 0.0}
+
+
+def reddit_credentials() -> Tuple[Optional[str], Optional[str]]:
+    return os.environ.get("REDDIT_CLIENT_ID"), os.environ.get("REDDIT_CLIENT_SECRET")
+
+
+def get_reddit_token() -> Optional[str]:
+    """App-only OAuth token, cached until shortly before it expires."""
+    client_id, client_secret = reddit_credentials()
+    if not client_id or not client_secret:
+        return None
+    if _token_cache["token"] and time.time() < _token_cache["expires_at"]:
+        return _token_cache["token"]
+    try:
+        resp = requests.post(
+            REDDIT_TOKEN_URL,
+            auth=(client_id, client_secret),
+            data={"grant_type": "client_credentials"},
+            headers={"User-Agent": REDDIT_USER_AGENT},
+            timeout=8,
+        )
+        if resp.status_code != 200:
+            print(f"[forum_scanner] Reddit-Token abgelehnt: HTTP {resp.status_code}")
+            return None
+        payload = resp.json()
+        token = payload.get("access_token")
+        if not token:
+            return None
+        _token_cache["token"] = token
+        _token_cache["expires_at"] = time.time() + float(payload.get("expires_in", 3600)) - 60
+        return token
+    except Exception as exc:
+        print(f"[forum_scanner] Reddit-Token fehlgeschlagen: {type(exc).__name__}")
+        return None
+
 
 class ForumSentimentHarvester:
     """Scans major investor forums (Reddit, StockTwits, etc.) to detect trending tickers and crowd sentiment."""
 
     SUBREDDITS = ["wallstreetbets", "stocks", "investing", "Finanzen", "pennystocks", "options"]
-    
+
     BULLISH_KEYWORDS = {
-        "call", "calls", "buy", "buying", "bought", "moon", "bull", "bullish", 
+        "call", "calls", "buy", "buying", "bought", "moon", "bull", "bullish",
         "undervalued", "breakout", "gem", "long", "rally", "upgrade", "pump", "strong", "holding", "hold"
     }
     BEARISH_KEYWORDS = {
-        "put", "puts", "sell", "selling", "sold", "bear", "bearish", "overvalued", 
+        "put", "puts", "sell", "selling", "sold", "bear", "bearish", "overvalued",
         "drop", "dump", "crash", "short", "shorting", "downgrade", "bubble", "weak", "tanking"
     }
 
@@ -29,6 +77,7 @@ class ForumSentimentHarvester:
     }
 
     def __init__(self, target_tickers: List[str]):
+        self.last_error: Optional[str] = None
         self.target_map = {}
         for t in target_tickers:
             clean = t.split(".")[0].upper()
@@ -45,17 +94,35 @@ class ForumSentimentHarvester:
             "sample_titles": []
         })
 
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) MarketResearch/2.0"}
+        token = get_reddit_token()
+        if not token:
+            # Without a token every request is a guaranteed 403. Say so once
+            # instead of burning eight timeouts per scan and silently reporting
+            # zero mentions for every ticker, which is what used to happen.
+            has_creds = all(reddit_credentials())
+            self.last_error = (
+                "Reddit-Zugangsdaten vorhanden, aber abgelehnt - Client-ID/Secret pruefen"
+                if has_creds else
+                "Keine Reddit-Zugangsdaten (REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET) "
+                "- Forum-Sentiment inaktiv")
+            print(f"[forum_scanner] {self.last_error}")
+            return {}
+
+        headers = {"User-Agent": REDDIT_USER_AGENT, "Authorization": f"bearer {token}"}
+        fetched_any = False
 
         for sub in self.SUBREDDITS:
             for feed in ["hot", "new"]:
-                url = f"https://www.reddit.com/r/{sub}/{feed}.json?limit={limit_per_sub}"
+                url = f"{REDDIT_API_BASE}/r/{sub}/{feed}?limit={limit_per_sub}"
                 try:
-                    resp = requests.get(url, headers=headers, timeout=6)
+                    resp = requests.get(url, headers=headers, timeout=8)
                     if resp.status_code != 200:
+                        print(f"[forum_scanner] r/{sub}/{feed}: HTTP {resp.status_code}")
                         continue
                     data = resp.json()
                     posts = (data.get("data") or {}).get("children", [])
+                    if posts:
+                        fetched_any = True
 
                     for p in posts:
                         pdata = p.get("data", {})
@@ -84,6 +151,10 @@ class ForumSentimentHarvester:
                                     stats[full_sym]["sample_titles"].append(f"[r/{sub}] {title[:90]}")
                 except Exception:
                     continue
+
+        if not fetched_any:
+            self.last_error = "Reddit lieferte keine Posts (Token gültig, aber alle Feeds leer)"
+            print(f"[forum_scanner] {self.last_error}")
 
         results = {}
         for ticker, data in stats.items():

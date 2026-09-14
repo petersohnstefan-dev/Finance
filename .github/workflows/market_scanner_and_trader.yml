@@ -28,6 +28,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: 🔍 1. Markt & Foren vollständig scannen
+        env:
+          # Optional: ohne diese Secrets laeuft alles weiter, nur das
+          # Reddit-Forum-Sentiment bleibt inaktiv (siehe src/forum_scanner.py).
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: |
           python -m src.realtime_scanner
           python -m src.market_scanner
