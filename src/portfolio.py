@@ -56,9 +56,31 @@ class PortfolioManager:
 
         candidate = {"symbol": sym, "name": name, "price": price, "reason": reason}
         depot = self.data["portfolios"][depot_id]
-        
-        # Run Tribunal Debate
-        action, judge_reasoning, debate_log = self.tribunal.decide_trade(depot_id, candidate, depot["cash"])
+
+        # Hand the tribunal what was actually measured. It used to receive only the
+        # scanner's headline string and consequently argued from the model's own
+        # recollection of the ticker - the logs show it reasoning about a "Dark Pool"
+        # figure that was a modulo artefact.
+        underlying = (derivative_meta or {}).get("underlying_symbol", sym)
+        try:
+            intel = self.deep_intel.get_asset_360_intelligence(underlying)
+        except Exception:
+            intel = None
+        scan_row = None
+        try:
+            scan_file = os.path.join(os.path.dirname(__file__), "..", "data",
+                                     "market_scan_results.json")
+            with open(scan_file, "r", encoding="utf-8") as fh:
+                scan_row = next((r for r in json.load(fh).get("data", [])
+                                 if r.get("symbol") == underlying), None)
+        except Exception:
+            scan_row = None
+
+        evidence = self.tribunal.build_evidence(
+            candidate, intel, depot_id, depot, scan_row=scan_row, stop_loss=stop_loss)
+
+        action, judge_reasoning, debate_log = self.tribunal.decide_trade(
+            depot_id, candidate, depot["cash"], evidence=evidence)
         
         if action == "BUY":
             full_reason = f"{reason} | ⚖️ Tribunal (BUY): {judge_reasoning}"

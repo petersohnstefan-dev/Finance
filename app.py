@@ -2373,7 +2373,7 @@ elif app_mode == "🔍 Einzelaktien-Tiefenanalyse":
 
 elif app_mode == "⚖️ KI-Tribunal (Handelsentscheidungen)":
     st.header("⚖️ KI-Tribunal (Handelsentscheidungen)")
-    st.markdown("Bevor ein Trade in einem der Musterdepots ausgeführt wird, wird der Kandidat vom **KI-Tribunal** verhandelt. Ein Bär sucht nach Risiken, ein Bulle nach Chancen, und der Judge entscheidet knallhart, ob der Trade genehmigt oder blockiert wird.")
+    st.markdown("Bevor ein Trade in einem der Musterdepots ausgeführt wird, wird der Kandidat vom **KI-Tribunal** verhandelt. Bulle und Bär plädieren in **zwei getrennten, parallelen Aufrufen** – keiner kennt das Plädoyer der Gegenseite oder das Urteil. Ein dritter Aufruf wägt beide Seiten gegen die gemessenen Kennzahlen ab und muss benennen, welcher Wert den Ausschlag gab.")
     
     from src.tribunal import AITribunalManager
     logs = AITribunalManager.get_latest_logs(20)
@@ -2388,11 +2388,22 @@ elif app_mode == "⚖️ KI-Tribunal (Handelsentscheidungen)":
             with st.expander(f"{log['timestamp']} | {log['symbol']} - {name_str} ({log['depot_id']}) - {icon} {log['action']}"):
                 st.markdown(f"**Urteilsbegründung (Judge):** <span style='color: {action_color}; font-weight: bold;'>{log['judge_decision']}</span>", unsafe_allow_html=True)
                 
+                if log.get("decisive_factor"):
+                    st.markdown(f"**⚖️ Ausschlaggebende Kennzahl:** `{log['decisive_factor']}`")
+
                 c1, c2 = st.columns(2)
                 with c1:
                     st.info(f"🐂 **Der Bulle (Chancen):**\n\n{log['bull_case']}")
                 with c2:
                     st.error(f"🐻 **Der Bär (Risiken):**\n\n{log['bear_case']}")
+
+                if log.get("evidence"):
+                    import json as _json
+                    with st.popover("📊 Datengrundlage, die beiden Seiten vorlag"):
+                        try:
+                            st.json(_json.loads(log["evidence"]))
+                        except Exception:
+                            st.text(log["evidence"])
                     
 # MODE 10: KI CHATBOT
 elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
