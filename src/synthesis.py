@@ -18,7 +18,9 @@ class DecisionSynthesizer:
         l_score = long_res.get("score", 50)
         
         # 1. Kurzfrist-Score (Options Flow 25%, Short Squeeze 20%, Momentum 30%, Sentiment 15%, On-Chain 10%)
-        opt_score = options_intel.get("smart_money_score", 70) if options_intel else 70
+        opt_score = (options_intel or {}).get("smart_money_score")
+        if opt_score is None:
+            opt_score = 70  # Neutral: no options chain for this instrument
         squeeze_score = fundamentals.get("squeezeScore", 20)
         social_score = short_res.get("details", {}).get("sentiment_score", 50)
         

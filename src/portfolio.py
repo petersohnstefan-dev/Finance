@@ -1135,9 +1135,13 @@ class PortfolioManager:
                 held_rankings = []
                 for s, p in st_depot["positions"].items():
                     h_intel = self.deep_intel.get_asset_360_intelligence(s)
-                    h_alpha = h_intel.get("composite_alpha_score", 70)
+                    h_alpha = h_intel.get("composite_alpha_score")
                     h_gain = (p["current_price"] - p["buy_price"]) / p["buy_price"] * 100.0 if p["buy_price"] > 0 else 0.0
-                    held_rankings.append((s, p, h_alpha, h_gain))
+                    # A position whose alpha cannot be measured is not "dead money" -
+                    # it is unmeasured. Ranking it as 70 would have swapped it out on
+                    # the strength of a placeholder, so it is excluded instead.
+                    if h_alpha is not None:
+                        held_rankings.append((s, p, h_alpha, h_gain))
                 
                 # Check for profitable harvest first (>= 5%)
                 prof_positions = sorted([x for x in held_rankings if x[3] >= 5.0], key=lambda x: x[3], reverse=True)
@@ -1311,12 +1315,16 @@ class PortfolioManager:
             top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
             if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
                 cand_intel = self.deep_intel.get_asset_360_intelligence(top_mt_cand["symbol"])
-                cand_alpha = cand_intel.get("composite_alpha_score", 75)
+                cand_alpha = cand_intel.get("composite_alpha_score")
+                if cand_alpha is None:
+                    cand_alpha = 0.0  # Unmeasurable candidate never wins a swap
                 if mt_depot["cash"] < 1500.0 and len(mt_depot["positions"]) >= 3:
                     mt_rankings = []
                     for s, p in mt_depot["positions"].items():
                         m_intel = self.deep_intel.get_asset_360_intelligence(s)
-                        m_alpha = m_intel.get("composite_alpha_score", 70)
+                        m_alpha = m_intel.get("composite_alpha_score")
+                        if m_alpha is None:
+                            continue  # Unmeasured holding is not swap material
                         m_gain = (p["current_price"] - p["buy_price"])/p["buy_price"]*100.0 if p["buy_price"] > 0 else 0.0
                         mt_rankings.append((s, p, m_alpha, m_gain))
                     
@@ -1349,7 +1357,9 @@ class PortfolioManager:
                         
                         alloc = min(base_alloc * vol_factor, mt_depot["cash"] * 0.85)
                         shares = alloc / p
-                        reason_msg = f"📈 Growth & Smart Money (Alpha: {cand_intel['composite_alpha_score']}/100, Sentiment: {cand_intel['social_sentiment']['nlp_sentiment_score']}/100)"
+                        c_news = cand_intel['social_sentiment'].get('nlp_sentiment_score')
+                        reason_msg = (f"📈 Growth & Smart Money (Alpha: {cand_alpha:.0f}/100, "
+                                      f"News: {c_news if c_news is not None else 'o. A.'}/100)")
                         approved, msg = self._tribunal_approved_buy("medium_term", sym, top_mt_cand.get("name", sym), shares, p,
                                  reason=reason_msg,
                                  stop_loss=p*0.90, take_profit=None)  # Dynamic trailing
@@ -1368,9 +1378,12 @@ class PortfolioManager:
             buy_p = pos["buy_price"]
             lt_intel = self.deep_intel.get_asset_360_intelligence(sym)
             forensic = lt_intel.get("forensic_quality", {})
-            q_score = forensic.get("quality_investing_score", 80)
-            # If fundamental moat or balance sheet quality breaks down (< 45/100):
-            if q_score < 45:
+            q_score = forensic.get("quality_investing_score")
+            # Only sell on a MEASURED deterioration. Gold and Bitcoin have no
+            # balance sheet at all and would previously have been scored 80 by
+            # default - close enough to the threshold to be one bad default away
+            # from a forced sale.
+            if q_score is not None and q_score < 45:
                 self.sell("long_term", sym, curr_p,
                           reason=f"🚨 Qualitäts-Degradierung: Fundamental-Rating auf {q_score}/100 gefallen ➔ Burggraben-Austausch")
                 actions_taken.append(f"QUALITÄTS-AUSSTIEG {sym}")

@@ -1782,18 +1782,24 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 social = p_intel["social_sentiment"]
                 forensic = p_intel["forensic_quality"]
                 
+                # Every one of these can be None now: components without a data
+                # source are reported as missing instead of being filled with a
+                # constant, so each cell needs its own empty state.
+                alpha = p_intel.get("composite_alpha_score")
+                pcr = flow.get("put_call_ratio")
+                news = social.get("nlp_sentiment_score")
+                dq = p_intel.get("data_quality", 0)
+
                 intel_rows.append({
                     "WKN": get_wkn(sym),
                     "Name": p["name"][:20],
-                    "Alpha-Score": f"⭐ {p_intel['composite_alpha_score']}/100",
-                    "Put/Call-Ratio": (f"{flow['put_call_ratio']:.2f}"
-                                       if flow.get('put_call_ratio') is not None
-                                       else "— keine Optionsdaten"),
-                    "Put/Call Ratio": f"{flow['put_call_ratio']:.2f}",
-                    "Piotroski F-Score": forensic["piotroski_f_score"].split("(")[0].strip(),
-                    "Altman Z-Score": forensic["altman_z_score"].split("(")[0].strip(),
-                    "Social Spike (24h)": f"{social['relative_mentions_spike_pct']:+.0f}%",
-                    "Burggraben-Rating": forensic["moat_rating"]
+                    "Alpha-Score": f"⭐ {alpha}/100" if alpha is not None else "—",
+                    "Datenlage": f"{dq * 100:.0f}%",
+                    "Put/Call-Ratio": f"{pcr:.2f}" if pcr is not None else "—",
+                    "Piotroski F-Score": str(forensic.get("piotroski_f_score", "—")).split("(")[0].strip(),
+                    "Altman Z-Score": str(forensic.get("altman_z_score", "—")).split("(")[0].strip(),
+                    "News-Sentiment": f"{news}/100" if news is not None else "—",
+                    "Burggraben-Rating": forensic.get("moat_rating", "—")
                 })
             
             if intel_rows:
