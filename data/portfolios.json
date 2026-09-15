@@ -594,35 +594,8 @@
       ]
     },
     "day_trading": {
-      "cash": 7215.0965206339815,
-      "positions": {
-        "KO957996": {
-          "symbol": "KO957996",
-          "name": "🔻 Turbo Bear 0.8x auf Dogecoin USD (KO: 0.09)",
-          "shares": 181081.4685,
-          "buy_price": 0.0101,
-          "current_price": 0.01,
-          "buy_date": "2026-09-15 20:48",
-          "stop_loss": 0.01,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+1.8% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "wkn": "KO957996",
-          "underlying_symbol": "DOGE-USD",
-          "underlying_name": "Dogecoin USD",
-          "direction": "SHORT",
-          "ratio": 0.1,
-          "strike": 0.09,
-          "knockout_barrier": 0.09,
-          "initial_underlying_price": 0.08,
-          "current_underlying_price": 0.08,
-          "cert_price": 0.01,
-          "leverage": 0.8,
-          "distance_to_ko_pct": 12.0,
-          "is_knocked_out": false
-        }
-      },
+      "cash": 8997.748985358981,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -859,6 +832,20 @@
           "total": 1837.98,
           "date": "2026-09-15 20:48",
           "reason": "⚡ Daytrade (+1.8% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO957996",
+          "name": "🔻 Turbo Bear 0.8x auf Dogecoin USD (KO: 0.09)",
+          "product_type": "KNOCKOUT",
+          "shares": 181081.4685,
+          "buy_price": 0.0101,
+          "sell_price": 0.0098,
+          "total": 1783.65,
+          "pnl": -45.27,
+          "pnl_pct": -2.48,
+          "date": "2026-09-15 20:52",
+          "reason": "🚨 Stop-Loss Disziplin (-1.0%) — Verlust akzeptiert"
         }
       ]
     }
@@ -867,6 +854,7 @@
     "long_term_BN276169": "2026-09-16T00:32:00.255033+02:00",
     "long_term_BN190412": "2026-09-16T00:36:30.729576+02:00",
     "long_term_BN171361": "2026-09-16T00:41:33.098131+02:00",
-    "long_term_BN401133": "2026-09-16T00:46:20.615011+02:00"
+    "long_term_BN401133": "2026-09-16T00:46:20.615011+02:00",
+    "long_term_BN865261": "2026-09-16T00:51:39.723920+02:00"
   }
 }
