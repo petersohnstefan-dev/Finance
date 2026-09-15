@@ -436,7 +436,7 @@
       "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
       "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
       "initial_cash": 10000.0,
-      "cash": 1000.0,
+      "cash": 3006.7918909560003,
       "positions": {
         "SAP.DE": {
           "symbol": "SAP.DE",
@@ -489,19 +489,6 @@
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
           "last_updated": "17:57:10"
-        },
-        "SMCI": {
-          "symbol": "SMCI",
-          "name": "Super Micro Computer, Inc.",
-          "shares": 53.7057,
-          "buy_price": 37.24,
-          "current_price": 37.46,
-          "buy_date": "2026-08-25 12:30",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "Exzellenter Long-Term Score (100/100), KGV 11.4",
-          "derivative_type": "STOCK",
-          "last_updated": "20:51:41"
         }
       },
       "history": [
@@ -564,6 +551,20 @@
           "total": 2000.0,
           "date": "2026-08-24 22:07:11",
           "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz"
+        },
+        {
+          "type": "SELL",
+          "symbol": "SMCI",
+          "name": "Super Micro Computer, Inc.",
+          "product_type": "STOCK",
+          "shares": 53.7057,
+          "buy_price": 37.24,
+          "sell_price": 37.3851,
+          "total": 2007.79,
+          "pnl": 7.79,
+          "pnl_pct": 0.39,
+          "date": "2026-09-15 20:21",
+          "reason": "🚨 Qualitäts-Degradierung: Fundamental-Rating auf 38/100 gefallen ➔ Burggraben-Austausch"
         }
       ]
     },
