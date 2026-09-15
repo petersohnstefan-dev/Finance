@@ -909,6 +909,30 @@ class PortfolioManager:
         # Sort strictly descending: newest trades on top, oldest at the bottom
         merged_history.sort(key=lambda x: str(x.get("date", "")), reverse=True)
 
+        # Realised trade statistics. A SELL carries the P&L of the position it
+        # closed; partial sales (scaling out) each count as their own closed trade.
+        closed = [t for t in merged_history
+                  if str(t.get("type", "")).upper() == "SELL" and t.get("pnl") is not None]
+        wins = [t for t in closed if float(t["pnl"]) > 0]
+        losses = [t for t in closed if float(t["pnl"]) <= 0]
+        gross_win = sum(float(t["pnl"]) for t in wins)
+        gross_loss = abs(sum(float(t["pnl"]) for t in losses))
+        trade_stats = {
+            "closed_trades": len(closed),
+            "wins": len(wins),
+            "losses": len(losses),
+            "win_rate_pct": round(len(wins) / len(closed) * 100.0, 1) if closed else None,
+            "avg_win": round(gross_win / len(wins), 2) if wins else 0.0,
+            "avg_loss": round(gross_loss / len(losses), 2) if losses else 0.0,
+            "realized_pnl": round(gross_win - gross_loss, 2),
+            # Profit factor: gross profit over gross loss. Above 1.0 the depot earns
+            # more on its winners than it gives back on its losers.
+            "profit_factor": (round(gross_win / gross_loss, 2) if gross_loss > 0
+                              else (None if not wins else float("inf"))),
+            "best_trade": max(closed, key=lambda t: float(t["pnl"])) if closed else None,
+            "worst_trade": min(closed, key=lambda t: float(t["pnl"])) if closed else None,
+        }
+
         prev_close = None
         try:
             prev_close = self.db.get_previous_daily_close(depot_key)
@@ -933,7 +957,8 @@ class PortfolioManager:
             "today_pnl": round(today_pnl, 2),
             "today_pnl_pct": round(today_pnl_pct, 2),
             "positions": positions_list,
-            "history": merged_history
+            "history": merged_history,
+            "trade_stats": trade_stats
         }
 
     def get_equity_curve(self, depot_key: str) -> pd.DataFrame:

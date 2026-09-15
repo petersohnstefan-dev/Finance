@@ -1517,7 +1517,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 st.rerun()
 
         # 5 Metric Cards
-        m1, m1b, m2, m3, m4 = st.columns(5)
+        m1, m1b, m2, m3, m4, m5 = st.columns(6)
         with m1:
             st.metric(
                 "Depot-Gesamtwert", 
@@ -1549,6 +1549,20 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 f"{len(summary['positions'])} Titel",
                 help="Anzahl der aktuell gehaltenen Werte"
             )
+        with m5:
+            ts = summary.get("trade_stats", {})
+            if ts.get("closed_trades"):
+                st.metric(
+                    "Trefferquote",
+                    f"{ts['win_rate_pct']:.0f} %",
+                    delta=f"{ts['wins']} Gewinner / {ts['losses']} Verlierer",
+                    delta_color="off",
+                    help=("Anteil der abgeschlossenen Trades mit Gewinn. "
+                          "Offene Positionen zaehlen nicht mit.")
+                )
+            else:
+                st.metric("Trefferquote", "—",
+                          help="Noch kein Trade abgeschlossen")
 
         # Charts, Positions & Multi-Source Deep Intelligence
         tab_chart, tab_pos, tab_intel, tab_alloc, tab_hist = st.tabs([
@@ -1861,6 +1875,50 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         with tab_hist:
             st.subheader("📜 Vollständige Transaktions-Historie (Trade Log)")
             st.caption("Chronologisches Protokoll aller autonomen Käufe, Gewinnmitnahmen und Stop-Loss-Verkäufe.")
+
+            ts = summary.get("trade_stats", {})
+            if ts.get("closed_trades"):
+                s1, s2, s3, s4 = st.columns(4)
+                s1.metric("Abgeschlossene Trades", ts["closed_trades"],
+                          delta=f"{ts['wins']} im Plus / {ts['losses']} im Minus",
+                          delta_color="off")
+                s2.metric("Trefferquote", f"{ts['win_rate_pct']:.1f} %")
+                s3.metric("Ø Gewinn / Ø Verlust",
+                          f"+{ts['avg_win']:,.2f} €",
+                          delta=f"-{ts['avg_loss']:,.2f} € im Schnitt je Verlierer",
+                          delta_color="off")
+                pf = ts.get("profit_factor")
+                pf_txt = "—" if pf is None else ("∞" if pf == float("inf") else f"{pf:.2f}")
+                s4.metric("Profit-Faktor", pf_txt,
+                          delta=f"{ts['realized_pnl']:+,.2f} € realisiert",
+                          delta_color="normal" if ts["realized_pnl"] >= 0 else "inverse",
+                          help=("Summe aller Gewinne geteilt durch die Summe aller Verluste. "
+                                "Über 1,0 verdient das Depot mehr an seinen Gewinnern, "
+                                "als es an den Verlierern zurückgibt."))
+
+                best, worst = ts.get("best_trade"), ts.get("worst_trade")
+                if best and worst:
+                    st.caption(
+                        f"Bester Trade: **{best.get('name') or best.get('ticker')}** "
+                        f"{float(best['pnl']):+,.2f} € · "
+                        f"Schlechtester: **{worst.get('name') or worst.get('ticker')}** "
+                        f"{float(worst['pnl']):+,.2f} €")
+
+                if ts["win_rate_pct"] is not None and ts["losses"] and ts["wins"]:
+                    # A low hit rate is only a problem if the winners do not pay for it.
+                    needed = ts["avg_loss"] / (ts["avg_win"] + ts["avg_loss"]) * 100.0
+                    if ts["win_rate_pct"] < needed:
+                        st.warning(
+                            f"Bei einem durchschnittlichen Gewinn von {ts['avg_win']:,.2f} € "
+                            f"gegen {ts['avg_loss']:,.2f} € Verlust wäre eine Trefferquote von "
+                            f"**{needed:.0f} %** nötig, um die Verluste auszugleichen – "
+                            f"erreicht werden {ts['win_rate_pct']:.1f} %.")
+                    else:
+                        st.success(
+                            f"Die Trefferquote von {ts['win_rate_pct']:.1f} % liegt über den "
+                            f"{needed:.0f} %, die bei diesem Chance-Risiko-Verhältnis "
+                            f"zum Ausgleich nötig wären.")
+                st.divider()
 
             if summary["history"]:
                 hist_list = summary["history"]
