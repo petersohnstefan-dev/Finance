@@ -42,7 +42,10 @@ class PortfolioManager:
         if "cooldowns" not in self.data:
             self.data["cooldowns"] = {}
             
-        cooldown_key = f"{depot_id}_{sym}"
+        # Key on the underlying, not the certificate: a rejected turbo on ONON must
+        # also block the next turbo on ONON, whatever WKN it happens to carry.
+        cooldown_sym = (derivative_meta or {}).get("underlying_symbol", sym)
+        cooldown_key = f"{depot_id}_{cooldown_sym}"
         now = get_berlin_now()
         
         if cooldown_key in self.data["cooldowns"]:

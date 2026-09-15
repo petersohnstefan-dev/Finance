@@ -2502,14 +2502,34 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                 with st.chat_message("assistant"):
                     message_placeholder = st.empty()
                     
-                    sys_prompt = "Du bist ein professioneller KI-Trading-Assistent einer hochentwickelten Finanz-App. Erkläre Finanzkonzepte, Zinsentwicklungen, Short-Squeeze-Mechaniken und warum bestimmte Trades in bestimmten Marktsituationen sinnvoll sind. Antworte präzise, auf Deutsch und fachlich fundiert. WICHTIGE REGEL: Behaupte NIEMALS, dass du keine aktuellen Daten hast. Dir werden am Ende dieses Prompts die ECHTEN, AKTUELLEN LIVE-DATEN aus dem System übergeben! Nutze AUSSCHLIESSLICH diese bereitgestellten Daten, um Fragen nach dem aktuellen Marktstand oder den letzten 7 Tagen zu beantworten. Vermeide Floskeln. HEUTE IST DER 29.08.2026."
+                    sys_prompt = (
+                        "Du bist der KI-Trading-Assistent dieser Finanz-App. Du sprichst "
+                        "Deutsch, praezise und fachlich fundiert, ohne Floskeln.\n\n"
+                        "Dir wird unten der VOLLSTAENDIGE, LIVE ausgelesene Systemzustand "
+                        "uebergeben: Datum und Uhrzeit, alle vier Depots mit Positionen und "
+                        "Trade-Statistik, jede ausgefuehrte Transaktion mit Begruendung, die "
+                        "Urteile des KI-Tribunals, der Markt-Scan, Echtzeit-Alarme, die "
+                        "Nachrichtenlage, Insider- und Wal-Aktivitaet, Makrodaten, die aktiven "
+                        "Strategie-Parameter und das KI-Lerntagebuch.\n\n"
+                        "REGELN:\n"
+                        "1. Beantworte Fragen zum aktuellen Stand AUSSCHLIESSLICH aus diesen "
+                        "Daten. Dein Trainingswissen ist aelter und darf sie nicht "
+                        "ueberschreiben.\n"
+                        "2. Steht etwas NICHT in den Daten oder ist ein Abschnitt als nicht "
+                        "ladbar markiert, sage das klar. Erfinde niemals Zahlen, Trades, "
+                        "Forenbeitraege oder Insider-Meldungen. Eine ehrliche Luecke ist "
+                        "besser als eine Erfindung.\n"
+                        "3. Nenne bei konkreten Aussagen die Zahl und das Datum aus den Daten.\n"
+                        "4. Das Datum im Abschnitt ZEITPUNKT ist massgeblich fuer 'heute', "
+                        "'gestern' und 'diese Woche'.\n\n"
+                        "===== LIVE-SYSTEMZUSTAND =====\n")
                     try:
-                        import json
-                        with open("data/portfolios.json", "r", encoding="utf-8") as f:
-                            pf_data = json.load(f)
-                        sys_prompt += "\n\nHier ist der aktuelle Zustand der Musterdepots und die Transaktionshistorie (Käufe/Verkäufe) als JSON, damit du konkrete Fragen zu ausgeführten Trades beantworten kannst:\n" + json.dumps(pf_data)
-                    except:
-                        pass
+                        from src.chat_context import build_context
+                        sys_prompt += build_context()
+                    except Exception as ctx_err:
+                        sys_prompt += ("\n[Systemzustand konnte nicht geladen werden: "
+                                       f"{ctx_err}. Sage dem Nutzer, dass dir die Live-Daten "
+                                       "gerade fehlen, und rate nicht.]\n")
                         
                     try:
                         from src.universe import CATEGORIZED_UNIVERSES
@@ -2573,7 +2593,7 @@ elif app_mode == "💬 KI-Chatbot (Strategie & Analyse)":
                                 # Wenn es ein altes Modell (gemini-pro) ist, hängen wir den sys_prompt heimlich 
                                 # an die allerletzte User-Nachricht an, da es system_instruction nicht unterstützt.
                                 if '1.5' not in m_name and i == len(st.session_state.chat_messages) - 1 and r == "user":
-                                    content = f"SYSTEM-KONTEXT (Nutze diese Daten ZWINGEND für deine Antwort, ignoriere dein altes Wissen falls es abweicht! HEUTE IST DER 29.08.2026!):\n{sys_prompt}\n\nBENUTZERFRAGE:\n{content}"
+                                    content = f"SYSTEM-KONTEXT (Nutze diese Daten ZWINGEND für deine Antwort, ignoriere dein altes Wissen falls es abweicht! das Datum steht im Abschnitt ZEITPUNKT):\n{sys_prompt}\n\nBENUTZERFRAGE:\n{content}"
                                     
                                 gemini_messages.append({"role": r, "parts": [content]})
                             

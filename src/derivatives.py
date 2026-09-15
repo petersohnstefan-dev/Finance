@@ -3,6 +3,20 @@
 from typing import Dict, Any, List, Optional
 import datetime
 
+import zlib
+
+
+def _stable_id(seed: str) -> int:
+    """Deterministische Kennnummer.
+
+    hash() auf Strings ist pro Prozess zufaellig (PYTHONHASHSEED), also bekam
+    dasselbe Instrument bei jedem Bot-Lauf eine neue WKN. Dadurch griff die
+    Tribunal-Sperre nie und derselbe abgelehnte Kandidat wurde alle fuenf
+    Minuten erneut verhandelt.
+    """
+    return zlib.crc32(seed.encode("utf-8")) % 899999 + 100000
+
+
 class DerivativeEngine:
     """Generates and prices synthetic/real derivative structures for equities, cryptos, and commodities."""
 
@@ -19,7 +33,7 @@ class DerivativeEngine:
             cert_price = max(0.01, (current_price - strike) * ratio)
             distance_to_ko_pct = ((current_price - ko_barrier) / current_price) * 100.0
             actual_leverage = (current_price / (cert_price / ratio)) if cert_price > 0 else 0
-            wkn = f"KO{abs(hash(underlying_symbol + 'LONG')) % 899999 + 100000}"
+            wkn = f"KO{_stable_id(underlying_symbol + 'LONG')}"
             name = f"⚡ Turbo Bull {actual_leverage:.1f}x auf {underlying_name} (KO: {ko_barrier:.2f})"
         else:
             # Short: Strike and Barrier above current price
@@ -28,7 +42,7 @@ class DerivativeEngine:
             cert_price = max(0.01, (strike - current_price) * ratio)
             distance_to_ko_pct = ((ko_barrier - current_price) / current_price) * 100.0
             actual_leverage = (current_price / (cert_price / ratio)) if cert_price > 0 else 0
-            wkn = f"KO{abs(hash(underlying_symbol + 'SHORT')) % 899999 + 100000}"
+            wkn = f"KO{_stable_id(underlying_symbol + 'SHORT')}"
             name = f"🔻 Turbo Bear {actual_leverage:.1f}x auf {underlying_name} (KO: {ko_barrier:.2f})"
 
         return {
@@ -53,7 +67,7 @@ class DerivativeEngine:
     def create_factor_certificate(underlying_symbol: str, underlying_name: str, current_price: float, 
                                   factor: int = 3, direction: str = "LONG") -> Dict[str, Any]:
         """Creates a constant leverage Factor Certificate (e.g. 3x Long / 5x Long)."""
-        wkn = f"FA{abs(hash(underlying_symbol + str(factor) + direction)) % 899999 + 100000}"
+        wkn = f"FA{_stable_id(underlying_symbol + str(factor) + direction)}"
         name = f"🚀 Faktor {factor}x {direction} auf {underlying_name}"
         initial_cert_price = 10.00  # Standard normalized starting price
 
@@ -77,7 +91,7 @@ class DerivativeEngine:
         """Creates a Capped Bonus Certificate for defensive side-yields even in flat/declining markets."""
         barrier = current_price * (1.0 - (barrier_pct / 100.0))
         bonus_level = current_price * (1.0 + (bonus_pct / 100.0))
-        wkn = f"BN{abs(hash(underlying_symbol + 'BONUS')) % 899999 + 100000}"
+        wkn = f"BN{_stable_id(underlying_symbol + 'BONUS')}"
         name = f"🛡️ Bonus-Zertifikat auf {underlying_name} (Barriere: -{barrier_pct:.0f}%, Bonus: +{bonus_pct:.0f}%)"
 
         return {
