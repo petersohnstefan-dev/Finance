@@ -41,28 +41,28 @@
           "name": "SO",
           "shares": 22.8807,
           "buy_price": 87.5848,
-          "current_price": 86.78,
+          "current_price": 86.14,
           "buy_date": "2026-09-14 14:36",
           "stop_loss": 81.29,
           "take_profit": null,
           "reason": "⚡ Echtzeit-Spike (+0.7%) | Dark Pool: 49.0% | Social: +15% | ⚖️ Tribunal (BUY): Die Kombination aus einem klaren Echtzeit-Spike, starkem positivem Social-Momentum und einer hohen Dark Pool-Beteiligung indiziert ein aussichtsreiches kurzfristiges Momentum. Obwohl die Risiken einer Überhitzung bestehen, überwiegen die bullischen Signale; es liegen keine offensichtlichen Red Flags vor, die gegen eine spekulative Position sprechen, die auf Momentum basiert.",
           "derivative_type": "STOCK",
           "peak_price": 87.76,
-          "last_updated": "17:57:10"
+          "last_updated": "20:46:15"
         },
         "SRT3.DE": {
           "symbol": "SRT3.DE",
           "name": "SRT3.DE",
           "shares": 8.7912,
           "buy_price": 227.955,
-          "current_price": 227.9,
+          "current_price": 238.6,
           "buy_date": "2026-09-14 16:36",
           "stop_loss": 211.58,
           "take_profit": null,
           "reason": "⚡ Echtzeit-Spike (+0.7%) | Dark Pool: 36.5% | Social: +15% | ⚖️ Tribunal (BUY): Trotz der inhärenten Risiken von Momentum-Trades überwiegen die bullischen Signale – Echtzeit-Spike, hohes Dark Pool-Volumen und positives Social-Sentiment – für unser 'short_term'-Depot. Es gibt keine offensichtlichen Red Flags, die eine Ablehnung rechtfertigen würden, und das Setup passt zum Mandat, gute Momentum-Setups zu nutzen.",
           "derivative_type": "STOCK",
-          "peak_price": 227.955,
-          "last_updated": "17:57:10"
+          "peak_price": 238.6,
+          "last_updated": "20:46:15"
         }
       },
       "history": [
@@ -389,7 +389,7 @@
           "take_profit": 289.87,
           "reason": "KI-Hardware-Monopol & Nancy Pelosi Call-Optionen",
           "derivative_type": "STOCK",
-          "last_updated": "17:57:10",
+          "last_updated": "20:46:15",
           "peak_price": 234.64
         },
         "ONON": {
@@ -397,13 +397,14 @@
           "name": "On Holding AG",
           "shares": 74.9204,
           "buy_price": 26.7484,
-          "current_price": 26.695,
+          "current_price": 26.65,
           "buy_date": "2026-09-15 20:31",
           "stop_loss": 24.03,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 68/100, News: 61/100) | ⚖️ Tribunal (BUY): Die starken quantitativen Signale für Wachstum und Smart Money Flow (Alpha 68/100) sowie die positive Nachrichtenlage (61/100) sprechen klar für ONON. Es liegen keine offensichtlichen Red Flags vor, die gegen eine Aufnahme in ein mittel- bis langfristiges Depot sprechen würden, insbesondere da der CRO angehalten ist, nicht zu restriktiv zu sein und Trades mit gutem Momentum zu erlauben.",
           "derivative_type": "STOCK",
-          "peak_price": 26.7484
+          "peak_price": 26.7484,
+          "last_updated": "20:46:15"
         }
       },
       "history": [
@@ -467,13 +468,13 @@
           "name": "SAP SE",
           "shares": 10.6315,
           "buy_price": 188.12,
-          "current_price": 186.26,
+          "current_price": 187.08,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
           "derivative_type": "STOCK",
-          "last_updated": "17:57:10"
+          "last_updated": "20:46:15"
         },
         "MUV2.DE": {
           "symbol": "MUV2.DE",
@@ -493,26 +494,26 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 4350.7,
+          "current_price": 4343.5,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "20:51:41"
+          "last_updated": "20:46:15"
         },
         "BTC-USD": {
           "symbol": "BTC-USD",
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 76542.05,
+          "current_price": 75415.58,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "20:36:25"
+          "last_updated": "20:46:15"
         }
       },
       "history": [
@@ -593,8 +594,35 @@
       ]
     },
     "day_trading": {
-      "cash": 9054.073426140503,
-      "positions": {},
+      "cash": 7215.0965206339815,
+      "positions": {
+        "KO957996": {
+          "symbol": "KO957996",
+          "name": "🔻 Turbo Bear 0.8x auf Dogecoin USD (KO: 0.09)",
+          "shares": 181081.4685,
+          "buy_price": 0.0101,
+          "current_price": 0.01,
+          "buy_date": "2026-09-15 20:48",
+          "stop_loss": 0.01,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+1.8% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "wkn": "KO957996",
+          "underlying_symbol": "DOGE-USD",
+          "underlying_name": "Dogecoin USD",
+          "direction": "SHORT",
+          "ratio": 0.1,
+          "strike": 0.09,
+          "knockout_barrier": 0.09,
+          "initial_underlying_price": 0.08,
+          "current_underlying_price": 0.08,
+          "cert_price": 0.01,
+          "leverage": 0.8,
+          "distance_to_ko_pct": 12.0,
+          "is_knocked_out": false
+        }
+      },
       "history": [
         {
           "type": "BUY",
@@ -820,6 +848,17 @@
           "pnl_pct": -2.51,
           "date": "2026-09-10 23:54",
           "reason": "🛡️ EOD Pflichtverkauf (-1.0%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO957996",
+          "name": "🔻 Turbo Bear 0.8x auf Dogecoin USD (KO: 0.09)",
+          "product_type": "KNOCKOUT",
+          "shares": 181081.4685,
+          "price": 0.01,
+          "total": 1837.98,
+          "date": "2026-09-15 20:48",
+          "reason": "⚡ Daytrade (+1.8% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%"
         }
       ]
     }
@@ -827,6 +866,7 @@
   "cooldowns": {
     "long_term_BN276169": "2026-09-16T00:32:00.255033+02:00",
     "long_term_BN190412": "2026-09-16T00:36:30.729576+02:00",
-    "long_term_BN171361": "2026-09-16T00:41:33.098131+02:00"
+    "long_term_BN171361": "2026-09-16T00:41:33.098131+02:00",
+    "long_term_BN401133": "2026-09-16T00:46:20.615011+02:00"
   }
 }
