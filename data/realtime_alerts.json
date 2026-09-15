@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-15 22:41:00",
+    "time_str": "22:41:00",
+    "symbol": "BKSY",
+    "direction": "SHORT",
+    "trigger_price": 21.21,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 7.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-15 22:41:00",
+    "time_str": "22:41:00",
+    "symbol": "ESTC",
+    "direction": "LONG",
+    "trigger_price": 85.59,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 5.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ESTC explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-15 22:40:58",
+    "time_str": "22:40:58",
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 51.86,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-15 22:36:06",
     "time_str": "22:36:06",
     "symbol": "REGN",
@@ -515,38 +548,5 @@
     "vol_ratio": 2.42,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ACN explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-15 22:11:02",
-    "time_str": "22:11:02",
-    "symbol": "FSLR",
-    "direction": "SHORT",
-    "trigger_price": 202.34,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-15 22:11:02",
-    "time_str": "22:11:02",
-    "symbol": "ESTC",
-    "direction": "LONG",
-    "trigger_price": 85.59,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 2.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-15 22:11:01",
-    "time_str": "22:11:01",
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 41.69,
-    "change_1min_pct": 2.53,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -2.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
