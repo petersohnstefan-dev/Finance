@@ -20,7 +20,9 @@ from typing import Any, Dict, Optional, Tuple
 import pandas as pd
 import yfinance as yf
 
-CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "fundamentals_cache.json")
+from src.paths import data_file
+
+CACHE_FILE = data_file("fundamentals_cache.json")
 REFRESH_AFTER_DAYS = 7
 # Upper bound on statement downloads per process, so one run can never stall the bot
 MAX_REFRESHES_PER_RUN = 4
@@ -255,7 +257,7 @@ def _sector_from_scan(symbol: str) -> Optional[str]:
     if _SCAN_SECTORS is None:
         _SCAN_SECTORS = {}
         try:
-            path = os.path.join(os.path.dirname(__file__), "..", "data", "market_scan_results.json")
+            path = data_file("market_scan_results.json")
             with open(path, "r", encoding="utf-8") as fh:
                 for row in json.load(fh).get("data", []):
                     if row.get("symbol") and row.get("sector"):

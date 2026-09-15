@@ -8,8 +8,9 @@ from typing import Dict, Any, List, Optional
 import os
 import json
 
-MACRO_CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "macro_data.json")
+from src.paths import data_file
 
+MACRO_CACHE_FILE = data_file("macro_data.json")
 # Verified High-Quality RSS Feeds
 QUALITY_FEEDS = [
     {

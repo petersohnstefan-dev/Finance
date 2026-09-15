@@ -11,8 +11,9 @@ from src.deep_intelligence import DeepIntelligenceHub
 from src.wkn_mapping import get_wkn, get_wkn_display
 from src.tribunal import AITribunalManager
 
-PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
+from src.paths import data_file
 
+PORTFOLIO_FILE = data_file("portfolios.json")
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 
@@ -22,9 +23,7 @@ def get_berlin_now() -> datetime.datetime:
     except Exception:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
-ENTRY_DIAG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "entry_diagnostics.json")
-
-
+ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
 class PortfolioManager:
     """Manages 3 distinct paper trading portfolios (Short-Term, Medium-Term, Long-Term)."""
 
@@ -68,8 +67,7 @@ class PortfolioManager:
             intel = None
         scan_row = None
         try:
-            scan_file = os.path.join(os.path.dirname(__file__), "..", "data",
-                                     "market_scan_results.json")
+            scan_file = data_file("market_scan_results.json")
             with open(scan_file, "r", encoding="utf-8") as fh:
                 scan_row = next((r for r in json.load(fh).get("data", [])
                                  if r.get("symbol") == underlying), None)
@@ -98,7 +96,7 @@ class PortfolioManager:
             return False, f"VETO vom Tribunal: {judge_reasoning}"
 
     def _load_strategy(self) -> Dict[str, Any]:
-        strat_file = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
+        strat_file = data_file("strategy.json")
         default_strat = {
             "daytrade_max_leverage": 10.0,
             "daytrade_stop_loss_pct": 0.15,

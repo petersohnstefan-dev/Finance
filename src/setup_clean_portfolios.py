@@ -4,8 +4,9 @@ import datetime
 from src.portfolio import PortfolioManager
 from src.data_fetcher import FinancialDataFetcher
 
-PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolios.json")
+from src.paths import data_file
 
+PORTFOLIO_FILE = data_file("portfolios.json")
 def reset_and_populate():
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     init_data = {

@@ -16,9 +16,10 @@ from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
 from src.universe import FULL_MARKET_UNIVERSE
 
-ALERTS_LOG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "realtime_alerts.json")
-LIVE_PRICES_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "live_ticks.json")
+from src.paths import data_file
 
+ALERTS_LOG_FILE = data_file("realtime_alerts.json")
+LIVE_PRICES_FILE = data_file("live_ticks.json")
 class RealTimeBreakoutScanner:
     """Monitors live price ticks and volume spikes in real-time across 500+ assets statelessly."""
 

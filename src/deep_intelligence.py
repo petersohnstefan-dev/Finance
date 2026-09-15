@@ -14,7 +14,7 @@ import datetime
 from typing import Dict, Any, List, Optional
 import yfinance as yf
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+from src.paths import DATA_DIR
 DEEP_INTEL_CACHE_FILE = os.path.join(DATA_DIR, "deep_intelligence_data.json")
 
 import time

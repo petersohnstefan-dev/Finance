@@ -10,11 +10,12 @@ try:
 except ImportError:
     pass
 
-DB_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolio.db")
-ALERTS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "realtime_alerts.json")
-STRATEGY_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "strategy.json")
-ENTRY_DIAG_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "entry_diagnostics.json")
+from src.paths import data_file
 
+DB_FILE = data_file("portfolio.db")
+ALERTS_FILE = data_file("realtime_alerts.json")
+STRATEGY_FILE = data_file("strategy.json")
+ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 

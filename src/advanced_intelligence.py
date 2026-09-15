@@ -14,8 +14,9 @@ import datetime
 from typing import Dict, Any, List, Optional
 import yfinance as yf
 
-INTEL_CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "advanced_intel_data.json")
+from src.paths import data_file
 
+INTEL_CACHE_FILE = data_file("advanced_intel_data.json")
 # ==============================================================================
 # MODULE 1: UNUSUAL OPTIONS FLOW & DARK POOLS (Smart Money Positioning)
 # ==============================================================================

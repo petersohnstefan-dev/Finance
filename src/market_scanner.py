@@ -14,8 +14,9 @@ from src.long_term_engine import LongTermEngine
 from src.synthesis import DecisionSynthesizer
 from src.breakout_radar import BreakoutRadar
 
-DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "market_scan_results.json")
+from src.paths import data_file
 
+DATA_FILE = data_file("market_scan_results.json")
 class MarketScanner:
     """Scans and ranks across Stocks, Cryptocurrencies, Precious Metals, and Commodities."""
 

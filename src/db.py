@@ -12,8 +12,9 @@ def get_berlin_now() -> datetime.datetime:
     except Exception:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
-DB_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "portfolio.db")
+from src.paths import data_file
 
+DB_FILE = data_file("portfolio.db")
 class PortfolioDB:
     """Enterprise-grade SQLite database for persistent trade logging and daily portfolio tracking."""
 

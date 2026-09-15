@@ -24,20 +24,42 @@ Ein umfassendes, datengestütztes Analyse- und Entscheidungssystem für Aktienm�
 ## 🚀 Schnellstart (Lokal)
 
 1. Abhängigkeiten installieren:
-\\\ash
+```bash
 pip install -r requirements.txt
-\\\
+```
 
 2. Web-Dashboard starten:
-\\\ash
+```bash
 streamlit run app.py
-\\\
+```
 
 3. Oder Einzelanalyse im Terminal ausführen:
-\\\ash
+```bash
 python analyze.py --ticker NVDA
 python analyze.py --ticker SAP.DE
-\\\
+```
+
+---
+
+## 🧪 Tests & Trockenläufe (ohne die Live-Daten anzufassen)
+
+Schon das Erzeugen eines `PortfolioManager` öffnet `data/portfolio.db` und wendet
+Migrationen an – ein scheinbar lesender Test verändert also die Arbeitskopie und
+kann versehentlich über die Schreibvorgänge des Bots committet werden.
+
+Deshalb laufen Tests über den Sandbox-Runner. Er kopiert `data/` in ein
+temporäres Verzeichnis, biegt die Anwendung per `FINANCE_DATA_DIR` darauf um
+(siehe `src/paths.py`) und prüft danach per Prüfsumme, dass das echte `data/`
+unverändert ist:
+
+```bash
+python tools/sandbox_run.py mein_test.py
+python tools/sandbox_run.py --keep mein_test.py   # Sandbox zum Nachsehen behalten
+python tools/sandbox_run.py -m src.market_scanner
+```
+
+Wird eine echte Datei doch verändert, bricht der Runner mit Exit-Code 1 ab und
+nennt die Datei – das bedeutet, dass ein Modul `src.paths` umgeht.
 
 ---
 
