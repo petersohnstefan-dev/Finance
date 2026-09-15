@@ -594,35 +594,8 @@
       ]
     },
     "day_trading": {
-      "cash": 7170.205941331108,
-      "positions": {
-        "KO639809": {
-          "symbol": "KO639809",
-          "name": "🔻 Turbo Bear 7.0x auf CONTINENTAL AG                I (KO: 76.79)",
-          "shares": 1836.2753,
-          "buy_price": 0.9947,
-          "current_price": 0.98,
-          "buy_date": "2026-09-15 20:57",
-          "stop_loss": 0.88,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+1.5% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "wkn": "KO639809",
-          "underlying_symbol": "CON.DE",
-          "underlying_name": "CONTINENTAL AG                I",
-          "direction": "SHORT",
-          "ratio": 0.1,
-          "strike": 78.35,
-          "knockout_barrier": 76.79,
-          "initial_underlying_price": 68.56,
-          "current_underlying_price": 68.56,
-          "cert_price": 0.98,
-          "leverage": 7.0,
-          "distance_to_ko_pct": 12.0,
-          "is_knocked_out": false
-        }
-      },
+      "cash": 8941.762488421107,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -884,6 +857,20 @@
           "total": 1826.54,
           "date": "2026-09-15 20:57",
           "reason": "⚡ Daytrade (+1.5% Spike, Score 95/100) | 7.0x Hebel | Risiko 10%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO639809",
+          "name": "🔻 Turbo Bear 7.0x auf CONTINENTAL AG                I (KO: 76.79)",
+          "product_type": "KNOCKOUT",
+          "shares": 1836.2753,
+          "buy_price": 0.9947,
+          "sell_price": 0.9653,
+          "total": 1772.56,
+          "pnl": -53.99,
+          "pnl_pct": -2.96,
+          "date": "2026-09-15 21:02",
+          "reason": "🛡️ EOD Pflichtverkauf (-1.5%) — Kein Übernacht-Risiko"
         }
       ]
     }
