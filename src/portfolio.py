@@ -111,6 +111,10 @@ class PortfolioManager:
             "medium_term_hedge_leverage": 3.0,
             "medium_term_hedge_symbol": "SPY",
             "long_term_min_score": 75,
+            "long_term_max_positions": 6,
+            "long_term_min_cash": 1500.0,
+            "medium_term_min_score": 75,
+            "medium_term_max_positions": 4,
             "min_data_quality_for_thesis_exit": 0.45
         }
         if os.path.exists(strat_file):
@@ -1312,8 +1316,24 @@ class PortfolioManager:
 
         # Mittelfrist Opportunity & Dead-Money Check
         if scan_results:
-            top_mt_cand = max(scan_results, key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6))
-            if top_mt_cand.get("total_score", 0) >= 75 and top_mt_cand["symbol"] not in mt_depot["positions"]:
+            # Previously: pick max() by the short/long blend, then gate that ONE
+            # candidate on total_score. The two metrics disagree, so the depot was
+            # blocked by WAC.DE (blend 95.4 / total 69) while eleven other names
+            # cleared the threshold and were never looked at.
+            mt_min_score = self.strategy.get("medium_term_min_score", 75)
+            mt_qualified = [c for c in scan_results
+                            if c.get("total_score", 0) >= mt_min_score
+                            and c["symbol"] not in mt_depot["positions"]
+                            and c.get("price")]
+            mt_qualified.sort(
+                key=lambda x: (x.get("short_score", 0) * 0.4 + x.get("long_score", 0) * 0.6),
+                reverse=True)
+            top_mt_cand = mt_qualified[0] if mt_qualified else None
+            if top_mt_cand is None:
+                best_seen = max((c.get("total_score", 0) for c in scan_results), default=0)
+                actions_taken.append(
+                    f"⏸️ Mittelfrist wartet (bester Gesamt-Score {best_seen:.0f} < {mt_min_score})")
+            if top_mt_cand is not None:
                 cand_intel = self.deep_intel.get_asset_360_intelligence(top_mt_cand["symbol"])
                 cand_alpha = cand_intel.get("composite_alpha_score")
                 if cand_alpha is None:
@@ -1345,7 +1365,8 @@ class PortfolioManager:
 
                 mt_core_count = sum(1 for hp in mt_depot["positions"].values()
                                     if not hp.get("is_macro_hedge"))
-                if mt_depot["cash"] >= 1500.0 and mt_core_count < 4:
+                if (mt_depot["cash"] >= 1500.0
+                        and mt_core_count < self.strategy.get("medium_term_max_positions", 4)):
                     p = top_mt_cand.get("price")
                     sym = top_mt_cand["symbol"]
                     if p and p > 0:
@@ -1388,7 +1409,11 @@ class PortfolioManager:
                           reason=f"🚨 Qualitäts-Degradierung: Fundamental-Rating auf {q_score}/100 gefallen ➔ Burggraben-Austausch")
                 actions_taken.append(f"QUALITÄTS-AUSSTIEG {sym}")
                 continue
-        if lt_depot["cash"] >= 1500.0 and len(lt_depot["positions"]) < 4 and scan_results:
+        # The depot was seeded with five holdings but limited to four, so it could
+        # never buy again regardless of cash. Both bounds are configuration now.
+        lt_max_pos = self.strategy.get("long_term_max_positions", 6)
+        lt_min_cash = self.strategy.get("long_term_min_cash", 1500.0)
+        if lt_depot["cash"] >= lt_min_cash and len(lt_depot["positions"]) < lt_max_pos and scan_results:
             candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
             lt_min_score = self.strategy.get("long_term_min_score", 75)
             for cand in candidates:

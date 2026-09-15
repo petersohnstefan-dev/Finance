@@ -80,7 +80,11 @@ class AITribunalManager:
         Returns: action ('BUY', 'REJECT'), reason, debate_log
         """
         if not self.api_key:
-            return "BUY", "Kein API Key gefunden, automatischer Buy-Bypass.", {}
+            # Fail closed. This used to approve every trade, so a missing secret
+            # silently switched the whole safety gate off instead of blocking.
+            return ("REJECT",
+                    "Kein GEMINI_API_KEY vorhanden - Tribunal kann nicht tagen, "
+                    "Kauf wird sicherheitshalber abgelehnt.", {})
             
         sym = candidate.get("symbol", "Unbekannt")
         reason = candidate.get("reason", "")
