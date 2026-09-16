@@ -1159,5 +1159,45 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "S92.DE": {
+  "fetched_ts": 1789543302.2823691,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.31,
+   "altman_detail": {
+    "X1": 0.149,
+    "X2": 0.162,
+    "X3": -0.143,
+    "X4": 2.026,
+    "X5": 1.161
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -3.17,
+   "beneish_detail": {
+    "DSRI": 0.855,
+    "GMI": 2.042,
+    "AQI": 1.236,
+    "SGI": 0.991,
+    "DEPI": 0.716,
+    "SGAI": 0.933,
+    "LVGI": 1.045,
+    "TATA": -0.248
+   },
+   "computed_at": "2026-09-16"
+  }
  }
 }
