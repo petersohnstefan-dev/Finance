@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-16 09:55:56",
+    "time_str": "09:55:56",
+    "symbol": "LEG.DE",
+    "direction": "LONG",
+    "trigger_price": 46.66,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LEG.DE explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 09:55:55",
+    "time_str": "09:55:55",
+    "symbol": "RAA.DE",
+    "direction": "LONG",
+    "trigger_price": 577.0,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RAA.DE explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 09:55:55",
+    "time_str": "09:55:55",
+    "symbol": "VOS.DE",
+    "direction": "SHORT",
+    "trigger_price": 57.65,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VOS.DE stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-16 09:51:01",
     "time_str": "09:51:01",
     "symbol": "ZTS",
@@ -515,38 +548,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MAERSK-B.CO stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 09:35:46",
-    "time_str": "09:35:46",
-    "symbol": "TLX.DE",
-    "direction": "LONG",
-    "trigger_price": 122.5,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TLX.DE explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 09:35:46",
-    "time_str": "09:35:46",
-    "symbol": "GYC.DE",
-    "direction": "SHORT",
-    "trigger_price": 8.29,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GYC.DE stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 09:35:46",
-    "time_str": "09:35:46",
-    "symbol": "TEG.DE",
-    "direction": "SHORT",
-    "trigger_price": 11.35,
-    "change_1min_pct": 0.96,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEG.DE stürzt um -0.96% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
