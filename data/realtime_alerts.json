@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-16 21:06:01",
+    "time_str": "21:06:01",
+    "symbol": "GS",
+    "direction": "SHORT",
+    "trigger_price": 941.82,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 21:05:54",
+    "time_str": "21:05:54",
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 6.74,
+    "change_1min_pct": 0.71,
+    "vol_ratio": 0.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 21:05:49",
+    "time_str": "21:05:49",
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.8,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.80% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-16 21:01:10",
     "time_str": "21:01:10",
     "symbol": "BNR.DE",
@@ -515,38 +548,5 @@
     "vol_ratio": 1.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKW stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 21:01:04",
-    "time_str": "21:01:04",
-    "symbol": "ETHW",
-    "direction": "LONG",
-    "trigger_price": 17.23,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHW explodiert um +0.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 21:01:04",
-    "time_str": "21:01:04",
-    "symbol": "FETH",
-    "direction": "LONG",
-    "trigger_price": 24.0,
-    "change_1min_pct": 0.93,
-    "vol_ratio": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FETH explodiert um +0.93% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 21:01:04",
-    "time_str": "21:01:04",
-    "symbol": "ETHA",
-    "direction": "LONG",
-    "trigger_price": 18.17,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHA explodiert um +0.89% in 5 Min.! Momentum aktiv."
   }
 ]
