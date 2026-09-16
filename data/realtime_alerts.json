@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-16 08:01:01",
+    "time_str": "08:01:01",
+    "symbol": "HODL",
+    "direction": "SHORT",
+    "trigger_price": 21.3,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 0.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HODL stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 08:01:01",
+    "time_str": "08:01:01",
+    "symbol": "BITB",
+    "direction": "SHORT",
+    "trigger_price": 40.98,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 0.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BITB stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-16 08:01:01",
+    "time_str": "08:01:01",
+    "symbol": "ARKB",
+    "direction": "LONG",
+    "trigger_price": 25.14,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARKB explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-16 07:36:00",
     "time_str": "07:36:00",
     "symbol": "ZTS",
@@ -515,38 +548,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 07:01:16",
-    "time_str": "07:01:16",
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 4.08,
-    "change_1min_pct": 0.98,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.98% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 07:01:16",
-    "time_str": "07:01:16",
-    "symbol": "RDWR",
-    "direction": "SHORT",
-    "trigger_price": 29.88,
-    "change_1min_pct": 1.35,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR stürzt um -1.35% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-16 07:01:16",
-    "time_str": "07:01:16",
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 16.72,
-    "change_1min_pct": 1.26,
-    "vol_ratio": 16.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
