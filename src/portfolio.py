@@ -252,11 +252,27 @@ class PortfolioManager:
                 same_sector_count += 1
         return same_sector_count < max_correlated
 
+    def _daily_limit_waiver(self, depot_key: str) -> float:
+        """Loss amount excluded from today's limit because it was a defect, not a trade.
+
+        The daily loss limit exists to stop a losing *strategy*. A loss caused by a
+        broken instrument says nothing about the strategy, so it can be waived - but
+        only explicitly, only for one day, and the trade itself stays in the history
+        and in every statistic. Waivers expire on their own by date.
+        """
+        try:
+            today = get_berlin_now().strftime("%Y-%m-%d")
+            waivers = (self.data.get("daily_limit_waivers") or {}).get(depot_key) or []
+            return sum(float(w.get("amount", 0)) for w in waivers
+                       if w.get("date") == today)
+        except Exception:
+            return 0.0
+
     def _check_daily_loss_limit(self, depot_value: float) -> bool:
         """Returns True if the daily loss limit has NOT been reached (trading allowed)."""
         max_loss_pct = self.strategy.get("daytrade_max_daily_loss_pct", 0.05)
         max_loss = depot_value * max_loss_pct
-        today_pnl = self.db.get_today_pnl("day_trading")
+        today_pnl = self.db.get_today_pnl("day_trading") + self._daily_limit_waiver("day_trading")
         return today_pnl > -max_loss  # True = can still trade
 
     def _check_daily_trade_count(self) -> bool:

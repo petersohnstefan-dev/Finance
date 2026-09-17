@@ -1,5 +1,20 @@
 [
  {
+  "timestamp": "2026-09-17 12:15:48",
+  "component": "portfolio",
+  "kind": "daily_limit_waived",
+  "severity": "info",
+  "message": "day_trading: 1570.04 EUR vom Tages-Verlustlimit ausgenommen - Knock-Out durch fehlerhafte Zertifikatsberechnung bei STRK-USD (Kurs 0.0283) - technischer Defekt, kein Strategiefehler; behoben in ca98220",
+  "context": {
+   "depot": "day_trading",
+   "betrag": 1570.04,
+   "datum": "2026-09-17",
+   "hinweis": "Trade bleibt in Historie und Statistik enthalten"
+  },
+  "count": 1,
+  "last_seen": "2026-09-17 12:15:48"
+ },
+ {
   "timestamp": "2026-09-17 12:08:29",
   "component": "ai_journal",
   "kind": "parameter_drift_corrected",

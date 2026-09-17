@@ -984,5 +984,15 @@
     "short_term_ENPH": "2026-09-16T00:56:54.247837+02:00",
     "long_term_ONON": "2026-09-17T15:06:32.779108+02:00",
     "long_term_BATS.L": "2026-09-17T15:31:36.374859+02:00"
+  },
+  "daily_limit_waivers": {
+    "day_trading": [
+      {
+        "date": "2026-09-17",
+        "amount": 1570.04,
+        "reason": "Knock-Out durch fehlerhafte Zertifikatsberechnung bei STRK-USD (Kurs 0.0283) - technischer Defekt, kein Strategiefehler; behoben in ca98220",
+        "created": "2026-09-17 12:15:48"
+      }
+    ]
   }
 }
