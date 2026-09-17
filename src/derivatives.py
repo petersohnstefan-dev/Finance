@@ -17,36 +17,109 @@ def _stable_id(seed: str) -> int:
     return zlib.crc32(seed.encode("utf-8")) % 899999 + 100000
 
 
+# A certificate below this price cannot carry a meaningful stop: prices get rounded
+# to the cent, so the stop collapses onto the purchase price and only the knock-out
+# can still fire - which is a total loss.
+MIN_CERT_PRICE = 0.20
+
+#: Underlyings cheaper than this are not offered as turbos at all. Their quotes tick
+#: in increments of whole percent, and leverage multiplies that noise directly.
+MIN_UNDERLYING_PRICE = 1.0
+
+#: Subscription ratios an issuer would realistically use.
+_RATIO_STEPS = [0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+
+
+def round_price(value):
+    """Rounds to a precision the price can actually carry.
+
+    round(x, 2) on a 1-cent certificate rounds a 10% stop back onto the entry
+    price. That is how a stop-loss silently became inoperative on 17.09. and a
+    knock-out took the entire position.
+    """
+    if value is None:
+        return None
+    a = abs(value)
+    if a >= 100:
+        return round(value, 2)
+    if a >= 1:
+        return round(value, 3)
+    if a >= 0.01:
+        return round(value, 5)
+    return round(value, 8)
+
+
+def _pick_ratio(current_price: float, target_leverage: float) -> float:
+    """Chooses the subscription ratio that puts the certificate near one unit.
+
+    The ratio used to be fixed at 0.1 with a max(0.01, ...) floor catching the
+    result. For a 0.03 USD underlying that floor multiplied the price by 23x, so
+    a '7x' turbo was priced as a 0.3x one and its stop was meaningless.
+    """
+    if current_price <= 0 or target_leverage <= 0:
+        return 0.1
+    ideal = target_leverage / current_price
+    return min(_RATIO_STEPS, key=lambda r: abs((r / ideal) - 1.0))
+
 class DerivativeEngine:
     """Generates and prices synthetic/real derivative structures for equities, cryptos, and commodities."""
 
     @staticmethod
-    def create_turbo_knockout(underlying_symbol: str, underlying_name: str, current_price: float, 
-                              direction: str = "LONG", target_leverage: float = 4.0, 
-                              ratio: float = 0.1) -> Dict[str, Any]:
-        """Creates a synthetic Turbo / Knock-Out Certificate with realistic pricing and leverage."""
+    def create_turbo_knockout(underlying_symbol: str, underlying_name: str, current_price: float,
+                              direction: str = "LONG", target_leverage: float = 4.0,
+                              ratio: float = None) -> Dict[str, Any]:
+        """Creates a synthetic Turbo / Knock-Out Certificate with realistic pricing and leverage.
+
+        Always check `valid` before buying: a turbo that cannot be priced sensibly
+        comes back with valid=False and a reason instead of a broken instrument.
+        """
         direction = direction.upper()
+        if not current_price or current_price < MIN_UNDERLYING_PRICE:
+            return {
+                "type": "KNOCKOUT", "valid": False,
+                "invalid_reason": (f"Basiswert {underlying_symbol} steht bei {current_price}; "
+                                   f"unter {MIN_UNDERLYING_PRICE} ist kein Turbo mit "
+                                   f"tragfaehigem Stop darstellbar"),
+                "underlying_symbol": underlying_symbol, "underlying_name": underlying_name,
+                "cert_price": None, "leverage": None,
+            }
+
+        if ratio is None:
+            ratio = _pick_ratio(current_price, target_leverage)
+
         if direction == "LONG":
             # Strike and KO Barrier below current price
             strike = current_price * (1.0 - (1.0 / target_leverage))
             ko_barrier = strike * 1.02  # Slight safety buffer above strike for barrier
-            cert_price = max(0.01, (current_price - strike) * ratio)
+            cert_price = (current_price - strike) * ratio
             distance_to_ko_pct = ((current_price - ko_barrier) / current_price) * 100.0
-            actual_leverage = (current_price / (cert_price / ratio)) if cert_price > 0 else 0
             wkn = f"KO{_stable_id(underlying_symbol + 'LONG')}"
-            name = f"⚡ Turbo Bull {actual_leverage:.1f}x auf {underlying_name} (KO: {ko_barrier:.2f})"
+            label = "⚡ Turbo Bull"
         else:
             # Short: Strike and Barrier above current price
             strike = current_price * (1.0 + (1.0 / target_leverage))
             ko_barrier = strike * 0.98
-            cert_price = max(0.01, (strike - current_price) * ratio)
+            cert_price = (strike - current_price) * ratio
             distance_to_ko_pct = ((ko_barrier - current_price) / current_price) * 100.0
-            actual_leverage = (current_price / (cert_price / ratio)) if cert_price > 0 else 0
             wkn = f"KO{_stable_id(underlying_symbol + 'SHORT')}"
-            name = f"🔻 Turbo Bear {actual_leverage:.1f}x auf {underlying_name} (KO: {ko_barrier:.2f})"
+            label = "\U0001f53b Turbo Bear"
+
+        if cert_price < MIN_CERT_PRICE:
+            return {
+                "type": "KNOCKOUT", "valid": False,
+                "invalid_reason": (f"Zertifikatspreis waere {cert_price:.4f} und damit unter "
+                                   f"{MIN_CERT_PRICE} - kein belastbarer Stop moeglich"),
+                "underlying_symbol": underlying_symbol, "underlying_name": underlying_name,
+                "cert_price": None, "leverage": None,
+            }
+
+        cert_price = round_price(cert_price)
+        actual_leverage = (current_price / (cert_price / ratio)) if cert_price > 0 else 0
+        name = f"{label} {actual_leverage:.1f}x auf {underlying_name} (KO: {round_price(ko_barrier)})"
 
         return {
             "type": "KNOCKOUT",
+            "valid": True,
             "wkn": wkn,
             "name": name,
             "underlying_symbol": underlying_symbol,

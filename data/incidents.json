@@ -1,0 +1,89 @@
+[
+ {
+  "timestamp": "2026-09-17 12:08:29",
+  "component": "ai_journal",
+  "kind": "parameter_drift_corrected",
+  "severity": "info",
+  "message": "Stop- und Risikoparameter auf die begruendeten Ausgangswerte zurueckgesetzt, nachdem die Drift sie ueber drei Naechte verengt hatte. Die Score-Huerden (min_alpha 70, min_entry_score 70) bleiben erhoeht - strengere Auswahl ist bei einer Trefferquote um 20% plausibel.",
+  "context": {
+   "zurueckgesetzt": {
+    "short_term_stop_atr_mult": {
+     "war": 1.75,
+     "jetzt": 2.5
+    },
+    "short_term_trail_atr_mult": {
+     "war": 2.0,
+     "jetzt": 2.5
+    },
+    "short_term_stop_loss_pct": {
+     "war": 0.08,
+     "jetzt": 0.15
+    },
+    "short_term_stop_min_pct": {
+     "war": 0.05,
+     "jetzt": 0.06
+    },
+    "short_term_max_risk_per_trade_pct": {
+     "war": 0.01,
+     "jetzt": 0.015
+    },
+    "daytrade_stop_loss_pct": {
+     "war": 0.1,
+     "jetzt": 0.15
+    }
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-09-17 12:08:29"
+ },
+ {
+  "timestamp": "2026-09-17 12:08:29",
+  "component": "ai_journal",
+  "kind": "llm_parse_error",
+  "severity": "error",
+  "message": "17.09. - Beide Tagesretrospektiven endeten mit 'Fehler beim Parsen der KI-Antwort'; der Rohtext wurde verworfen, die Ursache blieb unbekannt.",
+  "context": {
+   "behoben_durch": "JSON-Rettungsversuch + Stoerungsmeldung mit Antwortanfang"
+  },
+  "count": 1,
+  "last_seen": "2026-09-17 12:08:29"
+ },
+ {
+  "timestamp": "2026-09-17 12:08:29",
+  "component": "ai_journal",
+  "kind": "parameter_drift",
+  "severity": "error",
+  "message": "14.-16.09. - Das Lerntagebuch drehte dieselben Parameter drei Naechte in Folge in dieselbe Richtung, ohne die eigenen Vornaechte zu kennen: short_term_stop_atr_mult 2.5 -> 2.0 -> 1.75, short_term_min_alpha_score 55 -> 65 -> 70, daytrade_stop_loss_pct 0.15 -> 0.10. Da die Positionsgroesse als Risiko/Stopabstand berechnet wird, VERGROESSERN engere Stops die Position. Der Verlust vom 17.09. fiel dadurch rund 500 EUR hoeher aus.",
+  "context": {
+   "betroffene_parameter": [
+    "short_term_stop_atr_mult",
+    "short_term_stop_loss_pct",
+    "short_term_min_alpha_score",
+    "daytrade_stop_loss_pct"
+   ],
+   "behoben_durch": "Aenderungshistorie im Prompt, Richtungssperre 3 Tage, Schrittbegrenzung, Depot-Zustaendigkeit"
+  },
+  "count": 1,
+  "last_seen": "2026-09-17 12:08:29"
+ },
+ {
+  "timestamp": "2026-09-17 12:08:29",
+  "component": "derivatives",
+  "kind": "invalid_certificate",
+  "severity": "critical",
+  "message": "17.09. 09:06 - Turbo Bear auf STRK-USD (Kurs 0.0283) gekauft. Der Boden max(0.01, ...) in create_turbo_knockout hob den Zertifikatspreis auf 0.01, wodurch aus dem 7x-Hebel rechnerisch 0.3x wurden und round(stop, 2) den Stop auf den Einstandspreis zurueckrundete. Nur die Knock-Out-Barriere konnte noch greifen: Totalverlust -1570.04 EUR nach 6 Minuten.",
+  "context": {
+   "depot": "day_trading",
+   "wkn": "KO401245",
+   "basiswert": "STRK-USD",
+   "kurs_basiswert": 0.0283,
+   "zertifikatspreis": 0.01,
+   "stueck": 172247,
+   "position_eur": 1748.31,
+   "verlust_eur": -1570.04,
+   "behoben_durch": "MIN_UNDERLYING_PRICE, MIN_CERT_PRICE, round_price, max_position_pct_of_depot"
+  },
+  "count": 1,
+  "last_seen": "2026-09-17 12:08:29"
+ }
+]

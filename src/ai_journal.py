@@ -5,6 +5,8 @@ import os
 import re
 from typing import Dict, Any, List, Optional
 
+from src import incidents
+
 try:
     import google.generativeai as genai
 except ImportError:
@@ -16,6 +18,10 @@ DB_FILE = data_file("portfolio.db")
 ALERTS_FILE = data_file("realtime_alerts.json")
 STRATEGY_FILE = data_file("strategy.json")
 ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
+
+#: A parameter moved in one direction may not be moved the same way again
+#: until its effect could plausibly show up in the statistics.
+PARAM_CHANGE_COOLDOWN_DAYS = 3
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 
@@ -272,22 +278,90 @@ class AIJournalEngine:
                 out[day] = slot
         return out
 
-    def _apply_param_updates(self, updates: Dict[str, Any]) -> Dict[str, Any]:
+    #: Which depot may tune which parameters. On 15.09. the day_trading run changed
+    #: short_term_stop_loss_pct, so one depot was turned by two runs on the same night.
+    DEPOT_PREFIX = {
+        "day_trading": ("daytrade_",),
+        "short_term": ("short_term_",),
+        "medium_term": ("medium_term_",),
+        "long_term": ("long_term_",),
+    }
+
+    def _recent_param_changes(self, days: int = 4) -> Dict[str, list]:
+        """What was already changed in the last few nights, per parameter.
+
+        Without this the journal sees the same bad all-time statistics every night,
+        prescribes the same medicine, and never notices it already did. Between the
+        14th and the 16th that ratcheted short_term_stop_atr_mult from 2.5 to 1.75
+        and min_alpha from 55 to 70, one step at a time.
+        """
+        out: Dict[str, list] = {}
+        try:
+            cutoff = (get_berlin_now() - datetime.timedelta(days=days)).strftime("%Y-%m-%d")
+            conn = sqlite3.connect(DB_FILE)
+            rows = conn.execute(
+                "SELECT date, param_updates FROM ai_journal "
+                "WHERE date >= ? AND param_updates IS NOT NULL ORDER BY id DESC",
+                (cutoff,)).fetchall()
+            conn.close()
+            for date, blob in rows:
+                try:
+                    changes = json.loads(blob) if isinstance(blob, str) else (blob or {})
+                except Exception:
+                    continue
+                if not isinstance(changes, dict):
+                    continue
+                for name, delta in changes.items():
+                    if isinstance(delta, dict) and "old" in delta and "new" in delta:
+                        out.setdefault(name, []).append(
+                            {"date": date, "old": delta["old"], "new": delta["new"]})
+        except Exception:
+            pass
+        return out
+
+    def format_change_history(self, days: int = 4) -> str:
+        hist = self._recent_param_changes(days)
+        if not hist:
+            return "Keine Parameteraenderungen in den letzten Tagen."
+        lines = []
+        for name, entries in sorted(hist.items()):
+            chain = " -> ".join(str(e["old"]) for e in reversed(entries))
+            chain += f" -> {entries[0]['new']}"
+            lines.append(f"- {name}: {chain} (zuletzt {entries[0]['date']})")
+        return "\n".join(lines)
+
+    def _apply_param_updates(self, updates: Dict[str, Any],
+                             depot_id: Optional[str] = None) -> Dict[str, Any]:
         """Validates and applies parameter updates from the AI within safety bounds.
-        Returns a dict of what was actually changed."""
+
+        Beyond the static bounds there are three guards, all added after the journal
+        tightened the same knobs three nights running and made the depot worse:
+        a depot may only tune its own parameters, a parameter may not be moved twice
+        in the same direction within the cooldown, and one call may not move it by
+        more than a single configured step.
+
+        Returns a dict of what was actually changed.
+        """
         if not updates or not isinstance(updates, dict):
             return {}
 
         current = self._load_strategy()
-        applied = {}
+        history = self._recent_param_changes(PARAM_CHANGE_COOLDOWN_DAYS)
+        allowed_prefixes = self.DEPOT_PREFIX.get(depot_id or "", ())
+        applied, rejected = {}, {}
 
         for param_name, new_value in updates.items():
             if param_name not in PARAM_SAFETY_BOUNDS:
                 continue  # Unknown parameter, skip
-            
+
+            # Guard 1: stay in your own lane
+            if allowed_prefixes and not param_name.startswith(allowed_prefixes):
+                rejected[param_name] = (f"gehoert nicht zu Depot {depot_id}")
+                continue
+
             bounds = PARAM_SAFETY_BOUNDS[param_name]
             old_value = current.get(param_name)
-            
+
             # A parameter that only lives in the engine defaults and has never been
             # written to strategy.json must still be tunable - otherwise every newly
             # introduced knob is silently inert. Fall back to the bounds own type.
@@ -300,16 +374,52 @@ class AIJournalEngine:
 
             # Clamp to safety bounds
             new_value = max(bounds["min"], min(bounds["max"], new_value))
+            if old_value is None or new_value == old_value:
+                if new_value != old_value:
+                    current[param_name] = new_value
+                    applied[param_name] = {"old": old_value, "new": new_value}
+                continue
 
-            # Only apply if actually different
+            direction = 1 if new_value > old_value else -1
+
+            # Guard 2: no second push in the same direction while the last one is
+            # still young - its effect cannot have shown up in the statistics yet.
+            past = history.get(param_name) or []
+            if past:
+                last = past[0]
+                try:
+                    last_dir = 1 if float(last["new"]) > float(last["old"]) else -1
+                except (TypeError, ValueError):
+                    last_dir = 0
+                if last_dir == direction:
+                    rejected[param_name] = (
+                        f"bereits am {last['date']} in dieselbe Richtung gedreht "
+                        f"({last['old']} -> {last['new']}); Wirkung noch nicht messbar")
+                    continue
+
+            # Guard 3: at most one configured step per run
+            step = bounds.get("step")
+            if step:
+                capped = old_value + direction * step
+                if abs(new_value - old_value) > abs(step) * 1.001:
+                    new_value = cast_to(max(bounds["min"], min(bounds["max"], capped)))
+                    rejected[param_name] = (
+                        f"Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)")
+
             if new_value != old_value:
                 current[param_name] = new_value
                 applied[param_name] = {"old": old_value, "new": new_value}
 
         if applied:
             self._save_strategy(current)
-
+        if rejected:
+            incidents.record(
+                "ai_journal", "param_change_rejected",
+                f"Depot {depot_id}: {len(rejected)} Parameteraenderung(en) abgelehnt",
+                severity="info", context={"depot": depot_id, "abgelehnt": rejected})
+        self._last_rejected = rejected
         return applied
+
 
     def generate_retrospective(self, depot_id: str, mode="daily") -> Dict[str, Any]:
         """Generates an AI retrospective with real statistics and actionable parameter updates."""
@@ -377,6 +487,17 @@ eines algorithmischen Trading-Systems und schlägst KONKRETE Parameteränderunge
 - Profit Factor: {alltime_stats['profit_factor']}
 - Gesamt-PnL: {alltime_stats['total_pnl']}€
 - Max. Verluststrecke: {alltime_stats['max_consecutive_losses']}
+
+### BEREITS VORGENOMMENE PARAMETERAENDERUNGEN (letzte Tage):
+{self.format_change_history()}
+Drehe einen Parameter NICHT erneut in dieselbe Richtung, solange die Wirkung der
+letzten Aenderung noch nicht in den Statistiken sichtbar sein kann. Solche
+Vorschlaege werden automatisch abgelehnt.
+
+### TECHNISCHE STOERUNGEN (Defekte, keine Strategiefrage):
+{incidents.summarize(7)}
+Wenn ein Verlust auf eine technische Stoerung zurueckgeht, ist die Antwort NICHT,
+Parameter zu drehen. Benenne den Defekt in "reflection" und lass die Parameter in Ruhe.
 
 ### Aktuelle Strategie-Parameter:
 {json.dumps(current_params, indent=2)}
@@ -477,18 +598,38 @@ Wenn keine Änderungen nötig sind, setze "parameter_changes": {{}}.
         try:
             raw_text = response.text.strip().removeprefix('```json').removesuffix('```').strip()
             res_json = json.loads(raw_text)
-        except Exception:
-            res_json = {
-                "reflection": "Fehler beim Parsen der KI-Antwort.",
-                "missed_opportunities": "",
-                "lesson": "",
-                "parameter_changes": {},
-                "change_reasoning": ""
-            }
+        except Exception as parse_err:
+            # This used to fail silently: the entry said "Fehler beim Parsen" and
+            # nothing else, so on 17.09. both depots produced empty retrospectives
+            # with no trace of why. Try to salvage the JSON, then report it.
+            res_json = None
+            try:
+                import re as _re
+                match = _re.search(r"\{.*\}", raw_text, _re.DOTALL)
+                if match:
+                    res_json = json.loads(match.group(0))
+            except Exception:
+                res_json = None
+
+            if res_json is None:
+                incidents.record(
+                    "ai_journal", "llm_parse_error",
+                    f"Antwort des Modells war kein gueltiges JSON ({parse_err})",
+                    severity="error",
+                    context={"depot": depot_id, "mode": mode,
+                             "antwort_anfang": str(raw_text)[:300]})
+                res_json = {
+                    "reflection": f"Antwort des Modells nicht lesbar ({parse_err}). "
+                                  f"Die Stoerung ist im Stoerungs-Log vermerkt.",
+                    "missed_opportunities": "",
+                    "lesson": "",
+                    "parameter_changes": {},
+                    "change_reasoning": ""
+                }
 
         # 8. Apply parameter changes (the core new feature!)
         param_changes = res_json.get("parameter_changes", {})
-        applied_changes = self._apply_param_updates(param_changes)
+        applied_changes = self._apply_param_updates(param_changes, depot_id=depot_id)
         change_reasoning = res_json.get("change_reasoning", "")
 
         if applied_changes:

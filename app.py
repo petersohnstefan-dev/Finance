@@ -197,6 +197,7 @@ with st.sidebar:
         "⚖️ KI-Tribunal (Handelsentscheidungen)",
         "💬 KI-Chatbot (Strategie & Analyse)",
         "🧠 KI-Lerntagebuch (Retrospektive)",
+        "🛠️ System-Stoerungen (Technik-Log)",
         "📖 Handelsstrategie & System-Logik"
     ]
     
@@ -2732,6 +2733,51 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
             else:
                 for idx, j in enumerate(weekly_journals):
                     render_journal(j, is_first=(idx == 0))
+
+# MODE 12: STOERUNGS-LOG
+elif app_mode == "\U0001f6e0️ System-Stoerungen (Technik-Log)":
+    st.header("\U0001f6e0️ System-Stoerungen")
+    st.markdown(
+        "Technische Defekte – getrennt vom KI-Lerntagebuch. Das Lerntagebuch ist eine "
+        "**Strategie**-Retrospektive und reagiert auf schlechte Ergebnisse mit Parameteränderungen. "
+        "Bei einem Defekt ist das die falsche Medizin: Am 17.09. kostete ein fehlerhaft "
+        "berechnetes Knock-Out-Zertifikat 1.570 €, während das Tagebuch in den Nächten davor "
+        "die Stops verengt hatte – was die Positionen **vergrößert** hat. Solche Vorfälle "
+        "landen hier, und das Lerntagebuch liest sie mit."
+    )
+
+    from src import incidents as _inc
+
+    _entries = _inc.get_recent(200)
+    if not _entries:
+        st.success("Keine Störungen protokolliert.")
+    else:
+        _crit = [e for e in _entries if e.get("severity") == "critical"]
+        _err = [e for e in _entries if e.get("severity") == "error"]
+        _warn = [e for e in _entries if e.get("severity") == "warn"]
+        _info = [e for e in _entries if e.get("severity") == "info"]
+
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric("\U0001f534 Kritisch", len(_crit))
+        k2.metric("\U0001f7e0 Fehler", len(_err))
+        k3.metric("\U0001f7e1 Warnungen", len(_warn))
+        k4.metric("ℹ️ Hinweise", len(_info))
+
+        _levels = st.multiselect(
+            "Schweregrad", ["critical", "error", "warn", "info"],
+            default=["critical", "error", "warn"])
+        _shown = [e for e in _entries if e.get("severity") in _levels]
+
+        if not _shown:
+            st.info("Keine Einträge für diese Auswahl.")
+        for e in _shown[:80]:
+            _icon = {"critical": "\U0001f534", "error": "\U0001f7e0",
+                     "warn": "\U0001f7e1", "info": "ℹ️"}.get(e.get("severity"), "ℹ️")
+            _times = f" · {e['count']}x, zuletzt {e.get('last_seen')}" if e.get("count", 1) > 1 else ""
+            with st.expander(f"{_icon} {e['timestamp']} – {e['component']}/{e['kind']}{_times}"):
+                st.markdown(f"**{e['message']}**")
+                if e.get("context"):
+                    st.json(e["context"])
 
 elif app_mode == "📖 Handelsstrategie & System-Logik":
     st.header("📖 Handelsstrategie & System-Logik")

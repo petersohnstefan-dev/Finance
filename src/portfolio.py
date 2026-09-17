@@ -12,6 +12,8 @@ from src.wkn_mapping import get_wkn, get_wkn_display
 from src.tribunal import AITribunalManager
 
 from src.paths import data_file
+from src.derivatives import round_price
+from src import incidents
 
 PORTFOLIO_FILE = data_file("portfolios.json")
 from zoneinfo import ZoneInfo
@@ -138,7 +140,9 @@ class PortfolioManager:
             "long_term_min_cash": 1500.0,
             "medium_term_min_score": 75,
             "medium_term_max_positions": 4,
-            "min_data_quality_for_thesis_exit": 0.45
+            "min_data_quality_for_thesis_exit": 0.45,
+            "max_position_pct_of_depot": 0.08,
+            "large_loss_alert_pct": 0.05
         }
         if os.path.exists(strat_file):
             try:
@@ -448,7 +452,12 @@ class PortfolioManager:
         else:
             position_size = risk_amount / 0.15  # Fallback
 
-        return position_size
+        # Hard ceiling on the notional. The formula above assumes the stop holds;
+        # a knock-out certificate can lose 100% before it is ever touched, and a
+        # TIGHTER stop produces a LARGER position. On 17.09. that combination cost
+        # 1570 EUR on a 2% risk budget - nine times the intended loss.
+        max_notional = depot_value * self.strategy.get("max_position_pct_of_depot", 0.08)
+        return min(position_size, max_notional)
 
     def _get_seed_data(self) -> Dict[str, Any]:
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
@@ -653,8 +662,10 @@ class PortfolioManager:
             "buy_price": round(effective_price, 4),
             "current_price": round(price, 4),  # Current market price is still mid
             "buy_date": now_str,
-            "stop_loss": round(stop_loss, 2) if stop_loss else None,
-            "take_profit": round(take_profit, 2) if take_profit else None,
+            # round_price, not round(_, 2): a 10% stop on a cent-priced certificate
+            # rounded straight back onto the entry price, leaving only the knock-out.
+            "stop_loss": round_price(stop_loss) if stop_loss else None,
+            "take_profit": round_price(take_profit) if take_profit else None,
             "reason": reason,
             "derivative_type": derivative_meta.get("type", "STOCK") if derivative_meta else "STOCK"
         }
@@ -735,6 +746,30 @@ class PortfolioManager:
             "reason": reason
         }
         depot["history"].append(trade_record)
+
+        # A loss beyond the configured share of the depot is not normal trading noise -
+        # it means a stop did not do its job. Record it so the cause is visible instead
+        # of only showing up as a worse win rate days later.
+        try:
+            depot_value = depot.get("cash", 0) + sum(
+                x.get("current_price", 0) * x.get("shares", 0)
+                for x in depot.get("positions", {}).values())
+            alert_pct = self.strategy.get("large_loss_alert_pct", 0.05)
+            if depot_value > 0 and pnl < 0 and abs(pnl) >= depot_value * alert_pct:
+                incidents.record(
+                    "portfolio", "large_loss",
+                    f"{depot_key}: {symbol} mit {pnl:+.2f} EUR geschlossen "
+                    f"({abs(pnl) / depot_value * 100:.1f}% des Depotwerts)",
+                    severity="critical" if abs(pnl) >= depot_value * 0.10 else "error",
+                    context={"depot": depot_key, "symbol": symbol, "name": pos.get("name"),
+                             "pnl": round(pnl, 2), "pnl_pct": round(pnl_pct, 2),
+                             "einstand": pos.get("buy_price"), "verkauf": price,
+                             "stop_loss": pos.get("stop_loss"),
+                             "produkt": pos.get("derivative_type"),
+                             "basiswert": pos.get("underlying_symbol"),
+                             "grund": reason[:200]})
+        except Exception:
+            pass
 
         try:
             self.db.record_trade(depot_key, "SELL", symbol, pos["name"], shares, revenue, 
@@ -1238,18 +1273,29 @@ class PortfolioManager:
                         actions_taken.append(f"⏸️ Kurzfrist-Long {sym} pausiert (Carry-Unwind)")
                     elif is_bearish:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, top_st_candidate["name"], p, direction="SHORT", target_leverage=3.5)
-                        cert_price = turbo["cert_price"]
-                        shares = alloc / cert_price
-                        # Same underlying stop distance, expressed on the certificate
-                        cert_sl_pct = min(sl_pct * max(turbo.get("leverage", 1.0), 1.0), 0.5)
-                        approved, msg = self._tribunal_approved_buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
-                                 reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
-                                 stop_loss=cert_price*(1.0 - cert_sl_pct), take_profit=None, derivative_meta=turbo)
-                        if approved:
-                            st_entered = True
-                            actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
+                        if not turbo.get("valid"):
+                            incidents.record(
+                                "derivatives", "invalid_certificate",
+                                f"Short-Turbo auf {sym} nicht darstellbar: "
+                                f"{turbo.get('invalid_reason')}",
+                                severity="warn",
+                                context={"depot": "short_term", "symbol": sym, "kurs": p})
+                            actions_taken.append(f"⛔ Short auf {sym} uebersprungen (kein Turbo darstellbar)")
+                            approved = False
+                            msg = "kein darstellbares Zertifikat"
                         else:
-                            actions_taken.append(f"VETO (Short-Term): {turbo['name']} ({msg})")
+                            cert_price = turbo["cert_price"]
+                            shares = alloc / cert_price
+                            # Same underlying stop distance, expressed on the certificate
+                            cert_sl_pct = min(sl_pct * max(turbo.get("leverage", 1.0), 1.0), 0.5)
+                            approved, msg = self._tribunal_approved_buy("short_term", turbo["wkn"], turbo["name"], shares, cert_price,
+                                     reason=f"🔻 Bearisher Short-Trade: {top_st_candidate['reason']}",
+                                     stop_loss=cert_price*(1.0 - cert_sl_pct), take_profit=None, derivative_meta=turbo)
+                            if approved:
+                                st_entered = True
+                                actions_taken.append(f"KAUF {turbo['name']} (🔻 Short-Hebel)")
+                            else:
+                                actions_taken.append(f"VETO (Short-Term): {turbo['name']} ({msg})")
                     else:
                         shares = alloc / p
                         approved, msg = self._tribunal_approved_buy("short_term", sym, top_st_candidate["name"], shares, p,
@@ -1313,6 +1359,17 @@ class PortfolioManager:
                     h_turbo = DerivativeEngine.create_turbo_knockout(
                         hedge_sym, f"{hedge_sym} Index", idx_price, direction="SHORT",
                         target_leverage=self.strategy.get("medium_term_hedge_leverage", 3.0))
+                    if not h_turbo.get("valid"):
+                        incidents.record(
+                            "derivatives", "invalid_certificate",
+                            f"Makro-Hedge auf {hedge_sym} nicht darstellbar: "
+                            f"{h_turbo.get('invalid_reason')}",
+                            severity="error",   # the book stays unhedged in a stressed market
+                            context={"depot": "medium_term", "symbol": hedge_sym,
+                                     "kurs": idx_price, "vix": vix_now})
+                        actions_taken.append(f"⛔ Makro-Hedge nicht moeglich ({hedge_sym})")
+                        h_turbo = None
+                if h_turbo and h_turbo.get("valid"):
                     h_turbo["is_macro_hedge"] = True
                     h_shares = hedge_alloc / h_turbo["cert_price"]
                     self.buy("medium_term", h_turbo["wkn"], h_turbo["name"], h_shares, h_turbo["cert_price"],
@@ -1692,8 +1749,25 @@ class PortfolioManager:
                     )
                     alloc = min(alloc, dt_depot["cash"] * 0.9)  # Never exceed 90% of cash
 
+                    turbo = None
                     if chosen_lev > 1.0:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, name, p, direction=dir_str, target_leverage=chosen_lev)
+                        if not turbo.get("valid"):
+                            # The 17.09. case: a 0.03 USD underlying produced a certificate
+                            # whose stop rounded onto the entry price, so only the knock-out
+                            # could fire. Fall back to the unleveraged stock - no barrier.
+                            incidents.record(
+                                "derivatives", "invalid_certificate",
+                                f"Daytrade-Turbo auf {sym} nicht darstellbar: "
+                                f"{turbo.get('invalid_reason')}",
+                                severity="warn",
+                                context={"depot": "day_trading", "symbol": sym, "kurs": p,
+                                         "hebel": chosen_lev, "score": entry_score})
+                            actions_taken.append(
+                                f"ℹ️ {sym}: kein Turbo darstellbar, Direktkauf ohne Hebel")
+                            turbo = None
+                            chosen_lev = 1.0
+                    if turbo:
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
                         reason_msg = f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100) | {chosen_lev}x Hebel | Risiko {sl_pct*100:.0f}%"
