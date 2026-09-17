@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-17 21:51:03",
+    "time_str": "21:51:03",
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 30.8,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 2.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 21:51:02",
+    "time_str": "21:51:02",
+    "symbol": "ESTC",
+    "direction": "LONG",
+    "trigger_price": 89.31,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ESTC explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 21:51:01",
+    "time_str": "21:51:01",
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 157.33,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-17 21:46:03",
     "time_str": "21:46:03",
     "symbol": "DSV.CO",
@@ -515,38 +548,5 @@
     "vol_ratio": 1.01,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADV.DE stürzt um -1.33% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 21:11:03",
-    "time_str": "21:11:03",
-    "symbol": "DUE.DE",
-    "direction": "SHORT",
-    "trigger_price": 16.8,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 10.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DUE.DE stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 21:11:03",
-    "time_str": "21:11:03",
-    "symbol": "TEG.DE",
-    "direction": "SHORT",
-    "trigger_price": 11.47,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 43.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEG.DE stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 21:11:02",
-    "time_str": "21:11:02",
-    "symbol": "TTK.DE",
-    "direction": "SHORT",
-    "trigger_price": 3.2,
-    "change_1min_pct": 2.44,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TTK.DE stürzt um -2.44% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
