@@ -24,5 +24,19 @@
     "short_term_max_risk_per_trade_pct": 0.015,
     "short_term_min_alpha_score": 70,
     "short_term_min_spike_pct": 1.5,
-    "short_term_max_candidates_scored": 12
+    "short_term_max_candidates_scored": 12,
+    "carry_unwind_usdjpy_threshold": 145.0,
+    "medium_term_hedge_vix_threshold": 28.0,
+    "medium_term_hedge_exit_vix": 22.0,
+    "medium_term_hedge_pct": 0.2,
+    "medium_term_hedge_leverage": 3.0,
+    "medium_term_hedge_symbol": "SPY",
+    "long_term_min_score": 75,
+    "long_term_max_positions": 6,
+    "long_term_min_cash": 1500.0,
+    "medium_term_min_score": 75,
+    "medium_term_max_positions": 4,
+    "min_data_quality_for_thesis_exit": 0.45,
+    "max_position_pct_of_depot": 0.08,
+    "large_loss_alert_pct": 0.05
 }
