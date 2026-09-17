@@ -26,6 +26,29 @@ def get_berlin_now() -> datetime.datetime:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
 ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
+def effective_spread_pct(symbol: str, price: float, is_derivative: bool) -> float:
+    """Bid/ask spread as a fraction of price.
+
+    A flat 1.5% understated the cost of cheap certificates badly: the tick size is
+    fixed, so on a 1-cent paper a single tick already moves the price by a
+    double-digit percentage. Three daytrades in that range were stopped at -1.0%
+    and realised -2.48% - the difference was pure spread, and it was unavoidable.
+    """
+    if is_derivative:
+        if price >= 10.0:
+            return 0.008
+        if price >= 2.0:
+            return 0.012
+        if price >= 1.0:
+            return 0.018
+        if price >= 0.5:
+            return 0.030
+        return 0.060   # below 50 cents the spread dominates any edge
+    if "-USD" in (symbol or "").upper():
+        return 0.005   # crypto exchanges
+    return 0.002       # regular equities
+
+
 class PortfolioManager:
     """Manages 3 distinct paper trading portfolios (Short-Term, Medium-Term, Long-Term)."""
 
@@ -142,7 +165,10 @@ class PortfolioManager:
             "medium_term_max_positions": 4,
             "min_data_quality_for_thesis_exit": 0.45,
             "max_position_pct_of_depot": 0.08,
-            "large_loss_alert_pct": 0.05
+            "large_loss_alert_pct": 0.05,
+            "long_term_bonus_pct": 14.0,
+            "long_term_bonus_barrier_pct": 25.0,
+            "long_term_swap_min_advantage": 20
         }
         if os.path.exists(strat_file):
             try:
@@ -251,6 +277,58 @@ class PortfolioManager:
             if self._get_sector(underlying) == new_sector:
                 same_sector_count += 1
         return same_sector_count < max_correlated
+
+    #: Holdings that exist for macro reasons, not for their quality score. Gold,
+    #: bitcoin and bond ETFs are the portfolio's hedge - they must never be sold
+    #: just because an equity screens better this week.
+    LONG_TERM_CORE_HOLDINGS = {"GC=F", "SI=F", "BTC-USD", "ETH-USD",
+                               "SHY", "TLT", "IEF", "LQD", "4GLD.DE"}
+
+    def _find_long_term_swap_candidate(self, lt_depot: Dict, cand: Dict) -> Optional[tuple]:
+        """Weakest holding that the candidate clearly beats, or None.
+
+        Only fires on a measured advantage: the incoming score must exceed the
+        holding's by long_term_swap_min_advantage, and the holding must itself be
+        below the buy threshold. Macro hedges and positions nursing a large loss
+        are excluded - selling those would turn a hedge into a realised loss.
+        """
+        min_adv = self.strategy.get("long_term_swap_min_advantage", 20)
+        min_score = self.strategy.get("long_term_min_score", 75)
+        cand_score = cand.get("long_score", 0)
+
+        scan_scores = {}
+        try:
+            with open(data_file("market_scan_results.json"), "r", encoding="utf-8") as fh:
+                for row in json.load(fh).get("data", []):
+                    if row.get("symbol") and row.get("long_score") is not None:
+                        scan_scores[row["symbol"]] = row["long_score"]
+        except Exception:
+            return None
+
+        ranked = []
+        for sym, pos in lt_depot.get("positions", {}).items():
+            underlying = pos.get("underlying_symbol", sym)
+            if underlying in self.LONG_TERM_CORE_HOLDINGS:
+                continue
+            score = scan_scores.get(underlying)
+            if score is None:
+                continue  # not currently scanned - no basis to judge it
+            buy_p = pos.get("buy_price") or 0
+            gain = ((pos.get("current_price", 0) - buy_p) / buy_p * 100.0) if buy_p else 0.0
+            ranked.append((sym, pos, score, gain))
+
+        if not ranked:
+            return None
+        ranked.sort(key=lambda x: x[2])
+        weakest = ranked[0]
+
+        if weakest[2] >= min_score:
+            return None            # still good enough on its own merits
+        if cand_score - weakest[2] < min_adv:
+            return None            # advantage too small to pay the round trip
+        if weakest[3] < -15.0:
+            return None            # deep in the red: selling locks in the loss
+        return weakest
 
     def _daily_limit_waiver(self, depot_key: str) -> float:
         """Loss amount excluded from today's limit because it was a defect, not a trade.
@@ -651,13 +729,7 @@ class PortfolioManager:
         is_crypto = "-USD" in symbol.upper()
         is_derivative = derivative_meta is not None or symbol.startswith("KO")
         
-        if is_derivative:
-            SPREAD_PCT = 0.015  # 1.5% Spread für Hebelprodukte (wg. Emittenten-Risiko/Aufschlag)
-        elif is_crypto:
-            SPREAD_PCT = 0.005  # 0.5% Spread für Krypto-Börsen
-        else:
-            SPREAD_PCT = 0.002  # 0.2% für reguläre Aktien
-
+        SPREAD_PCT = effective_spread_pct(symbol, price, is_derivative)
         effective_price = price * (1.0 + SPREAD_PCT)
 
         cost = shares * effective_price
@@ -731,13 +803,7 @@ class PortfolioManager:
         is_crypto = "-USD" in symbol.upper()
         is_derivative = pos.get("derivative_meta") is not None or symbol.startswith("KO")
         
-        if is_derivative:
-            SPREAD_PCT = 0.015  # 1.5% 
-        elif is_crypto:
-            SPREAD_PCT = 0.005  # 0.5% 
-        else:
-            SPREAD_PCT = 0.002  # 0.2% 
-            
+        SPREAD_PCT = effective_spread_pct(symbol, price, is_derivative)
         effective_price = price * (1.0 - SPREAD_PCT)
         
         revenue = shares * effective_price
@@ -1534,51 +1600,96 @@ class PortfolioManager:
         # never buy again regardless of cash. Both bounds are configuration now.
         lt_max_pos = self.strategy.get("long_term_max_positions", 6)
         lt_min_cash = self.strategy.get("long_term_min_cash", 1500.0)
-        if lt_depot["cash"] >= lt_min_cash and len(lt_depot["positions"]) < lt_max_pos and scan_results:
-            candidates = sorted(scan_results, key=lambda x: x.get("long_score", 0), reverse=True)
-            lt_min_score = self.strategy.get("long_term_min_score", 75)
-            for cand in candidates:
-                sym = cand["symbol"]
-                p = cand.get("price")
-                # There used to be NO minimum here: the depot bought the best
-                # available candidate no matter how weak, so in a poor market it
-                # was forced into the least bad name instead of holding cash.
-                if cand.get("long_score", 0) < lt_min_score:
+        lt_min_score = self.strategy.get("long_term_min_score", 75)
+        lt_qualified = [c for c in scan_results
+                        if c.get("long_score", 0) >= lt_min_score
+                        and c["symbol"] not in lt_depot["positions"]
+                        and c.get("price")]
+        lt_qualified.sort(key=lambda x: x.get("long_score", 0), reverse=True)
+
+        if scan_results and not lt_qualified:
+            best_seen = max((c.get("long_score", 0) for c in scan_results), default=0)
+            actions_taken.append(
+                f"⏸️ Langfrist wartet (bester Score {best_seen:.0f} < {lt_min_score})")
+
+        if lt_qualified:
+            cand = lt_qualified[0]
+            sym = cand["symbol"]
+            p = cand.get("price")
+            has_room = (lt_depot["cash"] >= lt_min_cash
+                        and len(lt_depot["positions"]) < lt_max_pos)
+
+            # No room: check whether this candidate is clearly better than the
+            # weakest holding. Without this the depot simply stopped buying once
+            # it was full - a candidate scoring 100 could not displace a holding
+            # scoring 60, which is the whole point of a quality mandate.
+            swap_target = None
+            if not has_room:
+                swap_target = self._find_long_term_swap_candidate(lt_depot, cand)
+                if swap_target:
+                    w_sym, w_pos, w_score, w_gain = swap_target
+                    self.sell("long_term", w_sym, w_pos["current_price"],
+                              reason=(f"\U0001f504 Qualitaets-Umschichtung: {w_sym} "
+                                      f"(Score {w_score:.0f}, {w_gain:+.1f}%) weicht dem "
+                                      f"staerkeren {sym} (Score {cand.get('long_score', 0):.0f})"))
                     actions_taken.append(
-                        f"⏸️ Langfrist wartet (bester Score {cand.get('long_score', 0):.0f} < {lt_min_score})")
-                    break  # sorted descending - nothing below will qualify either
-                if sym not in lt_depot["positions"] and p and p > 0:
-                    vol_factor = self._calculate_volatility_factor(sym)
-                    regime = self._get_market_regime()
-                    base_alloc = 2000.0
-                    if regime == "BEAR" and sym not in ["GC=F", "SHY", "TLT", "IEF", "LQD"]:
-                        # Halve allocation to standard stocks in a bear market
-                        base_alloc = 1000.0
-                        
-                    alloc = min(base_alloc * vol_factor, lt_depot["cash"] * 0.85)
-                    cand_intel = self.deep_intel.get_asset_360_intelligence(sym)
-                    forensic = cand_intel["forensic_quality"]
-                    moat_reason = f"🏰 Burggraben & Bilanz-Audit: {forensic['moat_rating']} | Piotroski: {forensic['piotroski_f_score']}"
-                    
-                    if cand.get("long_score", 0) >= 90:
-                        bonus = DerivativeEngine.create_bonus_certificate(sym, cand.get("name", sym), p, barrier_pct=25.0, bonus_pct=14.0)
-                        shares = alloc / p
-                        approved, msg = self._tribunal_approved_buy("long_term", bonus["wkn"], bonus["name"], shares, p,
-                                 reason=f"🛡️ Bonus-Zertifikat (-25% Puffer, +14% Bonus) | {moat_reason}", stop_loss=0, take_profit=0,
-                                 derivative_meta=bonus)
-                        if approved:
-                            actions_taken.append(f"KAUF {bonus['name']} für Langfrist-Depot")
-                        else:
-                            actions_taken.append(f"VETO (Long-Term): {bonus['name']} ({msg})")
-                    else:
-                        shares = alloc / p
-                        approved, msg = self._tribunal_approved_buy("long_term", sym, cand.get("name", sym), shares, p,
-                                 reason=moat_reason, stop_loss=0, take_profit=0)
-                        if approved:
-                            actions_taken.append(f"KAUF {sym} für Langfrist-Depot")
-                        else:
-                            actions_taken.append(f"VETO (Long-Term): {sym} ({msg})")
-                    break
+                        f"UMSCHICHTUNG Langfrist: {w_sym} ({w_score:.0f}) ➔ {sym} "
+                        f"({cand.get('long_score', 0):.0f})")
+                    has_room = True
+
+            if has_room and p and p > 0:
+                vol_factor = self._calculate_volatility_factor(sym)
+                regime = self._get_market_regime()
+                base_alloc = 2000.0
+                if regime == "BEAR" and sym not in ["GC=F", "SHY", "TLT", "IEF", "LQD"]:
+                    # Halve allocation to standard stocks in a bear market
+                    base_alloc = 1000.0
+
+                alloc = min(base_alloc * vol_factor, lt_depot["cash"] * 0.85)
+                cand_intel = self.deep_intel.get_asset_360_intelligence(sym)
+                forensic = cand_intel["forensic_quality"]
+                moat_reason = (f"\U0001f3f0 Burggraben & Bilanz-Audit: {forensic['moat_rating']} "
+                               f"| Piotroski: {forensic['piotroski_f_score']}")
+
+                # A bonus certificate caps the upside at bonus_pct in exchange for a
+                # downside buffer. That is worth having when the expected move is
+                # SMALLER than the cap - not when it is larger. The old rule had it
+                # backwards (long_score >= 90 -> certificate), so the strongest
+                # candidates were the ones whose upside got capped: ONON with 61%
+                # analyst potential was repeatedly proposed with a 14% cap, and the
+                # tribunal rejected it 23 times in a row for exactly that reason.
+                bonus_pct = self.strategy.get("long_term_bonus_pct", 14.0)
+                upside = cand.get("upside_pct")
+                use_bonus = (upside is not None and upside < bonus_pct * 0.9)
+
+                if use_bonus:
+                    bonus = DerivativeEngine.create_bonus_certificate(
+                        sym, cand.get("name", sym), p,
+                        barrier_pct=self.strategy.get("long_term_bonus_barrier_pct", 25.0),
+                        bonus_pct=bonus_pct)
+                    shares = alloc / p
+                    approved, msg = self._tribunal_approved_buy(
+                        "long_term", bonus["wkn"], bonus["name"], shares, p,
+                        reason=(f"\U0001f6e1️ Bonus-Zertifikat (-25% Puffer, +{bonus_pct:.0f}% Bonus): "
+                                f"Analystenpotenzial nur {upside:.1f}%, Puffer schlaegt Kurschance "
+                                f"| {moat_reason}"),
+                        stop_loss=0, take_profit=0, derivative_meta=bonus)
+                    label = bonus["name"]
+                else:
+                    shares = alloc / p
+                    reason_txt = moat_reason
+                    if upside is not None:
+                        reason_txt += f" | Analystenpotenzial {upside:.1f}% (ungedeckelt gekauft)"
+                    approved, msg = self._tribunal_approved_buy(
+                        "long_term", sym, cand.get("name", sym), shares, p,
+                        reason=reason_txt, stop_loss=0, take_profit=0)
+                    label = sym
+
+                if approved:
+                    actions_taken.append(f"KAUF {label} fuer Langfrist-Depot")
+                else:
+                    actions_taken.append(f"VETO (Long-Term): {label} ({msg})")
+
 
         # ======================================================================
         # 4. DAYTRADER DEPOT — Professional Risk-Managed Intraday System

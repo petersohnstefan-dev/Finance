@@ -20,7 +20,7 @@ def _stable_id(seed: str) -> int:
 # A certificate below this price cannot carry a meaningful stop: prices get rounded
 # to the cent, so the stop collapses onto the purchase price and only the knock-out
 # can still fire - which is a total loss.
-MIN_CERT_PRICE = 0.20
+MIN_CERT_PRICE = 0.50
 
 #: Underlyings cheaper than this are not offered as turbos at all. Their quotes tick
 #: in increments of whole percent, and leverage multiplies that noise directly.
@@ -49,17 +49,31 @@ def round_price(value):
     return round(value, 8)
 
 
+#: Target price band for a generated certificate. Real issuers keep turbos in
+#: roughly this range, and it is where the spread stays economically sane: the
+#: bid/ask on a cent-priced paper is a double-digit percentage of its value.
+TARGET_CERT_PRICE = 2.0
+
+
 def _pick_ratio(current_price: float, target_leverage: float) -> float:
-    """Chooses the subscription ratio that puts the certificate near one unit.
+    """Chooses the subscription ratio that puts the certificate in a tradable band.
 
     The ratio used to be fixed at 0.1 with a max(0.01, ...) floor catching the
     result. For a 0.03 USD underlying that floor multiplied the price by 23x, so
     a '7x' turbo was priced as a 0.3x one and its stop was meaningless.
+
+    Aiming at TARGET_CERT_PRICE rather than 1.0 keeps the result clear of the
+    cent range even when the coarse ratio steps round the wrong way: four of the
+    18 daytrade purchases landed at exactly 0.01 and produced 52% of that depot's
+    entire loss.
     """
     if current_price <= 0 or target_leverage <= 0:
         return 0.1
-    ideal = target_leverage / current_price
-    return min(_RATIO_STEPS, key=lambda r: abs((r / ideal) - 1.0))
+    # intrinsic value per unit is price/leverage; we want intrinsic * ratio ~ target
+    intrinsic = current_price / target_leverage
+    ideal = TARGET_CERT_PRICE / intrinsic if intrinsic > 0 else 1.0
+    viable = [r for r in _RATIO_STEPS if intrinsic * r >= MIN_CERT_PRICE]
+    return min(viable or _RATIO_STEPS, key=lambda r: abs((r / ideal) - 1.0))
 
 class DerivativeEngine:
     """Generates and prices synthetic/real derivative structures for equities, cryptos, and commodities."""

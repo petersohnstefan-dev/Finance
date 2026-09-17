@@ -31,6 +31,8 @@ except ImportError:
 
 from src.paths import data_file
 
+from src import incidents
+
 DB_FILE = data_file("portfolio.db")
 def get_berlin_now() -> datetime.datetime:
     try:
@@ -165,9 +167,26 @@ class AITribunalManager:
     # ------------------------------------------------------------------
     # The three voices
     # ------------------------------------------------------------------
+    def _fallback_models(self) -> list:
+        """Models to try after the preferred one, taken from what the API offers.
+
+        The fallback used to be the literal string "models/gemini-1.5-flash-latest",
+        which v1beta no longer serves: 11 of 35 tribunal sessions died on a 404 and,
+        because the tribunal fails closed, every one of those became a rejected buy.
+        """
+        try:
+            available = [m.name for m in genai.list_models()
+                         if 'generateContent' in m.supported_generation_methods]
+        except Exception:
+            return []
+        flash = [m for m in available if 'flash' in m.lower()]
+        return (flash or available)[:3]
+
     def _call(self, system_instruction: str, prompt: str) -> Dict[str, Any]:
         model_name = self._get_fastest_model_name()
-        for name in (model_name, "models/gemini-1.5-flash-latest"):
+        candidates = [model_name] + [m for m in self._fallback_models() if m != model_name]
+        last = None
+        for name in candidates:
             try:
                 model = genai.GenerativeModel(name, system_instruction=system_instruction)
                 resp = model.generate_content(
@@ -176,6 +195,15 @@ class AITribunalManager:
                 return json.loads(text)
             except Exception as exc:
                 last = exc
+                # A model that 404s is not coming back this run - forget the cached choice
+                if "404" in str(exc) and hasattr(self, "_cached_model"):
+                    del self._cached_model
+        incidents.record(
+            "tribunal", "model_unavailable",
+            f"Kein Gemini-Modell lieferte eine Antwort: {last}",
+            severity="error",
+            context={"versucht": candidates,
+                     "folge": "Kauf wird abgelehnt (fail-closed)"})
         raise RuntimeError(f"Alle Modelle fehlgeschlagen: {last}")
 
     ADVOCATE_SYS = (
