@@ -1,5 +1,60 @@
 [
   {
+    "timestamp": "2026-09-17 16:31:14",
+    "time_str": "16:31:14",
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 35.78,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 16:31:14",
+    "time_str": "16:31:14",
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 31.57,
+    "change_1min_pct": 0.98,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.98% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 16:31:13",
+    "time_str": "16:31:13",
+    "symbol": "RDDT",
+    "direction": "SHORT",
+    "trigger_price": 150.43,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 16:31:13",
+    "time_str": "16:31:13",
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.54,
+    "change_1min_pct": 1.87,
+    "vol_ratio": 1.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +1.87% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-17 16:31:10",
+    "time_str": "16:31:10",
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.51,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-17 16:28:18",
     "time_str": "16:28:18",
     "symbol": "INTC",
@@ -493,60 +548,5 @@
     "vol_ratio": 0.97,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INH.DE explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 16:15:59",
-    "time_str": "16:15:59",
-    "symbol": "HAG.DE",
-    "direction": "SHORT",
-    "trigger_price": 78.12,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HAG.DE stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 16:15:59",
-    "time_str": "16:15:59",
-    "symbol": "EUZ.DE",
-    "direction": "SHORT",
-    "trigger_price": 12.12,
-    "change_1min_pct": 0.66,
-    "vol_ratio": 2.41,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 EUZ.DE stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 16:15:58",
-    "time_str": "16:15:58",
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 7.36,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 0.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.89% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 16:15:58",
-    "time_str": "16:15:58",
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 8.6,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-17 16:15:58",
-    "time_str": "16:15:58",
-    "symbol": "BKSY",
-    "direction": "LONG",
-    "trigger_price": 23.14,
-    "change_1min_pct": 0.96,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY explodiert um +0.96% in 5 Min.! Momentum aktiv."
   }
 ]
