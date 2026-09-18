@@ -39,6 +39,10 @@ jobs:
           # Reddit-Forum-Sentiment bleibt inaktiv (siehe src/forum_scanner.py).
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          # Ebenfalls optional: ohne diese Schluessel melden die Energie- und
+          # Inflationsabschnitte "keine Daten" statt zu schaetzen.
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           python -m src.realtime_scanner
           python -m src.market_scanner

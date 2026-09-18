@@ -877,13 +877,21 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         with f3:
             st.metric("US-Dollar Index (DXY)", fred["us_dollar_index_dxy"], delta=fred["dxy_trend"][:15])
         with f4:
-            st.metric("High-Yield Spread", fred["us_high_yield_spread"][:5], delta="Solide / Keine Panik")
+            st.metric("US-Inflation (CPI)", fred.get("cpi_yoy", "—"),
+                      delta=str(fred.get("inflation_status", ""))[:28], delta_color="off",
+                      help="Jahresrate aus FRED. Kern-Inflation: "
+                           + str(fred.get("core_cpi_yoy", "—")))
+
+        if not fred.get("available"):
+            st.info(f"ℹ️ Zins- und Inflationsdaten derzeit nicht abrufbar – "
+                    f"{fred.get('reason', 'unbekannter Grund')}")
 
         st.markdown(f"""
         <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
             <h4 style="margin: 0 0 4px 0; color: #34d399;">📐 Zinskurven-Zustand: {fred['yield_curve_spread']}</h4>
             <p style="margin: 0; color: #1e293b; font-size: 14px;">{fred['yield_curve_status']}</p>
             <p style="margin: 6px 0 0 0; color: #0f172a; font-size: 14px;"><b>Fazit:</b> {fred['verdict']}</p>
+            <p style="margin: 6px 0 0 0; color: #475569; font-size: 12px;">Stand: {fred.get('as_of', '—')} · Quelle: {fred.get('source', '—')}</p>
         </div>
         """, unsafe_allow_html=True)
 

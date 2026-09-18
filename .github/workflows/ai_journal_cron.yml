@@ -46,6 +46,8 @@ jobs:
         if: github.event.schedule == '30 20 * * 1-5' || inputs.mode == 'daily'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           python run_ai_journal.py
 
@@ -53,6 +55,8 @@ jobs:
         if: github.event.schedule == '0 21 * * 5' || inputs.mode == 'weekly'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           python run_ai_journal.py --weekly
 

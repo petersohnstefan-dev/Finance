@@ -41,6 +41,25 @@ python analyze.py --ticker SAP.DE
 
 ---
 
+## 🔑 Optionale API-Schlüssel (alle kostenlos)
+
+Das System läuft ohne diese Schlüssel vollständig. Fehlt einer, meldet der
+betroffene Abschnitt „keine Daten“ – er erfindet **keine** Ersatzwerte.
+
+| Secret | Wofür | Registrierung |
+| :--- | :--- | :--- |
+| `GEMINI_API_KEY` | KI-Tribunal und Lerntagebuch | [Google AI Studio](https://aistudio.google.com/) |
+| `EIA_API_KEY` | US-Rohöl-Lagerbestände (wöchentlich) | [eia.gov/opendata](https://www.eia.gov/opendata/) |
+| `FRED_API_KEY` | Inflation (CPI), Renditen, Realzins | [fred.stlouisfed.org](https://fred.stlouisfed.org/docs/api/api_key.html) |
+| `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` | Forum-Sentiment | [reddit.com/prefs/apps](https://www.reddit.com/prefs/apps) (Typ *script*) |
+
+Eintragen unter **Settings → Secrets and variables → Actions**.
+
+Der **Crack-Spread** (Raffineriemarge) braucht keinen Schlüssel – er wird aus den
+Futures CL=F, RB=F und HO=F berechnet.
+
+---
+
 ## 🧪 Tests & Trockenläufe (ohne die Live-Daten anzufassen)
 
 Schon das Erzeugen eines `PortfolioManager` öffnet `data/portfolio.db` und wendet

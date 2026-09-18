@@ -312,18 +312,76 @@ class FREDMacroEngine:
 
     @staticmethod
     def get_macro_indicators() -> Dict[str, Any]:
-        return {
-            "us_10y_yield": "3.88%",
-            "us_2y_yield": "3.92%",
-            "yield_curve_spread": "-0.04% (Un-Inversion / Normalisierung)",
-            "yield_curve_status": "🔄 Zinskurve normalisiert sich nach historischer Inversion (Klassischer Vorbote von Fed-Zinssenkungen)",
-            "us_dollar_index_dxy": "101.40",
-            "dxy_trend": "📉 Schwächer werdender Dollar (Starkes Rückenwind-Signal für Gold, Krypto & Rohstoffe)",
-            "us_high_yield_spread": "3.15% (Historisch niedrig / Keine Kreditausfall-Panik)",
-            "fed_net_liquidity": ".25 Bio. (Stabil)",
-            "fred_macro_score": 76,
-            "verdict": "🟢 Makroökonomisch extrem günstiges Fenster für Zinswende-Gewinner (Gold, Tech & Krypto)."
-        }
+        """Yields, inflation and the dollar - measured, not asserted.
+
+        Every value here used to be a fixed string ("us_10y_yield": "3.88%"), so the
+        macro panel showed the same reading in every market. Yields and inflation now
+        come from FRED, the dollar index from the live FX feed. Anything unavailable
+        is labelled as such instead of being filled in.
+        """
+        from src.energy_macro import get_fred_macro
+        from src.commodities_forex_radar import ForexCurrencyEngine
+
+        fred = get_fred_macro()
+        out: Dict[str, Any] = {"source": "FRED + Live-FX", "available": fred.get("available", False)}
+
+        if fred.get("available"):
+            def pct(v):
+                return f"{v:.2f}%" if isinstance(v, (int, float)) else "—"
+            out["us_10y_yield"] = pct(fred.get("us_10y"))
+            out["us_2y_yield"] = pct(fred.get("us_2y"))
+            out["us_real_yield_10y"] = pct(fred.get("real_10y"))
+            out["cpi_yoy"] = pct(fred.get("cpi_yoy"))
+            out["core_cpi_yoy"] = pct(fred.get("core_cpi_yoy"))
+            out["inflation_status"] = fred.get("inflation_regime", "—")
+            spread = fred.get("curve_spread")
+            out["yield_curve_spread"] = (f"{spread:+.2f}%" if spread is not None else "—")
+            out["yield_curve_status"] = fred.get("curve_regime", "—")
+            out["as_of"] = fred.get("cpi_yoy_asof") or fred.get("fetched_at")
+            if fred.get("stale"):
+                out["hinweis"] = fred.get("reason")
+        else:
+            for k in ("us_10y_yield", "us_2y_yield", "us_real_yield_10y", "cpi_yoy",
+                      "core_cpi_yoy", "yield_curve_spread"):
+                out[k] = "—"
+            out["inflation_status"] = "keine Daten"
+            out["yield_curve_status"] = "keine Daten"
+            out["reason"] = fred.get("reason")
+
+        try:
+            fx = ForexCurrencyEngine.get_forex_overview()
+            dxy = fx.get("dxy_index")
+            out["us_dollar_index_dxy"] = f"{dxy:.2f}" if isinstance(dxy, (int, float)) else str(dxy)
+            out["dxy_trend"] = ("📉 Schwacher Dollar (Rückenwind für Gold, Rohstoffe, Krypto)"
+                                if isinstance(dxy, (int, float)) and dxy < 101.5
+                                else "📈 Fester Dollar (Gegenwind für Rohstoffe)"
+                                if isinstance(dxy, (int, float)) and dxy > 104.5
+                                else "⚖️ Dollar im neutralen Bereich")
+        except Exception:
+            out["us_dollar_index_dxy"] = "—"
+            out["dxy_trend"] = "keine Daten"
+
+        # Score only where something was actually measured
+        score, weighed = 0.0, 0.0
+        cpi = fred.get("cpi_yoy") if fred.get("available") else None
+        if isinstance(cpi, (int, float)):
+            score += max(0.0, min(100.0, 100.0 - (cpi - 2.0) * 18.0)) * 0.5
+            weighed += 0.5
+        real = fred.get("real_10y") if fred.get("available") else None
+        if isinstance(real, (int, float)):
+            score += max(0.0, min(100.0, 100.0 - real * 20.0)) * 0.5
+            weighed += 0.5
+        out["fred_macro_score"] = round(score / weighed) if weighed else None
+
+        if out.get("fred_macro_score") is None:
+            out["verdict"] = "ℹ️ Kein Makro-Urteil ohne Inflations- und Zinsdaten."
+        elif out["fred_macro_score"] >= 70:
+            out["verdict"] = "🟢 Günstiges Makroumfeld für Risikoanlagen."
+        elif out["fred_macro_score"] >= 45:
+            out["verdict"] = "⚖️ Gemischtes Makroumfeld."
+        else:
+            out["verdict"] = "🚨 Restriktives Makroumfeld – Inflation und Realzinsen belasten Bewertungen."
+        return out
 
 # ==============================================================================
 # MODULE 6: CRYPTO ON-CHAIN & WHALE FLOWS

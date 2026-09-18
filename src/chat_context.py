@@ -273,6 +273,21 @@ def section_journal(limit: int = 4) -> str:
     return "\n".join(out) + "\n"
 
 
+def section_energy() -> str:
+    """Oil, refining margins, inventories and inflation - the chain from a supply
+    shock through to consumer prices, which the chat could not speak to at all."""
+    try:
+        from src import energy_macro
+        body = energy_macro.summarize()
+    except Exception as exc:
+        return "## ENERGIE & INFLATION\nNicht ladbar (%s).\n" % type(exc).__name__
+    return ("## ENERGIE & INFLATION (Rohoel, Raffineriemargen, Lager, Preise)\n"
+            "Der Crack-Spread ist die Raffineriemarge: er weitet sich, wenn Produkte\n"
+            "(Benzin, Heizoel) knapper sind als Rohoel - das fruehste Marktsignal fuer\n"
+            "eine Angebotsverknappung, die beim Verbraucher ankommt.\n"
+            + body + "\n")
+
+
 def section_macro() -> str:
     parts = ["## MAKRO-DATEN (live)"]
     try:
@@ -307,7 +322,8 @@ def build_context(pm=None) -> str:
     for fn, label in ((section_depots, "Depots"), (section_trades, "Transaktionen"),
                       (section_tribunal, "Tribunal"), (section_scan, "Markt-Scan"),
                       (section_alerts, "Alarme"), (section_buzz, "Buzz"),
-                      (section_insider_whales, "Insider"), (section_macro, "Makro"),
+                      (section_insider_whales, "Insider"), (section_energy, "Energie"),
+                      (section_macro, "Makro"),
                       (section_strategy, "Strategie"), (section_journal, "Lerntagebuch")):
         try:
             blocks.append(fn(pm) if fn in (section_depots, section_trades, section_buzz) else fn())

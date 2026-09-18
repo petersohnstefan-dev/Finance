@@ -108,17 +108,47 @@ class CommoditiesIntelEngine:
         wti = prices.get("wti_oil", 74.80)
         brent = prices.get("brent_oil", 79.10)
         gas = prices.get("natural_gas", 2.15)
-        crack_spread = "$22.50 / Barrel (Solide Raffinerie-Margen)"
-        
+
+        # These used to be fixed strings. The crack spread claimed "$22.50 / Barrel
+        # (Solide Raffinerie-Margen)" while the computed value was 62 - the display
+        # was hiding exactly the shortage it should have shown.
+        from src.energy_macro import get_crack_spread, get_eia_inventories
+        crack = get_crack_spread()
+        inv = get_eia_inventories()
+
+        if crack.get("available"):
+            crack_text = f"${crack['crack_spread_usd']:.2f} / Barrel ({crack['regime']})"
+        else:
+            crack_text = f"— nicht berechenbar ({crack.get('reason', '')[:60]})"
+
+        if inv.get("available"):
+            inv_text = (f"{inv['stocks_mbbl']:.1f} Mio. Barrel (Stand {inv['latest_period']}), "
+                        f"Woche {inv['change_week_mbbl']:+.1f}, 4 Wochen "
+                        f"{inv['change_4w_mbbl']:+.1f} – {inv['regime']}")
+        else:
+            inv_text = f"— keine Daten ({inv.get('reason', '')[:80]})"
+
+        # A verdict built from measured values instead of one fixed sentence
+        verdict_parts = []
+        if crack.get("available") and crack["crack_spread_usd"] >= 40:
+            verdict_parts.append("Raffineriemargen extrem hoch (Produktknappheit)")
+        if inv.get("available") and inv.get("change_4w_mbbl", 0) < -5:
+            verdict_parts.append("Lagerbestände im Abbau")
+        if brent - wti > 6:
+            verdict_parts.append(f"ungewöhnlich hohe Brent-Prämie (${brent - wti:.2f})")
+        verdict = ("🚨 " + "; ".join(verdict_parts)) if verdict_parts else                   "⚖️ Keine auffälligen Anspannungssignale im Energiekomplex."
+
         data = {
             "wti_price": wti,
             "brent_price": brent,
             "brent_wti_spread": f"${brent - wti:.2f} (Brent-Prämie)",
             "natural_gas_price": gas,
-            "eia_crude_inventory": "📉 -3.4 Mio. Barrel (Unerwarteter Lagerabbau / Hohe US-Nachfrage)",
-            "opec_spare_capacity": "3.2 Mio. Barrel/Tag (OPEC+ hält Fördermengen diszipliniert gekürzt)",
-            "crack_spread_margin": crack_spread,
-            "oil_regime_verdict": "⚖️ Geopolitische Risikoprämie trifft auf moderate globale Nachfrage."
+            "eia_crude_inventory": inv_text,
+            "opec_spare_capacity": "— keine freie Datenquelle (OPEC veröffentlicht keine API)",
+            "crack_spread_margin": crack_text,
+            "crack_spread_usd": crack.get("crack_spread_usd"),
+            "inventories": inv,
+            "oil_regime_verdict": verdict
         }
         _COMMODITIES_CACHE["energy"] = {"data": data, "ts": now}
         return data
