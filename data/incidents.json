@@ -1,5 +1,21 @@
 [
  {
+  "timestamp": "2026-09-18 10:22:09",
+  "component": "derivatives",
+  "kind": "invalid_certificate",
+  "severity": "warn",
+  "message": "Daytrade-Turbo auf SES nicht darstellbar: Basiswert SES steht bei 0.54; unter 1.0 ist kein Turbo mit tragfaehigem Stop darstellbar",
+  "context": {
+   "depot": "day_trading",
+   "symbol": "SES",
+   "kurs": 0.54,
+   "hebel": 9.0,
+   "score": 75
+  },
+  "count": 1,
+  "last_seen": "2026-09-18 10:22:09"
+ },
+ {
   "timestamp": "2026-09-18 07:27:30",
   "component": "tribunal",
   "kind": "model_unavailable",
