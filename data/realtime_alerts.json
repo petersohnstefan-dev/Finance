@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-09-18 20:05:59",
+    "time_str": "20:05:59",
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 56.36,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-18 20:05:57",
+    "time_str": "20:05:57",
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.91,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.91% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-18 20:01:32",
     "time_str": "20:01:32",
     "symbol": "STEM",
@@ -526,27 +548,5 @@
     "vol_ratio": 362.01,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HOT.DE explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-18 19:26:00",
-    "time_str": "19:26:00",
-    "symbol": "NEM.DE",
-    "direction": "SHORT",
-    "trigger_price": 60.55,
-    "change_1min_pct": 0.66,
-    "vol_ratio": 478.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEM.DE stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-18 19:21:02",
-    "time_str": "19:21:02",
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.58,
-    "change_1min_pct": 0.87,
-    "vol_ratio": 0.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
