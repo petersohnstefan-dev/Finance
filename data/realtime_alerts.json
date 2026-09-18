@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-09-18 10:01:24",
+    "time_str": "10:01:24",
+    "symbol": "CDI.PA",
+    "direction": "SHORT",
+    "trigger_price": 373.0,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CDI.PA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-18 10:01:23",
+    "time_str": "10:01:23",
+    "symbol": "NOEJ.DE",
+    "direction": "LONG",
+    "trigger_price": 17.58,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOEJ.DE explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-18 09:56:02",
     "time_str": "09:56:02",
     "symbol": "SIX2.DE",
@@ -526,27 +548,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VOS.DE explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-18 09:31:14",
-    "time_str": "09:31:14",
-    "symbol": "HAG.DE",
-    "direction": "SHORT",
-    "trigger_price": 78.26,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HAG.DE stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-18 09:26:01",
-    "time_str": "09:26:01",
-    "symbol": "SRT3.DE",
-    "direction": "LONG",
-    "trigger_price": 248.5,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRT3.DE explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
