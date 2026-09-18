@@ -197,7 +197,7 @@ with st.sidebar:
         "⚖️ KI-Tribunal (Handelsentscheidungen)",
         "💬 KI-Chatbot (Strategie & Analyse)",
         "🧠 KI-Lerntagebuch (Retrospektive)",
-        "🛠️ System-Stoerungen (Technik-Log)",
+        "🛠️ System-Störungen (Technik-Log)",
         "📖 Handelsstrategie & System-Logik"
     ]
     
@@ -1972,16 +1972,17 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         with st.expander("📖 Strategie-Handbuch & Allokations-Regeln (Nach welchen Formeln handelt die KI?)"):
             from src import strategy_doc as sd
 
-            st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
+            _strat_txt = summary.get("strategy") or summary.get("name") or selected_depot_key
+            st.markdown(f"**Aktive Depot-Strategie:** *{_strat_txt}*")
             st.caption(
                 "Alle Zahlenwerte unten werden beim Aufruf live aus `data/strategy.json` "
                 "gelesen – sie zeigen also immer, womit die Automatik gerade arbeitet. "
-                "Das KI-Lerntagebuch passt einen Teil davon naechtlich an."
+                "Das KI-Lerntagebuch passt einen Teil davon nächtlich an."
             )
 
             _changes = sd.recent_changes(14)
             if _changes:
-                with st.expander(f"🔄 {len(_changes)} Parameteraenderung(en) "
+                with st.expander(f"🔄 {len(_changes)} Parameteränderung(en) "
                                  f"durch das Lerntagebuch (14 Tage)"):
                     st.dataframe(
                         pd.DataFrame([{
@@ -1991,7 +1992,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                         use_container_width=True, hide_index=True)
             st.markdown("---")
             h_tab_dt, h_tab1, h_tab2, h_tab3, h_tab4 = st.tabs([
-                "🔥 Daytrader-Depot (Intraday / Dynamischer Hebel)",
+                "🔥 Daytrader-Depot (Intraday / Risiko-Budget)",
                 "⚡ 1. Kurzfrist-Depot (Tage–Wochen)",
                 "📈 2. Mittelfrist-Depot (1–6 Monate)",
                 "🏛️ 3. Langfrist-Depot (1–5+ Jahre)",
@@ -2054,9 +2055,9 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 * **🟢 KAUF-Trigger (Long):** Auswahl-Score ≥ **{sd.num("short_term_min_alpha_score")} / 100** ➔ **Direktkauf der Aktie** (kein Hebel auf der Long-Seite).
                 * **🔻 SHORT-Trigger:** Abwärts-Breakdown ➔ **🔻 Turbo Bear (3,5x Knock-Out Put)**.
-                * **🚨 Stop-Loss:** **{sd.num("short_term_stop_atr_mult", digits=2)} × ATR** des Werts, geklammert auf **{sd.pct("short_term_stop_min_pct")} – {sd.pct("short_term_stop_max_pct")}**. Ein volatiler Biotech bekommt so mehr Luft als ein Versorger — ein pauschaler Prozentsatz wurde bei hoher Volatilität zwangsläufig von normalem Rauschen getroffen.
+                * **🚨 Stop-Loss:** **{sd.num("short_term_stop_atr_mult", digits=1)} × ATR** des Werts, geklammert auf **{sd.pct("short_term_stop_min_pct")} – {sd.pct("short_term_stop_max_pct")}**. Ein volatiler Biotech bekommt so mehr Luft als ein Versorger — ein pauschaler Prozentsatz wurde bei hoher Volatilität zwangsläufig von normalem Rauschen getroffen.
                 * **💰 Positionsgröße:** 2.000 € × Volatilitätsfaktor, **gedeckelt auf {sd.pct("short_term_max_risk_per_trade_pct", digits=1)} Depotrisiko** pro Trade (`short_term_max_risk_per_trade_pct`) und 85 % des Cash. Ein weiterer Stop führt so zu einer kleineren Position, nicht zu mehr Risiko.
-                * **🎯 Trendfolge-Exit:** Nach **{sd.num("short_term_breakeven_trigger_atr", digits=2)} ATR Gewinn** wandert der Stop auf Einstand — ab da ist kein Verlust mehr möglich. Danach **Chandelier-Trailing {sd.num("short_term_trail_atr_mult", digits=2)} × ATR unter dem Zwischenhoch**, nie unter den Einstand.
+                * **🎯 Trendfolge-Exit:** Nach **{sd.num("short_term_breakeven_trigger_atr", digits=1)} ATR Gewinn** wandert der Stop auf Einstand — ab da ist kein Verlust mehr möglich. Danach **Chandelier-Trailing {sd.num("short_term_trail_atr_mult", digits=1)} × ATR unter dem Zwischenhoch**, nie unter den Einstand.
                 * **🛡️ Thesen-Audit:** Alpha-Score < **42 / 100** oder Put/Call > **1,35** ➔ sofortiger Ausstieg, auch ohne Stop-Berührung.
                 * **💡 Opportunitäts-Tausch:** Neuer Kandidat mit **≥ 25 Punkten** mehr Alpha ➔ schwächste Position wird liquidiert.
                 * **🛡️ Freitags-Derisking:** Gehebelte Knock-Out-Gewinne ab **+10 %** werden vor dem Wochenende realisiert.
@@ -2753,8 +2754,8 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                     render_journal(j, is_first=(idx == 0))
 
 # MODE 12: STOERUNGS-LOG
-elif app_mode == "\U0001f6e0️ System-Stoerungen (Technik-Log)":
-    st.header("\U0001f6e0️ System-Stoerungen")
+elif app_mode == "\U0001f6e0️ System-Störungen (Technik-Log)":
+    st.header("\U0001f6e0️ System-Störungen")
     st.markdown(
         "Technische Defekte – getrennt vom KI-Lerntagebuch. Das Lerntagebuch ist eine "
         "**Strategie**-Retrospektive und reagiert auf schlechte Ergebnisse mit Parameteränderungen. "

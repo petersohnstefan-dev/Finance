@@ -561,7 +561,7 @@ class PortfolioManager:
             "portfolios": {
                 "short_term": {
                     "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
-                    "strategy": "Aggressives Swing-Trading auf akute Ausbrüche, Short Squeezes & Krypto-Momentum via Hebel / Knock-Outs (Stop-Loss -7% / Take-Profit +20%).",
+                    "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
                     "initial_cash": self.initial_capital,
                     "cash": 2668.34,
                     "positions": {
@@ -605,7 +605,7 @@ class PortfolioManager:
                 },
                 "medium_term": {
                     "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
-                    "strategy": "Mittelfristige Trendfolge auf führende Wachstumsaktien & KI-Leader über der 50-Tage-Linie (Trailing Stop-Loss -10% / Take-Profit +35%).",
+                    "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
                     "initial_cash": self.initial_capital,
                     "cash": 4000.0,
                     "positions": {
@@ -639,7 +639,7 @@ class PortfolioManager:
                 },
                 "long_term": {
                     "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
-                    "strategy": "Klassisches Buy & Hold bei krisenfesten Burggraben-Unternehmen (ROE > 15%), Gold zur Absicherung, Bitcoin-Core und Bonus-Zertifikaten.",
+                    "strategy": "Buy & Hold bei Qualitätsunternehmen mit Burggraben (Piotroski, Altman, Beneish aus den Jahresabschlüssen), Gold und Bitcoin als Absicherung. Bonus-Zertifikate nur, wenn das Kurspotenzial unter dem Bonus liegt.",
                     "initial_cash": self.initial_capital,
                     "cash": 1000.0,
                     "positions": {

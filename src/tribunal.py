@@ -86,26 +86,40 @@ class AITribunalManager:
         conn.commit()
         conn.close()
 
+    #: Substrings that mark a model as unusable for the tribunal, regardless of name.
+    #: gemini-2.5-flash-preview-tts is a text-to-speech model and was being offered
+    #: as a fallback purely because its name contains "flash".
+    _MODEL_EXCLUDE = ("tts", "vision", "embedding", "aqa", "imagen", "veo", "image")
+
+    #: Preference order. Lite variants carry the most generous free-tier quota, and
+    #: the tribunal spends three calls per candidate - on 18.09. the daily quota was
+    #: exhausted by 07:27 and every purchase after that was rejected for lack of a
+    #: verdict rather than on its merits.
+    _MODEL_PREFERENCE = ("flash-lite", "1.5-flash", "flash-latest", "flash")
+
+    @staticmethod
+    def _usable_models(available: list) -> list:
+        clean = [m for m in available
+                 if not any(bad in m.lower() for bad in AITribunalManager._MODEL_EXCLUDE)]
+        ranked = []
+        for pref in AITribunalManager._MODEL_PREFERENCE:
+            for m in clean:
+                if pref in m.lower() and m not in ranked:
+                    ranked.append(m)
+        for m in clean:
+            if m not in ranked:
+                ranked.append(m)
+        return ranked
+
     def _get_fastest_model_name(self) -> str:
         if not hasattr(self, "_cached_model"):
             try:
                 available = [m.name for m in genai.list_models()
                              if 'generateContent' in m.supported_generation_methods]
-                if available:
-                    # Prefer 1.5 flash specifically because it has 1500 RPM limit on free tier,
-                    # whereas 2.5 flash often has a strict 20 RPM limit.
-                    flash_15_models = [m for m in available if '1.5-flash' in m.lower()]
-                    flash_models = [m for m in available if 'flash' in m.lower()]
-                    if flash_15_models:
-                        self._cached_model = flash_15_models[0]
-                    elif flash_models:
-                        self._cached_model = flash_models[0]
-                    else:
-                        self._cached_model = available[0]
-                else:
-                    self._cached_model = "gemini-1.5-flash"
+                usable = self._usable_models(available)
+                self._cached_model = usable[0] if usable else "models/gemini-flash-latest"
             except Exception:
-                self._cached_model = "gemini-1.5-flash"
+                self._cached_model = "models/gemini-flash-latest"
         return self._cached_model
 
     # ------------------------------------------------------------------
@@ -179,8 +193,7 @@ class AITribunalManager:
                          if 'generateContent' in m.supported_generation_methods]
         except Exception:
             return []
-        flash = [m for m in available if 'flash' in m.lower()]
-        return (flash or available)[:3]
+        return self._usable_models(available)[:3]
 
     def _call(self, system_instruction: str, prompt: str) -> Dict[str, Any]:
         model_name = self._get_fastest_model_name()
@@ -198,12 +211,18 @@ class AITribunalManager:
                 # A model that 404s is not coming back this run - forget the cached choice
                 if "404" in str(exc) and hasattr(self, "_cached_model"):
                     del self._cached_model
+        is_quota = any(t in str(last).lower() for t in ("429", "quota", "resource_exhausted"))
         incidents.record(
-            "tribunal", "model_unavailable",
-            f"Kein Gemini-Modell lieferte eine Antwort: {last}",
+            "tribunal", "quota_exhausted" if is_quota else "model_unavailable",
+            (f"Gemini-Kontingent erschoepft - bis zur Ruecksetzung werden keine Kaeufe "
+             f"freigegeben: {last}" if is_quota else
+             f"Kein Gemini-Modell lieferte eine Antwort: {last}"),
             severity="error",
             context={"versucht": candidates,
-                     "folge": "Kauf wird abgelehnt (fail-closed)"})
+                     "folge": "Kauf wird abgelehnt (fail-closed)",
+                     "hinweis": ("Das Tribunal verbraucht 3 Aufrufe je Kandidat. Bei "
+                                 "erschoepftem Kontingent hilft nur Warten oder ein "
+                                 "hoeheres Gemini-Kontingent.") if is_quota else None})
         raise RuntimeError(f"Alle Modelle fehlgeschlagen: {last}")
 
     ADVOCATE_SYS = (
