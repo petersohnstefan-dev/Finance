@@ -9,6 +9,12 @@ on:
 permissions:
   contents: write
 
+# Ein Scan-Lauf darf den naechsten nicht ueberholen: zwei parallele Laeufe
+# wuerden denselben Kandidaten zweimal pruefen und zweimal kaufen.
+concurrency:
+  group: market-scanner
+  cancel-in-progress: false
+
 jobs:
   scan-and-trade:
     runs-on: ubuntu-latest

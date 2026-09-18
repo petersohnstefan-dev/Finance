@@ -421,11 +421,45 @@ class AIJournalEngine:
         return applied
 
 
-    def generate_retrospective(self, depot_id: str, mode="daily") -> Dict[str, Any]:
+    def already_written_today(self, depot_id: str, mode: str = "daily") -> bool:
+        """True if a usable retrospective for this depot/day/mode already exists.
+
+        The database row is an upsert, so a second run looked harmless - but it
+        spends another LLM call and, worse, applies another round of parameter
+        changes while overwriting the record of the first round. An entry that only
+        holds a parse error does not count: that one should be retried.
+        """
+        try:
+            today = get_berlin_now().strftime("%Y-%m-%d")
+            conn = sqlite3.connect(DB_FILE)
+            row = conn.execute(
+                "SELECT reflection FROM ai_journal WHERE depot_id=? AND date=? AND mode=?",
+                (depot_id, today, mode)).fetchone()
+            conn.close()
+            if not row:
+                return False
+            text = str(row[0] or "")
+            failed = ("nicht lesbar" in text or "Fehler beim Parsen" in text or not text.strip())
+            return not failed
+        except Exception:
+            return False
+
+    def generate_retrospective(self, depot_id: str, mode="daily",
+                               force: bool = False) -> Dict[str, Any]:
         """Generates an AI retrospective with real statistics and actionable parameter updates."""
         if not self.api_key:
             raise ValueError("Kein Gemini API Key vorhanden.")
-            
+
+        if not force and self.already_written_today(depot_id, mode):
+            incidents.record(
+                "ai_journal", "duplicate_run_skipped",
+                f"{depot_id}/{mode}: Retrospektive fuer heute lag bereits vor - "
+                f"zweiter Lauf uebersprungen",
+                severity="info", context={"depot": depot_id, "mode": mode})
+            raise RuntimeError(
+                f"Retrospektive fuer {depot_id} ({mode}) wurde heute bereits erstellt. "
+                f"Mit --force erzwingen.")
+
         now = get_berlin_now()
         today_str = now.strftime("%Y-%m-%d")
         

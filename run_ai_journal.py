@@ -15,7 +15,8 @@ def main():
         
     engine = AIJournalEngine(api_key)
     
-    mode = "weekly" if len(sys.argv) > 1 and sys.argv[1] == "--weekly" else "daily"
+    mode = "weekly" if "--weekly" in sys.argv else "daily"
+    force = "--force" in sys.argv
     
     if mode == "daily":
         print("=" * 60)
@@ -24,7 +25,7 @@ def main():
         for depot in ["day_trading", "short_term"]:
             try:
                 print(f"\n📊 Analysiere {depot}...")
-                result = engine.generate_retrospective(depot_id=depot, mode="daily")
+                result = engine.generate_retrospective(depot_id=depot, mode="daily", force=force)
                 print(f"  ✅ Erfolgreich generiert für: {depot}")
                 print(f"  Win-Rate (gesamt): {result['win_rate']}%")
                 if result.get('param_updates') and result['param_updates'] != '{}':
@@ -38,7 +39,7 @@ def main():
         for depot in ["medium_term", "long_term"]:
             try:
                 print(f"\n📊 Analysiere {depot}...")
-                result = engine.generate_retrospective(depot_id=depot, mode="weekly")
+                result = engine.generate_retrospective(depot_id=depot, mode="weekly", force=force)
                 print(f"  ✅ Erfolgreich generiert für: {depot}")
                 print(f"  Win-Rate (gesamt): {result['win_rate']}%")
                 if result.get('param_updates') and result['param_updates'] != '{}':

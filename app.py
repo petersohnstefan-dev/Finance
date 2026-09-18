@@ -1970,7 +1970,25 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         # Strategy Handbook & Strategy Info (Moved to bottom)
         st.markdown("---")
         with st.expander("📖 Strategie-Handbuch & Allokations-Regeln (Nach welchen Formeln handelt die KI?)"):
+            from src import strategy_doc as sd
+
             st.markdown(f"**Aktive Depot-Strategie:** *{summary['strategy']}*")
+            st.caption(
+                "Alle Zahlenwerte unten werden beim Aufruf live aus `data/strategy.json` "
+                "gelesen – sie zeigen also immer, womit die Automatik gerade arbeitet. "
+                "Das KI-Lerntagebuch passt einen Teil davon naechtlich an."
+            )
+
+            _changes = sd.recent_changes(14)
+            if _changes:
+                with st.expander(f"🔄 {len(_changes)} Parameteraenderung(en) "
+                                 f"durch das Lerntagebuch (14 Tage)"):
+                    st.dataframe(
+                        pd.DataFrame([{
+                            "Datum": c["date"], "Depot": c["depot"], "Parameter": c["param"],
+                            "vorher": c["old"], "nachher": c["new"],
+                        } for c in _changes]),
+                        use_container_width=True, hide_index=True)
             st.markdown("---")
             h_tab_dt, h_tab1, h_tab2, h_tab3, h_tab4 = st.tabs([
                 "🔥 Daytrader-Depot (Intraday / Dynamischer Hebel)",
@@ -1981,7 +1999,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
             ])
 
             with h_tab_dt:
-                st.markdown("""
+                st.markdown(f"""
                 #### 🔥 Daytrader-Depot (Intraday-Momentum mit Risiko-Budget)
                 **Ziel:** Intraday-Ausbrüche mit gehebelten Turbos reiten — aber nur solche, die eine mehrstufige Qualitätsprüfung bestehen. Kein Risiko über Nacht.
 
@@ -1995,20 +2013,20 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | **🎯 Chance-Risiko (CRV)** | **20** | 2× ATR des Basiswerts gegen den Stopabstand (Zertifikats-Stop ÷ Hebel): ≥ 2,0 → 20 P., ≥ 1,5 → 10 P. |
                 | **🌡️ Marktumfeld** | **15** | VIX-Modus NORMAL → 15 P., DEFENSIVE → 5 P. |
 
-                * **🟢 KAUF-Trigger:** Score ≥ **65 / 100** (`daytrade_min_entry_score`). Im DEFENSIVE-Modus sind **80** nötig. Bewertet werden die **8 stärksten** Kandidaten, gekauft wird der **beste** — nicht der neueste Alarm.
-                * **🚀 Hebel:** Nach Spike-Stärke **1x / 3x / 5x / 7x / 10x**, hart gedeckelt durch `daytrade_max_leverage` (aktuell **10x**). Unter 0,5 % Spike wird die Aktie direkt gekauft.
-                * **💰 Positionsgröße:** Risikobasiert — maximal **2 % des Depotwerts** Verlust pro Trade (`daytrade_max_risk_per_trade_pct`), geteilt durch den Stopabstand. Nie mehr als 90 % des Cash.
-                * **🚨 Stop-Loss:** **15 %** auf das Zertifikat (`daytrade_stop_loss_pct`). Bei Knock-Out-Berührung Totalverlust.
-                * **🎯 Dreistufiges Trailing:** ab **+3 %** Stop auf Einstand · ab **+5 %** Stop auf +2 % · ab **+10 %** Trailing 5 % unter dem Zwischenhoch.
+                * **🟢 KAUF-Trigger:** Score ≥ **{sd.num("daytrade_min_entry_score")} / 100** (`daytrade_min_entry_score`). Im DEFENSIVE-Modus sind **80** nötig. Bewertet werden die **{sd.num("daytrade_max_candidates_scored")} stärksten** Kandidaten, gekauft wird der **beste** — nicht der neueste Alarm.
+                * **🚀 Hebel:** Nach Spike-Stärke **1x / 3x / 5x / 7x / 10x**, hart gedeckelt durch `daytrade_max_leverage` (aktuell **{sd.num("daytrade_max_leverage")}x**). Unter 0,5 % Spike wird die Aktie direkt gekauft.
+                * **💰 Positionsgröße:** Risikobasiert — maximal **{sd.pct("daytrade_max_risk_per_trade_pct")} des Depotwerts** Verlust pro Trade (`daytrade_max_risk_per_trade_pct`), geteilt durch den Stopabstand. Nie mehr als 90 % des Cash.
+                * **🚨 Stop-Loss:** **{sd.pct("daytrade_stop_loss_pct")}** auf das Zertifikat (`daytrade_stop_loss_pct`). Bei Knock-Out-Berührung Totalverlust.
+                * **🎯 Dreistufiges Trailing:** ab **+{sd.pct("daytrade_trailing_breakeven_pct")}** Stop auf Einstand · ab **+{sd.pct("daytrade_trailing_lock_pct")}** Stop auf +2 % · ab **+{sd.pct("daytrade_trailing_aggressive_pct")}** Trailing 5 % unter dem Zwischenhoch.
                 * **🛡️ EOD-Zwangsverkauf:** Ab **21:00 Uhr werden ALLE Positionen geschlossen** — unabhängig von Gewinn oder Verlust (`daytrade_eod_close_all`).
 
                 ##### 🛑 Risiko-Sperren (jede blockiert neue Einstiege)
                 | Sperre | Schwelle |
                 | :--- | :--- |
-                | **VIX-Modus** | ≥ 25 → DEFENSIVE (halbes Risiko, Score-Hürde 80) · ≥ 35 → **PAUSE**, gar keine Einstiege |
-                | **Tages-Verlustlimit** | −5 % des Depotwerts → gesperrt bis zum nächsten Tag |
-                | **Trade-Limit** | max. **5 Trades pro Tag** |
-                | **Klumpenrisiko** | max. **2 Positionen im selben Sektor** |
+                | **VIX-Modus** | ≥ {sd.num("daytrade_vix_defensive_threshold")} → DEFENSIVE (halbes Risiko, Score-Hürde 80) · ≥ {sd.num("daytrade_vix_pause_threshold")} → **PAUSE**, gar keine Einstiege |
+                | **Tages-Verlustlimit** | −{sd.pct("daytrade_max_daily_loss_pct")} des Depotwerts → gesperrt bis zum nächsten Tag |
+                | **Trade-Limit** | max. **{sd.num("daytrade_max_daily_trades")} Trades pro Tag** |
+                | **Klumpenrisiko** | max. **{sd.num("daytrade_max_correlated_positions")} Positionen im selben Sektor** |
                 | **Kein Revenge-Trading** | dasselbe Symbol wird an einem Tag nur einmal gehandelt |
                 | **Signal-Frische** | Alarm muss **jünger als 15 Minuten** sein |
                 | **Handelsfenster** | Einstiege nur zwischen **8:00 und 21:00 Uhr** |
@@ -2017,13 +2035,13 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
 
             with h_tab1:
-                st.markdown("""
+                st.markdown(f"""
                 #### ⚡ Kurzfristiges Trading-Depot (Trendfolge, Smart Money & Shorts)
                 **Ziel:** Ausbrüche über Tage bis Wochen begleiten. Verluste werden eng begrenzt, **Gewinner dürfen laufen** — es gibt kein festes Kursziel.
 
-                **Kandidaten:** Echtzeit-Alarme **ab 1,5 % Spike** (`short_term_min_spike_pct`) *plus* die Top 10 des Markt-Scans. Beide Quellen laufen durch **dieselbe** Bewertung.
+                **Kandidaten:** Echtzeit-Alarme **ab {sd.raw_pct("short_term_min_spike_pct")} Spike** (`short_term_min_spike_pct`) *plus* die Top 10 des Markt-Scans. Beide Quellen laufen durch **dieselbe** Bewertung.
 
-                **Auswahl-Score = Breakout-Score × 0,4 + Alpha-Score × 0,6** (max. 12 Kandidaten pro Lauf). Werte ohne Breakout-Messung bekommen neutrale 50 Punkte, damit fehlende Daten kein Vorteil sind.
+                **Auswahl-Score = Breakout-Score × 0,4 + Alpha-Score × 0,6** (max. {sd.num("short_term_max_candidates_scored")} Kandidaten pro Lauf). Werte ohne Breakout-Messung bekommen neutrale 50 Punkte, damit fehlende Daten kein Vorteil sind.
 
                 | Bestandteil des Alpha-Scores | Gewichtung | Datenquelle |
                 | :--- | :---: | :--- |
@@ -2034,11 +2052,11 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
 
                 **⚖️ Umgang mit fehlenden Daten:** Ein Baustein ohne Datengrundlage wird **aus der Gewichtung entfernt**, nicht durch einen Schätzwert ersetzt. Anschließend wird der Score in Richtung 50 geschrumpft – im Verhältnis dazu, wie viel Gewicht tatsächlich durch Messungen gedeckt ist (`data_quality`). Eine dünne Datenlage kann so keine hohe Überzeugung mehr erzeugen. Der **Thesen-Ausstieg ist ausgesetzt**, solange weniger als 45 % des Scores gedeckt sind.
 
-                * **🟢 KAUF-Trigger (Long):** Auswahl-Score ≥ **55 / 100** ➔ **Direktkauf der Aktie** (kein Hebel auf der Long-Seite).
+                * **🟢 KAUF-Trigger (Long):** Auswahl-Score ≥ **{sd.num("short_term_min_alpha_score")} / 100** ➔ **Direktkauf der Aktie** (kein Hebel auf der Long-Seite).
                 * **🔻 SHORT-Trigger:** Abwärts-Breakdown ➔ **🔻 Turbo Bear (3,5x Knock-Out Put)**.
-                * **🚨 Stop-Loss:** **2,5 × ATR** des Werts, geklammert auf **6 – 25 %**. Ein volatiler Biotech bekommt so mehr Luft als ein Versorger — ein pauschaler Prozentsatz wurde bei hoher Volatilität zwangsläufig von normalem Rauschen getroffen.
-                * **💰 Positionsgröße:** 2.000 € × Volatilitätsfaktor, **gedeckelt auf 1,5 % Depotrisiko** pro Trade (`short_term_max_risk_per_trade_pct`) und 85 % des Cash. Ein weiterer Stop führt so zu einer kleineren Position, nicht zu mehr Risiko.
-                * **🎯 Trendfolge-Exit:** Nach **1 ATR Gewinn** wandert der Stop auf Einstand — ab da ist kein Verlust mehr möglich. Danach **Chandelier-Trailing 2,5 × ATR unter dem Zwischenhoch**, nie unter den Einstand.
+                * **🚨 Stop-Loss:** **{sd.num("short_term_stop_atr_mult", digits=2)} × ATR** des Werts, geklammert auf **{sd.pct("short_term_stop_min_pct")} – {sd.pct("short_term_stop_max_pct")}**. Ein volatiler Biotech bekommt so mehr Luft als ein Versorger — ein pauschaler Prozentsatz wurde bei hoher Volatilität zwangsläufig von normalem Rauschen getroffen.
+                * **💰 Positionsgröße:** 2.000 € × Volatilitätsfaktor, **gedeckelt auf {sd.pct("short_term_max_risk_per_trade_pct", digits=1)} Depotrisiko** pro Trade (`short_term_max_risk_per_trade_pct`) und 85 % des Cash. Ein weiterer Stop führt so zu einer kleineren Position, nicht zu mehr Risiko.
+                * **🎯 Trendfolge-Exit:** Nach **{sd.num("short_term_breakeven_trigger_atr", digits=2)} ATR Gewinn** wandert der Stop auf Einstand — ab da ist kein Verlust mehr möglich. Danach **Chandelier-Trailing {sd.num("short_term_trail_atr_mult", digits=2)} × ATR unter dem Zwischenhoch**, nie unter den Einstand.
                 * **🛡️ Thesen-Audit:** Alpha-Score < **42 / 100** oder Put/Call > **1,35** ➔ sofortiger Ausstieg, auch ohne Stop-Berührung.
                 * **💡 Opportunitäts-Tausch:** Neuer Kandidat mit **≥ 25 Punkten** mehr Alpha ➔ schwächste Position wird liquidiert.
                 * **🛡️ Freitags-Derisking:** Gehebelte Knock-Out-Gewinne ab **+10 %** werden vor dem Wochenende realisiert.
@@ -2047,7 +2065,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 """)
 
             with h_tab2:
-                st.markdown("""
+                st.markdown(f"""
                 #### 📈 Mittelfristiges Trend- & Growth-Depot (Swing, Wachstum & Makro-Hedging)
                 **Ziel:** Starke Aufwärtstrends reiten und das Buch bei Marktstress aktiv absichern.
 
@@ -2069,7 +2087,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 """)
 
             with h_tab3:
-                st.markdown("""
+                st.markdown(f"""
                 #### 🏛️ Langfristiges Investment-Depot (Quality, Gold, Moat & Crash-Schutz)
                 **Ziel:** Krisenfestes Compounding mit starkem Burggraben, Gold, digitalem Wertspeicher & defensiven Bonus-Zertifikaten.
 
@@ -2081,7 +2099,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 | **🏰 Kapitalrendite & Burggraben** | **10 %** | ROE > 15 %, freie Cashflow-Marge > 15 %, Preissetzungsmacht |
                 | **🏷️ Bewertung & Capped Bonus** | **10 %** | KGV < 25 oder PEG < 1.2 |
 
-                * **🟢 KAUF-Trigger:** **Langfrist-Score ≥ 75 / 100** (`long_term_min_score`). Wird die Hürde von keinem Kandidaten erreicht, **bleibt das Depot in Cash** statt den am wenigsten schlechten Wert zu kaufen.
+                * **🟢 KAUF-Trigger:** **Langfrist-Score ≥ {sd.num("long_term_min_score")} / 100** (`long_term_min_score`). Wird die Hürde von keinem Kandidaten erreicht, **bleibt das Depot in Cash** statt den am wenigsten schlechten Wert zu kaufen.
                 * **🛡️ Ab Score ≥ 90** wird statt der Aktie ein **Bonus-Zertifikat** gekauft (−25 % Sicherheitspuffer, +14 % Bonusrendite).
                 * **🛡️ Bilanz- & Burggraben-Audit:** Verschlechtert sich die Bonität (Piotroski < 5, Altman Z Richtung Notlage), trennt sich das System vom Titel, um Value Traps zu vermeiden.
                 * **🛡️ Gold & Krypto als natürlicher Hedge** gegen Geldentwertung und geopolitische Krisen.
@@ -2090,7 +2108,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 """)
 
             with h_tab4:
-                st.markdown("""
+                st.markdown(f"""
                 #### 🪙 Makro-Filter in der Entscheidungs-Engine
                 **Diese vier Kennzahlen verändern den Alpha-Score jedes Werts** (Makro-Block = 20 % des Alpha-Scores):
 

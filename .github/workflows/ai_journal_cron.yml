@@ -6,10 +6,23 @@ on:
     - cron: '30 20 * * 1-5'
     # Jeden Freitag um 21:00 UTC (23:00 CEST) für die Weekly-Retrospektive
     - cron: '0 21 * * 5'
-  workflow_dispatch: # Erlaubt manuellen Start via GitHub UI
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Welche Retrospektive?"
+        required: true
+        default: daily
+        type: choice
+        options: [daily, weekly]
 
 permissions:
   contents: write
+
+# Ohne diese Klammer koennen sich zwei Laeufe ueberholen und beide eine
+# Retrospektive schreiben - am 11.09. ist das passiert (22:41 und 22:50).
+concurrency:
+  group: ai-journal
+  cancel-in-progress: false
 
 jobs:
   generate-journal:
@@ -30,14 +43,14 @@ jobs:
           pip install -r requirements.txt
 
       - name: "\U0001F4DD Tägliche Retrospektive generieren (Mo-Fr)"
-        if: github.event.schedule == '30 20 * * 1-5' || github.event_name == 'workflow_dispatch'
+        if: github.event.schedule == '30 20 * * 1-5' || inputs.mode == 'daily'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python run_ai_journal.py
 
       - name: "\U0001F4C5 Wöchentliche Retrospektive generieren (Fr)"
-        if: github.event.schedule == '0 21 * * 5' || github.event_name == 'workflow_dispatch'
+        if: github.event.schedule == '0 21 * * 5' || inputs.mode == 'weekly'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
