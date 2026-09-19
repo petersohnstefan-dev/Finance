@@ -70,66 +70,80 @@ class OptionsDarkPoolEngine:
             "smart_money_score": 72
         }
 
+    #: Liquid names whose option chains yfinance actually serves.
+    _FLOW_UNIVERSE = ["NVDA", "TSLA", "AAPL", "MSFT", "AMD", "PLTR", "META",
+                      "AMZN", "GOOGL", "COIN", "MSTR", "SMCI", "MRNA", "NFLX"]
+
     @staticmethod
     def get_top_unusual_options_alerts() -> List[Dict[str, Any]]:
-        import random
-        from datetime import date
-        from src.wkn_mapping import get_wkn
-        
-        # Große Datenbank an potenziellen Alerts
-        all_alerts = [
-            {"symbol": "MRNA", "name": "Moderna", "type": "⚡ Ungewöhnlicher OTM Call-Sweep", "strike": "Calls", "premium": "$1.8 Mio.", "pcr": 0.28, "sig": "🟢 Extrem bullische Vorab-Positionierung"},
-            {"symbol": "NVDA", "name": "Nvidia", "type": "⚡ Institutional Dark Pool Block", "strike": "Calls", "premium": "$4.5 Mio.", "pcr": 0.42, "sig": "🟢 Institutionelle Großkäufe"},
-            {"symbol": "PLTR", "name": "Palantir", "type": "⚡ Aggressive Call-Akkumulation", "strike": "Calls", "premium": "$2.2 Mio.", "pcr": 0.35, "sig": "🟢 Starke Nachfrage nach Upside-Hebel"},
-            {"symbol": "TSLA", "name": "Tesla", "type": "🔻 Massiver Put-Sweep", "strike": "Puts", "premium": "$5.1 Mio.", "pcr": 1.45, "sig": "🔴 Smart Money wettet auf Kurseinbruch"},
-            {"symbol": "AAPL", "name": "Apple", "type": "⚡ Dark Pool Print (Block Trade)", "strike": "Aktien", "premium": "$12.0 Mio.", "pcr": 0.85, "sig": "🟡 Stille Akkumulation durch Großinvestor"},
-            {"symbol": "META", "name": "Meta", "type": "⚡ ITM Call-Roll", "strike": "Calls", "premium": "$3.4 Mio.", "pcr": 0.55, "sig": "🟢 Laufzeitverlängerung bestehender Longs"},
-            {"symbol": "AMD", "name": "AMD", "type": "⚡ OTM Call-Sweep (Kurzläufer)", "strike": "Calls", "premium": "$1.2 Mio.", "pcr": 0.30, "sig": "🟢 Hochrisiko-Wette auf schnellen Ausbruch"},
-            {"symbol": "SMCI", "name": "Super Micro", "type": "🔻 Schutz-Puts (Hedging)", "strike": "Puts", "premium": "$6.5 Mio.", "pcr": 1.25, "sig": "🔴 massive Absicherung vor Quartalszahlen"},
-            {"symbol": "NFLX", "name": "Netflix", "type": "⚡ Bull Call Spread", "strike": "Calls", "premium": "$2.8 Mio.", "pcr": 0.60, "sig": "🟢 Gezielte Wette auf moderate Kursgewinne"},
-            {"symbol": "CRWD", "name": "CrowdStrike", "type": "⚡ Institutional Dark Pool Block", "strike": "Aktien", "premium": "$4.2 Mio.", "pcr": 0.70, "sig": "🟢 Großer Support auf aktuellem Niveau"},
-            {"symbol": "UBER", "name": "Uber", "type": "⚡ Call-Sweep", "strike": "Calls", "premium": "$1.5 Mio.", "pcr": 0.45, "sig": "🟢 Smart Money erwartet gute Zahlen"},
-            {"symbol": "COIN", "name": "Coinbase", "type": "⚡ Aggressive Call-Akkumulation", "strike": "Calls", "premium": "$3.1 Mio.", "pcr": 0.38, "sig": "🟢 Krypto-Momentum Hebel"},
-            {"symbol": "SNOW", "name": "Snowflake", "type": "🔻 OTM Put-Sweep", "strike": "Puts", "premium": "$2.3 Mio.", "pcr": 1.30, "sig": "🔴 Short-Seller bauen Druck auf"},
-            {"symbol": "MSTR", "name": "MicroStrategy", "type": "⚡ Volatilitäts-Calls", "strike": "Calls", "premium": "$4.8 Mio.", "pcr": 0.50, "sig": "🟢 Wette auf massiven Bitcoin-Ausbruch"},
-            {"symbol": "RHM.DE", "name": "Rheinmetall", "type": "⚡ OTC Block-Trade", "strike": "Aktien", "premium": "€8.5 Mio.", "pcr": 0.65, "sig": "🟢 Institutioneller Nachkauf in Europa"}
-        ]
-        
-        # Deterministischer Seed basierend auf dem aktuellen Datum
-        # (Dadurch ändern sich die Daten jeden Tag automatisch, bleiben aber am selben Tag stabil)
-        today = date.today()
-        rnd = random.Random(today.toordinal())
-        
-        # Wähle 4 zufällige Alerts für den heutigen Tag
-        daily_selection = rnd.sample(all_alerts, 4)
-        
-        # Expiry dynamisch auf aktuelle/nächste Monate setzen
-        months = ["Sep", "Okt", "Nov", "Dez", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug"]
-        curr_m = today.month - 1
-        
-        results = []
-        for i, item in enumerate(daily_selection):
-            # Verteile die Expirys auf die nächsten 1-3 Monate
-            exp_m = (curr_m + rnd.randint(0, 3)) % 12
-            exp_str = f"{months[exp_m]} {today.year if exp_m >= curr_m else today.year + 1}"
-            
-            results.append({
-                "wkn": get_wkn(item["symbol"]),
-                "symbol": item["symbol"],
-                "name": item["name"],
-                "type": item["type"],
-                "strike": item["strike"],
-                "expiry": exp_str,
-                "premium": item["premium"],
-                "put_call_ratio": item["pcr"],
-                "signal": item["sig"]
-            })
-            
-        return results
+        """Most conspicuous option chains right now, measured rather than listed.
 
-# ==============================================================================
-# MODULE 2: BAFIN & BUNDESANZEIGER NET SHORT REGISTER (DE & EU)
-# ==============================================================================
+        This used to return a fixed table picked at random from hardcoded entries -
+        SNOW, SMCI, MRNA and UBER with "Aug 2026" expiries that never changed.
+        yfinance serves real chains for liquid US names, so the put/call ratio and
+        the volume-to-open-interest ratio are simply read off them.
+
+        Volume over open interest is the part that says "today": open interest is
+        yesterday's positioning, so a ratio far above 1 means today's flow is large
+        relative to everything already in place.
+        """
+        import concurrent.futures
+        from src.wkn_mapping import get_wkn
+
+        def probe(sym: str):
+            try:
+                t = yf.Ticker(sym)
+                expirations = t.options
+                if not expirations:
+                    return None
+                chain = t.option_chain(expirations[0])
+                c_vol = int(chain.calls["volume"].fillna(0).sum())
+                p_vol = int(chain.puts["volume"].fillna(0).sum())
+                c_oi = int(chain.calls["openInterest"].fillna(0).sum())
+                p_oi = int(chain.puts["openInterest"].fillna(0).sum())
+                if c_vol + p_vol < 500:
+                    return None                      # too thin to read anything into
+                pcr = round(p_vol / c_vol, 2) if c_vol else None
+                total_oi = c_oi + p_oi
+                turnover = round((c_vol + p_vol) / total_oi, 2) if total_oi else None
+                try:
+                    name = t.fast_info.get("shortName") or sym
+                except Exception:
+                    name = sym
+                if pcr is None:
+                    return None
+                if pcr <= 0.6:
+                    typ, signal = "⚡ Call-Uebergewicht", "\U0001f7e2 Bullische Positionierung"
+                elif pcr >= 1.2:
+                    typ, signal = "\U0001f53b Put-Uebergewicht", "\U0001f534 Absicherung oder Short-Druck"
+                else:
+                    typ, signal = "⚖️ Ausgeglichen", "⚪ Keine klare Richtung"
+                return {
+                    "symbol": sym,
+                    "wkn": get_wkn(sym),
+                    "name": str(name)[:26],
+                    "type": typ,
+                    "expiry": expirations[0],
+                    "calls_volume": c_vol,
+                    "puts_volume": p_vol,
+                    "put_call_ratio": pcr,
+                    "open_interest": total_oi,
+                    "turnover_ratio": turnover,
+                    "signal": signal,
+                }
+            except Exception:
+                return None
+
+        rows = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+            for r in pool.map(probe, OptionsDarkPoolEngine._FLOW_UNIVERSE):
+                if r:
+                    rows.append(r)
+
+        # Most conspicuous first: distance of the put/call ratio from balance
+        rows.sort(key=lambda r: abs((r["put_call_ratio"] or 1.0) - 0.85), reverse=True)
+        return rows[:8]
+
 class BaFinShortRegister:
     """Official German & European net short position register (>= 0.5% of equity)."""
 
@@ -391,15 +405,50 @@ class CryptoOnChainEngine:
 
     @staticmethod
     def get_onchain_metrics() -> Dict[str, Any]:
-        return {
-            "btc_exchange_netflow": "📉 -18.400 BTC (Starke Netto-Abflüsse in Cold Wallets / Angebotsschock)",
-            "stablecoin_supply_ratio": " Mrd. USDT/USDC (Rekord-Trockenpulver an den Seitenlinien)",
-            "whale_wallet_accumulation": "🟢 Wale (>1.000 BTC) akkumulieren seit 60 Tagen kontinuierlich",
-            "mvrv_z_score": "1.85 (Gesunder Bullenmarkt-Bereich / Weit entfernt von Manie-Top > 6.0)",
-            "fear_and_greed_index": "58 / 100 (Greed / Gier - Gesundes Marktumfeld)",
-            "onchain_score": 82,
-            "summary": "🚀 Fundamentale On-Chain-Daten signalisieren Verknappung des liquiden Angebots bei hoher Kaufbereitschaft."
+        """Crypto sentiment from a free source; on-chain flows reported as absent.
+
+        Every field here used to be a fixed string - exchange netflow "-18.400 BTC",
+        MVRV 1.85, a fear & greed index of 58 that never moved. The fear & greed
+        index has a free public API and is fetched; exchange flows, whale wallets
+        and MVRV need a paid on-chain provider, so they say so rather than showing
+        invented figures.
+        """
+        out: Dict[str, Any] = {
+            "btc_exchange_netflow": "— keine kostenlose Quelle (On-Chain-Anbieter noetig)",
+            "whale_wallet_accumulation": "— keine kostenlose Quelle",
+            "mvrv_z_score": "— keine kostenlose Quelle",
+            "stablecoin_supply_ratio": "— keine kostenlose Quelle",
         }
+        try:
+            import requests
+            resp = requests.get("https://api.alternative.me/fng/?limit=8", timeout=8)
+            data = resp.json().get("data", []) if resp.status_code == 200 else []
+            if data:
+                cur = int(data[0]["value"])
+                out["fear_and_greed_index"] = f"{cur} / 100 ({data[0].get('value_classification')})"
+                week = [int(d["value"]) for d in data if d.get("value")]
+                if len(week) >= 7:
+                    out["fear_greed_7d_avg"] = round(sum(week[:7]) / 7)
+                    out["fear_greed_trend"] = ("steigend" if cur > week[6]
+                                               else "fallend" if cur < week[6] else "seitwaerts")
+                out["onchain_score"] = cur
+                out["onchain_verdict"] = (
+                    "🚨 Extreme Gier - historisch ein schlechter Einstiegszeitpunkt" if cur >= 80
+                    else "⚠️ Gier im Markt" if cur >= 60
+                    else "⚖️ Neutrale Stimmung" if cur >= 40
+                    else "👀 Angst - historisch guenstigere Einstiege" if cur >= 20
+                    else "🚨 Extreme Angst")
+                out["summary"] = out["onchain_verdict"]
+                out["available"] = True
+                return out
+        except Exception:
+            pass
+        out.update({"fear_and_greed_index": "— nicht abrufbar",
+                    "onchain_score": None,
+                    "onchain_verdict": "ℹ️ Krypto-Stimmungsindex derzeit nicht abrufbar",
+                    "summary": "ℹ️ Keine Krypto-Stimmungsdaten verfuegbar",
+                    "available": False})
+        return out
 
 # ==============================================================================
 # MASTER INTELLIGENCE HUB (Combines all 6 modules)

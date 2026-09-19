@@ -19,9 +19,15 @@ ALERTS_FILE = data_file("realtime_alerts.json")
 STRATEGY_FILE = data_file("strategy.json")
 ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
 
-#: A parameter moved in one direction may not be moved the same way again
-#: until its effect could plausibly show up in the statistics.
-PARAM_CHANGE_COOLDOWN_DAYS = 3
+#: A parameter moved in one direction may not be moved the same way again until
+#: its effect could plausibly show up in the statistics. Measured in CLOSED TRADES,
+#: not in days: three days is one trade in the short-term depot and a dozen in the
+#: daytrader, and a time-based lock merely slows a drift instead of stopping it -
+#: at one step every four days the stop multiplier would have been walked from 2.5
+#: back down to its 1.5 floor within a fortnight.
+PARAM_CHANGE_MIN_TRADES = 5
+#: How far back to look for previous changes at all.
+PARAM_CHANGE_LOOKBACK_DAYS = 30
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 
@@ -332,16 +338,38 @@ class AIJournalEngine:
             pass
         return out
 
-    def format_change_history(self, days: int = 4) -> str:
+    def _closed_trades_since(self, depot_id: str, date_str: str) -> int:
+        """Closed trades in this depot since a given date - the evidence that has
+        accumulated since a parameter was last touched."""
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            n = conn.execute(
+                "SELECT COUNT(*) FROM trades WHERE depot_id = ? AND trade_type = 'SELL' "
+                "AND pnl IS NOT NULL AND substr(executed_at, 1, 10) > ?",
+                (depot_id, date_str)).fetchone()[0]
+            conn.close()
+            return int(n)
+        except Exception:
+            return 0
+
+    def format_change_history(self, days: int = PARAM_CHANGE_LOOKBACK_DAYS,
+                              depot_id: Optional[str] = None) -> str:
         hist = self._recent_param_changes(days)
         if not hist:
             return "Keine Parameteraenderungen in den letzten Tagen."
-        lines = []
+        out = []
         for name, entries in sorted(hist.items()):
             chain = " -> ".join(str(e["old"]) for e in reversed(entries))
             chain += f" -> {entries[0]['new']}"
-            lines.append(f"- {name}: {chain} (zuletzt {entries[0]['date']})")
-        return "\n".join(lines)
+            note = ""
+            if depot_id:
+                n = self._closed_trades_since(depot_id, entries[0]["date"])
+                note = f" | seither {n} abgeschlossene Trades"
+                if n < PARAM_CHANGE_MIN_TRADES:
+                    note += (f" - unter {PARAM_CHANGE_MIN_TRADES}, eine erneute "
+                             f"Aenderung in dieselbe Richtung wird abgelehnt")
+            out.append(f"- {name}: {chain} (zuletzt {entries[0]['date']}){note}")
+        return chr(10).join(out)
 
     def _apply_param_updates(self, updates: Dict[str, Any],
                              depot_id: Optional[str] = None) -> Dict[str, Any]:
@@ -359,7 +387,7 @@ class AIJournalEngine:
             return {}
 
         current = self._load_strategy()
-        history = self._recent_param_changes(PARAM_CHANGE_COOLDOWN_DAYS)
+        history = self._recent_param_changes(PARAM_CHANGE_LOOKBACK_DAYS)
         allowed_prefixes = self.DEPOT_PREFIX.get(depot_id or "", ())
         applied, rejected = {}, {}
 
@@ -395,8 +423,10 @@ class AIJournalEngine:
 
             direction = 1 if new_value > old_value else -1
 
-            # Guard 2: no second push in the same direction while the last one is
-            # still young - its effect cannot have shown up in the statistics yet.
+            # Guard 2: do not push the same direction again until the previous push
+            # has been tested by real trades. Counting days instead of trades let a
+            # slow drift walk a parameter to its bound while every single step
+            # looked individually justified.
             past = history.get(param_name) or []
             if past:
                 last = past[0]
@@ -404,10 +434,13 @@ class AIJournalEngine:
                     last_dir = 1 if float(last["new"]) > float(last["old"]) else -1
                 except (TypeError, ValueError):
                     last_dir = 0
-                if last_dir == direction:
+                evidence = self._closed_trades_since(depot_id or "", last["date"])
+                if last_dir == direction and evidence < PARAM_CHANGE_MIN_TRADES:
                     rejected[param_name] = (
-                        f"bereits am {last['date']} in dieselbe Richtung gedreht "
-                        f"({last['old']} -> {last['new']}); Wirkung noch nicht messbar")
+                        f"seit der Aenderung am {last['date']} ({last['old']} -> "
+                        f"{last['new']}) erst {evidence} abgeschlossene Trades; "
+                        f"mindestens {PARAM_CHANGE_MIN_TRADES} noetig, um die Wirkung "
+                        f"zu beurteilen")
                     continue
 
             # Guard 3: at most one configured step per run
@@ -416,6 +449,10 @@ class AIJournalEngine:
                 capped = old_value + direction * step
                 if abs(new_value - old_value) > abs(step) * 1.001:
                     new_value = cast_to(max(bounds["min"], min(bounds["max"], capped)))
+                # 0.15 - 0.01 lands on 0.13999999999999999 in binary floating point,
+                # which then shows up verbatim in the dashboard and the journal entry.
+                if isinstance(new_value, float):
+                    new_value = round(new_value, 4)
                     rejected[param_name] = (
                         f"Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)")
 
@@ -536,10 +573,11 @@ eines algorithmischen Trading-Systems und schlägst KONKRETE Parameteränderunge
 - Max. Verluststrecke: {alltime_stats['max_consecutive_losses']}
 
 ### BEREITS VORGENOMMENE PARAMETERAENDERUNGEN (letzte Tage):
-{self.format_change_history()}
-Drehe einen Parameter NICHT erneut in dieselbe Richtung, solange die Wirkung der
-letzten Aenderung noch nicht in den Statistiken sichtbar sein kann. Solche
-Vorschlaege werden automatisch abgelehnt.
+{self.format_change_history(depot_id=depot_id)}
+Drehe einen Parameter NICHT erneut in dieselbe Richtung, solange die letzte
+Aenderung nicht durch neue Trades geprueft wurde. Massstab sind abgeschlossene
+Trades, nicht verstrichene Tage - solche Vorschlaege werden automatisch abgelehnt.
+Fehlt die Evidenz, ist "nichts aendern" die richtige Antwort.
 
 ### TECHNISCHE STOERUNGEN (Defekte, keine Strategiefrage):
 {incidents.summarize(7)}

@@ -927,11 +927,20 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         
         o1, o2, o3 = st.columns(3)
         with o1:
-            st.metric("On-Chain Score", f"{onchain['onchain_score']} / 100", delta="Starke Verknappung")
+            st.metric("Fear & Greed Index", onchain.get("fear_and_greed_index", "—"),
+                      delta=(f"7-Tage-Schnitt {onchain['fear_greed_7d_avg']}, "
+                             f"{onchain.get('fear_greed_trend','')}"
+                             if onchain.get("fear_greed_7d_avg") is not None else None),
+                      delta_color="off",
+                      help="Stimmungsindex von alternative.me: 0 = extreme Angst, "
+                           "100 = extreme Gier. An den Extremen ein Kontraindikator.")
         with o2:
-            st.metric("Fear & Greed Index", onchain["fear_and_greed_index"], delta="Greed / Gier")
+            st.metric("Einordnung", str(onchain.get("onchain_verdict", "—"))[:30])
         with o3:
-            st.metric("MVRV Z-Score", onchain["mvrv_z_score"][:4], help="Bewertungsbandbreite des Bitcoin-Netzwerks")
+            st.metric("On-Chain-Kennzahlen", "—",
+                      help="Börsen-Zuflüsse, Wale-Wallets und MVRV erfordern einen "
+                           "kostenpflichtigen Anbieter (Glassnode, CryptoQuant) – "
+                           "früher standen hier feste Fantasiewerte.")
 
         st.markdown(f"""
         <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin: 15px 0;">
