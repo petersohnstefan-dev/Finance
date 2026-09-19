@@ -456,17 +456,32 @@ class PortfolioManager:
         return 1.0  # Direct stock purchase for weak signals
 
     def _calculate_entry_quality(self, alert: Dict, sym: str) -> int:
-        """Calculates a multi-factor entry quality score (0-100) for professional daytrading."""
+        """Multi-factor entry quality score (0-100).
+
+        Also records the individual factor contributions in self._last_score_parts.
+        Only the total was ever stored with a trade, so when the score turned out to
+        correlate negatively with outcomes there was no way to tell which factor was
+        responsible - the diagnosis had to be reconstructed from leverage patterns.
+        """
         score = 0
+        parts: Dict[str, Any] = {}
+        _before = 0
 
         # 1. Volume Confirmation (25 points)
-        vol_ratio = alert.get('vol_ratio', 1.0)
+        # None means the scanner had no usable baseline - award nothing rather than
+        # treating "unmeasured" as "average".
+        vol_ratio = alert.get('vol_ratio')
+        if vol_ratio is None:
+            vol_ratio = 0.0
         if vol_ratio >= 3.0:
             score += 25
         elif vol_ratio >= 1.8:
             score += 15
         elif vol_ratio >= 1.2:
             score += 5
+
+        parts["volumen"] = score - _before
+        _before = score
 
         # 2. Trend Conformity (20 points) — only trade WITH the trend
         try:
@@ -484,6 +499,9 @@ class PortfolioManager:
         except:
             score += 5  # Benefit of the doubt
 
+        parts["trend"] = score - _before
+        _before = score
+
         # 3. Spike Strength (20 points) — stronger spike = higher conviction
         spike = alert.get('change_1min_pct', 0)
         if spike >= 2.0:
@@ -495,25 +513,43 @@ class PortfolioManager:
         elif spike >= 0.5:
             score += 5
 
-        # 4. RRR Potential (20 points) — estimated from ATR
+        parts["spike"] = score - _before
+        _before = score
+
+        # 4. Stop buffer (20 points) - does the stop survive ordinary noise?
+        #
+        # This factor used to reward LEVERAGE. It compared 2xATR against
+        # price*sl_pct/leverage, so a bigger lever shrank the denominator and
+        # improved the ratio: 10x scored full marks precisely because its stop sat
+        # closest to the entry. Combined with factor 3, which also rises with the
+        # spike that sets the lever, 40 of 100 points were paying for risk. The
+        # paired trades show the result - every 95-score trade lost, the only clean
+        # winner scored 65, and winners averaged 70 against losers at 77.
+        #
+        # What matters is the opposite: how much normal movement the stop can absorb
+        # before it is hit. A 1.7% stop on a name that swings 3% a day is a near
+        # certain stop-out, however attractive the leverage looks.
         try:
             hist = yf.Ticker(sym).history(period="1mo")
             if len(hist) >= 14:
-                atr = hist['High'].sub(hist['Low']).rolling(14).mean().iloc[-1]
-                price = alert.get("trigger_price", hist['Close'].iloc[-1])
-                # sl_pct is the stop on the leveraged certificate. On the underlying
-                # the same stop sits sl_pct/leverage away, which is what the ATR
-                # reward has to be compared against.
+                atr = float(hist['High'].sub(hist['Low']).rolling(14).mean().iloc[-1])
+                price = float(alert.get("trigger_price") or hist['Close'].iloc[-1])
                 sl_pct = self.strategy.get("daytrade_stop_loss_pct", 0.15)
-                lev = self._choose_leverage(alert.get('change_1min_pct', 0))
-                risk = price * sl_pct / max(lev, 1.0)
-                reward = atr * 2  # Expect 2x ATR move on breakout
-                if risk > 0 and reward / risk >= 2.0:
-                    score += 20
-                elif risk > 0 and reward / risk >= 1.5:
-                    score += 10
-        except:
+                lev = max(self._choose_leverage(alert.get('change_1min_pct', 0)), 1.0)
+                stop_distance = price * sl_pct / lev      # on the underlying
+                buffer_atr = stop_distance / atr if atr > 0 else 0.0
+                if buffer_atr >= 1.5:
+                    score += 20      # stop sits outside a normal day's range
+                elif buffer_atr >= 1.0:
+                    score += 12
+                elif buffer_atr >= 0.6:
+                    score += 5
+                # below 0.6 ATR the stop is inside the noise - no points
+        except Exception:
             pass
+
+        parts["stop_puffer"] = score - _before
+        _before = score
 
         # 5. Market Context (15 points) — VIX calm + no macro event
         trading_mode = self._get_trading_mode()
@@ -522,8 +558,15 @@ class PortfolioManager:
         elif trading_mode == "DEFENSIVE":
             score += 5
         # PAUSE mode: 0 points (but entry is blocked elsewhere anyway)
+        parts["marktumfeld"] = score - _before
 
-        return min(100, score)
+        total = min(100, score)
+        parts["gesamt"] = total
+        parts["symbol"] = sym
+        parts["spike_pct"] = alert.get("change_1min_pct")
+        parts["vol_ratio"] = alert.get("vol_ratio")
+        self._last_score_parts = parts
+        return total
 
     def _calculate_risk_based_position_size(self, depot_value: float, entry_price: float,
                                              stop_loss_pct: float, trading_mode: str,
@@ -1872,12 +1915,13 @@ class PortfolioManager:
                 max_scored = self.strategy.get("daytrade_max_candidates_scored", 8)
                 candidates.sort(key=lambda a: a.get("change_1min_pct", 0), reverse=True)
 
-                top_alert, entry_score = None, 0
+                top_alert, entry_score, top_parts = None, 0, {}
                 for alert in candidates[:max_scored]:
                     score = self._calculate_entry_quality(alert, alert["symbol"])
                     dt_scores.append(score)
                     if score > entry_score:
                         top_alert, entry_score = alert, score
+                        top_parts = dict(getattr(self, "_last_score_parts", {}) or {})
 
                 dt_threshold = min_score
                 if not candidates:
@@ -1936,7 +1980,10 @@ class PortfolioManager:
                     if turbo:
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
-                        reason_msg = f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100) | {chosen_lev}x Hebel | Risiko {sl_pct*100:.0f}%"
+                        _pd = " ".join(f"{k[:4]}{v}" for k, v in top_parts.items()
+                                        if k in ("volumen","trend","spike","stop_puffer","marktumfeld"))
+                        reason_msg = (f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100 "
+                                      f"[{_pd}]) | {chosen_lev}x Hebel | Risiko {sl_pct*100:.0f}%")
                         sl_price = cert_price * (1.0 - sl_pct)
 
                         self.buy("day_trading", turbo["wkn"], turbo["name"], shares, cert_price,
@@ -1947,7 +1994,10 @@ class PortfolioManager:
                     else:
                         # Direct stock purchase (no leverage for weak signals)
                         shares = alloc / p
-                        reason_msg = f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100) | 1x Aktie | Risiko {sl_pct*100:.0f}%"
+                        _pd = " ".join(f"{k[:4]}{v}" for k, v in top_parts.items()
+                                        if k in ("volumen","trend","spike","stop_puffer","marktumfeld"))
+                        reason_msg = (f"⚡ Daytrade ({spike:+.1f}% Spike, Score {entry_score}/100 "
+                                      f"[{_pd}]) | 1x Aktie | Risiko {sl_pct*100:.0f}%")
                         sl_price = p * (1.0 - sl_pct)
 
                         self.buy("day_trading", sym, name, shares, p,

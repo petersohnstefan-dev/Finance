@@ -62,15 +62,20 @@ class RealTimeBreakoutScanner:
                 
                 # Volume confirmation: the 5 spike bars against the 20 bars before them.
                 # Same idea as the daily Vol_Ratio in indicators.py, but intraday.
-                vol_ratio = 1.0
+                vol_ratio = None
                 try:
                     if "Volume" in df.columns and len(df) >= 25:
                         base_vol = float(df["Volume"].iloc[-25:-5].mean())
                         spike_vol = float(df["Volume"].iloc[-5:].mean())
-                        if base_vol > 0 and spike_vol > 0:
-                            vol_ratio = round(spike_vol / base_vol, 2)
+                        # A ratio is only meaningful against a real baseline. Right
+                        # after the open the preceding 20 minutes are nearly empty,
+                        # which produced ratios of 300-490x for German listings -
+                        # every one of them then collected full marks on the volume
+                        # factor while the absolute turnover was negligible.
+                        if base_vol >= 50 and spike_vol > 0:
+                            vol_ratio = round(min(spike_vol / base_vol, 10.0), 2)
                 except Exception:
-                    vol_ratio = 1.0
+                    vol_ratio = None
 
                 return {
                     "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
