@@ -20,8 +20,13 @@ permissions:
 
 # Ohne diese Klammer koennen sich zwei Laeufe ueberholen und beide eine
 # Retrospektive schreiben - am 11.09. ist das passiert (22:41 und 22:50).
+#
+# Die Gruppe MUSS den Modus enthalten. Mit einer gemeinsamen Gruppe hat der
+# Tageslauf den Wochenlauf verdraengt: am 18.09. stand der 20:30-Lauf bis 22:43
+# in der Warteschlange, der Wochenlauf war fuer 21:00 faellig und fiel aus.
+# Seit dem 12.09. gab es deshalb keine Wochenretrospektive mehr.
 concurrency:
-  group: ai-journal
+  group: ai-journal-${{ github.event.schedule || inputs.mode || 'manual' }}
   cancel-in-progress: false
 
 jobs:

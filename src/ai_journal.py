@@ -94,6 +94,17 @@ PARAM_SAFETY_BOUNDS = {
     "short_term_min_alpha_score":     {"min": 40,    "max": 85,    "step": 5},
     "short_term_min_spike_pct":       {"min": 0.5,   "max": 5.0,   "step": 0.25},
     "short_term_max_candidates_scored":{"min": 5,    "max": 25,    "step": 1},
+    # The weekly retrospective covers medium_term and long_term, but had no tunable
+    # parameter under either prefix - it wrote an analysis every week that could not
+    # change anything. Entry thresholds and the swap bar are opened up; position
+    # counts, cash floors and the loss ceiling stay closed, since those are structure
+    # and safety rather than strategy.
+    "medium_term_min_score":          {"min": 60,    "max": 90,    "step": 5},
+    "medium_term_hedge_vix_threshold":{"min": 22.0,  "max": 40.0,  "step": 2.0},
+    "medium_term_hedge_exit_vix":     {"min": 15.0,  "max": 30.0,  "step": 2.0},
+    "long_term_min_score":            {"min": 60,    "max": 95,    "step": 5},
+    "long_term_swap_min_advantage":   {"min": 10,    "max": 40,    "step": 5},
+    "long_term_bonus_pct":            {"min": 8.0,   "max": 25.0,  "step": 2.0},
 }
 
 
