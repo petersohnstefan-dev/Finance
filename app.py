@@ -1561,14 +1561,24 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         with m5:
             ts = summary.get("trade_stats", {})
             if ts.get("closed_trades"):
-                st.metric(
-                    "Trefferquote",
-                    f"{ts['win_rate_pct']:.0f} %",
-                    delta=f"{ts['wins']} Gewinner / {ts['losses']} Verlierer",
-                    delta_color="off",
-                    help=("Anteil der abgeschlossenen Trades mit Gewinn. "
-                          "Offene Positionen zaehlen nicht mit.")
-                )
+                if "win_rate_delta_pp" in ts:
+                    _d = ts["win_rate_delta_pp"]
+                    _delta = f"{_d:+.0f} Pp. ggü. den {ts['window']} davor"
+                    _help = (f"Anteil gewonnener Trades. Gesamt seit Start: "
+                             f"{ts['win_rate_pct']:.1f} % ({ts['wins']} von {ts['closed_trades']}). "
+                             f"Angezeigt ist die Quote der letzten {ts['window']} Trades "
+                             f"({ts['win_rate_recent_pct']:.0f} %) gegen die {ts['window']} davor "
+                             f"({ts['win_rate_prior_pct']:.0f} %). Offene Positionen zählen nicht mit.")
+                    _wert = f"{ts['win_rate_recent_pct']:.0f} %"
+                else:
+                    _delta = f"{ts['wins']} Gewinner / {ts['losses']} Verlierer"
+                    _d = None
+                    _help = ("Anteil der abgeschlossenen Trades mit Gewinn. "
+                             "Offene Positionen zählen nicht mit.")
+                    _wert = f"{ts['win_rate_pct']:.0f} %"
+                st.metric("Trefferquote (Trend)" if _d is not None else "Trefferquote",
+                          _wert, delta=_delta,
+                          delta_color="normal" if _d else "off", help=_help)
             else:
                 st.metric("Trefferquote", "—",
                           help="Noch kein Trade abgeschlossen")
@@ -1927,6 +1937,55 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                             f"Die Trefferquote von {ts['win_rate_pct']:.1f} % liegt über den "
                             f"{needed:.0f} %, die bei diesem Chance-Risiko-Verhältnis "
                             f"zum Ausgleich nötig wären.")
+                _series = ts.get("series") or []
+                if len(_series) >= 4:
+                    st.markdown("###### Entwicklung der Trefferquote")
+                    _tdf = pd.DataFrame(_series)
+                    _fig_wr = go.Figure()
+                    # Rolling rate first: it is the series the reader is here for.
+                    if "rollierend_pct" in _tdf.columns:
+                        # Vor dem ersten vollen Fenster ist die rollierende Quote
+                        # rechnerisch die kumulative - dort waere sie eine Scheinaussage.
+                        _w = ts.get("window", 10)
+                        _roll = _tdf[_tdf["nr"] >= _w]
+                        _fig_wr.add_trace(go.Scatter(
+                            x=_roll["nr"], y=_roll["rollierend_pct"], mode="lines+markers",
+                            name=f"Letzte {ts.get('window', 10)} Trades",
+                            line=dict(color="#38bdf8", width=2),
+                            marker=dict(size=8, color="#38bdf8",
+                                        line=dict(color="#ffffff", width=2)),
+                            customdata=_roll[["date", "symbol", "pnl"]],
+                            hovertemplate=("Trade %{x} &middot; %{customdata[0]}<br>"
+                                           "%{customdata[1]}: %{customdata[2]:+.2f} &euro;<br>"
+                                           "<b>Quote: %{y:.0f}%</b><extra></extra>")))
+                    _fig_wr.add_trace(go.Scatter(
+                        x=_tdf["nr"], y=_tdf["kumulativ_pct"], mode="lines",
+                        name="Seit Depotstart",
+                        line=dict(color="#f59e0b", width=2, dash="dot"),
+                        hovertemplate="Trade %{x}<br>Kumulativ: %{y:.0f}%<extra></extra>"))
+                    _fig_wr.add_hline(y=50, line=dict(color="#cbd5e1", width=1, dash="dash"),
+                                      annotation_text="50 %", annotation_position="top left",
+                                      annotation_font=dict(size=10, color="#94a3b8"))
+                    _fig_wr.update_layout(
+                        height=300, margin=dict(l=62, r=24, t=34, b=54),
+                        hovermode="x unified", plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
+                        yaxis=dict(title=dict(text="Gewonnene Trades", standoff=12,
+                                              font=dict(size=11, color="#64748b")),
+                                   ticksuffix=" %", range=[-6, 106], dtick=25,
+                                   gridcolor="#eef2f7", zeroline=False,
+                                   tickfont=dict(size=10, color="#64748b")),
+                        xaxis=dict(title=dict(text="Abgeschlossene Trades (chronologisch)",
+                                              standoff=10, font=dict(size=11, color="#64748b")),
+                                   gridcolor="#f8fafc", zeroline=False,
+                                   tickfont=dict(size=10, color="#64748b")),
+                        legend=dict(orientation="h", yanchor="bottom", y=1.01,
+                                    xanchor="left", x=0, font=dict(size=11)))
+                    st.plotly_chart(_fig_wr, use_container_width=True)
+                    st.caption(
+                        f"Die gepunktete Linie ist der Durchschnitt seit Depotstart – sie "
+                        f"reagiert mit jedem Trade träger. Die durchgezogene Linie zeigt nur "
+                        f"die jeweils letzten {ts.get('window', 10)} Trades und macht damit "
+                        f"sichtbar, ob sich gerade etwas ändert.")
                 st.divider()
 
             if summary["history"]:

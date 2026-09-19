@@ -1051,6 +1051,45 @@ class PortfolioManager:
             "worst_trade": min(closed, key=lambda t: float(t["pnl"])) if closed else None,
         }
 
+        # Rolling view. The cumulative rate since inception moves too slowly to show
+        # whether anything is improving: after 20 trades a single win shifts it by
+        # five points, so a good week and a bad week look almost identical.
+        window = max(5, min(10, len(closed) // 2)) if closed else 0
+        if len(closed) >= window * 2 > 0:
+            ordered = sorted(closed, key=lambda t: str(t.get("date", "")))
+            recent, prior = ordered[-window:], ordered[-2 * window:-window]
+            rate = lambda xs: sum(1 for t in xs if float(t["pnl"]) > 0) / len(xs) * 100.0
+            r_recent, r_prior = rate(recent), rate(prior)
+            trade_stats.update({
+                "window": window,
+                "win_rate_recent_pct": round(r_recent, 1),
+                "win_rate_prior_pct": round(r_prior, 1),
+                "win_rate_delta_pp": round(r_recent - r_prior, 1),
+                "pnl_recent": round(sum(float(t["pnl"]) for t in recent), 2),
+                "pnl_prior": round(sum(float(t["pnl"]) for t in prior), 2),
+            })
+
+        # Per-trade series for the chart, oldest first, with a running rate
+        series, wins_so_far = [], 0
+        for i, t in enumerate(sorted(closed, key=lambda x: str(x.get("date", ""))), 1):
+            if float(t["pnl"]) > 0:
+                wins_so_far += 1
+            series.append({
+                "nr": i,
+                "date": str(t.get("date", ""))[:16],
+                "symbol": t.get("ticker") or t.get("symbol"),
+                "pnl": round(float(t["pnl"]), 2),
+                "kumulativ_pct": round(wins_so_far / i * 100.0, 1),
+            })
+        # Rolling rate over the same window, so the chart shows the trend not the average
+        if window:
+            for i, row in enumerate(series):
+                lo = max(0, i - window + 1)
+                chunk = series[lo:i + 1]
+                row["rollierend_pct"] = round(
+                    sum(1 for c in chunk if c["pnl"] > 0) / len(chunk) * 100.0, 1)
+        trade_stats["series"] = series
+
         prev_close = None
         try:
             prev_close = self.db.get_previous_daily_close(depot_key)

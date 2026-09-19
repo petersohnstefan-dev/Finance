@@ -91,6 +91,19 @@ PARAM_SAFETY_BOUNDS = {
 }
 
 
+def trading_day(now: Optional[datetime.datetime] = None) -> datetime.datetime:
+    """The trading day a nightly run is about, not the calendar day it ran on.
+
+    The cron fires at 20:30 UTC, but GitHub's queue can delay it past midnight
+    Berlin time - on 18.09. it ran at 22:43 UTC, i.e. 00:43 on the 19th. The
+    Friday retrospective was then stored under Saturday's date, which also made
+    the duplicate-run guard check the wrong day. Anything before 06:00 belongs to
+    the day before.
+    """
+    now = now or get_berlin_now()
+    return now - datetime.timedelta(days=1) if now.hour < 6 else now
+
+
 class AIJournalEngine:
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -297,7 +310,7 @@ class AIJournalEngine:
         """
         out: Dict[str, list] = {}
         try:
-            cutoff = (get_berlin_now() - datetime.timedelta(days=days)).strftime("%Y-%m-%d")
+            cutoff = (trading_day() - datetime.timedelta(days=days)).strftime("%Y-%m-%d")
             conn = sqlite3.connect(DB_FILE)
             rows = conn.execute(
                 "SELECT date, param_updates FROM ai_journal "
@@ -430,7 +443,7 @@ class AIJournalEngine:
         holds a parse error does not count: that one should be retried.
         """
         try:
-            today = get_berlin_now().strftime("%Y-%m-%d")
+            today = trading_day().strftime("%Y-%m-%d")
             conn = sqlite3.connect(DB_FILE)
             row = conn.execute(
                 "SELECT reflection FROM ai_journal WHERE depot_id=? AND date=? AND mode=?",
@@ -460,7 +473,7 @@ class AIJournalEngine:
                 f"Retrospektive fuer {depot_id} ({mode}) wurde heute bereits erstellt. "
                 f"Mit --force erzwingen.")
 
-        now = get_berlin_now()
+        now = trading_day()
         today_str = now.strftime("%Y-%m-%d")
         
         # 1. Gather real statistics
