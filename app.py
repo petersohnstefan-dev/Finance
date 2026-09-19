@@ -886,6 +886,29 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
             st.info(f"ℹ️ Zins- und Inflationsdaten derzeit nicht abrufbar – "
                     f"{fred.get('reason', 'unbekannter Grund')}")
 
+        # US net liquidity - moved here from the depot's intelligence tab, where it
+        # was a fixed "$6.05 Billionen USD" and had nothing to do with the depot.
+        st.markdown("##### 🌊 US-Netto-Liquidität")
+        st.caption("Fed-Bilanzsumme abzüglich Treasury-Konto und Reverse-Repo – "
+                   "die Geldmenge, die den Märkten tatsächlich zur Verfügung steht. "
+                   "Aus den FRED-Serien WALCL, WTREGEN und RRPONTSYD berechnet.")
+        from src.energy_macro import get_net_liquidity
+        _liq = get_net_liquidity()
+        if _liq.get("available"):
+            l1, l2, l3 = st.columns(3)
+            l1.metric("Netto-Liquidität", f"{_liq['net_liquidity_trn']:.2f} Bio. $",
+                      delta=f"{_liq['delta_4w_bn']:+.0f} Mrd. $ (4 Wochen)")
+            l2.metric("Regime", _liq["regime"].split(" ", 1)[1][:22]
+                      if " " in _liq["regime"] else _liq["regime"])
+            l3.metric("Stand", _liq.get("as_of", "—"))
+            with st.popover("Komponenten"):
+                st.dataframe(pd.DataFrame([
+                    {"Komponente": k, "Mrd. USD": v["mrd_usd"], "Stand": v["stand"]}
+                    for k, v in (_liq.get("components") or {}).items()
+                ]), use_container_width=True, hide_index=True)
+        else:
+            st.info(f"ℹ️ Netto-Liquidität nicht berechenbar – {_liq.get('reason', '')}")
+
         st.markdown(f"""
         <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #34d399; border-radius: 8px; padding: 15px; margin: 15px 0;">
             <h4 style="margin: 0 0 4px 0; color: #34d399;">📐 Zinskurven-Zustand: {fred['yield_curve_spread']}</h4>
@@ -1587,7 +1610,7 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
         tab_chart, tab_pos, tab_intel, tab_alloc, tab_hist = st.tabs([
             "📈 Depot-Wertentwicklung (Equity Curve)",
             "📋 Offene Positionen & Buchgewinne (Live-Ticks)",
-            "🧠 Deep-Intelligence & Multi-Source Audit (6 Dimensionen)",
+            "🧠 Deep-Intelligence (Bilanz, News & Datenlage je Position)",
             "🥧 Asset Allocation (Gewichtung)",
             "📜 Transaktions-Historie (Trade Log)"
         ])
@@ -1787,26 +1810,15 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 st.info("Keine offenen Positionen. Das Depot hält 100% Cash.")
 
         with tab_intel:
-            st.subheader("🧠 Multi-Source Deep Intelligence & 6-Dimensionen-Audit")
-            st.caption("Institutioneller Datenabgleich über Dark Pools, Insiderkäufe, Fed-Liquidität, Social-Buzz, Bilanz-Forensik & Krypto-On-Chain.")
+            st.subheader("🧠 Deep-Intelligence-Audit der Depot-Positionen")
+            st.caption(
+                "Was das System über die **hier gehaltenen Werte** gemessen hat: "
+                "Bilanzqualität aus den Jahresabschlüssen, Nachrichtenlage, "
+                "Options-Orderflow — und wie viel des Alpha-Scores tatsächlich durch "
+                "Messungen gedeckt ist. Marktweite Kennzahlen stehen in den eigenen "
+                "Modulen *Makro-Klima* und *Whale- & Insider-Radar*, nicht hier."
+            )
 
-            macro_ov = pm.deep_intel.get_macro_and_insider_overview()
-            liq = macro_ov["macro_liquidity"]
-            
-            # Row 1: Global Macro & Smart Money Regime Bar
-            st.markdown("#### 🌐 1. Makro-Liquidität & Zinswende-Kompass (Federal Reserve & CME)")
-            m_col1, m_col2, m_col3, m_col4 = st.columns(4)
-            m_col1.metric("US Netto-Liquidität", liq["us_net_liquidity"], delta=liq["net_liquidity_delta_30d"])
-            m_col2.metric("FedWatch Zinswende", "88.5% Chance", delta="25–50 Bp Zinssenkung")
-            m_col3.metric("US Zinskurve (10Y–2Y)", "-0.02%", delta="De-Invertiert / Normal")
-            m_col4.metric("US-Dollar Index (DXY)", "101.35", delta="-1.2% Schwäche (Bullisch)")
-
-            st.info(f"**Aktuelles Makro-Regime:** {liq['macro_regime']}")
-
-            # Row 2: 360-Grad Audit für aktuelle Depotwerte
-            st.markdown("---")
-            st.markdown("#### 🏰 2. Forensisches Bilanz-Audit & Smart-Money-Score (Depot-Positionen)")
-            
             intel_rows = []
             for p in summary["positions"]:
                 sym = p["symbol"]
@@ -1814,64 +1826,54 @@ elif app_mode == "💼 Musterdepots & Live-Performance (4x 10.000 €)":
                 flow = p_intel["smart_money_flow"]
                 social = p_intel["social_sentiment"]
                 forensic = p_intel["forensic_quality"]
-                
-                # Every one of these can be None now: components without a data
-                # source are reported as missing instead of being filled with a
-                # constant, so each cell needs its own empty state.
+
+                # Every one of these can be None: components without a data source
+                # are reported as missing rather than filled with a constant.
                 alpha = p_intel.get("composite_alpha_score")
                 pcr = flow.get("put_call_ratio")
                 news = social.get("nlp_sentiment_score")
                 dq = p_intel.get("data_quality", 0)
+                missing = p_intel.get("data_missing") or []
 
                 intel_rows.append({
                     "WKN": get_wkn(sym),
                     "Name": p["name"][:20],
                     "Alpha-Score": f"⭐ {alpha}/100" if alpha is not None else "—",
                     "Datenlage": f"{dq * 100:.0f}%",
+                    "fehlt": ", ".join(missing) if missing else "—",
                     "Put/Call-Ratio": f"{pcr:.2f}" if pcr is not None else "—",
                     "Piotroski F-Score": str(forensic.get("piotroski_f_score", "—")).split("(")[0].strip(),
                     "Altman Z-Score": str(forensic.get("altman_z_score", "—")).split("(")[0].strip(),
                     "News-Sentiment": f"{news}/100" if news is not None else "—",
                     "Burggraben-Rating": forensic.get("moat_rating", "—")
                 })
-            
+
             if intel_rows:
                 st.dataframe(pd.DataFrame(intel_rows), use_container_width=True, hide_index=True)
+                st.caption(
+                    "**Datenlage** ist der Anteil des Alpha-Scores, der auf gemessenen "
+                    "Werten beruht. Fehlende Bausteine werden aus der Gewichtung entfernt, "
+                    "nicht geschätzt — unter 45 % ist der Thesen-Ausstieg ausgesetzt. "
+                    "Der Options-Orderflow existiert nur für US-Werte, Bilanzkennzahlen "
+                    "nur für bilanzierende Unternehmen (nicht für Gold, Krypto, Futures)."
+                )
+            else:
+                st.info("Keine offenen Positionen — nichts zu prüfen.")
 
-            # Row 3: Insider & Dark Pool Live Blocks
-            st.markdown("---")
-            i_col1, i_col2 = st.columns(2)
-            with i_col1:
-                st.markdown("#### 🕵️‍♂️ 3. Dark Pool & Optionen-Großblöcke (Smart Money)")
-                for b in macro_ov["block_trades"][:3]:
-                    st.markdown(f"""
-                    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #38bdf8;">
-                        <span style="font-weight: 700; color: #38bdf8;">{b['symbol']} ({b['name']})</span> &bull; 
-                        <span style="color: #334155;">{b['type']}</span><br>
-                        <span style="font-size: 0.85rem; color: #64748b;">Größe: {b['size']} | Volumen: <b>{b['value']}</b> | {b['time']}</span>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-            with i_col2:
-                st.markdown("#### 🏛️ 4. SEC Form 4 Insider- & Kongress-Trades")
-                for c in macro_ov["congress_trades"][:2]:
-                    st.markdown(f"""
-                    <div style="background-color: #0f172a; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #a78bfa;">
-                        <span style="font-weight: 700; color: #a78bfa;">{c['politician']}</span> ({c['committee']})<br>
-                        <span style="color: #334155;">{c['asset']} &bull; <b>{c['amount']}</b></span><br>
-                        <span style="font-size: 0.85rem; color: #64748b;">Historischer Track-Record: {c['history_track_record']}</span>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-            # Row 4: Krypto On-Chain Deep Dive (if Crypto held or global)
-            st.markdown("---")
-            st.markdown("#### ⛓️ 5. Krypto On-Chain & Derivate-Intelligence (Bitcoin & Solana)")
-            k_data = macro_ov["crypto_macro"]
-            kc1, kc2, kc3 = st.columns(3)
-            kc1.metric("Exchange Netflow", "-22.500 BTC", delta="Verknappung / Abfluss")
-            kc2.metric("Perpetual Funding Rate", "+6.8% p.a.", delta="Gesundes Long-Interesse")
-            kc3.metric("MVRV Z-Score", "1.82", delta="Goldilocks Bullenmarkt")
-            st.caption(f"**On-Chain Fazit:** {k_data['onchain_verdict']}")
+            with st.expander("Warum stehen hier keine Dark-Pool-Blöcke und Kongress-Trades mehr?"):
+                st.markdown(
+                    "Dieser Tab zeigte bis zuletzt vier Blöcke mit marktweiten Kennzahlen: "
+                    "US-Netto-Liquidität, FedWatch-Wahrscheinlichkeiten, Dark-Pool-Großblöcke, "
+                    "Kongress-Trades und Krypto-On-Chain-Daten. Alle waren **fest im Code "
+                    "hinterlegt** und veränderten sich nie — die Dark-Pool-Blöcke trugen seit "
+                    "Wochen den Zeitstempel „Vor 14 Min.“, der Dollar-Index stand auf 101,35 "
+                    "(tatsächlich: ~100,2).\n\n"
+                    "Was sich aus freien Quellen berechnen lässt, ist jetzt echt und steht im "
+                    "Modul **🌐 Makro-Klima, Zentralbanken & News**: Netto-Liquidität aus den "
+                    "FRED-Serien, Zinskurve, Dollar-Index, Inflation. Für CME-FedWatch, "
+                    "Dark-Pool-Prints und Kongress-Trades gibt es keine kostenlose Quelle — "
+                    "diese Blöcke wurden entfernt, statt weiter Zahlen von August zu zeigen."
+                )
 
         with tab_alloc:
             labels = [p["name"] for p in summary["positions"]] + ["Freies Cash"]

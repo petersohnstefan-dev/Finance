@@ -135,30 +135,76 @@ class InsiderPolitEngine:
 # DIMENSION 3: MACRO-LIQUIDITY & CENTRAL BANK REGIMES
 # ==============================================================================
 class MacroLiquidityEngine:
-    """Computes US Net Liquidity, CME FedWatch rate probabilities and Macro Regimes."""
+    """US net liquidity and the macro regime derived from it."""
 
     @staticmethod
     def get_liquidity_regime() -> Dict[str, Any]:
-        # Formel: Fed Balance Sheet (~7.15 Bio) - TGA (~780 Mrd) - RRP (~320 Mrd) = 6.05 Bio USD Net Liquidity
-        net_liquidity_bio = 6.05
-        liquidity_30d_delta = "+85 Mrd. USD (Expansiv)"
+        """Net liquidity from FRED, yields and dollar from the live feeds.
 
-        fed_rate_cut_prob_sep = 88.5  # 88.5% Probability of 25-50 bps cut
-        fed_rate_cut_prob_nov = 96.2
+        Every field here used to be a fixed string - "$6.05 Billionen USD",
+        "88.5% (25-50 Bp Zinssenkung)", a regime verdict of "EXPANSIV / RISK-ON"
+        that held in every market. The three balance-sheet components are public
+        FRED series, so the figure is computed; what has no free source is now
+        reported as unavailable instead of asserted.
+        """
+        from src.energy_macro import get_net_liquidity, get_fred_macro
+        from src.commodities_forex_radar import ForexCurrencyEngine
 
-        regime = "🟢 EXPANSIV / RISK-ON (Liquiditäts-Rückenwind für Tech, Gold & Krypto)"
+        liq = get_net_liquidity()
+        fred = get_fred_macro()
 
-        return {
-            "us_net_liquidity": f"${net_liquidity_bio:.2f} Billionen USD",
-            "net_liquidity_delta_30d": liquidity_30d_delta,
-            "fedwatch_sep_cut_probability": f"{fed_rate_cut_prob_sep}% (25–50 Bp Zinssenkung)",
-            "fedwatch_nov_cut_probability": f"{fed_rate_cut_prob_nov}%",
-            "yield_curve_spread_10y_2y": "-0.02% (Fast vollständig de-invertiert / Zinswende eingepreist)",
-            "dollar_index_dxy": "101.35 (Schwächend)",
-            "macro_regime": regime,
-            "macro_multiplier_score": 85,
-            "hedging_urgency": "🟢 Niedrig (Keine akute Makro-Gefahr / Absicherung nicht erforderlich)"
-        }
+        out: Dict[str, Any] = {"available": liq.get("available", False)}
+
+        if liq.get("available"):
+            out["us_net_liquidity"] = f"${liq['net_liquidity_trn']:.2f} Billionen USD"
+            out["net_liquidity_delta_30d"] = (
+                f"{liq['delta_4w_bn']:+.0f} Mrd. USD (4 Wochen)")
+            out["net_liquidity_components"] = liq.get("components")
+            out["as_of"] = liq.get("as_of")
+            out["macro_regime"] = liq["regime"]
+        else:
+            out["us_net_liquidity"] = "—"
+            out["net_liquidity_delta_30d"] = "—"
+            out["macro_regime"] = f"ℹ️ Kein Liquiditaetsurteil: {liq.get('reason', '')}"
+            out["reason"] = liq.get("reason")
+
+        # CME FedWatch has no free API - do not pretend otherwise
+        out["fedwatch_sep_cut_probability"] = "— keine kostenlose Quelle (CME FedWatch)"
+        out["fedwatch_nov_cut_probability"] = "—"
+
+        if fred.get("available") and fred.get("curve_spread") is not None:
+            out["yield_curve_spread_10y_2y"] = (
+                f"{fred['curve_spread']:+.2f}% ({fred.get('curve_regime', '')})")
+        else:
+            out["yield_curve_spread_10y_2y"] = "— keine Zinsdaten"
+
+        try:
+            dxy = ForexCurrencyEngine.get_forex_overview().get("dxy_index")
+            out["dollar_index_dxy"] = (f"{dxy:.2f}" if isinstance(dxy, (int, float))
+                                       else "—")
+        except Exception:
+            out["dollar_index_dxy"] = "—"
+
+        # Score only from what was measured
+        score, weighed = 0.0, 0.0
+        if liq.get("available"):
+            d = liq["delta_4w_bn"]
+            score += max(0.0, min(100.0, 50.0 + d / 4.0)) * 0.6
+            weighed += 0.6
+        if fred.get("available") and fred.get("cpi_yoy") is not None:
+            score += max(0.0, min(100.0, 100.0 - (fred["cpi_yoy"] - 2.0) * 18.0)) * 0.4
+            weighed += 0.4
+        out["macro_multiplier_score"] = round(score / weighed) if weighed else None
+
+        if out["macro_multiplier_score"] is None:
+            out["hedging_urgency"] = "— ohne Makrodaten nicht bewertbar"
+        elif out["macro_multiplier_score"] >= 65:
+            out["hedging_urgency"] = "\U0001f7e2 Niedrig"
+        elif out["macro_multiplier_score"] >= 40:
+            out["hedging_urgency"] = "⚠️ Mittel"
+        else:
+            out["hedging_urgency"] = "\U0001f6a8 Hoch – restriktives Umfeld"
+        return out
 
 # ==============================================================================
 # DIMENSION 4: SENTIMENT & ALTERNATIVE SOCIAL INTELLIGENCE

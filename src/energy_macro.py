@@ -298,6 +298,79 @@ def get_fred_macro() -> Dict[str, Any]:
     return out
 
 
+# ---------------------------------------------------- net liquidity
+#: Fed balance sheet minus the two balances that drain reserves. All three are
+#: FRED series; WALCL is in millions, the other two in billions.
+LIQUIDITY_SERIES = {
+    "fed_assets": ("WALCL", 1e-3),        # millions -> billions
+    "treasury_account": ("WTREGEN", 1.0),
+    "reverse_repo": ("RRPONTSYD", 1.0),
+}
+
+
+def get_net_liquidity() -> Dict[str, Any]:
+    """US net liquidity = Fed balance sheet - TGA - reverse repo.
+
+    The dashboard asserted "$6.05 Billionen USD (Stabil)" as a fixed string, and
+    the macro panel built a regime verdict on top of it. The three components are
+    public FRED series, so the figure can simply be computed.
+    """
+    key = os.environ.get("FRED_API_KEY")
+    if not key:
+        return {"available": False,
+                "reason": "Kein FRED_API_KEY gesetzt (kostenlos unter "
+                          "https://fred.stlouisfed.org/docs/api/api_key.html)"}
+
+    cached = _cache_get("liquidity", FRED_TTL)
+    if cached:
+        return cached
+
+    parts: Dict[str, Any] = {}
+    try:
+        for name, (sid, factor) in LIQUIDITY_SERIES.items():
+            obs = _fred_series(sid, key, limit=8)
+            if not obs:
+                return {"available": False, "reason": f"FRED-Serie {sid} ohne Werte"}
+            parts[name] = {"value_bn": obs[0]["value"] * factor,
+                           "date": obs[0]["date"],
+                           # four weeks back where the series allows it
+                           "prev_bn": (obs[min(4, len(obs) - 1)]["value"] * factor)}
+    except Exception as exc:
+        stale = _stale("liquidity")
+        if stale:
+            stale = dict(stale)
+            stale["stale"] = True
+            stale["reason"] = f"Abruf fehlgeschlagen ({type(exc).__name__}), letzter Stand"
+            return stale
+        return {"available": False, "reason": f"FRED-Abruf fehlgeschlagen: {exc}"}
+
+    net = (parts["fed_assets"]["value_bn"] - parts["treasury_account"]["value_bn"]
+           - parts["reverse_repo"]["value_bn"])
+    net_prev = (parts["fed_assets"]["prev_bn"] - parts["treasury_account"]["prev_bn"]
+                - parts["reverse_repo"]["prev_bn"])
+    delta = net - net_prev
+
+    if delta > 50:
+        regime = "🟢 Expansiv – Liquiditaet fliesst in die Maerkte"
+    elif delta < -50:
+        regime = "🚨 Restriktiv – Liquiditaet wird abgezogen"
+    else:
+        regime = "⚖️ Neutral – Liquiditaet weitgehend unveraendert"
+
+    data = {
+        "available": True,
+        "net_liquidity_bn": round(net, 1),
+        "net_liquidity_trn": round(net / 1000.0, 2),
+        "delta_4w_bn": round(delta, 1),
+        "regime": regime,
+        "components": {k: {"mrd_usd": round(v["value_bn"], 1), "stand": v["date"]}
+                       for k, v in parts.items()},
+        "as_of": parts["fed_assets"]["date"],
+    }
+    _cache_put("liquidity", data)
+    return data
+
+
 # ------------------------------------------------------------ summary
 def get_energy_macro_overview() -> Dict[str, Any]:
     """Everything at once, for the dashboard and the chat context."""
