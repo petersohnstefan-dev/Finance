@@ -643,8 +643,36 @@
       ]
     },
     "day_trading": {
-      "cash": 6757.343634910144,
-      "positions": {},
+      "cash": 6199.538519393548,
+      "positions": {
+        "KO217125": {
+          "symbol": "KO217125",
+          "name": "⚡ Turbo Bull 9.0x auf Arweave USD (KO: 4.497)",
+          "shares": 982.8863,
+          "buy_price": 0.5665,
+          "current_price": 0.55,
+          "buy_date": "2026-09-21 08:21",
+          "stop_loss": 0.473,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+2.3% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO217125",
+          "underlying_symbol": "AR-USD",
+          "underlying_name": "Arweave USD",
+          "direction": "LONG",
+          "ratio": 1.0,
+          "strike": 4.41,
+          "knockout_barrier": 4.5,
+          "initial_underlying_price": 4.96,
+          "current_underlying_price": 4.96,
+          "cert_price": 0.55,
+          "leverage": 9.0,
+          "distance_to_ko_pct": 9.3,
+          "is_knocked_out": false
+        }
+      },
       "history": [
         {
           "type": "BUY",
@@ -1195,6 +1223,17 @@
           "pnl_pct": 8.99,
           "date": "2026-09-18 21:01",
           "reason": "🛡️ EOD Pflichtverkauf (+10.3%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO217125",
+          "name": "⚡ Turbo Bull 9.0x auf Arweave USD (KO: 4.497)",
+          "product_type": "KNOCKOUT",
+          "shares": 982.8863,
+          "price": 0.55,
+          "total": 556.81,
+          "date": "2026-09-21 08:21",
+          "reason": "⚡ Daytrade (+2.3% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
