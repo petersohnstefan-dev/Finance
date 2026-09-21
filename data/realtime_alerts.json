@@ -1,5 +1,49 @@
 [
   {
+    "timestamp": "2026-09-21 12:05:56",
+    "time_str": "12:05:56",
+    "symbol": "HYQ.DE",
+    "direction": "LONG",
+    "trigger_price": 77.25,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HYQ.DE explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-21 12:05:55",
+    "time_str": "12:05:55",
+    "symbol": "AOF.DE",
+    "direction": "SHORT",
+    "trigger_price": 90.8,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AOF.DE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-21 12:05:51",
+    "time_str": "12:05:51",
+    "symbol": "GDXJ",
+    "direction": "LONG",
+    "trigger_price": 125.29,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GDXJ explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-21 12:05:50",
+    "time_str": "12:05:50",
+    "symbol": "BITB",
+    "direction": "SHORT",
+    "trigger_price": 45.9,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BITB stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-21 12:01:27",
     "time_str": "12:01:27",
     "symbol": "MDLZ",
@@ -504,49 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX explodiert um +1.38% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 11:31:11",
-    "time_str": "11:31:11",
-    "symbol": "FETH",
-    "direction": "LONG",
-    "trigger_price": 27.16,
-    "change_1min_pct": 0.93,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FETH explodiert um +0.93% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 11:31:11",
-    "time_str": "11:31:11",
-    "symbol": "ETHA",
-    "direction": "LONG",
-    "trigger_price": 20.58,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHA explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 11:31:11",
-    "time_str": "11:31:11",
-    "symbol": "BITB",
-    "direction": "LONG",
-    "trigger_price": 45.81,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BITB explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 11:31:11",
-    "time_str": "11:31:11",
-    "symbol": "FBTC",
-    "direction": "LONG",
-    "trigger_price": 73.45,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FBTC explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
