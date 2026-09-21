@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-09-21 21:01:28",
+    "time_str": "21:01:28",
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 34.83,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-21 21:01:26",
+    "time_str": "21:01:26",
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 8.03,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 3.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-21 20:55:57",
     "time_str": "20:55:57",
     "symbol": "HLE.DE",
@@ -526,27 +548,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FRA.DE explodiert um +0.83% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 20:16:25",
-    "time_str": "20:16:25",
-    "symbol": "DEQ.DE",
-    "direction": "SHORT",
-    "trigger_price": 17.56,
-    "change_1min_pct": 1.46,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DEQ.DE stürzt um -1.46% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-21 20:16:24",
-    "time_str": "20:16:24",
-    "symbol": "AOF.DE",
-    "direction": "SHORT",
-    "trigger_price": 90.3,
-    "change_1min_pct": 1.1,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AOF.DE stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
