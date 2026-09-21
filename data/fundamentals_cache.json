@@ -1,42 +1,9 @@
 {
  "NVDA": {
-  "fetched_ts": 1789415266.4791317,
+  "fetched_ts": 1790020610.071612,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 66.9,
-   "altman_detail": {
-    "X1": 0.452,
-    "X2": 0.711,
-    "X3": 0.685,
-    "X4": 103.436,
-    "X5": 1.044
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -1.27,
-   "beneish_detail": {
-    "DSRI": 1.008,
-    "GMI": 1.055,
-    "AQI": 1.232,
-    "SGI": 1.655,
-    "DEPI": 1.061,
-    "SGAI": 0.793,
-    "LVGI": 0.807,
-    "TATA": 0.084
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "BAC": {
@@ -183,77 +150,17 @@
   }
  },
  "SAP.DE": {
-  "fetched_ts": 1789415291.8785214,
+  "fetched_ts": 1790020610.8437903,
   "scores": {
-   "available": true,
-   "piotroski": 8,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 7.12,
-   "altman_detail": {
-    "X1": 0.04,
-    "X2": 0.673,
-    "X3": 0.153,
-    "X4": 8.501,
-    "X5": 0.523
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.63,
-   "beneish_detail": {
-    "DSRI": 0.863,
-    "GMI": 1.001,
-    "AQI": 0.982,
-    "SGI": 1.077,
-    "DEPI": 0.982,
-    "SGAI": 0.928,
-    "LVGI": 0.935,
-    "TATA": -0.026
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "MUV2.DE": {
-  "fetched_ts": 1789415294.7965083,
+  "fetched_ts": 1790020611.494929,
   "scores": {
-   "available": true,
-   "piotroski": 5,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": null,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": null,
-   "altman_detail": null,
-   "altman_not_applicable": true,
-   "sector": "Financial Services",
-   "beneish_m": null,
-   "beneish_detail": {
-    "DSRI": null,
-    "GMI": null,
-    "AQI": null,
-    "SGI": 0.9672171861418105,
-    "DEPI": 1.1970093820590637,
-    "SGAI": 1.0756278525411933,
-    "LVGI": null,
-    "TATA": 0.004340308787071238
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "RKLB": {
@@ -344,43 +251,10 @@
   }
  },
  "DUOL": {
-  "fetched_ts": 1789415325.2602117,
+  "fetched_ts": 1790020609.4363198,
   "scores": {
-   "available": true,
-   "piotroski": 3,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 8.07,
-   "altman_detail": {
-    "X1": 0.444,
-    "X2": 0.145,
-    "X3": 0.068,
-    "X4": 10.987,
-    "X5": 0.521
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -1.72,
-   "beneish_detail": {
-    "DSRI": 0.911,
-    "GMI": 1.008,
-    "AQI": 1.852,
-    "SGI": 1.387,
-    "DEPI": 1.279,
-    "SGAI": 0.9,
-    "LVGI": 0.884,
-    "TATA": 0.013
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "GC=F": {
