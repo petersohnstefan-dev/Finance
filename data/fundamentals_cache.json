@@ -231,14 +231,14 @@
   }
  },
  "GC=F": {
-  "fetched_ts": 1789496130.6658225,
+  "fetched_ts": 1790101002.2361357,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
   }
  },
  "BTC-USD": {
-  "fetched_ts": 1789496131.1881008,
+  "fetched_ts": 1790101002.4016411,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
@@ -285,163 +285,31 @@
   }
  },
  "FOUR": {
-  "fetched_ts": 1789496188.9586434,
+  "fetched_ts": 1790101000.159592,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 0.97,
-   "altman_detail": {
-    "X1": 0.1,
-    "X2": -0.054,
-    "X3": 0.044,
-    "X4": 0.506,
-    "X5": 0.48
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -1.88,
-   "beneish_detail": {
-    "DSRI": 1.694,
-    "GMI": 0.855,
-    "AQI": 1.234,
-    "SGI": 1.255,
-    "DEPI": 1.012,
-    "SGAI": 1.223,
-    "LVGI": 0.958,
-    "TATA": -0.056
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "ONON": {
-  "fetched_ts": 1789496192.1711771,
+  "fetched_ts": 1790100998.799139,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 6.49,
-   "altman_detail": {
-    "X1": 0.437,
-    "X2": 0.135,
-    "X3": 0.08,
-    "X4": 7.414,
-    "X5": 1.063
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Cyclical",
-   "beneish_m": -2.4,
-   "beneish_detail": {
-    "DSRI": 0.955,
-    "GMI": 0.965,
-    "AQI": 1.304,
-    "SGI": 1.3,
-    "DEPI": 1.139,
-    "SGAI": 0.977,
-    "LVGI": 1.029,
-    "TATA": -0.055
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "CELH": {
-  "fetched_ts": 1789496195.270795,
+  "fetched_ts": 1790100999.3585122,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 2.76,
-   "altman_detail": {
-    "X1": 0.143,
-    "X2": 0.034,
-    "X3": 0.034,
-    "X4": 3.22,
-    "X5": 0.491
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Defensive",
-   "beneish_m": -0.95,
-   "beneish_detail": {
-    "DSRI": 1.506,
-    "GMI": 0.996,
-    "AQI": 2.874,
-    "SGI": 1.855,
-    "DEPI": 0.461,
-    "SGAI": 0.821,
-    "LVGI": 1.578,
-    "TATA": -0.049
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "MNTS": {
-  "fetched_ts": 1789496198.3320847,
+  "fetched_ts": 1790100999.7365866,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": -15.14,
-   "altman_detail": {
-    "X1": 0.154,
-    "X2": -10.878,
-    "X3": -0.739,
-    "X4": 3.857,
-    "X5": 0.028
-   },
-   "altman_not_applicable": false,
-   "sector": "Industrials",
-   "beneish_m": -4.44,
-   "beneish_detail": {
-    "DSRI": 0.0,
-    "GMI": 0.971,
-    "AQI": 0.801,
-    "SGI": 0.525,
-    "DEPI": 2.962,
-    "SGAI": 1.664,
-    "LVGI": 0.371,
-    "TATA": -0.178
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "BLNK": {
