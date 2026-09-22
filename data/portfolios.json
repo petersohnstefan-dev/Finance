@@ -6,7 +6,7 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
       "initial_cash": 10000.0,
-      "cash": 5141.536831294,
+      "cash": 4200.860919742741,
       "positions": {
         "SRT3.DE": {
           "symbol": "SRT3.DE",
@@ -35,6 +35,18 @@
           "derivative_type": "STOCK",
           "peak_price": 27.93,
           "last_updated": "18:47:16"
+        },
+        "ONON": {
+          "symbol": "ONON",
+          "name": "On Holding AG",
+          "shares": 31.0479,
+          "buy_price": 30.2654,
+          "current_price": 30.205,
+          "buy_date": "2026-09-22 19:04",
+          "stop_loss": 25.674,
+          "take_profit": null,
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 82/100) | keine Optionsdaten | On Holding stock soaring on growth forecasts in new sports categories | ⚖️ Tribunal (BUY): Der Titel zeigt ein starkes Momentum mit einem Breakout-Score von 100 und positiven News zu neuen Wachstumskategorien. Keine der Ausschlusskriterien greift: Die Bilanz ist solide (Altman Z 6.49, Piotroski 6/9), die Datenabdeckung liegt mit 70% über der 50%-Grenze, es besteht kein Klumpenrisiko im Sektor und das Momentum wird durch fundamentale Daten sowie Nachrichten gestützt.",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -366,6 +378,17 @@
           "total": 2004.0,
           "date": "2026-09-18 22:31",
           "reason": "🚨 Smart-Money Ausbruch (Alpha 66/100) | PCR: 0.31 | Sector Update: Healthcare Stocks Softer Late Afternoon | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen auf Basis von Momentum und Ausbruechen, wobei fundamentale Schieflagen ein Ausschlussgrund sind. Der Smart-Money Ausbruch, der starke Alpha-Score von 69.4 und das extrem bullische Put-Call-Ratio von 0.31 stützen das Setup. Die fundamentale Seite zeigt keine groben Schieflagen (Piotroski 6/9, unauffällige Bilanzierung laut Beneish M-Score), womit die Ausschlusskriterien nicht erfüllt sind."
+        },
+        {
+          "type": "BUY",
+          "symbol": "ONON",
+          "name": "On Holding AG",
+          "product_type": "STOCK",
+          "shares": 31.0479,
+          "price": 30.2,
+          "total": 939.68,
+          "date": "2026-09-22 19:04",
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 82/100) | keine Optionsdaten | On Holding stock soaring on growth forecasts in new sports categories | ⚖️ Tribunal (BUY): Der Titel zeigt ein starkes Momentum mit einem Breakout-Score von 100 und positiven News zu neuen Wachstumskategorien. Keine der Ausschlusskriterien greift: Die Bilanz ist solide (Altman Z 6.49, Piotroski 6/9), die Datenabdeckung liegt mit 70% über der 50%-Grenze, es besteht kein Klumpenrisiko im Sektor und das Momentum wird durch fundamentale Daten sowie Nachrichten gestützt."
         }
       ]
     },
@@ -1432,7 +1455,6 @@
     "long_term_ONON": "2026-09-17T23:11:42.886429+02:00",
     "short_term_DNA": "2026-09-18T15:56:25.058641+02:00",
     "short_term_RDWR": "2026-09-18T17:51:44.584222+02:00",
-    "short_term_ONON": "2026-09-19T00:26:55.468208+02:00",
     "short_term_MNTS": "2026-09-22T18:07:12.882722+02:00",
     "short_term_VKTX": "2026-09-22T21:21:42.809250+02:00"
   },
