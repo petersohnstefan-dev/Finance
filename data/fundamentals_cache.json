@@ -455,17 +455,83 @@
   }
  },
  "UBER": {
-  "fetched_ts": 1789496676.4261975,
+  "fetched_ts": 1790102196.1097724,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 3.51,
+   "altman_detail": {
+    "X1": 0.027,
+    "X2": -0.172,
+    "X3": 0.101,
+    "X4": 4.231,
+    "X5": 0.842
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.28,
+   "beneish_detail": {
+    "DSRI": 0.971,
+    "GMI": 0.991,
+    "AQI": 1.075,
+    "SGI": 1.183,
+    "DEPI": 0.964,
+    "SGAI": 0.863,
+    "LVGI": 0.955,
+    "TATA": -0.0
+   },
+   "computed_at": "2026-09-22"
   }
  },
  "IBM": {
-  "fetched_ts": 1789496677.7340364,
+  "fetched_ts": 1790102197.9674876,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 3.23,
+   "altman_detail": {
+    "X1": -0.011,
+    "X2": 1.025,
+    "X3": 0.081,
+    "X4": 1.831,
+    "X5": 0.445
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.4,
+   "beneish_detail": {
+    "DSRI": 1.108,
+    "GMI": 0.974,
+    "AQI": 1.019,
+    "SGI": 1.076,
+    "DEPI": 0.96,
+    "SGAI": 0.941,
+    "LVGI": 1.017,
+    "TATA": -0.017
+   },
+   "computed_at": "2026-09-22"
   }
  },
  "REL.L": {
