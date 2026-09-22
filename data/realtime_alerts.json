@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-09-22 09:01:14",
+    "time_str": "09:01:14",
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.03,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-22 09:01:13",
+    "time_str": "09:01:13",
+    "symbol": "BONK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.4,
+    "vol_ratio": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BONK-USD stürzt um -1.40% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-22 08:55:54",
     "time_str": "08:55:54",
     "symbol": "FLOKI-USD",
@@ -526,27 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVCR explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 08:06:00",
-    "time_str": "08:06:00",
-    "symbol": "BEAM",
-    "direction": "SHORT",
-    "trigger_price": 24.85,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 08:06:00",
-    "time_str": "08:06:00",
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 59.0,
-    "change_1min_pct": 0.68,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.68% in 5 Min.! Momentum aktiv."
   }
 ]
