@@ -2055,5 +2055,85 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "AMGN": {
+  "fetched_ts": 1790080002.132506,
+  "scores": {
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.05,
+   "altman_detail": {
+    "X1": 0.039,
+    "X2": -0.277,
+    "X3": 0.13,
+    "X4": 2.594,
+    "X5": 0.406
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": -2.26,
+   "beneish_detail": {
+    "DSRI": 1.283,
+    "GMI": 0.915,
+    "AQI": 0.966,
+    "SGI": 1.1,
+    "DEPI": 1.167,
+    "SGAI": 0.904,
+    "LVGI": 0.961,
+    "TATA": -0.025
+   },
+   "computed_at": "2026-09-22"
+  }
+ },
+ "BKNG": {
+  "fetched_ts": 1790080003.5341275,
+  "scores": {
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 6.3,
+   "altman_detail": {
+    "X1": 0.19,
+    "X2": 1.39,
+    "X3": 0.289,
+    "X4": 3.748,
+    "X5": 0.92
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Cyclical",
+   "beneish_m": -3.0,
+   "beneish_detail": {
+    "DSRI": 1.053,
+    "GMI": null,
+    "AQI": 0.891,
+    "SGI": 1.134,
+    "DEPI": 1.008,
+    "SGAI": 0.948,
+    "LVGI": 1.042,
+    "TATA": -0.137
+   },
+   "computed_at": "2026-09-22"
+  }
  }
 }
