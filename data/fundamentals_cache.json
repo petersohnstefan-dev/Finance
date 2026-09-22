@@ -558,7 +558,7 @@
   }
  },
  "TIA-USD": {
-  "fetched_ts": 1789498610.0915732,
+  "fetched_ts": 1790105204.1797516,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
@@ -586,43 +586,10 @@
   }
  },
  "PFE": {
-  "fetched_ts": 1789500115.6531446,
+  "fetched_ts": 1790105203.428957,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 2.04,
-   "altman_detail": {
-    "X1": 0.028,
-    "X2": 0.551,
-    "X3": 0.049,
-    "X4": 1.293,
-    "X5": 0.301
-   },
-   "altman_not_applicable": false,
-   "sector": "Healthcare",
-   "beneish_m": -2.52,
-   "beneish_detail": {
-    "DSRI": 1.053,
-    "GMI": 0.968,
-    "AQI": 1.039,
-    "SGI": 0.984,
-    "DEPI": 1.085,
-    "SGAI": 0.952,
-    "LVGI": 1.006,
-    "TATA": -0.019
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "SPGI": {
