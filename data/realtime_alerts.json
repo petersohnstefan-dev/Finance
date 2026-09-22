@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-22 13:46:11",
+    "time_str": "13:46:11",
+    "symbol": "GFT.DE",
+    "direction": "SHORT",
+    "trigger_price": 26.5,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 0.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GFT.DE stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-22 13:46:11",
+    "time_str": "13:46:11",
+    "symbol": "EVT.DE",
+    "direction": "LONG",
+    "trigger_price": 2.86,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 EVT.DE explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-22 13:46:08",
+    "time_str": "13:46:08",
+    "symbol": "ESTC",
+    "direction": "LONG",
+    "trigger_price": 91.0,
+    "change_1min_pct": 0.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ESTC explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-22 13:41:08",
     "time_str": "13:41:08",
     "symbol": "ISRG",
@@ -515,38 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VKTX explodiert um +3.21% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 13:25:54",
-    "time_str": "13:25:54",
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 1.34,
-    "change_1min_pct": 1.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -1.85% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 13:25:53",
-    "time_str": "13:25:53",
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 58.83,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 13:25:53",
-    "time_str": "13:25:53",
-    "symbol": "COPX",
-    "direction": "SHORT",
-    "trigger_price": 88.02,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COPX stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
