@@ -643,7 +643,7 @@
       ]
     },
     "day_trading": {
-      "cash": 5447.7583645689165,
+      "cash": 4925.384656590857,
       "positions": {
         "KO757678": {
           "symbol": "KO757678",
@@ -702,6 +702,33 @@
           "is_knocked_out": false,
           "peak_price": 2.3782,
           "last_updated": "15:21:48"
+        },
+        "KO109385": {
+          "symbol": "KO109385",
+          "name": "⚡ Turbo Bull 9.0x auf Astera Labs, Inc. (KO: 319.07)",
+          "shares": 131.7625,
+          "buy_price": 3.9569,
+          "current_price": 3.91,
+          "buy_date": "2026-09-22 15:36",
+          "stop_loss": 3.363,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+2.7% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO109385",
+          "underlying_symbol": "ALAB",
+          "underlying_name": "Astera Labs, Inc.",
+          "direction": "LONG",
+          "ratio": 0.1,
+          "strike": 312.82,
+          "knockout_barrier": 319.07,
+          "initial_underlying_price": 351.92,
+          "current_underlying_price": 351.92,
+          "cert_price": 3.91,
+          "leverage": 9.0,
+          "distance_to_ko_pct": 9.3,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -1376,6 +1403,17 @@
           "total": 523.57,
           "date": "2026-09-22 14:08",
           "reason": "⚡ Daytrade (+1.4% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 7.0x Hebel | Risiko 14%"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO109385",
+          "name": "⚡ Turbo Bull 9.0x auf Astera Labs, Inc. (KO: 319.07)",
+          "product_type": "KNOCKOUT",
+          "shares": 131.7625,
+          "price": 3.91,
+          "total": 521.37,
+          "date": "2026-09-22 15:36",
+          "reason": "⚡ Daytrade (+2.7% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
