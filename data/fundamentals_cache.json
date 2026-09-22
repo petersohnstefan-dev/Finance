@@ -1980,5 +1980,45 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "HON": {
+  "fetched_ts": 1790064709.1449375,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.57,
+   "altman_detail": {
+    "X1": 0.095,
+    "X2": 0.692,
+    "X3": 0.093,
+    "X4": 1.116,
+    "X5": 0.508
+   },
+   "altman_not_applicable": false,
+   "sector": "Industrials",
+   "beneish_m": -2.61,
+   "beneish_detail": {
+    "DSRI": 0.975,
+    "GMI": 1.042,
+    "AQI": 0.919,
+    "SGI": 1.078,
+    "DEPI": 0.89,
+    "SGAI": 0.965,
+    "LVGI": 1.105,
+    "TATA": -0.026
+   },
+   "computed_at": "2026-09-22"
+  }
  }
 }
