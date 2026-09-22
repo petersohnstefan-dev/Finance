@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-09-22 08:26:01",
+    "time_str": "08:26:01",
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.14,
+    "vol_ratio": 0.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-22 08:21:00",
     "time_str": "08:21:00",
     "symbol": "STRK-USD",
@@ -537,16 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARGX explodiert um +0.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-22 07:35:50",
-    "time_str": "07:35:50",
-    "symbol": "BMRN",
-    "direction": "LONG",
-    "trigger_price": 65.0,
-    "change_1min_pct": 1.47,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BMRN explodiert um +1.47% in 5 Min.! Momentum aktiv."
   }
 ]
