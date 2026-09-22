@@ -427,43 +427,10 @@
   }
  },
  "ASTS": {
-  "fetched_ts": 1789496209.8776767,
+  "fetched_ts": 1790101291.9239335,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 4.14,
-   "altman_detail": {
-    "X1": 0.46,
-    "X2": -0.166,
-    "X3": -0.084,
-    "X4": 6.813,
-    "X5": 0.014
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": 44.8,
-   "beneish_detail": {
-    "DSRI": 1.679,
-    "GMI": 1.986,
-    "AQI": 82.286,
-    "SGI": 16.052,
-    "DEPI": 4.387,
-    "SGAI": 0.103,
-    "LVGI": 1.939,
-    "TATA": -0.078
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "TTK.DE": {
