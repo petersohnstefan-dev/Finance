@@ -2080,5 +2080,45 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "APP": {
+  "fetched_ts": 1790159240.0421581,
+  "scores": {
+   "available": true,
+   "piotroski": 9,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 16.42,
+   "altman_detail": {
+    "X1": 0.427,
+    "X2": 0.239,
+    "X3": 0.573,
+    "X4": 21.548,
+    "X5": 0.755
+   },
+   "altman_not_applicable": false,
+   "sector": "Communication Services",
+   "beneish_m": -2.38,
+   "beneish_detail": {
+    "DSRI": 0.834,
+    "GMI": 0.954,
+    "AQI": 0.645,
+    "SGI": 1.7,
+    "DEPI": 1.224,
+    "SGAI": 0.616,
+    "LVGI": 0.858,
+    "TATA": -0.074
+   },
+   "computed_at": "2026-09-23"
+  }
  }
 }
