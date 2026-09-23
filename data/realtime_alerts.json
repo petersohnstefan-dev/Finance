@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-23 18:41:00",
+    "time_str": "18:41:00",
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 29.71,
+    "change_1min_pct": 0.97,
+    "vol_ratio": 1.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 18:40:58",
+    "time_str": "18:40:58",
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.42,
+    "change_1min_pct": 1.07,
+    "vol_ratio": 4.38,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +1.07% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 18:40:56",
+    "time_str": "18:40:56",
+    "symbol": "NEAR-USD",
+    "direction": "SHORT",
+    "trigger_price": 4.22,
+    "change_1min_pct": 1.23,
+    "vol_ratio": 0.6,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-23 18:36:01",
     "time_str": "18:36:01",
     "symbol": "NOVO-B.CO",
@@ -515,38 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BRRR stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 18:05:51",
-    "time_str": "18:05:51",
-    "symbol": "PENDLE-USD",
-    "direction": "LONG",
-    "trigger_price": 2.4,
-    "change_1min_pct": 1.46,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PENDLE-USD explodiert um +1.46% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 18:05:51",
-    "time_str": "18:05:51",
-    "symbol": "CRV-USD",
-    "direction": "LONG",
-    "trigger_price": 0.33,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRV-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 18:05:51",
-    "time_str": "18:05:51",
-    "symbol": "AAVE-USD",
-    "direction": "LONG",
-    "trigger_price": 139.7,
-    "change_1min_pct": 1.06,
-    "vol_ratio": 6.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AAVE-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
   }
 ]
