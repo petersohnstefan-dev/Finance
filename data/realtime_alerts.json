@@ -1,5 +1,49 @@
 [
   {
+    "timestamp": "2026-09-23 12:01:26",
+    "time_str": "12:01:26",
+    "symbol": "MDLZ",
+    "direction": "SHORT",
+    "trigger_price": 61.02,
+    "change_1min_pct": 0.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDLZ stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 12:01:22",
+    "time_str": "12:01:22",
+    "symbol": "NOEJ.DE",
+    "direction": "SHORT",
+    "trigger_price": 16.14,
+    "change_1min_pct": 1.1,
+    "vol_ratio": 1.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOEJ.DE stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 12:01:20",
+    "time_str": "12:01:20",
+    "symbol": "SGL.DE",
+    "direction": "SHORT",
+    "trigger_price": 4.49,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SGL.DE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 12:01:17",
+    "time_str": "12:01:17",
+    "symbol": "SB=F",
+    "direction": "LONG",
+    "trigger_price": 18.57,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 2.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SB=F explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-23 11:56:02",
     "time_str": "11:56:02",
     "symbol": "TXN",
@@ -504,49 +548,5 @@
     "vol_ratio": 0.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NOEJ.DE explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:21:05",
-    "time_str": "11:21:05",
-    "symbol": "SZG.DE",
-    "direction": "LONG",
-    "trigger_price": 53.2,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 2.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SZG.DE explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:21:04",
-    "time_str": "11:21:04",
-    "symbol": "SGL.DE",
-    "direction": "LONG",
-    "trigger_price": 4.52,
-    "change_1min_pct": 1.57,
-    "vol_ratio": 0.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SGL.DE explodiert um +1.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:21:04",
-    "time_str": "11:21:04",
-    "symbol": "LPK.DE",
-    "direction": "LONG",
-    "trigger_price": 14.5,
-    "change_1min_pct": 1.05,
-    "vol_ratio": 0.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LPK.DE explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:21:03",
-    "time_str": "11:21:03",
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.56,
-    "change_1min_pct": 1.36,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +1.36% in 5 Min.! Momentum aktiv."
   }
 ]
