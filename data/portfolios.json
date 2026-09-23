@@ -668,8 +668,36 @@
       ]
     },
     "day_trading": {
-      "cash": 6529.627330324137,
-      "positions": {},
+      "cash": 5996.854480542539,
+      "positions": {
+        "KO643545": {
+          "symbol": "KO643545",
+          "name": "⚡ Turbo Bull 9.0x auf LPKF Laser & Electronics SE   I (KO: 15.595)",
+          "shares": 273.4922,
+          "buy_price": 1.9444,
+          "current_price": 1.91,
+          "buy_date": "2026-09-23 14:31",
+          "stop_loss": 1.643,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+8.9% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO643545",
+          "underlying_symbol": "LPK.DE",
+          "underlying_name": "LPKF Laser & Electronics SE   I",
+          "direction": "LONG",
+          "ratio": 1.0,
+          "strike": 15.29,
+          "knockout_barrier": 15.59,
+          "initial_underlying_price": 17.2,
+          "current_underlying_price": 17.2,
+          "cert_price": 1.91,
+          "leverage": 9.0,
+          "distance_to_ko_pct": 9.3,
+          "is_knocked_out": false
+        }
+      },
       "history": [
         {
           "type": "BUY",
@@ -1420,6 +1448,17 @@
           "pnl_pct": -3.16,
           "date": "2026-09-22 21:01",
           "reason": "🛡️ EOD Pflichtverkauf (-1.4%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO643545",
+          "name": "⚡ Turbo Bull 9.0x auf LPKF Laser & Electronics SE   I (KO: 15.595)",
+          "product_type": "KNOCKOUT",
+          "shares": 273.4922,
+          "price": 1.91,
+          "total": 531.77,
+          "date": "2026-09-23 14:31",
+          "reason": "⚡ Daytrade (+8.9% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
