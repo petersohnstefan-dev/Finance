@@ -1,5 +1,5 @@
 {
-    "daytrade_max_leverage": 9.0,
+    "daytrade_max_leverage": 3.0,
     "daytrade_stop_loss_pct": 0.14,
     "daytrade_max_risk_per_trade_pct": 0.015,
     "daytrade_min_risk_reward_ratio": 2.5,
@@ -8,7 +8,7 @@
     "daytrade_max_correlated_positions": 2,
     "daytrade_eod_close_all": true,
     "daytrade_eod_time_hour": 21,
-    "daytrade_min_entry_score": 65,
+    "daytrade_min_entry_score": 75,
     "daytrade_max_candidates_scored": 8,
     "daytrade_trailing_breakeven_pct": 0.03,
     "daytrade_trailing_lock_pct": 0.05,

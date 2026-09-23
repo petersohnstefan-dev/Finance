@@ -126,7 +126,7 @@ class PortfolioManager:
     def _load_strategy(self) -> Dict[str, Any]:
         strat_file = data_file("strategy.json")
         default_strat = {
-            "daytrade_max_leverage": 10.0,
+            "daytrade_max_leverage": 3.0,
             "daytrade_stop_loss_pct": 0.15,
             "daytrade_max_risk_per_trade_pct": 0.02,
             "daytrade_min_risk_reward_ratio": 2.0,
@@ -135,7 +135,9 @@ class PortfolioManager:
             "daytrade_max_correlated_positions": 2,
             "daytrade_eod_close_all": True,
             "daytrade_eod_time_hour": 21,
-            "daytrade_min_entry_score": 65,
+            # Raised with the leverage cap: the stop-buffer factor now scores 12-20
+            # instead of 0-5, so 65 would pass 65% of candidates where it passed 18%.
+            "daytrade_min_entry_score": 75,
             "daytrade_max_candidates_scored": 8,
             "daytrade_trailing_breakeven_pct": 0.03,
             "daytrade_trailing_lock_pct": 0.05,
@@ -442,17 +444,34 @@ class PortfolioManager:
         return min(max(sl_pct, lo), hi)
 
     def _choose_leverage(self, spike: float) -> float:
-        """Maps an intraday spike to the certificate leverage. Shared by scoring and entry
-        so the RRR estimate uses the same stop distance the trade will actually get."""
-        max_lev = self.strategy.get("daytrade_max_leverage", 10.0)
-        if spike >= 2.0:
-            return min(10.0, max_lev)
-        if spike >= 1.2:
-            return min(7.0, max_lev)
-        if spike >= 0.8:
-            return min(5.0, max_lev)
-        if spike >= 0.5:
+        """Maps an intraday spike to certificate leverage, capped at what the polling
+        interval can actually protect.
+
+        The bot checks every five minutes at best - sometimes far less often when
+        GitHub's queue is busy. Between two checks nothing can be sold. A stop of
+        sl_pct on the certificate therefore only holds if the underlying needs a
+        LARGER move than sl_pct/leverage to jump it:
+
+            leverage   move needed to jump a 14% stop
+               2x                7.0%   practically never in five minutes
+               3x                4.7%   rare
+               7x                2.0%   regularly
+              10x                1.4%   routinely
+
+        The scanner selects names moving 0.5-3% in five minutes, so at 7-10x the
+        entry criterion and the stop-failure threshold were the same size. Nine of
+        32 trades blew through the stop - one at -81.5%, one at -55.2% - and those
+        nine account for 94% of the depot's entire loss.
+
+        The ladder is therefore capped at 3x. This trades upside per trade for a
+        stop that actually functions; whether the signal selection is any good is
+        a question that could not even be asked while the stops were failing.
+        """
+        max_lev = self.strategy.get("daytrade_max_leverage", 3.0)
+        if spike >= 1.5:
             return min(3.0, max_lev)
+        if spike >= 0.8:
+            return min(2.0, max_lev)
         return 1.0  # Direct stock purchase for weak signals
 
     def _calculate_entry_quality(self, alert: Dict, sym: str) -> int:

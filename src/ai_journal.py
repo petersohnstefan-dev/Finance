@@ -68,7 +68,12 @@ _migrate_ai_journal_db()
 
 # Safety bounds for each tunable parameter — the AI cannot go outside these ranges
 PARAM_SAFETY_BOUNDS = {
-    "daytrade_max_leverage":          {"min": 2.0,   "max": 15.0,  "step": 1.0},
+    # Capped at 3x, not 15x: a stop can only hold if the underlying needs a bigger
+    # move than sl_pct/leverage to jump it between two five-minute checks. At 7-10x
+    # that threshold (1.4-2.0%) is the same size as the entry criterion itself, and
+    # nine trades that blew through the stop produced 94% of the depot's loss. The
+    # journal may lower the lever, never raise it past what the polling can protect.
+    "daytrade_max_leverage":          {"min": 1.0,   "max": 3.0,   "step": 0.5},
     "daytrade_stop_loss_pct":         {"min": 0.05,  "max": 0.30,  "step": 0.01},
     "daytrade_max_risk_per_trade_pct":{"min": 0.005, "max": 0.03,  "step": 0.005},
     "daytrade_min_risk_reward_ratio": {"min": 1.5,   "max": 4.0,   "step": 0.5},
@@ -589,6 +594,17 @@ Drehe einen Parameter NICHT erneut in dieselbe Richtung, solange die letzte
 Aenderung nicht durch neue Trades geprueft wurde. Massstab sind abgeschlossene
 Trades, nicht verstrichene Tage - solche Vorschlaege werden automatisch abgelehnt.
 Fehlt die Evidenz, ist "nichts aendern" die richtige Antwort.
+
+### HARTE RANDBEDINGUNG DES SYSTEMS (nicht verhandelbar):
+Der Handels-Bot laeuft als Cron-Job und prueft die Positionen bestenfalls alle
+5 Minuten, bei Warteschlangen auch deutlich seltener. Dazwischen kann NICHTS
+verkauft werden. Ein Stop von X% auf einem Hebelzertifikat haelt daher nur, wenn
+der Basiswert mehr als X%/Hebel Gegenbewegung braucht, um ihn zu ueberspringen.
+Bei Hebel 7-10 liegt diese Schwelle bei 1,4-2,0% - genau die Groessenordnung, die
+der Scanner als Einstiegssignal sucht. Der Hebel ist deshalb auf 3x begrenzt.
+Schlage NIEMALS einen hoeheren Hebel vor, auch nicht zur Renditesteigerung, und
+begruende Verluste nicht mit "zu wenig Hebel". Wenn die Verluste zu gross sind,
+ist der richtige Hebel kleiner, nicht groesser.
 
 ### TECHNISCHE STOERUNGEN (Defekte, keine Strategiefrage):
 {incidents.summarize(7)}
