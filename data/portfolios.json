@@ -668,7 +668,7 @@
       ]
     },
     "day_trading": {
-      "cash": 5996.854480542539,
+      "cash": 5464.928830540275,
       "positions": {
         "KO643545": {
           "symbol": "KO643545",
@@ -697,6 +697,33 @@
           "distance_to_ko_pct": 9.3,
           "is_knocked_out": false,
           "peak_price": 1.9444
+        },
+        "KO962646": {
+          "symbol": "KO962646",
+          "name": "⚡ Turbo Bull 9.0x auf Klaviyo, Inc. Series A (KO: 15.051)",
+          "shares": 283.4445,
+          "buy_price": 1.8731,
+          "current_price": 1.84,
+          "buy_date": "2026-09-23 15:42",
+          "stop_loss": 1.582,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+2.1% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO962646",
+          "underlying_symbol": "KVYO",
+          "underlying_name": "Klaviyo, Inc. Series A",
+          "direction": "LONG",
+          "ratio": 1.0,
+          "strike": 14.76,
+          "knockout_barrier": 15.05,
+          "initial_underlying_price": 16.6,
+          "current_underlying_price": 16.6,
+          "cert_price": 1.84,
+          "leverage": 9.0,
+          "distance_to_ko_pct": 9.3,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -1460,6 +1487,17 @@
           "total": 531.77,
           "date": "2026-09-23 14:31",
           "reason": "⚡ Daytrade (+8.9% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO962646",
+          "name": "⚡ Turbo Bull 9.0x auf Klaviyo, Inc. Series A (KO: 15.051)",
+          "product_type": "KNOCKOUT",
+          "shares": 283.4445,
+          "price": 1.84,
+          "total": 530.93,
+          "date": "2026-09-23 15:42",
+          "reason": "⚡ Daytrade (+2.1% Spike, Score 65/100 [volu25 tren5 spik20 stop0 mark15]) | 9.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
