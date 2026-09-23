@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-23 20:35:52",
+    "time_str": "20:35:52",
+    "symbol": "RUN",
+    "direction": "LONG",
+    "trigger_price": 8.51,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 3.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 20:35:52",
+    "time_str": "20:35:52",
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 3.82,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 20:35:48",
+    "time_str": "20:35:48",
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 5.1,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -5.10% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-23 20:25:57",
     "time_str": "20:25:57",
     "symbol": "TTK.DE",
@@ -515,38 +548,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NOEJ.DE explodiert um +2.21% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 19:46:10",
-    "time_str": "19:46:10",
-    "symbol": "ADV.DE",
-    "direction": "SHORT",
-    "trigger_price": 22.0,
-    "change_1min_pct": 0.9,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADV.DE stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 19:46:10",
-    "time_str": "19:46:10",
-    "symbol": "S92.DE",
-    "direction": "SHORT",
-    "trigger_price": 58.45,
-    "change_1min_pct": 1.6,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S92.DE stürzt um -1.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 19:46:10",
-    "time_str": "19:46:10",
-    "symbol": "DEQ.DE",
-    "direction": "SHORT",
-    "trigger_price": 17.54,
-    "change_1min_pct": 2.01,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DEQ.DE stürzt um -2.01% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
