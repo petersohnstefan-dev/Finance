@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-23 11:46:03",
+    "time_str": "11:46:03",
+    "symbol": "EVT.DE",
+    "direction": "SHORT",
+    "trigger_price": 2.8,
+    "change_1min_pct": 0.92,
+    "vol_ratio": 0.38,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 EVT.DE stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 11:46:02",
+    "time_str": "11:46:02",
+    "symbol": "TTK.DE",
+    "direction": "LONG",
+    "trigger_price": 3.13,
+    "change_1min_pct": 2.28,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TTK.DE explodiert um +2.28% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 11:46:02",
+    "time_str": "11:46:02",
+    "symbol": "STO3.DE",
+    "direction": "SHORT",
+    "trigger_price": 99.1,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STO3.DE stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-23 11:41:06",
     "time_str": "11:41:06",
     "symbol": "MNTS",
@@ -515,38 +548,5 @@
     "vol_ratio": 0.4,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HFG.DE stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:05:53",
-    "time_str": "11:05:53",
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 29.61,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:05:53",
-    "time_str": "11:05:53",
-    "symbol": "ARM",
-    "direction": "LONG",
-    "trigger_price": 333.0,
-    "change_1min_pct": 0.84,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 11:05:52",
-    "time_str": "11:05:52",
-    "symbol": "VKTX",
-    "direction": "LONG",
-    "trigger_price": 40.53,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX explodiert um +0.78% in 5 Min.! Momentum aktiv."
   }
 ]
