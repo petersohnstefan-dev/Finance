@@ -6,6 +6,7 @@ import re
 from typing import Dict, Any, List, Optional
 
 from src import incidents
+from src import exit_analysis
 
 try:
     import google.generativeai as genai
@@ -92,7 +93,12 @@ PARAM_SAFETY_BOUNDS = {
     "short_term_stop_loss_pct":       {"min": 0.05,  "max": 0.25,  "step": 0.01},
     "short_term_stop_atr_mult":       {"min": 1.5,   "max": 4.0,   "step": 0.25},
     "short_term_trail_atr_mult":      {"min": 1.5,   "max": 4.0,   "step": 0.25},
-    "short_term_breakeven_trigger_atr":{"min": 0.5,  "max": 3.0,   "step": 0.25},
+    # Floor raised from 0.5 to 1.5: at 1.0 ATR the stop was pulled to the entry
+    # price on any ordinary day, and three of three positions stopped out that way
+    # rose an average of 14% in the three weeks after the exit. Below 1.5 the
+    # trigger stops protecting profit and starts harvesting noise, so the
+    # retrospective may no longer go back there - see the prompt constraint.
+    "short_term_breakeven_trigger_atr":{"min": 1.5,  "max": 3.0,   "step": 0.25},
     "short_term_stop_min_pct":        {"min": 0.03,  "max": 0.12,  "step": 0.01},
     "short_term_stop_max_pct":        {"min": 0.15,  "max": 0.40,  "step": 0.05},
     "short_term_max_risk_per_trade_pct":{"min": 0.005, "max": 0.03, "step": 0.005},
@@ -556,6 +562,13 @@ class AIJournalEngine:
         score_analysis = self._get_entry_score_analysis(alltime_stats["trades"])
         gate_diag = self._load_entry_diagnostics(depot_id, days=7 if mode == "weekly" else 1)
 
+        # Exit analysis deliberately looks far beyond the reporting period. A
+        # daily retrospective sees one or two closed trades, and an exit
+        # mechanism that fires every second trade and earns nothing is a pattern
+        # that only exists across weeks. Judging exits on a single day is how
+        # the premature breakeven stop stayed invisible for a month.
+        exit_block = exit_analysis.format_for_prompt(depot_id, days=90)
+
         # 4. Build the bounds description for the prompt
         bounds_desc = "\n".join([
             f"  - {k}: aktuell={current_params.get(k, '?')}, min={v['min']}, max={v['max']}, step={v['step']}"
@@ -606,6 +619,14 @@ Schlage NIEMALS einen hoeheren Hebel vor, auch nicht zur Renditesteigerung, und
 begruende Verluste nicht mit "zu wenig Hebel". Wenn die Verluste zu gross sind,
 ist der richtige Hebel kleiner, nicht groesser.
 
+Der Breakeven-Trigger des Kurzfristdepots stand bis zum 23.09.2026 bei 1.0 ATR.
+Das hat die Stops auf den Einstand gezogen, bevor die Trades irgendwo waren: drei
+so beendete Positionen stiegen danach im Schnitt 14%, die Haelfte aller Ausstiege
+lag im Nullsummenbereich. Er steht jetzt bei 2.0 und die Untergrenze bei 1.5.
+Senke ihn nicht mit der Begruendung, Verluste zu begrenzen - der Wert begrenzt
+keine Verluste, er beendet Gewinner vorzeitig. Niedrigere Vorschlaege werden
+abgelehnt.
+
 ### TECHNISCHE STOERUNGEN (Defekte, keine Strategiefrage):
 {incidents.summarize(7)}
 Wenn ein Verlust auf eine technische Stoerung zurueckgeht, ist die Antwort NICHT,
@@ -622,6 +643,24 @@ Parameter zu drehen. Benenne den Defekt in "reflection" und lass die Parameter i
     'type': t.get('trade_type'), 'symbol': t.get('symbol'), 'pnl': t.get('pnl'),
     'pnl_pct': t.get('pnl_pct'), 'reason': t.get('reason', '')[:100], 'date': t.get('executed_at')
 } for t in stats['trades'][:30]], indent=2, ensure_ascii=False)}
+
+### AUSSTIEGSANALYSE (wie Trades endeten - und was der Kurs DANACH tat):
+{exit_block}
+Lesehilfe und Pflichtpruefung:
+- "kurs_nach_ausstieg_schnitt_pct" ist die Kursentwicklung NACH dem Verkauf, gemessen
+  ab dem Verkaufspreis ueber die folgenden Handelstage. Positiv heisst: die Position
+  lief ohne uns weiter. Das ist die einzige Zahl, die einen gelungenen Ausstieg von
+  einem verfruehten unterscheidet - im PnL sehen beide gleich aus.
+- Ein Ausstiegsgrund mit vielen Treffern, einem Ergebnis nahe null UND deutlich
+  positiver Nachentwicklung ist ein DEFEKT DER AUSSTIEGSLOGIK, kein Einstiegsproblem.
+  Eine hoehere Einstiegshuerde behebt ihn nicht. Benenne ihn in "reflection" und setze
+  am zugehoerigen Ausstiegsparameter an (Breakeven-Trigger, Trailing-Abstand,
+  Thesen-Schwelle) statt an min_entry_score.
+- Umgekehrt: sind die Nachentwicklungen ueberwiegend negativ, haben die Stops ihre
+  Aufgabe erfuellt. Dann ist der Fehler im Einstieg zu suchen, nicht im Ausstieg.
+- "nullsummen_ausstiege" zaehlt Trades, die praktisch auf dem Einstand endeten. Ein
+  hoher Anteil bedeutet, dass das System Positionen loslaesst, bevor sie etwas
+  erreichen konnten - auch dann, wenn die Win-Rate dadurch harmlos aussieht.
 
 ### Verpasste Signale (nicht gehandelt):
 {json.dumps(missed_alerts[:10], indent=2, ensure_ascii=False) if missed_alerts else "Keine verpassten Signale."}
@@ -654,7 +693,11 @@ uebersprungen wurde, "blocks" = welches Gate wie oft blockiert hat.
    - "separation" um 0 oder negativ heisst, der Score sagt nichts vorher. Dann bringt
      eine hoehere Huerde NICHTS ausser weniger Trades; setze stattdessen an Stop- und
      Risikoparametern an und weise in "lesson" darauf hin.
-5. Ändere Parameter NUR wenn du eine klare datengetriebene Begründung hast. Wenn alles gut läuft, ändere NICHTS.
+5. Werte die Ausstiegsanalyse aus, BEVOR du Einstiegsparameter anfasst. Die Frage
+   "haben wir die richtigen Trades gekauft?" und die Frage "haben wir sie zur
+   richtigen Zeit verkauft?" haben getrennte Antworten und getrennte Stellschrauben.
+   Ein Verlust, der nach dem Verkauf wieder aufgeholt wurde, war kein Einstiegsfehler.
+6. Ändere Parameter NUR wenn du eine klare datengetriebene Begründung hast. Wenn alles gut läuft, ändere NICHTS.
 
 Antworte AUSSCHLIESSLICH im folgenden JSON-Format (keine Markdown-Blöcke):
 {{

@@ -147,7 +147,11 @@ class PortfolioManager:
             "short_term_stop_loss_pct": 0.15,
             "short_term_stop_atr_mult": 2.5,
             "short_term_trail_atr_mult": 2.5,
-            "short_term_breakeven_trigger_atr": 1.0,
+            # 1.0 ATR is reached on almost any normal day, so the stop moved to
+            # breakeven before the position had gone anywhere - seven of fourteen
+            # closed trades ended within 2.5% of entry, five of which ran 3-17%
+            # further after being stopped out.
+            "short_term_breakeven_trigger_atr": 2.0,
             "short_term_stop_min_pct": 0.06,
             "short_term_stop_max_pct": 0.25,
             "short_term_max_risk_per_trade_pct": 0.015,
@@ -1278,17 +1282,22 @@ class PortfolioManager:
                 be_trigger = self.strategy.get("short_term_breakeven_trigger_atr", 1.0)
                 trail_mult = self.strategy.get("short_term_trail_atr_mult", 2.5)
 
-                # Once the trade has earned one ATR of room, it may no longer lose
+                # Once the trade has earned its ATR ration of room, it may no
+                # longer lose. Which mechanism last raised the stop is recorded,
+                # so the exit reason can name it and the retrospective can tell a
+                # breakeven stop apart from a genuine protective stop.
                 if gain_pct >= be_trigger * pos_atr_pct * 100.0:
                     be_sl = round(buy_p * 1.001, 2)
                     if not pos.get("stop_loss") or pos["stop_loss"] < be_sl:
                         pos["stop_loss"] = be_sl
+                        pos["stop_source"] = "breakeven"
 
                 # Chandelier trail at the same ATR distance as the initial stop.
                 # Never placed below entry, so it cannot turn a winner into a loser.
                 trail_sl = round(peak_p * (1.0 - trail_mult * pos_atr_pct), 2)
                 if trail_sl > buy_p and (not pos.get("stop_loss") or pos["stop_loss"] < trail_sl):
                     pos["stop_loss"] = trail_sl
+                    pos["stop_source"] = "trail"
 
             # Carry unwind: every position already in profit is pulled to breakeven
             # so a liquidity shock cannot turn a winner into a loser.
@@ -1296,6 +1305,7 @@ class PortfolioManager:
                 be_sl = round(buy_p * 1.001, 2)
                 if not pos.get("stop_loss") or pos["stop_loss"] < be_sl:
                     pos["stop_loss"] = be_sl
+                    pos["stop_source"] = "carry_unwind"
 
             # 1d. Friday Derisking for Leveraged Positions
             if is_friday_evening and pos.get("derivative_type") == "KNOCKOUT" and gain_pct >= 10.0:
@@ -1308,6 +1318,12 @@ class PortfolioManager:
                 if curr_p >= buy_p:
                     self.sell("short_term", sym, curr_p, reason=f"🎯 Trailing Stop-Loss gegriffen (+{gain_pct:.1f}% Gewinn gesichert)")
                     actions_taken.append(f"VERKAUF {sym} (Trailing Profit +{gain_pct:.1f}%)")
+                elif pos.get("stop_source") in ("breakeven", "carry_unwind"):
+                    # The stop that fired was not the protective stop from entry -
+                    # it was pulled up to the entry price and then undercut. Name it
+                    # so seven such exits cannot hide inside the loss statistics.
+                    self.sell("short_term", sym, curr_p, reason=f"↩️ Breakeven-Stop gegriffen ({gain_pct:.1f}%) — Position auf Einstand abgesichert")
+                    actions_taken.append(f"VERKAUF {sym} (Breakeven-Stop)")
                 else:
                     self.sell("short_term", sym, curr_p, reason=f"🚨 Stop-Loss ausgelöst ({gain_pct:.1f}%) zur Verlustbegrenzung")
                     actions_taken.append(f"VERKAUF {sym} (Stop-Loss)")
