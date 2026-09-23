@@ -1,5 +1,27 @@
 [
  {
+  "timestamp": "2026-09-23 15:46:53",
+  "component": "portfolio",
+  "kind": "large_loss",
+  "severity": "error",
+  "message": "day_trading: KO643545 mit -439.23 EUR geschlossen (7.2% des Depotwerts)",
+  "context": {
+   "depot": "day_trading",
+   "symbol": "KO643545",
+   "name": "⚡ Turbo Bull 9.0x auf LPKF Laser & Electronics SE   I (KO: 15.595)",
+   "pnl": -439.23,
+   "pnl_pct": -82.6,
+   "einstand": 1.9444,
+   "verkauf": 0.3600000000000012,
+   "stop_loss": 1.643,
+   "produkt": "KNOCKOUT",
+   "basiswert": "LPK.DE",
+   "grund": "🚨 Stop-Loss Disziplin (-81.5%) — Verlust akzeptiert"
+  },
+  "count": 1,
+  "last_seen": "2026-09-23 15:46:53"
+ },
+ {
   "timestamp": "2026-09-21 15:56:33",
   "component": "derivatives",
   "kind": "invalid_certificate",
