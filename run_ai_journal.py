@@ -5,6 +5,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from src.ai_journal import AIJournalEngine
+from src import incidents
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -31,7 +32,17 @@ def main():
                 if result.get('param_updates') and result['param_updates'] != '{}':
                     print(f"  🔧 Parameter-Updates: {result['param_updates']}")
             except Exception as e:
+                # A print in a cron log is invisible: the job still reports success,
+                # no entry is written, and nothing says why. On 22.09. both depots
+                # failed this way and the gap was only noticed two days later.
                 print(f"  ❌ Fehler bei {depot}: {e}")
+                skipped = "bereits erstellt" in str(e)
+                incidents.record(
+                    "ai_journal", "run_skipped" if skipped else "run_failed",
+                    f"{depot}/{mode}: {e}",
+                    severity="info" if skipped else "error",
+                    context={"depot": depot, "mode": mode,
+                             "fehler": type(e).__name__})
     else:
         print("=" * 60)
         print("🧠 KI-Lerntagebuch — Wöchentliche Retrospektive")
@@ -45,7 +56,17 @@ def main():
                 if result.get('param_updates') and result['param_updates'] != '{}':
                     print(f"  🔧 Parameter-Updates: {result['param_updates']}")
             except Exception as e:
+                # A print in a cron log is invisible: the job still reports success,
+                # no entry is written, and nothing says why. On 22.09. both depots
+                # failed this way and the gap was only noticed two days later.
                 print(f"  ❌ Fehler bei {depot}: {e}")
+                skipped = "bereits erstellt" in str(e)
+                incidents.record(
+                    "ai_journal", "run_skipped" if skipped else "run_failed",
+                    f"{depot}/{mode}: {e}",
+                    severity="info" if skipped else "error",
+                    context={"depot": depot, "mode": mode,
+                             "fehler": type(e).__name__})
 
     print("\n" + "=" * 60)
     print("🏁 Fertig.")

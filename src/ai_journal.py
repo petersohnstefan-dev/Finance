@@ -618,10 +618,10 @@ Parameter zu drehen. Benenne den Defekt in "reflection" und lass die Parameter i
 {bounds_desc}
 
 ### Einzelne Trades im Zeitraum:
-{json.dumps([{{
+{json.dumps([{
     'type': t.get('trade_type'), 'symbol': t.get('symbol'), 'pnl': t.get('pnl'),
     'pnl_pct': t.get('pnl_pct'), 'reason': t.get('reason', '')[:100], 'date': t.get('executed_at')
-}} for t in stats['trades'][:30]], indent=2, ensure_ascii=False)}
+} for t in stats['trades'][:30]], indent=2, ensure_ascii=False)}
 
 ### Verpasste Signale (nicht gehandelt):
 {json.dumps(missed_alerts[:10], indent=2, ensure_ascii=False) if missed_alerts else "Keine verpassten Signale."}
