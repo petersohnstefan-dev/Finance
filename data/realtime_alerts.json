@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-23 20:55:56",
+    "time_str": "20:55:56",
+    "symbol": "TTK.DE",
+    "direction": "SHORT",
+    "trigger_price": 3.04,
+    "change_1min_pct": 0.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TTK.DE stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 20:55:55",
+    "time_str": "20:55:55",
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 33.92,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 2.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-23 20:55:55",
+    "time_str": "20:55:55",
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 30.2,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 1.46,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-23 20:51:08",
     "time_str": "20:51:08",
     "symbol": "MTX.DE",
@@ -515,38 +548,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GXI.DE stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 20:16:09",
-    "time_str": "20:16:09",
-    "symbol": "PUM.DE",
-    "direction": "LONG",
-    "trigger_price": 22.3,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PUM.DE explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 20:16:09",
-    "time_str": "20:16:09",
-    "symbol": "WAC.DE",
-    "direction": "SHORT",
-    "trigger_price": 23.85,
-    "change_1min_pct": 1.04,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WAC.DE stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-23 20:16:09",
-    "time_str": "20:16:09",
-    "symbol": "PWO.DE",
-    "direction": "SHORT",
-    "trigger_price": 20.8,
-    "change_1min_pct": 1.89,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PWO.DE stürzt um -1.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
