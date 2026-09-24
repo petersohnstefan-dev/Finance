@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-24 17:55:54",
+    "time_str": "17:55:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.55,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 6.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 17:55:53",
+    "time_str": "17:55:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "CELH",
+    "direction": "SHORT",
+    "trigger_price": 27.98,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CELH stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 17:55:50",
+    "time_str": "17:55:50",
+    "data_age_min": 1.9,
+    "window_span_min": 6.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.17,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 17:51:09",
     "time_str": "17:51:09",
     "data_age_min": 0.2,
@@ -561,38 +600,5 @@
     "vol_ratio": 0.22,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GFT.DE stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:16:05",
-    "time_str": "17:16:05",
-    "symbol": "DUE.DE",
-    "direction": "SHORT",
-    "trigger_price": 16.74,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DUE.DE stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:16:04",
-    "time_str": "17:16:04",
-    "symbol": "STO3.DE",
-    "direction": "SHORT",
-    "trigger_price": 96.6,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STO3.DE stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:16:03",
-    "time_str": "17:16:03",
-    "symbol": "FSLR",
-    "direction": "SHORT",
-    "trigger_price": 177.43,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
