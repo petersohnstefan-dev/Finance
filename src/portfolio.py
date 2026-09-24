@@ -26,6 +26,11 @@ def get_berlin_now() -> datetime.datetime:
         return datetime.datetime.utcnow() + datetime.timedelta(hours=2)
 
 ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
+#: An alert is only as fresh as the candles it was computed from. Kept a little
+#: above the scanner's own limit so a queued bot run does not discard everything.
+MAX_ALERT_DATA_AGE_MIN = 20.0
+
+
 def effective_spread_pct(symbol: str, price: float, is_derivative: bool) -> float:
     """Bid/ask spread as a fraction of price.
 
@@ -1970,6 +1975,17 @@ class PortfolioManager:
                                 continue
                         except Exception:
                             pass
+
+                    # Gate 6b: the market data behind the alert must be live too.
+                    # Gate 6 only checks when the SCANNER ran. On 24.09. a fresh
+                    # alert carried a price from candles ten hours old, because the
+                    # underlying had not traded since the previous evening - the
+                    # turbo bought on it lost 23.6% the moment it met a real price.
+                    # An alert without this field comes from the old scanner and is
+                    # treated as unverified rather than trusted.
+                    daten_alter = alert.get("data_age_min")
+                    if daten_alter is None or daten_alter > MAX_ALERT_DATA_AGE_MIN:
+                        continue
 
                     # Gate 7: Correlation check (max 2 in same sector)
                     if not self._check_correlation(sym, dt_depot):

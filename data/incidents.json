@@ -1,5 +1,24 @@
 [
  {
+  "timestamp": "2026-09-24 17:32:49",
+  "component": "realtime_scanner",
+  "kind": "stale_price_data",
+  "severity": "error",
+  "message": "24.09. 09:42 - Daytrade-Turbo auf Invesco Solar ETF (TAN) zu einem Basiswert von 48.67 USD gekauft; die Tagesspanne lag bei 43.01-44.12. Der Scanner las Close[-1] gegen Close[-5] ohne die Zeitstempel zu pruefen: die juengste Kerze war 10h27 alt, die verglichenen Kerzen lagen 78 Minuten auseinander. Eine nachboersliche Notierung wurde so zu einem '+8.0% Spike in 5 Minuten'. Position verlor 23.6% beim ersten Bewerten gegen einen echten Kurs - kein Stop-Versagen, sondern ein Einstiegskurs, den es nie gab.",
+  "context": {
+   "depot": "day_trading",
+   "symbol": "KO974825",
+   "basiswert": "TAN",
+   "angenommen": 48.67,
+   "tagesspanne": "43.01-44.12",
+   "kerzenalter_min": 627,
+   "fenster_min": 78,
+   "behoben_in": "Zeitstempelpruefung im Scanner plus Gate 6b im Depot"
+  },
+  "count": 1,
+  "last_seen": "2026-09-24 17:32:49"
+ },
+ {
   "timestamp": "2026-09-24 11:39:29",
   "component": "derivatives",
   "kind": "invalid_certificate",

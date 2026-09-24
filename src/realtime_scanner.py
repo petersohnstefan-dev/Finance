@@ -20,6 +20,18 @@ from src.paths import data_file
 
 ALERTS_LOG_FILE = data_file("realtime_alerts.json")
 LIVE_PRICES_FILE = data_file("live_ticks.json")
+#: A candle older than this is not a live price. Fifteen minutes is generous
+#: next to the five-minute polling interval, and still rules out the after-hours
+#: prints that produced phantom spikes.
+MAX_CANDLE_AGE_MIN = 15.0
+
+#: The window the spike is supposed to measure, and how far the real gap between
+#: the two candles may deviate from it before the reading is discarded.
+SPIKE_WINDOW_MIN = 5.0
+MIN_WINDOW_SPAN_MIN = 2.0
+MAX_WINDOW_SPAN_MIN = 12.0
+
+
 class RealTimeBreakoutScanner:
     """Monitors live price ticks and volume spikes in real-time across 500+ assets statelessly."""
 
@@ -33,24 +45,64 @@ class RealTimeBreakoutScanner:
                 json.dump([], f)
 
     def fetch_stateless_spike(self, symbol: str) -> Optional[Dict[str, Any]]:
-        """Fetches 5-minute price history and detects spikes statelessly (perfect for GH Actions)."""
+        """Fetches 5-minute price history and detects spikes statelessly (perfect for GH Actions).
+
+        Candles are selected by TIMESTAMP, not by position. The older code took
+        Close[-1] against Close[-5] and called the difference a five-minute move,
+        which is only true while the market trades every minute. It does not:
+
+          23.09. 21:57  45.08   <- Close[-5], regular session
+          23.09. 22:00  45.05   <- regular close
+          23.09. 22:51  48.67   <- after hours, thin
+          23.09. 23:15  48.67   <- Close[-1]
+
+        Those two candles are 78 minutes apart, and the drift between them was
+        reported as "+8.0% in 5 minutes". The bot bought a 3x turbo on it at 09:42
+        the next morning - when the underlying had not traded for ten hours - and
+        the position lost 23.6% the moment it was revalued against the real market.
+        A stop cannot protect a position whose entry price never existed.
+        """
         now = get_berlin_now()
         is_crypto = "-USD" in symbol
-        
+
         try:
             # 1. Fetch live ticks using 1m interval
             t = yf.Ticker(symbol)
             df = t.history(period="1d", interval="1m", prepost=True)
-            
+
             if df.empty or len(df) < 5:
                 return None
-                
+
+            idx = df.index
+            try:
+                jetzt = (pd.Timestamp.now(tz=idx.tz) if getattr(idx, "tz", None)
+                         else pd.Timestamp.now())
+            except Exception:
+                return None
+
+            # Gate A: the newest candle must be recent. An old one means the
+            # market is closed or the name barely trades - in both cases there is
+            # no live price to act on, whatever the numbers look like.
+            alter_min = (jetzt - idx[-1]).total_seconds() / 60.0
+            if alter_min > MAX_CANDLE_AGE_MIN:
+                return None
+
+            # Gate B: the reference candle is picked by time, and the window it
+            # actually spans has to resemble the window we claim to measure.
+            ziel = idx[-1] - pd.Timedelta(minutes=SPIKE_WINDOW_MIN)
+            pos = int(idx.get_indexer([ziel], method="nearest")[0])
+            if pos < 0 or pos >= len(idx) - 1:
+                return None
+            spanne_min = (idx[-1] - idx[pos]).total_seconds() / 60.0
+            if not (MIN_WINDOW_SPAN_MIN <= spanne_min <= MAX_WINDOW_SPAN_MIN):
+                return None
+
             current_price = float(df["Close"].iloc[-1])
-            five_mins_ago_price = float(df["Close"].iloc[-5])
-            
+            five_mins_ago_price = float(df["Close"].iloc[pos])
+
             if five_mins_ago_price <= 0:
                 return None
-                
+
             change_pct = ((current_price - five_mins_ago_price) / five_mins_ago_price) * 100.0
             
             # Threshold: > 0.5% in 5 minutes for stocks, > 1.0% for crypto
@@ -80,6 +132,11 @@ class RealTimeBreakoutScanner:
                 return {
                     "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
                     "time_str": now.strftime("%H:%M:%S"),
+                    # Age of the underlying market data, not of the alert. Gate 6
+                    # in portfolio.py checks the latter and was happy with a fresh
+                    # alert built on ten-hour-old candles.
+                    "data_age_min": round(alter_min, 1),
+                    "window_span_min": round(spanne_min, 1),
                     "symbol": symbol,
                     "direction": direction,
                     "trigger_price": round(current_price, 2),
