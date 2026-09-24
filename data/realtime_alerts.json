@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-09-24 12:41:00",
+    "time_str": "12:41:00",
+    "symbol": "SGL.DE",
+    "direction": "SHORT",
+    "trigger_price": 4.42,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SGL.DE stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 12:41:00",
+    "time_str": "12:41:00",
+    "symbol": "PBB.DE",
+    "direction": "SHORT",
+    "trigger_price": 3.06,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PBB.DE stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 12:40:59",
+    "time_str": "12:40:59",
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 32.79,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 12:35:58",
     "time_str": "12:35:58",
     "symbol": "S92.DE",
@@ -515,38 +548,5 @@
     "vol_ratio": 1.98,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WAF.DE stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 11:55:58",
-    "time_str": "11:55:58",
-    "symbol": "SGL.DE",
-    "direction": "LONG",
-    "trigger_price": 4.4,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 4.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SGL.DE explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 11:55:58",
-    "time_str": "11:55:58",
-    "symbol": "PSM.DE",
-    "direction": "SHORT",
-    "trigger_price": 3.33,
-    "change_1min_pct": 0.83,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PSM.DE stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 11:55:58",
-    "time_str": "11:55:58",
-    "symbol": "NDX1.DE",
-    "direction": "LONG",
-    "trigger_price": 39.84,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NDX1.DE explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
