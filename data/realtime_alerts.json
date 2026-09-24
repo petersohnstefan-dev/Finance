@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-09-24 09:05:45",
+    "time_str": "09:05:45",
+    "symbol": "HM-B.ST",
+    "direction": "LONG",
+    "trigger_price": 162.8,
+    "change_1min_pct": 1.18,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HM-B.ST explodiert um +1.18% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 09:05:40",
+    "time_str": "09:05:40",
+    "symbol": "TIA-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.47,
+    "change_1min_pct": 1.04,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 08:41:05",
     "time_str": "08:41:05",
     "symbol": "LOW",
@@ -526,27 +548,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 08:05:56",
-    "time_str": "08:05:56",
-    "symbol": "BEAM",
-    "direction": "SHORT",
-    "trigger_price": 24.38,
-    "change_1min_pct": 0.89,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 08:05:56",
-    "time_str": "08:05:56",
-    "symbol": "BNTX",
-    "direction": "LONG",
-    "trigger_price": 99.49,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BNTX explodiert um +1.05% in 5 Min.! Momentum aktiv."
   }
 ]
