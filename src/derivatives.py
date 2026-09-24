@@ -91,6 +91,10 @@ class DerivativeEngine:
         if not current_price or current_price < MIN_UNDERLYING_PRICE:
             return {
                 "type": "KNOCKOUT", "valid": False,
+                # Machine-readable, because the callers must react differently.
+                # A cheap underlying rules out the direct purchase as well; a
+                # certificate price below the minimum does not.
+                "invalid_code": "underlying_too_cheap",
                 "invalid_reason": (f"Basiswert {underlying_symbol} steht bei {current_price}; "
                                    f"unter {MIN_UNDERLYING_PRICE} ist kein Turbo mit "
                                    f"tragfaehigem Stop darstellbar"),
@@ -121,6 +125,7 @@ class DerivativeEngine:
         if cert_price < MIN_CERT_PRICE:
             return {
                 "type": "KNOCKOUT", "valid": False,
+                "invalid_code": "cert_price_too_low",
                 "invalid_reason": (f"Zertifikatspreis waere {cert_price:.4f} und damit unter "
                                    f"{MIN_CERT_PRICE} - kein belastbarer Stop moeglich"),
                 "underlying_symbol": underlying_symbol, "underlying_name": underlying_name,

@@ -12,7 +12,7 @@ from src.wkn_mapping import get_wkn, get_wkn_display
 from src.tribunal import AITribunalManager
 
 from src.paths import data_file
-from src.derivatives import round_price
+from src.derivatives import round_price, MIN_UNDERLYING_PRICE
 from src import incidents
 
 PORTFOLIO_FILE = data_file("portfolios.json")
@@ -44,9 +44,20 @@ def effective_spread_pct(symbol: str, price: float, is_derivative: bool) -> floa
         if price >= 0.5:
             return 0.030
         return 0.060   # below 50 cents the spread dominates any edge
-    if "-USD" in (symbol or "").upper():
-        return 0.005   # crypto exchanges
-    return 0.002       # regular equities
+    # Cheap underlyings were charged as if they traded like a blue chip: SES at
+    # 0.54 EUR got the 0.2% equity rate, although its tick size of one cent is
+    # 1.9% of the price. A daytrade there cannot be cheaper than its spread, and
+    # pricing it at 0.2% made the statistics look better than the depot did.
+    base = 0.005 if "-USD" in (symbol or "").upper() else 0.002
+    if price >= 5.0:
+        return base
+    if price >= 2.0:
+        return max(base, 0.006)
+    if price >= 1.0:
+        return max(base, 0.012)
+    if price >= 0.5:
+        return max(base, 0.025)
+    return max(base, 0.050)   # penny range: the spread eats any daytrade edge
 
 
 class PortfolioManager:
@@ -1910,13 +1921,34 @@ class PortfolioManager:
                 todays_trades = [t for t in recent_trades
                                  if (t.get("executed_at") or t.get("date", "")).startswith(today_str)]
 
-                # Gates 4-7 are local and cheap, so pre-filter every pending alert
+                # Never below the level at which a turbo stops being representable -
+                # otherwise the scanner would keep proposing what the certificate
+                # engine is bound to reject.
+                min_underlying_price = max(
+                    float(self.strategy.get("daytrade_min_underlying_price",
+                                            MIN_UNDERLYING_PRICE)),
+                    MIN_UNDERLYING_PRICE)
+
+                # Gates 3b-7 are local and cheap, so pre-filter every pending alert
                 # before spending yfinance calls on the quality score.
                 candidates = []
                 for alert in rt_alerts:
                     sym = alert["symbol"]
                     p = alert.get("trigger_price", 10.0)
                     if p <= 0:
+                        continue
+
+                    # Gate 3b: Underlyings too cheap to trade sensibly.
+                    #
+                    # This used to be caught only at the certificate step, far too
+                    # late: the penny name had already won the scoring - ONDO-USD
+                    # scored 87 of 100 - and thereby displaced every viable
+                    # candidate, because the code never falls back to the runner-up.
+                    # It then bought the penny underlying directly, at exactly the
+                    # price that had just disqualified the certificate. Four such
+                    # names in a week; the two closed ones lost 4-5% on a one-cent
+                    # move. Filtered here, a real candidate can win instead.
+                    if p < min_underlying_price:
                         continue
 
                     # Gate 4: No duplicate positions on same underlying
@@ -1995,23 +2027,38 @@ class PortfolioManager:
                     alloc = min(alloc, dt_depot["cash"] * 0.9)  # Never exceed 90% of cash
 
                     turbo = None
+                    skip_entry = False
                     if chosen_lev > 1.0:
                         turbo = DerivativeEngine.create_turbo_knockout(sym, name, p, direction=dir_str, target_leverage=chosen_lev)
                         if not turbo.get("valid"):
                             # The 17.09. case: a 0.03 USD underlying produced a certificate
                             # whose stop rounded onto the entry price, so only the knock-out
-                            # could fire. Fall back to the unleveraged stock - no barrier.
+                            # could fire. Falling back to the unleveraged stock is the right
+                            # answer when the CERTIFICATE could not be priced - but not when
+                            # the UNDERLYING itself is too cheap. In that case the direct
+                            # purchase inherits the very defect that disqualified the
+                            # certificate, and the depot ends up holding the penny stock
+                            # without even the leverage it was after. Gate 3b should have
+                            # caught this already; this branch is the second line.
+                            skip_entry = turbo.get("invalid_code") == "underlying_too_cheap"
                             incidents.record(
                                 "derivatives", "invalid_certificate",
                                 f"Daytrade-Turbo auf {sym} nicht darstellbar: "
                                 f"{turbo.get('invalid_reason')}",
                                 severity="warn",
                                 context={"depot": "day_trading", "symbol": sym, "kurs": p,
-                                         "hebel": chosen_lev, "score": entry_score})
-                            actions_taken.append(
-                                f"ℹ️ {sym}: kein Turbo darstellbar, Direktkauf ohne Hebel")
+                                         "hebel": chosen_lev, "score": entry_score,
+                                         "rueckfall": "uebersprungen" if skip_entry
+                                                      else "direktkauf_ohne_hebel"})
                             turbo = None
-                            chosen_lev = 1.0
+                            if skip_entry:
+                                actions_taken.append(
+                                    f"⛔ {sym}: Basiswert unter {MIN_UNDERLYING_PRICE} EUR - "
+                                    f"weder Turbo noch Direktkauf")
+                            else:
+                                actions_taken.append(
+                                    f"ℹ️ {sym}: kein Turbo darstellbar, Direktkauf ohne Hebel")
+                                chosen_lev = 1.0
                     if turbo:
                         cert_price = turbo["cert_price"]
                         shares = alloc / cert_price
@@ -2026,6 +2073,10 @@ class PortfolioManager:
                                  stop_loss=sl_price, take_profit=None, derivative_meta=turbo)
                         dt_entered = True
                         actions_taken.append(f"KAUF {turbo['name']} ({chosen_lev}x {dir_str}, Score {entry_score})")
+                    elif skip_entry:
+                        # Deliberately no entry - recorded so the gate telemetry
+                        # shows why the day had a candidate but no trade.
+                        dt_block = "basiswert_zu_billig"
                     else:
                         # Direct stock purchase (no leverage for weak signals)
                         shares = alloc / p
