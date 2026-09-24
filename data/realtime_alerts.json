@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-24 21:25:56",
+    "time_str": "21:25:56",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 3.93,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:25:54",
+    "time_str": "21:25:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NVCR",
+    "direction": "SHORT",
+    "trigger_price": 16.15,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 21:20:56",
     "time_str": "21:20:56",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.46,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEI-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:31:15",
-    "time_str": "20:31:15",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "LONG",
-    "trigger_price": 21.3,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:31:13",
-    "time_str": "20:31:13",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.41,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.41% in 5 Min.! Momentum aktiv."
   }
 ]
