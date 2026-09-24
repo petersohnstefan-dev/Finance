@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-24 20:31:15",
+    "time_str": "20:31:15",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "LONG",
+    "trigger_price": 21.3,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 20:31:13",
+    "time_str": "20:31:13",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.41,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.41% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 20:29:48",
     "time_str": "20:29:48",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.81,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RIVN explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 19:45:57",
-    "time_str": "19:45:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ONDO-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.52,
-    "change_1min_pct": 1.04,
-    "vol_ratio": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONDO-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 19:41:08",
-    "time_str": "19:41:08",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 44.4,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
