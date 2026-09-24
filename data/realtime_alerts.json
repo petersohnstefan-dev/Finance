@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-24 21:05:50",
+    "time_str": "21:05:50",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 80.08,
+    "change_1min_pct": 0.91,
+    "vol_ratio": 0.71,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:05:49",
+    "time_str": "21:05:49",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SMCI",
+    "direction": "SHORT",
+    "trigger_price": 41.9,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.74,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:05:49",
+    "time_str": "21:05:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 55.86,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:05:46",
+    "time_str": "21:05:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "SHORT",
+    "trigger_price": 8.23,
+    "change_1min_pct": 1.01,
+    "vol_ratio": 0.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 21:01:27",
     "time_str": "21:01:27",
     "data_age_min": 2.5,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:16:00",
-    "time_str": "20:16:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 32.77,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 16.44,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.41,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:11:07",
-    "time_str": "20:11:07",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 4.28,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:11:07",
-    "time_str": "20:11:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "LONG",
-    "trigger_price": 17.54,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 0.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
