@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-24 19:01:21",
+    "time_str": "19:01:21",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.46,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 0.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:01:21",
+    "time_str": "19:01:21",
+    "data_age_min": 10.4,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "LONG",
+    "trigger_price": 3.35,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:01:18",
+    "time_str": "19:01:18",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "LONG",
+    "trigger_price": 4.72,
+    "change_1min_pct": 1.11,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 18:55:58",
     "time_str": "18:55:58",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 6.22,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BZ=F stürzt um -2.20% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:27:05",
-    "time_str": "18:27:05",
-    "data_age_min": 10.1,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "SHORT",
-    "trigger_price": 94.39,
-    "change_1min_pct": 2.31,
-    "vol_ratio": 3.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F stürzt um -2.31% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:27:05",
-    "time_str": "18:27:05",
-    "data_age_min": 10.1,
-    "window_span_min": 5.0,
-    "symbol": "HG=F",
-    "direction": "LONG",
-    "trigger_price": 6.79,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HG=F explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:27:05",
-    "time_str": "18:27:05",
-    "data_age_min": 10.1,
-    "window_span_min": 4.0,
-    "symbol": "PA=F",
-    "direction": "LONG",
-    "trigger_price": 1280.5,
-    "change_1min_pct": 0.91,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PA=F explodiert um +0.91% in 5 Min.! Momentum aktiv."
   }
 ]
