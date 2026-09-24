@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-24 18:05:57",
+    "time_str": "18:05:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "LONG",
+    "trigger_price": 3.87,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 0.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 18:05:57",
+    "time_str": "18:05:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.55,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 18:05:56",
+    "time_str": "18:05:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MSTR",
+    "direction": "SHORT",
+    "trigger_price": 160.55,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 18:05:53",
+    "time_str": "18:05:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "WLD-USD",
+    "direction": "LONG",
+    "trigger_price": 0.45,
+    "change_1min_pct": 1.96,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 WLD-USD explodiert um +1.96% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 18:01:38",
     "time_str": "18:01:38",
     "data_age_min": 0.7,
@@ -580,49 +632,5 @@
     "vol_ratio": 2.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ALAB explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:25:52",
-    "time_str": "17:25:52",
-    "symbol": "SRPT",
-    "direction": "SHORT",
-    "trigger_price": 18.35,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRPT stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:25:51",
-    "time_str": "17:25:51",
-    "symbol": "BEAM",
-    "direction": "SHORT",
-    "trigger_price": 23.93,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:21:51",
-    "time_str": "17:21:51",
-    "symbol": "SRT3.DE",
-    "direction": "LONG",
-    "trigger_price": 263.6,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.13,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRT3.DE explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 17:21:50",
-    "time_str": "17:21:50",
-    "symbol": "MAERSK-B.CO",
-    "direction": "LONG",
-    "trigger_price": 23720.0,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MAERSK-B.CO explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
