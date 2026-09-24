@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-24 21:41:04",
+    "time_str": "21:41:04",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 29.7,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:41:03",
+    "time_str": "21:41:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "JOBY",
+    "direction": "LONG",
+    "trigger_price": 6.28,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 21:35:58",
     "time_str": "21:35:58",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 3.58,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AFRM explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:41:03",
-    "time_str": "20:41:03",
-    "data_age_min": 1.1,
-    "window_span_min": 4.0,
-    "symbol": "ARVN",
-    "direction": "LONG",
-    "trigger_price": 7.62,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 2.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARVN explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:41:03",
-    "time_str": "20:41:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 3.77,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 4.89,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
