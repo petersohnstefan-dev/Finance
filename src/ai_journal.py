@@ -132,6 +132,86 @@ def trading_day(now: Optional[datetime.datetime] = None) -> datetime.datetime:
     return now - datetime.timedelta(days=1) if now.hour < 6 else now
 
 
+def _escape_control_chars_in_strings(text: str) -> str:
+    """Escape raw control characters that sit inside JSON string literals.
+
+    Last resort for a model that put a literal newline or tab in a value. Walks
+    the text tracking whether it is inside a string, so control characters
+    between tokens - which are legal whitespace - stay untouched.
+    """
+    out = []
+    in_string = False
+    escaped = False
+    for ch in text:
+        if in_string:
+            if escaped:
+                out.append(ch)
+                escaped = False
+                continue
+            if ch == "\\":
+                out.append(ch)
+                escaped = True
+                continue
+            if ch == '"':
+                in_string = False
+                out.append(ch)
+                continue
+            if ch == "\n":
+                out.append("\\n")
+                continue
+            if ch == "\r":
+                out.append("\\r")
+                continue
+            if ch == "\t":
+                out.append("\\t")
+                continue
+            if ord(ch) < 0x20:
+                out.append("\\u%04x" % ord(ch))
+                continue
+            out.append(ch)
+            continue
+        if ch == '"':
+            in_string = True
+        out.append(ch)
+    return "".join(out)
+
+
+def parse_model_json(raw_text: str) -> Optional[Dict[str, Any]]:
+    """Read the model's answer, tolerating the ways an LLM bends JSON.
+
+    A single strict json.loads is the wrong tool here. On 23.09. the daytrader
+    retrospective was lost because the model put a real line break inside a
+    string value - "Invalid control character at char 3944" - and the salvage
+    path retried with the same strict parser, so it failed identically. The
+    whole analysis was discarded over a newline.
+
+    Python's strict mode exists to reject exactly that, but the JSON spec's
+    intent here is not worth a lost retrospective: the content is prose meant
+    for a human. Each stage below is strictly more permissive than the last.
+    """
+    attempts = [
+        ("strict", lambda t: json.loads(t)),
+        ("kontrollzeichen erlaubt", lambda t: json.loads(t, strict=False)),
+        ("nur der JSON-Block", lambda t: json.loads(
+            re.search(r"\{.*\}", t, re.DOTALL).group(0), strict=False)),
+        ("Kontrollzeichen maskiert", lambda t: json.loads(
+            _escape_control_chars_in_strings(
+                re.search(r"\{.*\}", t, re.DOTALL).group(0)))),
+        ("ohne Komma am Blockende", lambda t: json.loads(
+            re.sub(r",(\s*[}\]])", r"\1",
+                   _escape_control_chars_in_strings(
+                       re.search(r"\{.*\}", t, re.DOTALL).group(0))))),
+    ]
+    for _label, fn in attempts:
+        try:
+            res = fn(raw_text)
+            if isinstance(res, dict):
+                return res
+        except Exception:
+            continue
+    return None
+
+
 class AIJournalEngine:
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -750,37 +830,39 @@ Wenn keine Änderungen nötig sind, setze "parameter_changes": {{}}.
             raise Exception(f"Alle {len(available_models)} Modelle fehlgeschlagen. Letzter Fehler: {last_err}")
 
         # 7. Parse response
-        try:
-            raw_text = response.text.strip().removeprefix('```json').removesuffix('```').strip()
-            res_json = json.loads(raw_text)
-        except Exception as parse_err:
-            # This used to fail silently: the entry said "Fehler beim Parsen" and
-            # nothing else, so on 17.09. both depots produced empty retrospectives
-            # with no trace of why. Try to salvage the JSON, then report it.
-            res_json = None
-            try:
-                import re as _re
-                match = _re.search(r"\{.*\}", raw_text, _re.DOTALL)
-                if match:
-                    res_json = json.loads(match.group(0))
-            except Exception:
-                res_json = None
+        raw_text = response.text.strip().removeprefix('```json').removesuffix('```').strip()
+        res_json = parse_model_json(raw_text)
 
-            if res_json is None:
-                incidents.record(
-                    "ai_journal", "llm_parse_error",
-                    f"Antwort des Modells war kein gueltiges JSON ({parse_err})",
-                    severity="error",
-                    context={"depot": depot_id, "mode": mode,
-                             "antwort_anfang": str(raw_text)[:300]})
-                res_json = {
-                    "reflection": f"Antwort des Modells nicht lesbar ({parse_err}). "
-                                  f"Die Stoerung ist im Stoerungs-Log vermerkt.",
-                    "missed_opportunities": "",
-                    "lesson": "",
-                    "parameter_changes": {},
-                    "change_reasoning": ""
-                }
+        if res_json is None:
+            # Preserve the evidence. The 17.09. incident kept only the first 300
+            # characters, and the 23.09. failure sat at character 3944 - so the
+            # log recorded that something broke without recording what. The full
+            # answer goes to disk, the log points at it.
+            stamp = get_berlin_now().strftime("%Y%m%d-%H%M%S")
+            dump_path = data_file(f"llm_raw_{depot_id}_{mode}_{stamp}.txt")
+            try:
+                with open(dump_path, "w", encoding="utf-8") as fh:
+                    fh.write(raw_text)
+                saved = os.path.basename(dump_path)
+            except Exception:
+                saved = "konnte nicht gespeichert werden"
+            incidents.record(
+                "ai_journal", "llm_parse_error",
+                "Antwort des Modells war auch nach allen Reparaturversuchen kein "
+                "gueltiges JSON",
+                severity="error",
+                context={"depot": depot_id, "mode": mode, "rohantwort": saved,
+                         "laenge": len(raw_text),
+                         "antwort_anfang": str(raw_text)[:300]})
+            res_json = {
+                "reflection": ("Antwort des Modells nicht lesbar. Die Stoerung ist "
+                               f"im Stoerungs-Log vermerkt, die Rohantwort liegt "
+                               f"unter {saved}."),
+                "missed_opportunities": "",
+                "lesson": "",
+                "parameter_changes": {},
+                "change_reasoning": ""
+            }
 
         # 8. Apply parameter changes (the core new feature!)
         param_changes = res_json.get("parameter_changes", {})
