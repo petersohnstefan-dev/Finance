@@ -31,6 +31,11 @@ SPIKE_WINDOW_MIN = 5.0
 MIN_WINDOW_SPAN_MIN = 2.0
 MAX_WINDOW_SPAN_MIN = 12.0
 
+#: Baseline for the volume ratio: the twenty minutes before the move, and the
+#: fewest candles that still make an average worth comparing against.
+BASELINE_WINDOW_MIN = 20.0
+MIN_BASELINE_CANDLES = 8
+
 
 class RealTimeBreakoutScanner:
     """Monitors live price ticks and volume spikes in real-time across 500+ assets statelessly."""
@@ -112,20 +117,40 @@ class RealTimeBreakoutScanner:
                 direction = "LONG" if change_pct > 0 else "SHORT"
                 msg = f"🚨 {symbol} explodiert um {change_pct:+.2f}% in 5 Min.! Momentum aktiv." if direction == "LONG" else f"🚨 {symbol} stürzt um {change_pct:+.2f}% in 5 Min. ab! Panik-Verkauf aktiv."
                 
-                # Volume confirmation: the 5 spike bars against the 20 bars before them.
-                # Same idea as the daily Vol_Ratio in indicators.py, but intraday.
+                # Volume confirmation: the volume during the move against the
+                # twenty minutes before it. Both windows are cut by TIMESTAMP for
+                # the same reason the price window is: iloc[-25:-5] assumed
+                # twenty consecutive minutes of trading, so right after an open -
+                # or across a session break - the "preceding twenty minutes"
+                # could reach back into the previous day. That is how a quiet
+                # name collects a volume ratio it never earned.
                 vol_ratio = None
                 try:
-                    if "Volume" in df.columns and len(df) >= 25:
-                        base_vol = float(df["Volume"].iloc[-25:-5].mean())
-                        spike_vol = float(df["Volume"].iloc[-5:].mean())
-                        # A ratio is only meaningful against a real baseline. Right
-                        # after the open the preceding 20 minutes are nearly empty,
-                        # which produced ratios of 300-490x for German listings -
-                        # every one of them then collected full marks on the volume
-                        # factor while the absolute turnover was negligible.
-                        if base_vol >= 50 and spike_vol > 0:
-                            vol_ratio = round(min(spike_vol / base_vol, 10.0), 2)
+                    if "Volume" in df.columns:
+                        ref_ts = idx[pos]
+                        im_spike = idx > ref_ts
+                        im_basis = ((idx > ref_ts - pd.Timedelta(minutes=BASELINE_WINDOW_MIN))
+                                    & (idx <= ref_ts))
+                        spike_v = df["Volume"][im_spike]
+                        basis_v = df["Volume"][im_basis]
+                        basis_idx = idx[im_basis]
+                        # A ratio needs a real baseline: enough candles, and a
+                        # stretch of time that actually resembles twenty minutes.
+                        genug = (len(spike_v) >= 2
+                                 and len(basis_v) >= MIN_BASELINE_CANDLES)
+                        if genug:
+                            basis_spanne = (basis_idx[-1] - basis_idx[0]).total_seconds() / 60.0
+                            genug = basis_spanne <= BASELINE_WINDOW_MIN * 1.5
+                        if genug:
+                            base_vol = float(basis_v.mean())
+                            spike_vol = float(spike_v.mean())
+                            # Right after the open the preceding minutes are nearly
+                            # empty, which produced ratios of 300-490x for German
+                            # listings - every one of them then collected full marks
+                            # on the volume factor while the absolute turnover was
+                            # negligible.
+                            if base_vol >= 50 and spike_vol > 0:
+                                vol_ratio = round(min(spike_vol / base_vol, 10.0), 2)
                 except Exception:
                     vol_ratio = None
 
