@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-24 19:46:01",
+    "time_str": "19:46:01",
+    "data_age_min": 0.0,
+    "window_span_min": 5.0,
+    "symbol": "RDDT",
+    "direction": "SHORT",
+    "trigger_price": 150.32,
+    "change_1min_pct": 0.83,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:46:01",
+    "time_str": "19:46:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RIVN",
+    "direction": "LONG",
+    "trigger_price": 15.43,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RIVN explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:45:57",
+    "time_str": "19:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ONDO-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.52,
+    "change_1min_pct": 1.04,
+    "vol_ratio": 0.6,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONDO-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 19:41:08",
     "time_str": "19:41:08",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:55:53",
-    "time_str": "18:55:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEI-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.06,
-    "change_1min_pct": 1.22,
-    "vol_ratio": 6.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEI-USD stürzt um -1.22% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:51:00",
-    "time_str": "18:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 139.13,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:50:54",
-    "time_str": "18:50:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 211.82,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 3.34,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
