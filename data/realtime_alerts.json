@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-24 20:55:47",
+    "time_str": "20:55:47",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.14,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 2.76,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 20:55:46",
+    "time_str": "20:55:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "SHORT",
+    "trigger_price": 44.98,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 0.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 20:55:46",
+    "time_str": "20:55:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "LONG",
+    "trigger_price": 18.64,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 4.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 20:51:02",
     "time_str": "20:51:02",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.34,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BZ=F stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:11:04",
-    "time_str": "20:11:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "PENDLE-USD",
-    "direction": "LONG",
-    "trigger_price": 2.54,
-    "change_1min_pct": 1.16,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PENDLE-USD explodiert um +1.16% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:05:59",
-    "time_str": "20:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "INTC",
-    "direction": "SHORT",
-    "trigger_price": 124.22,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:05:54",
-    "time_str": "20:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 7.38,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
