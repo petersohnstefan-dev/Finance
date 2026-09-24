@@ -2232,5 +2232,45 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "SZU.DE": {
+  "fetched_ts": 1790236920.5430355,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 1.46,
+   "altman_detail": {
+    "X1": 0.247,
+    "X2": null,
+    "X3": -0.043,
+    "X4": 0.512,
+    "X5": 0.995
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Defensive",
+   "beneish_m": -3.21,
+   "beneish_detail": {
+    "DSRI": 0.89,
+    "GMI": 0.907,
+    "AQI": 1.209,
+    "SGI": 0.862,
+    "DEPI": 0.586,
+    "SGAI": 1.124,
+    "LVGI": 1.011,
+    "TATA": -0.1
+   },
+   "computed_at": "2026-09-24"
+  }
  }
 }
