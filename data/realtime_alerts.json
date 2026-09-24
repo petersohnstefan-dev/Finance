@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-24 19:51:08",
+    "time_str": "19:51:08",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 38.0,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:51:05",
+    "time_str": "19:51:05",
+    "data_age_min": 10.1,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "LONG",
+    "trigger_price": 3.38,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.12,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 19:51:03",
+    "time_str": "19:51:03",
+    "data_age_min": 3.1,
+    "window_span_min": 6.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 19:46:01",
     "time_str": "19:46:01",
     "data_age_min": 0.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.96,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:55:57",
-    "time_str": "18:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 4.0,
-    "symbol": "BNTX",
-    "direction": "SHORT",
-    "trigger_price": 98.49,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 1.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BNTX stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:55:57",
-    "time_str": "18:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 183.17,
-    "change_1min_pct": 2.56,
-    "vol_ratio": 5.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -2.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 18:55:55",
-    "time_str": "18:55:55",
-    "data_age_min": 3.9,
-    "window_span_min": 3.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.08,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
   }
 ]
