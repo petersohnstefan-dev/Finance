@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-24 20:16:00",
+    "time_str": "20:16:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 32.77,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.09,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 20:15:59",
+    "time_str": "20:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RGTI",
+    "direction": "SHORT",
+    "trigger_price": 16.44,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.41,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-24 20:11:07",
     "time_str": "20:11:07",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.03,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKSY explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 19:25:47",
-    "time_str": "19:25:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "LONG",
-    "trigger_price": 36.02,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX explodiert um +0.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 19:25:47",
-    "time_str": "19:25:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 184.24,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
