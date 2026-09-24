@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-24 21:15:59",
+    "time_str": "21:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 29.18,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:15:58",
+    "time_str": "21:15:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.52,
+    "change_1min_pct": 1.0,
+    "vol_ratio": 1.71,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +1.00% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:15:58",
+    "time_str": "21:15:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BEAM",
+    "direction": "SHORT",
+    "trigger_price": 24.56,
+    "change_1min_pct": 0.79,
+    "vol_ratio": 0.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-24 21:15:55",
+    "time_str": "21:15:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ONDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.52,
+    "change_1min_pct": 1.16,
+    "vol_ratio": 0.74,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONDO-USD explodiert um +1.16% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-24 21:11:02",
     "time_str": "21:11:02",
     "data_age_min": 1.1,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.49,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:25:54",
-    "time_str": "20:25:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 32.76,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:25:53",
-    "time_str": "20:25:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "LONG",
-    "trigger_price": 79.11,
-    "change_1min_pct": 0.75,
-    "vol_ratio": 0.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:25:53",
-    "time_str": "20:25:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ONON",
-    "direction": "LONG",
-    "trigger_price": 30.09,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 20:25:53",
-    "time_str": "20:25:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "LONG",
-    "trigger_price": 29.36,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS explodiert um +0.62% in 5 Min.! Momentum aktiv."
   }
 ]
