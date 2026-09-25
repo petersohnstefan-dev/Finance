@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 22:06:04",
+    "time_str": "22:06:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "PATH",
+    "direction": "LONG",
+    "trigger_price": 12.5,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PATH explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:06:04",
+    "time_str": "22:06:04",
+    "data_age_min": 0.6,
+    "window_span_min": 5.5,
+    "symbol": "CELH",
+    "direction": "LONG",
+    "trigger_price": 28.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CELH explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:06:03",
+    "time_str": "22:06:03",
+    "data_age_min": 0.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.6,
+    "change_1min_pct": 1.23,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 22:01:34",
     "time_str": "22:01:34",
     "data_age_min": 0.6,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.48,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ELF stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:05:52",
-    "time_str": "21:05:52",
-    "data_age_min": 2.9,
-    "window_span_min": 5.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.6,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:05:50",
-    "time_str": "21:05:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 45.97,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.07,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 20:58:41",
-    "time_str": "20:58:41",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 7.58,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
