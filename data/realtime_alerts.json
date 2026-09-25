@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 10:16:08",
+    "time_str": "10:16:08",
+    "data_age_min": 2.1,
+    "window_span_min": 5.1,
+    "symbol": "CRM",
+    "direction": "SHORT",
+    "trigger_price": 236.07,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 10:16:02",
+    "time_str": "10:16:02",
+    "data_age_min": 4.2,
+    "window_span_min": 6.9,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.17,
+    "change_1min_pct": 0.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 10:16:01",
+    "time_str": "10:16:01",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ARM",
+    "direction": "LONG",
+    "trigger_price": 318.82,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 10:11:03",
     "time_str": "10:11:03",
     "data_age_min": 3.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ISRG stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:46:18",
-    "time_str": "22:46:18",
-    "data_age_min": 2.4,
-    "window_span_min": 3.9,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.55,
-    "change_1min_pct": 3.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +3.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:46:18",
-    "time_str": "22:46:18",
-    "data_age_min": 0.6,
-    "window_span_min": 2.7,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 4.28,
-    "change_1min_pct": 0.94,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:46:14",
-    "time_str": "22:46:14",
-    "data_age_min": 1.2,
-    "window_span_min": 2.1,
-    "symbol": "BND",
-    "direction": "LONG",
-    "trigger_price": 70.81,
-    "change_1min_pct": 0.81,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BND explodiert um +0.81% in 5 Min.! Momentum aktiv."
   }
 ]
