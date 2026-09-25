@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 12:05:56",
+    "time_str": "12:05:56",
+    "data_age_min": 2.9,
+    "window_span_min": 3.0,
+    "symbol": "BEAM",
+    "direction": "LONG",
+    "trigger_price": 24.97,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 12:05:54",
+    "time_str": "12:05:54",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 12:05:53",
+    "time_str": "12:05:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 12:01:23",
     "time_str": "12:01:23",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SYM explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:11:01",
-    "time_str": "10:11:01",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "PA=F",
-    "direction": "LONG",
-    "trigger_price": 1266.0,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PA=F explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:10:59",
-    "time_str": "10:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SEI-USD",
-    "direction": "LONG",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.1,
-    "vol_ratio": 3.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEI-USD explodiert um +1.10% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:05:50",
-    "time_str": "10:05:50",
-    "data_age_min": 0.7,
-    "window_span_min": 5.2,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 18.1,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.78% in 5 Min.! Momentum aktiv."
   }
 ]
