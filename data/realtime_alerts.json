@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 20:51:00",
+    "time_str": "20:51:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 83.99,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 2.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 20:50:56",
+    "time_str": "20:50:56",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "LONG",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.15,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD explodiert um +1.15% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 20:50:55",
+    "time_str": "20:50:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.48,
+    "change_1min_pct": 3.05,
+    "vol_ratio": 1.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +3.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 20:46:05",
     "time_str": "20:46:05",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.08,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SMCI explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:01:18",
-    "time_str": "19:01:18",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "RKLB",
-    "direction": "SHORT",
-    "trigger_price": 74.42,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.79,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:01:17",
-    "time_str": "19:01:17",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "LONG",
-    "trigger_price": 35.52,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX explodiert um +1.08% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:01:17",
-    "time_str": "19:01:17",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.57,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 3.78,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +0.64% in 5 Min.! Momentum aktiv."
   }
 ]
