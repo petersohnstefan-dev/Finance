@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 22:45:53",
+    "time_str": "22:45:53",
+    "data_age_min": 2.5,
+    "window_span_min": 8.4,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.36,
+    "change_1min_pct": 1.47,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -1.47% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:45:53",
+    "time_str": "22:45:53",
+    "data_age_min": 1.7,
+    "window_span_min": 5.2,
+    "symbol": "FSLR",
+    "direction": "SHORT",
+    "trigger_price": 177.1,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FSLR stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:45:51",
+    "time_str": "22:45:51",
+    "data_age_min": 3.2,
+    "window_span_min": 4.7,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 54.93,
+    "change_1min_pct": 1.24,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +1.24% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 22:36:01",
     "time_str": "22:36:01",
     "data_age_min": 5.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MDB stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:55:54",
-    "time_str": "21:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 193.19,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:55:54",
-    "time_str": "21:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 267.39,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:55:53",
-    "time_str": "21:55:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SOFI",
-    "direction": "SHORT",
-    "trigger_price": 16.58,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
