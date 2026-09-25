@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 10:55:56",
+    "time_str": "10:55:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 23340.0,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 10:55:53",
+    "time_str": "10:55:53",
+    "data_age_min": 10.9,
+    "window_span_min": 5.0,
+    "symbol": "SI=F",
+    "direction": "LONG",
+    "trigger_price": 65.09,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SI=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 10:55:49",
+    "time_str": "10:55:49",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.46,
+    "change_1min_pct": 1.41,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD stürzt um -1.41% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 10:51:01",
     "time_str": "10:51:01",
     "data_age_min": 3.3,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARRY stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 23:42:39",
-    "time_str": "23:42:39",
-    "data_age_min": 0.1,
-    "window_span_min": 9.6,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.55,
-    "change_1min_pct": 0.77,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.77% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 23:42:37",
-    "time_str": "23:42:37",
-    "data_age_min": 4.5,
-    "window_span_min": 7.1,
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 43.85,
-    "change_1min_pct": 0.97,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 23:42:37",
-    "time_str": "23:42:37",
-    "data_age_min": 6.1,
-    "window_span_min": 4.6,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 28.3,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
