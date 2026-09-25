@@ -248,20 +248,20 @@
   },
   "2026-09-25": {
     "short_term": {
-      "runs": 101,
-      "scored": 1212,
+      "runs": 102,
+      "scored": 1224,
       "entries": 0,
       "best_score": 72.0,
-      "above_threshold": 71,
+      "above_threshold": 72,
       "threshold": 70.0,
       "blocks": {
-        "tribunal_veto_oder_kein_preis": 71,
+        "tribunal_veto_oder_kein_preis": 72,
         "unter_min_alpha_score": 30
       }
     },
     "day_trading": {
-      "runs": 101,
-      "scored": 356,
+      "runs": 102,
+      "scored": 364,
       "entries": 2,
       "best_score": 75,
       "above_threshold": 2,
@@ -269,7 +269,7 @@
       "blocks": {
         "ausserhalb_handelszeit": 12,
         "keine_kandidaten_nach_gates": 14,
-        "unter_min_entry_score": 73
+        "unter_min_entry_score": 74
       }
     }
   }
