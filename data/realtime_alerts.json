@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 10:41:03",
+    "time_str": "10:41:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.04,
+    "vol_ratio": 0.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 10:35:59",
     "time_str": "10:35:59",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BNTX stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 23:42:34",
-    "time_str": "23:42:34",
-    "data_age_min": 2.6,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
   }
 ]
