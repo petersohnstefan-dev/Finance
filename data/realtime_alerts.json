@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 22:16:09",
+    "time_str": "22:16:09",
+    "data_age_min": 1.2,
+    "window_span_min": 3.0,
+    "symbol": "ZTS",
+    "direction": "LONG",
+    "trigger_price": 71.5,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZTS explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:16:00",
+    "time_str": "22:16:00",
+    "data_age_min": 0.4,
+    "window_span_min": 4.6,
+    "symbol": "SRPT",
+    "direction": "LONG",
+    "trigger_price": 18.91,
+    "change_1min_pct": 1.28,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT explodiert um +1.28% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 22:15:59",
+    "time_str": "22:15:59",
+    "data_age_min": 4.0,
+    "window_span_min": 7.0,
+    "symbol": "COPX",
+    "direction": "SHORT",
+    "trigger_price": 85.76,
+    "change_1min_pct": 1.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 COPX stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 22:11:08",
     "time_str": "22:11:08",
     "data_age_min": 1.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:31:20",
-    "time_str": "21:31:20",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "INTC",
-    "direction": "SHORT",
-    "trigger_price": 124.08,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:31:13",
-    "time_str": "21:31:13",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 15.81,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 21:31:11",
-    "time_str": "21:31:11",
-    "data_age_min": 1.2,
-    "window_span_min": 4.0,
-    "symbol": "DNA",
-    "direction": "SHORT",
-    "trigger_price": 10.21,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
