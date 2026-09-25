@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 20:25:55",
+    "time_str": "20:25:55",
+    "data_age_min": 1.9,
+    "window_span_min": 4.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 4.45,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 20:25:54",
+    "time_str": "20:25:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "QBTS",
+    "direction": "LONG",
+    "trigger_price": 17.51,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QBTS explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 20:20:59",
     "time_str": "20:20:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.3,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LDO-USD stürzt um -2.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:50:55",
-    "time_str": "18:50:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 5.07,
-    "change_1min_pct": 1.26,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:46:05",
-    "time_str": "18:46:05",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "STEM",
-    "direction": "LONG",
-    "trigger_price": 4.4,
-    "change_1min_pct": 1.5,
-    "vol_ratio": 1.41,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM explodiert um +1.50% in 5 Min.! Momentum aktiv."
   }
 ]
