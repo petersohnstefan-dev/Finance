@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 18:36:04",
+    "time_str": "18:36:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ACN",
+    "direction": "SHORT",
+    "trigger_price": 178.04,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 18:35:58",
+    "time_str": "18:35:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.6,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 18:35:56",
+    "time_str": "18:35:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "SHORT",
+    "trigger_price": 18.64,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 18:31:13",
     "time_str": "18:31:13",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 3.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BA explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:01:28",
-    "time_str": "18:01:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "LOW",
-    "direction": "LONG",
-    "trigger_price": 188.91,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LOW explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:01:28",
-    "time_str": "18:01:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "TXN",
-    "direction": "LONG",
-    "trigger_price": 277.11,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TXN explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:01:28",
-    "time_str": "18:01:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "CAT",
-    "direction": "LONG",
-    "trigger_price": 817.97,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAT explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
