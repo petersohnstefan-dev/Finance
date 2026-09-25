@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 18:55:59",
+    "time_str": "18:55:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NOW",
+    "direction": "LONG",
+    "trigger_price": 136.7,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 18:55:53",
+    "time_str": "18:55:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 17.82,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 18:55:52",
+    "time_str": "18:55:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "LONG",
+    "trigger_price": 15.95,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 18:50:59",
     "time_str": "18:50:59",
     "data_age_min": 2.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.12,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:16:05",
-    "time_str": "18:16:05",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 54.96,
-    "change_1min_pct": 0.78,
-    "vol_ratio": 1.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:16:05",
-    "time_str": "18:16:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 197.6,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 0.71,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:11:04",
-    "time_str": "18:11:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 2.97,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 0.77,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +0.68% in 5 Min.! Momentum aktiv."
   }
 ]
