@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 10:01:08",
+    "time_str": "10:01:08",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.0,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.00% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 09:51:29",
     "time_str": "09:51:29",
     "data_age_min": 0.5,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CAVA explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:31:45",
-    "time_str": "22:31:45",
-    "data_age_min": 11.4,
-    "window_span_min": 5.4,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 3.88,
-    "change_1min_pct": 1.27,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
