@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 21:51:03",
+    "time_str": "21:51:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 8.91,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:50:59",
+    "time_str": "21:50:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.5,
+    "change_1min_pct": 1.57,
+    "vol_ratio": 1.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 21:45:51",
     "time_str": "21:45:51",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.48,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SMCI explodiert um +0.88% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:50:56",
-    "time_str": "19:50:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 1.57,
-    "change_1min_pct": 1.0,
-    "vol_ratio": 3.76,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:50:54",
-    "time_str": "19:50:54",
-    "data_age_min": 3.9,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.42,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.42% in 5 Min.! Momentum aktiv."
   }
 ]
