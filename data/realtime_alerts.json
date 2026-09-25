@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 11:31:07",
+    "time_str": "11:31:07",
+    "data_age_min": 1.0,
+    "window_span_min": 3.2,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 32.33,
+    "change_1min_pct": 1.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -1.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 11:31:06",
+    "time_str": "11:31:06",
+    "data_age_min": 1.6,
+    "window_span_min": 3.6,
+    "symbol": "AFRM",
+    "direction": "LONG",
+    "trigger_price": 71.85,
+    "change_1min_pct": 1.1,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AFRM explodiert um +1.10% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 11:26:02",
     "time_str": "11:26:02",
     "data_age_min": 1.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MAERSK-B.CO explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 09:20:54",
-    "time_str": "09:20:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.45,
-    "change_1min_pct": 1.21,
-    "vol_ratio": 1.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD explodiert um +1.21% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 09:20:54",
-    "time_str": "09:20:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.23,
-    "change_1min_pct": 1.11,
-    "vol_ratio": 0.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
   }
 ]
