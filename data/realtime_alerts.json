@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 19:50:57",
+    "time_str": "19:50:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 43.49,
+    "change_1min_pct": 0.88,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.88% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 19:50:56",
+    "time_str": "19:50:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.57,
+    "change_1min_pct": 1.0,
+    "vol_ratio": 3.76,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 19:50:54",
+    "time_str": "19:50:54",
+    "data_age_min": 3.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.42,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.42% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 19:45:58",
     "time_str": "19:45:58",
     "data_age_min": 3.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.31,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA explodiert um +1.12% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:41:02",
-    "time_str": "18:41:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 3.82,
-    "change_1min_pct": 0.99,
-    "vol_ratio": 1.29,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.99% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:41:01",
-    "time_str": "18:41:01",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "SHORT",
-    "trigger_price": 91.68,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.72,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:36:04",
-    "time_str": "18:36:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ACN",
-    "direction": "SHORT",
-    "trigger_price": 178.04,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
