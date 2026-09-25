@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 12:01:23",
+    "time_str": "12:01:23",
+    "data_age_min": 0.9,
+    "window_span_min": 4.5,
+    "symbol": "DDOG",
+    "direction": "SHORT",
+    "trigger_price": 257.01,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DDOG stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 11:55:40",
     "time_str": "11:55:40",
     "data_age_min": 0.7,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:05:49",
-    "time_str": "10:05:49",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 385.45,
-    "change_1min_pct": 0.92,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
