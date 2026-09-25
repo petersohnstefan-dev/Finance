@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 19:35:56",
+    "time_str": "19:35:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.55,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 19:35:55",
+    "time_str": "19:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 38.77,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 19:31:10",
     "time_str": "19:31:10",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.59,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKSY stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:31:11",
-    "time_str": "18:31:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 29.03,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:31:09",
-    "time_str": "18:31:09",
-    "data_age_min": 3.2,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
