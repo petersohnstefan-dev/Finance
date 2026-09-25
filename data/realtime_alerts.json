@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 17:16:03",
+    "time_str": "17:16:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "SHORT",
+    "trigger_price": 417.88,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.74,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 17:16:02",
+    "time_str": "17:16:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 21.17,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 17:16:02",
+    "time_str": "17:16:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "LONG",
+    "trigger_price": 252.33,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 17:11:01",
     "time_str": "17:11:01",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.53,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:35:58",
-    "time_str": "16:35:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FTNT",
-    "direction": "SHORT",
-    "trigger_price": 174.01,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:35:57",
-    "time_str": "16:35:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "LONG",
-    "trigger_price": 44.68,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 0.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:35:54",
-    "time_str": "16:35:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "XRP-USD",
-    "direction": "LONG",
-    "trigger_price": 1.6,
-    "change_1min_pct": 1.24,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 XRP-USD explodiert um +1.24% in 5 Min.! Momentum aktiv."
   }
 ]
