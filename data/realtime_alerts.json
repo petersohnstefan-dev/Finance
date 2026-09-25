@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 11:05:52",
+    "time_str": "11:05:52",
+    "data_age_min": 0.3,
+    "window_span_min": 4.6,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 18.41,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 11:05:47",
+    "time_str": "11:05:47",
+    "data_age_min": 2.8,
+    "window_span_min": 5.0,
+    "symbol": "KAS-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.04,
+    "vol_ratio": 8.1,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KAS-USD explodiert um +1.04% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 11:01:12",
     "time_str": "11:01:12",
     "data_age_min": 5.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.74,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ONDO-USD explodiert um +1.37% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 08:20:57",
-    "time_str": "08:20:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.23,
-    "change_1min_pct": 1.21,
-    "vol_ratio": 0.21,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.21% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 08:16:05",
-    "time_str": "08:16:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "BONK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 1.1,
-    "vol_ratio": 3.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BONK-USD stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
