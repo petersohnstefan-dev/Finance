@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 14:21:08",
+    "time_str": "14:21:08",
+    "data_age_min": 2.2,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "LONG",
+    "trigger_price": 23550.0,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 14:21:02",
+    "time_str": "14:21:02",
+    "data_age_min": 10.1,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "SHORT",
+    "trigger_price": 3.21,
+    "change_1min_pct": 0.74,
+    "vol_ratio": 1.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 14:16:02",
     "time_str": "14:16:02",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FET-USD stürzt um -1.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 13:41:04",
-    "time_str": "13:41:04",
-    "data_age_min": 0.5,
-    "window_span_min": 4.6,
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 367.27,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 13:41:04",
-    "time_str": "13:41:04",
-    "data_age_min": 0.8,
-    "window_span_min": 5.3,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.2,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
