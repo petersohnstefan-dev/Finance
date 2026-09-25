@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 20:11:00",
+    "time_str": "20:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 38.57,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.47,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 20:05:42",
     "time_str": "20:05:42",
     "data_age_min": 0.7,
@@ -635,18 +648,5 @@
     "vol_ratio": 6.65,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX explodiert um +1.04% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:46:02",
-    "time_str": "18:46:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 201.71,
-    "change_1min_pct": 1.26,
-    "vol_ratio": 3.77,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +1.26% in 5 Min.! Momentum aktiv."
   }
 ]
