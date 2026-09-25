@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-25 14:01:28",
+    "time_str": "14:01:28",
+    "data_age_min": 0.1,
+    "window_span_min": 5.4,
+    "symbol": "ORCL",
+    "direction": "SHORT",
+    "trigger_price": 138.88,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 14:01:22",
+    "time_str": "14:01:22",
+    "data_age_min": 0.2,
+    "window_span_min": 6.2,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.56,
+    "change_1min_pct": 1.31,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 14:01:22",
+    "time_str": "14:01:22",
+    "data_age_min": 4.2,
+    "window_span_min": 2.2,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 3.0,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 14:01:22",
+    "time_str": "14:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 6.0,
+    "symbol": "ZS",
+    "direction": "SHORT",
+    "trigger_price": 206.45,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 13:55:50",
     "time_str": "13:55:50",
     "data_age_min": 2.9,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SMH stürzt um -1.17% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 13:01:21",
-    "time_str": "13:01:21",
-    "data_age_min": 0.1,
-    "window_span_min": 5.3,
-    "symbol": "QQQ",
-    "direction": "SHORT",
-    "trigger_price": 741.1,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QQQ stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 12:35:54",
-    "time_str": "12:35:54",
-    "data_age_min": 4.8,
-    "window_span_min": 5.2,
-    "symbol": "FTNT",
-    "direction": "LONG",
-    "trigger_price": 179.75,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 12:35:51",
-    "time_str": "12:35:51",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 12:35:50",
-    "time_str": "12:35:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.24,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 0.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
