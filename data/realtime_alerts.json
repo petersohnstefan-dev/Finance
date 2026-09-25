@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 11:35:54",
+    "time_str": "11:35:54",
+    "data_age_min": 3.3,
+    "window_span_min": 4.6,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 10.23,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 11:35:51",
+    "time_str": "11:35:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.23,
+    "change_1min_pct": 1.18,
+    "vol_ratio": 0.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 11:31:07",
     "time_str": "11:31:07",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BZ=F stürzt um -6.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 09:31:05",
-    "time_str": "09:31:05",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.04,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 09:21:04",
-    "time_str": "09:21:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "MAERSK-B.CO",
-    "direction": "LONG",
-    "trigger_price": 23730.0,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MAERSK-B.CO explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
