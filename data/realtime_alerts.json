@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 20:58:41",
+    "time_str": "20:58:41",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "LONG",
+    "trigger_price": 7.58,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 20:58:41",
+    "time_str": "20:58:41",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "LONG",
+    "trigger_price": 4.03,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 0.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY explodiert um +0.75% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 20:58:39",
+    "time_str": "20:58:39",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "DUOL",
+    "direction": "SHORT",
+    "trigger_price": 142.74,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 20:55:58",
     "time_str": "20:55:58",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.87,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:16:11",
-    "time_str": "19:16:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 200.42,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:16:10",
-    "time_str": "19:16:10",
-    "data_age_min": 10.2,
-    "window_span_min": 5.0,
-    "symbol": "NG=F",
-    "direction": "SHORT",
-    "trigger_price": 3.2,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NG=F stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:10:55",
-    "time_str": "19:10:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 4.23,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 3.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
