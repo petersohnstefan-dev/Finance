@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 19:21:02",
+    "time_str": "19:21:02",
+    "data_age_min": 0.1,
+    "window_span_min": 6.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 32.56,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.49,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 19:21:01",
+    "time_str": "19:21:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RGTI",
+    "direction": "SHORT",
+    "trigger_price": 16.94,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 1.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 19:21:00",
+    "time_str": "19:21:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "SHORT",
+    "trigger_price": 45.94,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 19:16:12",
     "time_str": "19:16:12",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 3.19,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TIA-USD stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:21:46",
-    "time_str": "18:21:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 628.0,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.72,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:21:46",
-    "time_str": "18:21:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "TSLA",
-    "direction": "SHORT",
-    "trigger_price": 372.39,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TSLA stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 18:21:40",
-    "time_str": "18:21:40",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 8.2,
-    "change_1min_pct": 0.92,
-    "vol_ratio": 2.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.92% in 5 Min.! Momentum aktiv."
   }
 ]
