@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 21:31:20",
+    "time_str": "21:31:20",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "SHORT",
+    "trigger_price": 124.08,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:31:13",
+    "time_str": "21:31:13",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 15.81,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 0.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:31:11",
+    "time_str": "21:31:11",
+    "data_age_min": 1.2,
+    "window_span_min": 4.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 10.21,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 1.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 21:20:59",
     "time_str": "21:20:59",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INJ-USD stürzt um -1.28% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:31:06",
-    "time_str": "19:31:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.24,
-    "change_1min_pct": 1.01,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:25:52",
-    "time_str": "19:25:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 4.99,
-    "change_1min_pct": 1.39,
-    "vol_ratio": 0.17,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.39% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:21:02",
-    "time_str": "19:21:02",
-    "data_age_min": 0.1,
-    "window_span_min": 6.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 32.56,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
