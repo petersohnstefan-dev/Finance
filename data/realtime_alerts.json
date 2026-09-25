@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 17:01:24",
+    "time_str": "17:01:24",
+    "data_age_min": 2.4,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.11,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 17:01:24",
+    "time_str": "17:01:24",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 16:56:03",
     "time_str": "16:56:03",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKG explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:21:01",
-    "time_str": "16:21:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 3.96,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:21:01",
-    "time_str": "16:21:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "LONG",
-    "trigger_price": 16.38,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 2.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
