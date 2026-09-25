@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 09:11:31",
+    "time_str": "09:11:31",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.58,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD stürzt um -1.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 09:05:55",
     "time_str": "09:05:55",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:25:57",
-    "time_str": "22:25:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "SHORT",
-    "trigger_price": 5.67,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
