@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 17:41:09",
+    "time_str": "17:41:09",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 4.4,
+    "change_1min_pct": 1.61,
+    "vol_ratio": 0.29,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +1.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 17:41:08",
+    "time_str": "17:41:08",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "OKTA",
+    "direction": "SHORT",
+    "trigger_price": 199.01,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 17:41:07",
+    "time_str": "17:41:07",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.81,
+    "change_1min_pct": 0.79,
+    "vol_ratio": 3.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.79% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 17:35:58",
     "time_str": "17:35:58",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.02,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PATH stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:52:56",
-    "time_str": "16:52:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 43.94,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:52:56",
-    "time_str": "16:52:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CAVA",
-    "direction": "SHORT",
-    "trigger_price": 52.28,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 3.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAVA stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 16:52:56",
-    "time_str": "16:52:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IONQ",
-    "direction": "SHORT",
-    "trigger_price": 44.3,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
