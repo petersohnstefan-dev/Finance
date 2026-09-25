@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-25 21:05:52",
+    "time_str": "21:05:52",
+    "data_age_min": 2.9,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 4.6,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 1.35,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:05:50",
+    "time_str": "21:05:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "LONG",
+    "trigger_price": 45.97,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 20:58:41",
     "time_str": "20:58:41",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.11,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM explodiert um +0.81% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:16:11",
-    "time_str": "19:16:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "CRWD",
-    "direction": "LONG",
-    "trigger_price": 256.57,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:16:11",
-    "time_str": "19:16:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 10.66,
-    "change_1min_pct": 0.93,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
