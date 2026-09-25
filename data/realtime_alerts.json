@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 09:21:04",
+    "time_str": "09:21:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "LONG",
+    "trigger_price": 23730.0,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 09:20:54",
+    "time_str": "09:20:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.45,
+    "change_1min_pct": 1.21,
+    "vol_ratio": 1.23,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.21% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 09:20:54",
+    "time_str": "09:20:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "LONG",
+    "trigger_price": 0.23,
+    "change_1min_pct": 1.11,
+    "vol_ratio": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-25 09:11:31",
     "time_str": "09:11:31",
     "data_age_min": 0.5,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RXRX explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:26:03",
-    "time_str": "22:26:03",
-    "data_age_min": 4.0,
-    "window_span_min": 6.1,
-    "symbol": "LOW",
-    "direction": "SHORT",
-    "trigger_price": 187.5,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LOW stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:25:57",
-    "time_str": "22:25:57",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "OKTA",
-    "direction": "SHORT",
-    "trigger_price": 206.65,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:25:57",
-    "time_str": "22:25:57",
-    "data_age_min": 2.7,
-    "window_span_min": 5.3,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.15,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.73% in 5 Min.! Momentum aktiv."
   }
 ]
