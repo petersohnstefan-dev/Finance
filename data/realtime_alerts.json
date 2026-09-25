@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-25 21:36:01",
+    "time_str": "21:36:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 4.52,
+    "change_1min_pct": 1.09,
+    "vol_ratio": 0.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:36:00",
+    "time_str": "21:36:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 84.43,
+    "change_1min_pct": 0.89,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:35:59",
+    "time_str": "21:35:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.59,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 4.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 21:35:57",
+    "time_str": "21:35:57",
+    "data_age_min": 2.0,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.29,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 21:31:20",
     "time_str": "21:31:20",
     "data_age_min": 0.4,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.84,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FOUR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:31:10",
-    "time_str": "19:31:10",
-    "data_age_min": 0.2,
-    "window_span_min": 6.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.57,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:31:10",
-    "time_str": "19:31:10",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 2.88,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.27,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:31:06",
-    "time_str": "19:31:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.48,
-    "change_1min_pct": 1.03,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 19:31:06",
-    "time_str": "19:31:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "SHORT",
-    "trigger_price": 7.95,
-    "change_1min_pct": 1.28,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD stürzt um -1.28% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
