@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 12:35:54",
+    "time_str": "12:35:54",
+    "data_age_min": 4.8,
+    "window_span_min": 5.2,
+    "symbol": "FTNT",
+    "direction": "LONG",
+    "trigger_price": 179.75,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FTNT explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 12:35:51",
+    "time_str": "12:35:51",
+    "data_age_min": 1.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 12:35:50",
+    "time_str": "12:35:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.24,
+    "change_1min_pct": 1.07,
+    "vol_ratio": 0.35,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 12:31:06",
     "time_str": "12:31:06",
     "data_age_min": 0.4,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.05,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PYTH-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:20:59",
-    "time_str": "10:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DOT-USD",
-    "direction": "LONG",
-    "trigger_price": 1.18,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DOT-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:20:59",
-    "time_str": "10:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "LONG",
-    "trigger_price": 4.61,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 6.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 10:16:08",
-    "time_str": "10:16:08",
-    "data_age_min": 2.1,
-    "window_span_min": 5.1,
-    "symbol": "CRM",
-    "direction": "SHORT",
-    "trigger_price": 236.07,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
