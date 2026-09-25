@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-25 09:31:05",
+    "time_str": "09:31:05",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.04,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 09:21:04",
     "time_str": "09:21:04",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-24 22:31:43",
-    "time_str": "22:31:43",
-    "data_age_min": 0.1,
-    "window_span_min": 6.7,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 3.9,
-    "change_1min_pct": 0.75,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.75% in 5 Min.! Momentum aktiv."
   }
 ]
