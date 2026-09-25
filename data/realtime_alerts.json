@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-25 15:01:24",
+    "time_str": "15:01:24",
+    "data_age_min": 0.1,
+    "window_span_min": 5.3,
+    "symbol": "JOBY",
+    "direction": "LONG",
+    "trigger_price": 6.39,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 15:01:23",
+    "time_str": "15:01:23",
+    "data_age_min": 4.8,
+    "window_span_min": 5.5,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 249.59,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-25 15:01:20",
+    "time_str": "15:01:20",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "XRP-USD",
+    "direction": "SHORT",
+    "trigger_price": 1.59,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 XRP-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-25 14:55:52",
     "time_str": "14:55:52",
     "data_age_min": 3.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.9,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHIB-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 14:15:57",
-    "time_str": "14:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RENDER-USD",
-    "direction": "SHORT",
-    "trigger_price": 1.95,
-    "change_1min_pct": 1.32,
-    "vol_ratio": 1.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RENDER-USD stürzt um -1.32% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 14:15:57",
-    "time_str": "14:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 5.01,
-    "change_1min_pct": 1.12,
-    "vol_ratio": 1.41,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 14:15:57",
-    "time_str": "14:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "AVAX-USD",
-    "direction": "SHORT",
-    "trigger_price": 10.58,
-    "change_1min_pct": 1.03,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AVAX-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
