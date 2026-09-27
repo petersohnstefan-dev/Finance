@@ -1,0 +1,86 @@
+name: "\U0001F48E Vervielfacher-Scan (woechentlich)"
+
+# Warum woechentlich und nicht alle zwei Tage:
+#
+# Die Eingangsdaten sind Jahresabschluesse. Die aendern sich hoechstens vier Mal
+# im Jahr je Unternehmen - ein Lauf alle zwei Tage liest dieselben Zahlen 3,5 mal
+# so oft und kommt zwangslaeufig zum selben Ergebnis. Dazu kaeme die dreifache
+# Last auf yfinance (rund 4.000 Abrufe je Lauf), ohne Gegenwert.
+#
+# Der zweite Grund ist die Historie: "seit zwoelf Wochen auf der Liste" ist eine
+# Aussage. Bei einem Lauf alle zwei Tage waere dieselbe Aussage "seit 42 Laeufen"
+# und der Zaehler misst dann die Taktfrequenz statt die Bestaendigkeit.
+#
+# Sonntag, weil die Boersen zu sind und kein Handels-Job um dieselbe Anbindung
+# konkurriert - der Scanner laeuft werktags alle fuenf Minuten.
+on:
+  schedule:
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Nur die ersten N Symbole (leer = alle)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tenbagger-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: "\U0001F4E5 Code auschecken"
+        uses: actions/checkout@v4
+
+      - name: "\U0001F40D Python 3.12 einrichten"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: "\U0001F4E6 Abhängigkeiten installieren"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: "\U0001F48E Vervielfacher-Scan ausführen"
+        run: |
+          if [ -n "${{ inputs.limit }}" ]; then
+            python run_tenbagger_scan.py --limit ${{ inputs.limit }}
+          else
+            python run_tenbagger_scan.py
+          fi
+
+      - name: "\U0001F4BE Ergebnis zurückpushen"
+        run: |
+          git config --global user.name 'Finance AI Bot'
+          git config --global user.email 'bot@antigravity.ai'
+          git add data/portfolio.db data/tenbagger_universe.json data/tenbagger_cache.json data/incidents.json
+          if git diff --staged --quiet; then
+            echo 'Keine Änderungen.'
+            exit 0
+          fi
+          git commit -m '💎 Vervielfacher-Scan: Wochenliste aktualisiert [skip ci]'
+          # Der Handels-Bot pusht werktags alle fuenf Minuten. Sonntags ist das
+          # unwahrscheinlich, aber der Retry kostet nichts und hat beim
+          # Lerntagebuch schon Eintraege gerettet.
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push erfolgreich (Versuch $i)."
+              exit 0
+            fi
+            echo "Push abgelehnt. Rebase und Versuch $i von 3..."
+            if ! git pull --rebase; then
+              git rebase --abort || true
+              echo "::error::Rebase fehlgeschlagen."
+              exit 1
+            fi
+          done
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen."
+          exit 1

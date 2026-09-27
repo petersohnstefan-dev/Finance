@@ -197,6 +197,7 @@ with st.sidebar:
         "⚖️ KI-Tribunal (Handelsentscheidungen)",
         "💬 KI-Chatbot (Strategie & Analyse)",
         "🧠 KI-Lerntagebuch (Retrospektive)",
+        "💎 Vervielfacher-Radar (Tenbagger)",
         "🛠️ System-Störungen (Technik-Log)",
         "📖 Handelsstrategie & System-Logik"
     ]
@@ -2875,6 +2876,292 @@ elif app_mode == "\U0001f6e0️ System-Störungen (Technik-Log)":
                 st.markdown(f"**{e['message']}**")
                 if e.get("context"):
                     st.json(e["context"])
+
+elif app_mode == "\U0001f48e Vervielfacher-Radar (Tenbagger)":
+    from src import tenbagger as TB
+    # Die internen Schluessel sind bewusst umlautfrei; hier bekommen sie ihre
+    # lesbaren Namen, statt sie mit replace("_", " ") halb aufzuhuebschen.
+    TB_LABEL = {
+        "kapitalverzinsung": "Kapitalverzinsung",
+        "wachstumsqualitaet": "Wachstumsqualität",
+        "beschleunigung": "Beschleunigung",
+        "reinvestition": "Reinvestition",
+        "verwaesserung": "Verwässerung",
+        "ueberlebensfaehigkeit": "Überlebensfähigkeit",
+        "barmittel_deckung": "Barmitteldeckung",
+    }
+
+    st.header("\U0001f48e Vervielfacher-Radar")
+    st.caption(
+        "Wöchentliche Suche nach Unternehmen, die sich noch verzehnfachen **können** — "
+        "gemessen an dem, was eine Verzehnfachung antreibt, nicht daran, wer die letzten "
+        "drei Jahre am besten gelaufen ist."
+    )
+
+    tage = TB.get_scan_dates()
+    if not tage:
+        st.info(
+            "Noch kein Scan gelaufen. Der Lauf ist für **Sonntag 06:00 UTC** eingeplant "
+            "und lässt sich in GitHub Actions unter *Vervielfacher-Scan* jederzeit von "
+            "Hand starten."
+        )
+    else:
+        tab_liste, tab_hist, tab_methode = st.tabs(
+            ["\U0001f4cb Aktuelle Liste", "\U0001f4c8 Historie & Bestand",
+             "\U0001f9ee Wie wird gerechnet?"])
+
+        # ------------------------------------------------------------------
+        with tab_liste:
+            gewaehlt = st.selectbox("Scan vom", tage, index=0)
+            eintraege = TB.get_scan(gewaehlt)
+            if not eintraege:
+                st.warning("Dieser Lauf enthält keine Einträge.")
+            else:
+                spitze = [e for e in eintraege if (e["score"] or 0) >= TB.BAND_TENBAGGER]
+                stark = [e for e in eintraege if TB.BAND_STRONG <= (e["score"] or 0) < TB.BAND_TENBAGGER]
+                k1, k2, k3, k4 = st.columns(4)
+                k1.metric("Gelistet", len(eintraege))
+                k2.metric("Tenbagger-Kandidaten", len(spitze))
+                k3.metric("Starke Kandidaten", len(stark))
+                k4.metric("Bester Score", max((e["score"] or 0) for e in eintraege))
+
+                zeilen = []
+                for e in eintraege:
+                    zeilen.append({
+                        "Rang": e["rang"],
+                        "Symbol": e["symbol"],
+                        "Name": (e["name"] or "")[:28],
+                        "Score": e["score"],
+                        "Motor": e["motorscore"],
+                        "Größe": (f"x{e['groessenfaktor']:.2f}"
+                                  if e["groessenfaktor"] is not None else "—"),
+                        "Abzug": (f"x{e['abzugsfaktor']:.2f}"
+                                  if e["abzugsfaktor"] is not None else "—"),
+                        "Mrd €": e["marktkap_mrd_eur"],
+                        "KGV": e["kgv"],
+                        "Einstufung": e["band"],
+                        "Datenlage": (f"{(e['datenlage'] or 0)*100:.0f}%"),
+                        "Hinweise": " · ".join(e["warnungen"] or []) or "—",
+                    })
+                st.dataframe(pd.DataFrame(zeilen), use_container_width=True,
+                             hide_index=True)
+                st.caption(
+                    "**Score = Motor × Größe × Abzug.** Der Motor misst, was eine "
+                    "Verzehnfachung erzeugt; die Größe deckelt sie arithmetisch; die "
+                    "Abzüge sind die Wege, auf denen sie den Aktionär nicht erreicht. "
+                    "Das KGV wird **angezeigt, aber nicht bewertet** — warum, steht im "
+                    "Reiter *Wie wird gerechnet?*"
+                )
+
+                st.markdown("---")
+                st.subheader("Einzelwert aufschlüsseln")
+                wahl = st.selectbox(
+                    "Wert", [e["symbol"] for e in eintraege],
+                    format_func=lambda sym: next(
+                        (f"{sym} — {(x['name'] or '')[:30]} ({x['score']} Punkte)"
+                         for x in eintraege if x["symbol"] == sym), sym))
+                detail = next((e for e in eintraege if e["symbol"] == wahl), None)
+                if detail:
+                    d1, d2 = st.columns(2)
+                    with d1:
+                        st.markdown("**Wachstumsmotor**")
+                        mz = []
+                        for name, v in (detail["motor"] or {}).items():
+                            mz.append({
+                                "Faktor": TB_LABEL.get(name, name),
+                                "Punkte": (f"{v['punkte']}/{v['max']}"
+                                           if v.get("punkte") is not None
+                                           else f"—/{v['max']}"),
+                                "Messwert": (f"{v['wert']} " if v.get("wert") is not None else "— ")
+                                            + (v.get("einheit") or ""),
+                            })
+                        st.dataframe(pd.DataFrame(mz), use_container_width=True,
+                                     hide_index=True)
+                        for name, v in (detail["motor"] or {}).items():
+                            if v.get("zusatz"):
+                                st.caption(f"↳ {TB_LABEL.get(name, name)}: {v['zusatz']}")
+                    with d2:
+                        st.markdown("**Abzüge**")
+                        az = []
+                        for name, v in (detail["abzuege"] or {}).items():
+                            az.append({
+                                "Faktor": TB_LABEL.get(name, name),
+                                "Faktor-Wert": f"x{v['faktor']:.2f}",
+                                "Messwert": (f"{v['wert']} " if v.get("wert") is not None else "— ")
+                                            + (v.get("einheit") or ""),
+                            })
+                        st.dataframe(pd.DataFrame(az), use_container_width=True,
+                                     hide_index=True)
+                        if detail["warnungen"]:
+                            for w in detail["warnungen"]:
+                                st.warning(w)
+
+                    h = TB.get_symbol_history(wahl)
+                    if h.get("auftritte", 0) > 0:
+                        st.info(
+                            f"**Auf der Liste seit {h['erstmals']}** — "
+                            f"{h['auftritte']} von {h['von_scans']} Läufen, "
+                            f"aktuell {h['serie']} in Folge. "
+                            f"Score {h['score_erstmals']} → {h['score_aktuell']}"
+                            + (f", Kurs {h['kursentwicklung_pct']:+.1f}% seit dem ersten Mal."
+                               if h.get("kursentwicklung_pct") is not None else ".")
+                        )
+
+        # ------------------------------------------------------------------
+        with tab_hist:
+            st.subheader("Wer steht wie lange auf der Liste?")
+            st.caption(
+                "Beständigkeit ist die eigentliche Aussage dieser Liste. Ein Wert, der "
+                "zwölf Wochen in Folge auftaucht, hat zwölf Mal unabhängig voneinander "
+                "dieselbe Prüfung bestanden. Ein Wert, der einmal auftaucht und "
+                "verschwindet, war eine Momentaufnahme."
+            )
+            bestand = TB.get_watchlist()
+            if not bestand:
+                st.info("Noch keine Historie — die entsteht ab dem zweiten Lauf.")
+            else:
+                zeilen = []
+                for h in bestand:
+                    zeilen.append({
+                        "Symbol": h["symbol"],
+                        "Status": "\U0001f7e2 gelistet" if h["aktuell_gelistet"] else "⚪ abgefallen",
+                        "Erstmals": h["erstmals"],
+                        "Auftritte": f"{h['auftritte']} / {h['von_scans']}",
+                        "Serie": h["serie"],
+                        "Score zuerst": h["score_erstmals"],
+                        "Score jetzt": h["score_aktuell"],
+                        "Score Δ": h["score_differenz"],
+                        "Kurs zuerst": h["kurs_erstmals"],
+                        "Kurs jetzt": h["kurs_aktuell"],
+                        "Kurs seit Erstlistung": (f"{h['kursentwicklung_pct']:+.1f}%"
+                                                  if h.get("kursentwicklung_pct") is not None
+                                                  else "—"),
+                    })
+                st.dataframe(pd.DataFrame(zeilen), use_container_width=True,
+                             hide_index=True)
+
+                mit_kurs = [h for h in bestand
+                            if h.get("kursentwicklung_pct") is not None
+                            and h["auftritte"] >= 2]
+                if mit_kurs:
+                    st.markdown("---")
+                    st.subheader("Hat die Liste etwas getaugt?")
+                    schnitt = sum(h["kursentwicklung_pct"] for h in mit_kurs) / len(mit_kurs)
+                    gestiegen = sum(1 for h in mit_kurs if h["kursentwicklung_pct"] > 0)
+                    m1, m2, m3 = st.columns(3)
+                    m1.metric("Nachverfolgte Werte", len(mit_kurs))
+                    m2.metric("Ø seit Erstlistung", f"{schnitt:+.1f}%")
+                    m3.metric("davon im Plus", f"{gestiegen} von {len(mit_kurs)}")
+                    st.caption(
+                        "Gemessen ab dem Kurs beim ersten Auftauchen bis zum letzten "
+                        "Lauf, in dem der Wert noch gelistet war. Das ist **keine** "
+                        "Depot-Rendite: die Liste kauft nichts, und die Beobachtung "
+                        "endet, sobald ein Wert von der Liste fällt."
+                    )
+
+        # ------------------------------------------------------------------
+        with tab_methode:
+            st.markdown("""
+### Was eine Verzehnfachung erzeugt — und was sie verhindert
+
+Der Score ist ein Produkt, keine Summe:
+
+**Score = Wachstumsmotor × Größenfaktor × Abzugsfaktor**
+
+Das ist keine Formalie. Eine Summe hat in der ersten Fassung dieses Screenings
+**E.ON auf 85 von 100 Punkten** gebracht, vor jedem schnell wachsenden
+Unternehmen der Stichprobe. Der Grund: Verwässerung, Überlebensfähigkeit und
+Barmitteldeckung waren 35 von 85 Punkten, und die gewinnt ein Versorger
+mühelos — indem er nichts versucht. Wer nicht wächst, kann sich nicht
+verzehnfachen, egal wie solide er geführt wird.
+
+#### Der Motor (100 Punkte) — was die Verzehnfachung erzeugt
+
+| Faktor | Punkte | Warum |
+|---|---|---|
+| **Kapitalverzinsung** | 25 | Was jeder eingesetzte Euro zurückbringt. Über mehrere Jahre gemittelt, damit ein einzelnes Ausnahmejahr das Urteil nicht trägt. |
+| **Wachstumsqualität** | 30 | **Bruttogewinn**, nicht Umsatz — Umsatz lässt sich mit Rabatten kaufen, Bruttogewinn nicht. Dazu der Margentrend als Beleg für Preissetzungsmacht. |
+| **Beschleunigung** | 20 | Wachstum dieses Jahres gegen das des Vorjahres. Genau die Information, die ein Dreijahresschnitt bewusst wegmittelt. |
+| **Reinvestition** | 25 | Ob überhaupt mehr Kapital arbeiten geht — **gewichtet mit der Verzinsung**. Kapital zu 5 % einzusetzen vernichtet Wert, statt ihn zu schaffen. |
+
+#### Der Größenfaktor (×0,10 bis ×1,00) — die arithmetische Decke
+
+Nvidia erreicht **89 von 100 Motorpunkten** und verdient sie. Bei 4.864 Mrd €
+hieße eine Verzehnfachung 49 Billionen — mehr als die Welt in einem Jahr
+erwirtschaftet. Als Summand kostete diese Unmöglichkeit 15 Punkte und ließ
+einen „starken Kandidaten" übrig. Als Multiplikator erledigt sie die Frage:
+Endscore 9.
+
+| Marktkapitalisierung | Faktor |
+|---|---|
+| bis 5 Mrd € | ×1,00 |
+| 5–10 | ×0,92 |
+| 10–25 | ×0,80 |
+| 25–50 | ×0,62 |
+| 50–100 | ×0,40 |
+| 100–250 | ×0,22 |
+| über 250 | ×0,10 |
+
+#### Die Abzüge — wie die Verzehnfachung den Aktionär verfehlt
+
+| Abzug | bis | Warum |
+|---|---|---|
+| **Verwässerung** | ×0,55 | Der meistunterschätzte Killer. Zehnfacher Gewinn bei dreifacher Aktienzahl ist eine Verdreifachung. Bei 10 % Verwässerung pro Jahr muss ein Unternehmen in zehn Jahren 26-mal größer werden, damit der Aktionär das Zehnfache sieht. In Lynchs Zeit selten, heute mit Aktienvergütung die Regel. |
+| **Überlebensfähigkeit** | ×0,55 | Wer im Abschwung Geld aufnehmen muss, verwässert zum schlechtesten Kurs — und landet wieder in der Zeile darüber. |
+| **Barmitteldeckung** | ×0,82 | Kommt das Wachstum als Geld an? Bewusst der mildeste der drei: ein Unternehmen, das bei 80 % Wachstum Lager aufbaut, verbrennt aus gutem Grund Geld. |
+
+#### Was **nicht** bewertet wird: die Bewertung
+
+KGV und Wachstums-KGV stehen als Spalten in der Tabelle und gehen **nicht** in
+den Score ein. Ein Screening, das beim Vervielfacher-Suchen Günstigkeit belohnt,
+fördert systematisch Wertfallen zutage — die billigen sind meist deshalb billig,
+weil das Aufzinsen aufgehört hat. Der Einstiegskurs ist eine eigene Entscheidung
+und gehört getrennt beurteilt.
+
+#### Wogegen ich das Modell abgesichert habe
+
+- **Basiseffekte.** Wachstum wird von zwei verschiedenen Startjahren aus gemessen
+  und der **weniger schmeichelhafte** Wert genommen. E.ONs Bruttogewinn wuchs aus
+  dem Energiekrisenjahr heraus um 38 % pro Jahr — vom Jahr darauf aus gerechnet
+  sind es −16,6 %.
+- **Gekoppelte Kennzahlen.** Die Beschleunigung vergleicht zwei aufeinanderfolgende
+  Jahre statt Jahr gegen Mehrjahresschnitt. Sonst hätte ein vorsichtigerer
+  Schnitt die Beschleunigung gratis nach oben getrieben.
+- **Hyperwachstum.** Eine Verlangsamung von 120 % auf 60 % wird nicht bestraft,
+  solange das Wachstum über 25 % liegt.
+- **Dünne Datenlage.** Fehlende Bausteine werden aus der Gewichtung entfernt, nie
+  geschätzt. Unter 60 % gemessener Datenlage wird ein Wert gar nicht gelistet.
+
+#### Warum wöchentlich und nicht alle zwei Tage
+
+Die Eingangsdaten sind Jahresabschlüsse — sie ändern sich höchstens
+vierteljährlich. Ein Lauf alle zwei Tage läse dieselben Zahlen 3,5-mal so oft,
+bei dreifacher Abruflast, und käme zwangsläufig zum selben Ergebnis.
+
+Der zweite Grund ist die Historie: „seit zwölf Wochen auf der Liste" ist eine
+Aussage über Beständigkeit. Bei einem Zweitagestakt hieße dasselbe „seit 42
+Läufen" — dann misst der Zähler die Taktfrequenz statt die Beständigkeit.
+
+#### Das Suchfeld
+
+Das Handelsuniversum der App taugt für diese Frage nicht: Es wurde nach
+Liquidität und Zertifikate-Verfügbarkeit gebaut, und 101 von 318 Werten liegen
+über 100 Mrd € — dort ist eine Verzehnfachung ausgeschlossen. Der Scan holt sich
+deshalb sein eigenes Universum aus **S&P 600 SmallCap, S&P 400 MidCap, MDAX und
+TecDAX** (Wikipedia, monatlich aufgefrischt, mit Zwischenspeicher als Rückfall)
+und nimmt das Handelsuniversum dazu — rund 1.400 Werte.
+""")
+            uni_info = None
+            try:
+                from src.tenbagger_universe import get_universe
+                uni_info = get_universe()
+            except Exception:
+                uni_info = None
+            if uni_info:
+                st.caption(f"Aktuelles Suchfeld: **{len(uni_info['symbole'])} Werte** "
+                           f"({uni_info.get('herkunft')}, Stand {uni_info.get('stand') or '—'})")
+                st.json(uni_info.get("quellen", {}))
+
 
 elif app_mode == "📖 Handelsstrategie & System-Logik":
     st.header("📖 Handelsstrategie & System-Logik")

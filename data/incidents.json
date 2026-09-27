@@ -1,5 +1,20 @@
 [
  {
+  "timestamp": "2026-09-27 20:00:30",
+  "component": "tenbagger",
+  "kind": "rate_limited",
+  "severity": "warn",
+  "message": "27.09. - Der erste Volllauf des Vervielfacher-Scans (1.402 Symbole, 6 Threads, je Wert Eckdaten plus drei Abschluesse plus eine zweite Abschlussabfrage fuer Beneish/Altman) hat Yahoo zur Drosselung gebracht: 982 Groessenabrufe und ALLE 380 Abschlussabrufe kamen leer zurueck, Symbole die Minuten zuvor funktioniert hatten lieferten nichts mehr. Behoben durch Plattencache mit Monatsgueltigkeit, Abrufbudget von 150 Werten je Lauf, 2 statt 6 Threads, Pause zwischen den Abrufen und Wegfall der doppelten Abschlussabfrage. Fehlgeschlagene Abrufe werden bei erkannter Drosselung nicht in den Cache ueber",
+  "context": {
+   "universum": 1402,
+   "leer_groesse": 982,
+   "leer_abschluss": 380,
+   "behoben_in": "src/tenbagger.py - Cache, Budget, Threads, Pause"
+  },
+  "count": 1,
+  "last_seen": "2026-09-27 20:00:30"
+ },
+ {
   "timestamp": "2026-09-24 17:32:49",
   "component": "realtime_scanner",
   "kind": "stale_price_data",
