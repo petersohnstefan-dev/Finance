@@ -7,6 +7,7 @@ from typing import Dict, Any, List, Optional
 
 from src import incidents
 from src import exit_analysis
+from src import trend_analysis
 
 try:
     import google.generativeai as genai
@@ -649,6 +650,11 @@ class AIJournalEngine:
         # the premature breakeven stop stayed invisible for a month.
         exit_block = exit_analysis.format_for_prompt(depot_id, days=90)
 
+        # Where the depot stands is not the same question as where it is going.
+        # Judged on the all-time figures alone every night reads "catastrophic",
+        # because they are dominated by the worst stretch the system ever had.
+        trend_block = trend_analysis.format_for_prompt(depot_id)
+
         # 4. Build the bounds description for the prompt
         bounds_desc = "\n".join([
             f"  - {k}: aktuell={current_params.get(k, '?')}, min={v['min']}, max={v['max']}, step={v['step']}"
@@ -680,6 +686,26 @@ eines algorithmischen Trading-Systems und schlägst KONKRETE Parameteränderunge
 - Profit Factor: {alltime_stats['profit_factor']}
 - Gesamt-PnL: {alltime_stats['total_pnl']}€
 - Max. Verluststrecke: {alltime_stats['max_consecutive_losses']}
+
+### ENTWICKLUNG UEBER DIE LETZTEN VIER WOCHEN:
+{trend_block}
+Lesehilfe und Pflichtpruefung:
+- Die Gesamtstatistik oben enthaelt die schlechteste Phase des Systems und faellt
+  deshalb dauerhaft vernichtend aus. Sie sagt, WO das Depot steht. Ob es besser
+  oder schlechter wird, steht ausschliesslich hier.
+- Lies die Richtung am MEDIAN und am defektbereinigten Mittel ab, nicht am
+  Mittelwert. Ein Mittelwert, der sich bewegt, weil ein einzelner Grossverlust aus
+  dem Fenster gerutscht ist, ist kein Fortschritt. Beispiel aus diesem Depot: von
+  Tag 8-14 auf die letzten 7 Tage fiel das Mittel von -171.96 auf -50.85 EUR, was
+  nach einer Verdreifachung aussieht; ohne den einen Defekt-Trade sind es -55.45
+  gegen -50.85, also fast nichts. Der Median zeigt die tatsaechliche, kleinere
+  Verbesserung.
+- Steht "hinweis" oder "nicht aussagekraeftig" im Fenster, gibt es keinen Trend zu
+  interpretieren. Schreibe das hin, statt aus drei Trades eine Entwicklung zu lesen.
+- Verbessert sich das Depot bereits, sind KLEINERE Korrekturen angebracht oder gar
+  keine. Gegen eine laufende Verbesserung anzudrehen zerstoert sie. Verschlechtert
+  es sich trotz der letzten Aenderungen, pruefe zuerst, ob diese Aenderungen die
+  Ursache sind, bevor du in derselben Richtung weitergehst.
 
 ### BEREITS VORGENOMMENE PARAMETERAENDERUNGEN (letzte Tage):
 {self.format_change_history(depot_id=depot_id)}
@@ -760,7 +786,10 @@ uebersprungen wurde, "blocks" = welches Gate wie oft blockiert hat.
    - Wenn die Win-Rate zu niedrig ist: Erhöhe den min_entry_score.
    - Wenn die Verluste zu groß sind: Senke den stop_loss_pct oder den max_leverage.
    - Wenn zu wenig gehandelt wird: Senke den min_entry_score oder erhöhe max_daily_trades.
-   - Wenn der Profit Factor < 1.0: Die Strategie verliert Geld — aggressive Anpassung nötig.
+   - Wenn der Profit Factor < 1.0: Die Strategie verliert Geld. Ob eine AGGRESSIVE
+     Anpassung noetig ist, entscheidet die Entwicklung: zeigt der Trend nach oben,
+     reicht eine kleine Korrektur oder gar keine. Aggressiv wird nur angepasst,
+     wenn das Depot verliert UND sich dabei nicht verbessert.
 3. Wenn keine Trades stattfanden: Nutze die Entry-Gate-Telemetrie, um das zu erklaeren.
    - "above_threshold": 0 bei vielen "scored" heisst: die Huerde ist zu hoch angesetzt.
    - Liegt "best_score" ueber viele Durchlaeufe DAUERHAFT unter "threshold", ist die
