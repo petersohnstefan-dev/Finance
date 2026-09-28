@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-28 07:05:51",
+    "time_str": "07:05:51",
+    "data_age_min": 2.9,
+    "window_span_min": 4.0,
+    "symbol": "JUP-USD",
+    "direction": "LONG",
+    "trigger_price": 0.35,
+    "change_1min_pct": 1.36,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD explodiert um +1.36% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 07:05:51",
+    "time_str": "07:05:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.14,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 07:05:50",
+    "time_str": "07:05:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.69,
+    "vol_ratio": 0.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD stürzt um -1.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 07:01:25",
     "time_str": "07:01:25",
     "data_age_min": 0.4,
@@ -609,44 +648,5 @@
     "vol_ratio": 3.12,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:01:33",
-    "time_str": "22:01:33",
-    "data_age_min": 2.6,
-    "window_span_min": 5.0,
-    "symbol": "ESTC",
-    "direction": "LONG",
-    "trigger_price": 88.02,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 6.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:01:33",
-    "time_str": "22:01:33",
-    "data_age_min": 0.2,
-    "window_span_min": 5.4,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 6.35,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 3.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:01:32",
-    "time_str": "22:01:32",
-    "data_age_min": 0.2,
-    "window_span_min": 5.3,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 10.66,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 2.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.85% in 5 Min.! Momentum aktiv."
   }
 ]
