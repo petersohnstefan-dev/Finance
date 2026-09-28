@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-28 22:55:56",
+    "time_str": "22:55:56",
+    "data_age_min": 12.1,
+    "window_span_min": 5.9,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.53,
+    "change_1min_pct": 1.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.97% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 22:55:56",
+    "time_str": "22:55:56",
+    "data_age_min": 1.1,
+    "window_span_min": 4.8,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 349.26,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 22:51:07",
     "time_str": "22:51:07",
     "data_age_min": 0.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ONDO-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 22:06:07",
-    "time_str": "22:06:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "SEI-USD",
-    "direction": "LONG",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.11,
-    "vol_ratio": 0.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEI-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 22:06:07",
-    "time_str": "22:06:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "LONG",
-    "trigger_price": 7.4,
-    "change_1min_pct": 1.11,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
   }
 ]
