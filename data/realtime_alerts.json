@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-28 08:35:43",
+    "time_str": "08:35:43",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.24,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.24% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 08:25:52",
     "time_str": "08:25:52",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BEAM explodiert um +1.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:20:48",
-    "time_str": "22:20:48",
-    "data_age_min": 14.8,
-    "window_span_min": 6.0,
-    "symbol": "ARKF",
-    "direction": "SHORT",
-    "trigger_price": 46.55,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKF stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
