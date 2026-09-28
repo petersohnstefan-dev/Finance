@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-28 08:25:52",
+    "time_str": "08:25:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "CRV-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.33,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRV-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 08:20:56",
     "time_str": "08:20:56",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKF stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:20:47",
-    "time_str": "22:20:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "LONG",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.14,
-    "vol_ratio": 0.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD explodiert um +1.14% in 5 Min.! Momentum aktiv."
   }
 ]
