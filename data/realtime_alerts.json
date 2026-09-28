@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-28 21:11:05",
+    "time_str": "21:11:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 84.01,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 1.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 21:11:04",
+    "time_str": "21:11:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ARM",
+    "direction": "SHORT",
+    "trigger_price": 283.76,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 0.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 21:11:04",
+    "time_str": "21:11:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 10.52,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 21:11:04",
+    "time_str": "21:11:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.73,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 21:05:50",
     "time_str": "21:05:50",
     "data_age_min": 0.9,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.53,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CAVA stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:21:03",
-    "time_str": "19:21:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ROIV",
-    "direction": "SHORT",
-    "trigger_price": 36.89,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ROIV stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:21:03",
-    "time_str": "19:21:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 54.82,
-    "change_1min_pct": 0.92,
-    "vol_ratio": 0.44,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:21:00",
-    "time_str": "19:21:00",
-    "data_age_min": 3.0,
-    "window_span_min": 5.0,
-    "symbol": "KAS-USD",
-    "direction": "LONG",
-    "trigger_price": 0.05,
-    "change_1min_pct": 1.33,
-    "vol_ratio": 0.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KAS-USD explodiert um +1.33% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:10",
-    "time_str": "19:16:10",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 7.84,
-    "change_1min_pct": 0.92,
-    "vol_ratio": 3.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.92% in 5 Min.! Momentum aktiv."
   }
 ]
