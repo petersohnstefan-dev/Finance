@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-28 07:41:07",
+    "time_str": "07:41:07",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "LONG",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.0,
+    "vol_ratio": 0.66,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD explodiert um +1.00% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 07:35:53",
     "time_str": "07:35:53",
     "data_age_min": 2.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:01:34",
-    "time_str": "22:01:34",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 32.97,
-    "change_1min_pct": 1.67,
-    "vol_ratio": 3.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +1.67% in 5 Min.! Momentum aktiv."
   }
 ]
