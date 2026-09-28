@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-28 20:41:00",
+    "time_str": "20:41:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.53,
+    "change_1min_pct": 0.92,
+    "vol_ratio": 5.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 20:36:00",
     "time_str": "20:36:00",
     "data_age_min": 2.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKF explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:06",
-    "time_str": "19:16:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ETHW",
-    "direction": "LONG",
-    "trigger_price": 19.38,
-    "change_1min_pct": 1.04,
-    "vol_ratio": 7.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHW explodiert um +1.04% in 5 Min.! Momentum aktiv."
   }
 ]
