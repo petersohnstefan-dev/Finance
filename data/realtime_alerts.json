@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-28 17:51:02",
+    "time_str": "17:51:02",
+    "data_age_min": 1.1,
+    "window_span_min": 8.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 4.66,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 17:51:01",
+    "time_str": "17:51:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "SHORT",
+    "trigger_price": 334.19,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 17:51:01",
+    "time_str": "17:51:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 21.36,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 17:51:00",
+    "time_str": "17:51:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "SHORT",
+    "trigger_price": 18.34,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 2.65,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 17:46:06",
     "time_str": "17:46:06",
     "data_age_min": 0.1,
@@ -596,57 +648,5 @@
     "vol_ratio": 1.47,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RXRX explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:06:01",
-    "time_str": "17:06:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.7,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:06:01",
-    "time_str": "17:06:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 53.86,
-    "change_1min_pct": 0.72,
-    "vol_ratio": 1.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:06:01",
-    "time_str": "17:06:01",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "BZ=F",
-    "direction": "LONG",
-    "trigger_price": 100.17,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.77,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BZ=F explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:06:01",
-    "time_str": "17:06:01",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "LONG",
-    "trigger_price": 95.42,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
