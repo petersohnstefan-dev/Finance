@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-28 09:55:57",
+    "time_str": "09:55:57",
+    "data_age_min": 4.0,
+    "window_span_min": 4.0,
+    "symbol": "KAS-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.21,
+    "vol_ratio": 4.15,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KAS-USD stürzt um -1.21% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 09:50:56",
     "time_str": "09:50:56",
     "data_age_min": 3.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.15% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:31:11",
-    "time_str": "22:31:11",
-    "data_age_min": 1.6,
-    "window_span_min": 2.6,
-    "symbol": "DDOG",
-    "direction": "LONG",
-    "trigger_price": 276.43,
-    "change_1min_pct": 3.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG explodiert um +3.05% in 5 Min.! Momentum aktiv."
   }
 ]
