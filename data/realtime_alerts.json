@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-28 17:21:06",
+    "time_str": "17:21:06",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.56,
+    "change_1min_pct": 0.71,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 17:21:06",
+    "time_str": "17:21:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "BKSY",
+    "direction": "SHORT",
+    "trigger_price": 23.39,
+    "change_1min_pct": 0.91,
+    "vol_ratio": 1.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 17:21:05",
+    "time_str": "17:21:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.91,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 17:15:59",
     "time_str": "17:15:59",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.66,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMD stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 16:46:19",
-    "time_str": "16:46:19",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "NVDA",
-    "direction": "SHORT",
-    "trigger_price": 229.57,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 1.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVDA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 16:46:16",
-    "time_str": "16:46:16",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "SHORT",
-    "trigger_price": 0.57,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.07,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 16:46:15",
-    "time_str": "16:46:15",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.57,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
