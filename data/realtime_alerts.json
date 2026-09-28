@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-28 13:16:06",
+    "time_str": "13:16:06",
+    "data_age_min": 0.2,
+    "window_span_min": 2.9,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.55,
+    "change_1min_pct": 0.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 13:16:06",
+    "time_str": "13:16:06",
+    "data_age_min": 3.7,
+    "window_span_min": 5.4,
+    "symbol": "MDB",
+    "direction": "SHORT",
+    "trigger_price": 402.57,
+    "change_1min_pct": 0.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 13:16:05",
+    "time_str": "13:16:05",
+    "data_age_min": 0.1,
+    "window_span_min": 4.0,
+    "symbol": "IONQ",
+    "direction": "LONG",
+    "trigger_price": 45.03,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 13:11:10",
     "time_str": "13:11:10",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ACHR stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:20:59",
-    "time_str": "11:20:59",
-    "data_age_min": 0.2,
-    "window_span_min": 5.8,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 44.37,
-    "change_1min_pct": 1.17,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +1.17% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:20:59",
-    "time_str": "11:20:59",
-    "data_age_min": 0.3,
-    "window_span_min": 4.7,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 191.77,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:16:02",
-    "time_str": "11:16:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "META",
-    "direction": "SHORT",
-    "trigger_price": 725.68,
-    "change_1min_pct": 1.18,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
