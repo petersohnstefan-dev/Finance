@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-28 12:36:09",
+    "time_str": "12:36:09",
+    "data_age_min": 10.7,
+    "window_span_min": 8.5,
+    "symbol": "TXN",
+    "direction": "SHORT",
+    "trigger_price": 273.13,
+    "change_1min_pct": 0.75,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 12:35:57",
+    "time_str": "12:35:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "LONG",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.17,
+    "vol_ratio": 2.3,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 12:35:57",
+    "time_str": "12:35:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 7.36,
+    "change_1min_pct": 1.06,
+    "vol_ratio": 0.1,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 12:21:04",
     "time_str": "12:21:04",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:05:58",
-    "time_str": "11:05:58",
-    "data_age_min": 0.4,
-    "window_span_min": 6.6,
-    "symbol": "OKTA",
-    "direction": "SHORT",
-    "trigger_price": 193.29,
-    "change_1min_pct": 0.75,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:05:58",
-    "time_str": "11:05:58",
-    "data_age_min": 0.4,
-    "window_span_min": 5.6,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 369.07,
-    "change_1min_pct": 1.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -1.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 11:05:58",
-    "time_str": "11:05:58",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 191.03,
-    "change_1min_pct": 1.29,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
