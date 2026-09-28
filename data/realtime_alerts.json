@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-28 08:20:56",
+    "time_str": "08:20:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FLOKI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FLOKI-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 08:20:55",
+    "time_str": "08:20:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RENDER-USD",
+    "direction": "SHORT",
+    "trigger_price": 1.94,
+    "change_1min_pct": 1.13,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RENDER-USD stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 07:55:53",
     "time_str": "07:55:53",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.67,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PYTH-USD explodiert um +1.14% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:16:09",
-    "time_str": "22:16:09",
-    "data_age_min": 1.2,
-    "window_span_min": 3.0,
-    "symbol": "ZTS",
-    "direction": "LONG",
-    "trigger_price": 71.5,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZTS explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-25 22:16:00",
-    "time_str": "22:16:00",
-    "data_age_min": 0.4,
-    "window_span_min": 4.6,
-    "symbol": "SRPT",
-    "direction": "LONG",
-    "trigger_price": 18.91,
-    "change_1min_pct": 1.28,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRPT explodiert um +1.28% in 5 Min.! Momentum aktiv."
   }
 ]
