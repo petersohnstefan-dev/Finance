@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-28 20:36:00",
+    "time_str": "20:36:00",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 31.72,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 20:35:58",
+    "time_str": "20:35:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "LONG",
+    "trigger_price": 46.42,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 8.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 20:31:10",
     "time_str": "20:31:10",
     "data_age_min": 4.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 7.31,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHW explodiert um +1.04% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:06",
-    "time_str": "19:16:06",
-    "data_age_min": 1.1,
-    "window_span_min": 4.0,
-    "symbol": "FETH",
-    "direction": "LONG",
-    "trigger_price": 27.0,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 7.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FETH explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:06",
-    "time_str": "19:16:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ETHA",
-    "direction": "LONG",
-    "trigger_price": 20.48,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 8.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHA explodiert um +0.69% in 5 Min.! Momentum aktiv."
   }
 ]
