@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-28 19:41:06",
+    "time_str": "19:41:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "REGN",
+    "direction": "LONG",
+    "trigger_price": 756.2,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 REGN explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 19:40:58",
+    "time_str": "19:40:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.54,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 1.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-28 19:36:03",
     "time_str": "19:36:03",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 4.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WIF-USD explodiert um +1.03% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:05",
-    "time_str": "19:16:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.45,
-    "change_1min_pct": 1.53,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD explodiert um +1.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 19:16:05",
-    "time_str": "19:16:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ICP-USD",
-    "direction": "LONG",
-    "trigger_price": 3.05,
-    "change_1min_pct": 1.27,
-    "vol_ratio": 1.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ICP-USD explodiert um +1.27% in 5 Min.! Momentum aktiv."
   }
 ]
