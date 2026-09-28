@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-28 18:01:24",
+    "time_str": "18:01:24",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 15.55,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.93,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 18:01:24",
+    "time_str": "18:01:24",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 37.44,
+    "change_1min_pct": 0.86,
+    "vol_ratio": 1.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.86% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 18:01:23",
+    "time_str": "18:01:23",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "APP",
+    "direction": "LONG",
+    "trigger_price": 310.46,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-28 18:01:22",
+    "time_str": "18:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 54.5,
+    "change_1min_pct": 0.93,
+    "vol_ratio": 2.46,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.93% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-28 17:55:51",
     "time_str": "17:55:51",
     "data_age_min": 0.9,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.69,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 KVYO explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:11:13",
-    "time_str": "17:11:13",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "ESTC",
-    "direction": "LONG",
-    "trigger_price": 87.91,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 1.2,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:11:13",
-    "time_str": "17:11:13",
-    "data_age_min": 2.2,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 42.19,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:11:12",
-    "time_str": "17:11:12",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "ALNY",
-    "direction": "LONG",
-    "trigger_price": 252.96,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALNY explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 17:11:10",
-    "time_str": "17:11:10",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "HBAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.12,
-    "change_1min_pct": 1.2,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HBAR-USD stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
