@@ -89,7 +89,13 @@ PARAM_SAFETY_BOUNDS = {
     # journal may lower the lever, never raise it past what the polling can protect.
     "daytrade_max_leverage":          {"min": 1.0,   "max": 3.0,   "step": 0.5},
     "daytrade_stop_loss_pct":         {"min": 0.05,  "max": 0.30,  "step": 0.01},
-    "daytrade_max_risk_per_trade_pct":{"min": 0.005, "max": 0.03,  "step": 0.005},
+    # Untergrenze von 0.005 auf 0.01 angehoben. Bei 0,5% Risiko und einem
+    # 13%-Stop betrug die Position noch 224 EUR - 29% des Standes vom
+    # 18.09. Zwanzig perfekte Trades haetten damit 1.118 EUR gebracht,
+    # gegen 4.185 EUR aufgelaufenen Verlust. Unterhalb dieser Marke ist
+    # das Depot rechnerisch nicht mehr erholungsfaehig; das ist keine
+    # Risikobegrenzung mehr, sondern ein stilles Aufhoeren.
+    "daytrade_max_risk_per_trade_pct": {"min": 0.01,  "max": 0.03,  "step": 0.005},
     "daytrade_min_risk_reward_ratio": {"min": 1.5,   "max": 4.0,   "step": 0.5},
     "daytrade_max_daily_loss_pct":    {"min": 0.02,  "max": 0.10,  "step": 0.01},
     "daytrade_max_daily_trades":      {"min": 2,     "max": 10,    "step": 1},
@@ -761,6 +767,16 @@ aufgeschrieben hat. Raum fuer Gewinner entsteht an den AUSSTIEGS-Parametern
 Das Daytrader-Depot hat sein Risiko je Trade in zehn Tagen von 2,0% auf 0,5%
 gesenkt - die Untergrenze - und handelt damit Positionen, mit denen sich der
 aufgelaufene Verlust rechnerisch nicht mehr aufholen laesst.
+
+Das Risiko je Trade des Daytraders stand am 29.09.2026 auf 0,5% - der damaligen
+Untergrenze -, nachdem es in vier gleichgerichteten Schritten von 2,0% dorthin
+gesenkt worden war. Es wurde auf 1,5% zurueckgesetzt und die Untergrenze auf
+1,0% angehoben. Begruendung: die grossen Verluste, mit denen die Senkungen
+begruendet wurden, stammen aus Hebel 9-10 und aus veralteten Kursdaten. Beides
+ist behoben - der Hebel ist auf 2,5 begrenzt, der Scanner prueft seit dem 24.09.
+das Alter seiner Kerzen. Die Verluste, gegen die hier angesteuert wurde, koennen
+so nicht mehr entstehen. Senke diesen Wert nicht erneut mit Verweis auf Trades
+aus der Zeit davor.
 
 ### HARTE RANDBEDINGUNG DES SYSTEMS (nicht verhandelbar):
 Der Handels-Bot laeuft als Cron-Job und prueft die Positionen bestenfalls alle

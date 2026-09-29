@@ -1,5 +1,23 @@
 [
  {
+  "timestamp": "2026-09-29 21:13:21",
+  "component": "ai_journal",
+  "kind": "parameter_drift_corrected",
+  "severity": "info",
+  "message": "29.09. - daytrade_max_risk_per_trade_pct von 0,005 auf 0,015 zurueckgesetzt. Der Wert war in vier gleichgerichteten Schritten von 0,02 (18.09.) auf die damalige Untergrenze gesenkt worden; jeder Schritt war durch abgeschlossene Trades gedeckt, die Evidenzsperre hat also nicht versagt - sie sieht nur die Form der Folge nicht. Die Positionsgroesse betrug zuletzt 224 EUR gegen 775 EUR am 18.09.; zwanzig perfekte Trades haetten 1.118 EUR gebracht bei 4.185 EUR aufgelaufenem Verlust. Die grossen Verluste, mit denen die Senkungen begruendet wurden, stammen aus Hebel 9-10 und veralteten Kursdaten - b",
+  "context": {
+   "depot": "day_trading",
+   "parameter": "daytrade_max_risk_per_trade_pct",
+   "vorher": 0.005,
+   "nachher": 0.015,
+   "neue_untergrenze": 0.01,
+   "positionsgroesse_vorher_eur": 224,
+   "positionsgroesse_nachher_eur": 671
+  },
+  "count": 1,
+  "last_seen": "2026-09-29 21:13:21"
+ },
+ {
   "timestamp": "2026-09-27 20:00:30",
   "component": "tenbagger",
   "kind": "rate_limited",
