@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 12:35:50",
+    "time_str": "12:35:50",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "VWS.CO",
+    "direction": "SHORT",
+    "trigger_price": 190.5,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 4.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VWS.CO stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 12:35:46",
+    "time_str": "12:35:46",
+    "data_age_min": 2.1,
+    "window_span_min": 5.7,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 42.32,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +1.01% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 12:31:08",
     "time_str": "12:31:08",
     "data_age_min": 4.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 10:11:14",
-    "time_str": "10:11:14",
-    "data_age_min": 2.5,
-    "window_span_min": 3.8,
-    "symbol": "TXN",
-    "direction": "LONG",
-    "trigger_price": 278.51,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TXN explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 10:11:08",
-    "time_str": "10:11:08",
-    "data_age_min": 0.6,
-    "window_span_min": 5.6,
-    "symbol": "RGTI",
-    "direction": "LONG",
-    "trigger_price": 16.04,
-    "change_1min_pct": 0.94,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI explodiert um +0.94% in 5 Min.! Momentum aktiv."
   }
 ]
