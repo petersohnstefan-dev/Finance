@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 21:55:59",
+    "time_str": "21:55:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 339.32,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 21:55:57",
+    "time_str": "21:55:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 4.01,
+    "change_1min_pct": 1.11,
+    "vol_ratio": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 21:55:55",
+    "time_str": "21:55:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BONK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 0.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BONK-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 21:51:01",
     "time_str": "21:51:01",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 20:45:56",
-    "time_str": "20:45:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 143.54,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 3.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 20:45:56",
-    "time_str": "20:45:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "SHORT",
-    "trigger_price": 15.17,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 20:45:55",
-    "time_str": "20:45:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.84,
-    "change_1min_pct": 1.1,
-    "vol_ratio": 2.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +1.10% in 5 Min.! Momentum aktiv."
   }
 ]
