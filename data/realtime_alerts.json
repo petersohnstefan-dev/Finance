@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-29 12:06:00",
+    "time_str": "12:06:00",
+    "data_age_min": 0.0,
+    "window_span_min": 5.0,
+    "symbol": "NFLX",
+    "direction": "LONG",
+    "trigger_price": 70.5,
+    "change_1min_pct": 1.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NFLX explodiert um +1.95% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 12:01:22",
     "time_str": "12:01:22",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.99,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AVAX-USD explodiert um +1.32% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 09:51:05",
-    "time_str": "09:51:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "VWS.CO",
-    "direction": "SHORT",
-    "trigger_price": 192.3,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VWS.CO stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
