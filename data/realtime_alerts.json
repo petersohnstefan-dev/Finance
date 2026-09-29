@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 20:20:54",
+    "time_str": "20:20:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 82.94,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 0.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 20:20:53",
+    "time_str": "20:20:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 199.83,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 20:16:03",
     "time_str": "20:16:03",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.05,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 19:40:59",
-    "time_str": "19:40:59",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 55.21,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 19:40:59",
-    "time_str": "19:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 198.71,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.89,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
