@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-09-29 22:51:00",
+    "time_str": "22:51:00",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 207.0,
+    "change_1min_pct": 1.22,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +1.22% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:50:59",
+    "time_str": "22:50:59",
+    "data_age_min": 0.4,
+    "window_span_min": 4.6,
+    "symbol": "QS",
+    "direction": "LONG",
+    "trigger_price": 4.6,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:50:59",
+    "time_str": "22:50:59",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "HOOD",
+    "direction": "LONG",
+    "trigger_price": 124.29,
+    "change_1min_pct": 6.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HOOD explodiert um +6.97% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:50:58",
+    "time_str": "22:50:58",
+    "data_age_min": 1.0,
+    "window_span_min": 3.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 56.0,
+    "change_1min_pct": 1.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -1.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 22:46:02",
     "time_str": "22:46:02",
     "data_age_min": 0.8,
@@ -596,57 +648,5 @@
     "vol_ratio": 3.26,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ACHR explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 22:01:14",
-    "time_str": "22:01:14",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "DUOL",
-    "direction": "LONG",
-    "trigger_price": 142.69,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 3.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DUOL explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 22:01:14",
-    "time_str": "22:01:14",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "VKTX",
-    "direction": "LONG",
-    "trigger_price": 31.97,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 5.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 22:01:11",
-    "time_str": "22:01:11",
-    "data_age_min": 2.2,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.31,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:55:59",
-    "time_str": "21:55:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "LONG",
-    "trigger_price": 339.32,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 1.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
