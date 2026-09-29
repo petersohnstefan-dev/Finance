@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 10:50:57",
+    "time_str": "10:50:57",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.31,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.31% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 10:50:57",
+    "time_str": "10:50:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "AAVE-USD",
+    "direction": "LONG",
+    "trigger_price": 167.14,
+    "change_1min_pct": 1.17,
+    "vol_ratio": 0.23,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AAVE-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 10:50:56",
+    "time_str": "10:50:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LINK-USD",
+    "direction": "LONG",
+    "trigger_price": 15.3,
+    "change_1min_pct": 1.05,
+    "vol_ratio": 0.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LINK-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 10:45:52",
     "time_str": "10:45:52",
     "data_age_min": 1.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LDO-USD stürzt um -1.16% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 07:35:54",
-    "time_str": "07:35:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RENDER-USD",
-    "direction": "SHORT",
-    "trigger_price": 1.9,
-    "change_1min_pct": 1.07,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RENDER-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 07:10:57",
-    "time_str": "07:10:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "HBAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.12,
-    "change_1min_pct": 1.52,
-    "vol_ratio": 1.79,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HBAR-USD stürzt um -1.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 01:29:52",
-    "time_str": "01:29:52",
-    "data_age_min": 10.7,
-    "window_span_min": 3.2,
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 7.55,
-    "change_1min_pct": 0.94,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.94% in 5 Min.! Momentum aktiv."
   }
 ]
