@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 19:31:08",
+    "time_str": "19:31:08",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.52,
+    "change_1min_pct": 1.22,
+    "vol_ratio": 0.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +1.22% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:31:06",
+    "time_str": "19:31:06",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "LONG",
+    "trigger_price": 10.76,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 19:26:05",
     "time_str": "19:26:05",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IOT stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 18:01:14",
-    "time_str": "18:01:14",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 143.0,
-    "change_1min_pct": 1.92,
-    "vol_ratio": 5.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -1.92% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 18:01:14",
-    "time_str": "18:01:14",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.03,
-    "change_1min_pct": 0.75,
-    "vol_ratio": 0.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.75% in 5 Min.! Momentum aktiv."
   }
 ]
