@@ -1,5 +1,37 @@
 [
  {
+  "timestamp": "2026-09-30 01:52:02",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_breakeven_trigger_atr": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)",
+    "short_term_min_alpha_score": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-09-30 01:52:02"
+ },
+ {
+  "timestamp": "2026-09-30 01:51:19",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 3x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 3 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "daytrade_trailing_lock_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-09-30 01:51:19"
+ },
+ {
   "timestamp": "2026-09-29 21:13:21",
   "component": "ai_journal",
   "kind": "parameter_drift_corrected",
