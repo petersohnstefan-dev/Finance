@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 19:45:59",
+    "time_str": "19:45:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 36.47,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:45:57",
+    "time_str": "19:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 11.72,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 19:41:00",
     "time_str": "19:41:00",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.83,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 18:25:51",
-    "time_str": "18:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 197.73,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 2.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 18:16:00",
-    "time_str": "18:16:00",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.66,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
