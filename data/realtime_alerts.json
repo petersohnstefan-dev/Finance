@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 22:26:05",
+    "time_str": "22:26:05",
+    "data_age_min": 0.4,
+    "window_span_min": 4.7,
+    "symbol": "INTU",
+    "direction": "LONG",
+    "trigger_price": 268.15,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:25:58",
+    "time_str": "22:25:58",
+    "data_age_min": 1.5,
+    "window_span_min": 9.5,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 31.02,
+    "change_1min_pct": 1.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -1.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:25:54",
+    "time_str": "22:25:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.37,
+    "vol_ratio": 3.93,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.37% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 22:21:13",
     "time_str": "22:21:13",
     "data_age_min": 1.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:41:02",
-    "time_str": "21:41:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "LONG",
-    "trigger_price": 19.78,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:41:02",
-    "time_str": "21:41:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "LONG",
-    "trigger_price": 45.99,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 2.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:40:58",
-    "time_str": "21:40:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.23,
-    "change_1min_pct": 1.24,
-    "vol_ratio": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.24% in 5 Min.! Momentum aktiv."
   }
 ]
