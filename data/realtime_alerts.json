@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 21:11:00",
+    "time_str": "21:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 9.44,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 1.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 21:10:59",
+    "time_str": "21:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BILL",
+    "direction": "LONG",
+    "trigger_price": 41.62,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BILL explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 21:05:53",
     "time_str": "21:05:53",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 20:06:14",
-    "time_str": "20:06:14",
-    "data_age_min": 5.3,
-    "window_span_min": 5.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 28.99,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 20:06:13",
-    "time_str": "20:06:13",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.03,
-    "change_1min_pct": 1.38,
-    "vol_ratio": 2.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +1.38% in 5 Min.! Momentum aktiv."
   }
 ]
