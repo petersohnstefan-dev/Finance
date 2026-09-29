@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 19:15:48",
+    "time_str": "19:15:48",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.72,
+    "change_1min_pct": 1.01,
+    "vol_ratio": 2.06,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +1.01% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:15:47",
+    "time_str": "19:15:47",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 83.22,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 1.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:15:46",
+    "time_str": "19:15:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.89,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 19:11:05",
     "time_str": "19:11:05",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.47,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RIVN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:55:52",
-    "time_str": "17:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 4.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 11.28,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 0.13,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:55:52",
-    "time_str": "17:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "SHORT",
-    "trigger_price": 45.91,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 0.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:55:49",
-    "time_str": "17:55:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
