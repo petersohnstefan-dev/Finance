@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 20:16:03",
+    "time_str": "20:16:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 11.94,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 2.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 20:16:03",
+    "time_str": "20:16:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 55.74,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.46,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 20:11:05",
     "time_str": "20:11:05",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.89,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 19:40:57",
-    "time_str": "19:40:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRV-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.38,
-    "change_1min_pct": 1.28,
-    "vol_ratio": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRV-USD stürzt um -1.28% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 19:35:55",
-    "time_str": "19:35:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PANW",
-    "direction": "LONG",
-    "trigger_price": 384.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
