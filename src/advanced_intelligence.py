@@ -235,88 +235,220 @@ class USShortInterestRegister:
 # MODULE 3: EARNINGS REVISION MOMENTUM (Analyst Upgrades & EPS Momentum)
 # ==============================================================================
 class EarningsRevisionEngine:
-    """Evaluates 30-day analyst upward vs downward revisions and earnings surprises."""
+    """Was die Analysten in den letzten 30 Tagen wirklich mit ihren Schaetzungen gemacht haben.
+
+    This used to be a lookup table with two possible outcomes. Seven symbols were
+    hardcoded as "high momentum" and received 14 upgrades, 1 downgrade, a 90%
+    beat rate and a +12.4% surprise; everything else received 5, 4, 65% and
+    +2.8%. Forever, for every company, no matter what the analysts actually did -
+    which is why the dashboard showed seven identical rows.
+
+    yfinance serves every one of those figures for free:
+      - eps_revisions: how many estimates were raised and lowered in the last
+        30 days, which is literally the column this module claims to show
+      - eps_trend: the consensus estimate now against 30 and 90 days ago
+      - earnings_history: estimate against actual per quarter, so the beat rate
+        and the average surprise are counted rather than assigned
+    """
 
     @staticmethod
     def get_revision_metrics(symbol: str) -> Dict[str, Any]:
-        # Calibrated model analyzing revenue & EPS revisions
-        clean_sym = symbol.split(".")[0].upper()
-        
-        high_momentum_symbols = ["NVDA", "PLTR", "SAP", "DUOL", "MUV2", "ADBE", "MRNA"]
-        is_top_momentum = clean_sym in high_momentum_symbols
+        leer = {
+            "symbol": symbol, "available": False,
+            "revision_score": None, "upgrades_last_30d": None,
+            "downgrades_last_30d": None, "eps_beat_rate_pct": None,
+            "last_quarter_surprise_pct": None, "estimate_change_30d_pct": None,
+            "status": "— keine Analystendaten",
+        }
+        try:
+            t = yf.Ticker(symbol)
+        except Exception:
+            return leer
 
-        upgrades_30d = 14 if is_top_momentum else 5
-        downgrades_30d = 1 if is_top_momentum else 4
-        eps_beat_rate_pct = 90.0 if is_top_momentum else 65.0
-        avg_surprise_pct = +12.4 if is_top_momentum else +2.8
+        hoch = runter = None
+        try:
+            rev = t.eps_revisions
+            if rev is not None and not rev.empty and "0q" in rev.index:
+                zeile = rev.loc["0q"]
+                hoch = _als_int(zeile.get("upLast30days"))
+                runter = _als_int(zeile.get("downLast30days"))
+        except Exception:
+            pass
 
-        revision_score = min(98, max(25, int(50 + ((upgrades_30d - downgrades_30d) * 3.5) + (avg_surprise_pct * 1.5))))
-        
-        status = "🚀 Starkes Aufwärts-Revisions-Momentum" if revision_score >= 75 else (
-            "✅ Solide Schätzungsanhebungen" if revision_score >= 55 else "⚠️ Eher stagnierende Schätzungen"
-        )
+        schaetzung_delta = None
+        try:
+            trend = t.eps_trend
+            if trend is not None and not trend.empty and "0q" in trend.index:
+                z = trend.loc["0q"]
+                jetzt, frueher = _als_float(z.get("current")), _als_float(z.get("30daysAgo"))
+                if jetzt is not None and frueher not in (None, 0):
+                    schaetzung_delta = round((jetzt / frueher - 1.0) * 100.0, 2)
+        except Exception:
+            pass
+
+        beat_quote = letzte_ueberraschung = None
+        try:
+            hist = t.earnings_history
+            if hist is not None and not hist.empty and "surprisePercent" in hist.columns:
+                werte = [_als_float(v) for v in hist["surprisePercent"]]
+                werte = [w for w in werte if w is not None]
+                if werte:
+                    # yfinance liefert den Anteil (0.0346), nicht Prozent
+                    beat_quote = round(sum(1 for w in werte if w > 0) / len(werte) * 100.0, 0)
+                    letzte_ueberraschung = round(werte[-1] * 100.0, 2)
+        except Exception:
+            pass
+
+        gemessen = [x for x in (hoch, runter, schaetzung_delta,
+                                beat_quote, letzte_ueberraschung) if x is not None]
+        if not gemessen:
+            return leer
+
+        # Der Score gewichtet nur, was gemessen wurde - fehlende Bausteine
+        # fallen aus der Gewichtung, statt durch eine Konstante ersetzt zu werden.
+        punkte = gewicht = 0.0
+        if hoch is not None and runter is not None:
+            saldo = hoch - runter
+            punkte += max(0.0, min(100.0, 50.0 + saldo * 4.0)) * 0.45
+            gewicht += 0.45
+        if schaetzung_delta is not None:
+            punkte += max(0.0, min(100.0, 50.0 + schaetzung_delta * 8.0)) * 0.35
+            gewicht += 0.35
+        if beat_quote is not None:
+            punkte += max(0.0, min(100.0, beat_quote)) * 0.20
+            gewicht += 0.20
+        score = round(punkte / gewicht) if gewicht > 0 else None
+
+        if score is None:
+            status = "— nicht bewertbar"
+        elif score >= 70:
+            status = "🚀 Schätzungen werden angehoben"
+        elif score >= 55:
+            status = "✅ Leicht aufwärts revidiert"
+        elif score >= 45:
+            status = "⚖️ Schätzungen unverändert"
+        else:
+            status = "⚠️ Schätzungen werden gesenkt"
 
         return {
-            "symbol": symbol,
-            "revision_score": revision_score,
-            "upgrades_last_30d": upgrades_30d,
-            "downgrades_last_30d": downgrades_30d,
-            "eps_beat_rate_pct": eps_beat_rate_pct,
-            "last_quarter_surprise_pct": avg_surprise_pct,
-            "status": status
+            "symbol": symbol, "available": True,
+            "revision_score": score,
+            "upgrades_last_30d": hoch,
+            "downgrades_last_30d": runter,
+            "eps_beat_rate_pct": beat_quote,
+            "last_quarter_surprise_pct": letzte_ueberraschung,
+            "estimate_change_30d_pct": schaetzung_delta,
+            "datenlage": round(gewicht, 2),
+            "status": status,
         }
 
-# ==============================================================================
-# MODULE 4: EARNINGS CALL TRANSCRIPTS & AI TONE ANALYZER
-# ==============================================================================
+
+def _als_float(wert) -> Optional[float]:
+    try:
+        if wert is None:
+            return None
+        f = float(wert)
+        return None if f != f else f          # NaN aussortieren
+    except Exception:
+        return None
+
+
+def _als_int(wert) -> Optional[int]:
+    f = _als_float(wert)
+    return None if f is None else int(f)
+
+
 class EarningsCallAnalyzer:
-    """Analyzes quarterly conference call transcripts for tone shifts and keyword trends."""
+    """Wie Markt und Analysten auf den letzten Quartalsbericht reagiert haben.
 
-    CALL_ANALYSES = {
-        "NVDA": {
-            "date": "Q2 2026 Earnings Call",
-            "ceo_tone": "🟢 Extrem Zuversichtlich (94/100)",
-            "key_phrases": ["Next-gen AI Datacenter", "Blackwell Ramp Accelerated", "Sovereign AI Demand", "Record Margins"],
-            "caution_flags": ["Lieferketten-Auslastung nahe 100%"],
-            "ai_verdict": "Hervorragende Guidance; CEO Jensen Huang sieht anhaltende Nachfrage weit über Angebot."
-        },
-        "PLTR": {
-            "date": "Q2 2026 Earnings Call",
-            "ceo_tone": "🟢 Hohe Euphorie / Aggressiv (91/100)",
-            "key_phrases": ["AIP Bootcamps Conversion > 80%", "US Commercial Surge", "Rule of 40 Exceeded"],
-            "caution_flags": ["Verlängerte Sales Cycles in Europa"],
-            "ai_verdict": "Karp bestätigt massive Beschleunigung im US-Privatkundengeschäft durch AIP."
-        },
-        "MRNA": {
-            "date": "Q2 2026 Earnings Call",
-            "ceo_tone": "🟢 Stark Optimistisch (88/100)",
-            "key_phrases": ["Phase 3 Intismeran Vaccine Breakthrough", "Oncology Pipeline Acceleration", "Cash Runway Secured"],
-            "caution_flags": ["COVID-Saisonalität"],
-            "ai_verdict": "Fokus-Shift auf Krebs-Vakzine erfolgreich eingeleitet; Analystenfragen hochgradig positiv."
-        },
-        "SAP.DE": {
-            "date": "Q2 2026 Earnings Call",
-            "ceo_tone": "🟢 Souverän & Fokussiert (86/100)",
-            "key_phrases": ["Current Cloud Backlog +28%", "Business AI Integration", "Operating Margin Expansion"],
-            "caution_flags": ["On-Premise Migration"],
-            "ai_verdict": "Solide Cloud-Transformation; Christian Klein bekräftigt mittelfristige Margenziele."
-        }
-    }
+    Bis zum 29.09.2026 stand hier ein handgeschriebenes Woerterbuch mit vier
+    Eintraegen: erfundene Schluesselbegriffe, eine erfundene "CEO-Tonalitaet
+    94/100" und erfundene Aussagen, die namentlich echten Vorstandsvorsitzenden
+    zugeschrieben wurden. Fuer Transkripte von Telefonkonferenzen gibt es keine
+    kostenlose Quelle, also laesst sich die Tonalitaet nicht messen - und was
+    sich nicht messen laesst, wird hier nicht behauptet.
 
-    @classmethod
-    def get_transcript_analysis_for_ticker(cls, symbol: str) -> Dict[str, Any]:
-        clean_sym = symbol.upper()
-        if clean_sym in cls.CALL_ANALYSES:
-            return cls.CALL_ANALYSES[clean_sym]
-        
-        # General automated heuristic
+    Messbar ist dagegen, was auf den Bericht FOLGTE, und das beantwortet
+    dieselbe Frage ehrlicher: die tatsaechliche Abweichung von der Schaetzung,
+    die Kursreaktion am Tag danach und die Analystenaktionen der Folgewoche.
+    """
+
+    @staticmethod
+    def get_reaction(symbol: str) -> Dict[str, Any]:
+        import datetime as _dt
+
+        leer = {"symbol": symbol, "available": False,
+                "reason": "Keine Berichtsdaten abrufbar"}
+        try:
+            t = yf.Ticker(symbol)
+            termine = t.earnings_dates
+        except Exception as e:
+            leer["reason"] = f"Abruf fehlgeschlagen: {str(e)[:60]}"
+            return leer
+        if termine is None or termine.empty:
+            return leer
+
+        # Juengster Termin, der bereits berichtet wurde
+        berichtet = termine[termine["Reported EPS"].notna()]
+        if berichtet.empty:
+            leer["reason"] = "Noch kein Quartal berichtet"
+            return leer
+        zeile = berichtet.iloc[0]
+        datum = berichtet.index[0]
+
+        schaetzung = _als_float(zeile.get("EPS Estimate"))
+        gemeldet = _als_float(zeile.get("Reported EPS"))
+        ueberraschung = _als_float(zeile.get("Surprise(%)"))
+
+        kursreaktion = None
+        try:
+            start = (datum - _dt.timedelta(days=6)).strftime("%Y-%m-%d")
+            ende = (datum + _dt.timedelta(days=8)).strftime("%Y-%m-%d")
+            hist = t.history(start=start, end=ende)
+            if not hist.empty:
+                tag = datum.tz_convert(hist.index.tz) if hist.index.tz else datum
+                davor = hist[hist.index <= tag]["Close"]
+                danach = hist[hist.index > tag]["Close"]
+                if len(davor) and len(danach):
+                    kursreaktion = round(
+                        (float(danach.iloc[0]) / float(davor.iloc[-1]) - 1.0) * 100.0, 2)
+        except Exception:
+            pass
+
+        aktionen = []
+        try:
+            ud = t.upgrades_downgrades
+            if ud is not None and not ud.empty:
+                # earnings_dates ist zeitzonenbehaftet (America/New_York),
+                # upgrades_downgrades nicht. Der direkte Vergleich wirft einen
+                # TypeError, den das except hier still geschluckt hat - die
+                # Liste blieb immer leer, ohne dass etwas darauf hingewiesen haette.
+                grenze = datum.tz_localize(None) if datum.tzinfo else datum
+                idx = ud.index.tz_localize(None) if ud.index.tz is not None else ud.index
+                maske = (idx >= grenze) & (idx <= grenze + _dt.timedelta(days=10))
+                fenster = ud[maske]
+                for zeitpunkt, r in list(fenster.iterrows())[:6]:
+                    aktionen.append({
+                        "datum": str(zeitpunkt)[:10],
+                        "haus": str(r.get("Firm", ""))[:28],
+                        "aktion": str(r.get("Action", "")),
+                        "von": str(r.get("FromGrade", "") or "—"),
+                        "auf": str(r.get("ToGrade", "") or "—"),
+                    })
+        except Exception:
+            pass
+
         return {
-            "date": "Jüngster Earnings Call",
-            "ceo_tone": "⚖️ Neutral bis Konstruktiv (70/100)",
-            "key_phrases": ["Disziplinierte Kostenkontrolle", "Fokus auf operative Marge", "Solider Auftragseingang"],
-            "caution_flags": ["Makroökonomische Zurückhaltung"],
-            "ai_verdict": "Management bestätigt Ausblick im Rahmen der Markterwartungen."
+            "symbol": symbol, "available": True,
+            "berichtsdatum": str(datum)[:10],
+            "eps_geschaetzt": schaetzung,
+            "eps_gemeldet": gemeldet,
+            "ueberraschung_pct": ueberraschung,
+            "kursreaktion_pct": kursreaktion,
+            "analystenaktionen": aktionen,
         }
+
+
 
 # ==============================================================================
 # MODULE 5: FRED MACRO PIPELINE & US YIELD CURVE

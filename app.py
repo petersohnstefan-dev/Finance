@@ -705,7 +705,7 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         "🎯 1. Optionen-Fluss & Dark Pools",
         "🏛️ 2. BaFin Leerverkäufer (DE/EU)",
         "📈 3. Earnings-Revisionen (EPS)",
-        "🎙️ 4. Earnings-Call KI-Tonalität",
+        "🎙️ 4. Reaktion auf Quartalsberichte",
         "🌐 5. FRED-Makro & Zinskurve",
         "⛓️ 6. Krypto On-Chain & Whales"
     ])
@@ -716,20 +716,49 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
         st.caption("Echtzeit-Tracking von institutionellen Call-Sweeps weit aus dem Geld und außerbörslichen Dark-Pool-Transaktionen.")
         
         opt_alerts = OptionsDarkPoolEngine.get_top_unusual_options_alerts()
-        o_df = pd.DataFrame(opt_alerts)
-        
-        display_o = pd.DataFrame()
-        display_o["WKN"] = [get_wkn(s) for s in o_df["symbol"]]
-        display_o["Unternehmen"] = o_df["name"]
-        display_o["Order-Typ"] = o_df["type"]
-        display_o["Strike"] = o_df["strike"]
-        display_o["Verfall"] = o_df["expiry"]
-        display_o["Prämie"] = o_df["premium"]
-        display_o["Put/Call"] = o_df["put_call_ratio"]
-        display_o["KI-Signal"] = o_df["signal"]
-        
-        st.dataframe(display_o, use_container_width=True, hide_index=True)
-        st.info("💡 **Smart-Money-Regel**: Ein stark fallendes Put/Call-Verhältnis (< 0.5) bei gleichzeitig explodierendem Call-Volumen ist das stärkste Vorab-Signal für anstehende Kurssprünge.")
+
+        # "Strike" und "Prämie" standen hier bis zum 29.09. und stammten aus der
+        # fest verdrahteten Tabelle, die dieses Modul vorher zeigte (SNOW, SMCI,
+        # MRNA, UBER mit Verfall "Aug 2026", die sich nie änderten). Seit der
+        # Umstellung auf gemessene Optionsketten gibt es diese Felder nicht mehr:
+        # ein einzelner Strike lässt sich aus einer aggregierten Kette nicht
+        # ableiten. Die Seite ist daran mit KeyError: 'strike' abgestürzt.
+        # Gezeigt wird jetzt, was tatsächlich gemessen wird.
+        if not opt_alerts:
+            st.warning(
+                "Keine Optionsketten abrufbar. yfinance liefert Ketten nur für "
+                "liquide US-Werte, und ausserhalb der US-Handelszeiten oder bei "
+                "einer Drosselung kommt nichts zurück."
+            )
+        else:
+            o_df = pd.DataFrame(opt_alerts)
+            display_o = pd.DataFrame()
+            display_o["WKN"] = [get_wkn(s) for s in o_df["symbol"]]
+            display_o["Unternehmen"] = o_df["name"]
+            display_o["Positionierung"] = o_df["type"]
+            display_o["Nächster Verfall"] = o_df["expiry"]
+            display_o["Call-Volumen"] = o_df["calls_volume"]
+            display_o["Put-Volumen"] = o_df["puts_volume"]
+            display_o["Put/Call"] = o_df["put_call_ratio"]
+            display_o["Offene Kontrakte"] = o_df["open_interest"]
+            display_o["Umschlag"] = o_df["turnover_ratio"]
+            display_o["KI-Signal"] = o_df["signal"]
+
+            st.dataframe(display_o, use_container_width=True, hide_index=True)
+            st.caption(
+                "**Umschlag** ist das heutige Volumen geteilt durch die offenen "
+                "Kontrakte. Offene Kontrakte sind die Positionierung von gestern, "
+                "das heutige Volumen die von heute — ein Wert deutlich über 1 "
+                "heisst also, dass die heutige Bewegung gross ist gegenüber allem, "
+                "was schon steht. Das ist der Teil, der „jetzt“ sagt."
+            )
+            st.info(
+                "💡 **Smart-Money-Regel**: Ein niedriges Put/Call-Verhältnis (< 0,5) "
+                "bei gleichzeitig hohem Umschlag ist das stärkste Vorab-Signal für "
+                "anstehende Kurssprünge. Ein hohes Put/Call-Verhältnis (> 1,2) ist "
+                "entweder Absicherung oder Short-Druck — welches von beidem, sagt "
+                "diese Tabelle nicht."
+            )
 
     # Module 2: Global Short Registers (US Live)
     with tab_m2:
@@ -828,40 +857,108 @@ elif app_mode == "🔮 Smart-Money & Makro-Radar (6 Module)":
     # Module 3: Earnings Revisions
     with tab_m3:
         st.subheader("📈 Gewinnschätzungs-Revisionen (Analyst EPS Momentum)")
-        st.caption("Unternehmen, deren Umsatz- und Gewinnschätzungen in den letzten 30 Tagen von der Wall Street systematisch nach oben korrigiert wurden.")
-        
+        st.caption(
+            "Wie viele Analysten ihre Gewinnschätzung für das laufende Quartal in "
+            "den letzten 30 Tagen angehoben oder gesenkt haben, wie stark der "
+            "Konsens sich dabei verschoben hat, und wie oft das Unternehmen seine "
+            "eigene Schätzung zuletzt übertroffen hat."
+        )
+
         rev_sample = ["NVDA", "PLTR", "SAP.DE", "DUOL", "MUV2.DE", "MRNA", "ADBE", "RIVN"]
         rev_data = [EarningsRevisionEngine.get_revision_metrics(sym) for sym in rev_sample]
-        r_df = pd.DataFrame(rev_data)
-        
-        display_r = r_df[["symbol", "revision_score", "upgrades_last_30d", "downgrades_last_30d", "eps_beat_rate_pct", "last_quarter_surprise_pct", "status"]].copy()
-        display_r["symbol"] = [get_wkn(s) for s in display_r["symbol"]]
-        display_r.columns = ["WKN", "Revisions-Score", "Upgrades (30T)", "Downgrades (30T)", "Beat-Rate (%)", "Letzte EPS-Surprise", "Trend-Status"]
-        display_r["Beat-Rate (%)"] = display_r["Beat-Rate (%)"].apply(lambda x: f"{x:.0f}%")
-        display_r["Letzte EPS-Surprise"] = display_r["Letzte EPS-Surprise"].apply(lambda x: f"{x:+.1f}%")
-        
-        st.dataframe(display_r, use_container_width=True, hide_index=True)
+        rev_ok = [d for d in rev_data if d.get("available")]
 
-    # Module 4: Earnings Call Transcripts
+        if not rev_ok:
+            st.warning("Für keinen der geprüften Werte liegen Analystendaten vor.")
+        else:
+            def _z(v, suffix="", stellen=0):
+                if v is None:
+                    return "—"
+                return f"{v:.{stellen}f}{suffix}"
+
+            display_r = pd.DataFrame([{
+                "WKN": get_wkn(d["symbol"]),
+                "Ticker": d["symbol"],
+                "Revisions-Score": d["revision_score"],
+                "Angehoben (30T)": _z(d["upgrades_last_30d"]),
+                "Gesenkt (30T)": _z(d["downgrades_last_30d"]),
+                "Konsens 30T": _z(d.get("estimate_change_30d_pct"), "%", 2),
+                "Beat-Rate": _z(d["eps_beat_rate_pct"], "%"),
+                "Letzte Überraschung": _z(d["last_quarter_surprise_pct"], "%", 1),
+                "Datenlage": _z((d.get("datenlage") or 0) * 100, "%"),
+                "Trend-Status": d["status"],
+            } for d in rev_ok])
+            st.dataframe(display_r, use_container_width=True, hide_index=True)
+            st.caption(
+                "**Angehoben / Gesenkt** sind die tatsächlichen Schätzungsänderungen "
+                "der letzten 30 Tage, **Konsens 30T** die daraus folgende Verschiebung "
+                "der mittleren Gewinnerwartung. Der Score gewichtet nur, was messbar "
+                "war — fehlende Bausteine fallen aus der Gewichtung, statt durch eine "
+                "Konstante ersetzt zu werden. Die **Datenlage** sagt, wie viel davon "
+                "gedeckt ist."
+            )
+            fehlend = [d["symbol"] for d in rev_data if not d.get("available")]
+            if fehlend:
+                st.caption(f"Ohne Analystendaten und deshalb nicht gelistet: "
+                           f"{', '.join(fehlend)}")
+
+    # Module 4: Reaktion auf den letzten Quartalsbericht
     with tab_m4:
-        st.subheader("🎙️ KI-Tonalitätsanalyse von Quartals-Telefonkonferenzen (Earnings Calls)")
-        st.caption("NLP-Auswertung der Wortwahl von CEOs & CFOs im Analysten-Gespräch auf Zuversicht, Risiken und Margenaussichten.")
-        
-        calls = EarningsCallAnalyzer.CALL_ANALYSES
-        for sym, c_data in calls.items():
-            st.markdown(f"""
-            <div style="background-color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
-                <div style="display: flex; justify-content: space-between; font-size: 13px;">
-                    <b style="font-size: 16px; color: white;">{sym} • {c_data['date']}</b>
-                    <span style="font-weight: bold; color: #38bdf8;">CEO-Tonalität: {c_data['ceo_tone']}</span>
-                </div>
-                <div style="margin: 8px 0; font-size: 14px; color: #334155;"><b>Schlüsselbegriffe:</b> {', '.join(c_data['key_phrases'])}</div>
-                <div style="font-size: 13px; color: #64748b;"><b>Warnsignale / Risiken:</b> {', '.join(c_data['caution_flags'])}</div>
-                <div style="margin-top: 6px; font-size: 14px; color: #0f172a; background-color: #111827; padding: 8px; border-radius: 6px;">
-                    🧠 <b>KI-Urteil:</b> {c_data['ai_verdict']}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+        st.subheader("🎙️ Reaktion auf den letzten Quartalsbericht")
+        st.caption(
+            "Was auf den Bericht folgte: die tatsächliche Abweichung von der "
+            "Analystenschätzung, die Kursreaktion am Handelstag danach und die "
+            "Analystenaktionen der Folgetage."
+        )
+
+        with st.expander("Warum steht hier keine KI-Tonalitätsanalyse mehr?"):
+            st.markdown(
+                "Dieser Reiter zeigte bis zum 29.09.2026 eine „NLP-Auswertung der "
+                "Wortwahl von CEOs & CFOs\" mit Werten wie *CEO-Tonalität: Extrem "
+                "Zuversichtlich (94/100)* und Sätzen, die namentlich echten "
+                "Vorstandsvorsitzenden zugeschrieben wurden.\n\n"
+                "Das war **vollständig im Code hinterlegt** — vier handgeschriebene "
+                "Einträge, die sich nie änderten, für alle übrigen Werte ein fünfter "
+                "Standardtext. Für Transkripte von Telefonkonferenzen gibt es keine "
+                "kostenlose Quelle, also lässt sich die Tonalität nicht messen. Was "
+                "sich nicht messen lässt, wird hier nicht mehr behauptet.\n\n"
+                "Messbar ist dagegen, was **auf** den Bericht folgte — und das "
+                "beantwortet dieselbe Frage ehrlicher: Hat das Unternehmen geliefert, "
+                "und was haben Markt und Analysten daraufhin getan?"
+            )
+
+        call_sample = ["NVDA", "PLTR", "MRNA", "SAP.DE"]
+        for sym in call_sample:
+            r = EarningsCallAnalyzer.get_reaction(sym)
+            if not r.get("available"):
+                st.info(f"**{sym}** — {r.get('reason', 'keine Daten')}")
+                continue
+
+            ueb = r.get("ueberraschung_pct")
+            kurs = r.get("kursreaktion_pct")
+            with st.container(border=True):
+                st.markdown(f"**{sym} — Bericht vom {r['berichtsdatum']}**")
+                c1, c2, c3, c4 = st.columns(4)
+                c1.metric("EPS geschätzt",
+                          f"{r['eps_geschaetzt']:.2f}" if r.get("eps_geschaetzt") is not None else "—")
+                c2.metric("EPS gemeldet",
+                          f"{r['eps_gemeldet']:.2f}" if r.get("eps_gemeldet") is not None else "—")
+                c3.metric("Abweichung", f"{ueb:+.2f}%" if ueb is not None else "—")
+                c4.metric("Kurs am Tag danach",
+                          f"{kurs:+.2f}%" if kurs is not None else "—")
+
+                aktionen = r.get("analystenaktionen") or []
+                if aktionen:
+                    st.dataframe(
+                        pd.DataFrame([{
+                            "Datum": a["datum"], "Haus": a["haus"],
+                            "Aktion": a["aktion"],
+                            "Einstufung": f"{a['von']} → {a['auf']}",
+                        } for a in aktionen]),
+                        use_container_width=True, hide_index=True)
+                else:
+                    st.caption("Keine Analystenaktionen in den zehn Tagen danach.")
+
 
     # Module 5: FRED Macro
     with tab_m5:

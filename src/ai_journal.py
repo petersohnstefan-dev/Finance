@@ -883,10 +883,18 @@ Wenn keine Änderungen nötig sind, setze "parameter_changes": {{}}.
                 context={"depot": depot_id, "mode": mode, "rohantwort": saved,
                          "laenge": len(raw_text),
                          "antwort_anfang": str(raw_text)[:300]})
+            # Der Auszug wandert MIT in den Journaleintrag. Die Datei allein
+            # reicht nicht: sie liegt auf dem GitHub-Runner, und bis zum 29.09.
+            # hat der Workflow sie nicht mitgecommittet - die Rohantwort zum
+            # Fehler vom 28.09. war deshalb nicht mehr auffindbar. Die Datenbank
+            # wird dagegen immer zurueckgeschrieben.
+            auszug = raw_text[:1800].replace("\r", "")
             res_json = {
                 "reflection": ("Antwort des Modells nicht lesbar. Die Stoerung ist "
                                f"im Stoerungs-Log vermerkt, die Rohantwort liegt "
-                               f"unter {saved}."),
+                               f"unter {saved}.\n\n"
+                               f"--- Rohantwort, erste {len(auszug)} von "
+                               f"{len(raw_text)} Zeichen ---\n{auszug}"),
                 "missed_opportunities": "",
                 "lesson": "",
                 "parameter_changes": {},

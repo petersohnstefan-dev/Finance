@@ -69,7 +69,12 @@ jobs:
         run: |
           git config --global user.name 'Finance AI Bot'
           git config --global user.email 'bot@antigravity.ai'
-          git add data/portfolio.db data/strategy.json
+          # incidents.json und die Rohantworten fehlten hier: das Lerntagebuch
+          # hat sie auf dem Runner geschrieben und der Runner wurde danach
+          # weggeworfen. Am 28.09. war deshalb weder die Stoerungsmeldung noch
+          # die gespeicherte Rohantwort zum Parser-Fehler auffindbar.
+          git add data/portfolio.db data/strategy.json data/incidents.json
+          git add data/llm_raw_*.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo 'Keine neuen Einträge.'
             exit 0
