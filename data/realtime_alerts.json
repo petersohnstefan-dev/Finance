@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 14:40:56",
+    "time_str": "14:40:56",
+    "data_age_min": 0.3,
+    "window_span_min": 2.7,
+    "symbol": "ROIV",
+    "direction": "LONG",
+    "trigger_price": 37.5,
+    "change_1min_pct": 1.35,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ROIV explodiert um +1.35% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 14:40:56",
+    "time_str": "14:40:56",
+    "data_age_min": 10.9,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "SHORT",
+    "trigger_price": 3.11,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 2.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 14:35:59",
     "time_str": "14:35:59",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 13:46:00",
-    "time_str": "13:46:00",
-    "data_age_min": 4.5,
-    "window_span_min": 4.6,
-    "symbol": "FTNT",
-    "direction": "SHORT",
-    "trigger_price": 173.53,
-    "change_1min_pct": 0.92,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 13:40:59",
-    "time_str": "13:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DSV.CO",
-    "direction": "LONG",
-    "trigger_price": 1200.5,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 2.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DSV.CO explodiert um +0.67% in 5 Min.! Momentum aktiv."
   }
 ]
