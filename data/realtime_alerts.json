@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 22:46:02",
+    "time_str": "22:46:02",
+    "data_age_min": 0.8,
+    "window_span_min": 2.3,
+    "symbol": "SYM",
+    "direction": "SHORT",
+    "trigger_price": 41.33,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 22:46:02",
+    "time_str": "22:46:02",
+    "data_age_min": 0.2,
+    "window_span_min": 5.9,
+    "symbol": "AFRM",
+    "direction": "SHORT",
+    "trigger_price": 69.0,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AFRM stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 22:40:59",
     "time_str": "22:40:59",
     "data_age_min": 0.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.01,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MDB explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 4.01,
-    "change_1min_pct": 1.11,
-    "vol_ratio": 0.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +1.11% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 21:55:55",
-    "time_str": "21:55:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BONK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BONK-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
