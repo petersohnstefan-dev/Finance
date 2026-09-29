@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 10:21:05",
+    "time_str": "10:21:05",
+    "data_age_min": 0.0,
+    "window_span_min": 5.1,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 117.02,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 10:20:55",
+    "time_str": "10:20:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "LONG",
+    "trigger_price": 0.23,
+    "change_1min_pct": 1.27,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD explodiert um +1.27% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 10:15:59",
     "time_str": "10:15:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BLNK explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 22:40:53",
-    "time_str": "22:40:53",
-    "data_age_min": 3.9,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.1,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.10% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-28 22:40:52",
-    "time_str": "22:40:52",
-    "data_age_min": 3.9,
-    "window_span_min": 5.0,
-    "symbol": "RUNE-USD",
-    "direction": "LONG",
-    "trigger_price": 0.79,
-    "change_1min_pct": 1.05,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
   }
 ]
