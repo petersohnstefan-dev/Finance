@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 17:50:58",
+    "time_str": "17:50:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "LONG",
+    "trigger_price": 3.82,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 17:50:56",
+    "time_str": "17:50:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 10.44,
+    "change_1min_pct": 0.76,
+    "vol_ratio": 4.29,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 17:45:48",
     "time_str": "17:45:48",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.93,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RGTI stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:01:26",
-    "time_str": "17:01:26",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 60.68,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:01:26",
-    "time_str": "17:01:26",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 83.48,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
