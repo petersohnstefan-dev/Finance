@@ -30,6 +30,18 @@ ENTRY_DIAG_FILE = data_file("entry_diagnostics.json")
 PARAM_CHANGE_MIN_TRADES = 5
 #: How far back to look for previous changes at all.
 PARAM_CHANGE_LOOKBACK_DAYS = 30
+
+#: A parameter may not be pushed the same way more often than this within the
+#: lookback window, however much evidence has accumulated in between.
+#:
+#: The evidence guard asks "has the last change been tested?" and it worked -
+#: every step below was backed by real closed trades. What it cannot see is the
+#: SHAPE of the sequence. daytrade_max_risk_per_trade_pct went 0.02 -> 0.015
+#: (18.09.) -> 0.01 (24.09.) -> 0.005 (28.09.) and arrived at its floor: each
+#: step individually justified, the sum a depot whose positions are too small to
+#: recover anything. A losing system that is told every evening to reduce risk
+#: will reduce it to zero, which is a way of stopping rather than of improving.
+PARAM_SAME_DIRECTION_LIMIT = 2
 from zoneinfo import ZoneInfo
 BERLIN_TZ = ZoneInfo("Europe/Berlin")
 
@@ -409,6 +421,19 @@ class AIJournalEngine:
         "long_term": ("long_term_",),
     }
 
+    def _same_direction_count(self, history: Dict[str, list], param_name: str,
+                              direction: int) -> int:
+        """How often this parameter was already pushed this way in the window."""
+        n = 0
+        for eintrag in (history.get(param_name) or []):
+            try:
+                d = 1 if float(eintrag["new"]) > float(eintrag["old"]) else -1
+            except (TypeError, ValueError, KeyError):
+                continue
+            if d == direction:
+                n += 1
+        return n
+
     def _recent_param_changes(self, days: int = 4) -> Dict[str, list]:
         """What was already changed in the last few nights, per parameter.
 
@@ -545,6 +570,19 @@ class AIJournalEngine:
                         f"mindestens {PARAM_CHANGE_MIN_TRADES} noetig, um die Wirkung "
                         f"zu beurteilen")
                     continue
+
+            # Guard 2b: Driftbremse. Evidenz allein genuegt nicht, wenn die
+            # Richtung sich nie umkehrt - sonst wandert ein Parameter in lauter
+            # einzeln begruendeten Schritten an seine Grenze.
+            bisher = self._same_direction_count(history, param_name, direction)
+            if bisher >= PARAM_SAME_DIRECTION_LIMIT:
+                richtung_wort = "erhoeht" if direction > 0 else "gesenkt"
+                rejected[param_name] = (
+                    f"in den letzten {PARAM_CHANGE_LOOKBACK_DAYS} Tagen bereits "
+                    f"{bisher}x {richtung_wort}; weitere Schritte in dieselbe "
+                    f"Richtung sind gesperrt. Wenn {bisher} Korrekturen nichts "
+                    f"bewirkt haben, liegt die Ursache nicht an diesem Parameter")
+                continue
 
             # Guard 3: at most one configured step per run
             step = bounds.get("step")
@@ -713,6 +751,16 @@ Drehe einen Parameter NICHT erneut in dieselbe Richtung, solange die letzte
 Aenderung nicht durch neue Trades geprueft wurde. Massstab sind abgeschlossene
 Trades, nicht verstrichene Tage - solche Vorschlaege werden automatisch abgelehnt.
 Fehlt die Evidenz, ist "nichts aendern" die richtige Antwort.
+
+### ZUR POSITIONSGROESSE (haeufiger Denkfehler):
+Eine kleinere Position gibt Gewinnern NICHT mehr Raum - sie macht jedes Ergebnis
+kleiner, das gute wie das schlechte. Wer "Gewinner laufen lassen" als Lehre zieht
+und daraufhin das Risiko je Trade senkt, tut das Gegenteil dessen, was er
+aufgeschrieben hat. Raum fuer Gewinner entsteht an den AUSSTIEGS-Parametern
+(Trailing-Abstand, Breakeven-Schwelle, Gewinnmitnahme), nicht an der Groesse.
+Das Daytrader-Depot hat sein Risiko je Trade in zehn Tagen von 2,0% auf 0,5%
+gesenkt - die Untergrenze - und handelt damit Positionen, mit denen sich der
+aufgelaufene Verlust rechnerisch nicht mehr aufholen laesst.
 
 ### HARTE RANDBEDINGUNG DES SYSTEMS (nicht verhandelbar):
 Der Handels-Bot laeuft als Cron-Job und prueft die Positionen bestenfalls alle

@@ -36,9 +36,32 @@ from src.paths import data_file
 
 DB_FILE = data_file("portfolio.db")
 
-#: How far the follow-up looks past the exit. Long enough for a swing move to
-#: play out, short enough that it is still attributable to the exit decision.
-FOLLOW_UP_DAYS = 21
+#: How far the follow-up looks past the exit - PER DEPOT, because the question
+#: "would holding have been better" only makes sense against a horizon the depot
+#: is actually allowed to trade.
+#:
+#: A single 21-day window produced a wrong conclusion on 28.09.: the daytrader's
+#: end-of-day liquidations were followed by rising prices, the retrospective read
+#: that as "massiver Opportunitaetsverlust und vorzeitige Beendigung potenzieller
+#: Gewinner" and set out to give winners more room. But the daytrader is defined
+#: by not holding overnight. Comparing its exits against three weeks of holding
+#: measures it against a strategy it is forbidden to run, and no parameter can
+#: close that gap.
+FOLLOW_UP_DAYS_BY_DEPOT = {
+    "day_trading": 2,
+    "short_term": 21,
+    "medium_term": 60,
+    "long_term": 120,
+}
+FOLLOW_UP_DAYS = 21          # Rueckfall fuer unbekannte Depots
+
+#: Exits the depot did not choose. Measuring them against "could have held longer"
+#: is measuring the depot against its own design.
+ERZWUNGENE_AUSSTIEGE = {"EOD-Zwangsverkauf", "Knock-Out (Totalverlust)"}
+
+#: Below this many observed follow-ups the group average says nothing. Reported
+#: rather than suppressed, so the reader sees why.
+MIN_NACHBEOBACHTUNGEN = 5
 
 #: Exits within this band of the entry price are the ones worth separating out:
 #: neither a real loss nor a win, they are the trades the system let go of.
@@ -110,7 +133,8 @@ def _closed_trades(depot_id: str, days: int) -> List[Dict[str, Any]]:
         return []
 
 
-def _follow_up(trades: List[Dict[str, Any]]) -> Dict[int, Dict[str, float]]:
+def _follow_up(trades: List[Dict[str, Any]],
+               fenster_tage: int = FOLLOW_UP_DAYS) -> Dict[int, Dict[str, float]]:
     """Price development after each exit, keyed by index into `trades`.
 
     One batched download over the whole span, then sliced per trade - a request
@@ -141,7 +165,7 @@ def _follow_up(trades: List[Dict[str, Any]]) -> Dict[int, Dict[str, float]]:
                 continue
             exit_day = pd.Timestamp(str(t["executed_at"])[:10])
             window = closes[(closes.index > exit_day) &
-                            (closes.index <= exit_day + pd.Timedelta(days=FOLLOW_UP_DAYS))]
+                            (closes.index <= exit_day + pd.Timedelta(days=fenster_tage))]
             if window.empty:
                 continue
             ref = float(t["sell_price"])
@@ -166,11 +190,12 @@ def analyse_exits(depot_id: str, days: int = 90,
         return {"available": False,
                 "reason": f"Keine abgeschlossenen Trades in {days} Tagen."}
 
+    fenster_tage = FOLLOW_UP_DAYS_BY_DEPOT.get(depot_id, FOLLOW_UP_DAYS)
     follow: Dict[int, Dict[str, float]] = {}
     follow_error: Optional[str] = None
     if with_follow_up:
         try:
-            follow = _follow_up(trades)
+            follow = _follow_up(trades, fenster_tage)
         except Exception as e:            # market data must never break the run
             follow, follow_error = {}, str(e)[:120]
 
@@ -207,6 +232,24 @@ def analyse_exits(depot_id: str, days: int = 90,
             row["kurs_nach_ausstieg_bestfall_pct"] = round(sum(g["best_after"]) / n, 2)
             row["davon_weiter_gestiegen"] = sum(1 for a in g["after"] if a > 0)
             row["nachbeobachtet"] = n
+            row["nachbeobachtet_von"] = g["count"]
+            # On 28.09. an average built from five of thirty exits was read as a
+            # statement about all thirty. The caveat travels with the number.
+            if n < g["count"] * 0.5:
+                row["nachbeobachtung_hinweis"] = (
+                    f"nur {n} von {g['count']} Ausstiegen nachbeobachtbar - "
+                    f"Zertifikate haben keinen eigenen Kursverlauf. Der Schnitt "
+                    f"beschreibt diese {n}, nicht die Gruppe.")
+            elif n < MIN_NACHBEOBACHTUNGEN:
+                row["nachbeobachtung_hinweis"] = (
+                    f"vollstaendig beobachtet, aber nur {n} Faelle - zu wenig "
+                    f"fuer eine belastbare Aussage")
+        if cat in ERZWUNGENE_AUSSTIEGE:
+            row["erzwungen"] = True
+            row["hinweis"] = (
+                "Dieser Ausstieg ist vom Depot vorgeschrieben, nicht gewaehlt. "
+                "Was der Kurs danach tat, ist kein Versaeumnis - das Depot darf "
+                "diese Bewegung gar nicht mitnehmen.")
         rows.append(row)
 
     rows.sort(key=lambda r: r["anzahl"], reverse=True)
@@ -218,7 +261,11 @@ def analyse_exits(depot_id: str, days: int = 90,
         "available": True,
         "zeitraum_tage": days,
         "abgeschlossene_trades": total,
-        "nachbeobachtungsfenster_tage": FOLLOW_UP_DAYS,
+        "nachbeobachtungsfenster_tage": fenster_tage,
+        "nachbeobachtungsfenster_begruendung": (
+            f"Entspricht dem Anlagehorizont von {depot_id}. Ein laengeres Fenster "
+            f"wuerde die Ausstiege gegen eine Haltedauer messen, die dieses Depot "
+            f"nicht handeln darf."),
         "gruppen": rows,
         "nullsummen_ausstiege": {
             "anzahl": len(near_zero),
