@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 18:40:56",
+    "time_str": "18:40:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.73,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.5,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 18:40:54",
+    "time_str": "18:40:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 11.27,
+    "change_1min_pct": 0.79,
+    "vol_ratio": 0.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 18:40:54",
+    "time_str": "18:40:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.82,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-29 18:35:52",
     "time_str": "18:35:52",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:21:07",
-    "time_str": "17:21:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 3.95,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 3.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:21:06",
-    "time_str": "17:21:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "PATH",
-    "direction": "LONG",
-    "trigger_price": 12.2,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 2.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:21:05",
-    "time_str": "17:21:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 306.99,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
