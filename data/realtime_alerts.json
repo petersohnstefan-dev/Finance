@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 19:06:00",
+    "time_str": "19:06:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 9.15,
+    "change_1min_pct": 0.81,
+    "vol_ratio": 0.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:06:00",
+    "time_str": "19:06:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "SHORT",
+    "trigger_price": 196.32,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 19:05:58",
+    "time_str": "19:05:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 201.86,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 2.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 18:55:58",
     "time_str": "18:55:58",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:41:03",
-    "time_str": "17:41:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.53,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:36:03",
-    "time_str": "17:36:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "FSLR",
-    "direction": "LONG",
-    "trigger_price": 175.16,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 0.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 17:36:03",
-    "time_str": "17:36:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 31.31,
-    "change_1min_pct": 1.0,
-    "vol_ratio": 0.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +1.00% in 5 Min.! Momentum aktiv."
   }
 ]
