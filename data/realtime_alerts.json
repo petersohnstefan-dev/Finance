@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-29 16:46:03",
+    "time_str": "16:46:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "CART",
+    "direction": "SHORT",
+    "trigger_price": 43.79,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 1.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CART stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 16:46:03",
+    "time_str": "16:46:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 36.97,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 16:46:03",
+    "time_str": "16:46:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.99,
+    "change_1min_pct": 1.19,
+    "vol_ratio": 1.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +1.19% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 16:41:00",
     "time_str": "16:41:00",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.5,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 16:11:08",
-    "time_str": "16:11:08",
-    "data_age_min": 6.2,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.2,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 16:06:02",
-    "time_str": "16:06:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "NOW",
-    "direction": "LONG",
-    "trigger_price": 130.88,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NOW explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 16:06:01",
-    "time_str": "16:06:01",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "CAT",
-    "direction": "SHORT",
-    "trigger_price": 823.86,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.44,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAT stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
