@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-29 13:21:08",
+    "time_str": "13:21:08",
+    "data_age_min": 0.1,
+    "window_span_min": 5.1,
+    "symbol": "ADBE",
+    "direction": "SHORT",
+    "trigger_price": 228.77,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ADBE stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-29 13:21:00",
+    "time_str": "13:21:00",
+    "data_age_min": 3.8,
+    "window_span_min": 2.2,
+    "symbol": "BEAM",
+    "direction": "LONG",
+    "trigger_price": 24.45,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 13:16:05",
     "time_str": "13:16:05",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JUP-USD explodiert um +1.77% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 10:55:54",
-    "time_str": "10:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.1,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 15.22,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 10:55:53",
-    "time_str": "10:55:53",
-    "data_age_min": 0.6,
-    "window_span_min": 5.3,
-    "symbol": "ARM",
-    "direction": "SHORT",
-    "trigger_price": 287.0,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
