@@ -2091,43 +2091,10 @@
   }
  },
  "BKNG": {
-  "fetched_ts": 1790080003.5341275,
+  "fetched_ts": 1790688715.446224,
   "scores": {
-   "available": true,
-   "piotroski": 7,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 6.3,
-   "altman_detail": {
-    "X1": 0.19,
-    "X2": 1.39,
-    "X3": 0.289,
-    "X4": 3.748,
-    "X5": 0.92
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Cyclical",
-   "beneish_m": -3.0,
-   "beneish_detail": {
-    "DSRI": 1.053,
-    "GMI": null,
-    "AQI": 0.891,
-    "SGI": 1.134,
-    "DEPI": 1.008,
-    "SGAI": 0.948,
-    "LVGI": 1.042,
-    "TATA": -0.137
-   },
-   "computed_at": "2026-09-22"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "ALNY": {
