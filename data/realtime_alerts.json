@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-30 21:06:02",
+    "time_str": "21:06:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "BKSY",
+    "direction": "SHORT",
+    "trigger_price": 22.05,
+    "change_1min_pct": 0.81,
+    "vol_ratio": 0.6,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 21:06:02",
+    "time_str": "21:06:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 210.89,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 1.21,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 21:06:01",
+    "time_str": "21:06:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CRWD",
+    "direction": "LONG",
+    "trigger_price": 266.39,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 2.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-30 21:01:09",
     "time_str": "21:01:09",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.1,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ACN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 19:16:05",
-    "time_str": "19:16:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "SHORT",
-    "trigger_price": 7.83,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 5.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 19:16:05",
-    "time_str": "19:16:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 32.24,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 1.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 19:16:05",
-    "time_str": "19:16:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 4.03,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
