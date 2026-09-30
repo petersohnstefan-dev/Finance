@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-30 08:25:43",
+    "time_str": "08:25:43",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.47,
+    "change_1min_pct": 1.03,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-30 08:11:01",
     "time_str": "08:11:01",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKG explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 22:06:10",
-    "time_str": "22:06:10",
-    "data_age_min": 1.9,
-    "window_span_min": 5.3,
-    "symbol": "MDLZ",
-    "direction": "SHORT",
-    "trigger_price": 59.03,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 8.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDLZ stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
