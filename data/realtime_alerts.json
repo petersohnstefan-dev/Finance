@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-30 14:11:04",
+    "time_str": "14:11:04",
+    "data_age_min": 2.5,
+    "window_span_min": 6.6,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 42.0,
+    "change_1min_pct": 1.35,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +1.35% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 14:11:04",
+    "time_str": "14:11:04",
+    "data_age_min": 0.5,
+    "window_span_min": 6.6,
+    "symbol": "ARGX",
+    "direction": "LONG",
+    "trigger_price": 972.0,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-30 14:05:51",
     "time_str": "14:05:51",
     "data_age_min": 1.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMD stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 13:01:12",
-    "time_str": "13:01:12",
-    "data_age_min": 1.1,
-    "window_span_min": 7.2,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 3.94,
-    "change_1min_pct": 4.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -4.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 13:01:11",
-    "time_str": "13:01:11",
-    "data_age_min": 1.1,
-    "window_span_min": 2.1,
-    "symbol": "BNTX",
-    "direction": "LONG",
-    "trigger_price": 98.6,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BNTX explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
