@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-30 13:11:05",
+    "time_str": "13:11:05",
+    "data_age_min": 3.1,
+    "window_span_min": 8.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.78,
+    "change_1min_pct": 0.76,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 13:11:05",
+    "time_str": "13:11:05",
+    "data_age_min": 1.2,
+    "window_span_min": 6.9,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 31.7,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-30 13:06:09",
     "time_str": "13:06:09",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA stürzt um -1.37% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 11:01:06",
-    "time_str": "11:01:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.51,
-    "change_1min_pct": 1.91,
-    "vol_ratio": 7.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 10:55:55",
-    "time_str": "10:55:55",
-    "data_age_min": 0.2,
-    "window_span_min": 4.8,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 303.71,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
