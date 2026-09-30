@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-30 20:16:03",
+    "time_str": "20:16:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 33.04,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 20:16:03",
+    "time_str": "20:16:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.62,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 2.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 20:16:03",
+    "time_str": "20:16:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 14.49,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-30 20:11:09",
     "time_str": "20:11:09",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.56,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 KVYO stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:50:59",
-    "time_str": "18:50:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PATH",
-    "direction": "SHORT",
-    "trigger_price": 12.8,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 2.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:50:58",
-    "time_str": "18:50:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 2.39,
-    "change_1min_pct": 1.26,
-    "vol_ratio": 0.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +1.26% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:46:00",
-    "time_str": "18:46:00",
-    "data_age_min": 5.0,
-    "window_span_min": 4.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.4,
-    "change_1min_pct": 1.31,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
