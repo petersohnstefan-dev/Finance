@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-30 19:20:58",
+    "time_str": "19:20:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 399.42,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 19:20:57",
+    "time_str": "19:20:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.36,
+    "change_1min_pct": 1.26,
+    "vol_ratio": 1.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-30 19:16:11",
     "time_str": "19:16:11",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.9,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:01:22",
-    "time_str": "18:01:22",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 2.34,
-    "change_1min_pct": 2.71,
-    "vol_ratio": 0.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +2.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 17:55:53",
-    "time_str": "17:55:53",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.49,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
