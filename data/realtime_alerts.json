@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-30 19:31:06",
+    "time_str": "19:31:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 4.18,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 2.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-30 19:20:58",
     "time_str": "19:20:58",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NEAR-USD explodiert um +1.30% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:01:23",
-    "time_str": "18:01:23",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.65,
-    "change_1min_pct": 1.1,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
