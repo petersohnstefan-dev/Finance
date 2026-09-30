@@ -437,43 +437,10 @@
   }
  },
  "SMCI": {
-  "fetched_ts": 1789496134.3337374,
+  "fetched_ts": 1790775421.8586197,
   "scores": {
-   "available": true,
-   "piotroski": 2,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 3.65,
-   "altman_detail": {
-    "X1": 0.687,
-    "X2": 0.189,
-    "X3": 0.1,
-    "X4": 1.54,
-    "X5": 1.304
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": 0.04,
-   "beneish_detail": {
-    "DSRI": 1.563,
-    "GMI": 1.022,
-    "AQI": 0.547,
-    "SGI": 1.778,
-    "DEPI": 0.934,
-    "SGAI": 0.714,
-    "LVGI": 0.922,
-    "TATA": 0.302
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "FOUR": {
@@ -922,7 +889,7 @@
   }
  },
  "ENVX": {
-  "fetched_ts": 1790170597.427475,
+  "fetched_ts": 1790775422.4729013,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -1086,7 +1053,7 @@
   }
  },
  "ARRY": {
-  "fetched_ts": 1790170313.1458526,
+  "fetched_ts": 1790775423.1229365,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -1156,7 +1123,7 @@
   }
  },
  "SHLS": {
-  "fetched_ts": 1790170593.4721298,
+  "fetched_ts": 1790775422.8188803,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
