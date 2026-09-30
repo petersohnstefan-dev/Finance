@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-09-30 07:01:09",
+    "time_str": "07:01:09",
+    "data_age_min": 2.2,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "LONG",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-29 23:05:25",
     "time_str": "23:05:25",
     "data_age_min": 5.7,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRM stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-29 22:06:02",
-    "time_str": "22:06:02",
-    "data_age_min": 2.4,
-    "window_span_min": 4.7,
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 15.0,
-    "change_1min_pct": 1.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -1.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
