@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-09-30 20:31:02",
+    "time_str": "20:31:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ONON",
+    "direction": "LONG",
+    "trigger_price": 29.5,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 20:31:02",
+    "time_str": "20:31:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "APP",
+    "direction": "SHORT",
+    "trigger_price": 292.65,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 20:31:02",
+    "time_str": "20:31:02",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 4.18,
+    "change_1min_pct": 0.84,
+    "vol_ratio": 4.14,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.84% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-09-30 20:25:50",
     "time_str": "20:25:50",
     "data_age_min": 2.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.4,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 19:01:24",
-    "time_str": "19:01:24",
-    "data_age_min": 1.4,
-    "window_span_min": 5.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 29.98,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 5.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:55:58",
-    "time_str": "18:55:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 13.32,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 0.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 18:51:00",
-    "time_str": "18:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "LONG",
-    "trigger_price": 22.57,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 9.99,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
