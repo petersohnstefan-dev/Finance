@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-09-30 18:21:22",
+    "time_str": "18:21:22",
+    "data_age_min": 1.4,
+    "window_span_min": 6.0,
+    "symbol": "CHPT",
+    "direction": "LONG",
+    "trigger_price": 10.18,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-09-30 18:21:20",
+    "time_str": "18:21:20",
+    "data_age_min": 1.4,
+    "window_span_min": 4.0,
+    "symbol": "ARVN",
+    "direction": "SHORT",
+    "trigger_price": 7.92,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-09-30 18:15:51",
     "time_str": "18:15:51",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.87,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 17:26:01",
-    "time_str": "17:26:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 16.69,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 0.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 17:26:01",
-    "time_str": "17:26:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "SHORT",
-    "trigger_price": 15.02,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
