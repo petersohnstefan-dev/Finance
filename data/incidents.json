@@ -1,5 +1,37 @@
 [
  {
+  "timestamp": "2026-10-01 02:06:10",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_stop_atr_mult": "seit der Aenderung am 2026-09-16 (2.0 -> 1.75) erst 4 abgeschlossene Trades; mindestens 5 noetig, um die Wirkung zu beurteilen"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-01 02:06:10"
+ },
+ {
+  "timestamp": "2026-10-01 02:04:07",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 3 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_stop_loss_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)",
+    "daytrade_min_risk_reward_ratio": "in den letzten 30 Tagen bereits 2x erhoeht; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "daytrade_trailing_breakeven_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-01 02:04:07"
+ },
+ {
   "timestamp": "2026-09-30 01:52:02",
   "component": "ai_journal",
   "kind": "param_change_rejected",
