@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-01 08:50:59",
+    "time_str": "08:50:59",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "LONG",
+    "trigger_price": 90.26,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 2.66,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 08:50:56",
+    "time_str": "08:50:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "LONG",
+    "trigger_price": 0.24,
+    "change_1min_pct": 1.41,
+    "vol_ratio": 4.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD explodiert um +1.41% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-01 07:45:51",
     "time_str": "07:45:51",
     "data_age_min": 3.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 REGN stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 22:06:07",
-    "time_str": "22:06:07",
-    "data_age_min": 0.5,
-    "window_span_min": 4.7,
-    "symbol": "ADP",
-    "direction": "SHORT",
-    "trigger_price": 256.56,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADP stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 22:06:07",
-    "time_str": "22:06:07",
-    "data_age_min": 0.7,
-    "window_span_min": 5.4,
-    "symbol": "VRTX",
-    "direction": "SHORT",
-    "trigger_price": 519.0,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VRTX stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
