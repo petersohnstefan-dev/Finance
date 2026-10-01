@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-01 10:55:58",
+    "time_str": "10:55:58",
+    "data_age_min": 0.3,
+    "window_span_min": 4.7,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 33.36,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 10:55:58",
+    "time_str": "10:55:58",
+    "data_age_min": 0.2,
+    "window_span_min": 5.8,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 365.09,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 10:55:56",
+    "time_str": "10:55:56",
+    "data_age_min": 0.1,
+    "window_span_min": 5.8,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.28,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 10:51:01",
     "time_str": "10:51:01",
     "data_age_min": 2.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PANW stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:05:56",
-    "time_str": "10:05:56",
-    "data_age_min": 0.0,
-    "window_span_min": 4.9,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 60.47,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:05:55",
-    "time_str": "10:05:55",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "RKLB",
-    "direction": "LONG",
-    "trigger_price": 72.62,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:05:55",
-    "time_str": "10:05:55",
-    "data_age_min": 0.0,
-    "window_span_min": 4.9,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 188.12,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
