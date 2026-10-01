@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-01 12:41:11",
+    "time_str": "12:41:11",
+    "data_age_min": 2.0,
+    "window_span_min": 9.2,
+    "symbol": "CRM",
+    "direction": "LONG",
+    "trigger_price": 229.84,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRM explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 12:41:04",
+    "time_str": "12:41:04",
+    "data_age_min": 2.5,
+    "window_span_min": 3.5,
+    "symbol": "DUOL",
+    "direction": "SHORT",
+    "trigger_price": 142.0,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 12:36:05",
     "time_str": "12:36:05",
     "data_age_min": 5.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TXN explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:41:06",
-    "time_str": "10:41:06",
-    "data_age_min": 0.0,
-    "window_span_min": 5.1,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 1058.99,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:41:04",
-    "time_str": "10:41:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "VWS.CO",
-    "direction": "LONG",
-    "trigger_price": 193.85,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VWS.CO explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
