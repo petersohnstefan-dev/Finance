@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-01 13:16:26",
+    "time_str": "13:16:26",
+    "data_age_min": 0.6,
+    "window_span_min": 4.8,
+    "symbol": "INTU",
+    "direction": "LONG",
+    "trigger_price": 279.78,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 13:16:26",
+    "time_str": "13:16:26",
+    "data_age_min": 0.1,
+    "window_span_min": 4.3,
+    "symbol": "TXN",
+    "direction": "LONG",
+    "trigger_price": 282.04,
+    "change_1min_pct": 0.7,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 13:16:19",
+    "time_str": "13:16:19",
+    "data_age_min": 3.2,
+    "window_span_min": 5.1,
+    "symbol": "SYM",
+    "direction": "SHORT",
+    "trigger_price": 42.07,
+    "change_1min_pct": 1.13,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 13:16:19",
+    "time_str": "13:16:19",
+    "data_age_min": 3.9,
+    "window_span_min": 2.4,
+    "symbol": "NVCR",
+    "direction": "LONG",
+    "trigger_price": 15.75,
+    "change_1min_pct": 4.93,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR explodiert um +4.93% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-01 13:11:07",
     "time_str": "13:11:07",
     "data_age_min": 4.2,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHA stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 12:05:45",
-    "time_str": "12:05:45",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.51,
-    "change_1min_pct": 1.31,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 12:05:45",
-    "time_str": "12:05:45",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.03,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 12:05:45",
-    "time_str": "12:05:45",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "BONK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BONK-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 12:05:44",
-    "time_str": "12:05:44",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.43,
-    "change_1min_pct": 1.75,
-    "vol_ratio": 2.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD stürzt um -1.75% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
