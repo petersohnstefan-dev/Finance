@@ -1463,10 +1463,43 @@
   }
  },
  "ELF": {
-  "fetched_ts": 1790257293.6875281,
+  "fetched_ts": 1790862142.0666873,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 3,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 3.89,
+   "altman_detail": {
+    "X1": 0.189,
+    "X2": -0.065,
+    "X3": 0.034,
+    "X4": 4.931,
+    "X5": 0.684
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Defensive",
+   "beneish_m": -2.58,
+   "beneish_detail": {
+    "DSRI": 1.112,
+    "GMI": 1.007,
+    "AQI": 1.201,
+    "SGI": 1.246,
+    "DEPI": 0.922,
+    "SGAI": 1.059,
+    "LVGI": 1.377,
+    "TATA": -0.078
+   },
+   "computed_at": "2026-10-01"
   }
  },
  "BILL": {
@@ -2761,6 +2794,46 @@
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+  }
+ },
+ "MU": {
+  "fetched_ts": 1790862143.7899678,
+  "scores": {
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 27.02,
+   "altman_detail": {
+    "X1": 0.21,
+    "X2": 0.587,
+    "X3": 0.122,
+    "X4": 41.82,
+    "X5": 0.451
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.74,
+   "beneish_detail": {
+    "DSRI": 0.888,
+    "GMI": 0.562,
+    "AQI": 1.164,
+    "SGI": 1.489,
+    "DEPI": 1.077,
+    "SGAI": 0.717,
+    "LVGI": 0.941,
+    "TATA": -0.109
+   },
+   "computed_at": "2026-10-01"
   }
  }
 }
