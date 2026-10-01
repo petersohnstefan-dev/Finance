@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-01 18:16:02",
+    "time_str": "18:16:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "SHORT",
+    "trigger_price": 3.9,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 18:16:02",
+    "time_str": "18:16:02",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.76,
+    "change_1min_pct": 1.37,
+    "vol_ratio": 0.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +1.37% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 18:16:01",
+    "time_str": "18:16:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.14,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 1.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 18:11:10",
     "time_str": "18:11:10",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.23,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GDX explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 17:41:00",
-    "time_str": "17:41:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "URA",
-    "direction": "LONG",
-    "trigger_price": 39.13,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 URA explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 17:36:04",
-    "time_str": "17:36:04",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "SHORT",
-    "trigger_price": 523.38,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 17:35:58",
-    "time_str": "17:35:58",
-    "data_age_min": 3.0,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "SHORT",
-    "trigger_price": 21.29,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 0.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
