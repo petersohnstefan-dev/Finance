@@ -635,6 +635,84 @@ class PortfolioManager:
         max_notional = depot_value * self.strategy.get("max_position_pct_of_depot", 0.08)
         return min(position_size, max_notional)
 
+    def _trim_oversized_position(self, depot_key: str, sym: str,
+                                 depot_value: float) -> Optional[str]:
+        """Stutzt eine Position zurueck, die durch Kursgewinne ueber den Deckel gewachsen ist.
+
+        max_position_pct_of_depot wurde nach dem Knock-Out vom 17.09. eingefuehrt,
+        aber nur beim KAUF angewandt. Ein Gewinner waechst durch die Grenze
+        hindurch, ohne dass irgendetwas davon Notiz nimmt: PACB stand am
+        01.10.2026 bei 16,7% des Depots und 27,8% des investierten Kapitals,
+        gegen eine Obergrenze von 8%. Das Risikomodell hat dieser Groesse nie
+        zugestimmt - sie ist durch Erfolg entstanden, was sie nicht harmloser
+        macht, denn der Rueckweg ist derselbe.
+
+        Zurueckgestutzt wird auf den Deckel, nicht verkauft: dieses Depot hat sein
+        Geld bisher damit verloren, Gewinner zu frueh zu beenden - drei von drei
+        Breakeven-Stops liefen danach im Schnitt 15,9% weiter. Der Rest laeuft
+        also mit dem Trailing-Stop weiter, nur eben in normaler Groesse.
+
+        Das Toleranzband verhindert, dass jede Schwankung um den Deckel herum
+        einen gebuehrenpflichtigen Teilverkauf ausloest.
+        """
+        depot = self.data["portfolios"].get(depot_key) or {}
+        pos = (depot.get("positions") or {}).get(sym)
+        if not pos or depot_value <= 0:
+            return None
+
+        # Der Deckel ist NICHT fuer alle Depots derselbe, und das ist kein
+        # Versehen: der Daytrader haelt Hebelzertifikate, die 100% verlieren
+        # koennen, bevor ein Stop greift - dort gilt 8%. Die drei Swing-Depots
+        # dimensionieren dagegen seit jeher mit base_alloc = 2000 EUR auf 10.000,
+        # also 20% je Position; sie sind absichtlich konzentriert und halten vier
+        # bis fuenf Werte. Einen 8%-Deckel auf sie anzuwenden waere keine
+        # Risikobegrenzung, sondern eine andere Strategie.
+        deckel_pct = (self.strategy.get("max_position_pct_of_depot", 0.08)
+                      if depot_key == "day_trading"
+                      else self.strategy.get("max_position_pct_swing", 0.20))
+        toleranz = self.strategy.get("position_trim_tolerance", 1.25)
+        curr_p = pos.get("current_price") or 0.0
+        shares = pos.get("shares") or 0.0
+        if curr_p <= 0 or shares <= 0:
+            return None
+
+        wert = curr_p * shares
+        deckel_eur = depot_value * deckel_pct
+        if wert <= deckel_eur * toleranz:
+            return None
+
+        ueberhang = wert - deckel_eur
+        stueck = ueberhang / curr_p
+        # Ein Rest unterhalb dieser Groesse waere keine Position mehr, sondern
+        # ein Bodensatz, der nur noch Gebuehren kostet.
+        if (shares - stueck) * curr_p < 100.0:
+            return None
+
+        anteil_vorher = wert / depot_value * 100.0
+        buy_p = pos.get("buy_price") or curr_p
+        gewinn_pct = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+        grund = (f"✂️ Positionsdeckel: auf {deckel_pct*100:.0f}% zurueckgestutzt "
+                 f"(war {anteil_vorher:.1f}% des Depots, {gewinn_pct:+.1f}% im Gewinn)")
+        if not self.sell(depot_key, sym, curr_p, reason=grund, shares_to_sell=stueck):
+            return None
+
+        try:
+            incidents.record(
+                "portfolio", "position_trimmed",
+                f"{depot_key}: {sym} von {anteil_vorher:.1f}% auf {deckel_pct*100:.0f}% "
+                f"des Depots zurueckgestutzt ({stueck:.0f} von {shares:.0f} Stueck "
+                f"zu {curr_p:.2f}). Die Position war durch Kursgewinne ueber den "
+                f"Deckel gewachsen, den das Risikomodell beim Kauf gesetzt hatte.",
+                severity="info",
+                context={"depot": depot_key, "symbol": sym,
+                         "anteil_vorher_pct": round(anteil_vorher, 1),
+                         "deckel_pct": deckel_pct * 100,
+                         "gewinn_pct": round(gewinn_pct, 1),
+                         "stueck_verkauft": round(stueck, 2)})
+        except Exception:
+            pass
+        return f"TEILVERKAUF {sym} (Positionsdeckel, {stueck:.0f} Stueck)"
+
     def _get_seed_data(self) -> Dict[str, Any]:
         now_str = get_berlin_now().strftime("%Y-%m-%d %H:%M:%S")
         return {
@@ -1289,6 +1367,18 @@ class PortfolioManager:
                 actions_taken.append(f"KNOCK-OUT {sym}")
                 continue
 
+            # 1b2. Positionsdeckel. Vor den Stop-Pruefungen, damit ein
+            #      Rueckschnitt nicht mit einem Verkauf kollidiert.
+            st_wert = st_depot["cash"] + sum(
+                x["current_price"] * x["shares"] for x in st_depot["positions"].values())
+            trim = self._trim_oversized_position("short_term", sym, st_wert)
+            if trim:
+                actions_taken.append(trim)
+                pos = st_depot["positions"].get(sym)
+                if not pos:
+                    continue
+                curr_p = pos["current_price"]
+
             # 1c. Trend-following exit: breakeven guard, then ATR chandelier trail.
             #     No profit target and no fixed ratchet - the old +8% -> +3% lock
             #     capped the upside at 3% while the downside ran to the full stop.
@@ -1603,6 +1693,20 @@ class PortfolioManager:
             peak_p = max(pos.get("peak_price", buy_p), curr_p)
             pos["peak_price"] = peak_p
 
+            # Positionsdeckel - unabhaengig vom Scaling Out darunter. Das eine
+            # ist Gewinnmitnahme nach Rendite, das andere Begrenzung nach Groesse;
+            # eine Position kann den Deckel reissen, ohne je +35% erreicht zu haben.
+            mt_wert = mt_depot["cash"] + sum(
+                x["current_price"] * x["shares"] for x in mt_depot["positions"].values())
+            trim = self._trim_oversized_position("medium_term", sym, mt_wert)
+            if trim:
+                actions_taken.append(trim)
+                pos = mt_depot["positions"].get(sym)
+                if not pos:
+                    continue
+                curr_p = pos["current_price"]
+                gain_pct = ((curr_p - pos["buy_price"]) / pos["buy_price"] * 100.0)                     if pos["buy_price"] > 0 else 0.0
+
             # Trailing Profit Ratchet & Scaling Out
             if gain_pct >= 35.0 and not pos.get("scaled_out"):
                 self.sell("medium_term", sym, curr_p, reason=f"💰 Scaling Out: +{gain_pct:.1f}% erreicht, 50% der Position gesichert", shares_to_sell=pos["shares"]/2.0)
@@ -1717,6 +1821,16 @@ class PortfolioManager:
             pos = lt_depot["positions"][sym]
             curr_p = pos["current_price"]
             buy_p = pos["buy_price"]
+            lt_wert = lt_depot["cash"] + sum(
+                x["current_price"] * x["shares"] for x in lt_depot["positions"].values())
+            trim = self._trim_oversized_position("long_term", sym, lt_wert)
+            if trim:
+                actions_taken.append(trim)
+                pos = lt_depot["positions"].get(sym)
+                if not pos:
+                    continue
+                curr_p = pos["current_price"]
+
             lt_intel = self.deep_intel.get_asset_360_intelligence(sym)
             forensic = lt_intel.get("forensic_quality", {})
             q_score = forensic.get("quality_investing_score")

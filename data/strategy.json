@@ -42,5 +42,7 @@
     "long_term_bonus_pct": 14.0,
     "long_term_bonus_barrier_pct": 25.0,
     "long_term_swap_min_advantage": 20,
-    "daytrade_min_underlying_price": 1.0
+    "daytrade_min_underlying_price": 1.0,
+    "position_trim_tolerance": 1.25,
+    "max_position_pct_swing": 0.2
 }
