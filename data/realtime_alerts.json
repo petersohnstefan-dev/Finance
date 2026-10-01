@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-01 19:11:01",
+    "time_str": "19:11:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 8.08,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 1.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 19:11:01",
+    "time_str": "19:11:01",
+    "data_age_min": 3.0,
+    "window_span_min": 6.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.55,
+    "change_1min_pct": 0.76,
+    "vol_ratio": 0.9,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.76% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 19:10:59",
+    "time_str": "19:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RKLB",
+    "direction": "LONG",
+    "trigger_price": 70.71,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 2.9,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RKLB explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-01 19:06:01",
     "time_str": "19:06:01",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 4.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 18:25:52",
-    "time_str": "18:25:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 10.69,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 0.77,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 18:25:52",
-    "time_str": "18:25:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BEAM",
-    "direction": "SHORT",
-    "trigger_price": 24.54,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.34,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 18:25:51",
-    "time_str": "18:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 190.98,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
