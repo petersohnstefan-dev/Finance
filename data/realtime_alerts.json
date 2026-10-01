@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-01 14:10:54",
+    "time_str": "14:10:54",
+    "data_age_min": 1.1,
+    "window_span_min": 5.8,
+    "symbol": "REGN",
+    "direction": "LONG",
+    "trigger_price": 769.0,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 REGN explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 14:10:49",
+    "time_str": "14:10:49",
+    "data_age_min": 3.7,
+    "window_span_min": 2.1,
+    "symbol": "BMRN",
+    "direction": "SHORT",
+    "trigger_price": 60.0,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BMRN stürzt um -1.06% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 14:05:55",
     "time_str": "14:05:55",
     "data_age_min": 0.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 13:05:57",
-    "time_str": "13:05:57",
-    "data_age_min": 0.3,
-    "window_span_min": 4.7,
-    "symbol": "AMAT",
-    "direction": "SHORT",
-    "trigger_price": 523.27,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 13:05:56",
-    "time_str": "13:05:56",
-    "data_age_min": 0.0,
-    "window_span_min": 4.9,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 1059.5,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
