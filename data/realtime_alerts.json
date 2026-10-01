@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-01 11:16:06",
+    "time_str": "11:16:06",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "LONG",
+    "trigger_price": 23580.0,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 11:16:02",
+    "time_str": "11:16:02",
+    "data_age_min": 0.9,
+    "window_span_min": 9.2,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 19.02,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 11:11:08",
     "time_str": "11:11:08",
     "data_age_min": 4.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SMH stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:11:09",
-    "time_str": "10:11:09",
-    "data_age_min": 1.1,
-    "window_span_min": 5.1,
-    "symbol": "VOO",
-    "direction": "SHORT",
-    "trigger_price": 701.29,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VOO stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:11:09",
-    "time_str": "10:11:09",
-    "data_age_min": 3.2,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
