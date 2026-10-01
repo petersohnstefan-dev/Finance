@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-01 12:31:11",
+    "time_str": "12:31:11",
+    "data_age_min": 1.6,
+    "window_span_min": 4.7,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 16.64,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-01 12:20:55",
     "time_str": "12:20:55",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COIN explodiert um +0.76% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:40:56",
-    "time_str": "10:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.52,
-    "change_1min_pct": 1.16,
-    "vol_ratio": 1.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.16% in 5 Min.! Momentum aktiv."
   }
 ]
