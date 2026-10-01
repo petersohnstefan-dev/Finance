@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-01 17:21:02",
+    "time_str": "17:21:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 359.12,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 17:21:01",
+    "time_str": "17:21:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 338.5,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 17:21:01",
+    "time_str": "17:21:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 233.53,
+    "change_1min_pct": 1.03,
+    "vol_ratio": 0.65,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 17:16:09",
     "time_str": "17:16:09",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.94,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 16:50:57",
-    "time_str": "16:50:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "SHORT",
-    "trigger_price": 4.95,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 16:50:57",
-    "time_str": "16:50:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 58.93,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.97,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 16:50:57",
-    "time_str": "16:50:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 29.15,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
