@@ -1392,61 +1392,121 @@ elif app_mode == "🪙 Rohstoffe, Anleihen, Zinsen & Devisen (FICC)":
 
         b_hist_df = BondYieldsIntelEngine.get_historical_bond_chart_data(period="6mo")
         if not b_hist_df.empty:
+            # Drei Groessen, drei Felder, drei Achsen.
+            #
+            # Vorher lagen Rendite und TLT-Kurs im selben Feld: die Kurve setzte
+            # yaxis="y2", aber make_subplots war ohne zweite Achse angelegt, also
+            # hat Plotly beide auf dieselbe Achse gelegt. Die Rendite bewegt sich
+            # zwischen 4,25 und 5,29 - gut einen Punkt - auf einer Achse, die bis
+            # 86 reicht. Sie belegte damit 1,2% der Hoehe und sah aus wie eine
+            # gerade Linie, obwohl sie in sechs Monaten um 20,7% gestiegen ist.
+            #
+            # Die Reparatur ist nicht die fehlende zweite Achse, sondern ihr
+            # Verzicht: zwei Groessen verschiedener Dimension auf einer
+            # gemeinsamen Zeitachse gehoeren uebereinander, nicht uebereinander
+            # gelegt. So wird die Wippe sogar deutlicher - die eine Kurve steigt,
+            # waehrend die andere faellt.
+            _y = b_hist_df["us_10y_yield"].dropna()
+            _t = b_hist_df["tlt_bond_price"].dropna()
+            _r = b_hist_df["stock_to_bond_ratio"].dropna()
+
+            if len(_y) > 1 and len(_t) > 1:
+                k1, k2, k3 = st.columns(3)
+                k1.metric("US 10J-Rendite", f"{_y.iloc[-1]:.2f}%",
+                          f"{_y.iloc[-1] - _y.iloc[0]:+.2f} Punkte in 6 Monaten")
+                k2.metric("TLT (20J+ Anleihen)", f"${_t.iloc[-1]:.2f}",
+                          f"{(_t.iloc[-1]/_t.iloc[0]-1)*100:+.1f}%")
+                k3.metric("Aktien/Anleihen", f"{_r.iloc[-1]:.2f}",
+                          f"{(_r.iloc[-1]/_r.iloc[0]-1)*100:+.1f}%")
+
             fig_bonds = make_subplots(
-                rows=2, cols=1,
+                rows=3, cols=1,
                 shared_xaxes=True,
-                vertical_spacing=0.10,
+                vertical_spacing=0.09,
                 subplot_titles=(
-                    "⚖️ 1. Die Zins-Wippe: US 10-Jahres-Rendite (%) vs. 20+ Year Treasury Bond ETF ($ TLT)",
-                    "📊 2. Stock-to-Bond Ratio (S&P 500 vs. 20Y Treasuries: Steigend = Risk-On / Fallend = Risk-Off)"
+                    "1. US 10-Jahres-Rendite (%)",
+                    "2. Kurs langlaufender US-Staatsanleihen (TLT, $)",
+                    "3. Aktien/Anleihen-Verhältnis (SPY / TLT) — steigend = Risk-On",
                 ),
-                row_heights=[0.6, 0.4]
+                row_heights=[0.36, 0.34, 0.30],
             )
 
-            # Subplot 1: Yield vs Bond Price
             fig_bonds.add_trace(
                 go.Scatter(
                     x=b_hist_df["date"], y=b_hist_df["us_10y_yield"],
-                    name="US 10Y Rendite (%)",
-                    line=dict(color="#0284c7", width=2.5),
-                    hovertemplate="<b>Datum:</b> %{x}<br><b>US 10Y Rendite:</b> %{y:.2f}%<extra></extra>"
+                    name="US 10J-Rendite (%)", mode="lines",
+                    line=dict(color="#0284c7", width=2),
+                    hovertemplate="<b>%{x|%d.%m.%Y}</b><br>Rendite: %{y:.2f}%<extra></extra>",
                 ),
-                row=1, col=1
+                row=1, col=1,
             )
             fig_bonds.add_trace(
                 go.Scatter(
                     x=b_hist_df["date"], y=b_hist_df["tlt_bond_price"],
-                    name="TLT Bond-Preis ($)",
-                    line=dict(color="#10b981", width=2, dash="dot"),
-                    yaxis="y2",
-                    hovertemplate="<b>Datum:</b> %{x}<br><b>TLT Kurs:</b> $%{y:.2f}<extra></extra>"
+                    name="TLT ($)", mode="lines",
+                    line=dict(color="#0f766e", width=2),
+                    hovertemplate="<b>%{x|%d.%m.%Y}</b><br>TLT: $%{y:.2f}<extra></extra>",
                 ),
-                row=1, col=1
+                row=2, col=1,
             )
-
-            # Subplot 2: Stock-to-Bond Ratio
             fig_bonds.add_trace(
                 go.Scatter(
                     x=b_hist_df["date"], y=b_hist_df["stock_to_bond_ratio"],
-                    name="Stock-to-Bond Ratio (SPY/TLT)",
-                    line=dict(color="#f59e0b", width=2.5),
-                    fill="tozeroy",
-                    fillcolor="rgba(245, 158, 11, 0.08)",
-                    hovertemplate="<b>Datum:</b> %{x}<br><b>SPY/TLT Ratio:</b> %{y:.2f}<extra></extra>"
+                    name="SPY / TLT", mode="lines",
+                    line=dict(color="#b45309", width=2),
+                    hovertemplate="<b>%{x|%d.%m.%Y}</b><br>SPY/TLT: %{y:.2f}<extra></extra>",
                 ),
-                row=2, col=1
+                row=3, col=1,
             )
 
             fig_bonds.update_layout(
                 template="plotly_white",
-                height=520,
-                margin=dict(l=20, r=20, t=40, b=20),
-                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-                hovermode="x unified"
+                height=660,
+                margin=dict(l=60, r=24, t=46, b=30),
+                showlegend=False,          # jedes Feld fuehrt genau eine Reihe,
+                hovermode="x unified",     # der Titel benennt sie bereits
             )
-            fig_bonds.update_yaxes(title_text="Rendite (%)", row=1, col=1)
-            fig_bonds.update_yaxes(title_text="Stock/Bond Ratio", row=2, col=1)
+            for zeile_nr, titel in ((1, "Rendite (%)"), (2, "TLT ($)"),
+                                    (3, "SPY / TLT")):
+                fig_bonds.update_yaxes(
+                    title_text=titel, title_standoff=8, row=zeile_nr, col=1,
+                    gridcolor="rgba(148,163,184,0.22)", zeroline=False,
+                )
+                fig_bonds.update_xaxes(gridcolor="rgba(148,163,184,0.18)",
+                                       row=zeile_nr, col=1)
+            # Jedes Feld bekommt eine Spanne eng um seine eigenen Daten. Ohne das
+            # zieht Plotly die Achse bis zur Null herunter, und ein Verhaeltnis,
+            # das zwischen 7,7 und 9,8 schwankt, sieht auf einer Achse bis 10
+            # wieder aus wie eine gerade Linie - derselbe Fehler eine Ebene
+            # tiefer. Null ist hier kein sinnvoller Bezugspunkt: das Verhaeltnis
+            # kommt ihr nie nahe.
+            for zeile_nr, reihe in ((1, _y), (2, _t), (3, _r)):
+                if len(reihe) > 1:
+                    luft = max((reihe.max() - reihe.min()) * 0.12, 1e-9)
+                    fig_bonds.update_yaxes(
+                        range=[reihe.min() - luft, reihe.max() + luft],
+                        row=zeile_nr, col=1)
+            for anmerkung in fig_bonds.layout.annotations:
+                anmerkung.font.size = 13
+                anmerkung.xanchor = "left"
+                anmerkung.x = 0
+
             st.plotly_chart(fig_bonds, use_container_width=True)
+            st.caption(
+                "Renditen und Anleihekurse stehen bewusst **untereinander statt "
+                "übereinander**: Ein Prozentpunkt Rendite und ein Dollar Kurs sind "
+                "keine vergleichbaren Größen, und auf einer gemeinsamen Achse "
+                "erdrückt die größere Zahl die kleinere — die Rendite sah dort aus "
+                "wie eine gerade Linie. Getrennt ist die Wippe sogar besser zu "
+                "sehen: Feld 1 steigt, während Feld 2 fällt."
+            )
+        else:
+            st.warning(
+                "Keine historischen Anleihedaten abrufbar. Die Reihen stammen von "
+                "yfinance (^TNX, TLT, SPY); ausserhalb der US-Handelszeiten oder "
+                "bei einer Drosselung kommt nichts zurück."
+            )
+
 
         # 3. Educational Guide & Ratios
         st.markdown("---")
