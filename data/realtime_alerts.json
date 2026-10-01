@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-01 09:11:03",
+    "time_str": "09:11:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "VWS.CO",
+    "direction": "SHORT",
+    "trigger_price": 195.45,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VWS.CO stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-01 09:06:50",
     "time_str": "09:06:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONS explodiert um +1.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-09-30 22:11:03",
-    "time_str": "22:11:03",
-    "data_age_min": 0.9,
-    "window_span_min": 6.2,
-    "symbol": "URA",
-    "direction": "LONG",
-    "trigger_price": 40.5,
-    "change_1min_pct": 1.68,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 URA explodiert um +1.68% in 5 Min.! Momentum aktiv."
   }
 ]
