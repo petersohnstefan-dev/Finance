@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-01 11:11:08",
+    "time_str": "11:11:08",
+    "data_age_min": 4.7,
+    "window_span_min": 4.5,
+    "symbol": "CSCO",
+    "direction": "SHORT",
+    "trigger_price": 107.22,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CSCO stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-01 11:11:01",
+    "time_str": "11:11:01",
+    "data_age_min": 0.7,
+    "window_span_min": 5.3,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 354.06,
+    "change_1min_pct": 0.96,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.96% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-01 11:01:29",
     "time_str": "11:01:29",
     "data_age_min": 1.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:06:03",
-    "time_str": "10:06:03",
-    "data_age_min": 0.7,
-    "window_span_min": 5.3,
-    "symbol": "ISRG",
-    "direction": "SHORT",
-    "trigger_price": 407.29,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ISRG stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 10:06:03",
-    "time_str": "10:06:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "TXN",
-    "direction": "LONG",
-    "trigger_price": 286.09,
-    "change_1min_pct": 1.1,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TXN explodiert um +1.10% in 5 Min.! Momentum aktiv."
   }
 ]
