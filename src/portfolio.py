@@ -1405,6 +1405,34 @@ class PortfolioManager:
                     pos["stop_loss"] = trail_sl
                     pos["stop_source"] = "trail"
 
+
+            # Gewinnabgabe-Grenze: ein Boden unter dem Trailing-Stop.
+            #
+            # Eine ATR-Bremse wird zwangslaeufig WEITER, wenn die Volatilitaet
+            # steigt - und sie steigt durch genau die Nachricht, die den Gewinn
+            # erzeugt hat. Bei PACB wuchs der Trail-Abstand am 01.10.2026 von
+            # 14,7% auf 17,7%, waehrend die Position von +2% auf +52% lief: am
+            # weitesten weg, als am meisten zu verlieren war. Der Stop haette die
+            # Haelfte des Hoechstgewinns wieder freigegeben.
+            #
+            # Bewusst AUSSERHALB der ATR-Pruefung: der Boden braucht keine ATR,
+            # und wenn die Volatilitaet eines Werts nicht messbar ist, faellt
+            # sonst ausgerechnet bei der undurchsichtigsten Position jeder
+            # Schutz weg.
+            #
+            # Er greift erst ab einem deutlichen Gewinn - darunter wuerde er
+            # normale Positionen abschnueren - und senkt nie einen Stop, er hebt
+            # ihn nur. Das Depot hat sein Geld damit verloren, Gewinner zu frueh
+            # zu beenden; ein Drittel des Gewinns darf deshalb zurueckschwingen.
+            abgabe = self.strategy.get("short_term_max_giveback_pct", 0.33)
+            ab_gewinn = self.strategy.get("short_term_giveback_min_gain_pct", 0.25)
+            hoch_gewinn = (peak_p / buy_p - 1.0) if buy_p > 0 else 0.0
+            if hoch_gewinn >= ab_gewinn:
+                boden = round(buy_p * (1.0 + hoch_gewinn * (1.0 - abgabe)), 2)
+                if not pos.get("stop_loss") or pos["stop_loss"] < boden:
+                    pos["stop_loss"] = boden
+                    pos["stop_source"] = "gewinnabgabe"
+
             # Carry unwind: every position already in profit is pulled to breakeven
             # so a liquidity shock cannot turn a winner into a loser.
             if carry_unwind and curr_p > buy_p:
@@ -1424,6 +1452,9 @@ class PortfolioManager:
                 if curr_p >= buy_p:
                     self.sell("short_term", sym, curr_p, reason=f"🎯 Trailing Stop-Loss gegriffen (+{gain_pct:.1f}% Gewinn gesichert)")
                     actions_taken.append(f"VERKAUF {sym} (Trailing Profit +{gain_pct:.1f}%)")
+                elif pos.get("stop_source") == "gewinnabgabe":
+                    self.sell("short_term", sym, curr_p, reason=f"🔒 Gewinnabgabe-Grenze ({gain_pct:+.1f}%) — höchstens ein Drittel des Hoechstgewinns zurueckgegeben")
+                    actions_taken.append(f"VERKAUF {sym} (Gewinnabgabe-Grenze)")
                 elif pos.get("stop_source") in ("breakeven", "carry_unwind"):
                     # The stop that fired was not the protective stop from entry -
                     # it was pulled up to the entry price and then undercut. Name it
