@@ -357,5 +357,29 @@
         "max_trades_pro_tag": 32
       }
     }
+  },
+  "2026-10-01": {
+    "short_term": {
+      "runs": 1,
+      "scored": 12,
+      "entries": 0,
+      "best_score": 62.1,
+      "above_threshold": 0,
+      "threshold": 70.0,
+      "blocks": {
+        "unter_min_alpha_score": 1
+      }
+    },
+    "day_trading": {
+      "runs": 1,
+      "scored": 0,
+      "entries": 0,
+      "best_score": null,
+      "above_threshold": 0,
+      "threshold": 70.0,
+      "blocks": {
+        "ausserhalb_handelszeit": 1
+      }
+    }
   }
 }
