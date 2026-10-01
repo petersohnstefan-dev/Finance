@@ -635,6 +635,61 @@ class PortfolioManager:
         max_notional = depot_value * self.strategy.get("max_position_pct_of_depot", 0.08)
         return min(position_size, max_notional)
 
+    #: Ab welchem Hoechstgewinn der Boden greift und wie viel davon
+    #: zurueckgegeben werden darf - je Depot, weil die Horizonte verschieden sind.
+    GIVEBACK_DEFAULTS = {
+        "short_term":  {"ab_gewinn": 0.25, "abgabe": 0.33},
+        "medium_term": {"ab_gewinn": 0.25, "abgabe": 0.33},
+        # Langfrist bewusst viel lockerer: dieses Depot verkauft sonst gar nicht
+        # auf Kursbasis, sondern nur bei gemessener Qualitaetsverschlechterung.
+        # Ein enger Kursboden wuerde genau das tun, wogegen es gebaut ist -
+        # Qualitaet im Marktrueckgang abwerfen. Er greift erst bei einer
+        # Verdopplung und laesst die Haelfte zurueckschwingen; das faengt den
+        # Fall "hat sich verdreifacht und faellt jetzt zusammen" ab, nicht den
+        # gewoehnlichen Rueckschlag.
+        "long_term":   {"ab_gewinn": 1.00, "abgabe": 0.50},
+    }
+
+    def _apply_giveback_floor(self, depot_key: str, pos: Dict[str, Any],
+                              buy_p: float, peak_p: float) -> bool:
+        """Hebt den Stop so an, dass nur ein Teil des Hoechstgewinns zurueckkann.
+
+        Ein ATR-Trail wird zwangslaeufig WEITER, wenn die Volatilitaet steigt -
+        und sie steigt durch genau die Nachricht, die den Gewinn erzeugt. Bei
+        PACB wuchs der Trail-Abstand am 01.10.2026 von 14,7% auf 17,7%, waehrend
+        die Position von +2% auf +52% lief: am weitesten weg, als am meisten zu
+        verlieren war.
+
+        Der Boden haengt deshalb nicht an der Volatilitaet, sondern am Gewinn
+        selbst. Er senkt nie einen Stop, er hebt ihn nur - wo der vorhandene
+        Trail bereits enger steht, tut er nichts. Beim Mittelfristdepot ist das
+        regelmaessig der Fall: dessen fester 8%-Trail gibt bei +100% nur 16%
+        zurueck, der Boden erst bei kleinen Gewinnen etwas, wo jener bis zu 48%
+        freigibt.
+
+        Bewusst ausserhalb jeder ATR-Pruefung: laege er darin, fiele ausgerechnet
+        bei der Position jeder Schutz weg, deren Volatilitaet sich nicht messen
+        laesst.
+        """
+        if buy_p <= 0:
+            return False
+        werte = self.GIVEBACK_DEFAULTS.get(depot_key)
+        if not werte:
+            return False
+        ab_gewinn = self.strategy.get(f"{depot_key}_giveback_min_gain_pct",
+                                      werte["ab_gewinn"])
+        abgabe = self.strategy.get(f"{depot_key}_max_giveback_pct", werte["abgabe"])
+
+        hoch_gewinn = peak_p / buy_p - 1.0
+        if hoch_gewinn < ab_gewinn:
+            return False
+        boden = round(buy_p * (1.0 + hoch_gewinn * (1.0 - abgabe)), 2)
+        if pos.get("stop_loss") and pos["stop_loss"] >= boden:
+            return False
+        pos["stop_loss"] = boden
+        pos["stop_source"] = "gewinnabgabe"
+        return True
+
     def _trim_oversized_position(self, depot_key: str, sym: str,
                                  depot_value: float) -> Optional[str]:
         """Stutzt eine Position zurueck, die durch Kursgewinne ueber den Deckel gewachsen ist.
@@ -1406,32 +1461,8 @@ class PortfolioManager:
                     pos["stop_source"] = "trail"
 
 
-            # Gewinnabgabe-Grenze: ein Boden unter dem Trailing-Stop.
-            #
-            # Eine ATR-Bremse wird zwangslaeufig WEITER, wenn die Volatilitaet
-            # steigt - und sie steigt durch genau die Nachricht, die den Gewinn
-            # erzeugt hat. Bei PACB wuchs der Trail-Abstand am 01.10.2026 von
-            # 14,7% auf 17,7%, waehrend die Position von +2% auf +52% lief: am
-            # weitesten weg, als am meisten zu verlieren war. Der Stop haette die
-            # Haelfte des Hoechstgewinns wieder freigegeben.
-            #
-            # Bewusst AUSSERHALB der ATR-Pruefung: der Boden braucht keine ATR,
-            # und wenn die Volatilitaet eines Werts nicht messbar ist, faellt
-            # sonst ausgerechnet bei der undurchsichtigsten Position jeder
-            # Schutz weg.
-            #
-            # Er greift erst ab einem deutlichen Gewinn - darunter wuerde er
-            # normale Positionen abschnueren - und senkt nie einen Stop, er hebt
-            # ihn nur. Das Depot hat sein Geld damit verloren, Gewinner zu frueh
-            # zu beenden; ein Drittel des Gewinns darf deshalb zurueckschwingen.
-            abgabe = self.strategy.get("short_term_max_giveback_pct", 0.33)
-            ab_gewinn = self.strategy.get("short_term_giveback_min_gain_pct", 0.25)
-            hoch_gewinn = (peak_p / buy_p - 1.0) if buy_p > 0 else 0.0
-            if hoch_gewinn >= ab_gewinn:
-                boden = round(buy_p * (1.0 + hoch_gewinn * (1.0 - abgabe)), 2)
-                if not pos.get("stop_loss") or pos["stop_loss"] < boden:
-                    pos["stop_loss"] = boden
-                    pos["stop_source"] = "gewinnabgabe"
+            # Gewinnabgabe-Grenze - siehe _apply_giveback_floor.
+            self._apply_giveback_floor("short_term", pos, buy_p, peak_p)
 
             # Carry unwind: every position already in profit is pulled to breakeven
             # so a liquidity shock cannot turn a winner into a loser.
@@ -1748,6 +1779,12 @@ class PortfolioManager:
             if gain_pct >= 20.0:
                 pos["stop_loss"] = max(pos.get("stop_loss", 0), round(peak_p * 0.92, 2))  # 8% trailing room
 
+            # Gewinnabgabe-Grenze. Der feste 8%-Trail darueber gibt bei kleinen
+            # Gewinnen am meisten frei - bei +20% sind es 48% des Gewinns - und
+            # wird erst bei grossen Gewinnen eng. Genau diese Luecke schliesst
+            # der Boden; wo der Trail bereits enger steht, tut er nichts.
+            self._apply_giveback_floor("medium_term", pos, buy_p, peak_p)
+
             if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
                 if curr_p >= buy_p:
                     self.sell("medium_term", sym, curr_p, reason=f"🎯 Mittelfrist-Trailing-Stop gegriffen (+{gain_pct:.1f}% Gewinn gesichert)")
@@ -1861,6 +1898,19 @@ class PortfolioManager:
                 if not pos:
                     continue
                 curr_p = pos["current_price"]
+
+            lt_peak = max(pos.get("peak_price", buy_p), curr_p)
+            pos["peak_price"] = lt_peak
+            if self._apply_giveback_floor("long_term", pos, buy_p, lt_peak):
+                actions_taken.append(
+                    f"STOP {sym} auf {pos['stop_loss']} (Gewinnabgabe-Grenze)")
+            if pos.get("stop_loss") and curr_p <= pos["stop_loss"]:
+                gewinn = ((curr_p - buy_p) / buy_p * 100.0) if buy_p > 0 else 0.0
+                self.sell("long_term", sym, curr_p,
+                          reason=f"🔒 Gewinnabgabe-Grenze ({gewinn:+.1f}%) — nach einer "
+                                 f"Verdopplung hoechstens die Haelfte zurueckgegeben")
+                actions_taken.append(f"VERKAUF {sym} (Gewinnabgabe-Grenze)")
+                continue
 
             lt_intel = self.deep_intel.get_asset_360_intelligence(sym)
             forensic = lt_intel.get("forensic_quality", {})
