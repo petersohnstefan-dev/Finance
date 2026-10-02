@@ -479,37 +479,10 @@
   }
  },
  "SOFI": {
-  "fetched_ts": 1789496203.9590807,
+  "fetched_ts": 1790945782.2718148,
   "scores": {
-   "available": true,
-   "piotroski": 3,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": null,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": null,
-   "altman_detail": null,
-   "altman_not_applicable": true,
-   "sector": "Financial Services",
-   "beneish_m": null,
-   "beneish_detail": {
-    "DSRI": 1.0995106564903951,
-    "GMI": null,
-    "AQI": null,
-    "SGI": 1.383185662520451,
-    "DEPI": 1.1300858530229512,
-    "SGAI": 0.9318609423874754,
-    "LVGI": null,
-    "TATA": 0.08337422319623593
-   },
-   "computed_at": "2026-09-15"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "HUBS": {
@@ -1957,7 +1930,7 @@
   }
  },
  "NVAX": {
-  "fetched_ts": 1790340094.777632,
+  "fetched_ts": 1790945782.795281,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -2664,7 +2637,7 @@
   }
  },
  "QCOM": {
-  "fetched_ts": 1790249534.3037596,
+  "fetched_ts": 1790945782.025133,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
