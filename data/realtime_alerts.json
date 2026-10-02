@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-02 22:36:05",
+    "time_str": "22:36:05",
+    "data_age_min": 1.7,
+    "window_span_min": 5.4,
+    "symbol": "LIN",
+    "direction": "LONG",
+    "trigger_price": 483.0,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LIN explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 22:35:58",
+    "time_str": "22:35:58",
+    "data_age_min": 2.7,
+    "window_span_min": 3.3,
+    "symbol": "GTLB",
+    "direction": "SHORT",
+    "trigger_price": 49.53,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GTLB stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 22:35:54",
+    "time_str": "22:35:54",
+    "data_age_min": 5.9,
+    "window_span_min": 7.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.48,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.48% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-02 22:31:15",
     "time_str": "22:31:15",
     "data_age_min": 2.3,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.7,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ALNY stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:55:54",
-    "time_str": "21:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NVCR",
-    "direction": "SHORT",
-    "trigger_price": 14.93,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVCR stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:51:02",
-    "time_str": "21:51:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 33.04,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:51:02",
-    "time_str": "21:51:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "SHORT",
-    "trigger_price": 33.4,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
