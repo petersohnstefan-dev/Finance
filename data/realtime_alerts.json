@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-02 13:21:04",
+    "time_str": "13:21:04",
+    "data_age_min": 1.4,
+    "window_span_min": 4.7,
+    "symbol": "BKNG",
+    "direction": "SHORT",
+    "trigger_price": 161.63,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKNG stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 13:20:58",
+    "time_str": "13:20:58",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.85,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.87% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 13:20:58",
+    "time_str": "13:20:58",
+    "data_age_min": 4.1,
+    "window_span_min": 6.9,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 3.8,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 13:20:57",
+    "time_str": "13:20:57",
+    "data_age_min": 0.0,
+    "window_span_min": 4.9,
+    "symbol": "APP",
+    "direction": "SHORT",
+    "trigger_price": 269.96,
+    "change_1min_pct": 0.9,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 13:11:04",
     "time_str": "13:11:04",
     "data_age_min": 4.6,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ISRG stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:21:02",
-    "time_str": "10:21:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.54,
-    "change_1min_pct": 1.22,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.22% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:21:01",
-    "time_str": "10:21:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.41,
-    "vol_ratio": 2.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD explodiert um +1.41% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:21:01",
-    "time_str": "10:21:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.24,
-    "change_1min_pct": 1.02,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:21:01",
-    "time_str": "10:21:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DOGE-USD",
-    "direction": "LONG",
-    "trigger_price": 0.1,
-    "change_1min_pct": 1.07,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DOGE-USD explodiert um +1.07% in 5 Min.! Momentum aktiv."
   }
 ]
