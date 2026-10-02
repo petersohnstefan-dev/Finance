@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-02 20:11:03",
+    "time_str": "20:11:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 15.8,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 20:11:03",
+    "time_str": "20:11:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "RDDT",
+    "direction": "LONG",
+    "trigger_price": 147.47,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 1.76,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 20:11:01",
+    "time_str": "20:11:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 54.85,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 3.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 20:10:58",
+    "time_str": "20:10:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "SHORT",
+    "trigger_price": 4.7,
+    "change_1min_pct": 1.4,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD stürzt um -1.40% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 20:05:47",
     "time_str": "20:05:47",
     "data_age_min": 2.8,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.67,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -3.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 18:11:02",
-    "time_str": "18:11:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 58.29,
-    "change_1min_pct": 0.83,
-    "vol_ratio": 2.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.83% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 18:11:02",
-    "time_str": "18:11:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 76.61,
-    "change_1min_pct": 0.88,
-    "vol_ratio": 1.76,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -0.88% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 18:11:01",
-    "time_str": "18:11:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SRPT",
-    "direction": "SHORT",
-    "trigger_price": 17.32,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRPT stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 18:06:01",
-    "time_str": "18:06:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 8.24,
-    "change_1min_pct": 0.96,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.96% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
