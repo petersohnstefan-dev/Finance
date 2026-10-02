@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-02 22:50:45",
+    "time_str": "22:50:45",
+    "data_age_min": 3.6,
+    "window_span_min": 3.2,
+    "symbol": "TXN",
+    "direction": "SHORT",
+    "trigger_price": 293.0,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 22:50:38",
+    "time_str": "22:50:38",
+    "data_age_min": 1.6,
+    "window_span_min": 5.1,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 212.76,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 22:50:37",
+    "time_str": "22:50:37",
+    "data_age_min": 0.9,
+    "window_span_min": 3.7,
+    "symbol": "DUOL",
+    "direction": "LONG",
+    "trigger_price": 143.5,
+    "change_1min_pct": 1.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL explodiert um +1.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-02 22:45:59",
     "time_str": "22:45:59",
     "data_age_min": 0.7,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.93,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:56:02",
-    "time_str": "21:56:02",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "TSLA",
-    "direction": "SHORT",
-    "trigger_price": 370.15,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 1.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TSLA stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:55:56",
-    "time_str": "21:55:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FSLR",
-    "direction": "SHORT",
-    "trigger_price": 174.68,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 2.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 21:55:56",
-    "time_str": "21:55:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 15.77,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 2.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
