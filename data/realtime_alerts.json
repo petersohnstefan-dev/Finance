@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-02 07:10:52",
+    "time_str": "07:10:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "AAVE-USD",
+    "direction": "SHORT",
+    "trigger_price": 184.01,
+    "change_1min_pct": 1.23,
+    "vol_ratio": 0.41,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AAVE-USD stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 07:05:50",
     "time_str": "07:05:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ROIV explodiert um +1.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 22:11:14",
-    "time_str": "22:11:14",
-    "data_age_min": 4.5,
-    "window_span_min": 4.7,
-    "symbol": "SO",
-    "direction": "SHORT",
-    "trigger_price": 82.85,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SO stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
