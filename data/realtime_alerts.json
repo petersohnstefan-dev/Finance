@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-02 20:31:10",
+    "time_str": "20:31:10",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.83,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 0.71,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 20:31:05",
+    "time_str": "20:31:05",
+    "data_age_min": 3.1,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.14,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 20:26:02",
     "time_str": "20:26:02",
     "data_age_min": 2.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.56,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 19:11:02",
-    "time_str": "19:11:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "IOT",
-    "direction": "SHORT",
-    "trigger_price": 40.87,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IOT stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 19:11:01",
-    "time_str": "19:11:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 76.36,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
