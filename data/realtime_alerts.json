@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-02 13:51:04",
+    "time_str": "13:51:04",
+    "data_age_min": 1.7,
+    "window_span_min": 5.3,
+    "symbol": "BKNG",
+    "direction": "LONG",
+    "trigger_price": 162.49,
+    "change_1min_pct": 0.89,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKNG explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 13:50:58",
+    "time_str": "13:50:58",
+    "data_age_min": 0.3,
+    "window_span_min": 3.7,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.82,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 13:50:57",
+    "time_str": "13:50:57",
+    "data_age_min": 0.6,
+    "window_span_min": 5.4,
+    "symbol": "ACHR",
+    "direction": "SHORT",
+    "trigger_price": 5.06,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 13:46:03",
     "time_str": "13:46:03",
     "data_age_min": 2.4,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 11:55:57",
-    "time_str": "11:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "VWS.CO",
-    "direction": "SHORT",
-    "trigger_price": 195.2,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.97,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VWS.CO stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 11:40:50",
-    "time_str": "11:40:50",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.55,
-    "change_1min_pct": 1.05,
-    "vol_ratio": 1.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 11:31:10",
-    "time_str": "11:31:10",
-    "data_age_min": 3.2,
-    "window_span_min": 5.0,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 199.89,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
