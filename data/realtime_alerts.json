@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-02 11:31:10",
+    "time_str": "11:31:10",
+    "data_age_min": 3.2,
+    "window_span_min": 5.0,
+    "symbol": "ZS",
+    "direction": "SHORT",
+    "trigger_price": 199.89,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 11:31:08",
+    "time_str": "11:31:08",
+    "data_age_min": 1.9,
+    "window_span_min": 2.3,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 56.6,
+    "change_1min_pct": 1.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +1.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-02 11:20:57",
     "time_str": "11:20:57",
     "data_age_min": 1.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.21,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WIF-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 23:53:20",
-    "time_str": "23:53:20",
-    "data_age_min": 4.5,
-    "window_span_min": 4.8,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 3.9,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-01 23:53:20",
-    "time_str": "23:53:20",
-    "data_age_min": 2.4,
-    "window_span_min": 9.9,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 3.78,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
