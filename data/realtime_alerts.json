@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-02 17:55:58",
+    "time_str": "17:55:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ESTC",
+    "direction": "SHORT",
+    "trigger_price": 93.17,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.94,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ESTC stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 17:55:56",
+    "time_str": "17:55:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 12.48,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 17:50:57",
     "time_str": "17:50:57",
     "data_age_min": 2.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.12,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARRY stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 17:10:56",
-    "time_str": "17:10:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.82,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 17:10:55",
-    "time_str": "17:10:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 356.97,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
