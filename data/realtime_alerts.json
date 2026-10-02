@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-02 18:23:11",
+    "time_str": "18:23:11",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 43.65,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-02 18:21:01",
     "time_str": "18:21:01",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.15,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MU stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 17:21:04",
-    "time_str": "17:21:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "SHORT",
-    "trigger_price": 22.01,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
