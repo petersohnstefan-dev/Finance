@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-02 12:01:16",
+    "time_str": "12:01:16",
+    "data_age_min": 12.9,
+    "window_span_min": 5.4,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 57.0,
+    "change_1min_pct": 0.7,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-02 11:55:57",
     "time_str": "11:55:57",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JUP-USD stürzt um -1.46% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 07:20:51",
-    "time_str": "07:20:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BONK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BONK-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
