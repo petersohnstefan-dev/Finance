@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-02 15:15:52",
+    "time_str": "15:15:52",
+    "data_age_min": 0.2,
+    "window_span_min": 4.7,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.85,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 15:15:51",
+    "time_str": "15:15:51",
+    "data_age_min": 0.2,
+    "window_span_min": 3.7,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 344.0,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 15:11:02",
     "time_str": "15:11:02",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 14:46:03",
-    "time_str": "14:46:03",
-    "data_age_min": 2.0,
-    "window_span_min": 9.0,
-    "symbol": "URA",
-    "direction": "LONG",
-    "trigger_price": 40.21,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 URA explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 14:46:02",
-    "time_str": "14:46:02",
-    "data_age_min": 2.1,
-    "window_span_min": 6.0,
-    "symbol": "FBTC",
-    "direction": "SHORT",
-    "trigger_price": 75.21,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FBTC stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
