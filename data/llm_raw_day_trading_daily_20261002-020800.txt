@@ -1,0 +1,143 @@
+Professional Quant Analyst & Trading Coach.
+Analyze performance, identify weaknesses, and suggest concrete parameter changes.
+`day_trading` (Daytrading).
+
+        *   *Today (2026-10-01):* 3 trades, 33.3% WR, Avg Win 5.0€, Avg Loss 16.39€, Expectancy -9.26€, PnL -27.78€.
+        *   *Overall:* 53 trades, 28.3% WR, Expectancy -80.04€, PnL -4242.23€.
+        *   *4-Week Trend (Crucial):*
+            *   Tag 8-14: Median -45.89€, Mean -60.11€ (defektbereinigt).
+            *   Tag 15-28: Median -44.99€, Mean -95.78€.
+            *   Last 7 Days: Median -7.17€, Mean -14.73€.
+            *   *Trend Check:* Median improved significantly (-45 to -7), Mean improved significantly (-60 to -14). Direction is **"besser"** (improving).
+
+        *   Leverage: 2.5 (last changed 2026-09-25).
+        *   Risk/Trade: 0.015 (last changed 2026-09-28).
+        *   Min Entry Score: 70 (last changed 2026-09-24).
+        *   Min R/R: 2.5 (last changed 2026-09-25).
+        *   Stop Loss %: 0.14 (last changed 2026-09-30).
+        *   Trailing Breakeven: 0.05 (last changed 2026-09-30).
+        *   *Note:* Recent changes in Stop Loss and Breakeven have only 3 trades each.
+
+        *   EOD-Zwangsverkauf: 67.9% (36 trades). PnL avg -2.53%.
+        *   Stop-Loss: 17% (9 trades). PnL avg -33.5%.
+        *   Trailing-Stop: 7.5% (4 trades). PnL avg +15.66%.
+        *   Breakeven-Stop: 5.7% (3 trades). PnL avg -2.48%.
+        *   Knock-Out: 1.9% (1 trade).
+        *   *Analysis:* The Stop-Loss group is bleeding heavily (-33.5% per trade). EOD sales are neutral/slightly negative.
+
+        *   `avg_score_winners`: 74.1
+        *   `avg_score_losers`: 74.4
+        *   `separation`: -0.3
+        *   *Critical insight:* A separation of -0.3 means the entry score is **useless**. It doesn't differentiate winners from losers. Raising the threshold will only reduce trade count without improving quality.
+
+        *   `runs`: 194, `scored`: 82, `entries`: 3, `best_score`: 75, `threshold`: 70.
+        *   `blocks`: "kein_cash_oder_slot_frei" (126) is the dominant blocker. This is a capacity/capital issue, not an entry logic issue.
+
+    *   *Is the system improving?* Yes. The Median and Mean (defektbereinigt) show a strong upward trend (becoming less negative).
+    *   *Rule Check:* "Verbessert sich das Depot bereits, sind KLEINERE Korrekturen angebracht oder gar keine. Gegen eine laufende Verbesserung anzureden zerstört sie."
+    *   *Core Issue:* The Entry Score is currently non-predictive (separation -0.3). However, the "Stop-Loss" exit is the primary driver of large losses (avg -33.5%).
+    *   *Stop Loss Strategy:* The current `daytrade_stop_loss_pct` is 0.14. The user is losing 33.5% per stop-loss trade. This suggests the stop-loss is being hit frequently in deep negative territory.
+    *   *Wait:* Look at the `short_term` parameters vs `daytrade` parameters. The `daytrade_stop_loss_pct` is 0.14 (14%). A loss of 33.5% on a trade with 2.5x leverage means the underlying moved ~13.4%.
+    *   *Risk Management:* The risk per trade is 0.015 (1.5%). With 2.5x leverage, a 14% move in underlying = 35% move in position. 35% * 1.5% risk? No, the parameter `daytrade_max_risk_per_trade_pct` is 0.015.
+    *   *Re-evaluating the Stop-Loss:* If the avg loss on a Stop-Loss exit is -33.5% *of the position value*? No, the statistics say "pnl_schnitt_eur: -227.5".
+    *   *Let's look at the recent trades:*
+        *   CL=F: +5.00 (1.1%)
+        *   KO309107: -19.10 (-4.2%)
+        *   KO588971: -13.67 (-3.0%)
+        *   The total loss is driven by the *frequency* and *size* of losses.
+    *   *Can I change the entry score?* No, separation is negative.
+    *   *Can I change the Stop Loss?* The rule says "unter 5 [trades], eine erneute Aenderung in dieselbe Richtung wird abgelehnt". `daytrade_stop_loss_pct` was changed on 2026-09-30 (3 trades ago). I cannot change it in the same direction (decreasing/increasing) yet.
+    *   *Can I change the leverage?* Leverage is at 2.5. It was reduced from 10 to 3 to 2.5. It is near the bottom.
+    *   *Can I change the R/R?* `daytrade_min_risk_reward_ratio` is 2.5. It was changed on 2026-09-25 (14 trades ago).
+    *   *What about the Breakeven?* `daytrade_trailing_breakeven_pct` was changed on 2026-09-30 (3 trades ago). I cannot change it in the same direction yet.
+
+    *   The system is showing a clear improvement in the median and mean (becoming less negative).
+    *   The entry score is currently not working as a filter (separation -0.3).
+    *   The primary reason for large PnL hits is the Stop-Loss exit (17% of trades, but massive average loss).
+    *   *However*, the instruction is: "Verbessert sich das Depot bereits, sind KLEINERE Korrekturen angebracht oder gar keine."
+    *   Since the trend is "besser" and we are in the middle of testing recent changes (Stop Loss and Breakeven only have 3 trades each), the most professional course of action is **Nichts ändern** (Do nothing).
+
+    *   *Wait, look at the "Missed Opportunities":* There are many "EXTREM" urgency signals. But looking at the "blocks", "kein_cash_oder_slot_frei" (126) is the main reason for not trading. This means the bot wants to trade but has no capital/slots. This isn't a parameter issue, it's a capacity/balance issue.
+
+    *   *Wait, let's double-check the "Separation":* -0.3. If I increase the `min_entry_score`, I will get fewer trades, but since the score doesn't separate winners from losers, I won't get *better* trades. The loss will just happen more slowly.
+
+    *   *Conclusion:* The system is in a recovery phase (trend is up). Recent changes to Stop Loss and Breakeven are still being "proven" (only 3 trades). Any change now would violate the "don't interrupt a running improvement" and "wait for 5 trades" rules.
+
+    *   *Reflection:* The system's performance is improving (Median/Mean moving towards zero). The entry score currently lacks predictive power (separation -0.3). The primary loss driver is the Stop-Loss group, but recent adjustments to `daytrade_stop_loss_pct` and `daytrade_trailing_breakeven_pct` have only been tested on 3 trades.
+    *   *Missed Opportunities:* Many high-momentum signals were missed, primarily due to `kein_cash_oder_slot_frei` (lack of capital/slots).
+    *   *Lesson:* Don't trust the entry score when separation is near zero. Focus on exit quality and wait for enough sample size (5 trades) before adjusting recent parameters.
+    *   *Parameter Changes:* `{}`.
+
+    *   `daytrade_max_risk_per_trade_pct` (0.015) -> last changed 10 trades ago.
+    *   `daytrade_min_risk_reward_ratio` (2.5) -> last changed 14 trades ago.
+    *   `daytrade_min_entry_score` (70) -> last changed 17 trades ago.
+    *   `daytrade_max_leverage` (2.5) -> last changed 14 trades ago.
+    *   `daytrade_stop_loss_pct` (0.14) -> last changed 3 trades ago.
+    *   `daytrade_trailing_breakeven_pct` (0.05) -> last changed 3 trades ago.
+
+    *Strict Rule:* "unter 5, eine erneute Aenderung in dieselbe Richtung wird abgelehnt".
+    *Strict Rule:* "Verbessert sich das Depot bereits, sind KLEINERE Korrekturen angebracht oder gar keine."
+
+    The trend is clearly improving. The most disciplined action is to wait.
+
+    *   *Reflection:* The quantitative trend is positive. The median loss has dropped from ~45€ to ~7€ in the last window. The "Stop-Loss" exit group remains the largest source of drawdown, but the entry score shows zero predictive value (Separation -0.3), meaning we cannot solve the "bad trades" problem by simply raising the score.
+    *   *Missed Opportunities:* Significant momentum signals (e.g., SYM +1.46%, AFRM -1.28%) were blocked by `kein_cash_oder_slot_frei`, indicating the system is capital-constrained rather than logic-constrained.
+    *   *Lesson:* The current recovery phase must be allowed to play out. Recent changes to exit parameters (Stop Loss/Breakeven) lack sufficient statistical significance (n=3). Raising the entry score would be futile due to the negative separation.
+
+    *Self-Correction during drafting:* I must ensure I address the "separation" properly. Since separation is -0.3, I should explicitly state that increasing the score is not an option.
+
+    *One more check on "Stop Loss":* The loss per stop-loss trade is huge (-227.5€ avg). This is likely due to the absolute size of the position or the volatility. Since the leverage is low (2.5), this is more about the "Max Risk per Trade" and "Stop Loss %" interaction. But again, the recent change to Stop Loss is too fresh.
+
+    *Final decision:* No changes.
+
+    *Wait, let me check if I can suggest a change to `daytrade_min_entry_score`?* No, because separation is negative.
+
+    *Wait, let me check if I can suggest a change to `daytrade_max_risk_per_trade_pct`?* It's 0.015. It was 0.005, then 0.01, then 0.015. The direction is "up" (increasing risk). It was changed 10 trades ago. It is eligible for a change, but the trend is improving, so "nichts ändern" is better.
+
+    *Double check the stats:*
+    - 7 days: 21 trades, -309.41 EUR.
+    - 8-14 days: 18 trades, -2591.83 EUR.
+    - 15-28 days: 14 trades, -1340.99 EUR.
+    The improvement is massive. The system is clearly turning around.
+
+    *Wait, what about the "separation" lesson?*
+    "separation" um 0 oder negativ heisst, der Score sagt nichts vorher. Dann bringt eine hoehere Huerde NICHTS ausser weniger Trades; setze stattdessen an Stop- und Risikoparametern an und weise in "lesson" darauf hin.
+
+    This is the key.
+
+    *Final check on JSON format:* Needs to be just the JSON.
+
+    *Analysis of "Missed Opportunities":*
+    The signals like SYM (+1.46% in 5m) were "EXTREM". They were missed because of "kein_cash_oder_slot_frei". This means the bot is running out of money/slots to take even the most obvious trades. This is why the PnL is struggling to recover. However, as an analyst, I cannot "fix" the balance, I can only adjust parameters. Changing `max_daily_trades` or `max_correlated_positions` might help, but we don't have evidence that those trades would have been profitable, especially since the entry score has no predictive power.
+
+    *Final plan:*
+    Reflection: Improvement trend, Stop-Loss bleeding, Score uselessness.
+    Missed: Capital constraint (slots).
+    Lesson: Separation is 0 -> Score is useless. Exit parameters are the lever, not the entry score.
+    Changes: {}.
+
+    *Wait, one detail:* The "Stop-Loss" avg loss is -227.5€. This is very high compared to the "Gewinner" of 5€. This asymmetry (Win 5, Loss 227) is what's killing the expectancy. The "Stop-Loss" group has 9 trades. The "EOD" group has 36 trades.
+    Wait, if the Stop-Loss is 14% (0.14), and the avg loss is 227€, the position size must be huge.
+    If the max risk is 1.5% (0.015), and the stop is 14% (0.14), then the position size = 0.015 / 0.14 = 10.7% of the depot.
+    10.7% of a depot that has lost 4242€... if the depot was 50,000€, 10.7% is 5350€. 14% of 5350 is 749€.
+    The math of the provided PnL vs the statistics is slightly fuzzy in the prompt's text, but I will stick to the instructions: "Verbessert sich das Depot bereits... keine Änderungen."
+
+    The median is the star here: -45 -> -44 -> -7. The system is recovering.
+
+    One last look at "short_term_breakeven_trigger_atr": It was 2.0, and the "untergrenze" is 1.5. The prompt says "Senke ihn nicht mit der Begründung, Verluste zu begrenzen". Okay.
+
+    Everything points to: Nichts ändern.
+
+    *JSON Construction:*
+    `reflection`: "Die quantitative Analyse zeigt eine signifikante Trendwende: Der Median der Verluste hat sich von ca. -45€ (Tag 8-14) auf -7€ (letzte 7 Tage) verbessert. Trotz des negativen Gesamt-PnLs ist die Richtung positiv. Die Hauptschwachstelle ist die extreme Asymmetrie zwischen dem Durchschnittsgewinn (5€) und den Stop-Loss-Verlusten (ca. 227€ pro Trade in der Gruppe), was die Expectancy massiv drückt. Die Entry-Score-Kalibrierung ist aktuell wertlos (Separation -0.3), was bedeutet, dass der aktuelle Score keine Unterscheidungskraft zwischen Win/Loss besitzt."
+    `missed_opportunities`: "Zahlreiche hochvolatile Signale (z.B. SYM, AFRM) wurden aufgrund von 'kein_cash_oder_slot_frei' nicht ergriffen. Dies deutet darauf hin, dass das System an seine Kapazitätsgrenzen (Cash/Slots) stößt, was die Erholung des Depots erschwert."
+    `lesson`: "Ein negativer Separation-Wert (-0.3) bedeutet, dass eine Erhöhung des Entry-Scores die Qualität der Trades nicht verbessert, sondern lediglich die Handelsfrequenz senkt. Da die Ausstiegsanalyse zeigt, dass die Stop-Loss-Gruppe für die größten Einzelverluste verantwortlich ist, müssen zukünftig die Ausstiegs-Parameter (Trailing/Stop) und nicht die Einstiegs-Hürden optimiert werden. Da die jüngsten Änderungen an Stop-Loss und Breakeven erst 3 Trades hinter sich haben, ist eine weitere Anpassung statistisch nicht gedeckt."
+    `parameter_changes`: {}
+    `change_reasoning`: "Der Trend ist eindeutig positiv (Median und bereinigter Mittelwert steigen). Gemäß der Anweisung werden keine Änderungen vorgenommen, solange eine laufende Verbesserung erkennbar ist und die letzten Parameteränderungen (Stop-Loss, Breakeven) noch nicht durch die geforderten 5 Trades validiert wurden."
+{
+  "reflection": "Die quantitative Analyse zeigt eine deutliche, signifikante Trendwende: Während die Gesamtstatistik durch die historische Verlustphase noch vernichtend wirkt, zeigt der Median der Verluste eine massive Verbesserung von ca. -45€ (Tag 8-14) auf aktuell -7€ (letzte 7 Tage). Das System befindet sich in einer Erholungsphase. Die größte Schwachstelle ist die extreme Asymmetrie im PnL: Der durchschnittliche Gewinn pro Gewinner (5€) steht in keinem gesunden Verhältnis zu den Verlusten in der Stop-Loss-Gruppe (Durchschnitt ca. -227€), was die Expectancy massiv nach unten drückt. Zudem zeigt die Entry-Score-Kalibrierung eine Separation von -0.3, was bedeutet, dass der aktuelle Score absolut keine Vorhersagekraft besitzt; er unterscheidet nicht zwischen Gewinnern und Verlierern.",
+  "missed_opportunities": "Es wurden zahlreiche extrem momentumstarke Signale (z.B. SYM, AFRM, MNTS) verpasst. Die Entry-Gate-Telemetrie zeigt jedoch klar, dass dies nicht an zu hohen Hürden lag, sondern am Block 'kein_cash_oder_slot_frei' (126 Fälle). Das System ist aktuell durch die Kapitalallokation bzw. die Anzahl der verfügbaren Slots limitiert, nicht durch die Strategie-Logik.",
+  "lesson": "Ein negativer Separation-Wert (-0.3) ist ein Warnsignal: Höhere Einstiegshürden (min_entry_score) werden die Trade-Qualität nicht verbessern, sondern lediglich die Handelsfrequenz senken, ohne das Problem der schlechten Risk-Reward-Ratio zu lösen. Da die Stop-Loss-Ausstiege die Hauptverlustquelle sind, müssen die Stellschrauben an den Exit-Parametern (Stop-Loss-Prozent, Trailing) angesetzt werden, sobald die aktuellen Änderungen (Stop-Loss und Breakeven) durch mindestens 5 Trades validiert wurden. Aktuell ist der Trend positiv, daher ist Geduld geboten.",
+  "parameter_changes": {},
+  "change_reasoning": "Der Trend ist eindeutig positiv (Median und bereinigter Mittelwert verbessern sich stetig). Gemäß der Richtlinien werden gegen eine laufende Verbesserung nicht gesteuert. Zudem wurden die letzten Parameteränderungen an 'daytrade_stop_loss_pct' und 'daytrade_trailing_breakeven_pct' erst vor 3 Trades vorgenommen und damit noch nicht durch die geforderte Mindestanzahl von 5 Trades validiert."
+}
