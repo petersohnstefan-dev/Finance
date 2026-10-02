@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-02 18:25:57",
+    "time_str": "18:25:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 9.6,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 18:25:56",
+    "time_str": "18:25:56",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 35.67,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.41,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 18:23:11",
     "time_str": "18:23:11",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RKLB stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 17:21:11",
-    "time_str": "17:21:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "ACN",
-    "direction": "LONG",
-    "trigger_price": 203.59,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 1.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACN explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 17:21:10",
-    "time_str": "17:21:10",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 1074.09,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
