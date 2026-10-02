@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-02 12:48:34",
+    "time_str": "12:48:34",
+    "data_age_min": 2.4,
+    "window_span_min": 5.2,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.84,
+    "change_1min_pct": 1.38,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +1.38% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 12:48:33",
+    "time_str": "12:48:33",
+    "data_age_min": 1.8,
+    "window_span_min": 2.8,
+    "symbol": "VKTX",
+    "direction": "LONG",
+    "trigger_price": 31.28,
+    "change_1min_pct": 0.9,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VKTX explodiert um +0.90% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 12:48:32",
+    "time_str": "12:48:32",
+    "data_age_min": 0.1,
+    "window_span_min": 4.5,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 190.99,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 12:45:56",
     "time_str": "12:45:56",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QBTS explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:06:00",
-    "time_str": "10:06:00",
-    "data_age_min": 1.2,
-    "window_span_min": 4.8,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 350.0,
-    "change_1min_pct": 1.12,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:05:57",
-    "time_str": "10:05:57",
-    "data_age_min": 0.5,
-    "window_span_min": 5.4,
-    "symbol": "ETHA",
-    "direction": "SHORT",
-    "trigger_price": 20.52,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHA stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 10:01:07",
-    "time_str": "10:01:07",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.14,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
