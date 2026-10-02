@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-02 15:06:01",
+    "time_str": "15:06:01",
+    "data_age_min": 13.7,
+    "window_span_min": 6.4,
+    "symbol": "RTX",
+    "direction": "LONG",
+    "trigger_price": 186.49,
+    "change_1min_pct": 0.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RTX explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 15:06:00",
+    "time_str": "15:06:00",
+    "data_age_min": 13.0,
+    "window_span_min": 7.0,
+    "symbol": "V",
+    "direction": "LONG",
+    "trigger_price": 361.9,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 V explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-02 15:05:53",
+    "time_str": "15:05:53",
+    "data_age_min": 0.7,
+    "window_span_min": 3.2,
+    "symbol": "HALO",
+    "direction": "SHORT",
+    "trigger_price": 107.0,
+    "change_1min_pct": 1.83,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HALO stürzt um -1.83% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-02 15:01:34",
     "time_str": "15:01:34",
     "data_age_min": 0.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QS explodiert um +0.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 14:40:59",
-    "time_str": "14:40:59",
-    "data_age_min": 3.3,
-    "window_span_min": 6.7,
-    "symbol": "PATH",
-    "direction": "LONG",
-    "trigger_price": 13.44,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 14:40:58",
-    "time_str": "14:40:58",
-    "data_age_min": 4.8,
-    "window_span_min": 5.2,
-    "symbol": "CAVA",
-    "direction": "LONG",
-    "trigger_price": 55.49,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAVA explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 14:40:58",
-    "time_str": "14:40:58",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 267.5,
-    "change_1min_pct": 0.92,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
