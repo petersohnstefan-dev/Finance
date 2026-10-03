@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import json
 import pandas as pd
 import datetime
 import time
@@ -2972,8 +2973,25 @@ elif app_mode == "🧠 KI-Lerntagebuch (Retrospektive)":
                 # Check for param updates
                 param_updates = j.get("param_updates")
                 if param_updates and param_updates != "{}" and param_updates != "null":
-                    st.markdown("### ⚙️ Automatisch angepasste Strategie-Parameter")
-                    st.code(param_updates, language="json")
+                    try:
+                        _pu = json.loads(param_updates) if isinstance(param_updates, str) else dict(param_updates)
+                    except Exception:
+                        _pu = None
+                    if isinstance(_pu, dict):
+                        _abgelehnt = _pu.pop("_abgelehnt", None)
+                        if _pu:
+                            st.markdown("### ⚙️ Automatisch angepasste Strategie-Parameter")
+                            st.code(json.dumps(_pu, indent=2, ensure_ascii=False), language="json")
+                        if _abgelehnt:
+                            # Getrennt ausweisen: bis zum 03.10. standen abgelehnte
+                            # Vorschlaege im selben Block wie die durchgefuehrten
+                            # Aenderungen und lasen sich wie solche.
+                            st.markdown("### 🚫 Vorgeschlagen, aber von den Sperren abgelehnt")
+                            for _name, _grund in _abgelehnt.items():
+                                st.markdown(f"- **{_name}** — {_grund}")
+                    else:
+                        st.markdown("### ⚙️ Automatisch angepasste Strategie-Parameter")
+                        st.code(param_updates, language="json")
 
         with tab_daily:
             if not daily_journals:

@@ -31,6 +31,17 @@ PARAM_CHANGE_MIN_TRADES = 5
 #: How far back to look for previous changes at all.
 PARAM_CHANGE_LOOKBACK_DAYS = 30
 
+#: Hoechstzahl der Aenderungen je Parameter im Rueckblickfenster, unabhaengig
+#: von der Richtung.
+#:
+#: Die Richtungssperre darunter faengt den gleichmaessigen Marsch an die Grenze.
+#: Sie faengt nicht das Hin und Her: daytrade_min_risk_reward_ratio lief
+#: 2.0 -> 2.5 -> 2.0 innerhalb von zwei Wochen, jedes Mal mit frischer Begruendung
+#: und jedes Mal in der Gegenrichtung zur vorigen, also an der Sperre vorbei. Wer
+#: einen Wert dreimal anfasst und wieder dort landet, wo er angefangen hat, hat
+#: nicht den Wert gefunden, sondern Rauschen interpretiert.
+PARAM_MAX_CHANGES_PER_WINDOW = 3
+
 #: A parameter may not be pushed the same way more often than this within the
 #: lookback window, however much evidence has accumulated in between.
 #:
@@ -195,40 +206,116 @@ def _escape_control_chars_in_strings(text: str) -> str:
     return "".join(out)
 
 
-def parse_model_json(raw_text: str) -> Optional[Dict[str, Any]]:
-    """Read the model's answer, tolerating the ways an LLM bends JSON.
+def _param_feld(angewandt: Optional[Dict[str, Any]],
+                abgelehnt: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Was im Tagebuch unter param_updates steht.
 
-    A single strict json.loads is the wrong tool here. On 23.09. the daytrader
-    retrospective was lost because the model put a real line break inside a
-    string value - "Invalid control character at char 3944" - and the salvage
-    path retried with the same strict parser, so it failed identically. The
-    whole analysis was discarded over a newline.
-
-    Python's strict mode exists to reject exactly that, but the JSON spec's
-    intent here is not worth a lost retrospective: the content is prose meant
-    for a human. Each stage below is strictly more permissive than the last.
+    Durchgefuehrte Aenderungen stehen auf oberster Ebene wie bisher - die
+    Auswertungen lesen genau dort. Abgelehnte Vorschlaege kommen darunter in ein
+    eigenes Feld, damit sichtbar bleibt, was die Retro WOLLTE, ohne dass es
+    aussieht, als waere es geschehen. "_abgelehnt" traegt kein "old"/"new" und
+    wird von _recent_param_changes deshalb ohnehin uebersprungen.
     """
-    attempts = [
-        ("strict", lambda t: json.loads(t)),
-        ("kontrollzeichen erlaubt", lambda t: json.loads(t, strict=False)),
-        ("nur der JSON-Block", lambda t: json.loads(
-            re.search(r"\{.*\}", t, re.DOTALL).group(0), strict=False)),
-        ("Kontrollzeichen maskiert", lambda t: json.loads(
-            _escape_control_chars_in_strings(
-                re.search(r"\{.*\}", t, re.DOTALL).group(0)))),
-        ("ohne Komma am Blockende", lambda t: json.loads(
-            re.sub(r",(\s*[}\]])", r"\1",
-                   _escape_control_chars_in_strings(
-                       re.search(r"\{.*\}", t, re.DOTALL).group(0))))),
-    ]
-    for _label, fn in attempts:
-        try:
-            res = fn(raw_text)
-            if isinstance(res, dict):
-                return res
-        except Exception:
+    feld: Dict[str, Any] = dict(angewandt or {})
+    if abgelehnt:
+        feld["_abgelehnt"] = dict(abgelehnt)
+    return feld
+
+
+def _balancierte_objekte(text: str) -> List[str]:
+    """Alle geklammerten {...}-Bloecke der obersten Ebene, in Reihenfolge.
+
+    Klammern innerhalb von Zeichenketten zaehlen nicht mit - sonst beendet ein
+    "}" in einem Fliesstext den Block an der falschen Stelle.
+    """
+    out: List[str] = []
+    tiefe = 0
+    start: Optional[int] = None
+    in_str = False
+    esc = False
+    for i, c in enumerate(text):
+        if in_str:
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
             continue
-    return None
+        if c == '"':
+            in_str = True
+        elif c == "{":
+            if tiefe == 0:
+                start = i
+            tiefe += 1
+        elif c == "}":
+            tiefe -= 1
+            if tiefe == 0 and start is not None:
+                out.append(text[start:i + 1])
+                start = None
+            if tiefe < 0:
+                tiefe = 0
+    return out
+
+
+def parse_model_json(raw_text: str) -> Optional[Dict[str, Any]]:
+    r"""Read the model's answer, tolerating the ways an LLM bends JSON.
+
+    A single strict json.loads is the wrong tool here. The content is prose meant
+    for a human, and the model surrounds it with whatever it feels like:
+
+      23.09.  a literal line break inside a string value
+      02.10.  the prompt restated in prose, THEN the JSON
+      03.10.  valid JSON, closing fence, then an appended "Selbst-Reflexion"
+
+    The first was fixed by permitting control characters. The other two defeated
+    the salvage path for the same reason: it searched with a greedy r"\{.*\}",
+    which spans from the FIRST brace anywhere in the text to the LAST one - in
+    both cases across the commentary, producing something that parses as nothing.
+
+    Both answers were complete and readable; only the extraction failed. So the
+    text is now scanned for balanced top-level objects and each is tried in turn,
+    preferring one that actually carries the expected keys - the daytrader answer
+    contained three empty "{}" from the restated prompt before the real object,
+    so "take the first" would have been wrong too.
+    """
+    def versuche(t: str) -> Optional[Dict[str, Any]]:
+        for fn in (lambda x: json.loads(x),
+                   lambda x: json.loads(x, strict=False),
+                   lambda x: json.loads(_escape_control_chars_in_strings(x)),
+                   lambda x: json.loads(re.sub(r",(\s*[}\]])", r"\1",
+                                               _escape_control_chars_in_strings(x)))):
+            try:
+                res = fn(t)
+                if isinstance(res, dict):
+                    return res
+            except Exception:
+                continue
+        return None
+
+    text = (raw_text or "").strip()
+    # Zaeune entfernen, wo sie den ganzen Text umschliessen
+    direkt = versuche(text.removeprefix("```json").removeprefix("```").removesuffix("```").strip())
+    if direkt is not None and ("reflection" in direkt or "parameter_changes" in direkt):
+        return direkt
+
+    treffer: List[Dict[str, Any]] = []
+    for block in _balancierte_objekte(text):
+        res = versuche(block)
+        if res is not None:
+            treffer.append(res)
+
+    if treffer:
+        # Der Block mit den erwarteten Schluesseln gewinnt; bei mehreren der
+        # inhaltsreichste. Leere Objekte aus einer nacherzaehlten Aufgabe
+        # scheiden damit aus.
+        passend = [t for t in treffer
+                   if "reflection" in t or "parameter_changes" in t]
+        if passend:
+            return max(passend, key=lambda t: len(json.dumps(t, ensure_ascii=False)))
+        return max(treffer, key=lambda t: len(json.dumps(t, ensure_ascii=False)))
+
+    return direkt
 
 
 class AIJournalEngine:
@@ -576,6 +663,18 @@ class AIJournalEngine:
                         f"mindestens {PARAM_CHANGE_MIN_TRADES} noetig, um die Wirkung "
                         f"zu beurteilen")
                     continue
+
+            # Guard 2c: Pendelbremse. Zaehlt alle Aenderungen, nicht nur die
+            # gleichgerichteten - sonst kommt ein Wert durch, der nur hin und her
+            # geschoben wird.
+            alle = len(history.get(param_name) or [])
+            if alle >= PARAM_MAX_CHANGES_PER_WINDOW:
+                rejected[param_name] = (
+                    f"in den letzten {PARAM_CHANGE_LOOKBACK_DAYS} Tagen bereits "
+                    f"{alle}x geaendert; weitere Aenderungen sind gesperrt. Ein "
+                    f"Wert, der so oft angefasst wird, ist nicht gefunden, sondern "
+                    f"umstritten - die Ursache liegt woanders")
+                continue
 
             # Guard 2b: Driftbremse. Evidenz allein genuegt nicht, wenn die
             # Richtung sich nie umkehrt - sonst wandert ein Parameter in lauter
@@ -993,7 +1092,16 @@ Wenn keine Änderungen nötig sind, setze "parameter_changes": {{}}.
             "reflection": _safe_str(res_json.get("reflection", "")),
             "missed_opportunities": _safe_str(res_json.get("missed_opportunities", "")),
             "lesson": _safe_str(res_json.get("lesson", "")),
-            "param_updates": _safe_str(applied_changes) if applied_changes else _safe_str(param_changes)
+            # Bis zum 03.10. stand hier bei leerem applied_changes der ABGELEHNTE
+            # Vorschlag - im selben Feld, im selben Format, nur ohne Vorwert. Im
+            # Tagebuch las sich das wie eine durchgefuehrte Aenderung: der Eintrag
+            # vom 01.10. meldete short_term_breakeven_trigger_atr auf 2.5, waehrend
+            # in strategy.json weiterhin 2.25 stand, weil eine Sperre gegriffen
+            # hatte. Die Sperren selbst waren davon nie betroffen - sie lesen nur
+            # Eintraege mit "old" und "new" -, aber wer das Tagebuch liest, wurde
+            # in die Irre gefuehrt.
+            "param_updates": _safe_str(_param_feld(applied_changes,
+                                                   getattr(self, "_last_rejected", None)))
         }
 
         self.save_journal_entry(journal_entry)
