@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 1.4,
+    "window_span_min": 3.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.56,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 1.4,
+    "window_span_min": 4.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 8.94,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 20:55:54",
     "time_str": "20:55:54",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.08,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 19:05:55",
-    "time_str": "19:05:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 4.07,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 19:05:54",
-    "time_str": "19:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 11.19,
-    "change_1min_pct": 2.14,
-    "vol_ratio": 3.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +2.14% in 5 Min.! Momentum aktiv."
   }
 ]
