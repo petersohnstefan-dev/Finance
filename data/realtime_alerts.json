@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-05 18:41:01",
+    "time_str": "18:41:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RUN",
+    "direction": "LONG",
+    "trigger_price": 7.68,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 5.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 18:41:01",
+    "time_str": "18:41:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BKSY",
+    "direction": "SHORT",
+    "trigger_price": 21.52,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 18:41:00",
+    "time_str": "18:41:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RIVN",
+    "direction": "LONG",
+    "trigger_price": 14.44,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 3.34,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RIVN explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-05 18:35:51",
     "time_str": "18:35:51",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.09,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 REGN stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:25:57",
-    "time_str": "17:25:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IOT",
-    "direction": "SHORT",
-    "trigger_price": 42.57,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IOT stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:25:56",
-    "time_str": "17:25:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BEAM",
-    "direction": "LONG",
-    "trigger_price": 24.66,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:25:56",
-    "time_str": "17:25:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 55.39,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 2.41,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
