@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 16:46:00",
+    "time_str": "16:46:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 79.87,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 16:46:00",
+    "time_str": "16:46:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 19.94,
+    "change_1min_pct": 0.85,
+    "vol_ratio": 0.68,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 16:41:07",
     "time_str": "16:41:07",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.76,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:31:29",
-    "time_str": "16:31:29",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 8.0,
-    "change_1min_pct": 0.87,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:31:29",
-    "time_str": "16:31:29",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "SHORT",
-    "trigger_price": 8.96,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
