@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-05 13:55:58",
+    "time_str": "13:55:58",
+    "data_age_min": 1.0,
+    "window_span_min": 7.0,
+    "symbol": "FTNT",
+    "direction": "LONG",
+    "trigger_price": 182.63,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FTNT explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 13:55:56",
+    "time_str": "13:55:56",
+    "data_age_min": 4.2,
+    "window_span_min": 5.8,
+    "symbol": "SRPT",
+    "direction": "SHORT",
+    "trigger_price": 17.5,
+    "change_1min_pct": 1.41,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT stürzt um -1.41% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 13:55:56",
+    "time_str": "13:55:56",
+    "data_age_min": 1.9,
+    "window_span_min": 6.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 54.68,
+    "change_1min_pct": 1.39,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -1.39% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 13:51:07",
     "time_str": "13:51:07",
     "data_age_min": 2.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEDG stürzt um -1.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 12:05:57",
-    "time_str": "12:05:57",
-    "data_age_min": 0.8,
-    "window_span_min": 7.1,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 17.56,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 12:05:55",
-    "time_str": "12:05:55",
-    "data_age_min": 0.2,
-    "window_span_min": 4.8,
-    "symbol": "DKNG",
-    "direction": "LONG",
-    "trigger_price": 19.34,
-    "change_1min_pct": 1.49,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG explodiert um +1.49% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 12:05:55",
-    "time_str": "12:05:55",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "APP",
-    "direction": "LONG",
-    "trigger_price": 271.86,
-    "change_1min_pct": 0.93,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP explodiert um +0.93% in 5 Min.! Momentum aktiv."
   }
 ]
