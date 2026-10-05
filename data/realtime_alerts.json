@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-05 07:55:50",
+    "time_str": "07:55:50",
+    "data_age_min": 2.8,
+    "window_span_min": 6.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 97.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -97.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 07:05:47",
     "time_str": "07:05:47",
     "data_age_min": 0.8,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RGTI stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 22:05:55",
-    "time_str": "22:05:55",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "MDB",
-    "direction": "LONG",
-    "trigger_price": 359.58,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB explodiert um +0.65% in 5 Min.! Momentum aktiv."
   }
 ]
