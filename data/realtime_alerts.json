@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 12:31:11",
+    "time_str": "12:31:11",
+    "data_age_min": 3.6,
+    "window_span_min": 6.6,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.82,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 12:31:10",
+    "time_str": "12:31:10",
+    "data_age_min": 0.1,
+    "window_span_min": 7.1,
+    "symbol": "FTNT",
+    "direction": "SHORT",
+    "trigger_price": 180.01,
+    "change_1min_pct": 1.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FTNT stürzt um -1.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 12:21:04",
     "time_str": "12:21:04",
     "data_age_min": 4.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENPH stürzt um -1.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 10:25:51",
-    "time_str": "10:25:51",
-    "data_age_min": 0.5,
-    "window_span_min": 9.4,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.16,
-    "change_1min_pct": 1.19,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +1.19% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 10:20:50",
-    "time_str": "10:20:50",
-    "data_age_min": 0.2,
-    "window_span_min": 3.7,
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 215.85,
-    "change_1min_pct": 1.81,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +1.81% in 5 Min.! Momentum aktiv."
   }
 ]
