@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 17:01:22",
+    "time_str": "17:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 29.51,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.19,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 17:01:21",
+    "time_str": "17:01:21",
+    "data_age_min": 1.4,
+    "window_span_min": 5.0,
+    "symbol": "ARVN",
+    "direction": "SHORT",
+    "trigger_price": 7.29,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 16:55:59",
     "time_str": "16:55:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.01,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:25",
-    "time_str": "16:36:25",
-    "data_age_min": 1.4,
-    "window_span_min": 5.0,
-    "symbol": "HODL",
-    "direction": "SHORT",
-    "trigger_price": 24.18,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 2.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HODL stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:25",
-    "time_str": "16:36:25",
-    "data_age_min": 1.4,
-    "window_span_min": 5.0,
-    "symbol": "BITB",
-    "direction": "SHORT",
-    "trigger_price": 46.42,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 1.72,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BITB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
