@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 08:05:44",
+    "time_str": "08:05:44",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "BONK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 0.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BONK-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 08:05:44",
+    "time_str": "08:05:44",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.47,
+    "change_1min_pct": 1.14,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.14% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-05 07:55:50",
     "time_str": "07:55:50",
     "data_age_min": 2.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 22:05:56",
-    "time_str": "22:05:56",
-    "data_age_min": 2.5,
-    "window_span_min": 5.4,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 9.38,
-    "change_1min_pct": 0.97,
-    "vol_ratio": 0.72,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.97% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-02 22:05:55",
-    "time_str": "22:05:55",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 15.21,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
