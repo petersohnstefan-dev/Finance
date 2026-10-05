@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 11:05:57",
+    "time_str": "11:05:57",
+    "data_age_min": 0.3,
+    "window_span_min": 5.7,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.12,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 11:05:54",
+    "time_str": "11:05:54",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.47,
+    "change_1min_pct": 1.15,
+    "vol_ratio": 0.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.15% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-05 11:01:25",
     "time_str": "11:01:25",
     "data_age_min": 1.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JUP-USD stürzt um -97.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 07:05:47",
-    "time_str": "07:05:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "LONG",
-    "trigger_price": 4.98,
-    "change_1min_pct": 1.7,
-    "vol_ratio": 0.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD explodiert um +1.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-03 02:01:23",
-    "time_str": "02:01:23",
-    "data_age_min": 14.1,
-    "window_span_min": 5.3,
-    "symbol": "FSLR",
-    "direction": "SHORT",
-    "trigger_price": 174.97,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
