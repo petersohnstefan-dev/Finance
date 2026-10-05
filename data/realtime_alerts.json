@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-05 20:21:00",
+    "time_str": "20:21:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.83,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 0.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 20:21:00",
+    "time_str": "20:21:00",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 30.59,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.46,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-05 20:15:59",
     "time_str": "20:15:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.34,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 18:20:59",
-    "time_str": "18:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 33.71,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 18:20:58",
-    "time_str": "18:20:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ELF",
-    "direction": "SHORT",
-    "trigger_price": 105.91,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ELF stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
