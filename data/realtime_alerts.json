@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-05 18:11:00",
+    "time_str": "18:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 4.09,
+    "change_1min_pct": 1.09,
+    "vol_ratio": 3.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 18:10:59",
+    "time_str": "18:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "AFRM",
+    "direction": "LONG",
+    "trigger_price": 73.64,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AFRM explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 18:10:59",
+    "time_str": "18:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "APP",
+    "direction": "LONG",
+    "trigger_price": 285.73,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-05 18:05:55",
     "time_str": "18:05:55",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.63,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ESTC stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:05:58",
-    "time_str": "17:05:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PATH",
-    "direction": "SHORT",
-    "trigger_price": 12.81,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.02,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:05:54",
-    "time_str": "17:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ICP-USD",
-    "direction": "LONG",
-    "trigger_price": 3.45,
-    "change_1min_pct": 1.03,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ICP-USD explodiert um +1.03% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 17:01:22",
-    "time_str": "17:01:22",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "LONG",
-    "trigger_price": 29.51,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
