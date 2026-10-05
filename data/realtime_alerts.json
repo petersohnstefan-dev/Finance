@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-05 17:16:01",
+    "time_str": "17:16:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.94,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 17:16:00",
+    "time_str": "17:16:00",
+    "data_age_min": 1.0,
+    "window_span_min": 6.0,
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 30.79,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 17:16:00",
+    "time_str": "17:16:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 81.38,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.87,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-05 17:15:59",
+    "time_str": "17:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 4.57,
+    "change_1min_pct": 1.33,
+    "vol_ratio": 0.93,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +1.33% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-05 17:11:02",
     "time_str": "17:11:02",
     "data_age_min": 1.0,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.77,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:29",
-    "time_str": "16:36:29",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "TOST",
-    "direction": "SHORT",
-    "trigger_price": 30.13,
-    "change_1min_pct": 0.99,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TOST stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:29",
-    "time_str": "16:36:29",
-    "data_age_min": 1.5,
-    "window_span_min": 5.0,
-    "symbol": "BILL",
-    "direction": "SHORT",
-    "trigger_price": 44.21,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BILL stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:28",
-    "time_str": "16:36:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "SHORT",
-    "trigger_price": 351.93,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 1.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 16:36:28",
-    "time_str": "16:36:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 4.12,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 2.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
