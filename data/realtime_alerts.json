@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 11:40:56",
+    "time_str": "11:40:56",
+    "data_age_min": 0.1,
+    "window_span_min": 3.9,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 335.01,
+    "change_1min_pct": 1.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -1.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 11:40:54",
+    "time_str": "11:40:54",
+    "data_age_min": 11.8,
+    "window_span_min": 6.2,
+    "symbol": "FBTC",
+    "direction": "SHORT",
+    "trigger_price": 74.51,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FBTC stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 11:31:12",
     "time_str": "11:31:12",
     "data_age_min": 1.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TOST stürzt um -1.48% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:49",
-    "time_str": "22:24:49",
-    "data_age_min": 1.9,
-    "window_span_min": 4.9,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 202.0,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:49",
-    "time_str": "22:24:49",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "HOOD",
-    "direction": "LONG",
-    "trigger_price": 121.42,
-    "change_1min_pct": 6.42,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD explodiert um +6.42% in 5 Min.! Momentum aktiv."
   }
 ]
