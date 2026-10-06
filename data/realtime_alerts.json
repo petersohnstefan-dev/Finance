@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-06 12:11:02",
+    "time_str": "12:11:02",
+    "data_age_min": 0.1,
+    "window_span_min": 6.0,
+    "symbol": "PANW",
+    "direction": "LONG",
+    "trigger_price": 416.21,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-06 12:01:17",
     "time_str": "12:01:17",
     "data_age_min": 1.3,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADP stürzt um -1.97% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:54",
-    "time_str": "22:24:54",
-    "data_age_min": 0.9,
-    "window_span_min": 7.1,
-    "symbol": "COP",
-    "direction": "SHORT",
-    "trigger_price": 127.0,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COP stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
