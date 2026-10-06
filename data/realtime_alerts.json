@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 18:50:55",
+    "time_str": "18:50:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BKNG",
+    "direction": "SHORT",
+    "trigger_price": 156.49,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKNG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 18:50:50",
+    "time_str": "18:50:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 14.59,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 18:46:07",
     "time_str": "18:46:07",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.8,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA stürzt um -2.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 17:46:04",
-    "time_str": "17:46:04",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 4.62,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 17:46:03",
-    "time_str": "17:46:03",
-    "data_age_min": 10.1,
-    "window_span_min": 5.0,
-    "symbol": "BZ=F",
-    "direction": "LONG",
-    "trigger_price": 98.91,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BZ=F explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
