@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-06 17:41:00",
+    "time_str": "17:41:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 19.93,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 17:40:59",
+    "time_str": "17:40:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HALO",
+    "direction": "LONG",
+    "trigger_price": 109.66,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HALO explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 17:40:59",
+    "time_str": "17:40:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 2.65,
+    "change_1min_pct": 0.95,
+    "vol_ratio": 0.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.95% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-06 17:35:50",
     "time_str": "17:35:50",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.63,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MSTR explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 16:55:55",
-    "time_str": "16:55:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ARGX",
-    "direction": "LONG",
-    "trigger_price": 926.46,
-    "change_1min_pct": 0.91,
-    "vol_ratio": 0.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARGX explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 16:55:55",
-    "time_str": "16:55:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ROIV",
-    "direction": "LONG",
-    "trigger_price": 35.37,
-    "change_1min_pct": 0.91,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ROIV explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 16:55:55",
-    "time_str": "16:55:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "LONG",
-    "trigger_price": 44.03,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
