@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-06 10:21:07",
+    "time_str": "10:21:07",
+    "data_age_min": 0.2,
+    "window_span_min": 3.0,
+    "symbol": "TXN",
+    "direction": "LONG",
+    "trigger_price": 295.44,
+    "change_1min_pct": 1.36,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN explodiert um +1.36% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 10:21:00",
+    "time_str": "10:21:00",
+    "data_age_min": 1.0,
+    "window_span_min": 8.0,
+    "symbol": "ONON",
+    "direction": "LONG",
+    "trigger_price": 32.2,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 10:20:59",
+    "time_str": "10:20:59",
+    "data_age_min": 1.2,
+    "window_span_min": 4.8,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.92,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 10:16:05",
     "time_str": "10:16:05",
     "data_age_min": 3.6,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CHPT stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 20:55:54",
-    "time_str": "20:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.84,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 20:55:54",
-    "time_str": "20:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QUBT",
-    "direction": "LONG",
-    "trigger_price": 7.95,
-    "change_1min_pct": 0.86,
-    "vol_ratio": 3.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT explodiert um +0.86% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 20:55:54",
-    "time_str": "20:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "LONG",
-    "trigger_price": 15.56,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 2.92,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
