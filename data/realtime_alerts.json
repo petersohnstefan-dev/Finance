@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 10:56:01",
+    "time_str": "10:56:01",
+    "data_age_min": 3.3,
+    "window_span_min": 8.8,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 363.6,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 10:56:00",
+    "time_str": "10:56:00",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.9,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 10:51:02",
     "time_str": "10:51:02",
     "data_age_min": 4.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INCY explodiert um +1.99% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:11:14",
-    "time_str": "22:11:14",
-    "data_age_min": 2.0,
-    "window_span_min": 5.2,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 15.07,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:11:14",
-    "time_str": "22:11:14",
-    "data_age_min": 1.2,
-    "window_span_min": 5.1,
-    "symbol": "NVCR",
-    "direction": "LONG",
-    "trigger_price": 15.2,
-    "change_1min_pct": 2.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVCR explodiert um +2.98% in 5 Min.! Momentum aktiv."
   }
 ]
