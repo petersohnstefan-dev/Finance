@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 11:25:54",
+    "time_str": "11:25:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "LONG",
+    "trigger_price": 24950.0,
+    "change_1min_pct": 0.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO explodiert um +0.77% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 11:25:49",
+    "time_str": "11:25:49",
+    "data_age_min": 2.8,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.27,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 11:16:02",
     "time_str": "11:16:02",
     "data_age_min": 2.6,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:11:16",
-    "time_str": "22:11:16",
-    "data_age_min": 0.4,
-    "window_span_min": 3.9,
-    "symbol": "FSLR",
-    "direction": "LONG",
-    "trigger_price": 176.0,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:11:16",
-    "time_str": "22:11:16",
-    "data_age_min": 0.2,
-    "window_span_min": 5.1,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 33.83,
-    "change_1min_pct": 1.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -1.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
