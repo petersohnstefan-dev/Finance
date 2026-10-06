@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 21:45:58",
+    "time_str": "21:45:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "QUBT",
+    "direction": "SHORT",
+    "trigger_price": 7.91,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 2.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 21:45:57",
+    "time_str": "21:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CAVA",
+    "direction": "SHORT",
+    "trigger_price": 52.36,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 21:40:55",
     "time_str": "21:40:55",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +1.12% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 20:05:54",
-    "time_str": "20:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 15.06,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 20:05:54",
-    "time_str": "20:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 391.96,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
