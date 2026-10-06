@@ -547,10 +547,43 @@
   }
  },
  "BATS.L": {
-  "fetched_ts": 1790706389.868068,
+  "fetched_ts": 1791311200.0036247,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 85.36,
+   "altman_detail": {
+    "X1": -0.017,
+    "X2": 0.25,
+    "X3": 0.108,
+    "X4": 140.728,
+    "X5": 0.234
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Defensive",
+   "beneish_m": -2.34,
+   "beneish_detail": {
+    "DSRI": 1.066,
+    "GMI": 0.992,
+    "AQI": 0.998,
+    "SGI": 0.99,
+    "DEPI": 1.224,
+    "SGAI": 0.994,
+    "LVGI": 0.979,
+    "TATA": 0.013
+   },
+   "computed_at": "2026-10-06"
   }
  },
  "UBER": {
