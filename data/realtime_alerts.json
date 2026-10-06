@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-06 11:31:12",
+    "time_str": "11:31:12",
+    "data_age_min": 1.7,
+    "window_span_min": 3.5,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.84,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 11:31:11",
+    "time_str": "11:31:11",
+    "data_age_min": 0.1,
+    "window_span_min": 5.1,
+    "symbol": "MSTR",
+    "direction": "SHORT",
+    "trigger_price": 164.95,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 11:31:08",
+    "time_str": "11:31:08",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "FLOKI-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.17,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FLOKI-USD stürzt um -1.17% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 11:25:54",
     "time_str": "11:25:54",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HOOD explodiert um +6.42% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:48",
-    "time_str": "22:24:48",
-    "data_age_min": 0.3,
-    "window_span_min": 4.5,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 12.62,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:48",
-    "time_str": "22:24:48",
-    "data_age_min": 0.4,
-    "window_span_min": 5.5,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 2.89,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 22:24:48",
-    "time_str": "22:24:48",
-    "data_age_min": 8.0,
-    "window_span_min": 4.8,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 57.11,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
