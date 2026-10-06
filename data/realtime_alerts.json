@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 10:35:56",
+    "time_str": "10:35:56",
+    "data_age_min": 3.0,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 10:35:55",
+    "time_str": "10:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RENDER-USD",
+    "direction": "LONG",
+    "trigger_price": 2.11,
+    "change_1min_pct": 1.18,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RENDER-USD explodiert um +1.18% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-06 10:31:14",
     "time_str": "10:31:14",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.82,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INCY explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 21:06:06",
-    "time_str": "21:06:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 4.85,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.27,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-05 21:06:06",
-    "time_str": "21:06:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 204.14,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.82,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
