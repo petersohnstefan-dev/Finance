@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-06 20:31:06",
+    "time_str": "20:31:06",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 20:25:50",
     "time_str": "20:25:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 18:46:00",
-    "time_str": "18:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SMCI",
-    "direction": "LONG",
-    "trigger_price": 43.81,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI explodiert um +0.62% in 5 Min.! Momentum aktiv."
   }
 ]
