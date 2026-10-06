@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 12:25:50",
+    "time_str": "12:25:50",
+    "data_age_min": 3.6,
+    "window_span_min": 8.3,
+    "symbol": "RUN",
+    "direction": "SHORT",
+    "trigger_price": 7.65,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 12:25:49",
+    "time_str": "12:25:49",
+    "data_age_min": 4.6,
+    "window_span_min": 5.2,
+    "symbol": "BEAM",
+    "direction": "SHORT",
+    "trigger_price": 25.73,
+    "change_1min_pct": 1.41,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM stürzt um -1.41% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 12:20:51",
     "time_str": "12:20:51",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PA=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 09:25:45",
-    "time_str": "09:25:45",
-    "data_age_min": 10.8,
-    "window_span_min": 5.0,
-    "symbol": "SI=F",
-    "direction": "LONG",
-    "trigger_price": 61.26,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SI=F explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 08:15:54",
-    "time_str": "08:15:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CRV-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.36,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 4.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRV-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
