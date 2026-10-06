@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-06 19:25:55",
+    "time_str": "19:25:55",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "BKSY",
+    "direction": "LONG",
+    "trigger_price": 22.01,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 4.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 19:25:55",
+    "time_str": "19:25:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "LONG",
+    "trigger_price": 14.73,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.82,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 19:25:53",
+    "time_str": "19:25:53",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "ARGX",
+    "direction": "SHORT",
+    "trigger_price": 930.51,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 19:23:56",
     "time_str": "19:23:56",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.53,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 18:01:23",
-    "time_str": "18:01:23",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 54.12,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 2.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 18:01:23",
-    "time_str": "18:01:23",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 191.94,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 17:56:03",
-    "time_str": "17:56:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 34.36,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
