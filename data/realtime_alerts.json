@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-06 21:35:55",
+    "time_str": "21:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 4.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 4.76,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 21:35:53",
+    "time_str": "21:35:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 12.51,
+    "change_1min_pct": 0.89,
+    "vol_ratio": 0.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 21:35:53",
+    "time_str": "21:35:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "LONG",
+    "trigger_price": 11.09,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 21:35:49",
+    "time_str": "21:35:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.48,
+    "change_1min_pct": 1.2,
+    "vol_ratio": 0.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 21:31:32",
     "time_str": "21:31:32",
     "data_age_min": 0.5,
@@ -596,57 +648,5 @@
     "vol_ratio": 1.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PATH stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 19:41:03",
-    "time_str": "19:41:03",
-    "data_age_min": 2.1,
-    "window_span_min": 4.0,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 8.72,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 19:41:02",
-    "time_str": "19:41:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "LONG",
-    "trigger_price": 4.68,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 19:41:01",
-    "time_str": "19:41:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 12.57,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 19:40:58",
-    "time_str": "19:40:58",
-    "data_age_min": 2.0,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.05,
-    "change_1min_pct": 1.18,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
