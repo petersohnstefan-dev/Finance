@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-06 19:10:56",
+    "time_str": "19:10:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ACHR",
+    "direction": "SHORT",
+    "trigger_price": 4.61,
+    "change_1min_pct": 0.74,
+    "vol_ratio": 1.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-06 19:10:55",
+    "time_str": "19:10:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BMRN",
+    "direction": "SHORT",
+    "trigger_price": 55.92,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BMRN stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-06 19:05:59",
     "time_str": "19:05:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARRY explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 17:51:01",
-    "time_str": "17:51:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 18.35,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 17:51:01",
-    "time_str": "17:51:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 14.81,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 1.44,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.89% in 5 Min.! Momentum aktiv."
   }
 ]
