@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 09:10:59",
+    "time_str": "09:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 4.0,
+    "symbol": "HM-B.ST",
+    "direction": "LONG",
+    "trigger_price": 161.7,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HM-B.ST explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 09:10:59",
+    "time_str": "09:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ERIC-B.ST",
+    "direction": "SHORT",
+    "trigger_price": 93.78,
+    "change_1min_pct": 0.66,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ERIC-B.ST stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 09:06:02",
     "time_str": "09:06:02",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ISRG explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 22:05:40",
-    "time_str": "22:05:40",
-    "data_age_min": 0.5,
-    "window_span_min": 5.2,
-    "symbol": "RUN",
-    "direction": "SHORT",
-    "trigger_price": 7.76,
-    "change_1min_pct": 0.89,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 22:05:40",
-    "time_str": "22:05:40",
-    "data_age_min": 3.5,
-    "window_span_min": 5.2,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.79,
-    "change_1min_pct": 0.92,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
