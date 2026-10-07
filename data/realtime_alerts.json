@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-07 18:21:35",
+    "time_str": "18:21:35",
+    "data_age_min": 1.6,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.51,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 18:21:34",
+    "time_str": "18:21:34",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.95,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 18:21:32",
+    "time_str": "18:21:32",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 228.64,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 18:10:52",
     "time_str": "18:10:52",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.8,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:56:38",
-    "time_str": "16:56:38",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 11.64,
-    "change_1min_pct": 1.36,
-    "vol_ratio": 0.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +1.36% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:51:00",
-    "time_str": "16:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IOT",
-    "direction": "SHORT",
-    "trigger_price": 40.43,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 4.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IOT stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:50:58",
-    "time_str": "16:50:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 4.43,
-    "change_1min_pct": 0.99,
-    "vol_ratio": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
