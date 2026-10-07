@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-07 22:55:50",
+    "time_str": "22:55:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.45,
+    "change_1min_pct": 1.23,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.23% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 22:51:10",
     "time_str": "22:51:10",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.84,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 21:10:58",
-    "time_str": "21:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 44.13,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 4.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.81% in 5 Min.! Momentum aktiv."
   }
 ]
