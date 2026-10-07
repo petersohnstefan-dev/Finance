@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 14:05:49",
+    "time_str": "14:05:49",
+    "data_age_min": 3.9,
+    "window_span_min": 4.9,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.58,
+    "change_1min_pct": 0.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 14:05:49",
+    "time_str": "14:05:49",
+    "data_age_min": 0.8,
+    "window_span_min": 6.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 53.12,
+    "change_1min_pct": 0.66,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 14:01:23",
     "time_str": "14:01:23",
     "data_age_min": 0.3,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.07,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VWS.CO stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 10:45:54",
-    "time_str": "10:45:54",
-    "data_age_min": 0.4,
-    "window_span_min": 5.5,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 185.07,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 10:31:23",
-    "time_str": "10:31:23",
-    "data_age_min": 4.0,
-    "window_span_min": 5.4,
-    "symbol": "AMAT",
-    "direction": "SHORT",
-    "trigger_price": 522.19,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
