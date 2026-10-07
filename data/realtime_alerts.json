@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 16:11:00",
+    "time_str": "16:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 29.8,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 16:10:59",
+    "time_str": "16:10:59",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "BMRN",
+    "direction": "LONG",
+    "trigger_price": 55.73,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.36,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BMRN explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 16:05:55",
     "time_str": "16:05:55",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.31,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INCY explodiert um +0.83% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 15:51:06",
-    "time_str": "15:51:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 4.49,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 15:51:06",
-    "time_str": "15:51:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 11.1,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 0.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
