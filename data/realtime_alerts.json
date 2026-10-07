@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-07 19:26:12",
+    "time_str": "19:26:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.28,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 19:15:58",
     "time_str": "19:15:58",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 2.59,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADBE explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 17:40:58",
-    "time_str": "17:40:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 193.5,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
