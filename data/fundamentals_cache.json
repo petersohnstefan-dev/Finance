@@ -1444,43 +1444,10 @@
   }
  },
  "CAVA": {
-  "fetched_ts": 1790797606.8803427,
+  "fetched_ts": 1791402699.4888692,
   "scores": {
-   "available": true,
-   "piotroski": 5,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 7.57,
-   "altman_detail": {
-    "X1": 0.197,
-    "X2": -0.186,
-    "X3": 0.058,
-    "X4": 10.883,
-    "X5": 0.867
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Cyclical",
-   "beneish_m": -3.15,
-   "beneish_detail": {
-    "DSRI": 1.077,
-    "GMI": 1.019,
-    "AQI": -0.299,
-    "SGI": 1.224,
-    "DEPI": 0.999,
-    "SGAI": 0.932,
-    "LVGI": 1.053,
-    "TATA": -0.089
-   },
-   "computed_at": "2026-09-30"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "COPX": {
