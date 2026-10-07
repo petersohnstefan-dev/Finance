@@ -487,7 +487,7 @@
           "take_profit": 242.92,
           "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
           "derivative_type": "STOCK",
-          "last_updated": "13:21:43",
+          "last_updated": "13:46:25",
           "peak_price": 193.79
         },
         "DUOL": {
@@ -501,7 +501,7 @@
           "take_profit": 197.28,
           "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
           "derivative_type": "STOCK",
-          "last_updated": "13:36:18",
+          "last_updated": "13:46:25",
           "peak_price": 159.19
         },
         "NVDA": {
@@ -594,13 +594,13 @@
           "name": "SAP SE",
           "shares": 10.6315,
           "buy_price": 188.12,
-          "current_price": 186.62,
+          "current_price": 186.54,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
           "derivative_type": "STOCK",
-          "last_updated": "13:21:43",
+          "last_updated": "13:46:25",
           "peak_price": 189.86
         },
         "MUV2.DE": {
@@ -636,13 +636,13 @@
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 83627.38,
+          "current_price": 83579.7,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "13:21:43",
+          "last_updated": "13:46:25",
           "peak_price": 86727.81
         },
         "BATS.L": {
@@ -650,13 +650,13 @@
           "name": "BRITISH AMERICAN TOBACCO PLC OR",
           "shares": 0.478,
           "buy_price": 4192.368,
-          "current_price": 4017.0,
+          "current_price": 4037.0,
           "buy_date": "2026-09-17 22:37",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: ℹ️ Keine Bilanzdaten | Piotroski: — | Analystenpotenzial 23.0% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Keines der definierten Ausschlusskriterien greift: Zwar liegt die Datenabdeckung bei 45 %, doch stützt sich die Kaufseite auf tatsächlich gemessene Kennzahlen (KGV, ROE, langfrist_score, Analystenpotenzial) und nicht auf fehlende Bausteine wie Smart Money oder Forensic. Ein Verstoß der Bilanzqualität durch Distress-Werte liegt mangels negativer Scores nicht vor, ein Sektorklumpenrisiko existiert im Consumer-Defensive-Bereich nicht, und das Kaufargument basiert auf fundamentaler Bewertung statt reinem Momentum.",
           "derivative_type": "STOCK",
-          "last_updated": "13:21:43",
+          "last_updated": "13:46:25",
           "peak_price": 4192.368
         }
       },
@@ -749,8 +749,36 @@
       ]
     },
     "day_trading": {
-      "cash": 5637.406871215126,
-      "positions": {},
+      "cash": 5180.002410921549,
+      "positions": {
+        "KO840671": {
+          "symbol": "KO840671",
+          "name": "⚡ Turbo Bull 2.0x auf iShares PHLX SOX Semiconductor  (KO: 299.89)",
+          "shares": 153.3988,
+          "buy_price": 2.9753,
+          "current_price": 2.94,
+          "buy_date": "2026-10-07 13:46",
+          "stop_loss": 2.528,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+1.4% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 2.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO840671",
+          "underlying_symbol": "SOXX",
+          "underlying_name": "iShares PHLX SOX Semiconductor ",
+          "direction": "LONG",
+          "ratio": 0.01,
+          "strike": 294.0,
+          "knockout_barrier": 299.89,
+          "initial_underlying_price": 588.01,
+          "current_underlying_price": 588.01,
+          "cert_price": 2.94,
+          "leverage": 2.0,
+          "distance_to_ko_pct": 49.0,
+          "is_knocked_out": false
+        }
+      },
       "history": [
         {
           "type": "BUY",
@@ -2276,6 +2304,17 @@
           "pnl_pct": -8.42,
           "date": "2026-10-06 21:02",
           "reason": "🛡️ EOD Pflichtverkauf (-5.6%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO840671",
+          "name": "⚡ Turbo Bull 2.0x auf iShares PHLX SOX Semiconductor  (KO: 299.89)",
+          "product_type": "KNOCKOUT",
+          "shares": 153.3988,
+          "price": 2.94,
+          "total": 456.4,
+          "date": "2026-10-07 13:46",
+          "reason": "⚡ Daytrade (+1.4% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 2.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
