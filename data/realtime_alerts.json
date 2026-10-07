@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 13:40:59",
+    "time_str": "13:40:59",
+    "data_age_min": 0.6,
+    "window_span_min": 6.4,
+    "symbol": "BKSY",
+    "direction": "SHORT",
+    "trigger_price": 22.07,
+    "change_1min_pct": 1.25,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 13:40:56",
+    "time_str": "13:40:56",
+    "data_age_min": 0.2,
+    "window_span_min": 4.7,
+    "symbol": "SOXX",
+    "direction": "LONG",
+    "trigger_price": 588.01,
+    "change_1min_pct": 1.44,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SOXX explodiert um +1.44% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 13:35:52",
     "time_str": "13:35:52",
     "data_age_min": 2.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RXRX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 10:01:13",
-    "time_str": "10:01:13",
-    "data_age_min": 3.2,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.05,
-    "change_1min_pct": 1.24,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.24% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 09:40:57",
-    "time_str": "09:40:57",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "NG=F",
-    "direction": "LONG",
-    "trigger_price": 3.18,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NG=F explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
