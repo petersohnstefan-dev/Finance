@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-07 20:11:00",
+    "time_str": "20:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 32.27,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 20:06:03",
     "time_str": "20:06:03",
     "data_age_min": 0.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.43,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 18:40:56",
-    "time_str": "18:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LLY",
-    "direction": "SHORT",
-    "trigger_price": 1196.6,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LLY stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
