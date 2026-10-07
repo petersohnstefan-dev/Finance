@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-07 12:15:59",
+    "time_str": "12:15:59",
+    "data_age_min": 3.0,
+    "window_span_min": 3.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.1,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.10% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 12:05:51",
     "time_str": "12:05:51",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS stürzt um -2.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 22:41:02",
-    "time_str": "22:41:02",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 220.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
