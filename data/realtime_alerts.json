@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 13:25:48",
+    "time_str": "13:25:48",
+    "data_age_min": 0.6,
+    "window_span_min": 5.3,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 4.49,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 13:25:48",
+    "time_str": "13:25:48",
+    "data_age_min": 0.6,
+    "window_span_min": 5.2,
+    "symbol": "VKTX",
+    "direction": "SHORT",
+    "trigger_price": 28.3,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VKTX stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 13:20:58",
     "time_str": "13:20:58",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.29% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 23:45:17",
-    "time_str": "23:45:17",
-    "data_age_min": 2.1,
-    "window_span_min": 7.2,
-    "symbol": "HON",
-    "direction": "LONG",
-    "trigger_price": 214.24,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HON explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-06 23:45:17",
-    "time_str": "23:45:17",
-    "data_age_min": 0.7,
-    "window_span_min": 4.6,
-    "symbol": "INTU",
-    "direction": "LONG",
-    "trigger_price": 290.31,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU explodiert um +0.78% in 5 Min.! Momentum aktiv."
   }
 ]
