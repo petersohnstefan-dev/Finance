@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 14:46:06",
+    "time_str": "14:46:06",
+    "data_age_min": 4.1,
+    "window_span_min": 9.0,
+    "symbol": "TJX",
+    "direction": "LONG",
+    "trigger_price": 137.5,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TJX explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 14:45:59",
+    "time_str": "14:45:59",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "JOBY",
+    "direction": "SHORT",
+    "trigger_price": 5.65,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 14:40:59",
     "time_str": "14:40:59",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 13:10:47",
-    "time_str": "13:10:47",
-    "data_age_min": 0.2,
-    "window_span_min": 4.6,
-    "symbol": "JOBY",
-    "direction": "SHORT",
-    "trigger_price": 5.72,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 13:10:46",
-    "time_str": "13:10:46",
-    "data_age_min": 3.4,
-    "window_span_min": 3.4,
-    "symbol": "DNA",
-    "direction": "SHORT",
-    "trigger_price": 12.2,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
