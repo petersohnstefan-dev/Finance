@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 17:41:05",
+    "time_str": "17:41:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ADBE",
+    "direction": "LONG",
+    "trigger_price": 231.69,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 2.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ADBE explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 17:40:58",
+    "time_str": "17:40:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 193.5,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 17:36:42",
     "time_str": "17:36:42",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.47,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONQ stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:31:11",
-    "time_str": "16:31:11",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "HALO",
-    "direction": "SHORT",
-    "trigger_price": 112.24,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HALO stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:31:11",
-    "time_str": "16:31:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 2.62,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
