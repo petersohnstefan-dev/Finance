@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 22:01:16",
+    "time_str": "22:01:16",
+    "data_age_min": 2.3,
+    "window_span_min": 6.0,
+    "symbol": "MNTS",
+    "direction": "LONG",
+    "trigger_price": 3.5,
+    "change_1min_pct": 0.86,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS explodiert um +0.86% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 22:01:14",
+    "time_str": "22:01:14",
+    "data_age_min": 2.3,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 11.46,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 2.99,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 21:55:52",
     "time_str": "21:55:52",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.71,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FOUR explodiert um +0.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 11.56,
-    "change_1min_pct": 0.83,
-    "vol_ratio": 1.29,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.83% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 11.27,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
