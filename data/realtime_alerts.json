@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-07 14:40:59",
+    "time_str": "14:40:59",
+    "data_age_min": 0.7,
+    "window_span_min": 3.3,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.7,
+    "change_1min_pct": 1.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +1.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 14:40:57",
+    "time_str": "14:40:57",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "PA=F",
+    "direction": "SHORT",
+    "trigger_price": 1119.5,
+    "change_1min_pct": 0.93,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PA=F stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 14:40:57",
+    "time_str": "14:40:57",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "GC=F",
+    "direction": "SHORT",
+    "trigger_price": 4099.5,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 7.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GC=F stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 14:35:57",
     "time_str": "14:35:57",
     "data_age_min": 0.7,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 13:06:06",
-    "time_str": "13:06:06",
-    "data_age_min": 0.8,
-    "window_span_min": 5.3,
-    "symbol": "RTX",
-    "direction": "SHORT",
-    "trigger_price": 184.3,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RTX stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 13:05:59",
-    "time_str": "13:05:59",
-    "data_age_min": 2.6,
-    "window_span_min": 3.4,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 14.8,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 13:05:58",
-    "time_str": "13:05:58",
-    "data_age_min": 1.9,
-    "window_span_min": 4.1,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 27.07,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
