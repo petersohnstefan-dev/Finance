@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-07 18:25:55",
+    "time_str": "18:25:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "SHORT",
+    "trigger_price": 3.81,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 3.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-07 18:25:52",
+    "time_str": "18:25:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BEAM",
+    "direction": "LONG",
+    "trigger_price": 24.84,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-07 18:21:35",
     "time_str": "18:21:35",
     "data_age_min": 1.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADBE explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:56:39",
-    "time_str": "16:56:39",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "LONG",
-    "trigger_price": 216.49,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 16:56:38",
-    "time_str": "16:56:38",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "LONG",
-    "trigger_price": 72.32,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 0.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
