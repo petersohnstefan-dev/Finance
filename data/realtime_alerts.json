@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 12:20:58",
+    "time_str": "12:20:58",
+    "data_age_min": 0.3,
+    "window_span_min": 5.7,
+    "symbol": "HUBS",
+    "direction": "LONG",
+    "trigger_price": 217.22,
+    "change_1min_pct": 0.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 12:20:56",
+    "time_str": "12:20:56",
+    "data_age_min": 1.8,
+    "window_span_min": 9.2,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 51.75,
+    "change_1min_pct": 0.96,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.96% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 12:01:28",
     "time_str": "12:01:28",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SI=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 07:45:48",
-    "time_str": "07:45:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.45,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 07:20:55",
-    "time_str": "07:20:55",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.23,
-    "change_1min_pct": 1.79,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.79% in 5 Min.! Momentum aktiv."
   }
 ]
