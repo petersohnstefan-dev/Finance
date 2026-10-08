@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 21:15:57",
+    "time_str": "21:15:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ZS",
+    "direction": "SHORT",
+    "trigger_price": 215.7,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 21:15:56",
+    "time_str": "21:15:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PATH",
+    "direction": "SHORT",
+    "trigger_price": 13.15,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PATH stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 21:11:04",
     "time_str": "21:11:04",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ROIV explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:16:02",
-    "time_str": "20:16:02",
-    "data_age_min": 1.1,
-    "window_span_min": 4.0,
-    "symbol": "NVCR",
-    "direction": "LONG",
-    "trigger_price": 14.09,
-    "change_1min_pct": 1.33,
-    "vol_ratio": 1.63,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVCR explodiert um +1.33% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:16:02",
-    "time_str": "20:16:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 194.9,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 1.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.89% in 5 Min.! Momentum aktiv."
   }
 ]
