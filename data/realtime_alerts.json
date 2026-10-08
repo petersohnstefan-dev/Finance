@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-08 21:05:53",
+    "time_str": "21:05:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MA",
+    "direction": "SHORT",
+    "trigger_price": 574.67,
+    "change_1min_pct": 0.99,
+    "vol_ratio": 4.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MA stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 21:05:53",
+    "time_str": "21:05:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "V",
+    "direction": "SHORT",
+    "trigger_price": 375.81,
+    "change_1min_pct": 1.03,
+    "vol_ratio": 7.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 V stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 21:05:47",
+    "time_str": "21:05:47",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "CAVA",
+    "direction": "LONG",
+    "trigger_price": 54.49,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 3.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-08 21:01:19",
     "time_str": "21:01:19",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.74,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BONK-USD explodiert um +1.27% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ONDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.93,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONDO-USD explodiert um +1.93% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "LONG",
-    "trigger_price": 0.47,
-    "change_1min_pct": 1.43,
-    "vol_ratio": 1.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD explodiert um +1.43% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:15:59",
-    "time_str": "20:15:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.21,
-    "change_1min_pct": 1.44,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.44% in 5 Min.! Momentum aktiv."
   }
 ]
