@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-08 20:05:51",
+    "time_str": "20:05:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 31.93,
+    "change_1min_pct": 1.88,
+    "vol_ratio": 1.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +1.88% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 20:05:51",
+    "time_str": "20:05:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.47,
+    "change_1min_pct": 0.81,
+    "vol_ratio": 0.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.81% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 20:05:47",
+    "time_str": "20:05:47",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "SHORT",
+    "trigger_price": 6.42,
+    "change_1min_pct": 1.55,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD stürzt um -1.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 20:00:15",
     "time_str": "20:00:15",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HBAR-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:51",
-    "time_str": "19:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.03,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:50",
-    "time_str": "19:25:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BONK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 1.26,
-    "vol_ratio": 0.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BONK-USD stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:50",
-    "time_str": "19:25:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEI-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.06,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 0.21,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEI-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
