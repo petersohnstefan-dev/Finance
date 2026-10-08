@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 14:35:57",
+    "time_str": "14:35:57",
+    "data_age_min": 3.0,
+    "window_span_min": 8.0,
+    "symbol": "CAT",
+    "direction": "SHORT",
+    "trigger_price": 800.79,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAT stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 14:35:49",
+    "time_str": "14:35:49",
+    "data_age_min": 1.8,
+    "window_span_min": 6.1,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.64,
+    "change_1min_pct": 1.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 14:31:18",
     "time_str": "14:31:18",
     "data_age_min": 4.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:56:04",
-    "time_str": "12:56:04",
-    "data_age_min": 3.0,
-    "window_span_min": 9.1,
-    "symbol": "COP",
-    "direction": "LONG",
-    "trigger_price": 133.0,
-    "change_1min_pct": 0.77,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COP explodiert um +0.77% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:50:53",
-    "time_str": "12:50:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.52,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 4.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
