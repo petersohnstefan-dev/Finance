@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 12:41:03",
+    "time_str": "12:41:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "PEP",
+    "direction": "LONG",
+    "trigger_price": 124.87,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PEP explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 12:40:54",
+    "time_str": "12:40:54",
+    "data_age_min": 1.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-08 12:35:52",
     "time_str": "12:35:52",
     "data_age_min": 10.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MAERSK-B.CO explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 09:10:57",
-    "time_str": "09:10:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "LONG",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 0.99,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 09:05:58",
-    "time_str": "09:05:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ERIC-B.ST",
-    "direction": "SHORT",
-    "trigger_price": 93.8,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ERIC-B.ST stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
