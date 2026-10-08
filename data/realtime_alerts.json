@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-08 07:01:17",
+    "time_str": "07:01:17",
+    "data_age_min": 1.3,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.47,
+    "change_1min_pct": 2.03,
+    "vol_ratio": 2.12,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD stürzt um -2.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-07 22:55:50",
     "time_str": "22:55:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.13,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DNA explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-07 21:10:58",
-    "time_str": "21:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 153.69,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
