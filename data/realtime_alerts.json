@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-08 14:31:18",
+    "time_str": "14:31:18",
+    "data_age_min": 4.9,
+    "window_span_min": 3.4,
+    "symbol": "ACN",
+    "direction": "SHORT",
+    "trigger_price": 197.0,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACN stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 14:31:10",
+    "time_str": "14:31:10",
+    "data_age_min": 4.5,
+    "window_span_min": 4.7,
+    "symbol": "HUBS",
+    "direction": "SHORT",
+    "trigger_price": 215.1,
+    "change_1min_pct": 0.92,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 14:31:10",
+    "time_str": "14:31:10",
+    "data_age_min": 4.2,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.87,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 14:31:07",
+    "time_str": "14:31:07",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.25,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 14:25:57",
     "time_str": "14:25:57",
     "data_age_min": 0.1,
@@ -596,57 +648,5 @@
     "vol_ratio": 4.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WLD-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:46:02",
-    "time_str": "12:46:02",
-    "data_age_min": 1.0,
-    "window_span_min": 6.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.72,
-    "change_1min_pct": 1.48,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -1.48% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:41:03",
-    "time_str": "12:41:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "PEP",
-    "direction": "LONG",
-    "trigger_price": 124.87,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PEP explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:40:54",
-    "time_str": "12:40:54",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.06,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 12:35:52",
-    "time_str": "12:35:52",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "BZ=F",
-    "direction": "LONG",
-    "trigger_price": 104.96,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BZ=F explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
