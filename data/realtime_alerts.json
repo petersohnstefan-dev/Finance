@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-08 12:46:02",
+    "time_str": "12:46:02",
+    "data_age_min": 1.0,
+    "window_span_min": 6.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.72,
+    "change_1min_pct": 1.48,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.48% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 12:41:03",
     "time_str": "12:41:03",
     "data_age_min": 0.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.31,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRV-USD explodiert um +1.10% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 09:11:05",
-    "time_str": "09:11:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "MAERSK-B.CO",
-    "direction": "LONG",
-    "trigger_price": 24590.0,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MAERSK-B.CO explodiert um +0.65% in 5 Min.! Momentum aktiv."
   }
 ]
