@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-08 12:31:10",
+    "time_str": "12:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 32.6,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 12:31:08",
+    "time_str": "12:31:08",
+    "data_age_min": 0.7,
+    "window_span_min": 7.4,
+    "symbol": "ARGX",
+    "direction": "LONG",
+    "trigger_price": 798.01,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 12:31:08",
+    "time_str": "12:31:08",
+    "data_age_min": 1.7,
+    "window_span_min": 4.4,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.2,
+    "change_1min_pct": 0.71,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 12:26:05",
     "time_str": "12:26:05",
     "data_age_min": 0.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.26% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 08:55:55",
-    "time_str": "08:55:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "LONG",
-    "trigger_price": 5.53,
-    "change_1min_pct": 1.23,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD explodiert um +1.23% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 08:50:56",
-    "time_str": "08:50:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRV-USD",
-    "direction": "LONG",
-    "trigger_price": 0.39,
-    "change_1min_pct": 1.06,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRV-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 08:31:02",
-    "time_str": "08:31:02",
-    "data_age_min": 4.0,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.05,
-    "change_1min_pct": 1.49,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.49% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
