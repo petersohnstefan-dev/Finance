@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 19:41:05",
+    "time_str": "19:41:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 40.06,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.47,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 19:41:04",
+    "time_str": "19:41:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SYM",
+    "direction": "SHORT",
+    "trigger_price": 41.46,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 19:35:53",
     "time_str": "19:35:53",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKNG explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:16:00",
-    "time_str": "19:16:00",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.48,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:16:00",
-    "time_str": "19:16:00",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 8.22,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
