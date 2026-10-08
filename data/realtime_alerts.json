@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-08 22:21:07",
+    "time_str": "22:21:07",
+    "data_age_min": 3.5,
+    "window_span_min": 4.7,
+    "symbol": "INTU",
+    "direction": "LONG",
+    "trigger_price": 303.88,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 22:21:01",
+    "time_str": "22:21:01",
+    "data_age_min": 3.3,
+    "window_span_min": 5.7,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 347.05,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 22:21:00",
+    "time_str": "22:21:00",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 56.56,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 22:21:00",
+    "time_str": "22:21:00",
+    "data_age_min": 2.6,
+    "window_span_min": 6.5,
+    "symbol": "ARM",
+    "direction": "SHORT",
+    "trigger_price": 274.14,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-08 22:16:07",
     "time_str": "22:16:07",
     "data_age_min": 0.5,
@@ -596,57 +648,5 @@
     "vol_ratio": 1.77,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JOBY explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 21:35:55",
-    "time_str": "21:35:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ACN",
-    "direction": "LONG",
-    "trigger_price": 208.41,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 1.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACN explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 21:35:49",
-    "time_str": "21:35:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.48,
-    "change_1min_pct": 0.86,
-    "vol_ratio": 0.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.86% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 21:30:59",
-    "time_str": "21:30:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 195.46,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 21:30:57",
-    "time_str": "21:30:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "LONG",
-    "trigger_price": 0.52,
-    "change_1min_pct": 1.81,
-    "vol_ratio": 1.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD explodiert um +1.81% in 5 Min.! Momentum aktiv."
   }
 ]
