@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 21:30:59",
+    "time_str": "21:30:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 195.46,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 21:30:57",
+    "time_str": "21:30:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.52,
+    "change_1min_pct": 1.81,
+    "vol_ratio": 1.1,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.81% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-08 21:25:48",
     "time_str": "21:25:48",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.44,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PENDLE-USD explodiert um +1.30% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:25:46",
-    "time_str": "20:25:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "LONG",
-    "trigger_price": 4.51,
-    "change_1min_pct": 1.71,
-    "vol_ratio": 2.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD explodiert um +1.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 20:20:55",
-    "time_str": "20:20:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.47,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
