@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-08 20:11:17",
+    "time_str": "20:11:17",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "ORCL",
+    "direction": "SHORT",
+    "trigger_price": 136.1,
+    "change_1min_pct": 0.81,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 20:11:08",
+    "time_str": "20:11:08",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "CAVA",
+    "direction": "LONG",
+    "trigger_price": 54.49,
+    "change_1min_pct": 1.05,
+    "vol_ratio": 2.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 20:11:07",
+    "time_str": "20:11:07",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "ARVN",
+    "direction": "LONG",
+    "trigger_price": 7.45,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.69,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-08 20:05:51",
     "time_str": "20:05:51",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.77,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ALNY explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:53",
-    "time_str": "19:25:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 2.24,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 2.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:53",
-    "time_str": "19:25:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 51.61,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 19:25:51",
-    "time_str": "19:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HBAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.02,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HBAR-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
