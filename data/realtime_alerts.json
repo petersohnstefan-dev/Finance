@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-08 13:45:57",
+    "time_str": "13:45:57",
+    "data_age_min": 3.1,
+    "window_span_min": 5.9,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.84,
+    "change_1min_pct": 1.03,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-08 13:45:56",
+    "time_str": "13:45:56",
+    "data_age_min": 1.3,
+    "window_span_min": 4.7,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 196.23,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-08 13:40:59",
     "time_str": "13:40:59",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PLTR explodiert um +1.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 11:01:28",
-    "time_str": "11:01:28",
-    "data_age_min": 3.5,
-    "window_span_min": 8.9,
-    "symbol": "SPGI",
-    "direction": "LONG",
-    "trigger_price": 399.29,
-    "change_1min_pct": 0.86,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SPGI explodiert um +0.86% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 10:50:58",
-    "time_str": "10:50:58",
-    "data_age_min": 2.0,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.05,
-    "change_1min_pct": 2.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +2.06% in 5 Min.! Momentum aktiv."
   }
 ]
