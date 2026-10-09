@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-09 09:10:59",
+    "time_str": "09:10:59",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 24550.0,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 09:05:58",
     "time_str": "09:05:58",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 8.19,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DIS explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:01:22",
-    "time_str": "22:01:22",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "PEP",
-    "direction": "LONG",
-    "trigger_price": 128.62,
-    "change_1min_pct": 0.72,
-    "vol_ratio": 6.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PEP explodiert um +0.72% in 5 Min.! Momentum aktiv."
   }
 ]
