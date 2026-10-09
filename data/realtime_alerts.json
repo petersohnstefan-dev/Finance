@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-09 21:45:59",
+    "time_str": "21:45:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "LONG",
+    "trigger_price": 3.3,
+    "change_1min_pct": 1.23,
+    "vol_ratio": 1.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS explodiert um +1.23% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 21:45:58",
+    "time_str": "21:45:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RDDT",
+    "direction": "SHORT",
+    "trigger_price": 159.45,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 21:45:57",
+    "time_str": "21:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "SHORT",
+    "trigger_price": 31.1,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 0.82,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 21:41:08",
     "time_str": "21:41:08",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.85,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 20:31:15",
-    "time_str": "20:31:15",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "RKLB",
-    "direction": "SHORT",
-    "trigger_price": 68.42,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 20:25:58",
-    "time_str": "20:25:58",
-    "data_age_min": 1.0,
-    "window_span_min": 6.0,
-    "symbol": "BLNK",
-    "direction": "SHORT",
-    "trigger_price": 0.46,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 0.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 20:25:58",
-    "time_str": "20:25:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "SHORT",
-    "trigger_price": 7.88,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 2.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
