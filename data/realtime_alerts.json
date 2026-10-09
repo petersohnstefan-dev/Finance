@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-09 18:31:08",
+    "time_str": "18:31:08",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 13.01,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 0.47,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.77% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 18:31:07",
+    "time_str": "18:31:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 218.09,
+    "change_1min_pct": 0.88,
+    "vol_ratio": 1.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.88% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 18:25:44",
     "time_str": "18:25:44",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PLTR explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 17:20:59",
-    "time_str": "17:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 207.59,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 17:16:00",
-    "time_str": "17:16:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "LONG",
-    "trigger_price": 28.01,
-    "change_1min_pct": 0.72,
-    "vol_ratio": 1.63,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH explodiert um +0.72% in 5 Min.! Momentum aktiv."
   }
 ]
