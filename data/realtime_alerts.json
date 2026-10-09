@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-09 14:21:01",
+    "time_str": "14:21:01",
+    "data_age_min": 0.2,
+    "window_span_min": 2.8,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.79,
+    "change_1min_pct": 1.21,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.21% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 14:16:03",
     "time_str": "14:16:03",
     "data_age_min": 2.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 10:51:00",
-    "time_str": "10:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "VWS.CO",
-    "direction": "LONG",
-    "trigger_price": 189.45,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VWS.CO explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
