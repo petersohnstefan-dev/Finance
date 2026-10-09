@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-09 14:40:54",
+    "time_str": "14:40:54",
+    "data_age_min": 0.1,
+    "window_span_min": 5.8,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 33.15,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 14:40:53",
+    "time_str": "14:40:53",
+    "data_age_min": 1.5,
+    "window_span_min": 3.5,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 11.88,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 14:35:47",
     "time_str": "14:35:47",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FET-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 12:10:57",
-    "time_str": "12:10:57",
-    "data_age_min": 3.0,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 12:05:47",
-    "time_str": "12:05:47",
-    "data_age_min": 0.1,
-    "window_span_min": 4.7,
-    "symbol": "NVDA",
-    "direction": "LONG",
-    "trigger_price": 235.5,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVDA explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
