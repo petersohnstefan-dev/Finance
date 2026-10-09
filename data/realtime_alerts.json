@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-09 12:05:47",
+    "time_str": "12:05:47",
+    "data_age_min": 0.1,
+    "window_span_min": 4.7,
+    "symbol": "NVDA",
+    "direction": "LONG",
+    "trigger_price": 235.5,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVDA explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 12:01:15",
     "time_str": "12:01:15",
     "data_age_min": 4.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +3.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:35:48",
-    "time_str": "22:35:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.81,
-    "vol_ratio": 1.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.81% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
