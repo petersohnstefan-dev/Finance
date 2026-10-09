@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-09 22:20:43",
+    "time_str": "22:20:43",
+    "data_age_min": 2.4,
+    "window_span_min": 3.3,
+    "symbol": "RUN",
+    "direction": "SHORT",
+    "trigger_price": 7.6,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 22:20:43",
+    "time_str": "22:20:43",
+    "data_age_min": 1.9,
+    "window_span_min": 5.8,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 416.18,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 22:20:42",
+    "time_str": "22:20:42",
+    "data_age_min": 0.6,
+    "window_span_min": 5.1,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.32,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 22:20:42",
+    "time_str": "22:20:42",
+    "data_age_min": 1.7,
+    "window_span_min": 5.0,
+    "symbol": "VKTX",
+    "direction": "LONG",
+    "trigger_price": 28.66,
+    "change_1min_pct": 0.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VKTX explodiert um +0.84% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 22:15:49",
     "time_str": "22:15:49",
     "data_age_min": 6.4,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.46,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:11:02",
-    "time_str": "21:11:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 32.0,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 2.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:11:02",
-    "time_str": "21:11:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 32.42,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 3.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.89% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:11:02",
-    "time_str": "21:11:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 16.88,
-    "change_1min_pct": 0.84,
-    "vol_ratio": 5.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:11:02",
-    "time_str": "21:11:02",
-    "data_age_min": 1.1,
-    "window_span_min": 4.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 30.84,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
