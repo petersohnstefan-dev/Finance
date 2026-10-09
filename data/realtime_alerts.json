@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-09 18:16:11",
+    "time_str": "18:16:11",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "INTU",
+    "direction": "SHORT",
+    "trigger_price": 303.2,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 18:16:04",
+    "time_str": "18:16:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 17.11,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 3.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 18:15:59",
+    "time_str": "18:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DOT-USD",
+    "direction": "LONG",
+    "trigger_price": 1.21,
+    "change_1min_pct": 1.79,
+    "vol_ratio": 0.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DOT-USD explodiert um +1.79% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 18:11:02",
     "time_str": "18:11:02",
     "data_age_min": 2.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.97,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS stürzt um -1.48% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 17:10:52",
-    "time_str": "17:10:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 2.23,
-    "change_1min_pct": 1.11,
-    "vol_ratio": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 17:05:40",
-    "time_str": "17:05:40",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 277.89,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 17:05:40",
-    "time_str": "17:05:40",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "SHORT",
-    "trigger_price": 178.74,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
