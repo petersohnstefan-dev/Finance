@@ -1397,10 +1397,43 @@
   }
  },
  "CHPT": {
-  "fetched_ts": 1790947906.7319596,
+  "fetched_ts": 1791553890.0504792,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": -3.73,
+   "altman_detail": {
+    "X1": 0.099,
+    "X2": -2.665,
+    "X3": -0.243,
+    "X4": 0.283,
+    "X5": 0.519
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Cyclical",
+   "beneish_m": -3.6,
+   "beneish_detail": {
+    "DSRI": 0.911,
+    "GMI": 0.79,
+    "AQI": 1.184,
+    "SGI": 0.986,
+    "DEPI": 0.86,
+    "SGAI": 0.938,
+    "LVGI": 1.174,
+    "TATA": -0.199
+   },
+   "computed_at": "2026-10-09"
   }
  },
  "QBTS": {
