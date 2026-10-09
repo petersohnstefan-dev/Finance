@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-09 10:05:54",
+    "time_str": "10:05:54",
+    "data_age_min": 0.3,
+    "window_span_min": 4.6,
+    "symbol": "VZ",
+    "direction": "SHORT",
+    "trigger_price": 43.34,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VZ stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 10:05:53",
+    "time_str": "10:05:53",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 108.97,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.81% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 10:05:53",
+    "time_str": "10:05:53",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "AAPL",
+    "direction": "SHORT",
+    "trigger_price": 334.59,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AAPL stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 10:05:52",
+    "time_str": "10:05:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ERIC-B.ST",
+    "direction": "SHORT",
+    "trigger_price": 94.7,
+    "change_1min_pct": 0.98,
+    "vol_ratio": 1.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ERIC-B.ST stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 09:40:48",
     "time_str": "09:40:48",
     "data_age_min": 1.8,
@@ -596,57 +648,5 @@
     "vol_ratio": 1.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN stürzt um -1.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:06:00",
-    "time_str": "22:06:00",
-    "data_age_min": 2.9,
-    "window_span_min": 5.1,
-    "symbol": "FOUR",
-    "direction": "LONG",
-    "trigger_price": 40.3,
-    "change_1min_pct": 1.82,
-    "vol_ratio": 3.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FOUR explodiert um +1.82% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:06:00",
-    "time_str": "22:06:00",
-    "data_age_min": 0.5,
-    "window_span_min": 4.5,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 341.89,
-    "change_1min_pct": 0.9,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:05:59",
-    "time_str": "22:05:59",
-    "data_age_min": 1.6,
-    "window_span_min": 5.4,
-    "symbol": "CELH",
-    "direction": "LONG",
-    "trigger_price": 27.6,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:05:59",
-    "time_str": "22:05:59",
-    "data_age_min": 2.9,
-    "window_span_min": 5.1,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 27.6,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
