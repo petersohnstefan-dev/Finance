@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-09 07:45:55",
+    "time_str": "07:45:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.51,
+    "change_1min_pct": 1.22,
+    "vol_ratio": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD stürzt um -1.22% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 07:45:55",
+    "time_str": "07:45:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "LONG",
+    "trigger_price": 4.86,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 07:31:03",
     "time_str": "07:31:03",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 7.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COIN stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:01:14",
-    "time_str": "22:01:14",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 196.6,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 3.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 21:55:52",
-    "time_str": "21:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 3.83,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 1.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.79% in 5 Min.! Momentum aktiv."
   }
 ]
