@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-09 15:06:00",
+    "time_str": "15:06:00",
+    "data_age_min": 1.8,
+    "window_span_min": 5.2,
+    "symbol": "ONON",
+    "direction": "SHORT",
+    "trigger_price": 33.91,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 15:06:00",
+    "time_str": "15:06:00",
+    "data_age_min": 4.8,
+    "window_span_min": 9.2,
+    "symbol": "ARGX",
+    "direction": "LONG",
+    "trigger_price": 821.82,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 15:01:10",
     "time_str": "15:01:10",
     "data_age_min": 4.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +1.46% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 13:16:02",
-    "time_str": "13:16:02",
-    "data_age_min": 0.6,
-    "window_span_min": 5.5,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 197.2,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 13:10:57",
-    "time_str": "13:10:57",
-    "data_age_min": 0.0,
-    "window_span_min": 2.9,
-    "symbol": "ZS",
-    "direction": "LONG",
-    "trigger_price": 222.0,
-    "change_1min_pct": 1.02,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS explodiert um +1.02% in 5 Min.! Momentum aktiv."
   }
 ]
