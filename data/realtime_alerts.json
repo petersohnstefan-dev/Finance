@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-09 13:25:49",
+    "time_str": "13:25:49",
+    "data_age_min": 0.7,
+    "window_span_min": 5.1,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.86,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 13:25:49",
+    "time_str": "13:25:49",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.97,
+    "change_1min_pct": 0.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-09 13:21:04",
     "time_str": "13:21:04",
     "data_age_min": 0.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DSV.CO explodiert um +1.10% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 09:05:51",
-    "time_str": "09:05:51",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.35,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.35% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 09:05:50",
-    "time_str": "09:05:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.74,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
