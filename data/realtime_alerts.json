@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-09 21:36:01",
+    "time_str": "21:36:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "SHORT",
+    "trigger_price": 104.61,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 21:35:55",
+    "time_str": "21:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 339.28,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 0.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 21:35:53",
+    "time_str": "21:35:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "SHORT",
+    "trigger_price": 17.77,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 1.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-09 21:35:53",
+    "time_str": "21:35:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 221.95,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 1.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 21:25:55",
     "time_str": "21:25:55",
     "data_age_min": 0.9,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.39,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 20:10:49",
-    "time_str": "20:10:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "LONG",
-    "trigger_price": 28.6,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 20:05:46",
-    "time_str": "20:05:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 12.82,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 1.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 19:56:03",
-    "time_str": "19:56:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "DE",
-    "direction": "LONG",
-    "trigger_price": 635.59,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DE explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 19:55:56",
-    "time_str": "19:55:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 8.74,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
