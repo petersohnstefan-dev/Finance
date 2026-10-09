@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-09 09:40:48",
+    "time_str": "09:40:48",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.2,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.20% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-09 09:31:05",
     "time_str": "09:31:05",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.66,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VKTX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-08 22:05:55",
-    "time_str": "22:05:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DOT-USD",
-    "direction": "LONG",
-    "trigger_price": 1.07,
-    "change_1min_pct": 2.09,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DOT-USD explodiert um +2.09% in 5 Min.! Momentum aktiv."
   }
 ]
