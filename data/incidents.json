@@ -1,5 +1,20 @@
 [
  {
+  "timestamp": "2026-10-10 02:22:12",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot medium_term: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "medium_term",
+   "abgelehnt": {
+    "short_term_min_alpha_score": "gehoert nicht zu Depot medium_term"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-10 02:22:12"
+ },
+ {
   "timestamp": "2026-10-02 02:08:00",
   "component": "ai_journal",
   "kind": "llm_parse_error",
