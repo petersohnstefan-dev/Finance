@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-12 10:15:56",
+    "time_str": "10:15:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.14,
+    "vol_ratio": 1.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 10:11:07",
     "time_str": "10:11:07",
     "data_age_min": 4.3,
@@ -635,18 +648,5 @@
     "vol_ratio": 3.98,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDWR explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 22:01:24",
-    "time_str": "22:01:24",
-    "data_age_min": 3.4,
-    "window_span_min": 5.0,
-    "symbol": "FOUR",
-    "direction": "LONG",
-    "trigger_price": 39.94,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 6.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FOUR explodiert um +0.63% in 5 Min.! Momentum aktiv."
   }
 ]
