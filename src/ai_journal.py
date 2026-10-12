@@ -206,6 +206,63 @@ def _escape_control_chars_in_strings(text: str) -> str:
     return "".join(out)
 
 
+#: Depotspezifische Randbedingungen. Frueher standen sie alle im selben Prompt,
+#: unabhaengig davon, welches Depot gerade analysiert wurde - und am 06.10.2026
+#: hat die Kurzfrist-Retro daraufhin daytrade_stop_loss_pct und
+#: daytrade_min_entry_score vorgeschlagen. Die Depot-Sperre hat das abgefangen,
+#: aber die Retro hat eine Nacht lang ueber Parameter nachgedacht, die sie gar
+#: nicht anfassen darf.
+_RANDBEDINGUNGEN_ALLE = """### ZUR POSITIONSGROESSE (haeufiger Denkfehler):
+Eine kleinere Position gibt Gewinnern NICHT mehr Raum - sie macht jedes Ergebnis
+kleiner, das gute wie das schlechte. Wer "Gewinner laufen lassen" als Lehre zieht
+und daraufhin das Risiko je Trade senkt, tut das Gegenteil dessen, was er
+aufgeschrieben hat. Raum fuer Gewinner entsteht an den AUSSTIEGS-Parametern
+(Trailing-Abstand, Breakeven-Schwelle, Gewinnmitnahme), nicht an der Groesse."""
+
+_RANDBEDINGUNGEN_HEBEL = """### HARTE RANDBEDINGUNG DES SYSTEMS (nicht verhandelbar):
+Der Handels-Bot laeuft als Cron-Job und prueft die Positionen bestenfalls alle
+5 Minuten, bei Warteschlangen auch deutlich seltener. Dazwischen kann NICHTS
+verkauft werden. Ein Stop von X% auf einem Hebelzertifikat haelt daher nur, wenn
+der Basiswert mehr als X%/Hebel Gegenbewegung braucht, um ihn zu ueberspringen.
+Bei Hebel 7-10 liegt diese Schwelle bei 1,4-2,0% - genau die Groessenordnung, die
+der Scanner als Einstiegssignal sucht. Der Hebel ist deshalb begrenzt.
+Schlage NIEMALS einen hoeheren Hebel vor, auch nicht zur Renditesteigerung, und
+begruende Verluste nicht mit "zu wenig Hebel". Wenn die Verluste zu gross sind,
+ist der richtige Hebel kleiner, nicht groesser."""
+
+_RANDBEDINGUNGEN_DAYTRADE = """### ZUM RISIKO JE TRADE DIESES DEPOTS:
+Es stand am 29.09.2026 auf 0,5% - der damaligen Untergrenze -, nachdem es in vier
+gleichgerichteten Schritten von 2,0% dorthin gesenkt worden war. Die Position
+betrug dadurch noch 29% der vom 18.09., und der aufgelaufene Verlust war damit
+rechnerisch nicht mehr aufholbar. Es wurde auf 1,5% zurueckgesetzt und die
+Untergrenze auf 1,0% angehoben. Begruendung: die grossen Verluste, mit denen die
+Senkungen begruendet wurden, stammen aus Hebel 9-10 und aus veralteten
+Kursdaten. Beides ist behoben - der Hebel ist auf 2,5 begrenzt, der Scanner
+prueft seit dem 24.09. das Alter seiner Kerzen. Die Verluste, gegen die hier
+angesteuert wurde, koennen so nicht mehr entstehen. Senke diesen Wert nicht
+erneut mit Verweis auf Trades aus der Zeit davor."""
+
+_RANDBEDINGUNGEN_SHORT = """### ZUM BREAKEVEN-TRIGGER DIESES DEPOTS:
+Er stand bis zum 23.09.2026 bei 1.0 ATR. Das hat die Stops auf den Einstand
+gezogen, bevor die Trades irgendwo waren: drei so beendete Positionen stiegen
+danach im Schnitt 14%, die Haelfte aller Ausstiege lag im Nullsummenbereich.
+Die Untergrenze liegt seither bei 1.5. Senke ihn nicht mit der Begruendung,
+Verluste zu begrenzen - der Wert begrenzt keine Verluste, er beendet Gewinner
+vorzeitig. Niedrigere Vorschlaege werden abgelehnt."""
+
+
+def _randbedingungen(depot_id: str) -> str:
+    """Nur die Hinweise, die fuer dieses Depot gelten."""
+    teile = [_RANDBEDINGUNGEN_ALLE]
+    if depot_id in ("day_trading", "short_term"):
+        teile.append(_RANDBEDINGUNGEN_HEBEL)
+    if depot_id == "day_trading":
+        teile.append(_RANDBEDINGUNGEN_DAYTRADE)
+    if depot_id == "short_term":
+        teile.append(_RANDBEDINGUNGEN_SHORT)
+    return "\n\n".join(teile)
+
+
 def _param_feld(angewandt: Optional[Dict[str, Any]],
                 abgelehnt: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     """Was im Tagebuch unter param_updates steht.
@@ -728,9 +785,20 @@ class AIJournalEngine:
         try:
             today = trading_day().strftime("%Y-%m-%d")
             conn = sqlite3.connect(DB_FILE)
-            row = conn.execute(
-                "SELECT reflection FROM ai_journal WHERE depot_id=? AND date=? AND mode=?",
-                (depot_id, today, mode)).fetchone()
+            if mode == "weekly":
+                # Wocheneintraege tragen im Datumsfeld einen ZEITRAUM
+                # ("2026-10-02 bis 2026-10-09"), kein Datum. Der Gleichheits-
+                # vergleich darunter konnte deshalb nie greifen, und der
+                # Doppellauf-Schutz war fuer Wochenretrospektiven faktisch
+                # abgeschaltet - ein zweiter Lauf haette die Parameter erneut
+                # angewandt. Hier zaehlt das ENDE des Zeitraums.
+                row = conn.execute(
+                    "SELECT reflection FROM ai_journal WHERE depot_id=? AND mode=? "
+                    "AND date LIKE ?", (depot_id, mode, f"% bis {today}")).fetchone()
+            else:
+                row = conn.execute(
+                    "SELECT reflection FROM ai_journal WHERE depot_id=? AND date=? AND mode=?",
+                    (depot_id, today, mode)).fetchone()
             conn.close()
             if not row:
                 return False
@@ -792,6 +860,7 @@ class AIJournalEngine:
         # that only exists across weeks. Judging exits on a single day is how
         # the premature breakeven stop stayed invisible for a month.
         exit_block = exit_analysis.format_for_prompt(depot_id, days=90)
+        randbedingungen = _randbedingungen(depot_id)
 
         # Where the depot stands is not the same question as where it is going.
         # Judged on the all-time figures alone every night reads "catastrophic",
@@ -857,44 +926,7 @@ Aenderung nicht durch neue Trades geprueft wurde. Massstab sind abgeschlossene
 Trades, nicht verstrichene Tage - solche Vorschlaege werden automatisch abgelehnt.
 Fehlt die Evidenz, ist "nichts aendern" die richtige Antwort.
 
-### ZUR POSITIONSGROESSE (haeufiger Denkfehler):
-Eine kleinere Position gibt Gewinnern NICHT mehr Raum - sie macht jedes Ergebnis
-kleiner, das gute wie das schlechte. Wer "Gewinner laufen lassen" als Lehre zieht
-und daraufhin das Risiko je Trade senkt, tut das Gegenteil dessen, was er
-aufgeschrieben hat. Raum fuer Gewinner entsteht an den AUSSTIEGS-Parametern
-(Trailing-Abstand, Breakeven-Schwelle, Gewinnmitnahme), nicht an der Groesse.
-Das Daytrader-Depot hat sein Risiko je Trade in zehn Tagen von 2,0% auf 0,5%
-gesenkt - die Untergrenze - und handelt damit Positionen, mit denen sich der
-aufgelaufene Verlust rechnerisch nicht mehr aufholen laesst.
-
-Das Risiko je Trade des Daytraders stand am 29.09.2026 auf 0,5% - der damaligen
-Untergrenze -, nachdem es in vier gleichgerichteten Schritten von 2,0% dorthin
-gesenkt worden war. Es wurde auf 1,5% zurueckgesetzt und die Untergrenze auf
-1,0% angehoben. Begruendung: die grossen Verluste, mit denen die Senkungen
-begruendet wurden, stammen aus Hebel 9-10 und aus veralteten Kursdaten. Beides
-ist behoben - der Hebel ist auf 2,5 begrenzt, der Scanner prueft seit dem 24.09.
-das Alter seiner Kerzen. Die Verluste, gegen die hier angesteuert wurde, koennen
-so nicht mehr entstehen. Senke diesen Wert nicht erneut mit Verweis auf Trades
-aus der Zeit davor.
-
-### HARTE RANDBEDINGUNG DES SYSTEMS (nicht verhandelbar):
-Der Handels-Bot laeuft als Cron-Job und prueft die Positionen bestenfalls alle
-5 Minuten, bei Warteschlangen auch deutlich seltener. Dazwischen kann NICHTS
-verkauft werden. Ein Stop von X% auf einem Hebelzertifikat haelt daher nur, wenn
-der Basiswert mehr als X%/Hebel Gegenbewegung braucht, um ihn zu ueberspringen.
-Bei Hebel 7-10 liegt diese Schwelle bei 1,4-2,0% - genau die Groessenordnung, die
-der Scanner als Einstiegssignal sucht. Der Hebel ist deshalb auf 3x begrenzt.
-Schlage NIEMALS einen hoeheren Hebel vor, auch nicht zur Renditesteigerung, und
-begruende Verluste nicht mit "zu wenig Hebel". Wenn die Verluste zu gross sind,
-ist der richtige Hebel kleiner, nicht groesser.
-
-Der Breakeven-Trigger des Kurzfristdepots stand bis zum 23.09.2026 bei 1.0 ATR.
-Das hat die Stops auf den Einstand gezogen, bevor die Trades irgendwo waren: drei
-so beendete Positionen stiegen danach im Schnitt 14%, die Haelfte aller Ausstiege
-lag im Nullsummenbereich. Er steht jetzt bei 2.0 und die Untergrenze bei 1.5.
-Senke ihn nicht mit der Begruendung, Verluste zu begrenzen - der Wert begrenzt
-keine Verluste, er beendet Gewinner vorzeitig. Niedrigere Vorschlaege werden
-abgelehnt.
+{randbedingungen}
 
 ### TECHNISCHE STOERUNGEN (Defekte, keine Strategiefrage):
 {incidents.summarize(7)}
@@ -1104,10 +1136,44 @@ Wenn keine Änderungen nötig sind, setze "parameter_changes": {{}}.
                                                    getattr(self, "_last_rejected", None)))
         }
 
-        self.save_journal_entry(journal_entry)
+        self.save_journal_entry(journal_entry, applied_changes)
         return journal_entry
 
-    def save_journal_entry(self, entry: Dict[str, Any]):
+    def _eintrag_vormerken(self, entry: Dict[str, Any],
+                           angewandt: Optional[Dict[str, Any]] = None) -> None:
+        """Den Eintrag zusaetzlich als Datei ablegen, unversioniert.
+
+        portfolio.db ist binaer, Git kann sie nicht zusammenfuehren. Der
+        Handels-Bot pusht werktags alle fuenf Minuten, also liegt auf origin
+        meist schon eine neuere Datenbank, wenn die naechtliche Retrospektive
+        fertig ist. Der Push wird abgelehnt, das Retry rebased - und ein Rebase
+        ueber eine SQLite-Datei kann nicht gelingen. Am 02.10.2026 ist so eine
+        fertig berechnete Wochenretrospektive fuer beide Depots verlorengegangen.
+
+        Der Workflow setzt deshalb hart auf origin/main zurueck und schreibt den
+        Eintrag aus dieser Datei neu (tools/reapply_journal.py). Unversioniert,
+        weil `git reset --hard` versionierte Aenderungen verwirft, unverfolgte
+        Dateien aber stehen laesst.
+        """
+        try:
+            ordner = data_file("journal_pending")
+            os.makedirs(ordner, exist_ok=True)
+            sicher = str(entry.get("date", "")).replace(" ", "_").replace(":", "")
+            name = f"{entry['depot_id']}_{entry.get('mode', 'daily')}_{sicher}.json"
+            with open(os.path.join(ordner, name), "w", encoding="utf-8") as fh:
+                json.dump({"entry": entry,
+                           "strategy_updates": {k: v["new"] for k, v in
+                                                (angewandt or {}).items()
+                                                if isinstance(v, dict) and "new" in v}},
+                          fh, ensure_ascii=False, indent=1)
+        except Exception:
+            # Eine fehlgeschlagene Vormerkung darf die Retrospektive nicht kippen -
+            # sie ist die Absicherung, nicht der Zweck.
+            pass
+
+    def save_journal_entry(self, entry: Dict[str, Any],
+                           angewandt: Optional[Dict[str, Any]] = None):
+        self._eintrag_vormerken(entry, angewandt)
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
         cursor.execute('''

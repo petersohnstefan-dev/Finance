@@ -69,30 +69,54 @@ jobs:
         run: |
           git config --global user.name 'Finance AI Bot'
           git config --global user.email 'bot@antigravity.ai'
-          # incidents.json und die Rohantworten fehlten hier: das Lerntagebuch
-          # hat sie auf dem Runner geschrieben und der Runner wurde danach
-          # weggeworfen. Am 28.09. war deshalb weder die Stoerungsmeldung noch
-          # die gespeicherte Rohantwort zum Parser-Fehler auffindbar.
-          git add data/portfolio.db data/strategy.json data/incidents.json
-          git add data/llm_raw_*.txt 2>/dev/null || true
-          if git diff --staged --quiet; then
-            echo 'Keine neuen Einträge.'
-            exit 0
-          fi
-          git commit -m '🧠 KI-Lerntagebuch: Retrospektive + Strategie-Optimierung [skip ci]'
-          # Der Scanner-Bot pusht alle 5 Minuten und trifft diese Minute regelmäßig.
-          # Ohne Retry gingen die optimierten Parameter still verloren.
+
+          # data/portfolio.db ist eine SQLite-Datei und damit binaer - Git kann
+          # sie nicht zusammenfuehren. Der Handels-Bot pusht werktags alle fuenf
+          # Minuten, also liegt auf origin meist schon eine neuere Datenbank,
+          # wenn die naechtliche Retrospektive fertig ist. Der frueher hier
+          # stehende `git pull --rebase` konnte deshalb prinzipiell nicht
+          # gelingen:
+          #
+          #   Cannot merge binary files: data/portfolio.db
+          #   CONFLICT (content): Merge conflict in data/portfolio.db
+          #
+          # Am 02.10.2026 ist so eine fertig berechnete Wochenretrospektive fuer
+          # beide Depots verlorengegangen. Statt zu rebasen wird jetzt hart auf
+          # origin/main zurueckgesetzt und der Eintrag neu geschrieben - er liegt
+          # dafuer unversioniert in data/journal_pending/ und ueberlebt den Reset.
+          # Die Speicherung ist ein Upsert, erneutes Anwenden also gefahrlos.
+          push_ok=0
           for i in 1 2 3; do
+            if [ "$i" -gt 1 ]; then
+              echo "Versuch $i: auf origin/main zuruecksetzen und Eintrag neu schreiben."
+              git fetch origin main
+              git reset --hard origin/main
+              python tools/reapply_journal.py
+            fi
+
+            git add data/portfolio.db data/strategy.json data/incidents.json
+            git add data/llm_raw_*.txt 2>/dev/null || true
+
+            if git diff --staged --quiet; then
+              echo 'Keine neuen Eintraege.'
+              push_ok=1
+              break
+            fi
+
+            git commit -m '🧠 KI-Lerntagebuch: Retrospektive + Strategie-Optimierung [skip ci]'
             if git push; then
               echo "Push erfolgreich (Versuch $i)."
-              exit 0
+              push_ok=1
+              break
             fi
-            echo "Push abgelehnt - Bot war schneller. Rebase und Versuch $i von 3..."
-            if ! git pull --rebase; then
-              git rebase --abort || true
-              echo "::error::Rebase fehlgeschlagen (vermutlich Konflikt in data/portfolio.db)."
-              exit 1
-            fi
+            echo "Push abgelehnt - der Bot war schneller."
           done
-          echo "::error::Push nach 3 Versuchen fehlgeschlagen."
-          exit 1
+
+          if [ "$push_ok" -ne 1 ]; then
+            echo "::error::Push nach 3 Versuchen fehlgeschlagen. Die Retrospektive"
+            echo "::error::liegt noch in data/journal_pending/ auf diesem Runner."
+            exit 1
+          fi
+
+          python tools/reapply_journal.py --clear >/dev/null 2>&1 || true
+

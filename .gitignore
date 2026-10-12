@@ -17,3 +17,8 @@ ENV/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Vorgemerkte Tagebucheintraege: bewusst unversioniert, damit
+# `git reset --hard` sie stehen laesst - sie sind die Absicherung gegen
+# den nicht zusammenfuehrbaren Binaerkonflikt in portfolio.db.
+data/journal_pending/
