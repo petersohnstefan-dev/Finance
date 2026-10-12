@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-12 17:45:58",
+    "time_str": "17:45:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 31.88,
+    "change_1min_pct": 0.66,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 17:45:57",
+    "time_str": "17:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ARGX",
+    "direction": "SHORT",
+    "trigger_price": 812.48,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 17:45:56",
+    "time_str": "17:45:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 12.41,
+    "change_1min_pct": 0.84,
+    "vol_ratio": 1.14,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 17:41:03",
     "time_str": "17:41:03",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:31:05",
-    "time_str": "16:31:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ONDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.51,
-    "change_1min_pct": 1.17,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONDO-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:26:04",
-    "time_str": "16:26:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "SHORT",
-    "trigger_price": 31.66,
-    "change_1min_pct": 0.91,
-    "vol_ratio": 0.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:26:03",
-    "time_str": "16:26:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "PL",
-    "direction": "SHORT",
-    "trigger_price": 16.42,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.89,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
