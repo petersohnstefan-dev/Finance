@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-12 09:01:14",
+    "time_str": "09:01:14",
+    "data_age_min": 5.3,
+    "window_span_min": 4.0,
+    "symbol": "JUP-USD",
+    "direction": "LONG",
+    "trigger_price": 0.0,
+    "change_1min_pct": 2654.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD explodiert um +2654.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 08:45:47",
     "time_str": "08:45:47",
     "data_age_min": 0.8,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +1.23% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:45:58",
-    "time_str": "21:45:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 159.45,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.79,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
