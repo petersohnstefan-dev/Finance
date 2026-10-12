@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 13:46:00",
+    "time_str": "13:46:00",
+    "data_age_min": 0.6,
+    "window_span_min": 4.4,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 12.6,
+    "change_1min_pct": 1.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -1.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 13:45:57",
+    "time_str": "13:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.59,
+    "change_1min_pct": 1.06,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 13:35:52",
     "time_str": "13:35:52",
     "data_age_min": 1.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 10:40:57",
-    "time_str": "10:40:57",
-    "data_age_min": 0.6,
-    "window_span_min": 6.4,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 30.65,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 10:40:57",
-    "time_str": "10:40:57",
-    "data_age_min": 5.6,
-    "window_span_min": 6.4,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 4.41,
-    "change_1min_pct": 1.29,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
