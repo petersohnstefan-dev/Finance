@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 15:21:12",
+    "time_str": "15:21:12",
+    "data_age_min": 3.0,
+    "window_span_min": 2.2,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 4.55,
+    "change_1min_pct": 0.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 15:21:11",
+    "time_str": "15:21:11",
+    "data_age_min": 0.3,
+    "window_span_min": 4.9,
+    "symbol": "DUOL",
+    "direction": "LONG",
+    "trigger_price": 150.1,
+    "change_1min_pct": 0.98,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL explodiert um +0.98% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 15:15:52",
     "time_str": "15:15:52",
     "data_age_min": 5.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FTNT explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 13:10:53",
-    "time_str": "13:10:53",
-    "data_age_min": 0.5,
-    "window_span_min": 9.4,
-    "symbol": "ZS",
-    "direction": "LONG",
-    "trigger_price": 235.86,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 13:10:52",
-    "time_str": "13:10:52",
-    "data_age_min": 4.6,
-    "window_span_min": 6.3,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 12.6,
-    "change_1min_pct": 0.79,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
