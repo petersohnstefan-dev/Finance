@@ -20,7 +20,18 @@ def _stable_id(seed: str) -> int:
 # A certificate below this price cannot carry a meaningful stop: prices get rounded
 # to the cent, so the stop collapses onto the purchase price and only the knock-out
 # can still fire - which is a total loss.
-MIN_CERT_PRICE = 0.50
+#: Von 0,50 auf 2,00 angehoben.
+#:
+#: Das Bezugsverhaeltnis ist frei waehlbar, der Stueckpreis eines Zertifikats
+#: also eine reine Darstellungsfrage - aber der Spread haengt daran. Ein
+#: Daytrade-Turbo auf AAPL kostete bei Ratio 0,01 genau 0,92 EUR und damit 1,8%
+#: Spread je Seite; bei Ratio 0,1 kostet er 9,20 EUR und 0,8%. Gleicher Hebel,
+#: gleiche Position, ein Drittel der Kosten.
+#:
+#: In den 30 Tagen bis zum 12.10.2026 lagen 15 von 51 Zertifikatskaeufen unter
+#: 1,00 EUR. Diese 29% der Trades verursachten 63 von 120 Prozentpunkten der
+#: gesamten Spreadkosten des Depots - mehr als die Haelfte, fuer nichts.
+MIN_CERT_PRICE = 2.00
 
 #: Underlyings cheaper than this are not offered as turbos at all. Their quotes tick
 #: in increments of whole percent, and leverage multiplies that noise directly.
@@ -52,7 +63,11 @@ def round_price(value):
 #: Target price band for a generated certificate. Real issuers keep turbos in
 #: roughly this range, and it is where the spread stays economically sane: the
 #: bid/ask on a cent-priced paper is a double-digit percentage of its value.
-TARGET_CERT_PRICE = 2.0
+#: Zielpreis beim Waehlen des Bezugsverhaeltnisses. Hoeher als die Untergrenze,
+#: damit die groben Verhaeltnisstufen (0,001 / 0,01 / 0,1 / 1 / 10 ...) nicht
+#: regelmaessig knapp darueber landen. Bei einer Positionsgroesse von rund 670
+#: EUR bleiben selbst zweistellige Stueckpreise fein genug aufgeloest.
+TARGET_CERT_PRICE = 8.0
 
 
 def _pick_ratio(current_price: float, target_leverage: float) -> float:
