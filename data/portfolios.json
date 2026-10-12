@@ -586,22 +586,8 @@
       "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
       "strategy": "Buy & Hold bei Qualitätsunternehmen mit Burggraben (Piotroski, Altman, Beneish aus den Jahresabschlüssen), Gold und Bitcoin als Absicherung. Bonus-Zertifikate nur, wenn das Kurspotenzial unter dem Bonus liegt.",
       "initial_cash": 10000.0,
-      "cash": 1001.7918909560003,
+      "cash": 3058.1168452560005,
       "positions": {
-        "SAP.DE": {
-          "symbol": "SAP.DE",
-          "name": "SAP SE",
-          "shares": 10.6315,
-          "buy_price": 188.12,
-          "current_price": 193.9,
-          "buy_date": "2026-08-24 22:07",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "Europäischer Software-Monopolist, ROE 18.3%, solide Bilanz",
-          "derivative_type": "STOCK",
-          "last_updated": "13:41:33",
-          "peak_price": 194.36
-        },
         "MUV2.DE": {
           "symbol": "MUV2.DE",
           "name": "Münchener Rück AG",
@@ -744,6 +730,20 @@
           "total": 2004.0,
           "date": "2026-09-17 22:37",
           "reason": "🏰 Burggraben & Bilanz-Audit: ℹ️ Keine Bilanzdaten | Piotroski: — | Analystenpotenzial 23.0% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Keines der definierten Ausschlusskriterien greift: Zwar liegt die Datenabdeckung bei 45 %, doch stützt sich die Kaufseite auf tatsächlich gemessene Kennzahlen (KGV, ROE, langfrist_score, Analystenpotenzial) und nicht auf fehlende Bausteine wie Smart Money oder Forensic. Ein Verstoß der Bilanzqualität durch Distress-Werte liegt mangels negativer Scores nicht vor, ein Sektorklumpenrisiko existiert im Consumer-Defensive-Bereich nicht, und das Kaufargument basiert auf fundamentaler Bewertung statt reinem Momentum."
+        },
+        {
+          "type": "SELL",
+          "symbol": "SAP.DE",
+          "name": "SAP SE",
+          "product_type": "STOCK",
+          "shares": 10.6315,
+          "buy_price": 188.12,
+          "sell_price": 193.5122,
+          "total": 2057.32,
+          "pnl": 57.33,
+          "pnl_pct": 2.87,
+          "date": "2026-10-12 14:11",
+          "reason": "🔄 Qualitaets-Umschichtung: SAP.DE (Score 50, +3.1%) weicht dem staerkeren ONON (Score 100)"
         }
       ]
     },
@@ -2553,7 +2553,7 @@
     "long_term_BN401133": "2026-09-16T00:46:20.615011+02:00",
     "long_term_BN865261": "2026-09-16T00:51:39.723920+02:00",
     "short_term_ENPH": "2026-09-18T11:26:41.864721+02:00",
-    "long_term_ONON": "2026-09-17T23:11:42.886429+02:00",
+    "long_term_ONON": "2026-10-12T18:11:36.769730+02:00",
     "short_term_DNA": "2026-09-18T15:56:25.058641+02:00",
     "short_term_RDWR": "2026-09-18T17:51:44.584222+02:00",
     "short_term_MNTS": "2026-09-22T18:07:12.882722+02:00",
