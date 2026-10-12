@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 13:01:20",
+    "time_str": "13:01:20",
+    "data_age_min": 0.1,
+    "window_span_min": 5.3,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 52.79,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 13:01:20",
+    "time_str": "13:01:20",
+    "data_age_min": 0.1,
+    "window_span_min": 4.2,
+    "symbol": "IONQ",
+    "direction": "SHORT",
+    "trigger_price": 38.28,
+    "change_1min_pct": 3.28,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ stürzt um -3.28% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 12:55:54",
     "time_str": "12:55:54",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.32% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 09:01:14",
-    "time_str": "09:01:14",
-    "data_age_min": 5.3,
-    "window_span_min": 4.0,
-    "symbol": "JUP-USD",
-    "direction": "LONG",
-    "trigger_price": 0.0,
-    "change_1min_pct": 2654.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JUP-USD explodiert um +2654.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 08:45:47",
-    "time_str": "08:45:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.01,
-    "vol_ratio": 1.13,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
