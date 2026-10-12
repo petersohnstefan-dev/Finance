@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-12 20:16:01",
+    "time_str": "20:16:01",
+    "data_age_min": 1.0,
+    "window_span_min": 4.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 7.27,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 20:16:01",
+    "time_str": "20:16:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.47,
+    "change_1min_pct": 1.59,
+    "vol_ratio": 6.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -1.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 20:16:01",
+    "time_str": "20:16:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "QUBT",
+    "direction": "SHORT",
+    "trigger_price": 6.97,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 20:10:56",
     "time_str": "20:10:56",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.15,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENPH stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 18:31:20",
-    "time_str": "18:31:20",
-    "data_age_min": 4.4,
-    "window_span_min": 2.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 4.06,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 18:31:18",
-    "time_str": "18:31:18",
-    "data_age_min": 1.3,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 28.23,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 18:25:59",
-    "time_str": "18:25:59",
-    "data_age_min": 3.0,
-    "window_span_min": 5.0,
-    "symbol": "ARGX",
-    "direction": "LONG",
-    "trigger_price": 816.86,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 2.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARGX explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
