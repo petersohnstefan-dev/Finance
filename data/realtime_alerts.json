@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-12 17:16:02",
+    "time_str": "17:16:02",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 31.55,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 17:15:59",
+    "time_str": "17:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 12.7,
+    "change_1min_pct": 0.94,
+    "vol_ratio": 0.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 17:15:59",
+    "time_str": "17:15:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVCR",
+    "direction": "LONG",
+    "trigger_price": 14.52,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 17:10:57",
     "time_str": "17:10:57",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.74,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:21:05",
-    "time_str": "16:21:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 226.77,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:16:13",
-    "time_str": "16:16:13",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "INTU",
-    "direction": "SHORT",
-    "trigger_price": 306.69,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 16:16:07",
-    "time_str": "16:16:07",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 7.5,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 0.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
