@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 09:10:58",
+    "time_str": "09:10:58",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "SHORT",
+    "trigger_price": 104.02,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 09:10:58",
+    "time_str": "09:10:58",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "SHORT",
+    "trigger_price": 90.98,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.92,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 09:05:56",
     "time_str": "09:05:56",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HALO stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:55:46",
-    "time_str": "21:55:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "BEAM",
-    "direction": "SHORT",
-    "trigger_price": 25.69,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-09 21:50:48",
-    "time_str": "21:50:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "ARVN",
-    "direction": "SHORT",
-    "trigger_price": 7.63,
-    "change_1min_pct": 0.78,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARVN stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
