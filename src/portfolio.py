@@ -1069,8 +1069,16 @@ class PortfolioManager:
             pass
 
         try:
-            self.db.record_trade(depot_key, "SELL", symbol, pos["name"], shares, revenue, 
-                                 pos["buy_price"], sell_price=price, pnl=pnl, pnl_pct=pnl_pct, reason=reason)
+            # Die Verkaufsseite hat ihre Kosten bisher nicht festgehalten: auf der
+            # Kaufzeile stand der spreadbereinigte Preis und eine Gebuehr, auf der
+            # Verkaufszeile der notierte Preis und 0.0. Aus der Datenbank liess
+            # sich damit nicht ablesen, wie viel von einem Verlust Handel war und
+            # wie viel Kosten - der Daytrader hat so zehn Tage lang 1,4% je Trade
+            # an Spread verloren, ohne dass es irgendwo auftauchte.
+            verkaufskosten = shares * price * SPREAD_PCT + 1.00
+            self.db.record_trade(depot_key, "SELL", symbol, pos["name"], shares, revenue,
+                                 pos["buy_price"], sell_price=price, pnl=pnl,
+                                 pnl_pct=pnl_pct, reason=reason, fees=verkaufskosten)
         except Exception:
             pass
 

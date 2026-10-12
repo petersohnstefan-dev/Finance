@@ -76,16 +76,47 @@ def _is_defect(trade: Dict[str, Any], waivers: List[Dict[str, Any]]) -> bool:
     return False
 
 
+def _spreadkosten(symbol: str, buy_price: float, sell_price: float,
+                  shares: float) -> float:
+    """Was der Handel selbst gekostet hat, in Euro.
+
+    Der Spread steckt in den gespeicherten Preisen, nicht in einer eigenen
+    Spalte: auf der Kaufzeile ist der Preis bereits um ihn erhoeht, auf der
+    Verkaufszeile steht der notierte Kurs. Seit dem 12.10.2026 schreibt die
+    Verkaufsseite ihre Kosten mit; fuer aeltere Trades werden sie hier aus
+    denselben Staffeln zurueckgerechnet, aus denen sie entstanden sind.
+    """
+    try:
+        from src.portfolio import effective_spread_pct
+        ist_derivat = str(symbol).startswith("KO")
+        sp_kauf = effective_spread_pct(symbol, buy_price, ist_derivat)
+        sp_verkauf = effective_spread_pct(symbol, sell_price, ist_derivat)
+        # buy_price enthaelt den Aufschlag bereits: notiert = buy_price/(1+sp)
+        kosten_kauf = shares * buy_price * sp_kauf / (1.0 + sp_kauf)
+        kosten_verkauf = shares * sell_price * sp_verkauf
+        return kosten_kauf + kosten_verkauf + 2.00      # je 1 EUR Gebuehr
+    except Exception:
+        return 0.0
+
+
 def _closed_trades(depot_id: str) -> List[Dict[str, Any]]:
     try:
         conn = sqlite3.connect(DB_FILE)
         rows = conn.execute(
-            "SELECT substr(executed_at, 1, 10), pnl, pnl_pct FROM trades "
+            "SELECT substr(executed_at, 1, 10), pnl, pnl_pct, symbol, buy_price, "
+            "sell_price, shares FROM trades "
             "WHERE depot_id = ? AND trade_type = 'SELL' AND pnl IS NOT NULL "
             "ORDER BY executed_at", (depot_id,)).fetchall()
         conn.close()
-        return [{"date": r[0], "pnl": float(r[1]),
-                 "pnl_pct": (float(r[2]) if r[2] is not None else None)} for r in rows]
+        out = []
+        for r in rows:
+            kosten = _spreadkosten(r[3], float(r[4] or 0), float(r[5] or 0),
+                                   float(r[6] or 0))
+            out.append({"date": r[0], "pnl": float(r[1]),
+                        "pnl_pct": (float(r[2]) if r[2] is not None else None),
+                        "kosten": round(kosten, 2),
+                        "brutto": round(float(r[1]) + kosten, 2)})
+        return out
     except Exception:
         return []
 
@@ -97,12 +128,25 @@ def _stats(trades: List[Dict[str, Any]], waivers: List[Dict[str, Any]]) -> Dict[
     pnls = [t["pnl"] for t in trades]
     gewinner = [p for p in pnls if p > 0]
     bereinigt = [t["pnl"] for t in trades if not _is_defect(t, waivers)]
+    # Netto UND brutto. Ein Depot, dessen Handel bei null liegt und das nur an
+    # den Kosten verliert, braucht eine andere Antwort als eines, dessen Handel
+    # verliert - aus der Nettozahl allein sind die beiden nicht zu unterscheiden.
+    # Beim Daytrader waren es im Oktober -0,04% brutto gegen -1,42% netto, und
+    # genau das stand nirgends.
+    kosten = [t.get("kosten", 0.0) for t in trades]
+    brutto = [t.get("brutto", t["pnl"]) for t in trades]
     out: Dict[str, Any] = {
         "trades": n,
         "trefferquote_pct": round(len(gewinner) / n * 100.0, 1),
         "summe_eur": round(sum(pnls), 2),
         "mittel_eur": round(sum(pnls) / n, 2),
         "median_eur": round(statistics.median(pnls), 2),
+        "brutto_mittel_eur": round(sum(brutto) / n, 2),
+        "brutto_median_eur": round(statistics.median(brutto), 2),
+        "kosten_mittel_eur": round(sum(kosten) / n, 2),
+        "kostenanteil_am_verlust_pct": (
+            round(sum(kosten) / abs(sum(pnls)) * 100.0, 1)
+            if sum(pnls) < 0 and sum(kosten) > 0 else None),
     }
     if len(bereinigt) != n and bereinigt:
         out["defekte_ausgeschlossen"] = n - len(bereinigt)
@@ -132,7 +176,13 @@ def analyse_trend(depot_id: str) -> Dict[str, Any]:
         "fenster": fenster,
         "lesehilfe": ("Trend am Median und am defektbereinigten Mittel ablesen. Ein "
                       "Mittelwert, der sich wegen eines einzigen Trades bewegt, ist "
-                      "kein Trend."),
+                      "kein Trend. 'brutto' ist das Ergebnis VOR Spread und "
+                      "Gebuehren, 'kosten' die Differenz zum gebuchten Wert. Liegt "
+                      "brutto nahe null und steckt der Verlust fast ganz in den "
+                      "Kosten, ist das keine Strategiefrage, sondern eine Frage von "
+                      "Handelsfrequenz und Instrument - dann hilft kein Einstiegs- "
+                      "oder Ausstiegsparameter, sondern nur seltener oder guenstiger "
+                      "zu handeln."),
     }
 
     # Explicit comparison of the two most recent full windows, with the caveat
