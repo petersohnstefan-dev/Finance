@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-12 14:01:31",
+    "time_str": "14:01:31",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "HM-B.ST",
+    "direction": "SHORT",
+    "trigger_price": 161.75,
+    "change_1min_pct": 1.82,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HM-B.ST stürzt um -1.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 14:01:27",
+    "time_str": "14:01:27",
+    "data_age_min": 2.5,
+    "window_span_min": 4.0,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.58,
+    "change_1min_pct": 0.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 14:01:25",
+    "time_str": "14:01:25",
+    "data_age_min": 2.7,
+    "window_span_min": 2.7,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 12.62,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 13:55:52",
     "time_str": "13:55:52",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -1.30% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 11:46:04",
-    "time_str": "11:46:04",
-    "data_age_min": 1.1,
-    "window_span_min": 6.0,
-    "symbol": "MAERSK-B.CO",
-    "direction": "SHORT",
-    "trigger_price": 24920.0,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 0.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MAERSK-B.CO stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 11:10:58",
-    "time_str": "11:10:58",
-    "data_age_min": 0.5,
-    "window_span_min": 7.4,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 13.18,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 11:05:41",
-    "time_str": "11:05:41",
-    "data_age_min": 0.4,
-    "window_span_min": 5.3,
-    "symbol": "FSLR",
-    "direction": "LONG",
-    "trigger_price": 182.0,
-    "change_1min_pct": 1.68,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR explodiert um +1.68% in 5 Min.! Momentum aktiv."
   }
 ]
