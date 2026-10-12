@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-12 15:01:17",
+    "time_str": "15:01:17",
+    "data_age_min": 1.1,
+    "window_span_min": 5.2,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 30.99,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 14:55:52",
     "time_str": "14:55:52",
     "data_age_min": 0.7,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES explodiert um +1.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 12:46:07",
-    "time_str": "12:46:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ADBE",
-    "direction": "SHORT",
-    "trigger_price": 239.01,
-    "change_1min_pct": 1.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADBE stürzt um -1.64% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
