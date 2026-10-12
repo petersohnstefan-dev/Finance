@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-12 19:01:22",
+    "time_str": "19:01:22",
+    "data_age_min": 2.4,
+    "window_span_min": 9.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 4.05,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 19:01:20",
+    "time_str": "19:01:20",
+    "data_age_min": 1.4,
+    "window_span_min": 5.0,
+    "symbol": "CAVA",
+    "direction": "SHORT",
+    "trigger_price": 50.9,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 2.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 19:01:17",
+    "time_str": "19:01:17",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.12,
+    "vol_ratio": 2.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.12% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 18:55:54",
     "time_str": "18:55:54",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.4,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 17:31:26",
-    "time_str": "17:31:26",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 13.8,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 2.44,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 17:31:25",
-    "time_str": "17:31:25",
-    "data_age_min": 1.5,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 42.0,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 1.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 17:25:58",
-    "time_str": "17:25:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ONON",
-    "direction": "LONG",
-    "trigger_price": 35.01,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 2.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
