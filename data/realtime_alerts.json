@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-12 14:21:00",
+    "time_str": "14:21:00",
+    "data_age_min": 2.6,
+    "window_span_min": 2.5,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.48,
+    "change_1min_pct": 2.04,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -2.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-12 14:16:07",
     "time_str": "14:16:07",
     "data_age_min": 0.8,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADBE explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 12:05:59",
-    "time_str": "12:05:59",
-    "data_age_min": 0.1,
-    "window_span_min": 5.9,
-    "symbol": "CRM",
-    "direction": "LONG",
-    "trigger_price": 238.0,
-    "change_1min_pct": 3.03,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM explodiert um +3.03% in 5 Min.! Momentum aktiv."
   }
 ]
