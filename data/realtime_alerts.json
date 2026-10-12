@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 19:06:04",
+    "time_str": "19:06:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "META",
+    "direction": "LONG",
+    "trigger_price": 749.22,
+    "change_1min_pct": 0.95,
+    "vol_ratio": 1.71,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 META explodiert um +0.95% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 19:05:57",
+    "time_str": "19:05:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "RDDT",
+    "direction": "LONG",
+    "trigger_price": 155.96,
+    "change_1min_pct": 0.83,
+    "vol_ratio": 1.93,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT explodiert um +0.83% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 19:01:22",
     "time_str": "19:01:22",
     "data_age_min": 2.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.63,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BLNK explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 17:36:00",
-    "time_str": "17:36:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 12.95,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 17:35:58",
-    "time_str": "17:35:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 219.7,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
