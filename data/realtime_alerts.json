@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-12 13:55:52",
+    "time_str": "13:55:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.43,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.43% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-12 13:55:51",
+    "time_str": "13:55:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RENDER-USD",
+    "direction": "LONG",
+    "trigger_price": 2.1,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 1.38,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RENDER-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-12 13:51:03",
     "time_str": "13:51:03",
     "data_age_min": 3.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FSLR explodiert um +1.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 11:05:40",
-    "time_str": "11:05:40",
-    "data_age_min": 10.7,
-    "window_span_min": 5.0,
-    "symbol": "BZ=F",
-    "direction": "LONG",
-    "trigger_price": 105.39,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BZ=F explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 11:05:40",
-    "time_str": "11:05:40",
-    "data_age_min": 10.7,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "LONG",
-    "trigger_price": 92.34,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
