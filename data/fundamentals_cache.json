@@ -1254,10 +1254,43 @@
   }
  },
  "ACN": {
-  "fetched_ts": 1790257611.2426152,
+  "fetched_ts": 1791812199.0829136,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 4.61,
+   "altman_detail": {
+    "X1": 0.131,
+    "X2": 0.321,
+    "X3": 0.166,
+    "X4": 3.987,
+    "X5": 1.065
+   },
+   "altman_not_applicable": false,
+   "sector": null,
+   "beneish_m": -2.74,
+   "beneish_detail": {
+    "DSRI": 1.025,
+    "GMI": 1.022,
+    "AQI": 0.894,
+    "SGI": 1.074,
+    "DEPI": 0.835,
+    "SGAI": 0.954,
+    "LVGI": 1.14,
+    "TATA": -0.056
+   },
+   "computed_at": "2026-10-12"
   }
  },
  "SHLS": {
@@ -2846,10 +2879,37 @@
   }
  },
  "COIN": {
-  "fetched_ts": 1790602301.8254335,
+  "fetched_ts": 1791812201.01838,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": null,
+   "altman_detail": null,
+   "altman_not_applicable": true,
+   "sector": "Financial Services",
+   "beneish_m": -2.12,
+   "beneish_detail": {
+    "DSRI": 1.277,
+    "GMI": 1.002,
+    "AQI": 1.612,
+    "SGI": 1.094,
+    "DEPI": 0.985,
+    "SGAI": 1.433,
+    "LVGI": 0.913,
+    "TATA": -0.039
+   },
+   "computed_at": "2026-10-12"
   }
  },
  "BA": {
