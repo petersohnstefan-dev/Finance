@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 12:45:56",
+    "time_str": "12:45:56",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 213.06,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 12:45:55",
+    "time_str": "12:45:55",
+    "data_age_min": 2.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.28,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.28% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 12:36:04",
     "time_str": "12:36:04",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.95% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 09:10:43",
-    "time_str": "09:10:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "LONG",
-    "trigger_price": 8.0,
-    "change_1min_pct": 1.16,
-    "vol_ratio": 0.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD explodiert um +1.16% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 09:05:54",
-    "time_str": "09:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HM-B.ST",
-    "direction": "LONG",
-    "trigger_price": 165.9,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HM-B.ST explodiert um +0.67% in 5 Min.! Momentum aktiv."
   }
 ]
