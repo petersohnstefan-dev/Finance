@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 09:25:51",
+    "time_str": "09:25:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.61,
+    "change_1min_pct": 1.56,
+    "vol_ratio": 1.65,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD stürzt um -1.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 09:25:51",
+    "time_str": "09:25:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "SHORT",
+    "trigger_price": 5.17,
+    "change_1min_pct": 1.25,
+    "vol_ratio": 2.6,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 09:15:56",
     "time_str": "09:15:56",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.18,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 21:35:56",
-    "time_str": "21:35:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "LONG",
-    "trigger_price": 4.65,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 2.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 21:35:55",
-    "time_str": "21:35:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 4.01,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
