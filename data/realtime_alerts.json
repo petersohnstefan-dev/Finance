@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 18:55:58",
+    "time_str": "18:55:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 320.89,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 18:55:56",
+    "time_str": "18:55:56",
+    "data_age_min": 1.0,
+    "window_span_min": 4.0,
+    "symbol": "ARVN",
+    "direction": "SHORT",
+    "trigger_price": 7.05,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.14,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 18:55:56",
+    "time_str": "18:55:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "LONG",
+    "trigger_price": 12.62,
+    "change_1min_pct": 0.96,
+    "vol_ratio": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX explodiert um +0.96% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 18:46:06",
     "time_str": "18:46:06",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.79,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:35:45",
-    "time_str": "17:35:45",
-    "data_age_min": 1.8,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:31:19",
-    "time_str": "17:31:19",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.84,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.27,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:31:18",
-    "time_str": "17:31:18",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 67.86,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 0.92,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
