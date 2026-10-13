@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 17:40:55",
+    "time_str": "17:40:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 100.26,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 17:40:49",
+    "time_str": "17:40:49",
+    "data_age_min": 0.8,
+    "window_span_min": 4.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 17.24,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 1.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 17:40:48",
+    "time_str": "17:40:48",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 50.12,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 1.09,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 17:35:49",
     "time_str": "17:35:49",
     "data_age_min": 1.8,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.66,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRWD stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:55:43",
-    "time_str": "16:55:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 27.35,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 2.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:51:03",
-    "time_str": "16:51:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 47.07,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 0.82,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:51:03",
-    "time_str": "16:51:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 29.79,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 1.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
