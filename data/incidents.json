@@ -1,5 +1,24 @@
 [
  {
+  "timestamp": "2026-10-14 01:47:51",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 5 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_min_entry_score": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 4x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_breakeven_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_lock_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_aggressive_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-14 01:47:51"
+ },
+ {
   "timestamp": "2026-10-10 02:22:12",
   "component": "ai_journal",
   "kind": "param_change_rejected",
@@ -42,8 +61,8 @@
     "short_term_stop_atr_mult": "seit der Aenderung am 2026-09-16 (2.0 -> 1.75) erst 4 abgeschlossene Trades; mindestens 5 noetig, um die Wirkung zu beurteilen"
    }
   },
-  "count": 6,
-  "last_seen": "2026-10-13 04:11:04"
+  "count": 7,
+  "last_seen": "2026-10-14 01:48:31"
  },
  {
   "timestamp": "2026-10-01 02:04:07",
