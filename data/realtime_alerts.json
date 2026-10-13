@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 22:36:00",
+    "time_str": "22:36:00",
+    "data_age_min": 2.7,
+    "window_span_min": 6.3,
+    "symbol": "GE",
+    "direction": "SHORT",
+    "trigger_price": 307.63,
+    "change_1min_pct": 0.76,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GE stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 22:35:55",
+    "time_str": "22:35:55",
+    "data_age_min": 0.4,
+    "window_span_min": 5.5,
+    "symbol": "GTLB",
+    "direction": "SHORT",
+    "trigger_price": 51.0,
+    "change_1min_pct": 1.41,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GTLB stürzt um -1.41% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 22:31:00",
     "time_str": "22:31:00",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.87,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DUOL stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 21:35:56",
-    "time_str": "21:35:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.48,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 21:35:55",
-    "time_str": "21:35:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "LONG",
-    "trigger_price": 376.3,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
