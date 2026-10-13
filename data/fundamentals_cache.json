@@ -1274,43 +1274,10 @@
   }
  },
  "LCID": {
-  "fetched_ts": 1790689002.6487741,
+  "fetched_ts": 1791898598.5593007,
   "scores": {
-   "available": true,
-   "piotroski": 2,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": -3.26,
-   "altman_detail": {
-    "X1": 0.079,
-    "X2": -1.861,
-    "X3": -0.311,
-    "X4": 0.197,
-    "X5": 0.161
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Cyclical",
-   "beneish_m": -1.7,
-   "beneish_detail": {
-    "DSRI": 0.944,
-    "GMI": 1.231,
-    "AQI": 1.42,
-    "SGI": 1.676,
-    "DEPI": 0.811,
-    "SGAI": 0.685,
-    "LVGI": 1.701,
-    "TATA": 0.028
-   },
-   "computed_at": "2026-09-29"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "TEM": {
@@ -1806,7 +1773,7 @@
   }
  },
  "MDB": {
-  "fetched_ts": 1790948213.9351602,
+  "fetched_ts": 1791898596.8961918,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -1820,7 +1787,7 @@
   }
  },
  "OKTA": {
-  "fetched_ts": 1791188484.4688706,
+  "fetched_ts": 1791898595.7932007,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -3194,6 +3161,13 @@
  },
  "BNTX": {
   "fetched_ts": 1791894385.2074587,
+  "scores": {
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+  }
+ },
+ "GS": {
+  "fetched_ts": 1791898597.8082979,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
