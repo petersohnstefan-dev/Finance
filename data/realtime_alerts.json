@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 20:25:49",
+    "time_str": "20:25:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "GTLB",
+    "direction": "SHORT",
+    "trigger_price": 56.15,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GTLB stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 20:25:48",
+    "time_str": "20:25:48",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "ROIV",
+    "direction": "LONG",
+    "trigger_price": 33.64,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ROIV explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 20:21:00",
     "time_str": "20:21:00",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.84,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VKTX stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 19:05:44",
-    "time_str": "19:05:44",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "ROIV",
-    "direction": "SHORT",
-    "trigger_price": 33.77,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 2.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ROIV stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 19:01:37",
-    "time_str": "19:01:37",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "GS",
-    "direction": "SHORT",
-    "trigger_price": 894.8,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
