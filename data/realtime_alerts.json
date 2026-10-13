@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 21:35:56",
+    "time_str": "21:35:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.48,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 21:35:55",
+    "time_str": "21:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 376.3,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 0.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 21:35:54",
+    "time_str": "21:35:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SNOW",
+    "direction": "LONG",
+    "trigger_price": 357.32,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 21:31:08",
     "time_str": "21:31:08",
     "data_age_min": 1.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.56,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 20:05:51",
-    "time_str": "20:05:51",
-    "data_age_min": 0.9,
-    "window_span_min": 4.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 3.0,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 20:05:50",
-    "time_str": "20:05:50",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "RKLB",
-    "direction": "LONG",
-    "trigger_price": 63.99,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 20:05:50",
-    "time_str": "20:05:50",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "ARM",
-    "direction": "LONG",
-    "trigger_price": 253.91,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.29,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
