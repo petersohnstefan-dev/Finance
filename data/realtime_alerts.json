@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 16:51:03",
+    "time_str": "16:51:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 47.07,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 0.82,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 16:51:03",
+    "time_str": "16:51:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "SHORT",
+    "trigger_price": 29.79,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 16:51:03",
+    "time_str": "16:51:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MSTR",
+    "direction": "SHORT",
+    "trigger_price": 154.38,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 16:46:10",
     "time_str": "16:46:10",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.46,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TIA-USD stürzt um -1.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:20:57",
-    "time_str": "16:20:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 5.07,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 1.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:16:06",
-    "time_str": "16:16:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "NOW",
-    "direction": "SHORT",
-    "trigger_price": 142.63,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 0.21,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NOW stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 16:16:06",
-    "time_str": "16:16:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 479.24,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
