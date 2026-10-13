@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 13:40:46",
+    "time_str": "13:40:46",
+    "data_age_min": 8.3,
+    "window_span_min": 2.5,
+    "symbol": "NVAX",
+    "direction": "LONG",
+    "trigger_price": 12.57,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 13:40:46",
+    "time_str": "13:40:46",
+    "data_age_min": 4.7,
+    "window_span_min": 9.1,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.09,
+    "change_1min_pct": 1.29,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 13:35:44",
     "time_str": "13:35:44",
     "data_age_min": 1.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GS stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 12:36:03",
-    "time_str": "12:36:03",
-    "data_age_min": 0.7,
-    "window_span_min": 5.3,
-    "symbol": "BAC",
-    "direction": "SHORT",
-    "trigger_price": 54.22,
-    "change_1min_pct": 1.2,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BAC stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 12:35:56",
-    "time_str": "12:35:56",
-    "data_age_min": 1.6,
-    "window_span_min": 4.4,
-    "symbol": "COIN",
-    "direction": "SHORT",
-    "trigger_price": 180.6,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
