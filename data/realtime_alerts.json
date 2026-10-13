@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 19:55:52",
+    "time_str": "19:55:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 19.6,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.22,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 19:55:51",
+    "time_str": "19:55:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.83,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 2.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 19:50:51",
     "time_str": "19:50:51",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.96,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEDG explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 18:10:59",
-    "time_str": "18:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QUBT",
-    "direction": "SHORT",
-    "trigger_price": 6.81,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 18:10:59",
-    "time_str": "18:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 47.17,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
