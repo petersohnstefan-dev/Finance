@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 18:46:06",
+    "time_str": "18:46:06",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "NOW",
+    "direction": "SHORT",
+    "trigger_price": 141.1,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 18:46:05",
+    "time_str": "18:46:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "AMAT",
+    "direction": "LONG",
+    "trigger_price": 468.03,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.03,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMAT explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 18:45:53",
+    "time_str": "18:45:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 8.02,
+    "change_1min_pct": 1.21,
+    "vol_ratio": 1.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.21% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 18:41:02",
     "time_str": "18:41:02",
     "data_age_min": 2.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.92,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:31:17",
-    "time_str": "17:31:17",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 27.08,
-    "change_1min_pct": 0.93,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:31:16",
-    "time_str": "17:31:16",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "ARKG",
-    "direction": "SHORT",
-    "trigger_price": 48.65,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.89,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKG stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 17:25:40",
-    "time_str": "17:25:40",
-    "data_age_min": 1.7,
-    "window_span_min": 6.0,
-    "symbol": "ELF",
-    "direction": "SHORT",
-    "trigger_price": 107.04,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ELF stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
