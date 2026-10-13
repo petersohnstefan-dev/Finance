@@ -773,7 +773,7 @@
       ]
     },
     "day_trading": {
-      "cash": 4999.360580097788,
+      "cash": 4558.970297030672,
       "positions": {
         "KO789677": {
           "symbol": "KO789677",
@@ -803,6 +803,33 @@
           "is_knocked_out": false,
           "last_updated": "13:46:52",
           "peak_price": 5.9708
+        },
+        "KO980403": {
+          "symbol": "KO980403",
+          "name": "⚡ Turbo Bull 2.5x auf Advanced Micro Devices, Inc. (KO: 357.16)",
+          "shares": 186.3434,
+          "buy_price": 2.358,
+          "current_price": 2.33,
+          "buy_date": "2026-10-13 15:45",
+          "stop_loss": 2.004,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+1.9% Spike, Score 75/100 [volu5 tren20 spik15 stop20 mark15]) | 2.5x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO980403",
+          "underlying_symbol": "AMD",
+          "underlying_name": "Advanced Micro Devices, Inc.",
+          "direction": "LONG",
+          "ratio": 0.01,
+          "strike": 350.15,
+          "knockout_barrier": 357.16,
+          "initial_underlying_price": 583.59,
+          "current_underlying_price": 583.59,
+          "cert_price": 2.33,
+          "leverage": 2.5,
+          "distance_to_ko_pct": 38.8,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -2641,6 +2668,17 @@
           "total": 440.49,
           "date": "2026-10-13 13:02",
           "reason": "⚡ Daytrade (+1.3% Spike, Score 80/100 [volu25 tren20 spik15 stop5 mark15]) | 2.0x Hebel | Risiko 14%"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO980403",
+          "name": "⚡ Turbo Bull 2.5x auf Advanced Micro Devices, Inc. (KO: 357.16)",
+          "product_type": "KNOCKOUT",
+          "shares": 186.3434,
+          "price": 2.33,
+          "total": 439.39,
+          "date": "2026-10-13 15:45",
+          "reason": "⚡ Daytrade (+1.9% Spike, Score 75/100 [volu5 tren20 spik15 stop20 mark15]) | 2.5x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
@@ -2665,7 +2703,7 @@
     "medium_term_HG=F": "2026-10-12T20:31:52.807286+02:00",
     "medium_term_GFT.DE": "2026-10-12T21:16:39.971172+02:00",
     "medium_term_AFRM": "2026-10-13T19:21:30.589200+02:00",
-    "medium_term_NVAX": "2026-10-12T21:41:36.180563+02:00",
+    "medium_term_NVAX": "2026-10-13T19:41:57.347613+02:00",
     "long_term_CRM": "2026-10-12T23:42:10.110527+02:00"
   },
   "daily_limit_waivers": {

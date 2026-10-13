@@ -2262,43 +2262,10 @@
   }
  },
  "INTC": {
-  "fetched_ts": 1790602609.561528,
+  "fetched_ts": 1791898906.986641,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 5.21,
-   "altman_detail": {
-    "X1": 0.152,
-    "X2": 0.232,
-    "X3": 0.013,
-    "X4": 7.354,
-    "X5": 0.25
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.61,
-   "beneish_detail": {
-    "DSRI": 1.109,
-    "GMI": 0.94,
-    "AQI": 0.876,
-    "SGI": 0.995,
-    "DEPI": 0.954,
-    "SGAI": 0.844,
-    "LVGI": 0.858,
-    "TATA": -0.046
-   },
-   "computed_at": "2026-09-28"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "CI": {
@@ -2968,43 +2935,10 @@
   }
  },
  "MU": {
-  "fetched_ts": 1790862143.7899678,
+  "fetched_ts": 1791898910.9583607,
   "scores": {
-   "available": true,
-   "piotroski": 8,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 27.02,
-   "altman_detail": {
-    "X1": 0.21,
-    "X2": 0.587,
-    "X3": 0.122,
-    "X4": 41.82,
-    "X5": 0.451
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.74,
-   "beneish_detail": {
-    "DSRI": 0.888,
-    "GMI": 0.562,
-    "AQI": 1.164,
-    "SGI": 1.489,
-    "DEPI": 1.077,
-    "SGAI": 0.717,
-    "LVGI": 0.941,
-    "TATA": -0.109
-   },
-   "computed_at": "2026-10-01"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "AFRM": {
@@ -3043,7 +2977,7 @@
   }
  },
  "AMD": {
-  "fetched_ts": 1791293802.9501011,
+  "fetched_ts": 1791898908.9760637,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
