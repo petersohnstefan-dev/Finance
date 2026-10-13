@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 21:22:46",
+    "time_str": "21:22:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "INTU",
+    "direction": "SHORT",
+    "trigger_price": 306.67,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 1.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 21:22:38",
+    "time_str": "21:22:38",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "ARM",
+    "direction": "LONG",
+    "trigger_price": 255.2,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 21:22:37",
+    "time_str": "21:22:37",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 215.77,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.29,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 21:20:57",
     "time_str": "21:20:57",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.66,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +0.79% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 20:01:13",
-    "time_str": "20:01:13",
-    "data_age_min": 2.2,
-    "window_span_min": 5.0,
-    "symbol": "JUP-USD",
-    "direction": "LONG",
-    "trigger_price": 0.0,
-    "change_1min_pct": 2734.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JUP-USD explodiert um +2734.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 19:55:52",
-    "time_str": "19:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 19.6,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 19:55:51",
-    "time_str": "19:55:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.83,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 2.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
