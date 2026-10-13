@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-13 13:16:00",
+    "time_str": "13:16:00",
+    "data_age_min": 0.4,
+    "window_span_min": 4.6,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 67.5,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-13 13:10:54",
     "time_str": "13:10:54",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 APP explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 10:31:05",
-    "time_str": "10:31:05",
-    "data_age_min": 3.7,
-    "window_span_min": 5.4,
-    "symbol": "SMCI",
-    "direction": "LONG",
-    "trigger_price": 39.37,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
