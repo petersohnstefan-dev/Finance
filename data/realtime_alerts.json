@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-13 11:20:45",
+    "time_str": "11:20:45",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 11:20:44",
+    "time_str": "11:20:44",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.62,
+    "change_1min_pct": 1.05,
+    "vol_ratio": 0.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 11:10:55",
     "time_str": "11:10:55",
     "data_age_min": 0.6,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -2.30% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 22:15:59",
-    "time_str": "22:15:59",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 156.0,
-    "change_1min_pct": 1.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -1.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-12 22:10:59",
-    "time_str": "22:10:59",
-    "data_age_min": 2.0,
-    "window_span_min": 3.0,
-    "symbol": "INCY",
-    "direction": "SHORT",
-    "trigger_price": 106.95,
-    "change_1min_pct": 1.88,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INCY stürzt um -1.88% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
