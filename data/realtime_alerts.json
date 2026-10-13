@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-13 13:35:44",
+    "time_str": "13:35:44",
+    "data_age_min": 1.2,
+    "window_span_min": 4.6,
+    "symbol": "S",
+    "direction": "LONG",
+    "trigger_price": 23.9,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 13:35:44",
+    "time_str": "13:35:44",
+    "data_age_min": 0.4,
+    "window_span_min": 3.4,
+    "symbol": "OKTA",
+    "direction": "SHORT",
+    "trigger_price": 223.8,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-13 13:35:41",
+    "time_str": "13:35:41",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.62,
+    "change_1min_pct": 1.2,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.20% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-13 13:31:03",
     "time_str": "13:31:03",
     "data_age_min": 3.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COIN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 12:31:18",
-    "time_str": "12:31:18",
-    "data_age_min": 0.0,
-    "window_span_min": 5.3,
-    "symbol": "JPM",
-    "direction": "SHORT",
-    "trigger_price": 327.74,
-    "change_1min_pct": 2.81,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JPM stürzt um -2.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 12:31:18",
-    "time_str": "12:31:18",
-    "data_age_min": 0.1,
-    "window_span_min": 5.2,
-    "symbol": "UNH",
-    "direction": "SHORT",
-    "trigger_price": 383.8,
-    "change_1min_pct": 0.87,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 UNH stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-13 12:16:05",
-    "time_str": "12:16:05",
-    "data_age_min": 12.2,
-    "window_span_min": 8.9,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.77,
-    "change_1min_pct": 3.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -3.64% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
