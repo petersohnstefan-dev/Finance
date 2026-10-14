@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-14 20:01:21",
+    "time_str": "20:01:21",
+    "data_age_min": 1.4,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 3.56,
+    "change_1min_pct": 0.89,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 20:01:19",
+    "time_str": "20:01:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 223.86,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.32,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-14 19:55:45",
     "time_str": "19:55:45",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PYTH-USD explodiert um +1.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:40:58",
-    "time_str": "18:40:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 8.1,
-    "change_1min_pct": 0.75,
-    "vol_ratio": 0.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:40:58",
-    "time_str": "18:40:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 3.36,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 0.71,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.90% in 5 Min.! Momentum aktiv."
   }
 ]
