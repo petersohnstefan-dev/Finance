@@ -176,43 +176,10 @@
   }
  },
  "RKLB": {
-  "fetched_ts": 1790861544.4315224,
+  "fetched_ts": 1792010499.461027,
   "scores": {
-   "available": true,
-   "piotroski": 5,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 45.72,
-   "altman_detail": {
-    "X1": 0.444,
-    "X2": -0.435,
-    "X3": -0.086,
-    "X4": 76.372,
-    "X5": 0.259
-   },
-   "altman_not_applicable": false,
-   "sector": "Industrials",
-   "beneish_m": -2.13,
-   "beneish_detail": {
-    "DSRI": 0.776,
-    "GMI": 0.773,
-    "AQI": 1.373,
-    "SGI": 1.38,
-    "DEPI": 1.208,
-    "SGAI": 0.911,
-    "LVGI": 0.341,
-    "TATA": -0.014
-   },
-   "computed_at": "2026-10-01"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "SO": {
