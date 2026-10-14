@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-14 18:11:05",
+    "time_str": "18:11:05",
+    "data_age_min": 4.1,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.46,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 8.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 18:11:05",
+    "time_str": "18:11:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "TOST",
+    "direction": "SHORT",
+    "trigger_price": 29.3,
+    "change_1min_pct": 1.0,
+    "vol_ratio": 4.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TOST stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 18:11:00",
+    "time_str": "18:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.33,
+    "vol_ratio": 6.06,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.33% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 18:05:53",
     "time_str": "18:05:53",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.94,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 17:16:14",
-    "time_str": "17:16:14",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "IBM",
-    "direction": "LONG",
-    "trigger_price": 231.42,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IBM explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 17:16:07",
-    "time_str": "17:16:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 3.37,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 17:16:07",
-    "time_str": "17:16:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "CART",
-    "direction": "SHORT",
-    "trigger_price": 48.74,
-    "change_1min_pct": 1.09,
-    "vol_ratio": 1.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CART stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
