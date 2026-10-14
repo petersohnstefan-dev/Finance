@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-14 20:46:00",
+    "time_str": "20:46:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 14.18,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 0.27,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +0.75% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 20:46:00",
+    "time_str": "20:46:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "LONG",
+    "trigger_price": 17.05,
+    "change_1min_pct": 0.89,
+    "vol_ratio": 2.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 20:45:58",
+    "time_str": "20:45:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.97,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 4.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 20:41:02",
     "time_str": "20:41:02",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.23,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 19:11:00",
-    "time_str": "19:11:00",
-    "data_age_min": 1.0,
-    "window_span_min": 3.0,
-    "symbol": "STEM",
-    "direction": "LONG",
-    "trigger_price": 3.62,
-    "change_1min_pct": 0.83,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM explodiert um +0.83% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 19:10:59",
-    "time_str": "19:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "SHORT",
-    "trigger_price": 363.21,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 19:10:58",
-    "time_str": "19:10:58",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.99,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 2.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +1.02% in 5 Min.! Momentum aktiv."
   }
 ]
