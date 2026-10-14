@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-14 18:51:02",
+    "time_str": "18:51:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.95,
+    "change_1min_pct": 0.99,
+    "vol_ratio": 1.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.99% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 18:51:00",
+    "time_str": "18:51:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 11.78,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 1.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 18:45:57",
     "time_str": "18:45:57",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.96,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:01:26",
-    "time_str": "18:01:26",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 42.85,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:01:25",
-    "time_str": "18:01:25",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.73,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
