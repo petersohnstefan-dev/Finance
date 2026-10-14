@@ -2921,5 +2921,39 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "MS": {
+  "fetched_ts": 1791984718.0235927,
+  "scores": {
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": null,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": null,
+   "altman_detail": null,
+   "altman_not_applicable": true,
+   "sector": "Financial Services",
+   "beneish_m": null,
+   "beneish_detail": {
+    "DSRI": 1.1630654905825377,
+    "GMI": null,
+    "AQI": null,
+    "SGI": 1.1448256711962652,
+    "DEPI": 0.9998379099544658,
+    "SGAI": 0.9733216480630503,
+    "LVGI": null,
+    "TATA": 0.02458264977785914
+   },
+   "computed_at": "2026-10-14"
+  }
  }
 }
