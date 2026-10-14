@@ -586,7 +586,7 @@
       "name": "🏛️ Langfristiges Investment-Depot (Jahre / Quality, Gold & Moat)",
       "strategy": "Buy & Hold bei Qualitätsunternehmen mit Burggraben (Piotroski, Altman, Beneish aus den Jahresabschlüssen), Gold und Bitcoin als Absicherung. Bonus-Zertifikate nur, wenn das Kurspotenzial unter dem Bonus liegt.",
       "initial_cash": 10000.0,
-      "cash": 1053.1168452560003,
+      "cash": 3056.0222816980004,
       "positions": {
         "MUV2.DE": {
           "symbol": "MUV2.DE",
@@ -643,20 +643,6 @@
           "derivative_type": "STOCK",
           "last_updated": "15:31:54",
           "peak_price": 4265.0
-        },
-        "ONON": {
-          "symbol": "ONON",
-          "name": "On Holding AG",
-          "shares": 56.5771,
-          "buy_price": 35.4207,
-          "current_price": 35.49,
-          "buy_date": "2026-10-12 22:21",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 6 / 9 (✅ Gute Solidität) | Analystenpotenzial 22.4% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Die Bilanzqualität ist durch einen Altman-Z-Score von 7.54 in der Safe Zone und einen soliden Piotroski-Score von 6/9 stark ausgeprägt, was perfekt zum langfristigen Qualitätsmandat passt. Die Ausschlusskriterien greifen nicht: Die Datenabdeckung liegt mit 75% über der Mindestgrenze von 50%, es liegt kein Sektor-Klumpenrisiko vor, und die Entscheidung stützt sich auf fundamentale Bilanzstärke statt auf reines Momentum. Der hohe RSI spiegelt zwar kurzfristige Überkauftheit wider, wird jedoch im Rahmen des langfristigen Mandats durch die exzellenten Fundamentaldaten und das Analystenpotenzial von über 22% aufgewogen.",
-          "derivative_type": "STOCK",
-          "peak_price": 35.61,
-          "last_updated": "15:31:54"
         }
       },
       "history": [
@@ -769,6 +755,20 @@
           "total": 2004.0,
           "date": "2026-10-12 22:21",
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 6 / 9 (✅ Gute Solidität) | Analystenpotenzial 22.4% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Die Bilanzqualität ist durch einen Altman-Z-Score von 7.54 in der Safe Zone und einen soliden Piotroski-Score von 6/9 stark ausgeprägt, was perfekt zum langfristigen Qualitätsmandat passt. Die Ausschlusskriterien greifen nicht: Die Datenabdeckung liegt mit 75% über der Mindestgrenze von 50%, es liegt kein Sektor-Klumpenrisiko vor, und die Entscheidung stützt sich auf fundamentale Bilanzstärke statt auf reines Momentum. Der hohe RSI spiegelt zwar kurzfristige Überkauftheit wider, wird jedoch im Rahmen des langfristigen Mandats durch die exzellenten Fundamentaldaten und das Analystenpotenzial von über 22% aufgewogen."
+        },
+        {
+          "type": "SELL",
+          "symbol": "ONON",
+          "name": "On Holding AG",
+          "product_type": "STOCK",
+          "shares": 56.5771,
+          "buy_price": 35.4207,
+          "sell_price": 35.419,
+          "total": 2003.91,
+          "pnl": -0.1,
+          "pnl_pct": -0.0,
+          "date": "2026-10-14 16:26",
+          "reason": "🔄 Qualitaets-Umschichtung: ONON (Score 50, +0.2%) weicht dem staerkeren SOL-USD (Score 80)"
         }
       ]
     },
@@ -2742,7 +2742,8 @@
     "medium_term_NVAX": "2026-10-13T19:41:57.347613+02:00",
     "long_term_CRM": "2026-10-12T23:42:10.110527+02:00",
     "medium_term_ESTC": "2026-10-14T16:46:34.349412+02:00",
-    "medium_term_SIE.DE": "2026-10-14T14:06:46.068475+02:00"
+    "medium_term_SIE.DE": "2026-10-14T14:06:46.068475+02:00",
+    "long_term_SOL-USD": "2026-10-14T20:26:36.144627+02:00"
   },
   "daily_limit_waivers": {
     "day_trading": [
