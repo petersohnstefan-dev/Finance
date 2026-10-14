@@ -40,37 +40,10 @@
   }
  },
  "BAC": {
-  "fetched_ts": 1789415273.9514265,
+  "fetched_ts": 1791974790.789823,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": null,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": null,
-   "altman_detail": null,
-   "altman_not_applicable": true,
-   "sector": "Financial Services",
-   "beneish_m": null,
-   "beneish_detail": {
-    "DSRI": 1.1173619962366614,
-    "GMI": null,
-    "AQI": null,
-    "SGI": 1.068404247279323,
-    "DEPI": 0.977146897826862,
-    "SGAI": 0.9854496143893381,
-    "LVGI": null,
-    "TATA": 0.00524542036932496
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "ENPH": {
