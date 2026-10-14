@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-14 20:05:51",
+    "time_str": "20:05:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 7.94,
+    "change_1min_pct": 0.94,
+    "vol_ratio": 2.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 20:05:49",
+    "time_str": "20:05:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "BEAM",
+    "direction": "SHORT",
+    "trigger_price": 23.61,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 1.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 20:05:46",
+    "time_str": "20:05:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.2,
+    "change_1min_pct": 1.12,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 20:01:21",
     "time_str": "20:01:21",
     "data_age_min": 1.4,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.64,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AFRM stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:51:02",
-    "time_str": "18:51:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.95,
-    "change_1min_pct": 0.99,
-    "vol_ratio": 1.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +0.99% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:51:00",
-    "time_str": "18:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "SHORT",
-    "trigger_price": 11.78,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 1.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:45:57",
-    "time_str": "18:45:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "LONG",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD explodiert um +1.51% in 5 Min.! Momentum aktiv."
   }
 ]
