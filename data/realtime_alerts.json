@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-14 19:25:45",
+    "time_str": "19:25:45",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "LONG",
+    "trigger_price": 223.95,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 19:25:43",
+    "time_str": "19:25:43",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.23,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 19:25:42",
+    "time_str": "19:25:42",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "SHORT",
+    "trigger_price": 4.82,
+    "change_1min_pct": 1.4,
+    "vol_ratio": 0.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD stürzt um -1.40% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 19:21:08",
     "time_str": "19:21:08",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.5,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FSLR stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "SHORT",
-    "trigger_price": 7.27,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.02,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "SHORT",
-    "trigger_price": 29.35,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "SHORT",
-    "trigger_price": 6.72,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 1.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
