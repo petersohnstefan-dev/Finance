@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-14 19:11:00",
+    "time_str": "19:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 3.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 3.62,
+    "change_1min_pct": 0.83,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +0.83% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 19:10:59",
+    "time_str": "19:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "SHORT",
+    "trigger_price": 363.21,
+    "change_1min_pct": 0.71,
+    "vol_ratio": 1.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 19:10:58",
+    "time_str": "19:10:58",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.99,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 2.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-14 19:05:56",
     "time_str": "19:05:56",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.16,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QBTS stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 11.81,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 1.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 307.51,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 18:15:56",
-    "time_str": "18:15:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 272.1,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.78,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
