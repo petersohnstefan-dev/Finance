@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-14 15:21:14",
+    "time_str": "15:21:14",
+    "data_age_min": 1.5,
+    "window_span_min": 4.8,
+    "symbol": "AMAT",
+    "direction": "SHORT",
+    "trigger_price": 453.35,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMAT stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 15:21:03",
+    "time_str": "15:21:03",
+    "data_age_min": 0.3,
+    "window_span_min": 4.8,
+    "symbol": "HIMS",
+    "direction": "SHORT",
+    "trigger_price": 29.2,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 15:21:03",
+    "time_str": "15:21:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MSTR",
+    "direction": "SHORT",
+    "trigger_price": 149.1,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-14 15:21:03",
+    "time_str": "15:21:03",
+    "data_age_min": 0.8,
+    "window_span_min": 5.3,
+    "symbol": "CRWD",
+    "direction": "SHORT",
+    "trigger_price": 253.49,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-14 15:16:14",
     "time_str": "15:16:14",
     "data_age_min": 0.3,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKQ stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 14:55:53",
-    "time_str": "14:55:53",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "ARKG",
-    "direction": "LONG",
-    "trigger_price": 48.0,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKG explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 14:55:52",
-    "time_str": "14:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "LONG",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.38,
-    "vol_ratio": 0.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD explodiert um +1.38% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 14:51:11",
-    "time_str": "14:51:11",
-    "data_age_min": 2.3,
-    "window_span_min": 8.9,
-    "symbol": "CI",
-    "direction": "LONG",
-    "trigger_price": 285.0,
-    "change_1min_pct": 0.87,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CI explodiert um +0.87% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 14:51:11",
-    "time_str": "14:51:11",
-    "data_age_min": 4.6,
-    "window_span_min": 8.6,
-    "symbol": "SYK",
-    "direction": "LONG",
-    "trigger_price": 285.0,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYK explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
