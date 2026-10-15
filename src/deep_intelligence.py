@@ -225,13 +225,25 @@ class SocialSentimentEngine:
 
     @staticmethod
     def get_social_spike_score(symbol: str) -> Dict[str, Any]:
-        """Headline sentiment from the yfinance news feed.
+        """Schlagzeilen-Stimmung aus dem Yahoo-Nachrichtenfeed.
 
-        This used to be a hardcoded table of six tickers plus a constant 65 for
-        everything else - a quarter of the alpha score that never moved. Reddit
-        and StockTwits, which the handbook named as sources, both answer 403 to
-        unauthenticated requests, so the news feed is the sentiment source that
-        actually returns data for US, European and crypto symbols alike.
+        Hier stand einmal eine Tabelle mit sechs Tickern und einer Konstante 65
+        fuer alles uebrige - ein Viertel des Alpha-Scores, das sich nie bewegte.
+        Reddit und StockTwits antworten unangemeldet mit 403, also wurde
+        yfinance.Ticker.news zur Quelle.
+
+        Die liefert seit einiger Zeit fuer JEDES Symbol null Eintraege - auch fuer
+        AAPL und NVDA, es ist also nicht die Nachrichtenlage, sondern der
+        Endpunkt. Aufgefallen ist es erst am 14.10.2026 bei der Suche danach,
+        warum das Kurzfristdepot nichts mehr kauft: Der Baustein 'social' traegt
+        25 Prozentpunkte zur Datenabdeckung bei, und ohne ihn rutschen Kandidaten
+        unter die 50-Prozent-Schwelle, die das Tribunal verlangt. Der Code hat
+        das fehlende Ergebnis sauber als "keine Nachrichtenlage" behandelt - und
+        damit einen Ausfall wie einen Messwert aussehen lassen.
+
+        Der RSS-Feed von Yahoo Finance liefert dieselben Schlagzeilen, ohne
+        Schluessel und ohne Anmeldung. yfinance bleibt als Rueckfall, falls der
+        Endpunkt zurueckkommt.
         """
         now = time.time()
         cached = _NEWS_CACHE.get(symbol)
@@ -240,16 +252,36 @@ class SocialSentimentEngine:
 
         headlines: List[str] = []
         try:
-            raw = yf.Ticker(symbol).news or []
-            for item in raw[:10]:
-                content = item.get("content") or item
-                title = content.get("title") or ""
-                summary = content.get("summary") or ""
-                if title:
-                    headlines.append(title)
-                    _ = summary
+            import urllib.request
+            import xml.etree.ElementTree as ET
+            url = ("https://feeds.finance.yahoo.com/rss/2.0/headline"
+                   f"?s={symbol}&region=US&lang=en-US")
+            req = urllib.request.Request(
+                url, headers={"User-Agent": "Mozilla/5.0 (FinanceDashboard)"})
+            wurzel = ET.fromstring(urllib.request.urlopen(req, timeout=15).read())
+            # Nur Titel aus <item>, nicht aus dem ganzen Baum. Der Feed traegt
+            # seinen eigenen Namen ebenfalls als <title>, und fuer ein unbekanntes
+            # Symbol ist das ALLES, was zurueckkommt: zwei Kopfzeilen, null
+            # Meldungen. Ein stumpfes titel[1:11] hat daraus eine "Schlagzeile"
+            # gemacht und daraus ein Sentiment von 50 berechnet - ein erfundener
+            # Messwert fuer ein Symbol, das es nicht gibt.
+            headlines = [(t.text or "").strip()
+                         for item in wurzel.iter("item")
+                         for t in item.iter("title")
+                         if (t.text or "").strip()][:10]
         except Exception:
             headlines = []
+
+        if not headlines:
+            try:
+                raw = yf.Ticker(symbol).news or []
+                for item in raw[:10]:
+                    content = item.get("content") or item
+                    title = content.get("title") or ""
+                    if title:
+                        headlines.append(title)
+            except Exception:
+                headlines = []
 
         if not headlines:
             result = {

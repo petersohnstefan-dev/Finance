@@ -1531,6 +1531,10 @@ class PortfolioManager:
         # the whole block, so the depot bought the NEWEST realtime alert with no quality
         # bar at all, and the scored scan path below was effectively dead code.
         min_alpha = self.strategy.get("short_term_min_alpha_score", 55)
+        # Gleiche Schwelle, die das Tribunal anlegt - sonst widersprechen sich
+        # die beiden Tore und der Kandidat scheitert erst nach drei LLM-Aufrufen.
+        min_datenlage = self.strategy.get("min_data_quality_for_entry", 0.50)
+        duenne_datenlage = 0
         min_spike = self.strategy.get("short_term_min_spike_pct", 1.5)
         max_cands = self.strategy.get("short_term_max_candidates_scored", 12)
         scan_by_sym = {c["symbol"]: c for c in scan_results}
@@ -1558,6 +1562,18 @@ class PortfolioManager:
             alpha = intel.get("composite_alpha_score")
             if alpha is None:
                 continue  # No data at all - never buy on a substituted constant
+
+            # Das Tribunal lehnt jeden Kandidaten unter seiner Datenabdeckungs-
+            # schwelle zwingend ab. Ohne diese Pruefung hier laufen die drei
+            # Gemini-Aufrufe je Kandidat trotzdem - am 12.10.2026 waren das 79
+            # aussichtslose Verhandlungen an einem Tag, also 237 Aufrufe, und in
+            # der Telemetrie stand als Grund nur "tribunal_veto_oder_kein_preis".
+            # Jetzt scheidet der Kandidat vorher aus und die Telemetrie nennt
+            # den wahren Grund.
+            dq = intel.get("data_quality")
+            if dq is not None and dq < min_datenlage:
+                duenne_datenlage += 1
+                continue
             # Identical blend for both sources. A symbol the scanner has no read on
             # gets a NEUTRAL 50, not a free pass - otherwise missing data would score
             # better than a measured weak breakout.
@@ -1685,6 +1701,8 @@ class PortfolioManager:
         if not st_entered:
             if not st_scores:
                 st_block = "keine_kandidaten"
+            elif not st_scores and duenne_datenlage:
+                st_block = "zu_duenne_datenlage"
             elif st_scores[0] < min_alpha:
                 st_block = "unter_min_alpha_score"
             elif st_depot["cash"] < 1500.0:
