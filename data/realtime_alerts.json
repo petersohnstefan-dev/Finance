@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-15 19:55:58",
+    "time_str": "19:55:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 14.18,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.76,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 19:55:57",
+    "time_str": "19:55:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ARGX",
+    "direction": "LONG",
+    "trigger_price": 853.87,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARGX explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 19:55:56",
+    "time_str": "19:55:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 51.58,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 19:55:55",
+    "time_str": "19:55:55",
+    "data_age_min": 2.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 19:45:57",
     "time_str": "19:45:57",
     "data_age_min": 1.0,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDWR explodiert um +0.82% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 18:40:54",
-    "time_str": "18:40:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ZS",
-    "direction": "LONG",
-    "trigger_price": 217.85,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 18:40:51",
-    "time_str": "18:40:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ONDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.17,
-    "vol_ratio": 2.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONDO-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 18:36:08",
-    "time_str": "18:36:08",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 429.98,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 18:36:07",
-    "time_str": "18:36:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 912.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
