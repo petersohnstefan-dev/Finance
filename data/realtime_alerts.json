@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-15 12:25:47",
+    "time_str": "12:25:47",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.38,
+    "change_1min_pct": 1.07,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 12:20:59",
     "time_str": "12:20:59",
     "data_age_min": 2.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 10:05:49",
-    "time_str": "10:05:49",
-    "data_age_min": 0.2,
-    "window_span_min": 4.7,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 31.29,
-    "change_1min_pct": 1.26,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +1.26% in 5 Min.! Momentum aktiv."
   }
 ]
