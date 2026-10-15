@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-15 10:35:52",
+    "time_str": "10:35:52",
+    "data_age_min": 0.6,
+    "window_span_min": 8.3,
+    "symbol": "APP",
+    "direction": "LONG",
+    "trigger_price": 257.87,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 10:35:52",
+    "time_str": "10:35:52",
+    "data_age_min": 0.7,
+    "window_span_min": 5.2,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 223.0,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 10:35:50",
+    "time_str": "10:35:50",
+    "data_age_min": 2.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.08,
+    "change_1min_pct": 2.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +2.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-15 10:25:56",
     "time_str": "10:25:56",
     "data_age_min": 2.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 5.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRV-USD explodiert um +1.33% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 08:10:51",
-    "time_str": "08:10:51",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.07,
-    "change_1min_pct": 1.11,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 07:55:54",
-    "time_str": "07:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PENDLE-USD",
-    "direction": "SHORT",
-    "trigger_price": 1.92,
-    "change_1min_pct": 1.29,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PENDLE-USD stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 07:45:53",
-    "time_str": "07:45:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.29,
-    "vol_ratio": 0.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
