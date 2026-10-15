@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-15 09:06:00",
+    "time_str": "09:06:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HM-B.ST",
+    "direction": "LONG",
+    "trigger_price": 168.9,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HM-B.ST explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 09:06:00",
+    "time_str": "09:06:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ATCO-A.ST",
+    "direction": "SHORT",
+    "trigger_price": 199.25,
+    "change_1min_pct": 1.7,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ATCO-A.ST stürzt um -1.70% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 09:06:00",
+    "time_str": "09:06:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "VWS.CO",
+    "direction": "SHORT",
+    "trigger_price": 181.95,
+    "change_1min_pct": 0.98,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VWS.CO stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 09:05:54",
+    "time_str": "09:05:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.23,
+    "vol_ratio": 0.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 08:31:05",
     "time_str": "08:31:05",
     "data_age_min": 1.1,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 22:11:01",
-    "time_str": "22:11:01",
-    "data_age_min": 2.8,
-    "window_span_min": 8.2,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.46,
-    "change_1min_pct": 1.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +1.98% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 22:11:00",
-    "time_str": "22:11:00",
-    "data_age_min": 0.4,
-    "window_span_min": 4.6,
-    "symbol": "ONON",
-    "direction": "LONG",
-    "trigger_price": 35.35,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 22:11:00",
-    "time_str": "22:11:00",
-    "data_age_min": 0.7,
-    "window_span_min": 4.3,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 248.08,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 22:10:58",
-    "time_str": "22:10:58",
-    "data_age_min": 0.9,
-    "window_span_min": 5.1,
-    "symbol": "COPX",
-    "direction": "SHORT",
-    "trigger_price": 80.82,
-    "change_1min_pct": 1.38,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COPX stürzt um -1.38% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
