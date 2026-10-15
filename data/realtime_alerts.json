@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-15 13:26:02",
+    "time_str": "13:26:02",
+    "data_age_min": 0.4,
+    "window_span_min": 8.7,
+    "symbol": "AXP",
+    "direction": "SHORT",
+    "trigger_price": 307.0,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AXP stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 13:25:54",
+    "time_str": "13:25:54",
+    "data_age_min": 3.7,
+    "window_span_min": 4.3,
+    "symbol": "ESTC",
+    "direction": "LONG",
+    "trigger_price": 90.4,
+    "change_1min_pct": 0.7,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ESTC explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 13:25:50",
+    "time_str": "13:25:50",
+    "data_age_min": 2.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 13:21:09",
     "time_str": "13:21:09",
     "data_age_min": 4.8,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 11:45:49",
-    "time_str": "11:45:49",
-    "data_age_min": 0.0,
-    "window_span_min": 4.8,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 10.69,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 11:45:48",
-    "time_str": "11:45:48",
-    "data_age_min": 10.8,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "SHORT",
-    "trigger_price": 93.69,
-    "change_1min_pct": 1.36,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F stürzt um -1.36% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 11:45:47",
-    "time_str": "11:45:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.08,
-    "change_1min_pct": 1.27,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
