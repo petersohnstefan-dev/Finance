@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-15 10:50:56",
+    "time_str": "10:50:56",
+    "data_age_min": 2.6,
+    "window_span_min": 2.4,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 3.86,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 10:41:00",
     "time_str": "10:41:00",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.2,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PYTH-USD stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 08:31:05",
-    "time_str": "08:31:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "LONG",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.4,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD explodiert um +1.40% in 5 Min.! Momentum aktiv."
   }
 ]
