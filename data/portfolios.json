@@ -485,7 +485,7 @@
           "take_profit": 242.92,
           "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
           "derivative_type": "STOCK",
-          "last_updated": "09:56:48",
+          "last_updated": "10:16:39",
           "peak_price": 211.74
         },
         "DUOL": {
@@ -593,13 +593,13 @@
           "name": "Münchener Rück AG",
           "shares": 3.873,
           "buy_price": 516.4,
-          "current_price": 548.6,
+          "current_price": 546.2,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Münchener Rück: KGV unter 10, exzellente Dividendenhistorie",
           "derivative_type": "STOCK",
-          "last_updated": "09:56:48",
+          "last_updated": "10:16:39",
           "peak_price": 548.6
         },
         "GC=F": {
@@ -656,7 +656,7 @@
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.2% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein starker Piotroski F-Score von 7/9 und ein unauffälliger Beneish M-Score von -2.42 erfüllen das Qualitätsmandat voll und ganz. Die Datenabdeckung liegt mit 70% über der Mindestgrenze von 50%, und das bestehende Finanzmandat im Depot begründet kein unzulässiges Klumpenrisiko im Sinne der Ausschlusskriterien.",
           "derivative_type": "STOCK",
           "peak_price": 409.3871,
-          "last_updated": "09:56:48"
+          "last_updated": "10:16:39"
         }
       },
       "history": [
@@ -798,7 +798,7 @@
       ]
     },
     "day_trading": {
-      "cash": 4964.423759034741,
+      "cash": 4527.42881993754,
       "positions": {
         "KO411866": {
           "symbol": "KO411866",
@@ -828,6 +828,33 @@
           "is_knocked_out": false,
           "peak_price": 8.155,
           "last_updated": "09:56:48"
+        },
+        "KO590149": {
+          "symbol": "KO590149",
+          "name": "🔻 Turbo Bear 2.0x auf Global X Uranium ETF (KO: 50.95)",
+          "shares": 24.9587,
+          "buy_price": 17.4686,
+          "current_price": 17.33,
+          "buy_date": "2026-10-15 10:16",
+          "stop_loss": 14.904,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+1.4% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 2.0x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO590149",
+          "underlying_symbol": "URA",
+          "underlying_name": "Global X Uranium ETF",
+          "direction": "SHORT",
+          "ratio": 1.0,
+          "strike": 51.99,
+          "knockout_barrier": 50.95,
+          "initial_underlying_price": 34.66,
+          "current_underlying_price": 34.66,
+          "cert_price": 17.33,
+          "leverage": 2.0,
+          "distance_to_ko_pct": 47.0,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -2816,6 +2843,17 @@
           "total": 437.41,
           "date": "2026-10-15 09:11",
           "reason": "⚡ Daytrade (+1.7% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 2.5x Hebel | Risiko 14%"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO590149",
+          "name": "🔻 Turbo Bear 2.0x auf Global X Uranium ETF (KO: 50.95)",
+          "product_type": "KNOCKOUT",
+          "shares": 24.9587,
+          "price": 17.33,
+          "total": 435.99,
+          "date": "2026-10-15 10:16",
+          "reason": "⚡ Daytrade (+1.4% Spike, Score 70/100 [volu0 tren20 spik15 stop20 mark15]) | 2.0x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
