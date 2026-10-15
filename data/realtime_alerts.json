@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-15 07:55:54",
+    "time_str": "07:55:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PENDLE-USD",
+    "direction": "SHORT",
+    "trigger_price": 1.92,
+    "change_1min_pct": 1.29,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PENDLE-USD stürzt um -1.29% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-15 07:45:53",
     "time_str": "07:45:53",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DIS explodiert um +1.18% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-14 22:06:00",
-    "time_str": "22:06:00",
-    "data_age_min": 0.8,
-    "window_span_min": 5.2,
-    "symbol": "ABBV",
-    "direction": "SHORT",
-    "trigger_price": 284.63,
-    "change_1min_pct": 1.0,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ABBV stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
