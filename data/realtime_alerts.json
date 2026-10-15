@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-15 14:21:03",
+    "time_str": "14:21:03",
+    "data_age_min": 0.3,
+    "window_span_min": 4.7,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.46,
+    "change_1min_pct": 4.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -4.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 14:21:03",
+    "time_str": "14:21:03",
+    "data_age_min": 0.1,
+    "window_span_min": 6.0,
+    "symbol": "VKTX",
+    "direction": "SHORT",
+    "trigger_price": 25.78,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VKTX stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 14:21:02",
+    "time_str": "14:21:02",
+    "data_age_min": 14.7,
+    "window_span_min": 6.3,
+    "symbol": "URA",
+    "direction": "LONG",
+    "trigger_price": 34.82,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 URA explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-15 14:15:56",
     "time_str": "14:15:56",
     "data_age_min": 3.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 13:16:01",
-    "time_str": "13:16:01",
-    "data_age_min": 0.9,
-    "window_span_min": 4.1,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 37.24,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 13:11:05",
-    "time_str": "13:11:05",
-    "data_age_min": 2.4,
-    "window_span_min": 7.7,
-    "symbol": "PLD",
-    "direction": "SHORT",
-    "trigger_price": 130.2,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PLD stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 13:11:05",
-    "time_str": "13:11:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 128.19,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
