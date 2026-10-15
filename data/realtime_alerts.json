@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-15 21:01:23",
+    "time_str": "21:01:23",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "RGTI",
+    "direction": "LONG",
+    "trigger_price": 12.24,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 1.29,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "JOBY",
+    "direction": "LONG",
+    "trigger_price": 4.69,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-15 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "LONG",
+    "trigger_price": 33.36,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 1.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-15 20:55:50",
     "time_str": "20:55:50",
     "data_age_min": 10.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.16,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARGX explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 19:55:56",
-    "time_str": "19:55:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "SHORT",
-    "trigger_price": 51.58,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 19:55:55",
-    "time_str": "19:55:55",
-    "data_age_min": 2.9,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.77,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 19:45:57",
-    "time_str": "19:45:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.81,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
