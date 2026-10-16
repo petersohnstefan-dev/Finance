@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 19:10:51",
+    "time_str": "19:10:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 233.05,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 4.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 19:10:51",
+    "time_str": "19:10:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.75,
+    "change_1min_pct": 1.13,
+    "vol_ratio": 1.35,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 19:05:46",
     "time_str": "19:05:46",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.35,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CL=F explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 18:45:48",
-    "time_str": "18:45:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PYTH-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.09,
-    "change_1min_pct": 1.24,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PYTH-USD stürzt um -1.24% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 18:45:47",
-    "time_str": "18:45:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "SHORT",
-    "trigger_price": 8.76,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
