@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 11:55:45",
+    "time_str": "11:55:45",
+    "data_age_min": 2.9,
+    "window_span_min": 8.9,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 29.05,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 11:55:44",
+    "time_str": "11:55:44",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "WLD-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.52,
+    "change_1min_pct": 1.56,
+    "vol_ratio": 2.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 WLD-USD stürzt um -1.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 11:51:00",
     "time_str": "11:51:00",
     "data_age_min": 1.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:45:52",
-    "time_str": "22:45:52",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 44.3,
-    "change_1min_pct": 0.91,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:45:52",
-    "time_str": "22:45:52",
-    "data_age_min": 3.5,
-    "window_span_min": 2.4,
-    "symbol": "CAVA",
-    "direction": "SHORT",
-    "trigger_price": 55.0,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAVA stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
