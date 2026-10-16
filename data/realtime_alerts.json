@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-16 14:10:49",
+    "time_str": "14:10:49",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.46,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 14:10:48",
+    "time_str": "14:10:48",
+    "data_age_min": 0.6,
+    "window_span_min": 7.2,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 4.22,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 14:10:48",
+    "time_str": "14:10:48",
+    "data_age_min": 3.8,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 12.79,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 14:05:54",
     "time_str": "14:05:54",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PENDLE-USD explodiert um +1.39% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 12:35:51",
-    "time_str": "12:35:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.54,
-    "change_1min_pct": 1.11,
-    "vol_ratio": 1.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 12:35:51",
-    "time_str": "12:35:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "LONG",
-    "trigger_price": 0.42,
-    "change_1min_pct": 1.05,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 12:25:56",
-    "time_str": "12:25:56",
-    "data_age_min": 3.1,
-    "window_span_min": 2.9,
-    "symbol": "PL",
-    "direction": "SHORT",
-    "trigger_price": 14.65,
-    "change_1min_pct": 0.81,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
