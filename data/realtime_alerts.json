@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 15:16:03",
+    "time_str": "15:16:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "LONG",
+    "trigger_price": 1225.5,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 9.95,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 15:15:59",
+    "time_str": "15:15:59",
+    "data_age_min": 3.2,
+    "window_span_min": 6.8,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.45,
+    "change_1min_pct": 0.75,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.75% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-16 15:11:01",
     "time_str": "15:11:01",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.41,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WLD-USD explodiert um +1.86% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 13:20:54",
-    "time_str": "13:20:54",
-    "data_age_min": 0.1,
-    "window_span_min": 3.8,
-    "symbol": "SNOW",
-    "direction": "SHORT",
-    "trigger_price": 339.0,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SNOW stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 13:20:52",
-    "time_str": "13:20:52",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.08,
-    "change_1min_pct": 2.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +2.52% in 5 Min.! Momentum aktiv."
   }
 ]
