@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 21:25:47",
+    "time_str": "21:25:47",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 26.98,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 0.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 21:25:46",
+    "time_str": "21:25:46",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.15,
+    "change_1min_pct": 0.88,
+    "vol_ratio": 3.29,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +0.88% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-16 21:20:56",
     "time_str": "21:20:56",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 6.77,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHA stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 20:46:00",
-    "time_str": "20:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "EZBC",
-    "direction": "SHORT",
-    "trigger_price": 46.74,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 EZBC stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 20:46:00",
-    "time_str": "20:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "HODL",
-    "direction": "SHORT",
-    "trigger_price": 22.86,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HODL stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
