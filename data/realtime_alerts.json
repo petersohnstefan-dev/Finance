@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-16 11:15:52",
+    "time_str": "11:15:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.69,
+    "change_1min_pct": 1.69,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.69% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-16 11:10:51",
     "time_str": "11:10:51",
     "data_age_min": 1.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:40:57",
-    "time_str": "22:40:57",
-    "data_age_min": 3.0,
-    "window_span_min": 4.0,
-    "symbol": "JUP-USD",
-    "direction": "LONG",
-    "trigger_price": 0.0,
-    "change_1min_pct": 5.34,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JUP-USD explodiert um +5.34% in 5 Min.! Momentum aktiv."
   }
 ]
