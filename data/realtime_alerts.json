@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-16 07:10:56",
+    "time_str": "07:10:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.09,
+    "change_1min_pct": 1.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 07:05:50",
     "time_str": "07:05:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": 4.56,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CAT stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:01:25",
-    "time_str": "22:01:25",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "MRK",
-    "direction": "SHORT",
-    "trigger_price": 145.29,
-    "change_1min_pct": 0.84,
-    "vol_ratio": 9.29,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRK stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
