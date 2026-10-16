@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 20:31:07",
+    "time_str": "20:31:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 336.2,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 20:31:07",
+    "time_str": "20:31:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 40.85,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 20:25:56",
     "time_str": "20:25:56",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM explodiert um +0.99% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 19:35:58",
-    "time_str": "19:35:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 2.52,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 19:35:57",
-    "time_str": "19:35:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RGTI",
-    "direction": "LONG",
-    "trigger_price": 12.09,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
