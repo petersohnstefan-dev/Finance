@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-16 18:20:49",
+    "time_str": "18:20:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "RUN",
+    "direction": "SHORT",
+    "trigger_price": 7.46,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 18:20:49",
+    "time_str": "18:20:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.2,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 18:20:48",
+    "time_str": "18:20:48",
+    "data_age_min": 1.8,
+    "window_span_min": 4.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 50.07,
+    "change_1min_pct": 0.74,
+    "vol_ratio": 1.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.74% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-16 18:16:02",
     "time_str": "18:16:02",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 4.83,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PENDLE-USD stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 17:51:03",
-    "time_str": "17:51:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 7.47,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 17:51:03",
-    "time_str": "17:51:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 32.5,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 1.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 17:51:02",
-    "time_str": "17:51:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 3.32,
-    "change_1min_pct": 1.12,
-    "vol_ratio": 1.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
