@@ -13,28 +13,28 @@
           "name": "Shift4 Payments, Inc.",
           "shares": 24.3186,
           "buy_price": 38.4968,
-          "current_price": 39.88,
+          "current_price": 39.12,
           "buy_date": "2026-10-15 15:56",
           "stop_loss": 34.419,
           "take_profit": null,
           "reason": "🚨 Smart-Money Ausbruch (Alpha 71/100) | PCR: 0.50 | Shift4 Payments, Inc. (FOUR) Is a New Position in Sirmium Capital’s Portfolio | ⚖️ Tribunal (BUY): Das Depot-Mandat verlangt explizit kurzfristiges Trading (Tage bis Wochen) mit Fokus auf Momentum und Ausbrueche. Bilanzqualitaet ist hier zweitrangig. Der Wert zeigt einen starken Breakout-Score von 80, ein Smart-Money-Ausbruchsignal, ein Put-Call-Ratio von 0.50 sowie institutionelles Interesse (Sirmium Capital Einstieg) und hohes Analystenpotenzial (37.59%). Die Datenabdeckung liegt mit 75% ueber dem kritischen Schwellenwert von 50%, und es liegt keine grobe fundamentale Insolvenzschieflage vor. Saemtliche Ausschlusskriterien (wie unzureichende Datenabdeckung unter 50%, Klumpenrisiko oder reines Momentum ohne Nachrichtenstuetze) sind nicht erfuellt.",
           "derivative_type": "STOCK",
           "peak_price": 39.88,
-          "last_updated": "15:51:47"
+          "last_updated": "17:31:47"
         },
         "CAVA": {
           "symbol": "CAVA",
           "name": "CAVA Group, Inc.",
           "shares": 19.7154,
           "buy_price": 55.5108,
-          "current_price": 58.01,
+          "current_price": 57.69,
           "buy_date": "2026-10-16 10:57",
           "stop_loss": 50.455,
           "take_profit": null,
           "reason": "🚨 Smart-Money Ausbruch (Alpha 73/100) | PCR: 0.16 | BLMN vs. CAVA: Which Stock Is the Better Value Option? | ⚖️ Tribunal (BUY): Der Breakout-Score von 80, der Alpha-Score von 69.0 und das extrem bullische Put-Call-Ratio von 0.16 bestätigen ein starkes kurzfristiges Momentum. Die Datenabdeckung liegt mit 75% deutlich über dem kritischen Schwellenwert von 50%, und das Depot weist kein Klumpenrisiko im selben Sektor auf, da aktuell nur die Aktie FOUR gehalten wird und genügend Cash vorhanden ist.",
           "derivative_type": "STOCK",
           "peak_price": 58.01,
-          "last_updated": "15:51:47"
+          "last_updated": "17:31:47"
         }
       },
       "history": [
@@ -523,34 +523,20 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 4087.5231079100004,
+      "cash": 6174.810411414001,
       "positions": {
-        "PLTR": {
-          "symbol": "PLTR",
-          "name": "Palantir Technologies Inc.",
-          "shares": 11.1148,
-          "buy_price": 179.94,
-          "current_price": 195.49,
-          "buy_date": "2026-08-24 22:07",
-          "stop_loss": 188.94,
-          "take_profit": 242.92,
-          "reason": "KI-Enterprise-Wachstum & Trendfolge über EMA 50",
-          "derivative_type": "STOCK",
-          "last_updated": "15:51:47",
-          "peak_price": 211.74
-        },
         "DUOL": {
           "symbol": "DUOL",
           "name": "Duolingo, Inc.",
           "shares": 13.6864,
           "buy_price": 146.13,
-          "current_price": 149.15,
+          "current_price": 148.24,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": 131.52,
           "take_profit": 197.28,
           "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
           "derivative_type": "STOCK",
-          "last_updated": "16:56:29",
+          "last_updated": "17:31:47",
           "peak_price": 159.19
         },
         "ONON": {
@@ -558,14 +544,14 @@
           "name": "On Holding AG",
           "shares": 74.9204,
           "buy_price": 26.7484,
-          "current_price": 35.69,
+          "current_price": 34.92,
           "buy_date": "2026-09-15 20:31",
           "stop_loss": 32.87,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 68/100, News: 61/100) | ⚖️ Tribunal (BUY): Die starken quantitativen Signale für Wachstum und Smart Money Flow (Alpha 68/100) sowie die positive Nachrichtenlage (61/100) sprechen klar für ONON. Es liegen keine offensichtlichen Red Flags vor, die gegen eine Aufnahme in ein mittel- bis langfristiges Depot sprechen würden, insbesondere da der CRO angehalten ist, nicht zu restriktiv zu sein und Trades mit gutem Momentum zu erlauben.",
           "derivative_type": "STOCK",
           "peak_price": 35.73,
-          "last_updated": "15:56:29",
+          "last_updated": "17:31:47",
           "stop_source": "gewinnabgabe"
         }
       },
@@ -630,6 +616,20 @@
           "pnl_pct": 4.68,
           "date": "2026-10-12 16:26",
           "reason": "🎯 Mittelfrist-Trailing-Stop gegriffen (+4.9% Gewinn gesichert)"
+        },
+        {
+          "type": "SELL",
+          "symbol": "PLTR",
+          "name": "Palantir Technologies Inc.",
+          "product_type": "STOCK",
+          "shares": 11.1148,
+          "buy_price": 179.94,
+          "sell_price": 187.8835,
+          "total": 2088.29,
+          "pnl": 88.29,
+          "pnl_pct": 4.41,
+          "date": "2026-10-16 17:31",
+          "reason": "🎯 Mittelfrist-Trailing-Stop gegriffen (+4.6% Gewinn gesichert)"
         }
       ]
     },
@@ -644,13 +644,13 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 4195.9,
+          "current_price": 4198.6,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "15:51:47",
+          "last_updated": "17:31:47",
           "peak_price": 4640.8
         },
         "BTC-USD": {
@@ -658,13 +658,13 @@
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 81592.75,
+          "current_price": 81524.55,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "15:51:47",
+          "last_updated": "17:31:47",
           "peak_price": 86727.81
         },
         "BATS.L": {
@@ -672,28 +672,28 @@
           "name": "BRITISH AMERICAN TOBACCO PLC OR",
           "shares": 0.478,
           "buy_price": 4192.368,
-          "current_price": 4444.0,
+          "current_price": 4466.0,
           "buy_date": "2026-09-17 22:37",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: ℹ️ Keine Bilanzdaten | Piotroski: — | Analystenpotenzial 23.0% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Keines der definierten Ausschlusskriterien greift: Zwar liegt die Datenabdeckung bei 45 %, doch stützt sich die Kaufseite auf tatsächlich gemessene Kennzahlen (KGV, ROE, langfrist_score, Analystenpotenzial) und nicht auf fehlende Bausteine wie Smart Money oder Forensic. Ein Verstoß der Bilanzqualität durch Distress-Werte liegt mangels negativer Scores nicht vor, ein Sektorklumpenrisiko existiert im Consumer-Defensive-Bereich nicht, und das Kaufargument basiert auf fundamentaler Bewertung statt reinem Momentum.",
           "derivative_type": "STOCK",
-          "last_updated": "15:51:47",
-          "peak_price": 4444.0
+          "last_updated": "17:31:47",
+          "peak_price": 4466.0
         },
         "SPGI": {
           "symbol": "SPGI",
           "name": "S&P Global Inc.",
           "shares": 4.8951,
           "buy_price": 409.3871,
-          "current_price": 432.21,
+          "current_price": 427.51,
           "buy_date": "2026-10-15 08:36",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.2% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein starker Piotroski F-Score von 7/9 und ein unauffälliger Beneish M-Score von -2.42 erfüllen das Qualitätsmandat voll und ganz. Die Datenabdeckung liegt mit 70% über der Mindestgrenze von 50%, und das bestehende Finanzmandat im Depot begründet kein unzulässiges Klumpenrisiko im Sinne der Ausschlusskriterien.",
           "derivative_type": "STOCK",
           "peak_price": 432.21,
-          "last_updated": "15:51:47"
+          "last_updated": "17:31:47"
         }
       },
       "history": [
@@ -849,14 +849,14 @@
       ]
     },
     "day_trading": {
-      "cash": 4851.368088952655,
+      "cash": 4424.675361991048,
       "positions": {
         "KO548497": {
           "symbol": "KO548497",
           "name": "⚡ Turbo Bull 2.5x auf Celsius Holdings, Inc. (KO: 17.864)",
           "shares": 36.1506,
           "buy_price": 11.7734,
-          "current_price": 11.399999999999999,
+          "current_price": 11.25,
           "buy_date": "2026-10-16 15:52",
           "stop_loss": 10.045,
           "take_profit": null,
@@ -875,10 +875,37 @@
           "current_underlying_price": 29.19,
           "cert_price": 11.68,
           "leverage": 2.5,
-          "distance_to_ko_pct": 38.2,
+          "distance_to_ko_pct": 37.9,
           "is_knocked_out": false,
           "peak_price": 11.7734,
-          "last_updated": "16:26:26"
+          "last_updated": "17:31:47"
+        },
+        "KO693076": {
+          "symbol": "KO693076",
+          "name": "🔻 Turbo Bear 2.5x auf Sarepta Therapeutics, Inc. (KO: 23.557)",
+          "shares": 61.2293,
+          "buy_price": 6.9524,
+          "current_price": 6.87,
+          "buy_date": "2026-10-16 17:32",
+          "stop_loss": 5.908,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+1.6% Spike, Score 87/100 [volu25 tren20 spik15 stop12 mark15]) | 2.5x Hebel | Risiko 14%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO693076",
+          "underlying_symbol": "SRPT",
+          "underlying_name": "Sarepta Therapeutics, Inc.",
+          "direction": "SHORT",
+          "ratio": 1.0,
+          "strike": 24.04,
+          "knockout_barrier": 23.56,
+          "initial_underlying_price": 17.17,
+          "current_underlying_price": 17.17,
+          "cert_price": 6.87,
+          "leverage": 2.5,
+          "distance_to_ko_pct": 37.2,
+          "is_knocked_out": false
         }
       },
       "history": [
@@ -2942,6 +2969,17 @@
           "total": 425.62,
           "date": "2026-10-16 15:52",
           "reason": "⚡ Daytrade (+1.5% Spike, Score 75/100 [volu5 tren20 spik15 stop20 mark15]) | 2.5x Hebel | Risiko 14%"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO693076",
+          "name": "🔻 Turbo Bear 2.5x auf Sarepta Therapeutics, Inc. (KO: 23.557)",
+          "product_type": "KNOCKOUT",
+          "shares": 61.2293,
+          "price": 6.87,
+          "total": 425.69,
+          "date": "2026-10-16 17:32",
+          "reason": "⚡ Daytrade (+1.6% Spike, Score 87/100 [volu25 tren20 spik15 stop12 mark15]) | 2.5x Hebel | Risiko 14%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
