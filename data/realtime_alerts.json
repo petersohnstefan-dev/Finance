@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 07:05:50",
+    "time_str": "07:05:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.64,
+    "change_1min_pct": 1.69,
+    "vol_ratio": 0.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 07:05:50",
+    "time_str": "07:05:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 9.29,
+    "change_1min_pct": 1.03,
+    "vol_ratio": 1.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.03% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-15 23:33:35",
     "time_str": "23:33:35",
     "data_age_min": 12.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 9.29,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRK stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:01:19",
-    "time_str": "22:01:19",
-    "data_age_min": 0.2,
-    "window_span_min": 5.2,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 3.57,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 2.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-15 22:01:19",
-    "time_str": "22:01:19",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 11.57,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 1.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
