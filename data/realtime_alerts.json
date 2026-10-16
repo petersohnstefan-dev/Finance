@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-16 21:20:56",
+    "time_str": "21:20:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 38.96,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 3.34,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 21:20:55",
+    "time_str": "21:20:55",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 63.85,
+    "change_1min_pct": 1.37,
+    "vol_ratio": 2.14,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -1.37% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 21:20:54",
+    "time_str": "21:20:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 10.18,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 21:16:04",
     "time_str": "21:16:04",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HODL stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 20:46:00",
-    "time_str": "20:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "BITB",
-    "direction": "SHORT",
-    "trigger_price": 43.87,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BITB stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 20:46:00",
-    "time_str": "20:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 6.0,
-    "symbol": "ARKB",
-    "direction": "SHORT",
-    "trigger_price": 26.81,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 9.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKB stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 20:46:00",
-    "time_str": "20:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FBTC",
-    "direction": "SHORT",
-    "trigger_price": 70.32,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FBTC stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
