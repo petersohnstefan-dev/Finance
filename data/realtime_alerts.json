@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-16 17:46:00",
+    "time_str": "17:46:00",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 38.96,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-16 17:45:59",
+    "time_str": "17:45:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ONON",
+    "direction": "SHORT",
+    "trigger_price": 34.75,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 2.21,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-16 17:41:03",
     "time_str": "17:41:03",
     "data_age_min": 2.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.28,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDWR stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 17:10:54",
-    "time_str": "17:10:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 42.62,
-    "change_1min_pct": 0.78,
-    "vol_ratio": 0.92,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 17:10:54",
-    "time_str": "17:10:54",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 39.33,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 1.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
