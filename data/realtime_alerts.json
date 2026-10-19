@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-19 20:31:10",
+    "time_str": "20:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "ROIV",
+    "direction": "LONG",
+    "trigger_price": 35.1,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 7.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ROIV explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 20:25:56",
     "time_str": "20:25:56",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 18:11:02",
-    "time_str": "18:11:02",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "SHORT",
-    "trigger_price": 0.43,
-    "change_1min_pct": 1.24,
-    "vol_ratio": 0.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK stürzt um -1.24% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
