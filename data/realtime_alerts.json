@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-19 23:25:47",
+    "time_str": "23:25:47",
+    "data_age_min": 0.8,
+    "window_span_min": 2.0,
+    "symbol": "CI",
+    "direction": "LONG",
+    "trigger_price": 298.5,
+    "change_1min_pct": 0.9,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CI explodiert um +0.90% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 23:25:37",
+    "time_str": "23:25:37",
+    "data_age_min": 12.9,
+    "window_span_min": 6.8,
+    "symbol": "GDX",
+    "direction": "SHORT",
+    "trigger_price": 86.62,
+    "change_1min_pct": 3.34,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GDX stürzt um -3.34% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 23:25:34",
+    "time_str": "23:25:34",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.62,
+    "change_1min_pct": 1.22,
+    "vol_ratio": 0.36,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.22% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 22:56:01",
     "time_str": "22:56:01",
     "data_age_min": 4.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.76,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QUBT stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:51:01",
-    "time_str": "21:51:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 11.85,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:51:01",
-    "time_str": "21:51:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 11.76,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 1.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:51:01",
-    "time_str": "21:51:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 286.84,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 0.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
