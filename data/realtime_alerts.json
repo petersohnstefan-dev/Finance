@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 16:56:01",
+    "time_str": "16:56:01",
+    "data_age_min": 2.0,
+    "window_span_min": 6.0,
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 28.3,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 16:55:59",
+    "time_str": "16:55:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVCR",
+    "direction": "LONG",
+    "trigger_price": 14.55,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 16:51:04",
     "time_str": "16:51:04",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.2,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SYM stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:25:45",
-    "time_str": "16:25:45",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "LONG",
-    "trigger_price": 19.38,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:25:45",
-    "time_str": "16:25:45",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 9.96,
-    "change_1min_pct": 1.01,
-    "vol_ratio": 0.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +1.01% in 5 Min.! Momentum aktiv."
   }
 ]
