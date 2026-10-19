@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 14:46:06",
+    "time_str": "14:46:06",
+    "data_age_min": 2.2,
+    "window_span_min": 2.9,
+    "symbol": "CHPT",
+    "direction": "LONG",
+    "trigger_price": 7.02,
+    "change_1min_pct": 1.27,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT explodiert um +1.27% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 14:46:06",
+    "time_str": "14:46:06",
+    "data_age_min": 0.4,
+    "window_span_min": 4.7,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.56,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 14:41:05",
     "time_str": "14:41:05",
     "data_age_min": 2.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.35,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PYTH-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:15:57",
-    "time_str": "13:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 4.92,
-    "change_1min_pct": 1.03,
-    "vol_ratio": 1.2,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.03% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:10:59",
-    "time_str": "13:10:59",
-    "data_age_min": 4.8,
-    "window_span_min": 4.2,
-    "symbol": "HON",
-    "direction": "LONG",
-    "trigger_price": 214.0,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HON explodiert um +0.95% in 5 Min.! Momentum aktiv."
   }
 ]
