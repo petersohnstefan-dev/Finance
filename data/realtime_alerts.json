@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 15:01:19",
+    "time_str": "15:01:19",
+    "data_age_min": 0.1,
+    "window_span_min": 5.2,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 42.02,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 15:01:17",
+    "time_str": "15:01:17",
+    "data_age_min": 0.3,
+    "window_span_min": 7.0,
+    "symbol": "ARKG",
+    "direction": "SHORT",
+    "trigger_price": 47.18,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARKG stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 14:50:52",
     "time_str": "14:50:52",
     "data_age_min": 1.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENPH explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:20:59",
-    "time_str": "13:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "SHORT",
-    "trigger_price": 12.46,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:16:00",
-    "time_str": "13:16:00",
-    "data_age_min": 0.5,
-    "window_span_min": 5.5,
-    "symbol": "APP",
-    "direction": "LONG",
-    "trigger_price": 269.02,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP explodiert um +0.80% in 5 Min.! Momentum aktiv."
   }
 ]
