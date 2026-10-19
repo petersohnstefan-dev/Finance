@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 10:05:47",
+    "time_str": "10:05:47",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 93.42,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 10:05:43",
+    "time_str": "10:05:43",
+    "data_age_min": 0.5,
+    "window_span_min": 5.2,
+    "symbol": "PLTR",
+    "direction": "SHORT",
+    "trigger_price": 188.0,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 09:35:54",
     "time_str": "09:35:54",
     "data_age_min": 3.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 22:01:07",
-    "time_str": "22:01:07",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 218.0,
-    "change_1min_pct": 1.42,
-    "vol_ratio": 4.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +1.42% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-16 21:56:01",
-    "time_str": "21:56:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "META",
-    "direction": "LONG",
-    "trigger_price": 707.86,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
