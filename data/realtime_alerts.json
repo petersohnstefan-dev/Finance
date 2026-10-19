@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 21:05:56",
+    "time_str": "21:05:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 30.82,
+    "change_1min_pct": 0.83,
+    "vol_ratio": 1.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.83% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 21:05:54",
+    "time_str": "21:05:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 28.52,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.95,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 21:01:26",
     "time_str": "21:01:26",
     "data_age_min": 0.5,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 19:03:31",
-    "time_str": "19:03:31",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.79,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 1.82,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 19:01:25",
-    "time_str": "19:01:25",
-    "data_age_min": 14.4,
-    "window_span_min": 9.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 3.42,
-    "change_1min_pct": 0.76,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
