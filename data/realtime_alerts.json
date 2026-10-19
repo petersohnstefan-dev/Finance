@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 18:11:02",
+    "time_str": "18:11:02",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.43,
+    "change_1min_pct": 1.24,
+    "vol_ratio": 0.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -1.24% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 18:11:00",
+    "time_str": "18:11:00",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "LONG",
+    "trigger_price": 109.42,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 18:01:29",
     "time_str": "18:01:29",
     "data_age_min": 0.5,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.04,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMAT explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:46:04",
-    "time_str": "16:46:04",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 130.38,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:46:03",
-    "time_str": "16:46:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "LLY",
-    "direction": "SHORT",
-    "trigger_price": 1247.26,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LLY stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
