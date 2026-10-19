@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-19 21:10:59",
+    "time_str": "21:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 2.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.43,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 21:10:58",
+    "time_str": "21:10:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 285.7,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 21:10:58",
+    "time_str": "21:10:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 42.36,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 21:05:56",
     "time_str": "21:05:56",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 3.25,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 19:05:56",
-    "time_str": "19:05:56",
-    "data_age_min": 4.0,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 2.5,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 19:05:55",
-    "time_str": "19:05:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 192.72,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.13,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 19:03:33",
-    "time_str": "19:03:33",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.71,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 0.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
