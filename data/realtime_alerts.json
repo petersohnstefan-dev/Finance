@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 17:31:10",
+    "time_str": "17:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.68,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 17:31:06",
+    "time_str": "17:31:06",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "SHORT",
+    "trigger_price": 8.63,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 1.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 17:25:56",
     "time_str": "17:25:56",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.56,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARVN stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:45:54",
-    "time_str": "16:45:54",
-    "data_age_min": 0.9,
-    "window_span_min": 6.0,
-    "symbol": "ETHW",
-    "direction": "LONG",
-    "trigger_price": 17.21,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHW explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:45:54",
-    "time_str": "16:45:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "FETH",
-    "direction": "LONG",
-    "trigger_price": 23.94,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FETH explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
