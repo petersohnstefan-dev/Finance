@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 15:11:10",
+    "time_str": "15:11:10",
+    "data_age_min": 0.1,
+    "window_span_min": 2.0,
+    "symbol": "GE",
+    "direction": "LONG",
+    "trigger_price": 314.96,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GE explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 15:11:03",
+    "time_str": "15:11:03",
+    "data_age_min": 0.6,
+    "window_span_min": 5.5,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 31.2,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 15:05:56",
     "time_str": "15:05:56",
     "data_age_min": 2.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ALAB stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:31:15",
-    "time_str": "13:31:15",
-    "data_age_min": 5.5,
-    "window_span_min": 4.8,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.74,
-    "change_1min_pct": 1.44,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -1.44% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:25:50",
-    "time_str": "13:25:50",
-    "data_age_min": 0.1,
-    "window_span_min": 5.8,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 43.04,
-    "change_1min_pct": 3.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +3.59% in 5 Min.! Momentum aktiv."
   }
 ]
