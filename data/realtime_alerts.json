@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-19 18:31:12",
+    "time_str": "18:31:12",
+    "data_age_min": 3.2,
+    "window_span_min": 2.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 3.43,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 18:31:11",
+    "time_str": "18:31:11",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 39.79,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 2.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 18:31:08",
+    "time_str": "18:31:08",
+    "data_age_min": 2.1,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.26,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 18:26:02",
     "time_str": "18:26:02",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 17:01:22",
-    "time_str": "17:01:22",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "CART",
-    "direction": "SHORT",
-    "trigger_price": 49.33,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 0.88,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CART stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 17:01:21",
-    "time_str": "17:01:21",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 261.15,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:56:01",
-    "time_str": "16:56:01",
-    "data_age_min": 2.0,
-    "window_span_min": 6.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 28.3,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
