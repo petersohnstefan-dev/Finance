@@ -1,32 +1,4 @@
 {
-  "2026-09-30": {
-    "short_term": {
-      "runs": 192,
-      "scored": 2268,
-      "entries": 0,
-      "best_score": 75.7,
-      "above_threshold": 16,
-      "threshold": 70.0,
-      "blocks": {
-        "unter_min_alpha_score": 176,
-        "tribunal_veto_oder_kein_preis": 16
-      }
-    },
-    "day_trading": {
-      "runs": 192,
-      "scored": 663,
-      "entries": 4,
-      "best_score": 75,
-      "above_threshold": 6,
-      "threshold": 70.0,
-      "blocks": {
-        "ausserhalb_handelszeit": 36,
-        "keine_kandidaten_nach_gates": 10,
-        "unter_min_entry_score": 110,
-        "max_trades_pro_tag": 32
-      }
-    }
-  },
   "2026-10-01": {
     "short_term": {
       "runs": 194,
@@ -380,6 +352,30 @@
         "keine_kandidaten_nach_gates": 20,
         "unter_min_entry_score": 105,
         "kein_cash_oder_slot_frei": 29
+      }
+    }
+  },
+  "2026-10-19": {
+    "short_term": {
+      "runs": 1,
+      "scored": 0,
+      "entries": 0,
+      "best_score": null,
+      "above_threshold": 0,
+      "threshold": 70.0,
+      "blocks": {
+        "keine_kandidaten": 1
+      }
+    },
+    "day_trading": {
+      "runs": 1,
+      "scored": 0,
+      "entries": 0,
+      "best_score": null,
+      "above_threshold": 0,
+      "threshold": 70.0,
+      "blocks": {
+        "ausserhalb_handelszeit": 1
       }
     }
   }
