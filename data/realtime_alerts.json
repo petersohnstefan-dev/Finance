@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 18:26:02",
+    "time_str": "18:26:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "TXN",
+    "direction": "LONG",
+    "trigger_price": 276.52,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 0.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 18:25:53",
+    "time_str": "18:25:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.78,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.46,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 18:21:05",
     "time_str": "18:21:05",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDWR explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:55:59",
-    "time_str": "16:55:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NVCR",
-    "direction": "LONG",
-    "trigger_price": 14.55,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVCR explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 16:51:04",
-    "time_str": "16:51:04",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 547.67,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
