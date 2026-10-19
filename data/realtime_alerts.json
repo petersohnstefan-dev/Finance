@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 15:05:56",
+    "time_str": "15:05:56",
+    "data_age_min": 2.5,
+    "window_span_min": 9.5,
+    "symbol": "PL",
+    "direction": "SHORT",
+    "trigger_price": 13.85,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 15:05:54",
+    "time_str": "15:05:54",
+    "data_age_min": 0.2,
+    "window_span_min": 3.7,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.8,
+    "change_1min_pct": 2.86,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +2.86% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 15:01:19",
     "time_str": "15:01:19",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS explodiert um +3.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:25:50",
-    "time_str": "13:25:50",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "RKLB",
-    "direction": "LONG",
-    "trigger_price": 51.97,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 13:21:00",
-    "time_str": "13:21:00",
-    "data_age_min": 2.9,
-    "window_span_min": 5.1,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 31.2,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.65% in 5 Min.! Momentum aktiv."
   }
 ]
