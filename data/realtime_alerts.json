@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-19 19:05:56",
+    "time_str": "19:05:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.4,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 3.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 19:05:56",
+    "time_str": "19:05:56",
+    "data_age_min": 4.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 2.5,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 19:05:55",
+    "time_str": "19:05:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 192.72,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-19 19:03:33",
     "time_str": "19:03:33",
     "data_age_min": 0.6,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 17:16:03",
-    "time_str": "17:16:03",
-    "data_age_min": 4.1,
-    "window_span_min": 4.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 2.51,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 0.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 17:16:02",
-    "time_str": "17:16:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 3.15,
-    "change_1min_pct": 1.12,
-    "vol_ratio": 7.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +1.12% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 17:16:01",
-    "time_str": "17:16:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRSP",
-    "direction": "LONG",
-    "trigger_price": 49.67,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.07,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRSP explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
