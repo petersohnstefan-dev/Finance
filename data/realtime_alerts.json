@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-19 22:21:00",
+    "time_str": "22:21:00",
+    "data_age_min": 3.4,
+    "window_span_min": 5.6,
+    "symbol": "DIS",
+    "direction": "SHORT",
+    "trigger_price": 109.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DIS stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-19 22:20:55",
+    "time_str": "22:20:55",
+    "data_age_min": 7.1,
+    "window_span_min": 7.8,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 287.0,
+    "change_1min_pct": 1.42,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -1.42% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-19 22:15:56",
     "time_str": "22:15:56",
     "data_age_min": 2.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.04,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:25:57",
-    "time_str": "21:25:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 2.5,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:25:56",
-    "time_str": "21:25:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 155.31,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 2.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
