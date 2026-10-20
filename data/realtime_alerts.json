@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 22:31:10",
+    "time_str": "22:31:10",
+    "data_age_min": 4.2,
+    "window_span_min": 6.0,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 31.96,
+    "change_1min_pct": 0.83,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 22:31:08",
+    "time_str": "22:31:08",
+    "data_age_min": 0.1,
+    "window_span_min": 4.1,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 35.89,
+    "change_1min_pct": 10.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +10.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 22:25:53",
     "time_str": "22:25:53",
     "data_age_min": 3.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.49,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TSLA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:55:47",
-    "time_str": "21:55:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "META",
-    "direction": "LONG",
-    "trigger_price": 693.87,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.36,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:55:43",
-    "time_str": "21:55:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 19.66,
-    "change_1min_pct": 0.83,
-    "vol_ratio": 1.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
