@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 19:41:01",
+    "time_str": "19:41:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.02,
+    "change_1min_pct": 1.14,
+    "vol_ratio": 5.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 19:41:00",
+    "time_str": "19:41:00",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "ARVN",
+    "direction": "SHORT",
+    "trigger_price": 7.62,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-20 19:36:16",
     "time_str": "19:36:16",
     "data_age_min": 3.3,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.89,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SRPT explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 18:15:49",
-    "time_str": "18:15:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 26.14,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.63,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 18:10:55",
-    "time_str": "18:10:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "LONG",
-    "trigger_price": 12.44,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
