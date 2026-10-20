@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 10:35:59",
+    "time_str": "10:35:59",
+    "data_age_min": 0.0,
+    "window_span_min": 5.0,
+    "symbol": "TSLA",
+    "direction": "LONG",
+    "trigger_price": 369.5,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TSLA explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 10:35:57",
+    "time_str": "10:35:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "LONG",
+    "trigger_price": 1202.0,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 10:10:59",
     "time_str": "10:10:59",
     "data_age_min": 3.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 3.85,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TOST stürzt um -1.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:05:45",
-    "time_str": "22:05:45",
-    "data_age_min": 2.8,
-    "window_span_min": 5.0,
-    "symbol": "ONON",
-    "direction": "SHORT",
-    "trigger_price": 35.2,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 2.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:05:45",
-    "time_str": "22:05:45",
-    "data_age_min": 2.2,
-    "window_span_min": 4.6,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 29.49,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
