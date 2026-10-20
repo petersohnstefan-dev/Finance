@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 11:25:54",
+    "time_str": "11:25:54",
+    "data_age_min": 4.0,
+    "window_span_min": 5.9,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 40.85,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.74% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 11:25:51",
+    "time_str": "11:25:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.65,
+    "change_1min_pct": 1.18,
+    "vol_ratio": 0.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.18% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 11:16:05",
     "time_str": "11:16:05",
     "data_age_min": 2.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HIMS explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:15:55",
-    "time_str": "22:15:55",
-    "data_age_min": 0.5,
-    "window_span_min": 3.4,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 10.87,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:11:08",
-    "time_str": "22:11:08",
-    "data_age_min": 0.3,
-    "window_span_min": 4.9,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 905.0,
-    "change_1min_pct": 1.2,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
