@@ -2759,5 +2759,45 @@
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
   }
+ },
+ "RTX": {
+  "fetched_ts": 1792503387.8316245,
+  "scores": {
+   "available": true,
+   "piotroski": 9,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.7,
+   "altman_detail": {
+    "X1": 0.009,
+    "X2": 0.332,
+    "X3": 0.062,
+    "X4": 2.503,
+    "X5": 0.518
+   },
+   "altman_not_applicable": false,
+   "sector": null,
+   "beneish_m": -2.32,
+   "beneish_detail": {
+    "DSRI": 1.22,
+    "GMI": 0.951,
+    "AQI": 0.935,
+    "SGI": 1.097,
+    "DEPI": 1.033,
+    "SGAI": 0.957,
+    "LVGI": 0.982,
+    "TATA": -0.02
+   },
+   "computed_at": "2026-10-20"
+  }
  }
 }
