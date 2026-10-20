@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 10:55:55",
+    "time_str": "10:55:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 24000.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 10:55:51",
+    "time_str": "10:55:51",
+    "data_age_min": 1.1,
+    "window_span_min": 7.8,
+    "symbol": "S",
+    "direction": "SHORT",
+    "trigger_price": 21.51,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-20 10:40:50",
     "time_str": "10:40:50",
     "data_age_min": 2.6,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JUP-USD explodiert um +2703.87% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:05:50",
-    "time_str": "22:05:50",
-    "data_age_min": 3.2,
-    "window_span_min": 4.7,
-    "symbol": "INTU",
-    "direction": "SHORT",
-    "trigger_price": 319.94,
-    "change_1min_pct": 1.77,
-    "vol_ratio": 1.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:05:46",
-    "time_str": "22:05:46",
-    "data_age_min": 6.8,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 2.46,
-    "change_1min_pct": 1.2,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
