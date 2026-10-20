@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 13:01:10",
+    "time_str": "13:01:10",
+    "data_age_min": 0.4,
+    "window_span_min": 4.8,
+    "symbol": "GE",
+    "direction": "SHORT",
+    "trigger_price": 306.99,
+    "change_1min_pct": 0.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GE stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 13:01:10",
+    "time_str": "13:01:10",
+    "data_age_min": 0.0,
+    "window_span_min": 5.1,
+    "symbol": "ORCL",
+    "direction": "LONG",
+    "trigger_price": 130.18,
+    "change_1min_pct": 1.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL explodiert um +1.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 12:55:56",
     "time_str": "12:55:56",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:41:08",
-    "time_str": "22:41:08",
-    "data_age_min": 2.3,
-    "window_span_min": 2.9,
-    "symbol": "MDLZ",
-    "direction": "SHORT",
-    "trigger_price": 63.34,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDLZ stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:41:01",
-    "time_str": "22:41:01",
-    "data_age_min": 2.1,
-    "window_span_min": 3.9,
-    "symbol": "FSLR",
-    "direction": "LONG",
-    "trigger_price": 171.8,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR explodiert um +1.06% in 5 Min.! Momentum aktiv."
   }
 ]
