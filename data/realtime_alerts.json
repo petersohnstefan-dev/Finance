@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-20 19:11:00",
+    "time_str": "19:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.12,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 2.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 19:10:59",
+    "time_str": "19:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "LONG",
+    "trigger_price": 19.34,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 0.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 19:10:59",
+    "time_str": "19:10:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 1.99,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 1.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 19:05:56",
     "time_str": "19:05:56",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.02,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RKLB explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 17:55:56",
-    "time_str": "17:55:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PACB",
-    "direction": "LONG",
-    "trigger_price": 1.93,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 17:55:52",
-    "time_str": "17:55:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEI-USD",
-    "direction": "LONG",
-    "trigger_price": 0.06,
-    "change_1min_pct": 1.12,
-    "vol_ratio": 1.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEI-USD explodiert um +1.12% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 17:46:02",
-    "time_str": "17:46:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "FSLR",
-    "direction": "SHORT",
-    "trigger_price": 175.13,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 3.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
