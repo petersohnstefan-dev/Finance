@@ -1290,43 +1290,10 @@
   }
  },
  "BILL": {
-  "fetched_ts": 1791812815.4450426,
+  "fetched_ts": 1792526521.3791072,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 0.52,
-   "altman_detail": {
-    "X1": 0.246,
-    "X2": -0.204,
-    "X3": 0.001,
-    "X4": 0.577,
-    "X5": 0.162
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.68,
-   "beneish_detail": {
-    "DSRI": 0.848,
-    "GMI": 1.006,
-    "AQI": 1.126,
-    "SGI": 1.13,
-    "DEPI": 0.906,
-    "SGAI": 0.981,
-    "LVGI": 1.074,
-    "TATA": -0.042
-   },
-   "computed_at": "2026-10-12"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "DUK": {
@@ -2484,7 +2451,7 @@
   }
  },
  "NFLX": {
-  "fetched_ts": 1790676388.4655304,
+  "fetched_ts": 1792526520.4266737,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
