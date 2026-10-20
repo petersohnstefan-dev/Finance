@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 08:31:00",
+    "time_str": "08:31:00",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "SHORT",
+    "trigger_price": 98.77,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 08:31:00",
+    "time_str": "08:31:00",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "SI=F",
+    "direction": "LONG",
+    "trigger_price": 57.58,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SI=F explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 08:20:54",
     "time_str": "08:20:54",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ACHR stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:55:53",
-    "time_str": "21:55:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 39.12,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 1.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 21:55:53",
-    "time_str": "21:55:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "IONQ",
-    "direction": "SHORT",
-    "trigger_price": 30.79,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
