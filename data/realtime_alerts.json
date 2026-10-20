@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-20 13:35:47",
+    "time_str": "13:35:47",
+    "data_age_min": 0.7,
+    "window_span_min": 5.1,
+    "symbol": "RTX",
+    "direction": "LONG",
+    "trigger_price": 197.44,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RTX explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-20 13:25:59",
     "time_str": "13:25:59",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TIA-USD explodiert um +1.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 07:31:03",
-    "time_str": "07:31:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.54,
-    "change_1min_pct": 1.05,
-    "vol_ratio": 0.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
