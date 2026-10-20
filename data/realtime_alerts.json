@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-20 22:21:09",
+    "time_str": "22:21:09",
+    "data_age_min": 1.2,
+    "window_span_min": 4.0,
+    "symbol": "ABT",
+    "direction": "LONG",
+    "trigger_price": 102.45,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ABT explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 22:21:09",
+    "time_str": "22:21:09",
+    "data_age_min": 4.6,
+    "window_span_min": 3.5,
+    "symbol": "TMO",
+    "direction": "LONG",
+    "trigger_price": 692.0,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TMO explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 22:21:02",
+    "time_str": "22:21:02",
+    "data_age_min": 0.8,
+    "window_span_min": 5.2,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 29.42,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 22:21:01",
+    "time_str": "22:21:01",
+    "data_age_min": 1.9,
+    "window_span_min": 3.2,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.65,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-20 22:16:16",
     "time_str": "22:16:16",
     "data_age_min": 0.3,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.96,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:46:00",
-    "time_str": "21:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 7.92,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:45:59",
-    "time_str": "21:45:59",
-    "data_age_min": 1.0,
-    "window_span_min": 4.0,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 2.38,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 0.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:45:58",
-    "time_str": "21:45:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 3.64,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 1.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 21:45:57",
-    "time_str": "21:45:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "LONG",
-    "trigger_price": 45.4,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 2.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS explodiert um +0.58% in 5 Min.! Momentum aktiv."
   }
 ]
