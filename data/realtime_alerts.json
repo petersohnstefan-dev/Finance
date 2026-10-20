@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-20 10:06:00",
+    "time_str": "10:06:00",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "NOW",
+    "direction": "LONG",
+    "trigger_price": 146.3,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-20 10:05:55",
+    "time_str": "10:05:55",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 41.14,
+    "change_1min_pct": 1.2,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-20 09:16:00",
     "time_str": "09:16:00",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 4.63,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEDG stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:01:21",
-    "time_str": "22:01:21",
-    "data_age_min": 0.2,
-    "window_span_min": 5.2,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 10.78,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 7.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-19 22:01:20",
-    "time_str": "22:01:20",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "PANW",
-    "direction": "LONG",
-    "trigger_price": 347.12,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 3.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
