@@ -368,43 +368,10 @@
   }
  },
  "UBER": {
-  "fetched_ts": 1791921108.3472116,
+  "fetched_ts": 1792526182.459615,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 3.56,
-   "altman_detail": {
-    "X1": 0.027,
-    "X2": -0.172,
-    "X3": 0.101,
-    "X4": 4.316,
-    "X5": 0.842
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.28,
-   "beneish_detail": {
-    "DSRI": 0.971,
-    "GMI": 0.991,
-    "AQI": 1.075,
-    "SGI": 1.183,
-    "DEPI": 0.964,
-    "SGAI": 0.863,
-    "LVGI": 0.955,
-    "TATA": -0.0
-   },
-   "computed_at": "2026-10-13"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "IBM": {
