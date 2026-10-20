@@ -223,7 +223,7 @@
   }
  },
  "PLTR": {
-  "fetched_ts": 1791836198.776145,
+  "fetched_ts": 1792500089.2606046,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -1283,43 +1283,10 @@
   }
  },
  "ELF": {
-  "fetched_ts": 1791812810.1801584,
+  "fetched_ts": 1792500089.8414075,
   "scores": {
-   "available": true,
-   "piotroski": 3,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 3.92,
-   "altman_detail": {
-    "X1": 0.189,
-    "X2": -0.065,
-    "X3": 0.034,
-    "X4": 4.984,
-    "X5": 0.684
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Defensive",
-   "beneish_m": -2.58,
-   "beneish_detail": {
-    "DSRI": 1.112,
-    "GMI": 1.007,
-    "AQI": 1.201,
-    "SGI": 1.246,
-    "DEPI": 0.922,
-    "SGAI": 1.059,
-    "LVGI": 1.377,
-    "TATA": -0.078
-   },
-   "computed_at": "2026-10-12"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "BILL": {
@@ -1454,7 +1421,7 @@
   }
  },
  "HOOD": {
-  "fetched_ts": 1791231925.7204373,
+  "fetched_ts": 1792500089.5212958,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -2748,6 +2715,13 @@
  },
  "ETH-USD": {
   "fetched_ts": 1792494699.7674527,
+  "scores": {
+   "available": false,
+   "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
+  }
+ },
+ "CC=F": {
+  "fetched_ts": 1792500088.8222904,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
