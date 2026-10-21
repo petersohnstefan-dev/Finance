@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 13:16:06",
+    "time_str": "13:16:06",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "ABT",
+    "direction": "SHORT",
+    "trigger_price": 100.83,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ABT stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 13:15:59",
+    "time_str": "13:15:59",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "SMCI",
+    "direction": "SHORT",
+    "trigger_price": 36.06,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 13:15:57",
+    "time_str": "13:15:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.08,
+    "change_1min_pct": 1.18,
+    "vol_ratio": 2.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-21 13:11:10",
     "time_str": "13:11:10",
     "data_age_min": 2.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMD stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 10:11:05",
-    "time_str": "10:11:05",
-    "data_age_min": 0.5,
-    "window_span_min": 4.6,
-    "symbol": "META",
-    "direction": "LONG",
-    "trigger_price": 699.63,
-    "change_1min_pct": 0.94,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META explodiert um +0.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 10:10:59",
-    "time_str": "10:10:59",
-    "data_age_min": 0.2,
-    "window_span_min": 4.8,
-    "symbol": "SMCI",
-    "direction": "SHORT",
-    "trigger_price": 36.68,
-    "change_1min_pct": 2.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI stürzt um -2.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 10:05:48",
-    "time_str": "10:05:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 134.27,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.73% in 5 Min.! Momentum aktiv."
   }
 ]
