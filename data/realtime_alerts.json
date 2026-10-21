@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-21 14:36:01",
+    "time_str": "14:36:01",
+    "data_age_min": 3.6,
+    "window_span_min": 7.5,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.43,
+    "change_1min_pct": 1.13,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 14:36:01",
+    "time_str": "14:36:01",
+    "data_age_min": 13.9,
+    "window_span_min": 9.2,
+    "symbol": "KVYO",
+    "direction": "LONG",
+    "trigger_price": 19.61,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 14:31:12",
     "time_str": "14:31:12",
     "data_age_min": 2.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GOOGL stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 12:20:59",
-    "time_str": "12:20:59",
-    "data_age_min": 0.3,
-    "window_span_min": 3.7,
-    "symbol": "TMO",
-    "direction": "LONG",
-    "trigger_price": 685.0,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TMO explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 12:20:58",
-    "time_str": "12:20:58",
-    "data_age_min": 0.6,
-    "window_span_min": 5.3,
-    "symbol": "NFLX",
-    "direction": "LONG",
-    "trigger_price": 64.48,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NFLX explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
