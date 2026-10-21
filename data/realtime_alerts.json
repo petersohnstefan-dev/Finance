@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-21 13:01:31",
+    "time_str": "13:01:31",
+    "data_age_min": 0.1,
+    "window_span_min": 5.4,
+    "symbol": "NFLX",
+    "direction": "SHORT",
+    "trigger_price": 64.22,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NFLX stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 13:01:25",
+    "time_str": "13:01:25",
+    "data_age_min": 0.5,
+    "window_span_min": 4.9,
+    "symbol": "LUNR",
+    "direction": "LONG",
+    "trigger_price": 10.95,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 12:55:46",
     "time_str": "12:55:46",
     "data_age_min": 2.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ERIC-B.ST stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 09:05:55",
-    "time_str": "09:05:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DSV.CO",
-    "direction": "LONG",
-    "trigger_price": 1283.5,
-    "change_1min_pct": 0.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DSV.CO explodiert um +0.98% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 09:05:49",
-    "time_str": "09:05:49",
-    "data_age_min": 2.8,
-    "window_span_min": 4.0,
-    "symbol": "JUP-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.0,
-    "change_1min_pct": 96.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JUP-USD stürzt um -96.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
