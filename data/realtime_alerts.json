@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 13:11:10",
+    "time_str": "13:11:10",
+    "data_age_min": 2.9,
+    "window_span_min": 7.2,
+    "symbol": "SPGI",
+    "direction": "SHORT",
+    "trigger_price": 432.48,
+    "change_1min_pct": 1.12,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SPGI stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 13:11:01",
+    "time_str": "13:11:01",
+    "data_age_min": 1.6,
+    "window_span_min": 5.4,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 242.21,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 13:11:00",
+    "time_str": "13:11:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "WLD-USD",
+    "direction": "LONG",
+    "trigger_price": 0.59,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 WLD-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 13:05:47",
     "time_str": "13:05:47",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ORCL explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 10:05:44",
-    "time_str": "10:05:44",
-    "data_age_min": 0.5,
-    "window_span_min": 5.2,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 42.88,
-    "change_1min_pct": 1.08,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +1.08% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 09:55:57",
-    "time_str": "09:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DSV.CO",
-    "direction": "LONG",
-    "trigger_price": 1291.0,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DSV.CO explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 09:15:55",
-    "time_str": "09:15:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "LONG",
-    "trigger_price": 0.64,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 6.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD explodiert um +1.07% in 5 Min.! Momentum aktiv."
   }
 ]
