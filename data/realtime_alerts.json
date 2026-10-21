@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-21 12:55:46",
+    "time_str": "12:55:46",
+    "data_age_min": 2.1,
+    "window_span_min": 4.7,
+    "symbol": "TMO",
+    "direction": "SHORT",
+    "trigger_price": 681.5,
+    "change_1min_pct": 0.66,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TMO stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-21 12:51:03",
     "time_str": "12:51:03",
     "data_age_min": 1.5,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JUP-USD stürzt um -96.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 08:15:57",
-    "time_str": "08:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "LONG",
-    "trigger_price": 0.62,
-    "change_1min_pct": 1.22,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD explodiert um +1.22% in 5 Min.! Momentum aktiv."
   }
 ]
