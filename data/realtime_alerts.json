@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 17:05:49",
+    "time_str": "17:05:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "ISRG",
+    "direction": "SHORT",
+    "trigger_price": 423.33,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.36,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ISRG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 17:05:44",
+    "time_str": "17:05:44",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 377.08,
+    "change_1min_pct": 0.95,
+    "vol_ratio": 4.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.95% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 17:05:44",
+    "time_str": "17:05:44",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 226.17,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-21 17:01:37",
     "time_str": "17:01:37",
     "data_age_min": 0.6,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CELH explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 16:25:56",
-    "time_str": "16:25:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "HOOD",
-    "direction": "LONG",
-    "trigger_price": 99.65,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 16:25:56",
-    "time_str": "16:25:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 175.59,
-    "change_1min_pct": 1.27,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +1.27% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 16:25:55",
-    "time_str": "16:25:55",
-    "data_age_min": 2.9,
-    "window_span_min": 5.0,
-    "symbol": "ARVN",
-    "direction": "LONG",
-    "trigger_price": 7.62,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARVN explodiert um +0.73% in 5 Min.! Momentum aktiv."
   }
 ]
