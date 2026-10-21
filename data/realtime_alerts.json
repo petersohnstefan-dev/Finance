@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 10:50:56",
+    "time_str": "10:50:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "SHORT",
+    "trigger_price": 1294.5,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 10:50:53",
+    "time_str": "10:50:53",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "MSTR",
+    "direction": "LONG",
+    "trigger_price": 146.92,
+    "change_1min_pct": 0.71,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR explodiert um +0.71% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 10:50:51",
+    "time_str": "10:50:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "LONG",
+    "trigger_price": 5.27,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 1.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 10:45:51",
     "time_str": "10:45:51",
     "data_age_min": 4.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ABT explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 22:21:09",
-    "time_str": "22:21:09",
-    "data_age_min": 4.6,
-    "window_span_min": 3.5,
-    "symbol": "TMO",
-    "direction": "LONG",
-    "trigger_price": 692.0,
-    "change_1min_pct": 0.69,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TMO explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 22:21:02",
-    "time_str": "22:21:02",
-    "data_age_min": 0.8,
-    "window_span_min": 5.2,
-    "symbol": "HIMS",
-    "direction": "LONG",
-    "trigger_price": 29.42,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 22:21:01",
-    "time_str": "22:21:01",
-    "data_age_min": 1.9,
-    "window_span_min": 3.2,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.65,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
