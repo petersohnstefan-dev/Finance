@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-21 17:55:59",
+    "time_str": "17:55:59",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "LONG",
+    "trigger_price": 2.45,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 17:55:58",
+    "time_str": "17:55:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 20.07,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.74,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 17:55:57",
+    "time_str": "17:55:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SMCI",
+    "direction": "SHORT",
+    "trigger_price": 35.76,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 17:55:53",
+    "time_str": "17:55:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "LONG",
+    "trigger_price": 5.38,
+    "change_1min_pct": 1.13,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD explodiert um +1.13% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 17:51:01",
     "time_str": "17:51:01",
     "data_age_min": 1.0,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.36,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ISRG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 17:05:44",
-    "time_str": "17:05:44",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "LONG",
-    "trigger_price": 377.08,
-    "change_1min_pct": 0.95,
-    "vol_ratio": 4.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB explodiert um +0.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 17:05:44",
-    "time_str": "17:05:44",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "ALNY",
-    "direction": "SHORT",
-    "trigger_price": 226.17,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALNY stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 17:01:37",
-    "time_str": "17:01:37",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "PLD",
-    "direction": "SHORT",
-    "trigger_price": 127.98,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 2.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PLD stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 17:01:30",
-    "time_str": "17:01:30",
-    "data_age_min": 1.5,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 2.34,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
