@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 19:45:54",
+    "time_str": "19:45:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "S",
+    "direction": "SHORT",
+    "trigger_price": 23.1,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 19:45:54",
+    "time_str": "19:45:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "GTLB",
+    "direction": "SHORT",
+    "trigger_price": 55.54,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 GTLB stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 19:45:53",
+    "time_str": "19:45:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 249.5,
+    "change_1min_pct": 1.16,
+    "vol_ratio": 2.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +1.16% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 19:41:04",
     "time_str": "19:41:04",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 4.09,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COIN explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 18:40:48",
-    "time_str": "18:40:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "TAN",
-    "direction": "LONG",
-    "trigger_price": 42.55,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 6.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TAN explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 18:40:48",
-    "time_str": "18:40:48",
-    "data_age_min": 1.8,
-    "window_span_min": 4.0,
-    "symbol": "ARKQ",
-    "direction": "LONG",
-    "trigger_price": 116.52,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKQ explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 18:40:47",
-    "time_str": "18:40:47",
-    "data_age_min": 1.8,
-    "window_span_min": 4.0,
-    "symbol": "ETHW",
-    "direction": "LONG",
-    "trigger_price": 18.04,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.14,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHW explodiert um +0.73% in 5 Min.! Momentum aktiv."
   }
 ]
