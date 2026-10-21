@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 14:56:03",
+    "time_str": "14:56:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "NFLX",
+    "direction": "LONG",
+    "trigger_price": 64.47,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NFLX explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 14:55:55",
+    "time_str": "14:55:55",
+    "data_age_min": 1.8,
+    "window_span_min": 5.1,
+    "symbol": "NVAX",
+    "direction": "LONG",
+    "trigger_price": 11.4,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 14:55:55",
+    "time_str": "14:55:55",
+    "data_age_min": 2.3,
+    "window_span_min": 3.6,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.94,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-21 14:46:06",
     "time_str": "14:46:06",
     "data_age_min": 2.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 WLD-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 13:05:47",
-    "time_str": "13:05:47",
-    "data_age_min": 0.3,
-    "window_span_min": 4.5,
-    "symbol": "QBTS",
-    "direction": "LONG",
-    "trigger_price": 12.03,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 13:05:47",
-    "time_str": "13:05:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "FTNT",
-    "direction": "SHORT",
-    "trigger_price": 165.41,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 13:05:46",
-    "time_str": "13:05:46",
-    "data_age_min": 0.6,
-    "window_span_min": 5.2,
-    "symbol": "ROIV",
-    "direction": "LONG",
-    "trigger_price": 37.56,
-    "change_1min_pct": 5.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ROIV explodiert um +5.80% in 5 Min.! Momentum aktiv."
   }
 ]
