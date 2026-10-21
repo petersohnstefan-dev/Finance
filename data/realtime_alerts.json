@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-21 21:01:25",
+    "time_str": "21:01:25",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.61,
+    "change_1min_pct": 0.86,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.86% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 10.4,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "LONG",
+    "trigger_price": 109.55,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 10.4,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "LONG",
+    "trigger_price": 97.83,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 2.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F explodiert um +0.77% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-21 20:55:38",
     "time_str": "20:55:38",
     "data_age_min": 0.7,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM stürzt um -1.17% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 19:21:07",
-    "time_str": "19:21:07",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "LONG",
-    "trigger_price": 315.3,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 3.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 19:15:57",
-    "time_str": "19:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 2.47,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 3.54,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 19:15:57",
-    "time_str": "19:15:57",
-    "data_age_min": 1.0,
-    "window_span_min": 7.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 30.55,
-    "change_1min_pct": 1.07,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +1.07% in 5 Min.! Momentum aktiv."
   }
 ]
