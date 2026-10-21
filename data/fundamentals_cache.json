@@ -375,7 +375,7 @@
   }
  },
  "IBM": {
-  "fetched_ts": 1791921109.34527,
+  "fetched_ts": 1792613955.2992287,
   "scores": {
    "available": true,
    "piotroski": 7,
@@ -390,12 +390,12 @@
     "Bruttomarge gestiegen": true,
     "Kapitalumschlag gestiegen": false
    },
-   "altman_z": 3.23,
+   "altman_z": 3.33,
    "altman_detail": {
     "X1": -0.011,
     "X2": 1.025,
     "X3": 0.081,
-    "X4": 1.828,
+    "X4": 1.989,
     "X5": 0.445
    },
    "altman_not_applicable": false,
@@ -411,7 +411,7 @@
     "LVGI": 1.017,
     "TATA": -0.017
    },
-   "computed_at": "2026-10-13"
+   "computed_at": "2026-10-21"
   }
  },
  "REL.L": {
@@ -656,10 +656,43 @@
   }
  },
  "QS": {
-  "fetched_ts": 1791981107.5483582,
+  "fetched_ts": 1792613946.994587,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 6.32,
+   "altman_detail": {
+    "X1": 0.703,
+    "X2": -2.9,
+    "X3": -0.33,
+    "X4": 17.704,
+    "X5": 0.0
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Cyclical",
+   "beneish_m": null,
+   "beneish_detail": {
+    "DSRI": null,
+    "GMI": null,
+    "AQI": 0.9771221440172723,
+    "SGI": null,
+    "DEPI": 0.7730371181850705,
+    "SGAI": null,
+    "LVGI": 0.8396391672036638,
+    "TATA": -0.1472125648622947
+   },
+   "computed_at": "2026-10-21"
   }
  },
  "S92.DE": {
