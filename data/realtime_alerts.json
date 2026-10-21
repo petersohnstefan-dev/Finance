@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-21 11:35:59",
+    "time_str": "11:35:59",
+    "data_age_min": 2.1,
+    "window_span_min": 5.9,
+    "symbol": "AMD",
+    "direction": "LONG",
+    "trigger_price": 546.75,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMD explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-21 11:35:57",
+    "time_str": "11:35:57",
+    "data_age_min": 1.0,
+    "window_span_min": 4.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 23600.0,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-21 11:31:09",
     "time_str": "11:31:09",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 22:35:57",
-    "time_str": "22:35:57",
-    "data_age_min": 3.8,
-    "window_span_min": 6.2,
-    "symbol": "S",
-    "direction": "SHORT",
-    "trigger_price": 22.0,
-    "change_1min_pct": 2.14,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S stürzt um -2.14% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-20 22:35:56",
-    "time_str": "22:35:56",
-    "data_age_min": 8.5,
-    "window_span_min": 7.5,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 155.65,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
