@@ -539,37 +539,10 @@
   }
  },
  "SPGI": {
-  "fetched_ts": 1791975723.9687397,
+  "fetched_ts": 1792580785.2606435,
   "scores": {
-   "available": true,
-   "piotroski": 7,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": null,
-   "altman_detail": null,
-   "altman_not_applicable": true,
-   "sector": "Financial Services",
-   "beneish_m": -2.42,
-   "beneish_detail": {
-    "DSRI": 1.112,
-    "GMI": 0.987,
-    "AQI": 0.986,
-    "SGI": 1.079,
-    "DEPI": 1.005,
-    "SGAI": 0.991,
-    "LVGI": 1.107,
-    "TATA": -0.014
-   },
-   "computed_at": "2026-10-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "RDWR": {
@@ -601,7 +574,7 @@
   }
  },
  "ROIV": {
-  "fetched_ts": 1790885790.3454447,
+  "fetched_ts": 1792580779.7064052,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
