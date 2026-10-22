@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-22 14:25:55",
+    "time_str": "14:25:55",
+    "data_age_min": 0.1,
+    "window_span_min": 5.9,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.6,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 14:25:54",
+    "time_str": "14:25:54",
+    "data_age_min": 2.8,
+    "window_span_min": 3.1,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 10.77,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 14:21:02",
     "time_str": "14:21:02",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PG explodiert um +1.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 13:01:22",
-    "time_str": "13:01:22",
-    "data_age_min": 0.0,
-    "window_span_min": 5.3,
-    "symbol": "META",
-    "direction": "SHORT",
-    "trigger_price": 683.97,
-    "change_1min_pct": 0.82,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 13:01:22",
-    "time_str": "13:01:22",
-    "data_age_min": 0.1,
-    "window_span_min": 5.3,
-    "symbol": "GOOGL",
-    "direction": "SHORT",
-    "trigger_price": 325.31,
-    "change_1min_pct": 1.02,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GOOGL stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
