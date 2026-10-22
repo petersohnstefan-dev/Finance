@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-22 18:11:04",
+    "time_str": "18:11:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "CRM",
+    "direction": "LONG",
+    "trigger_price": 251.24,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRM explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 18:10:58",
+    "time_str": "18:10:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PLTR",
+    "direction": "LONG",
+    "trigger_price": 199.42,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-22 18:06:02",
     "time_str": "18:06:02",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.59,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 17:31:18",
-    "time_str": "17:31:18",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 260.54,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 17:31:18",
-    "time_str": "17:31:18",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 307.95,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.73,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
