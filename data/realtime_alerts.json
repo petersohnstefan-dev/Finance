@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-22 20:06:03",
+    "time_str": "20:06:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "IBM",
+    "direction": "LONG",
+    "trigger_price": 250.1,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IBM explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 20:05:58",
+    "time_str": "20:05:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 39.46,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.68,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 20:05:56",
+    "time_str": "20:05:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "CELH",
+    "direction": "SHORT",
+    "trigger_price": 28.42,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CELH stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 20:01:28",
     "time_str": "20:01:28",
     "data_age_min": 0.5,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.08,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HIMS stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 19:01:32",
-    "time_str": "19:01:32",
-    "data_age_min": 0.6,
-    "window_span_min": 5.0,
-    "symbol": "MRK",
-    "direction": "SHORT",
-    "trigger_price": 145.24,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRK stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 19:01:26",
-    "time_str": "19:01:26",
-    "data_age_min": 1.5,
-    "window_span_min": 5.0,
-    "symbol": "RDWR",
-    "direction": "LONG",
-    "trigger_price": 29.78,
-    "change_1min_pct": 0.88,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDWR explodiert um +0.88% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 19:01:25",
-    "time_str": "19:01:25",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "LONG",
-    "trigger_price": 263.08,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
