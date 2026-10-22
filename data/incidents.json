@@ -1,5 +1,42 @@
 [
  {
+  "timestamp": "2026-10-23 01:30:51",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 3 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "daytrade_min_entry_score": "gehoert nicht zu Depot short_term",
+    "daytrade_trailing_breakeven_pct": "gehoert nicht zu Depot short_term",
+    "daytrade_max_risk_per_trade_pct": "gehoert nicht zu Depot short_term"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-23 01:30:51"
+ },
+ {
+  "timestamp": "2026-10-23 01:30:04",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 6 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_min_risk_reward_ratio": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_aggressive_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_lock_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_breakeven_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_max_daily_loss_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-23 01:30:04"
+ },
+ {
   "timestamp": "2026-10-22 01:29:55",
   "component": "ai_journal",
   "kind": "param_change_rejected",
