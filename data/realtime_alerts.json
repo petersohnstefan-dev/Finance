@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-22 12:55:41",
+    "time_str": "12:55:41",
+    "data_age_min": 1.6,
+    "window_span_min": 5.1,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 39.43,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 12:50:56",
     "time_str": "12:50:56",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 10:05:59",
-    "time_str": "10:05:59",
-    "data_age_min": 1.4,
-    "window_span_min": 4.6,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 535.0,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +0.67% in 5 Min.! Momentum aktiv."
   }
 ]
