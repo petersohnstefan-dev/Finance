@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-22 10:21:02",
+    "time_str": "10:21:02",
+    "data_age_min": 13.0,
+    "window_span_min": 5.0,
+    "symbol": "S",
+    "direction": "LONG",
+    "trigger_price": 22.44,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 10:21:02",
+    "time_str": "10:21:02",
+    "data_age_min": 3.7,
+    "window_span_min": 5.4,
+    "symbol": "OKTA",
+    "direction": "SHORT",
+    "trigger_price": 200.0,
+    "change_1min_pct": 0.99,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 10:21:01",
+    "time_str": "10:21:01",
+    "data_age_min": 14.1,
+    "window_span_min": 4.9,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 313.0,
+    "change_1min_pct": 0.7,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 10:16:01",
     "time_str": "10:16:01",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 22:55:48",
-    "time_str": "22:55:48",
-    "data_age_min": 3.8,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.06,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 22:51:03",
-    "time_str": "22:51:03",
-    "data_age_min": 1.0,
-    "window_span_min": 7.1,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.63,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 22:51:03",
-    "time_str": "22:51:03",
-    "data_age_min": 0.7,
-    "window_span_min": 8.4,
-    "symbol": "QUBT",
-    "direction": "SHORT",
-    "trigger_price": 6.8,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
