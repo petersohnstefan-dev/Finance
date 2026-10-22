@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-22 12:01:16",
+    "time_str": "12:01:16",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "ATCO-A.ST",
+    "direction": "SHORT",
+    "trigger_price": 181.65,
+    "change_1min_pct": 3.33,
+    "vol_ratio": 1.22,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ATCO-A.ST stürzt um -3.33% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 11:55:50",
     "time_str": "11:55:50",
     "data_age_min": 4.6,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VOLV-B.ST stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 09:06:05",
-    "time_str": "09:06:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "DSV.CO",
-    "direction": "SHORT",
-    "trigger_price": 1356.5,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DSV.CO stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
