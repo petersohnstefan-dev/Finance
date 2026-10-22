@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-22 09:51:01",
+    "time_str": "09:51:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "LONG",
+    "trigger_price": 1386.0,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-22 09:06:05",
     "time_str": "09:06:05",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NOW stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-21 22:06:09",
-    "time_str": "22:06:09",
-    "data_age_min": 0.3,
-    "window_span_min": 4.9,
-    "symbol": "AMAT",
-    "direction": "SHORT",
-    "trigger_price": 400.5,
-    "change_1min_pct": 2.03,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT stürzt um -2.03% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
