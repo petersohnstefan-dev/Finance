@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-22 18:16:15",
+    "time_str": "18:16:15",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "DE",
+    "direction": "LONG",
+    "trigger_price": 639.93,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 1.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DE explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 18:16:08",
+    "time_str": "18:16:08",
+    "data_age_min": 1.2,
+    "window_span_min": 4.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.39,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 0.9,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-22 18:16:08",
+    "time_str": "18:16:08",
+    "data_age_min": 2.2,
+    "window_span_min": 4.0,
+    "symbol": "CHPT",
+    "direction": "SHORT",
+    "trigger_price": 8.35,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 2.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-22 18:11:04",
     "time_str": "18:11:04",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.51,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TSLA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 17:31:24",
-    "time_str": "17:31:24",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "META",
-    "direction": "SHORT",
-    "trigger_price": 655.55,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 17:31:19",
-    "time_str": "17:31:19",
-    "data_age_min": 1.3,
-    "window_span_min": 4.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 3.11,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 0.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 17:31:19",
-    "time_str": "17:31:19",
-    "data_age_min": 1.3,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 2.51,
-    "change_1min_pct": 0.98,
-    "vol_ratio": 0.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
