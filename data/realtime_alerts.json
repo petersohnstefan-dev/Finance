@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-23 10:05:57",
+    "time_str": "10:05:57",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "NOW",
+    "direction": "SHORT",
+    "trigger_price": 154.24,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:05:50",
+    "time_str": "10:05:50",
+    "data_age_min": 0.2,
+    "window_span_min": 4.7,
+    "symbol": "RKLB",
+    "direction": "LONG",
+    "trigger_price": 51.9,
+    "change_1min_pct": 1.11,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RKLB explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:05:50",
+    "time_str": "10:05:50",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "PLTR",
+    "direction": "SHORT",
+    "trigger_price": 195.0,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 09:45:55",
     "time_str": "09:45:55",
     "data_age_min": 10.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DIS explodiert um +0.79% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:10:54",
-    "time_str": "22:10:54",
-    "data_age_min": 3.0,
-    "window_span_min": 4.9,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 13.1,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:10:53",
-    "time_str": "22:10:53",
-    "data_age_min": 4.2,
-    "window_span_min": 5.7,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.58,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:10:52",
-    "time_str": "22:10:52",
-    "data_age_min": 2.8,
-    "window_span_min": 5.1,
-    "symbol": "COPX",
-    "direction": "LONG",
-    "trigger_price": 74.36,
-    "change_1min_pct": 1.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COPX explodiert um +1.50% in 5 Min.! Momentum aktiv."
   }
 ]
