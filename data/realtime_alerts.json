@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-23 09:06:03",
+    "time_str": "09:06:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "VOLV-B.ST",
+    "direction": "LONG",
+    "trigger_price": 306.5,
+    "change_1min_pct": 0.86,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VOLV-B.ST explodiert um +0.86% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 09:06:03",
+    "time_str": "09:06:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ATCO-A.ST",
+    "direction": "LONG",
+    "trigger_price": 179.65,
+    "change_1min_pct": 0.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ATCO-A.ST explodiert um +0.84% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 09:06:03",
+    "time_str": "09:06:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "SHORT",
+    "trigger_price": 1376.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 07:40:54",
     "time_str": "07:40:54",
     "data_age_min": 10.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SNOW stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:05:55",
-    "time_str": "22:05:55",
-    "data_age_min": 6.9,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 9.73,
-    "change_1min_pct": 0.88,
-    "vol_ratio": 4.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.88% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:01:27",
-    "time_str": "22:01:27",
-    "data_age_min": 0.1,
-    "window_span_min": 5.4,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 377.32,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 6.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:01:26",
-    "time_str": "22:01:26",
-    "data_age_min": 3.5,
-    "window_span_min": 5.0,
-    "symbol": "ACN",
-    "direction": "LONG",
-    "trigger_price": 259.04,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 3.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACN explodiert um +0.63% in 5 Min.! Momentum aktiv."
   }
 ]
