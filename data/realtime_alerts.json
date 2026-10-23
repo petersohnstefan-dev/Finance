@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-23 10:16:01",
+    "time_str": "10:16:01",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 22490.0,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:15:58",
+    "time_str": "10:15:58",
+    "data_age_min": 6.0,
+    "window_span_min": 4.0,
+    "symbol": "SOFI",
+    "direction": "LONG",
+    "trigger_price": 14.83,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SOFI explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:15:57",
+    "time_str": "10:15:57",
+    "data_age_min": 0.9,
+    "window_span_min": 6.1,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.56,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-23 10:11:00",
     "time_str": "10:11:00",
     "data_age_min": 2.4,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VZ stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:16:11",
-    "time_str": "22:16:11",
-    "data_age_min": 2.5,
-    "window_span_min": 4.7,
-    "symbol": "MRK",
-    "direction": "LONG",
-    "trigger_price": 148.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRK explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:16:05",
-    "time_str": "22:16:05",
-    "data_age_min": 5.0,
-    "window_span_min": 9.1,
-    "symbol": "OKTA",
-    "direction": "LONG",
-    "trigger_price": 202.69,
-    "change_1min_pct": 0.82,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA explodiert um +0.82% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:16:05",
-    "time_str": "22:16:05",
-    "data_age_min": 1.4,
-    "window_span_min": 5.7,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 236.0,
-    "change_1min_pct": 0.84,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
