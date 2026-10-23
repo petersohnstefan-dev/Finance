@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-23 20:05:57",
+    "time_str": "20:05:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ACHR",
+    "direction": "LONG",
+    "trigger_price": 3.9,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 1.73,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 20:05:56",
+    "time_str": "20:05:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "SHORT",
+    "trigger_price": 28.36,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 20:01:23",
     "time_str": "20:01:23",
     "data_age_min": 1.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.63,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 18:25:55",
-    "time_str": "18:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ARKG",
-    "direction": "SHORT",
-    "trigger_price": 47.73,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 2.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKG stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 18:21:15",
-    "time_str": "18:21:15",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 39.13,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
