@@ -478,7 +478,7 @@
   }
  },
  "WLD-USD": {
-  "fetched_ts": 1792087314.0533192,
+  "fetched_ts": 1792758084.5786843,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
@@ -968,10 +968,43 @@
   }
  },
  "IOT": {
-  "fetched_ts": 1791987993.0513804,
+  "fetched_ts": 1792758083.3450084,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 13.69,
+   "altman_detail": {
+    "X1": 0.232,
+    "X2": -0.637,
+    "X3": -0.021,
+    "X4": 22.886,
+    "X5": 0.637
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.6,
+   "beneish_detail": {
+    "DSRI": 1.06,
+    "GMI": 0.992,
+    "AQI": 0.958,
+    "SGI": 1.296,
+    "DEPI": 0.992,
+    "SGAI": 0.877,
+    "LVGI": 0.943,
+    "TATA": -0.097
+   },
+   "computed_at": "2026-10-23"
   }
  },
  "ACN": {
@@ -1097,7 +1130,7 @@
   }
  },
  "SBS.DE": {
-  "fetched_ts": 1790178101.6970172,
+  "fetched_ts": 1792758084.4068775,
   "scores": {
    "available": true,
    "piotroski": 3,
@@ -1112,16 +1145,16 @@
     "Bruttomarge gestiegen": false,
     "Kapitalumschlag gestiegen": true
    },
-   "altman_z": 1.98,
+   "altman_z": 2.02,
    "altman_detail": {
     "X1": 0.375,
     "X2": null,
     "X3": 0.021,
-    "X4": 1.446,
+    "X4": 1.511,
     "X5": 0.589
    },
    "altman_not_applicable": false,
-   "sector": "Healthcare",
+   "sector": "N/A",
    "beneish_m": -2.07,
    "beneish_detail": {
     "DSRI": 1.406,
@@ -1133,7 +1166,7 @@
     "LVGI": 0.973,
     "TATA": 0.0
    },
-   "computed_at": "2026-09-23"
+   "computed_at": "2026-10-23"
   }
  },
  "MVV1.DE": {
@@ -2497,10 +2530,43 @@
   }
  },
  "ZS": {
-  "fetched_ts": 1791987992.2247975,
+  "fetched_ts": 1792758082.3625057,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 4.93,
+   "altman_detail": {
+    "X1": 0.263,
+    "X2": -0.159,
+    "X3": -0.002,
+    "X4": 7.358,
+    "X5": 0.426
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.73,
+   "beneish_detail": {
+    "DSRI": 0.923,
+    "GMI": 1.001,
+    "AQI": 1.685,
+    "SGI": 1.254,
+    "DEPI": 0.905,
+    "SGAI": 0.94,
+    "LVGI": 0.92,
+    "TATA": -0.152
+   },
+   "computed_at": "2026-10-23"
   }
  },
  "HIMS": {
@@ -2850,6 +2916,13 @@
  },
  "FRE.DE": {
   "fetched_ts": 1792677731.253696,
+  "scores": {
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+  }
+ },
+ "XLE": {
+  "fetched_ts": 1792758085.245052,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
