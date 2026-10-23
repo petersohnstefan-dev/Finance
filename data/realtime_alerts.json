@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-23 12:56:07",
+    "time_str": "12:56:07",
+    "data_age_min": 0.7,
+    "window_span_min": 2.4,
+    "symbol": "ZTS",
+    "direction": "SHORT",
+    "trigger_price": 81.5,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZTS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 12:55:59",
+    "time_str": "12:55:59",
+    "data_age_min": 0.5,
+    "window_span_min": 9.5,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 9.85,
+    "change_1min_pct": 1.2,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 12:51:02",
     "time_str": "12:51:02",
     "data_age_min": 3.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PA=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 07:40:54",
-    "time_str": "07:40:54",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "SI=F",
-    "direction": "LONG",
-    "trigger_price": 54.37,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SI=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 07:10:58",
-    "time_str": "07:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DOT-USD",
-    "direction": "LONG",
-    "trigger_price": 1.18,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DOT-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
   }
 ]
