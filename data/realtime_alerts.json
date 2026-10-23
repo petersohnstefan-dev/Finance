@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-23 10:11:00",
+    "time_str": "10:11:00",
+    "data_age_min": 2.4,
+    "window_span_min": 4.6,
+    "symbol": "QUBT",
+    "direction": "LONG",
+    "trigger_price": 6.63,
+    "change_1min_pct": 1.22,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT explodiert um +1.22% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:10:59",
+    "time_str": "10:10:59",
+    "data_age_min": 3.6,
+    "window_span_min": 5.4,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 38.5,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 10:10:59",
+    "time_str": "10:10:59",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 34.59,
+    "change_1min_pct": 0.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-23 10:05:57",
     "time_str": "10:05:57",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ZS stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:16:04",
-    "time_str": "22:16:04",
-    "data_age_min": 1.4,
-    "window_span_min": 9.7,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 20.71,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:10:58",
-    "time_str": "22:10:58",
-    "data_age_min": 0.3,
-    "window_span_min": 6.7,
-    "symbol": "BKNG",
-    "direction": "SHORT",
-    "trigger_price": 160.09,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKNG stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:10:58",
-    "time_str": "22:10:58",
-    "data_age_min": 0.7,
-    "window_span_min": 3.3,
-    "symbol": "DIS",
-    "direction": "LONG",
-    "trigger_price": 113.13,
-    "change_1min_pct": 0.79,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DIS explodiert um +0.79% in 5 Min.! Momentum aktiv."
   }
 ]
