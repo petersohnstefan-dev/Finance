@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-23 21:25:58",
+    "time_str": "21:25:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.38,
+    "change_1min_pct": 0.71,
+    "vol_ratio": 0.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.71% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 21:25:57",
+    "time_str": "21:25:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 40.12,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.54,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 21:25:54",
+    "time_str": "21:25:54",
+    "data_age_min": 4.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 21:21:02",
     "time_str": "21:21:02",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.41,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 19:21:00",
-    "time_str": "19:21:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 3.18,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 2.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.79% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 19:20:59",
-    "time_str": "19:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 3.58,
-    "change_1min_pct": 1.13,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +1.13% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 19:20:59",
-    "time_str": "19:20:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "LONG",
-    "trigger_price": 12.01,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 2.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN explodiert um +0.67% in 5 Min.! Momentum aktiv."
   }
 ]
