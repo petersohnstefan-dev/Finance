@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-23 09:16:02",
+    "time_str": "09:16:02",
+    "data_age_min": 4.0,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-23 09:11:01",
     "time_str": "09:11:01",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 2.19,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PATH explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:05:55",
-    "time_str": "22:05:55",
-    "data_age_min": 0.1,
-    "window_span_min": 5.8,
-    "symbol": "ONON",
-    "direction": "SHORT",
-    "trigger_price": 33.74,
-    "change_1min_pct": 0.76,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
