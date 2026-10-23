@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-23 11:41:08",
+    "time_str": "11:41:08",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "LONG",
+    "trigger_price": 22690.0,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 11:41:04",
+    "time_str": "11:41:04",
+    "data_age_min": 5.1,
+    "window_span_min": 8.0,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 262.0,
+    "change_1min_pct": 0.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 11:35:55",
     "time_str": "11:35:55",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARM stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:40:59",
-    "time_str": "22:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 3.0,
-    "symbol": "INTU",
-    "direction": "LONG",
-    "trigger_price": 354.9,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-22 22:40:54",
-    "time_str": "22:40:54",
-    "data_age_min": 3.9,
-    "window_span_min": 3.0,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 40.36,
-    "change_1min_pct": 0.9,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.90% in 5 Min.! Momentum aktiv."
   }
 ]
