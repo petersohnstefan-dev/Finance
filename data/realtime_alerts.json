@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-23 23:36:40",
+    "time_str": "23:36:40",
+    "data_age_min": 14.7,
+    "window_span_min": 9.0,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 31.6,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-23 23:36:38",
+    "time_str": "23:36:38",
+    "data_age_min": 2.6,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-23 22:55:59",
     "time_str": "22:55:59",
     "data_age_min": 11.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QUBT stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 21:46:02",
-    "time_str": "21:46:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QS",
-    "direction": "SHORT",
-    "trigger_price": 4.04,
-    "change_1min_pct": 0.86,
-    "vol_ratio": 2.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QS stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 21:46:01",
-    "time_str": "21:46:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 27.57,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 2.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
