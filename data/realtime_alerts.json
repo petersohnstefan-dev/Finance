@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 17:01:36",
+    "time_str": "17:01:36",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "ACN",
+    "direction": "LONG",
+    "trigger_price": 245.66,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACN explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 17:01:29",
+    "time_str": "17:01:29",
+    "data_age_min": 1.5,
+    "window_span_min": 5.0,
+    "symbol": "DDOG",
+    "direction": "SHORT",
+    "trigger_price": 276.8,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 4.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DDOG stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 16:55:57",
     "time_str": "16:55:57",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:10:59",
-    "time_str": "16:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "LONG",
-    "trigger_price": 3.9,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:10:59",
-    "time_str": "16:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 4.69,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
