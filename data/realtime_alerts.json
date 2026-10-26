@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 17:31:12",
+    "time_str": "17:31:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "COIN",
+    "direction": "SHORT",
+    "trigger_price": 159.2,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 1.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 COIN stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 17:31:11",
+    "time_str": "17:31:11",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "SHORT",
+    "trigger_price": 49.58,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 17:26:23",
     "time_str": "17:26:23",
     "data_age_min": 1.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.11,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONS stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:26:02",
-    "time_str": "16:26:02",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 391.01,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:25:54",
-    "time_str": "16:25:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "LONG",
-    "trigger_price": 27.74,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH explodiert um +0.58% in 5 Min.! Momentum aktiv."
   }
 ]
