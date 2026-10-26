@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 10:10:59",
+    "time_str": "10:10:59",
+    "data_age_min": 0.6,
+    "window_span_min": 3.4,
+    "symbol": "BNTX",
+    "direction": "SHORT",
+    "trigger_price": 86.27,
+    "change_1min_pct": 1.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BNTX stürzt um -1.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 10:10:58",
+    "time_str": "10:10:58",
+    "data_age_min": 3.0,
+    "window_span_min": 6.0,
+    "symbol": "JUP-USD",
+    "direction": "LONG",
+    "trigger_price": 0.0,
+    "change_1min_pct": 2917.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD explodiert um +2917.97% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-26 09:51:02",
     "time_str": "09:51:02",
     "data_age_min": 1.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRM stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:06:06",
-    "time_str": "22:06:06",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.71,
-    "change_1min_pct": 1.56,
-    "vol_ratio": 0.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +1.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:06:06",
-    "time_str": "22:06:06",
-    "data_age_min": 0.7,
-    "window_span_min": 5.4,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 11.65,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
