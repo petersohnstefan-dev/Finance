@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 13:50:56",
+    "time_str": "13:50:56",
+    "data_age_min": 3.1,
+    "window_span_min": 6.9,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 375.0,
+    "change_1min_pct": 1.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 13:50:56",
+    "time_str": "13:50:56",
+    "data_age_min": 5.1,
+    "window_span_min": 7.9,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 3.99,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 13:45:52",
     "time_str": "13:45:52",
     "data_age_min": 8.6,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BNTX explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 12:05:52",
-    "time_str": "12:05:52",
-    "data_age_min": 2.9,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 12:01:25",
-    "time_str": "12:01:25",
-    "data_age_min": 0.1,
-    "window_span_min": 6.3,
-    "symbol": "VZ",
-    "direction": "LONG",
-    "trigger_price": 45.5,
-    "change_1min_pct": 0.93,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VZ explodiert um +0.93% in 5 Min.! Momentum aktiv."
   }
 ]
