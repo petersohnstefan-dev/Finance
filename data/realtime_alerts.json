@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 17:06:03",
+    "time_str": "17:06:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "CART",
+    "direction": "LONG",
+    "trigger_price": 53.16,
+    "change_1min_pct": 0.78,
+    "vol_ratio": 2.32,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CART explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 17:06:02",
+    "time_str": "17:06:02",
+    "data_age_min": 3.1,
+    "window_span_min": 4.0,
+    "symbol": "ARVN",
+    "direction": "SHORT",
+    "trigger_price": 7.3,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 17:01:36",
     "time_str": "17:01:36",
     "data_age_min": 0.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.27,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENPH explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:10:59",
-    "time_str": "16:10:59",
-    "data_age_min": 7.0,
-    "window_span_min": 5.0,
-    "symbol": "STEM",
-    "direction": "LONG",
-    "trigger_price": 3.01,
-    "change_1min_pct": 1.15,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM explodiert um +1.15% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 16:10:59",
-    "time_str": "16:10:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "S",
-    "direction": "SHORT",
-    "trigger_price": 25.31,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
