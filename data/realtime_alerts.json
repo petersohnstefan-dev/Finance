@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-26 09:31:03",
+    "time_str": "09:31:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.53,
+    "change_1min_pct": 1.0,
+    "vol_ratio": 0.35,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.00% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-26 09:25:50",
     "time_str": "09:25:50",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": 4.29,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:01:24",
-    "time_str": "22:01:24",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "ZS",
-    "direction": "LONG",
-    "trigger_price": 255.32,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 5.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
