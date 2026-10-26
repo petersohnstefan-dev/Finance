@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-26 22:50:59",
+    "time_str": "22:50:59",
+    "data_age_min": 4.3,
+    "window_span_min": 5.7,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 333.01,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 22:35:56",
     "time_str": "22:35:56",
     "data_age_min": 1.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 3.8,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +0.93% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 20:55:58",
-    "time_str": "20:55:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CART",
-    "direction": "LONG",
-    "trigger_price": 61.76,
-    "change_1min_pct": 0.93,
-    "vol_ratio": 1.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CART explodiert um +0.93% in 5 Min.! Momentum aktiv."
   }
 ]
