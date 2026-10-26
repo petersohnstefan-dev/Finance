@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-26 21:46:03",
+    "time_str": "21:46:03",
+    "data_age_min": 0.5,
+    "window_span_min": 7.5,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.79,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 21:41:07",
     "time_str": "21:41:07",
     "data_age_min": 3.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.04,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SES explodiert um +2.00% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 20:35:48",
-    "time_str": "20:35:48",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "LONG",
-    "trigger_price": 261.95,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
