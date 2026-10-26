@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 20:45:58",
+    "time_str": "20:45:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.44,
+    "change_1min_pct": 0.86,
+    "vol_ratio": 0.67,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 20:45:57",
+    "time_str": "20:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SRPT",
+    "direction": "LONG",
+    "trigger_price": 17.92,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.9,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-26 20:41:09",
     "time_str": "20:41:09",
     "data_age_min": 6.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.64,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 18:55:47",
-    "time_str": "18:55:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "LONG",
-    "trigger_price": 38.91,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.63,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 18:55:47",
-    "time_str": "18:55:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "AFRM",
-    "direction": "LONG",
-    "trigger_price": 69.94,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 1.81,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AFRM explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
