@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 12:31:10",
+    "time_str": "12:31:10",
+    "data_age_min": 1.6,
+    "window_span_min": 3.6,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 257.5,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 12:31:10",
+    "time_str": "12:31:10",
+    "data_age_min": 0.1,
+    "window_span_min": 6.0,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 39.48,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-26 12:25:48",
     "time_str": "12:25:48",
     "data_age_min": 1.8,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 23:36:40",
-    "time_str": "23:36:40",
-    "data_age_min": 14.7,
-    "window_span_min": 9.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 31.6,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 23:36:38",
-    "time_str": "23:36:38",
-    "data_age_min": 2.6,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.05,
-    "change_1min_pct": 1.08,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
