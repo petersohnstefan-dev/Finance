@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-26 22:35:56",
+    "time_str": "22:35:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "TIA-USD",
+    "direction": "LONG",
+    "trigger_price": 0.55,
+    "change_1min_pct": 1.11,
+    "vol_ratio": 0.94,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TIA-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-26 22:31:18",
     "time_str": "22:31:18",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CART explodiert um +0.93% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 20:55:57",
-    "time_str": "20:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 279.84,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 2.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
