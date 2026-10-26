@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-26 19:56:06",
+    "time_str": "19:56:06",
+    "data_age_min": 1.1,
+    "window_span_min": 4.0,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.65,
+    "change_1min_pct": 1.86,
+    "vol_ratio": 0.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +1.86% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 19:56:06",
+    "time_str": "19:56:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "QUBT",
+    "direction": "SHORT",
+    "trigger_price": 6.46,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 1.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 19:50:59",
     "time_str": "19:50:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.97,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MSTR explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 18:01:24",
-    "time_str": "18:01:24",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "LONG",
-    "trigger_price": 196.39,
-    "change_1min_pct": 1.21,
-    "vol_ratio": 1.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA explodiert um +1.21% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 18:01:22",
-    "time_str": "18:01:22",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "LONG",
-    "trigger_price": 0.44,
-    "change_1min_pct": 1.01,
-    "vol_ratio": 0.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD explodiert um +1.01% in 5 Min.! Momentum aktiv."
   }
 ]
