@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-26 12:05:56",
+    "time_str": "12:05:56",
+    "data_age_min": 2.2,
+    "window_span_min": 3.8,
+    "symbol": "PL",
+    "direction": "SHORT",
+    "trigger_price": 13.27,
+    "change_1min_pct": 0.79,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 12:05:54",
+    "time_str": "12:05:54",
+    "data_age_min": 3.6,
+    "window_span_min": 7.3,
+    "symbol": "BNTX",
+    "direction": "LONG",
+    "trigger_price": 86.44,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BNTX explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-26 12:05:52",
+    "time_str": "12:05:52",
+    "data_age_min": 2.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-26 12:01:25",
     "time_str": "12:01:25",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:20:56",
-    "time_str": "22:20:56",
-    "data_age_min": 0.5,
-    "window_span_min": 4.4,
-    "symbol": "LMT",
-    "direction": "LONG",
-    "trigger_price": 607.51,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LMT explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:20:56",
-    "time_str": "22:20:56",
-    "data_age_min": 2.3,
-    "window_span_min": 2.7,
-    "symbol": "RTX",
-    "direction": "LONG",
-    "trigger_price": 192.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RTX explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-23 22:20:56",
-    "time_str": "22:20:56",
-    "data_age_min": 0.3,
-    "window_span_min": 4.7,
-    "symbol": "INTU",
-    "direction": "LONG",
-    "trigger_price": 345.92,
-    "change_1min_pct": 0.74,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU explodiert um +0.74% in 5 Min.! Momentum aktiv."
   }
 ]
