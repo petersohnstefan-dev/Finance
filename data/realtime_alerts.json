@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-27 13:11:00",
+    "time_str": "13:11:00",
+    "data_age_min": 2.5,
+    "window_span_min": 7.5,
+    "symbol": "HD",
+    "direction": "LONG",
+    "trigger_price": 321.0,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HD explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 13:05:52",
     "time_str": "13:05:52",
     "data_age_min": 0.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SMH explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 11:46:05",
-    "time_str": "11:46:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "LONG",
-    "trigger_price": 4.49,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 7.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
   }
 ]
