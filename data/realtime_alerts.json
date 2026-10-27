@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-27 19:11:06",
+    "time_str": "19:11:06",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 30.94,
+    "change_1min_pct": 1.93,
+    "vol_ratio": 6.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -1.93% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 19:11:05",
+    "time_str": "19:11:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 4.14,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 19:11:04",
+    "time_str": "19:11:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 9.77,
+    "change_1min_pct": 1.11,
+    "vol_ratio": 2.19,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-27 19:05:51",
     "time_str": "19:05:51",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.35,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARRY stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 17:45:54",
-    "time_str": "17:45:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QUBT",
-    "direction": "SHORT",
-    "trigger_price": 6.84,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 0.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 17:45:53",
-    "time_str": "17:45:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QS",
-    "direction": "SHORT",
-    "trigger_price": 4.2,
-    "change_1min_pct": 1.16,
-    "vol_ratio": 0.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QS stürzt um -1.16% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 17:41:00",
-    "time_str": "17:41:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 3.31,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 0.87,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +0.82% in 5 Min.! Momentum aktiv."
   }
 ]
