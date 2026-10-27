@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 21:21:06",
+    "time_str": "21:21:06",
+    "data_age_min": 3.3,
+    "window_span_min": 4.8,
+    "symbol": "TXN",
+    "direction": "SHORT",
+    "trigger_price": 305.0,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 21:20:58",
+    "time_str": "21:20:58",
+    "data_age_min": 2.6,
+    "window_span_min": 6.4,
+    "symbol": "XLI",
+    "direction": "LONG",
+    "trigger_price": 168.79,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 XLI explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 21:16:01",
     "time_str": "21:16:01",
     "data_age_min": 3.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.45,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM explodiert um +4.17% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 20:36:03",
-    "time_str": "20:36:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "LONG",
-    "trigger_price": 0.83,
-    "change_1min_pct": 2.24,
-    "vol_ratio": 0.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES explodiert um +2.24% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 20:36:03",
-    "time_str": "20:36:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "LONG",
-    "trigger_price": 19.21,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY explodiert um +0.73% in 5 Min.! Momentum aktiv."
   }
 ]
