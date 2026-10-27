@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 22:56:01",
+    "time_str": "22:56:01",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 25.03,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 22:55:59",
+    "time_str": "22:55:59",
+    "data_age_min": 1.8,
+    "window_span_min": 8.2,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 11.32,
+    "change_1min_pct": 0.89,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 22:51:04",
     "time_str": "22:51:04",
     "data_age_min": 0.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM stürzt um -1.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 21:41:07",
-    "time_str": "21:41:07",
-    "data_age_min": 4.3,
-    "window_span_min": 5.8,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.39,
-    "change_1min_pct": 1.3,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +1.30% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 21:41:07",
-    "time_str": "21:41:07",
-    "data_age_min": 1.9,
-    "window_span_min": 3.2,
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 285.0,
-    "change_1min_pct": 1.79,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +1.79% in 5 Min.! Momentum aktiv."
   }
 ]
