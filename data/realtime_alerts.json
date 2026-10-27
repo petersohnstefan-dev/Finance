@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-27 17:02:29",
+    "time_str": "17:02:29",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "RGTI",
+    "direction": "LONG",
+    "trigger_price": 12.24,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 2.22,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 17:02:28",
+    "time_str": "17:02:28",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "RIVN",
+    "direction": "SHORT",
+    "trigger_price": 11.62,
+    "change_1min_pct": 1.15,
+    "vol_ratio": 3.56,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RIVN stürzt um -1.15% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 17:02:28",
+    "time_str": "17:02:28",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "SOFI",
+    "direction": "LONG",
+    "trigger_price": 16.73,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SOFI explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 16:55:59",
     "time_str": "16:55:59",
     "data_age_min": 2.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.24,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKG explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 16:11:07",
-    "time_str": "16:11:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "BA",
-    "direction": "SHORT",
-    "trigger_price": 168.84,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 16:11:01",
-    "time_str": "16:11:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 7.61,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 16:11:01",
-    "time_str": "16:11:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 32.02,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 0.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
