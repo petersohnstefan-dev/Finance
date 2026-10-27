@@ -1,5 +1,20 @@
 [
  {
+  "timestamp": "2026-10-28 00:54:51",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_trailing_aggressive_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-10-28 00:54:51"
+ },
+ {
   "timestamp": "2026-10-23 01:30:51",
   "component": "ai_journal",
   "kind": "param_change_rejected",
@@ -65,8 +80,8 @@
     "short_term_breakeven_trigger_atr": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
    }
   },
-  "count": 2,
-  "last_seen": "2026-10-27 00:59:33"
+  "count": 3,
+  "last_seen": "2026-10-28 00:55:54"
  },
  {
   "timestamp": "2026-10-20 01:51:03",
