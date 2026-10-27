@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 22:41:00",
+    "time_str": "22:41:00",
+    "data_age_min": 2.6,
+    "window_span_min": 8.4,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.3,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 22:40:56",
+    "time_str": "22:40:56",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.14,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.14% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 22:35:42",
     "time_str": "22:35:42",
     "data_age_min": 3.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 21:25:47",
-    "time_str": "21:25:47",
-    "data_age_min": 0.1,
-    "window_span_min": 4.7,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.8,
-    "change_1min_pct": 0.87,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 21:25:46",
-    "time_str": "21:25:46",
-    "data_age_min": 4.1,
-    "window_span_min": 4.7,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 5.04,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
