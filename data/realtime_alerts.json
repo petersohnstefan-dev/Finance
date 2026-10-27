@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 20:10:58",
+    "time_str": "20:10:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 3.34,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 20:10:57",
+    "time_str": "20:10:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.39,
+    "change_1min_pct": 1.19,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +1.19% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 20:06:01",
     "time_str": "20:06:01",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.17,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RIVN explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 18:31:17",
-    "time_str": "18:31:17",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 3.24,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 1.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 18:31:17",
-    "time_str": "18:31:17",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "FOUR",
-    "direction": "LONG",
-    "trigger_price": 37.85,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 1.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FOUR explodiert um +0.68% in 5 Min.! Momentum aktiv."
   }
 ]
