@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 12:55:51",
+    "time_str": "12:55:51",
+    "data_age_min": 0.7,
+    "window_span_min": 2.1,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.66,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 12:55:51",
+    "time_str": "12:55:51",
+    "data_age_min": 0.2,
+    "window_span_min": 7.7,
+    "symbol": "QBTS",
+    "direction": "SHORT",
+    "trigger_price": 11.61,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QBTS stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-27 12:50:57",
     "time_str": "12:50:57",
     "data_age_min": 2.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NOW explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 11:25:53",
-    "time_str": "11:25:53",
-    "data_age_min": 0.1,
-    "window_span_min": 9.8,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 192.72,
-    "change_1min_pct": 1.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -1.98% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 11:21:06",
-    "time_str": "11:21:06",
-    "data_age_min": 0.1,
-    "window_span_min": 7.0,
-    "symbol": "BKNG",
-    "direction": "LONG",
-    "trigger_price": 153.65,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKNG explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
