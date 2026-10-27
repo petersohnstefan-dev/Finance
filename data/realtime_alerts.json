@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 11:26:01",
+    "time_str": "11:26:01",
+    "data_age_min": 3.8,
+    "window_span_min": 4.2,
+    "symbol": "NOW",
+    "direction": "LONG",
+    "trigger_price": 156.6,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 11:25:53",
+    "time_str": "11:25:53",
+    "data_age_min": 0.1,
+    "window_span_min": 9.8,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 192.72,
+    "change_1min_pct": 1.98,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -1.98% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-27 11:21:06",
     "time_str": "11:21:06",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COPX explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 21:11:08",
-    "time_str": "21:11:08",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "MA",
-    "direction": "LONG",
-    "trigger_price": 620.99,
-    "change_1min_pct": 1.22,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MA explodiert um +1.22% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-26 21:11:08",
-    "time_str": "21:11:08",
-    "data_age_min": 0.1,
-    "window_span_min": 4.1,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 519.73,
-    "change_1min_pct": 1.96,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -1.96% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
