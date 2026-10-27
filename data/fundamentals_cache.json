@@ -2319,10 +2319,43 @@
   }
  },
  "QCOM": {
-  "fetched_ts": 1790945782.025133,
+  "fetched_ts": 1793111522.7254517,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 6.73,
+   "altman_detail": {
+    "X1": 0.331,
+    "X2": 0.412,
+    "X3": 0.266,
+    "X4": 6.668,
+    "X5": 0.883
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -3.17,
+   "beneish_detail": {
+    "DSRI": 1.07,
+    "GMI": 1.014,
+    "AQI": 0.837,
+    "SGI": 1.137,
+    "DEPI": 1.052,
+    "SGAI": 0.992,
+    "LVGI": 1.108,
+    "TATA": -0.169
+   },
+   "computed_at": "2026-10-27"
   }
  },
  "ORCL": {
@@ -2463,7 +2496,7 @@
   }
  },
  "BA": {
-  "fetched_ts": 1790602614.8147805,
+  "fetched_ts": 1793111516.163449,
   "scores": {
    "available": true,
    "piotroski": 6,
@@ -2478,12 +2511,12 @@
     "Bruttomarge gestiegen": true,
     "Kapitalumschlag gestiegen": true
    },
-   "altman_z": 1.48,
+   "altman_z": 1.45,
    "altman_detail": {
     "X1": 0.121,
     "X2": 0.103,
     "X3": 0.032,
-    "X4": 0.914,
+    "X4": 0.87,
     "X5": 0.532
    },
    "altman_not_applicable": false,
@@ -2499,7 +2532,7 @@
     "LVGI": 0.955,
     "TATA": 0.007
    },
-   "computed_at": "2026-09-28"
+   "computed_at": "2026-10-27"
   }
  },
  "LINK-USD": {
