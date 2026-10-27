@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 18:05:55",
+    "time_str": "18:05:55",
+    "data_age_min": 3.9,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 34.62,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 0.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 18:05:54",
+    "time_str": "18:05:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 11.23,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 17:55:54",
     "time_str": "17:55:54",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.22,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RGTI explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 17:02:28",
-    "time_str": "17:02:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "RIVN",
-    "direction": "SHORT",
-    "trigger_price": 11.62,
-    "change_1min_pct": 1.15,
-    "vol_ratio": 3.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN stürzt um -1.15% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 17:02:28",
-    "time_str": "17:02:28",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "SOFI",
-    "direction": "LONG",
-    "trigger_price": 16.73,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
