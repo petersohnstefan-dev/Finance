@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-27 14:15:50",
+    "time_str": "14:15:50",
+    "data_age_min": 0.5,
+    "window_span_min": 5.3,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.83,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-27 14:15:49",
+    "time_str": "14:15:49",
+    "data_age_min": 10.8,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "LONG",
+    "trigger_price": 101.42,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 2.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-27 14:11:03",
     "time_str": "14:11:03",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ONON explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 12:35:49",
-    "time_str": "12:35:49",
-    "data_age_min": 0.2,
-    "window_span_min": 4.7,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 192.66,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 12:31:19",
-    "time_str": "12:31:19",
-    "data_age_min": 0.1,
-    "window_span_min": 5.2,
-    "symbol": "BA",
-    "direction": "SHORT",
-    "trigger_price": 186.08,
-    "change_1min_pct": 1.48,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BA stürzt um -1.48% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
