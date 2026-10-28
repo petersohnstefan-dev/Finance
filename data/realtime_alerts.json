@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-28 22:55:49",
+    "time_str": "22:55:49",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "NOW",
+    "direction": "LONG",
+    "trigger_price": 123.12,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW explodiert um +0.81% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 22:55:44",
+    "time_str": "22:55:44",
+    "data_age_min": 2.6,
+    "window_span_min": 9.2,
+    "symbol": "QUBT",
+    "direction": "LONG",
+    "trigger_price": 6.91,
+    "change_1min_pct": 0.88,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT explodiert um +0.88% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 22:55:44",
+    "time_str": "22:55:44",
+    "data_age_min": 2.8,
+    "window_span_min": 8.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.36,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 22:51:02",
     "time_str": "22:51:02",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ADBE explodiert um +2.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:23",
-    "time_str": "22:01:23",
-    "data_age_min": 0.3,
-    "window_span_min": 5.1,
-    "symbol": "CRM",
-    "direction": "SHORT",
-    "trigger_price": 227.09,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:19",
-    "time_str": "22:01:19",
-    "data_age_min": 2.2,
-    "window_span_min": 7.2,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 11.56,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:19",
-    "time_str": "22:01:19",
-    "data_age_min": 1.9,
-    "window_span_min": 5.5,
-    "symbol": "QBTS",
-    "direction": "LONG",
-    "trigger_price": 11.69,
-    "change_1min_pct": 0.68,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS explodiert um +0.68% in 5 Min.! Momentum aktiv."
   }
 ]
