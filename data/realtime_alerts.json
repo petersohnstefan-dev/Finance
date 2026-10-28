@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-28 14:21:01",
+    "time_str": "14:21:01",
+    "data_age_min": 0.8,
+    "window_span_min": 4.2,
+    "symbol": "V",
+    "direction": "LONG",
+    "trigger_price": 399.09,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 V explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 14:20:57",
+    "time_str": "14:20:57",
+    "data_age_min": 0.7,
+    "window_span_min": 5.3,
+    "symbol": "PL",
+    "direction": "SHORT",
+    "trigger_price": 14.4,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 14:15:59",
     "time_str": "14:15:59",
     "data_age_min": 1.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RTX stürzt um -1.16% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 12:20:59",
-    "time_str": "12:20:59",
-    "data_age_min": 0.4,
-    "window_span_min": 4.6,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 135.0,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 12:20:58",
-    "time_str": "12:20:58",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "HOOD",
-    "direction": "SHORT",
-    "trigger_price": 86.62,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
