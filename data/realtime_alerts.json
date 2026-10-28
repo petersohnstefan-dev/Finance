@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-28 15:21:12",
+    "time_str": "15:21:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "VRTX",
+    "direction": "LONG",
+    "trigger_price": 527.83,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 3.38,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VRTX explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 15:21:05",
+    "time_str": "15:21:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "FSLR",
+    "direction": "SHORT",
+    "trigger_price": 171.6,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FSLR stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 15:21:03",
+    "time_str": "15:21:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 2.88,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 0.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 15:16:14",
     "time_str": "15:16:14",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.52,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QBTS stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:01:13",
-    "time_str": "15:01:13",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 20.57,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:01:13",
-    "time_str": "15:01:13",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "S",
-    "direction": "SHORT",
-    "trigger_price": 25.84,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:01:13",
-    "time_str": "15:01:13",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "IOT",
-    "direction": "SHORT",
-    "trigger_price": 43.62,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IOT stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
