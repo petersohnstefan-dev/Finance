@@ -1978,10 +1978,43 @@
   }
  },
  "CI": {
-  "fetched_ts": 1789997518.1449497,
+  "fetched_ts": 1793190081.4802325,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.69,
+   "altman_detail": {
+    "X1": -0.054,
+    "X2": 0.303,
+    "X3": 0.058,
+    "X4": 0.679,
+    "X5": 1.734
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": -2.33,
+   "beneish_detail": {
+    "DSRI": 1.067,
+    "GMI": 1.134,
+    "AQI": 0.988,
+    "SGI": 1.113,
+    "DEPI": 1.0,
+    "SGAI": 0.885,
+    "LVGI": 0.99,
+    "TATA": -0.021
+   },
+   "computed_at": "2026-10-28"
   }
  },
  "CAT": {
