@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-28 16:01:26",
+    "time_str": "16:01:26",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "AMAT",
+    "direction": "LONG",
+    "trigger_price": 410.95,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMAT explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 16:01:20",
+    "time_str": "16:01:20",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "SHORT",
+    "trigger_price": 251.49,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 2.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 16:01:19",
+    "time_str": "16:01:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "LONG",
+    "trigger_price": 3.33,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 16:01:19",
+    "time_str": "16:01:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 216.5,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 15:55:52",
     "time_str": "15:55:52",
     "data_age_min": 0.9,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.86,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM stürzt um -1.44% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:55",
-    "time_str": "15:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CHPT",
-    "direction": "LONG",
-    "trigger_price": 8.84,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.9,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CHPT explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:55",
-    "time_str": "15:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.79,
-    "change_1min_pct": 0.88,
-    "vol_ratio": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -0.88% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:55",
-    "time_str": "15:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 3.22,
-    "change_1min_pct": 3.33,
-    "vol_ratio": 1.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +3.33% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:54",
-    "time_str": "15:25:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 326.4,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.81,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
