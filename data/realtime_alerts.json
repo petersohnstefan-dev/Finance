@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-28 10:16:06",
+    "time_str": "10:16:06",
+    "data_age_min": 3.1,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.78,
+    "change_1min_pct": 2.08,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -2.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 10:01:18",
     "time_str": "10:01:18",
     "data_age_min": 4.5,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TIA-USD explodiert um +1.15% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 22:35:39",
-    "time_str": "22:35:39",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "LONG",
-    "trigger_price": 8.14,
-    "change_1min_pct": 2.0,
-    "vol_ratio": 0.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD explodiert um +2.00% in 5 Min.! Momentum aktiv."
   }
 ]
