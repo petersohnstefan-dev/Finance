@@ -54,43 +54,10 @@
   }
  },
  "VKTX": {
-  "fetched_ts": 1792505206.0398335,
+  "fetched_ts": 1793218594.4655547,
   "scores": {
-   "available": true,
-   "piotroski": 2,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 22.85,
-   "altman_detail": {
-    "X1": 0.893,
-    "X2": -1.184,
-    "X3": -0.55,
-    "X4": 42.08,
-    "X5": 0.0
-   },
-   "altman_not_applicable": false,
-   "sector": "Healthcare",
-   "beneish_m": null,
-   "beneish_detail": {
-    "DSRI": null,
-    "GMI": null,
-    "AQI": 0.782291466018386,
-    "SGI": null,
-    "DEPI": 0.30706942841565205,
-    "SGAI": null,
-    "LVGI": 3.469562683736595,
-    "TATA": -0.11310705588288304
-   },
-   "computed_at": "2026-10-20"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "SRT3.DE": {
