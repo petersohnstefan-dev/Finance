@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-28 17:41:12",
+    "time_str": "17:41:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 35.62,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 0.12,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.80% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 17:41:11",
+    "time_str": "17:41:11",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 13.27,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 3.99,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 17:36:07",
     "time_str": "17:36:07",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.25,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CAVA explodiert um +0.92% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 16:20:51",
-    "time_str": "16:20:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HOOD",
-    "direction": "LONG",
-    "trigger_price": 92.38,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 16:20:51",
-    "time_str": "16:20:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 265.04,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
