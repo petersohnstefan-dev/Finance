@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-28 09:31:09",
+    "time_str": "09:31:09",
+    "data_age_min": 1.2,
+    "window_span_min": 3.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 30.4,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 09:25:57",
     "time_str": "09:25:57",
     "data_age_min": 3.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 22:31:23",
-    "time_str": "22:31:23",
-    "data_age_min": 1.1,
-    "window_span_min": 4.3,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 159.05,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
