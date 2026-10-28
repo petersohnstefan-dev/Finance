@@ -375,43 +375,10 @@
   }
  },
  "IBM": {
-  "fetched_ts": 1792613955.2992287,
+  "fetched_ts": 1793223987.917058,
   "scores": {
-   "available": true,
-   "piotroski": 7,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 3.33,
-   "altman_detail": {
-    "X1": -0.011,
-    "X2": 1.025,
-    "X3": 0.081,
-    "X4": 1.989,
-    "X5": 0.445
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.4,
-   "beneish_detail": {
-    "DSRI": 1.108,
-    "GMI": 0.974,
-    "AQI": 1.019,
-    "SGI": 1.076,
-    "DEPI": 0.96,
-    "SGAI": 0.941,
-    "LVGI": 1.017,
-    "TATA": -0.017
-   },
-   "computed_at": "2026-10-21"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "REL.L": {
