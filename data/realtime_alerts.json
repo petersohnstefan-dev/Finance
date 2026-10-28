@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-28 20:26:01",
+    "time_str": "20:26:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "LONG",
+    "trigger_price": 37.49,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 0.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 20:26:01",
+    "time_str": "20:26:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "BILL",
+    "direction": "LONG",
+    "trigger_price": 47.83,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BILL explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 20:26:00",
+    "time_str": "20:26:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SOFI",
+    "direction": "LONG",
+    "trigger_price": 16.98,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 1.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SOFI explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 20:20:49",
     "time_str": "20:20:49",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.4,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONQ stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 19:55:51",
-    "time_str": "19:55:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HOOD",
-    "direction": "SHORT",
-    "trigger_price": 90.97,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 19:55:51",
-    "time_str": "19:55:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MSTR",
-    "direction": "SHORT",
-    "trigger_price": 140.14,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 0.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 19:55:51",
-    "time_str": "19:55:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "SHORT",
-    "trigger_price": 159.21,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
