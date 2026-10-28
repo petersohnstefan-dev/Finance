@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-28 16:35:51",
+    "time_str": "16:35:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 52.9,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 1.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 16:31:17",
     "time_str": "16:31:17",
     "data_age_min": 0.3,
@@ -635,18 +648,5 @@
     "vol_ratio": 1.18,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ZS stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:46:00",
-    "time_str": "15:46:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 5.0,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 2.76,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.60% in 5 Min.! Momentum aktiv."
   }
 ]
