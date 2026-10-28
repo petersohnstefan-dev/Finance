@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-28 09:20:58",
+    "time_str": "09:20:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "LONG",
+    "trigger_price": 1403.0,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.47,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 09:15:57",
     "time_str": "09:15:57",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TXN explodiert um +1.45% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-27 22:25:58",
-    "time_str": "22:25:58",
-    "data_age_min": 2.4,
-    "window_span_min": 5.6,
-    "symbol": "PACB",
-    "direction": "SHORT",
-    "trigger_price": 2.42,
-    "change_1min_pct": 1.22,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PACB stürzt um -1.22% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
