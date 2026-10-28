@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-28 15:31:17",
+    "time_str": "15:31:17",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "LONG",
+    "trigger_price": 7.39,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 0.58,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 15:31:15",
+    "time_str": "15:31:15",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 38.85,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 2.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 15:31:15",
+    "time_str": "15:31:15",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 20.67,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 15:31:12",
+    "time_str": "15:31:12",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 15:26:00",
     "time_str": "15:26:00",
     "data_age_min": 1.0,
@@ -596,57 +648,5 @@
     "vol_ratio": 2.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CELH stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:05:53",
-    "time_str": "15:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HOOD",
-    "direction": "LONG",
-    "trigger_price": 91.71,
-    "change_1min_pct": 0.96,
-    "vol_ratio": 0.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD explodiert um +0.96% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:05:53",
-    "time_str": "15:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 160.18,
-    "change_1min_pct": 0.87,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +0.87% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:05:53",
-    "time_str": "15:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ARM",
-    "direction": "LONG",
-    "trigger_price": 232.85,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:05:52",
-    "time_str": "15:05:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BEAM",
-    "direction": "LONG",
-    "trigger_price": 26.07,
-    "change_1min_pct": 1.32,
-    "vol_ratio": 0.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BEAM explodiert um +1.32% in 5 Min.! Momentum aktiv."
   }
 ]
