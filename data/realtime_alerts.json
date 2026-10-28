@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-28 22:51:02",
+    "time_str": "22:51:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "MSFT",
+    "direction": "LONG",
+    "trigger_price": 551.41,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSFT explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-28 22:45:49",
     "time_str": "22:45:49",
     "data_age_min": 3.8,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QBTS explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:19",
-    "time_str": "22:01:19",
-    "data_age_min": 1.0,
-    "window_span_min": 5.4,
-    "symbol": "CART",
-    "direction": "SHORT",
-    "trigger_price": 60.52,
-    "change_1min_pct": 0.77,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CART stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
