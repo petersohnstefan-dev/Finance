@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-28 16:11:05",
+    "time_str": "16:11:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 3.32,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 16:11:04",
+    "time_str": "16:11:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "RDDT",
+    "direction": "SHORT",
+    "trigger_price": 135.19,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 1.21,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-28 16:11:03",
+    "time_str": "16:11:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 12.97,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 0.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 16:06:02",
     "time_str": "16:06:02",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:26:00",
-    "time_str": "15:26:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "BKNG",
-    "direction": "SHORT",
-    "trigger_price": 147.12,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 2.27,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKNG stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:55",
-    "time_str": "15:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 28.9,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 15:25:55",
-    "time_str": "15:25:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 25.15,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.90% in 5 Min.! Momentum aktiv."
   }
 ]
