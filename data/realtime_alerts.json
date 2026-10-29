@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 17:26:01",
+    "time_str": "17:26:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "UNH",
+    "direction": "SHORT",
+    "trigger_price": 405.93,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 6.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 UNH stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 17:25:56",
+    "time_str": "17:25:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "LONG",
+    "trigger_price": 0.42,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK explodiert um +0.74% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 17:21:01",
     "time_str": "17:21:01",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.95,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID explodiert um +0.75% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 16:35:52",
-    "time_str": "16:35:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 20.23,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 16:35:51",
-    "time_str": "16:35:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HOOD",
-    "direction": "LONG",
-    "trigger_price": 92.39,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
