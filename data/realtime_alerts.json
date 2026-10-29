@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 22:55:56",
+    "time_str": "22:55:56",
+    "data_age_min": 1.4,
+    "window_span_min": 2.5,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 222.0,
+    "change_1min_pct": 1.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +1.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 22:55:56",
+    "time_str": "22:55:56",
+    "data_age_min": 14.9,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 372.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 22:55:55",
+    "time_str": "22:55:55",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "RDDT",
+    "direction": "SHORT",
+    "trigger_price": 105.82,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 22:54:08",
     "time_str": "22:54:08",
     "data_age_min": 1.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ETHA explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:10:58",
-    "time_str": "22:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "LONG",
-    "trigger_price": 0.17,
-    "change_1min_pct": 1.16,
-    "vol_ratio": 0.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD explodiert um +1.16% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:10:58",
-    "time_str": "22:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RENDER-USD",
-    "direction": "LONG",
-    "trigger_price": 1.58,
-    "change_1min_pct": 1.19,
-    "vol_ratio": 0.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RENDER-USD explodiert um +1.19% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:05:56",
-    "time_str": "22:05:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QCOM",
-    "direction": "SHORT",
-    "trigger_price": 180.0,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
