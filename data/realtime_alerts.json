@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 12:35:55",
+    "time_str": "12:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 6.0,
+    "symbol": "MS",
+    "direction": "SHORT",
+    "trigger_price": 192.2,
+    "change_1min_pct": 0.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MS stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 12:35:50",
+    "time_str": "12:35:50",
+    "data_age_min": 0.6,
+    "window_span_min": 7.3,
+    "symbol": "JOBY",
+    "direction": "SHORT",
+    "trigger_price": 5.01,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 12:35:49",
+    "time_str": "12:35:49",
+    "data_age_min": 0.6,
+    "window_span_min": 2.3,
+    "symbol": "NVCR",
+    "direction": "SHORT",
+    "trigger_price": 15.71,
+    "change_1min_pct": 2.91,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR stürzt um -2.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 12:31:04",
     "time_str": "12:31:04",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ASTS stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 10:15:59",
-    "time_str": "10:15:59",
-    "data_age_min": 0.7,
-    "window_span_min": 5.3,
-    "symbol": "SOFI",
-    "direction": "SHORT",
-    "trigger_price": 16.75,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 10:11:04",
-    "time_str": "10:11:04",
-    "data_age_min": 1.6,
-    "window_span_min": 3.5,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 565.0,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 10:10:58",
-    "time_str": "10:10:58",
-    "data_age_min": 3.1,
-    "window_span_min": 4.9,
-    "symbol": "SMCI",
-    "direction": "LONG",
-    "trigger_price": 34.85,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI explodiert um +0.64% in 5 Min.! Momentum aktiv."
   }
 ]
