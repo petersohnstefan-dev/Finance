@@ -2961,5 +2961,45 @@
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
+ },
+ "SHEL.L": {
+  "fetched_ts": 1793279802.80152,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 73.23,
+   "altman_detail": {
+    "X1": 0.067,
+    "X2": 0.415,
+    "X3": 0.093,
+    "X4": 119.24,
+    "X5": 0.721
+   },
+   "altman_not_applicable": false,
+   "sector": "Energy",
+   "beneish_m": -2.77,
+   "beneish_detail": {
+    "DSRI": 1.03,
+    "GMI": 1.015,
+    "AQI": 1.109,
+    "SGI": 0.939,
+    "DEPI": 1.021,
+    "SGAI": 1.08,
+    "LVGI": 0.955,
+    "TATA": -0.067
+   },
+   "computed_at": "2026-10-29"
+  }
  }
 }
