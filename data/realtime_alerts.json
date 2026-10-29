@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 12:41:06",
+    "time_str": "12:41:06",
+    "data_age_min": 1.9,
+    "window_span_min": 5.2,
+    "symbol": "CAT",
+    "direction": "SHORT",
+    "trigger_price": 644.5,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAT stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 12:41:05",
+    "time_str": "12:41:05",
+    "data_age_min": 0.0,
+    "window_span_min": 5.1,
+    "symbol": "AMZN",
+    "direction": "SHORT",
+    "trigger_price": 250.0,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMZN stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 12:35:55",
     "time_str": "12:35:55",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.44,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CL=F explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 10:16:00",
-    "time_str": "10:16:00",
-    "data_age_min": 1.3,
-    "window_span_min": 9.8,
-    "symbol": "ARRY",
-    "direction": "SHORT",
-    "trigger_price": 3.55,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 10:15:59",
-    "time_str": "10:15:59",
-    "data_age_min": 0.8,
-    "window_span_min": 2.2,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 41.29,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
