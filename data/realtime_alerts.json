@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 19:46:06",
+    "time_str": "19:46:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 77.51,
+    "change_1min_pct": 0.87,
+    "vol_ratio": 1.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.87% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 19:46:05",
+    "time_str": "19:46:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "LONG",
+    "trigger_price": 179.78,
+    "change_1min_pct": 1.46,
+    "vol_ratio": 0.68,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY explodiert um +1.46% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 19:41:05",
     "time_str": "19:41:05",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 6.51,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QS stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 18:35:57",
-    "time_str": "18:35:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ALNY",
-    "direction": "SHORT",
-    "trigger_price": 173.14,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALNY stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 18:35:57",
-    "time_str": "18:35:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NVCR",
-    "direction": "SHORT",
-    "trigger_price": 13.68,
-    "change_1min_pct": 0.87,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVCR stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
