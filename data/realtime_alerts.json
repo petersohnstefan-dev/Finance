@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 10:05:47",
+    "time_str": "10:05:47",
+    "data_age_min": 0.7,
+    "window_span_min": 4.0,
+    "symbol": "RGTI",
+    "direction": "LONG",
+    "trigger_price": 12.22,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 10:05:46",
+    "time_str": "10:05:46",
+    "data_age_min": 1.2,
+    "window_span_min": 5.6,
+    "symbol": "CRWD",
+    "direction": "SHORT",
+    "trigger_price": 250.6,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 10:01:11",
     "time_str": "10:01:11",
     "data_age_min": 0.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RKLB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:31:10",
-    "time_str": "22:31:10",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "HOOD",
-    "direction": "SHORT",
-    "trigger_price": 89.85,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:31:10",
-    "time_str": "22:31:10",
-    "data_age_min": 2.4,
-    "window_span_min": 4.8,
-    "symbol": "MSTR",
-    "direction": "SHORT",
-    "trigger_price": 144.28,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
