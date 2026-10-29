@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 19:01:22",
+    "time_str": "19:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "LONG",
+    "trigger_price": 3.62,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 3.52,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 19:01:22",
+    "time_str": "19:01:22",
+    "data_age_min": 7.4,
+    "window_span_min": 6.0,
+    "symbol": "STEM",
+    "direction": "LONG",
+    "trigger_price": 2.56,
+    "change_1min_pct": 0.98,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM explodiert um +0.98% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 19:01:22",
+    "time_str": "19:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 11.7,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.95,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 18:55:44",
     "time_str": "18:55:44",
     "data_age_min": 1.8,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.66,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CAVA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 17:45:58",
-    "time_str": "17:45:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "SHORT",
-    "trigger_price": 160.52,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.77,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 17:36:01",
-    "time_str": "17:36:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "SHORT",
-    "trigger_price": 138.62,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 17:36:00",
-    "time_str": "17:36:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "META",
-    "direction": "LONG",
-    "trigger_price": 633.8,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 3.3,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 META explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
