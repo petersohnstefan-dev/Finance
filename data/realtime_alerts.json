@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 12:01:30",
+    "time_str": "12:01:30",
+    "data_age_min": 0.0,
+    "window_span_min": 5.5,
+    "symbol": "MSFT",
+    "direction": "SHORT",
+    "trigger_price": 542.71,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSFT stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 12:01:25",
+    "time_str": "12:01:25",
+    "data_age_min": 1.4,
+    "window_span_min": 8.0,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 368.0,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 12:01:24",
+    "time_str": "12:01:24",
+    "data_age_min": 0.1,
+    "window_span_min": 3.3,
+    "symbol": "PLTR",
+    "direction": "LONG",
+    "trigger_price": 199.98,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR explodiert um +0.81% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 11:55:49",
     "time_str": "11:55:49",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMAT explodiert um +0.81% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 09:10:59",
-    "time_str": "09:10:59",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "INTC",
-    "direction": "LONG",
-    "trigger_price": 92.76,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 09:10:59",
-    "time_str": "09:10:59",
-    "data_age_min": 0.4,
-    "window_span_min": 4.6,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 954.87,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 09:10:56",
-    "time_str": "09:10:56",
-    "data_age_min": 2.0,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 5.06,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.80% in 5 Min.! Momentum aktiv."
   }
 ]
