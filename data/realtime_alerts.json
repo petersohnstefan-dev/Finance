@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 11:46:07",
+    "time_str": "11:46:07",
+    "data_age_min": 0.5,
+    "window_span_min": 5.7,
+    "symbol": "LIN",
+    "direction": "SHORT",
+    "trigger_price": 506.8,
+    "change_1min_pct": 2.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LIN stürzt um -2.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 11:46:07",
+    "time_str": "11:46:07",
+    "data_age_min": 0.1,
+    "window_span_min": 8.1,
+    "symbol": "LLY",
+    "direction": "SHORT",
+    "trigger_price": 1306.18,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LLY stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 11:35:52",
     "time_str": "11:35:52",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GOOGL explodiert um +0.98% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 09:05:54",
-    "time_str": "09:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HM-B.ST",
-    "direction": "LONG",
-    "trigger_price": 176.45,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HM-B.ST explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 09:05:54",
-    "time_str": "09:05:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MAERSK-B.CO",
-    "direction": "LONG",
-    "trigger_price": 23750.0,
-    "change_1min_pct": 0.72,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MAERSK-B.CO explodiert um +0.72% in 5 Min.! Momentum aktiv."
   }
 ]
