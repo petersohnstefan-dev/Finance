@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 22:21:05",
+    "time_str": "22:21:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "AMZN",
+    "direction": "SHORT",
+    "trigger_price": 228.01,
+    "change_1min_pct": 0.95,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMZN stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 22:20:59",
+    "time_str": "22:20:59",
+    "data_age_min": 3.5,
+    "window_span_min": 3.5,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 20.4,
+    "change_1min_pct": 0.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 22:20:59",
+    "time_str": "22:20:59",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "MSTR",
+    "direction": "LONG",
+    "trigger_price": 138.55,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 22:15:59",
     "time_str": "22:15:59",
     "data_age_min": 3.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMZN stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 21:50:57",
-    "time_str": "21:50:57",
-    "data_age_min": 4.1,
-    "window_span_min": 4.9,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 25.91,
-    "change_1min_pct": 1.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +1.98% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 21:50:57",
-    "time_str": "21:50:57",
-    "data_age_min": 1.4,
-    "window_span_min": 5.6,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 3.39,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 21:50:56",
-    "time_str": "21:50:56",
-    "data_age_min": 3.7,
-    "window_span_min": 3.2,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 11.51,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
