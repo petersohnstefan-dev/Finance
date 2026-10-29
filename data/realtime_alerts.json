@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 20:41:00",
+    "time_str": "20:41:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 2.12,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 20:40:58",
+    "time_str": "20:40:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DNA",
+    "direction": "SHORT",
+    "trigger_price": 12.84,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 0.44,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 20:40:58",
+    "time_str": "20:40:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVCR",
+    "direction": "LONG",
+    "trigger_price": 13.3,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 1.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 20:35:57",
     "time_str": "20:35:57",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.84,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB stürzt um -1.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 19:35:53",
-    "time_str": "19:35:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "PENDLE-USD",
-    "direction": "SHORT",
-    "trigger_price": 1.94,
-    "change_1min_pct": 1.09,
-    "vol_ratio": 0.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PENDLE-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 19:35:53",
-    "time_str": "19:35:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "CRV-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.32,
-    "change_1min_pct": 1.08,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRV-USD stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 19:31:22",
-    "time_str": "19:31:22",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "MRK",
-    "direction": "SHORT",
-    "trigger_price": 146.02,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 1.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRK stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
