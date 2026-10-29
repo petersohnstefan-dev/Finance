@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-29 13:25:54",
+    "time_str": "13:25:54",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "MSFT",
+    "direction": "SHORT",
+    "trigger_price": 534.54,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSFT stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 13:25:51",
+    "time_str": "13:25:51",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "CART",
+    "direction": "LONG",
+    "trigger_price": 58.92,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CART explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 13:25:50",
+    "time_str": "13:25:50",
+    "data_age_min": 3.8,
+    "window_span_min": 5.0,
+    "symbol": "QS",
+    "direction": "SHORT",
+    "trigger_price": 4.16,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 13:20:58",
     "time_str": "13:20:58",
     "data_age_min": 4.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 12:05:52",
-    "time_str": "12:05:52",
-    "data_age_min": 0.5,
-    "window_span_min": 5.4,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 130.5,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 12:05:51",
-    "time_str": "12:05:51",
-    "data_age_min": 0.4,
-    "window_span_min": 4.5,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 249.6,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 12:05:51",
-    "time_str": "12:05:51",
-    "data_age_min": 0.7,
-    "window_span_min": 5.2,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 24.29,
-    "change_1min_pct": 1.66,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -1.66% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
