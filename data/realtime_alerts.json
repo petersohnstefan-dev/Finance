@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 16:31:19",
+    "time_str": "16:31:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "TOST",
+    "direction": "SHORT",
+    "trigger_price": 31.64,
+    "change_1min_pct": 1.54,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TOST stürzt um -1.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 16:31:19",
+    "time_str": "16:31:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "FTNT",
+    "direction": "LONG",
+    "trigger_price": 136.35,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FTNT explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 16:25:53",
     "time_str": "16:25:53",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.88,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDWR stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 15:55:51",
-    "time_str": "15:55:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "SHORT",
-    "trigger_price": 19.93,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 1.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 15:55:50",
-    "time_str": "15:55:50",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BILL",
-    "direction": "SHORT",
-    "trigger_price": 47.75,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BILL stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
