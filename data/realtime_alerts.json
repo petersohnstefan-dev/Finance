@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-29 13:55:57",
+    "time_str": "13:55:57",
+    "data_age_min": 4.3,
+    "window_span_min": 8.7,
+    "symbol": "NET",
+    "direction": "LONG",
+    "trigger_price": 305.0,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NET explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-29 13:55:54",
+    "time_str": "13:55:54",
+    "data_age_min": 4.9,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.60% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-29 13:51:09",
     "time_str": "13:51:09",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PATH stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 12:50:47",
-    "time_str": "12:50:47",
-    "data_age_min": 0.6,
-    "window_span_min": 8.2,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 24.12,
-    "change_1min_pct": 1.11,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 12:45:59",
-    "time_str": "12:45:59",
-    "data_age_min": 1.1,
-    "window_span_min": 4.9,
-    "symbol": "CRM",
-    "direction": "SHORT",
-    "trigger_price": 227.15,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
