@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-29 08:01:12",
+    "time_str": "08:01:12",
+    "data_age_min": 2.2,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 07:45:55",
     "time_str": "07:45:55",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKNG explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:23",
-    "time_str": "22:01:23",
-    "data_age_min": 0.1,
-    "window_span_min": 6.3,
-    "symbol": "CAT",
-    "direction": "SHORT",
-    "trigger_price": 711.01,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAT stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
