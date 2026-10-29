@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-29 07:01:20",
+    "time_str": "07:01:20",
+    "data_age_min": 1.4,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.05,
+    "change_1min_pct": 1.02,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-28 22:55:49",
     "time_str": "22:55:49",
     "data_age_min": 0.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 KO stürzt um -1.23% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-28 22:01:23",
-    "time_str": "22:01:23",
-    "data_age_min": 4.9,
-    "window_span_min": 5.5,
-    "symbol": "ADBE",
-    "direction": "LONG",
-    "trigger_price": 249.76,
-    "change_1min_pct": 2.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADBE explodiert um +2.95% in 5 Min.! Momentum aktiv."
   }
 ]
