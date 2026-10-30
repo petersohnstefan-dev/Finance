@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 22:20:56",
+    "time_str": "22:20:56",
+    "data_age_min": 2.7,
+    "window_span_min": 7.3,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.03,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 22:20:54",
+    "time_str": "22:20:54",
+    "data_age_min": 0.8,
+    "window_span_min": 9.2,
+    "symbol": "FBTC",
+    "direction": "LONG",
+    "trigger_price": 66.9,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FBTC explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 22:16:06",
     "time_str": "22:16:06",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.4,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:01:14",
-    "time_str": "21:01:14",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 365.8,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 3.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:01:14",
-    "time_str": "21:01:14",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 3.04,
-    "change_1min_pct": 1.5,
-    "vol_ratio": 6.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +1.50% in 5 Min.! Momentum aktiv."
   }
 ]
