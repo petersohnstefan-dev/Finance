@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 16:01:37",
+    "time_str": "16:01:37",
+    "data_age_min": 0.6,
+    "window_span_min": 5.0,
+    "symbol": "REGN",
+    "direction": "LONG",
+    "trigger_price": 921.9,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 REGN explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 16:01:27",
+    "time_str": "16:01:27",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 52.1,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 15:55:57",
     "time_str": "15:55:57",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.31,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HOOD explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 15:41:01",
-    "time_str": "15:41:01",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 138.76,
-    "change_1min_pct": 1.14,
-    "vol_ratio": 0.85,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +1.14% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 15:41:01",
-    "time_str": "15:41:01",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SNOW",
-    "direction": "LONG",
-    "trigger_price": 305.24,
-    "change_1min_pct": 0.81,
-    "vol_ratio": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SNOW explodiert um +0.81% in 5 Min.! Momentum aktiv."
   }
 ]
