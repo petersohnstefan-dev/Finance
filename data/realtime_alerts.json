@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 19:21:00",
+    "time_str": "19:21:00",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "WLD-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.41,
+    "change_1min_pct": 1.47,
+    "vol_ratio": 1.81,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 WLD-USD stürzt um -1.47% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 19:20:59",
+    "time_str": "19:20:59",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "SHORT",
+    "trigger_price": 6.98,
+    "change_1min_pct": 1.17,
+    "vol_ratio": 0.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD stürzt um -1.17% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 19:16:03",
     "time_str": "19:16:03",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.19,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 17:55:54",
-    "time_str": "17:55:54",
-    "data_age_min": 2.9,
-    "window_span_min": 5.0,
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 3.03,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 7.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 17:55:53",
-    "time_str": "17:55:53",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "SYM",
-    "direction": "SHORT",
-    "trigger_price": 36.93,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.2,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYM stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
