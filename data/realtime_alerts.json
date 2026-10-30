@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-10-30 11:25:54",
+    "time_str": "11:25:54",
+    "data_age_min": 2.1,
+    "window_span_min": 4.8,
+    "symbol": "S",
+    "direction": "SHORT",
+    "trigger_price": 25.27,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 11:25:54",
+    "time_str": "11:25:54",
+    "data_age_min": 1.8,
+    "window_span_min": 7.1,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 221.0,
+    "change_1min_pct": 1.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +1.84% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 11:25:53",
+    "time_str": "11:25:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MSTR",
+    "direction": "LONG",
+    "trigger_price": 132.17,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 11:25:51",
+    "time_str": "11:25:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "CRV-USD",
+    "direction": "LONG",
+    "trigger_price": 0.28,
+    "change_1min_pct": 1.03,
+    "vol_ratio": 2.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRV-USD explodiert um +1.03% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 11:11:03",
     "time_str": "11:11:03",
     "data_age_min": 6.2,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QBTS stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 09:10:52",
-    "time_str": "09:10:52",
-    "data_age_min": 0.6,
-    "window_span_min": 2.2,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 11.6,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 09:10:51",
-    "time_str": "09:10:51",
-    "data_age_min": 0.1,
-    "window_span_min": 5.8,
-    "symbol": "RIVN",
-    "direction": "SHORT",
-    "trigger_price": 12.21,
-    "change_1min_pct": 0.89,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 09:10:51",
-    "time_str": "09:10:51",
-    "data_age_min": 2.6,
-    "window_span_min": 3.3,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 72.8,
-    "change_1min_pct": 1.33,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -1.33% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 09:10:51",
-    "time_str": "09:10:51",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "SOFI",
-    "direction": "SHORT",
-    "trigger_price": 16.94,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
