@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-30 10:11:01",
+    "time_str": "10:11:01",
+    "data_age_min": 2.0,
+    "window_span_min": 4.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.02,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 10:05:48",
     "time_str": "10:05:48",
     "data_age_min": 0.3,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.96% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 07:01:14",
-    "time_str": "07:01:14",
-    "data_age_min": 5.3,
-    "window_span_min": 5.0,
-    "symbol": "RUNE-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.68,
-    "change_1min_pct": 2.41,
-    "vol_ratio": 2.79,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD stürzt um -2.41% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
