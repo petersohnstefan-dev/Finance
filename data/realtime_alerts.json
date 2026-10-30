@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 13:41:02",
+    "time_str": "13:41:02",
+    "data_age_min": 1.7,
+    "window_span_min": 5.4,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 38.76,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 13:41:01",
+    "time_str": "13:41:01",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "SMCI",
+    "direction": "SHORT",
+    "trigger_price": 32.23,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 13:35:57",
     "time_str": "13:35:57",
     "data_age_min": 3.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ORCL stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 12:45:53",
-    "time_str": "12:45:53",
-    "data_age_min": 0.0,
-    "window_span_min": 6.9,
-    "symbol": "QCOM",
-    "direction": "SHORT",
-    "trigger_price": 176.58,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 12:45:53",
-    "time_str": "12:45:53",
-    "data_age_min": 1.1,
-    "window_span_min": 4.8,
-    "symbol": "CRM",
-    "direction": "SHORT",
-    "trigger_price": 230.96,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
