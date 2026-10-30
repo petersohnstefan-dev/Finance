@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-30 16:15:54",
+    "time_str": "16:15:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "QCOM",
+    "direction": "SHORT",
+    "trigger_price": 165.13,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QCOM stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 16:15:51",
+    "time_str": "16:15:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 1.99,
+    "change_1min_pct": 0.75,
+    "vol_ratio": 1.55,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 16:15:50",
+    "time_str": "16:15:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SNOW",
+    "direction": "SHORT",
+    "trigger_price": 301.08,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SNOW stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 16:11:08",
     "time_str": "16:11:08",
     "data_age_min": 1.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.13,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 15:41:09",
-    "time_str": "15:41:09",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 899.27,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.86,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 15:41:09",
-    "time_str": "15:41:09",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 518.02,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 1.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +0.94% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 15:41:09",
-    "time_str": "15:41:09",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "TSLA",
-    "direction": "LONG",
-    "trigger_price": 400.06,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 0.2,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TSLA explodiert um +0.62% in 5 Min.! Momentum aktiv."
   }
 ]
