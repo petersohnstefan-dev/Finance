@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-30 10:01:20",
+    "time_str": "10:01:20",
+    "data_age_min": 5.1,
+    "window_span_min": 5.2,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 28.68,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 09:57:02",
     "time_str": "09:57:02",
     "data_age_min": 0.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MDB explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:55:55",
-    "time_str": "22:55:55",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 105.82,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
