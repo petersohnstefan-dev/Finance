@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 20:15:56",
+    "time_str": "20:15:56",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 64.01,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.14,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 20:15:51",
+    "time_str": "20:15:51",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "IOT",
+    "direction": "LONG",
+    "trigger_price": 41.66,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 2.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IOT explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 20:11:03",
     "time_str": "20:11:03",
     "data_age_min": 2.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.83,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 19:36:02",
-    "time_str": "19:36:02",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 492.66,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 19:35:57",
-    "time_str": "19:35:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 29.15,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
