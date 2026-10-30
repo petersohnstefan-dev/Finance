@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-30 16:46:09",
+    "time_str": "16:46:09",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "QCOM",
+    "direction": "LONG",
+    "trigger_price": 164.88,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 0.09,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QCOM explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 16:46:04",
+    "time_str": "16:46:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 1.99,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.18,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 16:46:02",
+    "time_str": "16:46:02",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 221.2,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 16:41:08",
     "time_str": "16:41:08",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.33,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PENDLE-USD explodiert um +1.07% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 16:06:06",
-    "time_str": "16:06:06",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "BA",
-    "direction": "SHORT",
-    "trigger_price": 172.43,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BA stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 16:05:59",
-    "time_str": "16:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "SHORT",
-    "trigger_price": 24.91,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 1.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 16:05:59",
-    "time_str": "16:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ESTC",
-    "direction": "SHORT",
-    "trigger_price": 97.65,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 0.48,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
