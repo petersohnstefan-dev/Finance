@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-10-30 09:21:07",
+    "time_str": "09:21:07",
+    "data_age_min": 14.1,
+    "window_span_min": 3.0,
+    "symbol": "PG",
+    "direction": "LONG",
+    "trigger_price": 163.88,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PG explodiert um +0.81% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 09:21:07",
+    "time_str": "09:21:07",
+    "data_age_min": 0.3,
+    "window_span_min": 5.8,
+    "symbol": "QCOM",
+    "direction": "SHORT",
+    "trigger_price": 177.2,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QCOM stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 09:21:01",
+    "time_str": "09:21:01",
+    "data_age_min": 4.7,
+    "window_span_min": 5.3,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.0,
+    "change_1min_pct": 2.18,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -2.18% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 09:16:05",
     "time_str": "09:16:05",
     "data_age_min": 2.7,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.46,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ONDO-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:45:46",
-    "time_str": "22:45:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "LDO-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.34,
-    "change_1min_pct": 1.18,
-    "vol_ratio": 1.24,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LDO-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:45:46",
-    "time_str": "22:45:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "NEAR-USD",
-    "direction": "SHORT",
-    "trigger_price": 4.18,
-    "change_1min_pct": 1.1,
-    "vol_ratio": 0.22,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NEAR-USD stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:41:02",
-    "time_str": "22:41:02",
-    "data_age_min": 13.5,
-    "window_span_min": 5.6,
-    "symbol": "IBM",
-    "direction": "SHORT",
-    "trigger_price": 255.2,
-    "change_1min_pct": 1.19,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IBM stürzt um -1.19% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
