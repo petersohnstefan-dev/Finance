@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-30 22:01:19",
+    "time_str": "22:01:19",
+    "data_age_min": 5.3,
+    "window_span_min": 9.1,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 37.98,
+    "change_1min_pct": 0.88,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +0.88% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 21:50:58",
     "time_str": "21:50:58",
     "data_age_min": 2.8,
@@ -635,18 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARVN stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:01:13",
-    "time_str": "21:01:13",
-    "data_age_min": 2.2,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "SHORT",
-    "trigger_price": 10.06,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 9.34,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX stürzt um -0.79% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
