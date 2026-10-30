@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-30 07:01:14",
+    "time_str": "07:01:14",
+    "data_age_min": 5.3,
+    "window_span_min": 5.0,
+    "symbol": "RUNE-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.68,
+    "change_1min_pct": 2.41,
+    "vol_ratio": 2.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUNE-USD stürzt um -2.41% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-29 22:55:56",
     "time_str": "22:55:56",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 XLP explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:10:59",
-    "time_str": "22:10:59",
-    "data_age_min": 0.8,
-    "window_span_min": 5.2,
-    "symbol": "ETHA",
-    "direction": "LONG",
-    "trigger_price": 51.13,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ETHA explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
