@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-10-30 09:51:02",
+    "time_str": "09:51:02",
+    "data_age_min": 0.6,
+    "window_span_min": 4.5,
+    "symbol": "RDDT",
+    "direction": "LONG",
+    "trigger_price": 102.0,
+    "change_1min_pct": 2.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT explodiert um +2.01% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-10-30 09:51:01",
+    "time_str": "09:51:01",
+    "data_age_min": 3.9,
+    "window_span_min": 6.1,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 219.47,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 09:40:54",
     "time_str": "09:40:54",
     "data_age_min": 2.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SYM explodiert um +1.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:54:07",
-    "time_str": "22:54:07",
-    "data_age_min": 0.2,
-    "window_span_min": 4.9,
-    "symbol": "COIN",
-    "direction": "SHORT",
-    "trigger_price": 155.0,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-29 22:51:03",
-    "time_str": "22:51:03",
-    "data_age_min": 0.2,
-    "window_span_min": 4.9,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 532.08,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
