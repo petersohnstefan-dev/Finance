@@ -6,63 +6,49 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
       "initial_cash": 10000.0,
-      "cash": 6592.462616881205,
+      "cash": 7186.874482729205,
       "positions": {
-        "CRM": {
-          "symbol": "CRM",
-          "name": "Salesforce, Inc.",
-          "shares": 2.6014,
-          "buy_price": 250.6003,
-          "current_price": 229.29,
-          "buy_date": "2026-10-22 21:57",
-          "stop_loss": 212.59,
-          "take_profit": null,
-          "reason": "🚨 Smart-Money Ausbruch (Alpha 67/100) | keine Optionsdaten | The Zacks Analyst Blog Highlights Salesforce, S&P Global, Intuit, Kewaunee Scientific and Key Tronic | ⚖️ Tribunal (BUY): Der Alpha-Score von 72.2, ein starkes News-Sentiment von 72 sowie ein solider Kurzfrist-Score von 85 stuetzen das kurzfristige Momentum-Mandat ausreichend. Gleichzeitig sind fundamentale Schieflagen durch einen Altman-Z-Score von 3.06 und einen Piotroski-Wert von 7/9 klar ausgeschlossen, und die Datenabdeckung liegt mit 70 Prozent deutlich ueber der Ausschlussgrenze von 50 Prozent.",
-          "derivative_type": "STOCK",
-          "peak_price": 250.6003,
-          "last_updated": "18:56:14"
-        },
         "FOUR": {
           "symbol": "FOUR",
           "name": "Shift4 Payments, Inc.",
           "shares": 26.7854,
           "buy_price": 37.4397,
-          "current_price": 39.65,
+          "current_price": 39.72,
           "buy_date": "2026-10-27 16:47",
           "stop_loss": 33.743,
           "take_profit": null,
           "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.87 | Shift4 Announces Date of Third Quarter Earnings Results and Upcoming Investor Conference Participation | ⚖️ Tribunal (BUY): Der Wert weist einen starken Breakout-Score von 80 und ein klares Smart-Money-Ausbruchssignal auf, was exakt dem kurzfristigen Momentum-Mandat entspricht. Die Datenabdeckung liegt mit 75% ueber dem kritischen Schwellenwert von 50%, und grobe fundamentale Schieflagen sind nicht ersichtlich (KGV ca. 59, positive ROE). Das Depot hat zudem ausreichend Cash (9071) bei nur einer bestehenden Position (CRM) aus einem anderen Sektor (Technology vs. CRM ist Software/Cloud, hier Payment), sodass kein Klumpenrisiko vorliegt.",
           "derivative_type": "STOCK",
           "peak_price": 40.7,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         },
         "ENVX": {
           "symbol": "ENVX",
           "name": "ENVX",
           "shares": 151.0013,
           "buy_price": 3.3399,
-          "current_price": 3.17,
+          "current_price": 3.16,
           "buy_date": "2026-10-27 19:36",
           "stop_loss": 2.678,
           "take_profit": null,
           "reason": "⚡ Echtzeit-Spike (+1.8%, Alpha 68/100) | PCR 0.11 | News 65/100 | ⚖️ Tribunal (BUY): Fuer das kurzfristige Momentum-Mandat sprechen der starke Breakout-Score von 70, der aktuelle Echtzeit-Spike, das extrem bullische Put-Call-Ratio von 0.11 sowie konkrete positive Nachrichten ueber einen Grossauftrag. Trotz fehlender Bilanzdaten ist das Momentum durch starke News und Short-Interesse (Short Float 27.09%) fundamental und katalytisch untermauert, wodurch keine grobe fundamentale Schieflage im Sinne des Ausschlussgrundes vorliegt.",
           "derivative_type": "STOCK",
           "peak_price": 3.55,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         },
         "CAVA": {
           "symbol": "CAVA",
           "name": "CAVA Group, Inc.",
           "shares": 16.3147,
           "buy_price": 59.3284,
-          "current_price": 58.52,
+          "current_price": 58.6,
           "buy_date": "2026-10-30 11:51",
           "stop_loss": 53.238,
           "take_profit": null,
           "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.25 | Cava Group (CAVA) Reports Next Week: What Awaits? | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche, wobei Bilanzqualitaet zweitrangig ist solange keine groben fundamentalen Schieflagen vorliegen. Die Datenabdeckung liegt bei zulaessigen 75 Prozent (ueber dem Ausschlusskriterium von 50%), das Put-Call-Ratio von 0.25 signalisiert extremes Smart-Money-Interesse und der RSI von 61.98 untermauert das intakte Momentum. Da kein Klumpenrisiko im Sektor vorliegt und das Kaufargument klar durch News-Sentiment und Smart-Money-Signale gestuetzt wird, ist die Freigabe erteilt.",
           "derivative_type": "STOCK",
           "peak_price": 59.3284,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         }
       },
       "history": [
@@ -666,6 +652,20 @@
           "total": 967.93,
           "date": "2026-10-30 11:51",
           "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.25 | Cava Group (CAVA) Reports Next Week: What Awaits? | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche, wobei Bilanzqualitaet zweitrangig ist solange keine groben fundamentalen Schieflagen vorliegen. Die Datenabdeckung liegt bei zulaessigen 75 Prozent (ueber dem Ausschlusskriterium von 50%), das Put-Call-Ratio von 0.25 signalisiert extremes Smart-Money-Interesse und der RSI von 61.98 untermauert das intakte Momentum. Da kein Klumpenrisiko im Sektor vorliegt und das Kaufargument klar durch News-Sentiment und Smart-Money-Signale gestuetzt wird, ist die Freigabe erteilt."
+        },
+        {
+          "type": "SELL",
+          "symbol": "CRM",
+          "name": "Salesforce, Inc.",
+          "product_type": "STOCK",
+          "shares": 2.6014,
+          "buy_price": 250.6003,
+          "sell_price": 228.8813,
+          "total": 595.41,
+          "pnl": -56.5,
+          "pnl_pct": -8.67,
+          "date": "2026-10-30 19:01",
+          "reason": "🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: 58/100, PCR: 1.82) ➔ Vorzeitiger Ausstieg"
         }
       ]
     },
@@ -680,27 +680,27 @@
           "name": "Salesforce, Inc.",
           "shares": 8.272,
           "buy_price": 242.2636,
-          "current_price": 229.29,
+          "current_price": 229.34,
           "buy_date": "2026-10-22 14:16",
           "stop_loss": 217.6,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 72/100, News: 72/100) | ⚖️ Tribunal (BUY): Die fundamentale und quantitative Faktenlage ist ueberzeugend: Salesforce zeigt mit einem Piotroski-Score von 7/9 und einem Altman-Z-Score von 3.06 eine solide und sichere Bilanz. Der Gesamt-Score liegt bei 85, getragen von einem starken kurzfrist_score von 93 und einem langfrist_score von 100. Das Analystenpotenzial von rund 18.35% und ein moderates KGV von 22.12 untermauern das mittelfristige Wachstumspotenzial. Die Ausschlusskriterien greifen nicht: Die Bilanzqualitaet ist hoch, die Datenabdeckung liegt mit 70% ueber der 50%-Hoerte, das Kaufargument stuetzt sich keineswegs nur auf reines Momentum und das Sektorrisiko ist angesichts der bestehenden Positionen (DUOL, ONON) nicht ueberwaelzigend.",
           "derivative_type": "STOCK",
           "peak_price": 252.1,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         },
         "CI": {
           "symbol": "CI",
           "name": "The Cigna Group",
           "shares": 6.7051,
           "buy_price": 298.8766,
-          "current_price": 299.79,
+          "current_price": 299.65,
           "buy_date": "2026-10-28 13:21",
           "stop_loss": 268.45,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 61/100, News: 41/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7/9 und einem soliden KGV von 12,33 stark ausgeprägt, während die Bilanzierung laut Beneish M-Score unauffällig ist. Die Datenabdeckung liegt mit 70% über der kritischen 50%-Schwelle, und es liegt kein Sektor-Klumpenrisiko im Depot vor (bisher DUOL und CRM). Die geforderte Trendstärke wird durch den RSI von 64.4 und den starken Kurzfrist-Score untermauert, sodass kein Ausschlusskriterium greift.",
           "derivative_type": "STOCK",
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 299.79
         }
       },
@@ -868,13 +868,13 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 3893.1,
+          "current_price": 3889.7,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 4640.8
         },
         "BTC-USD": {
@@ -882,13 +882,13 @@
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 76967.04,
+          "current_price": 76948.9,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 86727.81
         },
         "SPGI": {
@@ -896,27 +896,27 @@
           "name": "S&P Global Inc.",
           "shares": 4.8951,
           "buy_price": 409.3871,
-          "current_price": 466.46,
+          "current_price": 466.54,
           "buy_date": "2026-10-15 08:36",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.2% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein starker Piotroski F-Score von 7/9 und ein unauffälliger Beneish M-Score von -2.42 erfüllen das Qualitätsmandat voll und ganz. Die Datenabdeckung liegt mit 70% über der Mindestgrenze von 50%, und das bestehende Finanzmandat im Depot begründet kein unzulässiges Klumpenrisiko im Sinne der Ausschlusskriterien.",
           "derivative_type": "STOCK",
           "peak_price": 468.49,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         },
         "UBER": {
           "symbol": "UBER",
           "name": "Uber Technologies, Inc.",
           "shares": 28.2945,
           "buy_price": 70.8264,
-          "current_price": 64.96,
+          "current_price": 64.83,
           "buy_date": "2026-10-16 18:18",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 6 / 9 (✅ Gute Solidität) | Analystenpotenzial 42.7% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein attraktives KGV von 15.50 sowie eine hohe Eigenkapitalrendite (ROE) von 37.16% untermauern die fundamentale Qualität und das Mandat für ein langfristiges Qualitätsinvestment, während die Bilanz mit einem Altman-Z-Score von 3.56 und einem Piotroski-Score von 6/9 solide bleibt und keine Ausschlusskriterien greifen.",
           "derivative_type": "STOCK",
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 70.8264
         }
       },
@@ -1105,7 +1105,7 @@
           "name": "⚡ Turbo Bull 1.5x auf Shift4 Payments, Inc. (KO: 13.515)",
           "shares": 150.7026,
           "buy_price": 2.6818,
-          "current_price": 2.64,
+          "current_price": 2.6470000000000002,
           "buy_date": "2026-10-30 17:41",
           "stop_loss": 2.332,
           "take_profit": null,
@@ -1124,9 +1124,9 @@
           "current_underlying_price": 39.75,
           "cert_price": 2.65,
           "leverage": 1.5,
-          "distance_to_ko_pct": 65.9,
+          "distance_to_ko_pct": 66.0,
           "is_knocked_out": false,
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 2.718
         },
         "KO776821": {
@@ -1134,7 +1134,7 @@
           "name": "⚡ Turbo Bull 1.5x auf BILL Holdings, Inc. (KO: 16.463)",
           "shares": 123.7518,
           "buy_price": 3.2688,
-          "current_price": 3.165,
+          "current_price": 3.1700000000000004,
           "buy_date": "2026-10-30 17:47",
           "stop_loss": 2.842,
           "take_profit": null,
@@ -1156,20 +1156,20 @@
           "distance_to_ko_pct": 65.6,
           "is_knocked_out": false,
           "peak_price": 3.2688,
-          "last_updated": "18:56:14"
+          "last_updated": "19:01:41"
         },
         "LUNR": {
           "symbol": "LUNR",
           "name": "Intuitive Machines, Inc.",
           "shares": 37.7639,
           "buy_price": 10.541,
-          "current_price": 10.45,
+          "current_price": 10.41,
           "buy_date": "2026-10-30 18:36",
           "stop_loss": 9.258,
           "take_profit": null,
           "reason": "⚡ Daytrade (+0.6% Spike, Score 85/100 [volu25 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 12%",
           "derivative_type": "STOCK",
-          "last_updated": "18:56:14",
+          "last_updated": "19:01:41",
           "peak_price": 10.541
         }
       },
