@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-10-30 11:41:01",
+    "time_str": "11:41:01",
+    "data_age_min": 2.8,
+    "window_span_min": 4.2,
+    "symbol": "ABBV",
+    "direction": "LONG",
+    "trigger_price": 299.0,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ABBV explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-10-30 11:25:54",
     "time_str": "11:25:54",
     "data_age_min": 2.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MU explodiert um +1.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 09:10:52",
-    "time_str": "09:10:52",
-    "data_age_min": 1.2,
-    "window_span_min": 5.7,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 11.08,
-    "change_1min_pct": 0.63,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
