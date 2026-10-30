@@ -2561,37 +2561,10 @@
   }
  },
  "COIN": {
-  "fetched_ts": 1791812201.01838,
+  "fetched_ts": 1793390501.5428972,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": null,
-   "altman_detail": null,
-   "altman_not_applicable": true,
-   "sector": "Financial Services",
-   "beneish_m": -2.12,
-   "beneish_detail": {
-    "DSRI": 1.277,
-    "GMI": 1.002,
-    "AQI": 1.612,
-    "SGI": 1.094,
-    "DEPI": 0.985,
-    "SGAI": 1.433,
-    "LVGI": 0.913,
-    "TATA": -0.039
-   },
-   "computed_at": "2026-10-12"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "BA": {
