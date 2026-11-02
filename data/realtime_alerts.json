@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 10:41:03",
+    "time_str": "10:41:03",
+    "data_age_min": 1.5,
+    "window_span_min": 5.6,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 264.01,
+    "change_1min_pct": 0.66,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 10:41:02",
+    "time_str": "10:41:02",
+    "data_age_min": 3.6,
+    "window_span_min": 5.4,
+    "symbol": "CRWD",
+    "direction": "LONG",
+    "trigger_price": 258.0,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-02 10:36:04",
     "time_str": "10:36:04",
     "data_age_min": 0.3,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA stürzt um -1.19% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:26:00",
-    "time_str": "21:26:00",
-    "data_age_min": 12.5,
-    "window_span_min": 3.5,
-    "symbol": "MDB",
-    "direction": "SHORT",
-    "trigger_price": 352.68,
-    "change_1min_pct": 0.76,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:26:00",
-    "time_str": "21:26:00",
-    "data_age_min": 6.8,
-    "window_span_min": 8.2,
-    "symbol": "DDOG",
-    "direction": "LONG",
-    "trigger_price": 236.99,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
