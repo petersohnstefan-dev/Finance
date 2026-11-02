@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 13:46:02",
+    "time_str": "13:46:02",
+    "data_age_min": 0.1,
+    "window_span_min": 6.9,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 264.14,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 13:46:01",
+    "time_str": "13:46:01",
+    "data_age_min": 0.1,
+    "window_span_min": 4.9,
+    "symbol": "PLTR",
+    "direction": "LONG",
+    "trigger_price": 187.45,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-02 13:41:12",
     "time_str": "13:41:12",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 COIN stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 11:21:06",
-    "time_str": "11:21:06",
-    "data_age_min": 0.1,
-    "window_span_min": 4.0,
-    "symbol": "RIVN",
-    "direction": "LONG",
-    "trigger_price": 12.74,
-    "change_1min_pct": 1.19,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RIVN explodiert um +1.19% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 11:16:00",
-    "time_str": "11:16:00",
-    "data_age_min": 1.0,
-    "window_span_min": 4.0,
-    "symbol": "TEM",
-    "direction": "SHORT",
-    "trigger_price": 70.0,
-    "change_1min_pct": 0.99,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TEM stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
