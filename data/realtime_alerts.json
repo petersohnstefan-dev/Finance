@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 11:11:08",
+    "time_str": "11:11:08",
+    "data_age_min": 2.0,
+    "window_span_min": 4.1,
+    "symbol": "CRWD",
+    "direction": "SHORT",
+    "trigger_price": 258.48,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 11:11:06",
+    "time_str": "11:11:06",
+    "data_age_min": 2.1,
+    "window_span_min": 6.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.01% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-02 11:05:51",
     "time_str": "11:05:51",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:35:54",
-    "time_str": "21:35:54",
-    "data_age_min": 1.4,
-    "window_span_min": 3.6,
-    "symbol": "QUBT",
-    "direction": "LONG",
-    "trigger_price": 6.6,
-    "change_1min_pct": 0.92,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT explodiert um +0.92% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:35:53",
-    "time_str": "21:35:53",
-    "data_age_min": 2.8,
-    "window_span_min": 2.1,
-    "symbol": "SRPT",
-    "direction": "LONG",
-    "trigger_price": 18.8,
-    "change_1min_pct": 1.24,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SRPT explodiert um +1.24% in 5 Min.! Momentum aktiv."
   }
 ]
