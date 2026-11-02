@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-02 07:10:57",
+    "time_str": "07:10:57",
+    "data_age_min": 5.0,
+    "window_span_min": 6.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-10-30 22:55:55",
     "time_str": "22:55:55",
     "data_age_min": 0.6,
@@ -635,18 +648,5 @@
     "vol_ratio": 2.71,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 KVYO stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-10-30 21:06:01",
-    "time_str": "21:06:01",
-    "data_age_min": 12.0,
-    "window_span_min": 5.0,
-    "symbol": "FOUR",
-    "direction": "LONG",
-    "trigger_price": 40.23,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 2.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FOUR explodiert um +0.52% in 5 Min.! Momentum aktiv."
   }
 ]
