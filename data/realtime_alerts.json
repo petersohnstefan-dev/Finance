@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 17:46:01",
+    "time_str": "17:46:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MDB",
+    "direction": "LONG",
+    "trigger_price": 345.83,
+    "change_1min_pct": 0.93,
+    "vol_ratio": 2.15,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MDB explodiert um +0.93% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 17:46:01",
+    "time_str": "17:46:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.19,
+    "change_1min_pct": 0.93,
+    "vol_ratio": 0.72,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-02 17:40:59",
     "time_str": "17:40:59",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.75,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PANW stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 17:10:57",
-    "time_str": "17:10:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MDB",
-    "direction": "SHORT",
-    "trigger_price": 344.23,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 17:10:57",
-    "time_str": "17:10:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 275.94,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 0.58,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
