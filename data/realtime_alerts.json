@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 18:16:06",
+    "time_str": "18:16:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 3.08,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 1.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 18:16:04",
+    "time_str": "18:16:04",
+    "data_age_min": 1.1,
+    "window_span_min": 4.0,
+    "symbol": "BEAM",
+    "direction": "SHORT",
+    "trigger_price": 26.5,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 0.57,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BEAM stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-02 18:11:04",
     "time_str": "18:11:04",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.76,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SNOW stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 17:31:04",
-    "time_str": "17:31:04",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.23,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.23% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 17:25:46",
-    "time_str": "17:25:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 31.14,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.74,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
