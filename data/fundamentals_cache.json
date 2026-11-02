@@ -216,43 +216,10 @@
   }
  },
  "SO": {
-  "fetched_ts": 1789415318.6994624,
+  "fetched_ts": 1793653613.2705073,
   "scores": {
-   "available": true,
-   "piotroski": 5,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 0.96,
-   "altman_detail": {
-    "X1": -0.038,
-    "X2": 0.095,
-    "X3": 0.053,
-    "X4": 0.854,
-    "X5": 0.19
-   },
-   "altman_not_applicable": false,
-   "sector": "Utilities",
-   "beneish_m": -2.65,
-   "beneish_detail": {
-    "DSRI": 0.914,
-    "GMI": 1.032,
-    "AQI": 0.953,
-    "SGI": 1.106,
-    "DEPI": 0.955,
-    "SGAI": null,
-    "LVGI": 1.029,
-    "TATA": -0.036
-   },
-   "computed_at": "2026-09-14"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "PLTR": {
@@ -992,7 +959,7 @@
   }
  },
  "KVYO": {
-  "fetched_ts": 1792497980.9015872,
+  "fetched_ts": 1793653612.062158,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -1486,7 +1453,7 @@
   }
  },
  "BMRN": {
-  "fetched_ts": 1790335292.1481879,
+  "fetched_ts": 1793653611.1366096,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -2253,7 +2220,7 @@
   }
  },
  "VRTX": {
-  "fetched_ts": 1792443385.0261574,
+  "fetched_ts": 1793653610.2435086,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
