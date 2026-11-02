@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-02 17:06:04",
+    "time_str": "17:06:04",
+    "data_age_min": 2.1,
+    "window_span_min": 4.0,
+    "symbol": "RDWR",
+    "direction": "LONG",
+    "trigger_price": 33.98,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 17:06:04",
+    "time_str": "17:06:04",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "LONG",
+    "trigger_price": 236.58,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 1.43,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 17:06:04",
+    "time_str": "17:06:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ZS",
+    "direction": "LONG",
+    "trigger_price": 232.75,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 17:06:03",
+    "time_str": "17:06:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ARM",
+    "direction": "LONG",
+    "trigger_price": 204.71,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.65,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-02 17:01:26",
     "time_str": "17:01:26",
     "data_age_min": 0.4,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVCR stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 16:41:03",
-    "time_str": "16:41:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "REGN",
-    "direction": "LONG",
-    "trigger_price": 965.01,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 2.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 REGN explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 16:41:03",
-    "time_str": "16:41:03",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SYK",
-    "direction": "LONG",
-    "trigger_price": 299.51,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SYK explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 16:41:00",
-    "time_str": "16:41:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "INTC",
-    "direction": "SHORT",
-    "trigger_price": 63.63,
-    "change_1min_pct": 1.09,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 16:40:56",
-    "time_str": "16:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "SHORT",
-    "trigger_price": 31.42,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
