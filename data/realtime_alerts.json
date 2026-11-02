@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-02 14:21:03",
+    "time_str": "14:21:03",
+    "data_age_min": 2.9,
+    "window_span_min": 5.1,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 40.76,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-02 14:21:02",
+    "time_str": "14:21:02",
+    "data_age_min": 1.2,
+    "window_span_min": 4.9,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 4.06,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-02 14:16:02",
     "time_str": "14:16:02",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 13:01:24",
-    "time_str": "13:01:24",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 40.63,
-    "change_1min_pct": 1.31,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 13:01:21",
-    "time_str": "13:01:21",
-    "data_age_min": 2.4,
-    "window_span_min": 6.0,
-    "symbol": "RUNE-USD",
-    "direction": "LONG",
-    "trigger_price": 0.53,
-    "change_1min_pct": 3.99,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD explodiert um +3.99% in 5 Min.! Momentum aktiv."
   }
 ]
