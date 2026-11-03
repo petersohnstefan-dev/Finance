@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 11:21:21",
+    "time_str": "11:21:21",
+    "data_age_min": 2.4,
+    "window_span_min": 9.0,
+    "symbol": "PFE",
+    "direction": "SHORT",
+    "trigger_price": 30.89,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PFE stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 11:21:12",
+    "time_str": "11:21:12",
+    "data_age_min": 4.7,
+    "window_span_min": 3.6,
+    "symbol": "CRWD",
+    "direction": "SHORT",
+    "trigger_price": 244.5,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRWD stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 11:21:12",
+    "time_str": "11:21:12",
+    "data_age_min": 0.1,
+    "window_span_min": 5.1,
+    "symbol": "PLTR",
+    "direction": "SHORT",
+    "trigger_price": 164.16,
+    "change_1min_pct": 1.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR stürzt um -1.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-03 11:16:04",
     "time_str": "11:16:04",
     "data_age_min": 1.6,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.26% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 08:20:58",
-    "time_str": "08:20:58",
-    "data_age_min": 2.0,
-    "window_span_min": 6.0,
-    "symbol": "RUNE-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.57,
-    "change_1min_pct": 1.04,
-    "vol_ratio": 0.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 07:11:01",
-    "time_str": "07:11:01",
-    "data_age_min": 3.0,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.04,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 07:05:40",
-    "time_str": "07:05:40",
-    "data_age_min": 2.7,
-    "window_span_min": 5.0,
-    "symbol": "RUNE-USD",
-    "direction": "LONG",
-    "trigger_price": 0.58,
-    "change_1min_pct": 1.09,
-    "vol_ratio": 1.97,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD explodiert um +1.09% in 5 Min.! Momentum aktiv."
   }
 ]
