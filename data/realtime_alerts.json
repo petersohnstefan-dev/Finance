@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 22:36:12",
+    "time_str": "22:36:12",
+    "data_age_min": 4.9,
+    "window_span_min": 3.4,
+    "symbol": "AXP",
+    "direction": "SHORT",
+    "trigger_price": 325.5,
+    "change_1min_pct": 0.91,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AXP stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 22:36:06",
+    "time_str": "22:36:06",
+    "data_age_min": 0.7,
+    "window_span_min": 5.4,
+    "symbol": "TOST",
+    "direction": "SHORT",
+    "trigger_price": 31.6,
+    "change_1min_pct": 2.19,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TOST stürzt um -2.19% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 22:36:04",
+    "time_str": "22:36:04",
+    "data_age_min": 0.5,
+    "window_span_min": 4.6,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.74,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 22:31:15",
     "time_str": "22:31:15",
     "data_age_min": 4.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.74,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:01:24",
-    "time_str": "22:01:24",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 30.44,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 4.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:01:24",
-    "time_str": "22:01:24",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "TOST",
-    "direction": "SHORT",
-    "trigger_price": 33.5,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 4.16,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TOST stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:01:24",
-    "time_str": "22:01:24",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 225.09,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 5.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
