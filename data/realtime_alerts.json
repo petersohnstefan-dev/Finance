@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-03 13:30:40",
+    "time_str": "13:30:40",
+    "data_age_min": 0.1,
+    "window_span_min": 3.6,
+    "symbol": "BNTX",
+    "direction": "SHORT",
+    "trigger_price": 88.55,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BNTX stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 13:30:38",
+    "time_str": "13:30:38",
+    "data_age_min": 2.7,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.21,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.21% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 13:25:47",
     "time_str": "13:25:47",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PFE stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 11:21:12",
-    "time_str": "11:21:12",
-    "data_age_min": 4.7,
-    "window_span_min": 3.6,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 244.5,
-    "change_1min_pct": 0.69,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 11:21:12",
-    "time_str": "11:21:12",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "PLTR",
-    "direction": "SHORT",
-    "trigger_price": 164.16,
-    "change_1min_pct": 1.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PLTR stürzt um -1.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
