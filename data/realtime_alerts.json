@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 21:01:16",
+    "time_str": "21:01:16",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "PFE",
+    "direction": "SHORT",
+    "trigger_price": 30.02,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 4.96,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PFE stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 21:01:12",
+    "time_str": "21:01:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "DDOG",
+    "direction": "LONG",
+    "trigger_price": 219.67,
+    "change_1min_pct": 0.66,
+    "vol_ratio": 2.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DDOG explodiert um +0.66% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 21:01:11",
+    "time_str": "21:01:11",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 9.62,
+    "change_1min_pct": 0.77,
+    "vol_ratio": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-03 20:56:18",
     "time_str": "20:56:18",
     "data_age_min": 2.3,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.42,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HUBS stürzt um -0.88% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:40:56",
-    "time_str": "19:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QS",
-    "direction": "SHORT",
-    "trigger_price": 4.07,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 0.97,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QS stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:40:55",
-    "time_str": "19:40:55",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.84,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:40:52",
-    "time_str": "19:40:52",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "RUNE-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.63,
-    "change_1min_pct": 1.25,
-    "vol_ratio": 0.13,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUNE-USD stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
