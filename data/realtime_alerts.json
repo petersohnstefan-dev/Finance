@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 10:35:59",
+    "time_str": "10:35:59",
+    "data_age_min": 1.1,
+    "window_span_min": 5.9,
+    "symbol": "PL",
+    "direction": "SHORT",
+    "trigger_price": 13.0,
+    "change_1min_pct": 0.76,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 10:35:55",
+    "time_str": "10:35:55",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "KAS-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 2.15,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KAS-USD stürzt um -2.15% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 10:35:55",
+    "time_str": "10:35:55",
+    "data_age_min": 1.9,
+    "window_span_min": 4.0,
+    "symbol": "RUNE-USD",
+    "direction": "LONG",
+    "trigger_price": 0.58,
+    "change_1min_pct": 1.02,
+    "vol_ratio": 1.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUNE-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 10:31:05",
     "time_str": "10:31:05",
     "data_age_min": 4.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LDO-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 22:51:06",
-    "time_str": "22:51:06",
-    "data_age_min": 6.1,
-    "window_span_min": 2.0,
-    "symbol": "ADBE",
-    "direction": "SHORT",
-    "trigger_price": 250.29,
-    "change_1min_pct": 0.68,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADBE stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 22:46:08",
-    "time_str": "22:46:08",
-    "data_age_min": 1.9,
-    "window_span_min": 5.3,
-    "symbol": "OKTA",
-    "direction": "SHORT",
-    "trigger_price": 184.87,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 22:46:07",
-    "time_str": "22:46:07",
-    "data_age_min": 11.2,
-    "window_span_min": 7.9,
-    "symbol": "SNOW",
-    "direction": "SHORT",
-    "trigger_price": 290.18,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SNOW stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
