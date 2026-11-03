@@ -1,5 +1,37 @@
 [
  {
+  "timestamp": "2026-11-03 03:31:17",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_breakeven_trigger_atr": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)",
+    "short_term_trail_atr_mult": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-03 03:31:17"
+ },
+ {
+  "timestamp": "2026-11-03 03:30:31",
+  "component": "ai_journal",
+  "kind": "llm_parse_error",
+  "severity": "error",
+  "message": "Antwort des Modells war auch nach allen Reparaturversuchen kein gueltiges JSON",
+  "context": {
+   "depot": "day_trading",
+   "mode": "daily",
+   "rohantwort": "llm_raw_day_trading_daily_20261103-033031.txt",
+   "laenge": 5179,
+   "antwort_anfang": "{\n  \"reflection\": \"Die Gesamtperformance des Depots seit Start ist mit einem PnL von -4788.21€ und einem Profit Factor von 0.18 desaströs. Die Expectancy von -41.28€ pro Trade signalisiert ein systematisches Problem. Ein genauerer Blick auf die Entwicklung der letzten vier Wochen zeigt jedoch eine p"
+  },
+  "count": 1,
+  "last_seen": "2026-11-03 03:30:31"
+ },
+ {
   "timestamp": "2026-10-29 01:08:04",
   "component": "ai_journal",
   "kind": "param_change_rejected",
