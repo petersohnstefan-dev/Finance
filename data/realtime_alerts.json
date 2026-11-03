@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 17:56:01",
+    "time_str": "17:56:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 2.89,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.31,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 17:56:01",
+    "time_str": "17:56:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 2.04,
+    "change_1min_pct": 1.92,
+    "vol_ratio": 1.77,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -1.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 17:55:59",
+    "time_str": "17:55:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "LONG",
+    "trigger_price": 160.82,
+    "change_1min_pct": 0.53,
+    "vol_ratio": 2.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 17:51:01",
     "time_str": "17:51:01",
     "data_age_min": 0.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.32,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEDG explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 17:01:32",
-    "time_str": "17:01:32",
-    "data_age_min": 0.5,
-    "window_span_min": 3.0,
-    "symbol": "STEM",
-    "direction": "LONG",
-    "trigger_price": 2.36,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 17:01:32",
-    "time_str": "17:01:32",
-    "data_age_min": 0.5,
-    "window_span_min": 4.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.44,
-    "change_1min_pct": 1.12,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +1.12% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 17:01:29",
-    "time_str": "17:01:29",
-    "data_age_min": 0.5,
-    "window_span_min": 5.0,
-    "symbol": "ALNY",
-    "direction": "LONG",
-    "trigger_price": 159.09,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 1.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALNY explodiert um +0.69% in 5 Min.! Momentum aktiv."
   }
 ]
