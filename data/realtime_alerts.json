@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 21:06:09",
+    "time_str": "21:06:09",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "RUN",
+    "direction": "LONG",
+    "trigger_price": 8.78,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 21:06:08",
+    "time_str": "21:06:08",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 21.33,
+    "change_1min_pct": 0.84,
+    "vol_ratio": 0.91,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 21:06:07",
+    "time_str": "21:06:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "DUOL",
+    "direction": "LONG",
+    "trigger_price": 128.53,
+    "change_1min_pct": 1.81,
+    "vol_ratio": 0.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL explodiert um +1.81% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 21:01:16",
     "time_str": "21:01:16",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": 4.36,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 APP explodiert um +1.15% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:45:53",
-    "time_str": "19:45:53",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 10.5,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 1.79,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.77% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:40:56",
-    "time_str": "19:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 236.77,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 19:40:56",
-    "time_str": "19:40:56",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "SHORT",
-    "trigger_price": 231.24,
-    "change_1min_pct": 0.88,
-    "vol_ratio": 2.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS stürzt um -0.88% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
