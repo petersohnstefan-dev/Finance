@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-03 19:01:19",
+    "time_str": "19:01:19",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 1.9,
+    "change_1min_pct": 1.3,
+    "vol_ratio": 4.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -1.30% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 19:01:16",
+    "time_str": "19:01:16",
+    "data_age_min": 2.3,
+    "window_span_min": 6.0,
+    "symbol": "RUNE-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.64,
+    "change_1min_pct": 1.25,
+    "vol_ratio": 0.06,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUNE-USD stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-03 18:56:02",
     "time_str": "18:56:02",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.77,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS stürzt um -1.92% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 17:55:59",
-    "time_str": "17:55:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ALNY",
-    "direction": "LONG",
-    "trigger_price": 160.82,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 2.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALNY explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 17:51:01",
-    "time_str": "17:51:01",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 4.28,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 2.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
