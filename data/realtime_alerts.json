@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-03 13:55:43",
+    "time_str": "13:55:43",
+    "data_age_min": 0.4,
+    "window_span_min": 5.3,
+    "symbol": "QUBT",
+    "direction": "LONG",
+    "trigger_price": 6.4,
+    "change_1min_pct": 0.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT explodiert um +0.77% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 13:55:43",
+    "time_str": "13:55:43",
+    "data_age_min": 1.1,
+    "window_span_min": 5.6,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 2.37,
+    "change_1min_pct": 0.84,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 13:55:42",
+    "time_str": "13:55:42",
+    "data_age_min": 3.7,
+    "window_span_min": 6.0,
+    "symbol": "URA",
+    "direction": "LONG",
+    "trigger_price": 33.41,
+    "change_1min_pct": 0.9,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 URA explodiert um +0.90% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 13:51:02",
     "time_str": "13:51:02",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONQ explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 13:01:20",
-    "time_str": "13:01:20",
-    "data_age_min": 0.2,
-    "window_span_min": 3.2,
-    "symbol": "CRM",
-    "direction": "SHORT",
-    "trigger_price": 220.08,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 13:01:16",
-    "time_str": "13:01:16",
-    "data_age_min": 0.7,
-    "window_span_min": 4.5,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 270.0,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 13:01:16",
-    "time_str": "13:01:16",
-    "data_age_min": 0.8,
-    "window_span_min": 8.5,
-    "symbol": "ARM",
-    "direction": "SHORT",
-    "trigger_price": 199.9,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
