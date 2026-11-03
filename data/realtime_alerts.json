@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-03 10:01:10",
+    "time_str": "10:01:10",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "RUNE-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.58,
+    "change_1min_pct": 1.35,
+    "vol_ratio": 0.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUNE-USD stürzt um -1.35% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-03 09:36:04",
     "time_str": "09:36:04",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID explodiert um +0.66% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 22:16:05",
-    "time_str": "22:16:05",
-    "data_age_min": 1.9,
-    "window_span_min": 2.2,
-    "symbol": "PATH",
-    "direction": "SHORT",
-    "trigger_price": 13.37,
-    "change_1min_pct": 1.17,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH stürzt um -1.17% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
