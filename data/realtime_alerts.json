@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-03 10:55:55",
+    "time_str": "10:55:55",
+    "data_age_min": 1.8,
+    "window_span_min": 3.1,
+    "symbol": "TXN",
+    "direction": "SHORT",
+    "trigger_price": 305.93,
+    "change_1min_pct": 1.31,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TXN stürzt um -1.31% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-03 10:55:50",
+    "time_str": "10:55:50",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "RIVN",
+    "direction": "LONG",
+    "trigger_price": 13.35,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RIVN explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-03 10:41:03",
     "time_str": "10:41:03",
     "data_age_min": 1.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ONON explodiert um +1.13% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 23:08:46",
-    "time_str": "23:08:46",
-    "data_age_min": 1.9,
-    "window_span_min": 4.9,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 25.3,
-    "change_1min_pct": 0.86,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-02 23:08:43",
-    "time_str": "23:08:43",
-    "data_age_min": 2.7,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
