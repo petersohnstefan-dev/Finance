@@ -2175,10 +2175,43 @@
   }
  },
  "BKNG": {
-  "fetched_ts": 1790688715.446224,
+  "fetched_ts": 1793802993.0884845,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": null,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 6.23,
+   "altman_detail": {
+    "X1": 0.19,
+    "X2": 1.39,
+    "X3": 0.289,
+    "X4": 3.638,
+    "X5": 0.92
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Cyclical",
+   "beneish_m": -3.0,
+   "beneish_detail": {
+    "DSRI": 1.053,
+    "GMI": null,
+    "AQI": 0.891,
+    "SGI": 1.134,
+    "DEPI": 1.008,
+    "SGAI": 0.948,
+    "LVGI": 1.042,
+    "TATA": -0.137
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "ALNY": {
@@ -2334,10 +2367,43 @@
   }
  },
  "MCD": {
-  "fetched_ts": 1790170596.4071722,
+  "fetched_ts": 1793802995.4939632,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 4.69,
+   "altman_detail": {
+    "X1": -0.003,
+    "X2": 1.181,
+    "X3": 0.21,
+    "X4": 3.154,
+    "X5": 0.452
+   },
+   "altman_not_applicable": false,
+   "sector": "Consumer Cyclical",
+   "beneish_m": -2.61,
+   "beneish_detail": {
+    "DSRI": 0.998,
+    "GMI": 0.989,
+    "AQI": 0.97,
+    "SGI": 1.037,
+    "DEPI": 1.055,
+    "SGAI": 1.032,
+    "LVGI": 0.972,
+    "TATA": -0.033
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "RHK.DE": {
