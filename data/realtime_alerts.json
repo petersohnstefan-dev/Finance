@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-04 19:06:04",
+    "time_str": "19:06:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 31.1,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 19:06:02",
+    "time_str": "19:06:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.89,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 2.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-04 19:01:35",
     "time_str": "19:01:35",
     "data_age_min": 0.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.43,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 18:25:57",
-    "time_str": "18:25:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "LONG",
-    "trigger_price": 191.43,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 0.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 18:25:56",
-    "time_str": "18:25:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SMCI",
-    "direction": "LONG",
-    "trigger_price": 30.24,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.99,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
