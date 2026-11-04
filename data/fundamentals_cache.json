@@ -623,43 +623,10 @@
   }
  },
  "QS": {
-  "fetched_ts": 1792613946.994587,
+  "fetched_ts": 1793802719.9554663,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": null,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 6.32,
-   "altman_detail": {
-    "X1": 0.703,
-    "X2": -2.9,
-    "X3": -0.33,
-    "X4": 17.704,
-    "X5": 0.0
-   },
-   "altman_not_applicable": false,
-   "sector": "Consumer Cyclical",
-   "beneish_m": null,
-   "beneish_detail": {
-    "DSRI": null,
-    "GMI": null,
-    "AQI": 0.9771221440172723,
-    "SGI": null,
-    "DEPI": 0.7730371181850705,
-    "SGAI": null,
-    "LVGI": 0.8396391672036638,
-    "TATA": -0.1472125648622947
-   },
-   "computed_at": "2026-10-21"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "S92.DE": {
@@ -2723,14 +2690,14 @@
   }
  },
  "AFRM": {
-  "fetched_ts": 1792504298.4708354,
+  "fetched_ts": 1793802723.5038035,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "ACHR": {
-  "fetched_ts": 1791811912.1320379,
+  "fetched_ts": 1793802724.5331776,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -2779,7 +2746,7 @@
   }
  },
  "JOBY": {
-  "fetched_ts": 1792676196.1641276,
+  "fetched_ts": 1793802721.405585,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
