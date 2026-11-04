@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-04 12:26:06",
+    "time_str": "12:26:06",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "CAT",
+    "direction": "SHORT",
+    "trigger_price": 625.01,
+    "change_1min_pct": 0.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAT stürzt um -0.77% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 12:26:05",
+    "time_str": "12:26:05",
+    "data_age_min": 0.3,
+    "window_span_min": 4.8,
+    "symbol": "UBER",
+    "direction": "SHORT",
+    "trigger_price": 67.8,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 UBER stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 12:26:00",
+    "time_str": "12:26:00",
+    "data_age_min": 0.4,
+    "window_span_min": 5.6,
+    "symbol": "PLTR",
+    "direction": "LONG",
+    "trigger_price": 170.9,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PLTR explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-04 12:20:53",
     "time_str": "12:20:53",
     "data_age_min": 3.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RDDT explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:56:03",
-    "time_str": "10:56:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "VWS.CO",
-    "direction": "LONG",
-    "trigger_price": 207.4,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 4.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VWS.CO explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:56:00",
-    "time_str": "10:56:00",
-    "data_age_min": 0.3,
-    "window_span_min": 8.7,
-    "symbol": "NET",
-    "direction": "LONG",
-    "trigger_price": 278.81,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET explodiert um +0.67% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:55:59",
-    "time_str": "10:55:59",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 30.5,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
