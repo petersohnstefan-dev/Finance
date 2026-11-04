@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-04 11:51:02",
+    "time_str": "11:51:02",
+    "data_age_min": 0.2,
+    "window_span_min": 4.9,
+    "symbol": "ORCL",
+    "direction": "SHORT",
+    "trigger_price": 124.42,
+    "change_1min_pct": 0.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 11:51:02",
+    "time_str": "11:51:02",
+    "data_age_min": 0.8,
+    "window_span_min": 7.2,
+    "symbol": "QCOM",
+    "direction": "SHORT",
+    "trigger_price": 165.0,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QCOM stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-04 11:45:55",
     "time_str": "11:45:55",
     "data_age_min": 4.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL explodiert um +0.74% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:20:56",
-    "time_str": "10:20:56",
-    "data_age_min": 4.6,
-    "window_span_min": 6.4,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 10.59,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:20:56",
-    "time_str": "10:20:56",
-    "data_age_min": 12.3,
-    "window_span_min": 4.6,
-    "symbol": "RDDT",
-    "direction": "LONG",
-    "trigger_price": 96.0,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT explodiert um +0.65% in 5 Min.! Momentum aktiv."
   }
 ]
