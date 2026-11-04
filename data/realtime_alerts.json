@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-04 12:01:30",
+    "time_str": "12:01:30",
+    "data_age_min": 4.8,
+    "window_span_min": 4.8,
+    "symbol": "ZTS",
+    "direction": "SHORT",
+    "trigger_price": 82.51,
+    "change_1min_pct": 1.49,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZTS stürzt um -1.49% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 12:01:24",
+    "time_str": "12:01:24",
+    "data_age_min": 0.9,
+    "window_span_min": 6.5,
+    "symbol": "PANW",
+    "direction": "LONG",
+    "trigger_price": 356.21,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 12:01:24",
+    "time_str": "12:01:24",
+    "data_age_min": 1.1,
+    "window_span_min": 4.3,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 38.05,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-04 11:55:59",
     "time_str": "11:55:59",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TAN stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:40:46",
-    "time_str": "10:40:46",
-    "data_age_min": 10.8,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "LONG",
-    "trigger_price": 95.74,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.92,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:36:05",
-    "time_str": "10:36:05",
-    "data_age_min": 2.8,
-    "window_span_min": 4.3,
-    "symbol": "UNH",
-    "direction": "SHORT",
-    "trigger_price": 407.09,
-    "change_1min_pct": 0.75,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 UNH stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 10:36:02",
-    "time_str": "10:36:02",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "NOVO-B.CO",
-    "direction": "LONG",
-    "trigger_price": 282.4,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NOVO-B.CO explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
