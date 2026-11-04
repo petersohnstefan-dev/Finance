@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-04 09:11:03",
+    "time_str": "09:11:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "HM-B.ST",
+    "direction": "SHORT",
+    "trigger_price": 172.3,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HM-B.ST stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 09:11:03",
+    "time_str": "09:11:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "NOVO-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 282.6,
+    "change_1min_pct": 0.86,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOVO-B.CO stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-04 09:05:56",
     "time_str": "09:05:56",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HIMS explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:25:55",
-    "time_str": "22:25:55",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "RKLB",
-    "direction": "SHORT",
-    "trigger_price": 54.01,
-    "change_1min_pct": 1.38,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB stürzt um -1.38% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:25:55",
-    "time_str": "22:25:55",
-    "data_age_min": 3.2,
-    "window_span_min": 5.8,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 244.68,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
