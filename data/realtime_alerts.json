@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-04 08:31:10",
+    "time_str": "08:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "WLD-USD",
+    "direction": "LONG",
+    "trigger_price": 0.39,
+    "change_1min_pct": 1.19,
+    "vol_ratio": 2.5,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 WLD-USD explodiert um +1.19% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 08:31:09",
+    "time_str": "08:31:09",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "LDO-USD",
+    "direction": "LONG",
+    "trigger_price": 0.34,
+    "change_1min_pct": 1.24,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LDO-USD explodiert um +1.24% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-04 08:16:03",
     "time_str": "08:16:03",
     "data_age_min": 11.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BAC explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:21:21",
-    "time_str": "22:21:21",
-    "data_age_min": 0.1,
-    "window_span_min": 5.3,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 516.76,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +1.09% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-03 22:21:16",
-    "time_str": "22:21:16",
-    "data_age_min": 3.4,
-    "window_span_min": 4.9,
-    "symbol": "PL",
-    "direction": "LONG",
-    "trigger_price": 13.58,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
