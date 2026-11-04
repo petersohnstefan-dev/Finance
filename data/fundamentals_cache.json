@@ -1690,10 +1690,43 @@
   }
  },
  "MRNA": {
-  "fetched_ts": 1792676809.2085173,
+  "fetched_ts": 1793822505.748016,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 16.78,
+   "altman_detail": {
+    "X1": 0.369,
+    "X2": 0.585,
+    "X3": -0.224,
+    "X4": 26.839,
+    "X5": 0.156
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": -3.36,
+   "beneish_detail": {
+    "DSRI": 0.855,
+    "GMI": 0.989,
+    "AQI": 1.167,
+    "SGI": 0.601,
+    "DEPI": 0.858,
+    "SGAI": 1.443,
+    "LVGI": 1.013,
+    "TATA": -0.077
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "HG=F": {
