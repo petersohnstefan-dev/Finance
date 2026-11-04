@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-04 15:20:58",
+    "time_str": "15:20:58",
+    "data_age_min": 0.9,
+    "window_span_min": 4.1,
+    "symbol": "CAT",
+    "direction": "LONG",
+    "trigger_price": 606.77,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAT explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 15:20:53",
+    "time_str": "15:20:53",
+    "data_age_min": 0.7,
+    "window_span_min": 4.2,
+    "symbol": "NET",
+    "direction": "SHORT",
+    "trigger_price": 268.01,
+    "change_1min_pct": 0.74,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NET stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 15:20:53",
+    "time_str": "15:20:53",
+    "data_age_min": 0.3,
+    "window_span_min": 4.7,
+    "symbol": "RDDT",
+    "direction": "LONG",
+    "trigger_price": 97.0,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDDT explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-04 15:16:07",
     "time_str": "15:16:07",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FSLR explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 14:46:00",
-    "time_str": "14:46:00",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 192.74,
-    "change_1min_pct": 2.16,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -2.16% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 14:46:00",
-    "time_str": "14:46:00",
-    "data_age_min": 0.8,
-    "window_span_min": 5.2,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 96.65,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 14:46:00",
-    "time_str": "14:46:00",
-    "data_age_min": 0.6,
-    "window_span_min": 3.4,
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 3.06,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
