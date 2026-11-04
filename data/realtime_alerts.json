@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-04 19:35:56",
+    "time_str": "19:35:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "LONG",
+    "trigger_price": 5.36,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 7.68,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 19:35:55",
+    "time_str": "19:35:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "SHORT",
+    "trigger_price": 219.51,
+    "change_1min_pct": 0.76,
+    "vol_ratio": 1.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-04 19:35:54",
+    "time_str": "19:35:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.88,
+    "change_1min_pct": 0.64,
+    "vol_ratio": 0.59,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-04 19:31:04",
     "time_str": "19:31:04",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.48,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DUOL explodiert um +0.76% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 18:50:54",
-    "time_str": "18:50:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MRNA",
-    "direction": "SHORT",
-    "trigger_price": 246.55,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MRNA stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 18:45:57",
-    "time_str": "18:45:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "INTU",
-    "direction": "LONG",
-    "trigger_price": 356.85,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.37,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTU explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 18:45:52",
-    "time_str": "18:45:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "QS",
-    "direction": "SHORT",
-    "trigger_price": 4.43,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
