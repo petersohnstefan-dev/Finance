@@ -251,10 +251,43 @@
   }
  },
  "SMCI": {
-  "fetched_ts": 1792159326.20947,
+  "fetched_ts": 1793807197.4840226,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 2,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 3.49,
+   "altman_detail": {
+    "X1": 0.687,
+    "X2": 0.189,
+    "X3": 0.1,
+    "X4": 1.286,
+    "X5": 1.304
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": 0.04,
+   "beneish_detail": {
+    "DSRI": 1.563,
+    "GMI": 1.022,
+    "AQI": 0.547,
+    "SGI": 1.778,
+    "DEPI": 0.934,
+    "SGAI": 0.714,
+    "LVGI": 0.922,
+    "TATA": 0.302
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "FOUR": {
@@ -307,10 +340,43 @@
   }
  },
  "ASTS": {
-  "fetched_ts": 1793200611.0292525,
+  "fetched_ts": 1793807195.4535587,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.56,
+   "altman_detail": {
+    "X1": 0.46,
+    "X2": -0.166,
+    "X3": -0.084,
+    "X4": 4.176,
+    "X5": 0.014
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": 44.8,
+   "beneish_detail": {
+    "DSRI": 1.679,
+    "GMI": 1.986,
+    "AQI": 82.286,
+    "SGI": 16.052,
+    "DEPI": 4.387,
+    "SGAI": 0.103,
+    "LVGI": 1.939,
+    "TATA": -0.078
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "TTK.DE": {
@@ -1092,10 +1158,43 @@
   }
  },
  "QBTS": {
-  "fetched_ts": 1792073186.2936034,
+  "fetched_ts": 1793807196.3252125,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 35.52,
+   "altman_detail": {
+    "X1": 0.956,
+    "X2": -1.072,
+    "X3": -0.383,
+    "X4": 61.855,
+    "X5": 0.027
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.77,
+   "beneish_detail": {
+    "DSRI": 0.401,
+    "GMI": 0.763,
+    "AQI": 0.731,
+    "SGI": 2.785,
+    "DEPI": 1.048,
+    "SGAI": 0.529,
+    "LVGI": 0.206,
+    "TATA": -0.309
+   },
+   "computed_at": "2026-11-04"
   }
  },
  "CAVA": {
