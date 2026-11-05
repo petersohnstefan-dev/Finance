@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-05 15:20:57",
+    "time_str": "15:20:57",
+    "data_age_min": 0.8,
+    "window_span_min": 6.2,
+    "symbol": "QS",
+    "direction": "LONG",
+    "trigger_price": 4.37,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QS explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 15:20:57",
+    "time_str": "15:20:57",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "JOBY",
+    "direction": "LONG",
+    "trigger_price": 5.74,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 15:20:56",
+    "time_str": "15:20:56",
+    "data_age_min": 0.2,
+    "window_span_min": 4.8,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 254.56,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 15:16:00",
     "time_str": "15:16:00",
     "data_age_min": 3.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 14:26:13",
-    "time_str": "14:26:13",
-    "data_age_min": 2.9,
-    "window_span_min": 4.3,
-    "symbol": "LUNR",
-    "direction": "LONG",
-    "trigger_price": 9.75,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 14:26:13",
-    "time_str": "14:26:13",
-    "data_age_min": 1.9,
-    "window_span_min": 4.3,
-    "symbol": "QUBT",
-    "direction": "LONG",
-    "trigger_price": 6.3,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 14:26:12",
-    "time_str": "14:26:12",
-    "data_age_min": 4.8,
-    "window_span_min": 8.4,
-    "symbol": "CART",
-    "direction": "SHORT",
-    "trigger_price": 58.99,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CART stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
