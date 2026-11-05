@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-05 21:25:57",
+    "time_str": "21:25:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ELF",
+    "direction": "LONG",
+    "trigger_price": 111.23,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.12,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ELF explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 21:25:57",
+    "time_str": "21:25:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DUOL",
+    "direction": "SHORT",
+    "trigger_price": 153.45,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 21:25:57",
+    "time_str": "21:25:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "VKTX",
+    "direction": "SHORT",
+    "trigger_price": 25.74,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VKTX stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 21:19:52",
     "time_str": "21:19:52",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.55,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 21:05:59",
-    "time_str": "21:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "SHORT",
-    "trigger_price": 175.55,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 21:05:59",
-    "time_str": "21:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "SHORT",
-    "trigger_price": 240.2,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 21:05:59",
-    "time_str": "21:05:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "SHORT",
-    "trigger_price": 3.82,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 0.39,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
