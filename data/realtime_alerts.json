@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-05 10:51:09",
+    "time_str": "10:51:09",
+    "data_age_min": 3.1,
+    "window_span_min": 5.1,
+    "symbol": "NOW",
+    "direction": "SHORT",
+    "trigger_price": 107.5,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 10:51:07",
+    "time_str": "10:51:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "MAERSK-B.CO",
+    "direction": "SHORT",
+    "trigger_price": 20660.0,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.63,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MAERSK-B.CO stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 10:51:03",
+    "time_str": "10:51:03",
+    "data_age_min": 0.3,
+    "window_span_min": 4.8,
+    "symbol": "APP",
+    "direction": "SHORT",
+    "trigger_price": 313.74,
+    "change_1min_pct": 1.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP stürzt um -1.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 10:46:01",
     "time_str": "10:46:01",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +0.79% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 22:55:59",
-    "time_str": "22:55:59",
-    "data_age_min": 2.2,
-    "window_span_min": 9.8,
-    "symbol": "ZTS",
-    "direction": "SHORT",
-    "trigger_price": 86.77,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZTS stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 22:55:58",
-    "time_str": "22:55:58",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "QCOM",
-    "direction": "LONG",
-    "trigger_price": 163.77,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 22:55:54",
-    "time_str": "22:55:54",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 326.0,
-    "change_1min_pct": 1.37,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -1.37% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
