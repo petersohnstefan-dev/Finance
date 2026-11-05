@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-05 08:01:05",
+    "time_str": "08:01:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "FET-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.16,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FET-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 01:50:07",
     "time_str": "01:50:07",
     "data_age_min": 0.3,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ENVX stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-04 22:11:06",
-    "time_str": "22:11:06",
-    "data_age_min": 2.0,
-    "window_span_min": 6.1,
-    "symbol": "RDDT",
-    "direction": "SHORT",
-    "trigger_price": 101.32,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RDDT stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
