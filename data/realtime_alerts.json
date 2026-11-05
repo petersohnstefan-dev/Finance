@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-05 11:11:04",
+    "time_str": "11:11:04",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 26.9,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-05 11:05:50",
     "time_str": "11:05:50",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BZ=F explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 08:01:05",
-    "time_str": "08:01:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "FET-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.16,
-    "change_1min_pct": 1.09,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FET-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
