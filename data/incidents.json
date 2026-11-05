@@ -1,5 +1,23 @@
 [
  {
+  "timestamp": "2026-11-05 01:58:14",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 4 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_max_leverage": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "daytrade_min_entry_score": "in den letzten 30 Tagen bereits 2x erhoeht; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "daytrade_trailing_breakeven_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-05 01:58:14"
+ },
+ {
   "timestamp": "2026-11-04 01:46:11",
   "component": "ai_journal",
   "kind": "param_change_rejected",
@@ -11,8 +29,8 @@
     "short_term_stop_atr_mult": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
    }
   },
-  "count": 1,
-  "last_seen": "2026-11-04 01:46:11"
+  "count": 2,
+  "last_seen": "2026-11-05 01:59:01"
  },
  {
   "timestamp": "2026-11-04 01:45:29",
