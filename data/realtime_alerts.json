@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-05 20:31:03",
+    "time_str": "20:31:03",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "RUN",
+    "direction": "SHORT",
+    "trigger_price": 9.48,
+    "change_1min_pct": 0.84,
+    "vol_ratio": 0.74,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 20:26:06",
     "time_str": "20:26:06",
     "data_age_min": 0.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 2.29,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ISRG explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 20:16:09",
-    "time_str": "20:16:09",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 330.82,
-    "change_1min_pct": 1.01,
-    "vol_ratio": 2.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +1.01% in 5 Min.! Momentum aktiv."
   }
 ]
