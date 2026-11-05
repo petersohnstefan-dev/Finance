@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-05 19:51:00",
+    "time_str": "19:51:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SO",
+    "direction": "SHORT",
+    "trigger_price": 93.21,
+    "change_1min_pct": 1.5,
+    "vol_ratio": 2.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SO stürzt um -1.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-05 19:50:56",
+    "time_str": "19:50:56",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.41,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-05 19:46:03",
     "time_str": "19:46:03",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FSLR explodiert um +1.30% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 19:11:07",
-    "time_str": "19:11:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 9.42,
-    "change_1min_pct": 1.24,
-    "vol_ratio": 1.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +1.24% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 19:11:07",
-    "time_str": "19:11:07",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 25.7,
-    "change_1min_pct": 1.26,
-    "vol_ratio": 0.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +1.26% in 5 Min.! Momentum aktiv."
   }
 ]
