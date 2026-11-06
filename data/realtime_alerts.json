@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-06 07:01:15",
+    "time_str": "07:01:15",
+    "data_age_min": 2.3,
+    "window_span_min": 4.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.01,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-06 01:59:12",
     "time_str": "01:59:12",
     "data_age_min": 2.6,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 UNH explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-05 22:31:13",
-    "time_str": "22:31:13",
-    "data_age_min": 0.1,
-    "window_span_min": 5.2,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 408.0,
-    "change_1min_pct": 1.33,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +1.33% in 5 Min.! Momentum aktiv."
   }
 ]
