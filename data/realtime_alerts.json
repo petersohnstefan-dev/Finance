@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-06 12:06:03",
+    "time_str": "12:06:03",
+    "data_age_min": 0.1,
+    "window_span_min": 10.0,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 192.4,
+    "change_1min_pct": 1.33,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -1.33% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-06 12:01:19",
     "time_str": "12:01:19",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QCOM explodiert um +0.60% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 10:41:07",
-    "time_str": "10:41:07",
-    "data_age_min": 0.9,
-    "window_span_min": 4.2,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 29.66,
-    "change_1min_pct": 1.23,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +1.23% in 5 Min.! Momentum aktiv."
   }
 ]
