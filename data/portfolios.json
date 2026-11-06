@@ -773,7 +773,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 7542.8041861536,
+      "cash": 7941.2433740416,
       "positions": {
         "CI": {
           "symbol": "CI",
@@ -786,36 +786,8 @@
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 61/100, News: 41/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7/9 und einem soliden KGV von 12,33 stark ausgeprägt, während die Bilanzierung laut Beneish M-Score unauffällig ist. Die Datenabdeckung liegt mit 70% über der kritischen 50%-Schwelle, und es liegt kein Sektor-Klumpenrisiko im Depot vor (bisher DUOL und CRM). Die geforderte Trendstärke wird durch den RSI von 64.4 und den starken Kurzfrist-Score untermauert, sodass kein Ausschlusskriterium greift.",
           "derivative_type": "STOCK",
-          "last_updated": "09:11:12",
+          "last_updated": "09:16:22",
           "peak_price": 313.12
-        },
-        "KO588105": {
-          "symbol": "KO588105",
-          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 957.79)",
-          "shares": 165.6929,
-          "buy_price": 2.4693,
-          "current_price": 2.44,
-          "buy_date": "2026-11-06 09:11",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "🛡️ Makro-Absicherung: VIX 28.2 ≥ 28.0 — 404€ Buchwert gegen Korrektur gehedgt",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO588105",
-          "underlying_symbol": "SPY",
-          "underlying_name": "SPY Index",
-          "direction": "SHORT",
-          "ratio": 0.01,
-          "strike": 977.33,
-          "knockout_barrier": 957.79,
-          "initial_underlying_price": 733.0,
-          "current_underlying_price": 733.0,
-          "cert_price": 2.44,
-          "leverage": 3.0,
-          "distance_to_ko_pct": 30.7,
-          "is_knocked_out": false,
-          "is_macro_hedge": true
         }
       },
       "history": [
@@ -1018,6 +990,20 @@
           "total": 409.14,
           "date": "2026-11-06 09:11",
           "reason": "🛡️ Makro-Absicherung: VIX 28.2 ≥ 28.0 — 404€ Buchwert gegen Korrektur gehedgt"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 957.79)",
+          "product_type": "KNOCKOUT",
+          "shares": 165.6929,
+          "buy_price": 2.4693,
+          "sell_price": 2.4107,
+          "total": 399.44,
+          "pnl": -9.71,
+          "pnl_pct": -2.37,
+          "date": "2026-11-06 09:16",
+          "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 22.0) — Marktstress abgeklungen"
         }
       ]
     },
