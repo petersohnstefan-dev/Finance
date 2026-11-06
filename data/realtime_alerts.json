@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-06 20:30:59",
+    "time_str": "20:30:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "LONG",
+    "trigger_price": 9.69,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.02,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 20:30:58",
+    "time_str": "20:30:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HALO",
+    "direction": "SHORT",
+    "trigger_price": 103.44,
+    "change_1min_pct": 0.8,
+    "vol_ratio": 1.15,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HALO stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-06 20:26:00",
     "time_str": "20:26:00",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.61,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TSLA explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:43",
-    "time_str": "19:35:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "FSLR",
-    "direction": "LONG",
-    "trigger_price": 202.05,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 1.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FSLR explodiert um +0.82% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:43",
-    "time_str": "19:35:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 9.9,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 1.35,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
