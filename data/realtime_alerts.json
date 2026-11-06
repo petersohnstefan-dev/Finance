@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-06 20:05:58",
+    "time_str": "20:05:58",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "LONG",
+    "trigger_price": 57.22,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 20:05:55",
+    "time_str": "20:05:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "LONG",
+    "trigger_price": 5.74,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 20:05:54",
+    "time_str": "20:05:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "AFRM",
+    "direction": "SHORT",
+    "trigger_price": 67.81,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AFRM stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 20:05:53",
+    "time_str": "20:05:53",
+    "data_age_min": 10.9,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "LONG",
+    "trigger_price": 98.09,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-06 20:01:18",
     "time_str": "20:01:18",
     "data_age_min": 0.3,
@@ -596,57 +648,5 @@
     "vol_ratio": 0.82,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AFRM explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:43",
-    "time_str": "19:35:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "SOFI",
-    "direction": "LONG",
-    "trigger_price": 16.22,
-    "change_1min_pct": 0.78,
-    "vol_ratio": 1.95,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:43",
-    "time_str": "19:35:43",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "HIMS",
-    "direction": "LONG",
-    "trigger_price": 25.77,
-    "change_1min_pct": 0.84,
-    "vol_ratio": 2.51,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:42",
-    "time_str": "19:35:42",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 389.55,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:42",
-    "time_str": "19:35:42",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "SMCI",
-    "direction": "LONG",
-    "trigger_price": 28.42,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 1.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMCI explodiert um +0.85% in 5 Min.! Momentum aktiv."
   }
 ]
