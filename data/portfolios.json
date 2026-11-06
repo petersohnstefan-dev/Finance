@@ -1273,38 +1273,8 @@
       ]
     },
     "day_trading": {
-      "cash": 4536.843809237947,
-      "positions": {
-        "KO559316": {
-          "symbol": "KO559316",
-          "name": "🔻 Turbo Bear 1.5x auf BioMarin Pharmaceutical Inc. (KO: 90.029)",
-          "shares": 107.6314,
-          "buy_price": 3.714,
-          "current_price": 3.639000000000001,
-          "buy_date": "2026-11-06 18:36",
-          "stop_loss": 3.23,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+1.0% Spike, Score 80/100 [volu15 tren20 spik10 stop20 mark15]) | 1.5x Hebel | Risiko 12%",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO559316",
-          "underlying_symbol": "BMRN",
-          "underlying_name": "BioMarin Pharmaceutical Inc.",
-          "direction": "SHORT",
-          "ratio": 0.1,
-          "strike": 91.87,
-          "knockout_barrier": 90.03,
-          "initial_underlying_price": 55.12,
-          "current_underlying_price": 55.12,
-          "cert_price": 3.67,
-          "leverage": 1.5,
-          "distance_to_ko_pct": 62.3,
-          "is_knocked_out": false,
-          "peak_price": 3.714,
-          "last_updated": "20:12:51"
-        }
-      },
+      "cash": 4922.814425862747,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -4366,6 +4336,20 @@
           "total": 399.75,
           "date": "2026-11-06 18:36",
           "reason": "⚡ Daytrade (+1.0% Spike, Score 80/100 [volu15 tren20 spik10 stop20 mark15]) | 1.5x Hebel | Risiko 12%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO559316",
+          "name": "🔻 Turbo Bear 1.5x auf BioMarin Pharmaceutical Inc. (KO: 90.029)",
+          "product_type": "KNOCKOUT",
+          "shares": 107.6314,
+          "buy_price": 3.714,
+          "sell_price": 3.5953,
+          "total": 386.97,
+          "pnl": -12.77,
+          "pnl_pct": -3.2,
+          "date": "2026-11-06 21:01",
+          "reason": "🛡️ EOD Pflichtverkauf (-2.0%) — Kein Übernacht-Risiko"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
