@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-06 20:39:50",
+    "time_str": "20:39:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "RUN",
+    "direction": "LONG",
+    "trigger_price": 9.98,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.64,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 20:39:48",
+    "time_str": "20:39:48",
+    "data_age_min": 0.8,
+    "window_span_min": 4.0,
+    "symbol": "SRPT",
+    "direction": "SHORT",
+    "trigger_price": 17.69,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 2.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SRPT stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-06 20:35:54",
     "time_str": "20:35:54",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.14,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BEAM stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:40:59",
-    "time_str": "19:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ARKG",
-    "direction": "SHORT",
-    "trigger_price": 45.08,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 5.8,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARKG stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 19:35:47",
-    "time_str": "19:35:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 332.9,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 1.02,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.76% in 5 Min.! Momentum aktiv."
   }
 ]
