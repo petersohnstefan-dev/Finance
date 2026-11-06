@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-06 11:21:10",
+    "time_str": "11:21:10",
+    "data_age_min": 4.9,
+    "window_span_min": 4.3,
+    "symbol": "SYK",
+    "direction": "LONG",
+    "trigger_price": 325.67,
+    "change_1min_pct": 1.77,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYK explodiert um +1.77% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 11:21:04",
+    "time_str": "11:21:04",
+    "data_age_min": 1.9,
+    "window_span_min": 4.2,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 324.8,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-06 11:21:02",
+    "time_str": "11:21:02",
+    "data_age_min": 0.1,
+    "window_span_min": 5.9,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 238.76,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.51% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-06 11:15:59",
     "time_str": "11:15:59",
     "data_age_min": 5.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NOW explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 10:11:06",
-    "time_str": "10:11:06",
-    "data_age_min": 4.9,
-    "window_span_min": 5.2,
-    "symbol": "CAT",
-    "direction": "SHORT",
-    "trigger_price": 556.56,
-    "change_1min_pct": 0.97,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CAT stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 10:11:06",
-    "time_str": "10:11:06",
-    "data_age_min": 0.4,
-    "window_span_min": 4.7,
-    "symbol": "AMZN",
-    "direction": "LONG",
-    "trigger_price": 258.0,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMZN explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-06 10:11:02",
-    "time_str": "10:11:02",
-    "data_age_min": 1.0,
-    "window_span_min": 7.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 9.94,
-    "change_1min_pct": 1.31,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +1.31% in 5 Min.! Momentum aktiv."
   }
 ]
