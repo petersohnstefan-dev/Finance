@@ -1,5 +1,20 @@
 [
  {
+  "timestamp": "2026-11-07 01:27:34",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot medium_term: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "medium_term",
+   "abgelehnt": {
+    "daytrade_trailing_aggressive_pct": "gehoert nicht zu Depot medium_term"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-07 01:27:34"
+ },
+ {
   "timestamp": "2026-11-05 01:58:14",
   "component": "ai_journal",
   "kind": "param_change_rejected",
