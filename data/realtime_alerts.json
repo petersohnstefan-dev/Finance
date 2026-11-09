@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-09 11:35:54",
+    "time_str": "11:35:54",
+    "data_age_min": 0.2,
+    "window_span_min": 4.7,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 33.1,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-09 11:35:53",
+    "time_str": "11:35:53",
+    "data_age_min": 2.2,
+    "window_span_min": 5.7,
+    "symbol": "HIMS",
+    "direction": "SHORT",
+    "trigger_price": 25.88,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-09 11:32:29",
     "time_str": "11:32:29",
     "data_age_min": 4.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GDX stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 10:11:02",
-    "time_str": "10:11:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "RENDER-USD",
-    "direction": "LONG",
-    "trigger_price": 1.62,
-    "change_1min_pct": 1.41,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RENDER-USD explodiert um +1.41% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 10:06:01",
-    "time_str": "10:06:01",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 451.5,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
