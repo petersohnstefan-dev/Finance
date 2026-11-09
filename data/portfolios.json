@@ -6,7 +6,7 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
       "initial_cash": 10000.0,
-      "cash": 7175.038745257878,
+      "cash": 6023.596022263464,
       "positions": {
         "RUN": {
           "symbol": "RUN",
@@ -35,6 +35,18 @@
           "derivative_type": "STOCK",
           "peak_price": 32.83,
           "last_updated": "18:06:23"
+        },
+        "VKTX": {
+          "symbol": "VKTX",
+          "name": "Viking Therapeutics, Inc.",
+          "shares": 40.0749,
+          "buy_price": 28.7073,
+          "current_price": 28.65,
+          "buy_date": "2026-11-09 18:41",
+          "stop_loss": 25.045,
+          "take_profit": null,
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.10 | Viking Therapeutics Announces Two Poster Presentations at ObesityWeek® 2026 | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche. VKTX weist einen starken Breakout-Score von 70, ein extrem bullisches Put-Call-Ratio von 0.10 und einen hohen Short Float von 21.06 Prozent auf, was exakt zum Profil passt. Die Datenabdeckung liegt bei ausreichenden 75 Prozent (> 50-Prozent-Grenze). Es liegt kein hartes Ausschlusskriterium vor (kein Klumpenrisiko, da RUN [Renewables/Utilities] und CELH [Consumer Staples/Beverages] nicht aus dem Healthcare-Sektor stammen, und die fundamentale Schieflage bei Biotech-Werten im klinischen Stadium mit starkem Short Squeeze-Potenzial im Rahmen des kurzfristigen Mandats tragbar ist).",
+          "derivative_type": "STOCK"
         }
       },
       "history": [
@@ -791,6 +803,17 @@
           "total": 1202.4,
           "date": "2026-11-09 09:32",
           "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.32 | Celsius Holdings (CELH) Stock Rallies As Q3 Earnings Spotlight Margin Risks | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche, wobei grobe fundamentale Schieflagen ein Ausschlussgrund sind. Die Datenabdeckung liegt mit 75% ueber der geforderten 50%-Mindestgrenze, und das Kaufargumentstuetzt sich nicht auf fehlende Bausteine, sondern auf konkrete Fakten wie das extrem niedrige Put-Call-Ratio von 0.32, den starken Alpha-Score von 70.7 sowie positive Q3-Ergebnismeldungen. Es liegt kein Sektoren-Klumpenrisiko im Depot vor (bisher nur RUN), und das KGV von 36 ist fuer einen Wachstumswert im Rahmen. Somit greift kein automatischer Ablehnungsgrund."
+        },
+        {
+          "type": "BUY",
+          "symbol": "VKTX",
+          "name": "Viking Therapeutics, Inc.",
+          "product_type": "STOCK",
+          "shares": 40.0749,
+          "price": 28.65,
+          "total": 1150.44,
+          "date": "2026-11-09 18:41",
+          "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.10 | Viking Therapeutics Announces Two Poster Presentations at ObesityWeek® 2026 | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche. VKTX weist einen starken Breakout-Score von 70, ein extrem bullisches Put-Call-Ratio von 0.10 und einen hohen Short Float von 21.06 Prozent auf, was exakt zum Profil passt. Die Datenabdeckung liegt bei ausreichenden 75 Prozent (> 50-Prozent-Grenze). Es liegt kein hartes Ausschlusskriterium vor (kein Klumpenrisiko, da RUN [Renewables/Utilities] und CELH [Consumer Staples/Beverages] nicht aus dem Healthcare-Sektor stammen, und die fundamentale Schieflage bei Biotech-Werten im klinischen Stadium mit starkem Short Squeeze-Potenzial im Rahmen des kurzfristigen Mandats tragbar ist)."
         }
       ]
     },
@@ -1298,8 +1321,36 @@
       ]
     },
     "day_trading": {
-      "cash": 4922.814425862747,
-      "positions": {},
+      "cash": 4524.838670561176,
+      "positions": {
+        "KO284221": {
+          "symbol": "KO284221",
+          "name": "🔻 Turbo Bear 1.5x auf Boeing Company (The) (KO: 277.27)",
+          "shares": 34.7902,
+          "buy_price": 11.4106,
+          "current_price": 11.32,
+          "buy_date": "2026-11-09 18:42",
+          "stop_loss": 9.962,
+          "take_profit": null,
+          "reason": "⚡ Daytrade (+2.5% Spike, Score 100/100 [volu25 tren20 spik20 stop20 mark15]) | 1.5x Hebel | Risiko 12%",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO284221",
+          "underlying_symbol": "BA",
+          "underlying_name": "Boeing Company (The)",
+          "direction": "SHORT",
+          "ratio": 0.1,
+          "strike": 282.93,
+          "knockout_barrier": 277.27,
+          "initial_underlying_price": 169.76,
+          "current_underlying_price": 169.76,
+          "cert_price": 11.32,
+          "leverage": 1.5,
+          "distance_to_ko_pct": 63.3,
+          "is_knocked_out": false
+        }
+      },
       "history": [
         {
           "type": "BUY",
@@ -4375,6 +4426,17 @@
           "pnl_pct": -3.2,
           "date": "2026-11-06 21:01",
           "reason": "🛡️ EOD Pflichtverkauf (-2.0%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO284221",
+          "name": "🔻 Turbo Bear 1.5x auf Boeing Company (The) (KO: 277.27)",
+          "product_type": "KNOCKOUT",
+          "shares": 34.7902,
+          "price": 11.32,
+          "total": 396.98,
+          "date": "2026-11-09 18:42",
+          "reason": "⚡ Daytrade (+2.5% Spike, Score 100/100 [volu25 tren20 spik20 stop20 mark15]) | 1.5x Hebel | Risiko 12%"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
@@ -4390,7 +4452,6 @@
     "short_term_DNA": "2026-09-18T15:56:25.058641+02:00",
     "short_term_RDWR": "2026-09-18T17:51:44.584222+02:00",
     "short_term_MNTS": "2026-09-22T18:07:12.882722+02:00",
-    "short_term_VKTX": "2026-09-28T15:26:15.683333+02:00",
     "short_term_NVAX": "2026-10-12T15:06:22.826046+02:00",
     "short_term_ASTS": "2026-10-12T16:06:30.482388+02:00",
     "medium_term_TTE.PA": "2026-10-19T22:56:37.011042+02:00",
