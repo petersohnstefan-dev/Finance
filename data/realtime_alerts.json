@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-09 14:29:35",
+    "time_str": "14:29:35",
+    "data_age_min": 0.5,
+    "window_span_min": 6.1,
+    "symbol": "PL",
+    "direction": "LONG",
+    "trigger_price": 12.74,
+    "change_1min_pct": 1.0,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PL explodiert um +1.00% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-09 14:29:34",
+    "time_str": "14:29:34",
+    "data_age_min": 0.5,
+    "window_span_min": 6.1,
+    "symbol": "ONON",
+    "direction": "SHORT",
+    "trigger_price": 37.69,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-09 14:25:50",
     "time_str": "14:25:50",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HOOD explodiert um +0.92% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 13:51:04",
-    "time_str": "13:51:04",
-    "data_age_min": 0.3,
-    "window_span_min": 4.8,
-    "symbol": "MSTR",
-    "direction": "LONG",
-    "trigger_price": 126.41,
-    "change_1min_pct": 0.9,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 13:51:04",
-    "time_str": "13:51:04",
-    "data_age_min": 0.2,
-    "window_span_min": 4.8,
-    "symbol": "ARM",
-    "direction": "LONG",
-    "trigger_price": 176.51,
-    "change_1min_pct": 1.14,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM explodiert um +1.14% in 5 Min.! Momentum aktiv."
   }
 ]
