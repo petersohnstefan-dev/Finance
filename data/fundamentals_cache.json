@@ -724,43 +724,10 @@
   }
  },
  "AMAT": {
-  "fetched_ts": 1792613325.3625917,
+  "fetched_ts": 1794235018.4829686,
   "scores": {
-   "available": true,
-   "piotroski": 6,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": true,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 16.46,
-   "altman_detail": {
-    "X1": 0.355,
-    "X2": 1.521,
-    "X3": 0.263,
-    "X4": 20.431,
-    "X5": 0.782
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -2.56,
-   "beneish_detail": {
-    "DSRI": 0.949,
-    "GMI": 0.975,
-    "AQI": 1.059,
-    "SGI": 1.044,
-    "DEPI": 1.219,
-    "SGAI": 0.943,
-    "LVGI": 0.984,
-    "TATA": -0.026
-   },
-   "computed_at": "2026-10-21"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "CRSP": {
@@ -2132,7 +2099,7 @@
   }
  },
  "TSLA": {
-  "fetched_ts": 1792157509.8942842,
+  "fetched_ts": 1794235017.2677226,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
