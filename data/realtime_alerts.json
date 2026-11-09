@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-09 13:05:49",
+    "time_str": "13:05:49",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "NVDA",
+    "direction": "SHORT",
+    "trigger_price": 175.9,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVDA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-09 13:05:45",
+    "time_str": "13:05:45",
+    "data_age_min": 0.9,
+    "window_span_min": 4.9,
+    "symbol": "HIMS",
+    "direction": "LONG",
+    "trigger_price": 25.4,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HIMS explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-09 13:05:43",
+    "time_str": "13:05:43",
+    "data_age_min": 0.7,
+    "window_span_min": 5.0,
+    "symbol": "DOT-USD",
+    "direction": "LONG",
+    "trigger_price": 0.87,
+    "change_1min_pct": 1.07,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DOT-USD explodiert um +1.07% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-09 13:01:33",
     "time_str": "13:01:33",
     "data_age_min": 1.5,
@@ -609,44 +648,5 @@
     "vol_ratio": 10.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEI-USD explodiert um +1.37% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 12:20:49",
-    "time_str": "12:20:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "TIA-USD",
-    "direction": "LONG",
-    "trigger_price": 0.43,
-    "change_1min_pct": 1.25,
-    "vol_ratio": 4.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TIA-USD explodiert um +1.25% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 12:20:49",
-    "time_str": "12:20:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "LONG",
-    "trigger_price": 8.16,
-    "change_1min_pct": 1.95,
-    "vol_ratio": 5.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD explodiert um +1.95% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 12:20:49",
-    "time_str": "12:20:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "WIF-USD",
-    "direction": "LONG",
-    "trigger_price": 0.16,
-    "change_1min_pct": 1.32,
-    "vol_ratio": 2.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WIF-USD explodiert um +1.32% in 5 Min.! Momentum aktiv."
   }
 ]
