@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-09 19:01:30",
+    "time_str": "19:01:30",
+    "data_age_min": 2.5,
+    "window_span_min": 4.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.52,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.34,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-09 19:01:28",
+    "time_str": "19:01:28",
+    "data_age_min": 0.5,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "LONG",
+    "trigger_price": 2.34,
+    "change_1min_pct": 0.65,
+    "vol_ratio": 0.26,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB explodiert um +0.65% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-09 18:55:51",
     "time_str": "18:55:51",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.57,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 18:16:09",
-    "time_str": "18:16:09",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 6.2,
-    "change_1min_pct": 0.65,
-    "vol_ratio": 2.1,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.65% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 18:16:08",
-    "time_str": "18:16:08",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 10.96,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 1.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +0.63% in 5 Min.! Momentum aktiv."
   }
 ]
