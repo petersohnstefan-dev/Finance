@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-10 22:25:53",
+    "time_str": "22:25:53",
+    "data_age_min": 0.1,
+    "window_span_min": 3.8,
+    "symbol": "RTX",
+    "direction": "SHORT",
+    "trigger_price": 199.26,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RTX stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 22:25:48",
+    "time_str": "22:25:48",
+    "data_age_min": 1.8,
+    "window_span_min": 9.0,
+    "symbol": "FSLR",
+    "direction": "LONG",
+    "trigger_price": 180.98,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FSLR explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 22:20:53",
     "time_str": "22:20:53",
     "data_age_min": 0.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.84,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 21:50:51",
-    "time_str": "21:50:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 25.84,
-    "change_1min_pct": 0.86,
-    "vol_ratio": 1.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.86% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 21:50:51",
-    "time_str": "21:50:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ENPH",
-    "direction": "LONG",
-    "trigger_price": 27.58,
-    "change_1min_pct": 0.77,
-    "vol_ratio": 1.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENPH explodiert um +0.77% in 5 Min.! Momentum aktiv."
   }
 ]
