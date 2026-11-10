@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-10 20:45:57",
+    "time_str": "20:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "APP",
+    "direction": "LONG",
+    "trigger_price": 388.4,
+    "change_1min_pct": 0.67,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 20:45:57",
+    "time_str": "20:45:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVAX",
+    "direction": "SHORT",
+    "trigger_price": 10.07,
+    "change_1min_pct": 0.89,
+    "vol_ratio": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVAX stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-10 20:36:07",
     "time_str": "20:36:07",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.15,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NG=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 19:31:07",
-    "time_str": "19:31:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "LONG",
-    "trigger_price": 4.7,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 19:31:07",
-    "time_str": "19:31:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AFRM",
-    "direction": "LONG",
-    "trigger_price": 65.19,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AFRM explodiert um +0.56% in 5 Min.! Momentum aktiv."
   }
 ]
