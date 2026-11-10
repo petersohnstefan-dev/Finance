@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-10 10:21:10",
+    "time_str": "10:21:10",
+    "data_age_min": 4.3,
+    "window_span_min": 5.8,
+    "symbol": "META",
+    "direction": "SHORT",
+    "trigger_price": 643.16,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 META stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 10:21:06",
+    "time_str": "10:21:06",
+    "data_age_min": 0.7,
+    "window_span_min": 5.5,
+    "symbol": "RGTI",
+    "direction": "LONG",
+    "trigger_price": 12.82,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RGTI explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 10:21:03",
+    "time_str": "10:21:03",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.82% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 10:16:02",
     "time_str": "10:16:02",
     "data_age_min": 5.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:40:59",
-    "time_str": "22:40:59",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "BZ=F",
-    "direction": "SHORT",
-    "trigger_price": 92.41,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BZ=F stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:40:59",
-    "time_str": "22:40:59",
-    "data_age_min": 11.0,
-    "window_span_min": 5.0,
-    "symbol": "CL=F",
-    "direction": "SHORT",
-    "trigger_price": 86.66,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CL=F stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:35:52",
-    "time_str": "22:35:52",
-    "data_age_min": 2.4,
-    "window_span_min": 6.5,
-    "symbol": "ZTS",
-    "direction": "LONG",
-    "trigger_price": 82.34,
-    "change_1min_pct": 2.01,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZTS explodiert um +2.01% in 5 Min.! Momentum aktiv."
   }
 ]
