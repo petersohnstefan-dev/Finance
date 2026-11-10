@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-10 10:56:01",
+    "time_str": "10:56:01",
+    "data_age_min": 3.5,
+    "window_span_min": 3.5,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 11.9,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 10:55:59",
+    "time_str": "10:55:59",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "SHORT",
+    "trigger_price": 89.56,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-10 10:51:01",
     "time_str": "10:51:01",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PL stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 00:06:12",
-    "time_str": "00:06:12",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "LCID",
-    "direction": "LONG",
-    "trigger_price": 3.5,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 00:06:12",
-    "time_str": "00:06:12",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 36.9,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.85% in 5 Min.! Momentum aktiv."
   }
 ]
