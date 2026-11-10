@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-10 07:01:08",
+    "time_str": "07:01:08",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.35,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.35% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 00:06:13",
     "time_str": "00:06:13",
     "data_age_min": 5.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVAX explodiert um +2.30% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:05:49",
-    "time_str": "22:05:49",
-    "data_age_min": 6.8,
-    "window_span_min": 5.0,
-    "symbol": "NOW",
-    "direction": "SHORT",
-    "trigger_price": 102.75,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 5.49,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NOW stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
