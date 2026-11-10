@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-10 09:51:06",
+    "time_str": "09:51:06",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "VWS.CO",
+    "direction": "LONG",
+    "trigger_price": 206.8,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 2.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VWS.CO explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 09:51:00",
+    "time_str": "09:51:00",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "LONG",
+    "trigger_price": 85.12,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 09:45:57",
     "time_str": "09:45:57",
     "data_age_min": 11.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:11:07",
-    "time_str": "22:11:07",
-    "data_age_min": 2.3,
-    "window_span_min": 8.9,
-    "symbol": "GS",
-    "direction": "LONG",
-    "trigger_price": 911.0,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GS explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:11:03",
-    "time_str": "22:11:03",
-    "data_age_min": 4.0,
-    "window_span_min": 7.1,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 2.08,
-    "change_1min_pct": 4.0,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +4.00% in 5 Min.! Momentum aktiv."
   }
 ]
