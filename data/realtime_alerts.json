@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-10 20:01:30",
+    "time_str": "20:01:30",
+    "data_age_min": 1.5,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 26.1,
+    "change_1min_pct": 0.51,
+    "vol_ratio": 1.13,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-10 19:56:05",
     "time_str": "19:56:05",
     "data_age_min": 1.1,
@@ -635,18 +648,5 @@
     "vol_ratio": 5.46,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BLNK explodiert um +2.48% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 18:51:11",
-    "time_str": "18:51:11",
-    "data_age_min": 1.2,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "LONG",
-    "trigger_price": 23.69,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 0.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY explodiert um +0.70% in 5 Min.! Momentum aktiv."
   }
 ]
