@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-10 11:55:55",
+    "time_str": "11:55:55",
+    "data_age_min": 2.6,
+    "window_span_min": 3.3,
+    "symbol": "LCID",
+    "direction": "SHORT",
+    "trigger_price": 3.51,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LCID stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-10 11:46:03",
     "time_str": "11:46:03",
     "data_age_min": 0.0,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 GDX explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 10:01:23",
-    "time_str": "10:01:23",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "DSV.CO",
-    "direction": "SHORT",
-    "trigger_price": 1428.0,
-    "change_1min_pct": 0.63,
-    "vol_ratio": 10.0,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DSV.CO stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
