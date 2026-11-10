@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-10 22:31:19",
+    "time_str": "22:31:19",
+    "data_age_min": 6.5,
+    "window_span_min": 6.8,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.48,
+    "change_1min_pct": 0.99,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.99% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 22:31:19",
+    "time_str": "22:31:19",
+    "data_age_min": 5.2,
+    "window_span_min": 3.2,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 2.62,
+    "change_1min_pct": 1.13,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 22:31:19",
+    "time_str": "22:31:19",
+    "data_age_min": 2.0,
+    "window_span_min": 3.4,
+    "symbol": "LUNR",
+    "direction": "LONG",
+    "trigger_price": 11.77,
+    "change_1min_pct": 0.94,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR explodiert um +0.94% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 22:25:53",
     "time_str": "22:25:53",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.04,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TXN explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 21:50:54",
-    "time_str": "21:50:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 721.16,
-    "change_1min_pct": 0.79,
-    "vol_ratio": 1.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.79% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 21:50:54",
-    "time_str": "21:50:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 515.64,
-    "change_1min_pct": 0.84,
-    "vol_ratio": 1.21,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 21:50:51",
-    "time_str": "21:50:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 8.68,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.84,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.58% in 5 Min.! Momentum aktiv."
   }
 ]
