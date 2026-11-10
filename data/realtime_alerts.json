@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-10 09:45:57",
+    "time_str": "09:45:57",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "SHORT",
+    "trigger_price": 90.2,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.94,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-10 09:11:12",
     "time_str": "09:11:12",
     "data_age_min": 0.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS explodiert um +4.00% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-09 22:11:03",
-    "time_str": "22:11:03",
-    "data_age_min": 4.0,
-    "window_span_min": 7.0,
-    "symbol": "MDB",
-    "direction": "LONG",
-    "trigger_price": 329.98,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MDB explodiert um +0.80% in 5 Min.! Momentum aktiv."
   }
 ]
