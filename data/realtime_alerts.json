@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-10 12:41:02",
+    "time_str": "12:41:02",
+    "data_age_min": 0.1,
+    "window_span_min": 6.0,
+    "symbol": "ONON",
+    "direction": "SHORT",
+    "trigger_price": 34.9,
+    "change_1min_pct": 1.11,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON stürzt um -1.11% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 12:41:00",
+    "time_str": "12:41:00",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.18,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.18% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-10 12:41:00",
+    "time_str": "12:41:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.13,
+    "vol_ratio": 1.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.13% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-10 12:35:51",
     "time_str": "12:35:51",
     "data_age_min": 0.4,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMZN stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 10:11:04",
-    "time_str": "10:11:04",
-    "data_age_min": 0.5,
-    "window_span_min": 3.6,
-    "symbol": "MSFT",
-    "direction": "SHORT",
-    "trigger_price": 541.34,
-    "change_1min_pct": 0.94,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSFT stürzt um -0.94% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 10:11:00",
-    "time_str": "10:11:00",
-    "data_age_min": 0.9,
-    "window_span_min": 5.1,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 214.06,
-    "change_1min_pct": 0.78,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 10:11:00",
-    "time_str": "10:11:00",
-    "data_age_min": 0.2,
-    "window_span_min": 3.8,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 326.5,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
