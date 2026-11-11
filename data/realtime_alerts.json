@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-11 22:52:28",
+    "time_str": "22:52:28",
+    "data_age_min": 2.0,
+    "window_span_min": 5.5,
+    "symbol": "CAVA",
+    "direction": "SHORT",
+    "trigger_price": 59.5,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 22:52:27",
+    "time_str": "22:52:27",
+    "data_age_min": 2.5,
+    "window_span_min": 7.0,
+    "symbol": "RXRX",
+    "direction": "LONG",
+    "trigger_price": 3.6,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-11 22:46:01",
     "time_str": "22:46:01",
     "data_age_min": 0.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.62,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKSY stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 21:10:58",
-    "time_str": "21:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 4.0,
-    "symbol": "MNTS",
-    "direction": "SHORT",
-    "trigger_price": 1.97,
-    "change_1min_pct": 1.25,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 21:10:58",
-    "time_str": "21:10:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 12.19,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 1.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
