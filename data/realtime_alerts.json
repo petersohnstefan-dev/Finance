@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-11 12:56:03",
+    "time_str": "12:56:03",
+    "data_age_min": 1.4,
+    "window_span_min": 3.7,
+    "symbol": "REGN",
+    "direction": "SHORT",
+    "trigger_price": 885.0,
+    "change_1min_pct": 1.26,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 REGN stürzt um -1.26% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 12:55:54",
+    "time_str": "12:55:54",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "APP",
+    "direction": "SHORT",
+    "trigger_price": 386.0,
+    "change_1min_pct": 0.93,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP stürzt um -0.93% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 12:55:54",
+    "time_str": "12:55:54",
+    "data_age_min": 0.1,
+    "window_span_min": 4.8,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 29.73,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 12:55:50",
+    "time_str": "12:55:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "NEAR-USD",
+    "direction": "LONG",
+    "trigger_price": 3.72,
+    "change_1min_pct": 1.14,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NEAR-USD explodiert um +1.14% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-11 12:41:08",
     "time_str": "12:41:08",
     "data_age_min": 0.1,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS explodiert um +0.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:55:46",
-    "time_str": "22:55:46",
-    "data_age_min": 0.9,
-    "window_span_min": 4.9,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 10.38,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:55:46",
-    "time_str": "22:55:46",
-    "data_age_min": 0.1,
-    "window_span_min": 4.7,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 11.07,
-    "change_1min_pct": 1.02,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -1.02% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:51:02",
-    "time_str": "22:51:02",
-    "data_age_min": 4.3,
-    "window_span_min": 5.8,
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 218.48,
-    "change_1min_pct": 1.06,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +1.06% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:51:02",
-    "time_str": "22:51:02",
-    "data_age_min": 1.2,
-    "window_span_min": 5.8,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 33.9,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
