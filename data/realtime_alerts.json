@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-11 17:51:03",
+    "time_str": "17:51:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "LONG",
+    "trigger_price": 26.88,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 17:51:03",
+    "time_str": "17:51:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 28.26,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 17:51:02",
+    "time_str": "17:51:02",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "SHORT",
+    "trigger_price": 19.41,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 1.11,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 17:51:02",
+    "time_str": "17:51:02",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 243.65,
+    "change_1min_pct": 1.13,
+    "vol_ratio": 1.84,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-11 17:46:29",
     "time_str": "17:46:29",
     "data_age_min": 0.5,
@@ -596,57 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 17:01:25",
-    "time_str": "17:01:25",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "LONG",
-    "trigger_price": 6.1,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 17:01:24",
-    "time_str": "17:01:24",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "LONG",
-    "trigger_price": 32.89,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.5,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 17:01:24",
-    "time_str": "17:01:24",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 11.89,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.23,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 16:55:56",
-    "time_str": "16:55:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "NVDA",
-    "direction": "LONG",
-    "trigger_price": 175.95,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.15,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVDA explodiert um +0.54% in 5 Min.! Momentum aktiv."
   }
 ]
