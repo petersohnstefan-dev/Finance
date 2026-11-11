@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-11 10:31:16",
+    "time_str": "10:31:16",
+    "data_age_min": 10.3,
+    "window_span_min": 5.0,
+    "symbol": "BZ=F",
+    "direction": "LONG",
+    "trigger_price": 92.73,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F explodiert um +0.61% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-11 10:25:53",
     "time_str": "10:25:53",
     "data_age_min": 10.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QUBT stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:06:01",
-    "time_str": "22:06:01",
-    "data_age_min": 3.9,
-    "window_span_min": 5.1,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 19.21,
-    "change_1min_pct": 0.83,
-    "vol_ratio": 5.46,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
