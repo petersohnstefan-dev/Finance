@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-11 13:46:17",
+    "time_str": "13:46:17",
+    "data_age_min": 3.1,
+    "window_span_min": 2.2,
+    "symbol": "ZTS",
+    "direction": "LONG",
+    "trigger_price": 82.16,
+    "change_1min_pct": 0.71,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZTS explodiert um +0.71% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 13:46:11",
+    "time_str": "13:46:11",
+    "data_age_min": 0.8,
+    "window_span_min": 8.4,
+    "symbol": "MNTS",
+    "direction": "SHORT",
+    "trigger_price": 1.93,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 13:46:09",
+    "time_str": "13:46:09",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.69,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-11 13:41:12",
     "time_str": "13:41:12",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMD explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 12:05:49",
-    "time_str": "12:05:49",
-    "data_age_min": 4.0,
-    "window_span_min": 3.8,
-    "symbol": "DNA",
-    "direction": "LONG",
-    "trigger_price": 12.6,
-    "change_1min_pct": 2.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DNA explodiert um +2.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 12:01:21",
-    "time_str": "12:01:21",
-    "data_age_min": 0.8,
-    "window_span_min": 4.6,
-    "symbol": "RGTI",
-    "direction": "SHORT",
-    "trigger_price": 12.0,
-    "change_1min_pct": 0.58,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RGTI stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 12:01:20",
-    "time_str": "12:01:20",
-    "data_age_min": 2.5,
-    "window_span_min": 6.8,
-    "symbol": "ARM",
-    "direction": "SHORT",
-    "trigger_price": 192.5,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
