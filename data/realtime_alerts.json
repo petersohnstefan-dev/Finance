@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-11 10:36:02",
+    "time_str": "10:36:02",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "VWS.CO",
+    "direction": "LONG",
+    "trigger_price": 187.65,
+    "change_1min_pct": 1.1,
+    "vol_ratio": 0.89,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VWS.CO explodiert um +1.10% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-11 10:31:16",
     "time_str": "10:31:16",
     "data_age_min": 10.3,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SHLS explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-10 22:06:02",
-    "time_str": "22:06:02",
-    "data_age_min": 0.8,
-    "window_span_min": 5.3,
-    "symbol": "QUBT",
-    "direction": "SHORT",
-    "trigger_price": 6.24,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
