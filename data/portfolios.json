@@ -6,7 +6,7 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
       "initial_cash": 10000.0,
-      "cash": 4018.596022263464,
+      "cash": 5240.8897218834645,
       "positions": {
         "RUN": {
           "symbol": "RUN",
@@ -20,20 +20,6 @@
           "reason": "⚡ Echtzeit-Spike (+2.0%, Alpha 69/100) | PCR 0.33 | News 74/100 | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche. Die harten harten Fakten zeigen einen starken Echtzeit-Spike mit einem Breakout-Score von 70, ein extrem bullisches Put-Call-Ratio von 0.33 sowie positive Earnings-News (Sentiment 74/100). Der hohe Short Float von 35.65% bietet zudem erhebliches Potenzial fuer einen Short Squeeze, der das Momentum zusaetzlich anheizen kann. Zwar fehlen forensische Bilanzdaten und die ROE ist negativ, jedoch sind keine harten fundamentalen Insolvenzindikatoren (wie Altman Z Distress) nachgewiesen, weshalb kein zwingender Ausschlussgrund vorliegt.",
           "derivative_type": "STOCK",
           "peak_price": 10.27,
-          "last_updated": "16:41:27"
-        },
-        "CELH": {
-          "symbol": "CELH",
-          "name": "Celsius Holdings, Inc.",
-          "shares": 37.3134,
-          "buy_price": 32.2243,
-          "current_price": 32.85,
-          "buy_date": "2026-11-09 09:32",
-          "stop_loss": 29.016,
-          "take_profit": null,
-          "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.32 | Celsius Holdings (CELH) Stock Rallies As Q3 Earnings Spotlight Margin Risks | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche, wobei grobe fundamentale Schieflagen ein Ausschlussgrund sind. Die Datenabdeckung liegt mit 75% ueber der geforderten 50%-Mindestgrenze, und das Kaufargumentstuetzt sich nicht auf fehlende Bausteine, sondern auf konkrete Fakten wie das extrem niedrige Put-Call-Ratio von 0.32, den starken Alpha-Score von 70.7 sowie positive Q3-Ergebnismeldungen. Es liegt kein Sektoren-Klumpenrisiko im Depot vor (bisher nur RUN), und das KGV von 36 ist fuer einen Wachstumswert im Rahmen. Somit greift kein automatischer Ablehnungsgrund.",
-          "derivative_type": "STOCK",
-          "peak_price": 33.25,
           "last_updated": "16:41:27"
         },
         "VKTX": {
@@ -841,6 +827,20 @@
           "total": 2004.0,
           "date": "2026-11-11 08:36",
           "reason": "⚡ Echtzeit-Spike (+6.5%, Alpha 67/100) | PCR 0.24 | News 56/100 | ⚖️ Tribunal (BUY): IBM erfuellt alle Mandatsvorgaben des Kurzfrist-Trading-Depots mit einem starken Momentum-Spike von +6.5%, einem Alpha-Score von 78.0 sowie positiven Nachrichten und einem extrem bullischen Put-Call-Ratio von 0.24. Entgegen den Bedenken der Gegenseite liegen keine fundamentalen Schieflagen vor; im Gegenteil belegen der Piotroski-Score von 7/9 und der Altman-Z-Wert von 3.34 eine solide Bilanz, womit kein Ausschlussgrund greift. Die verfuegbare Liquiditaet von 6024 Cash reicht fuer die Positionsaufnahme aus."
+        },
+        {
+          "type": "SELL",
+          "symbol": "CELH",
+          "name": "Celsius Holdings, Inc.",
+          "product_type": "STOCK",
+          "shares": 37.3134,
+          "buy_price": 32.2243,
+          "sell_price": 32.7843,
+          "total": 1223.29,
+          "pnl": 20.9,
+          "pnl_pct": 1.74,
+          "date": "2026-11-11 17:56",
+          "reason": "🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: 58/100, PCR: 1.4) ➔ Vorzeitiger Ausstieg"
         }
       ]
     },
