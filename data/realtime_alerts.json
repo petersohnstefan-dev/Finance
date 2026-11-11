@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-11 13:21:02",
+    "time_str": "13:21:02",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ORCL",
+    "direction": "LONG",
+    "trigger_price": 125.0,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-11 13:20:59",
+    "time_str": "13:20:59",
+    "data_age_min": 1.1,
+    "window_span_min": 2.9,
+    "symbol": "SHLS",
+    "direction": "LONG",
+    "trigger_price": 8.4,
+    "change_1min_pct": 1.44,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS explodiert um +1.44% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-11 13:18:02",
     "time_str": "13:18:02",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RGTI explodiert um +1.17% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 11:31:05",
-    "time_str": "11:31:05",
-    "data_age_min": 3.2,
-    "window_span_min": 5.9,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.63,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 11:20:58",
-    "time_str": "11:20:58",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "LONG",
-    "trigger_price": 8.05,
-    "change_1min_pct": 1.02,
-    "vol_ratio": 0.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
   }
 ]
