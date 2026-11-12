@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-12 13:51:08",
+    "time_str": "13:51:08",
+    "data_age_min": 2.5,
+    "window_span_min": 5.6,
+    "symbol": "RUN",
+    "direction": "LONG",
+    "trigger_price": 9.0,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RUN explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 13:51:07",
+    "time_str": "13:51:07",
+    "data_age_min": 2.0,
+    "window_span_min": 5.1,
+    "symbol": "NET",
+    "direction": "SHORT",
+    "trigger_price": 306.5,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NET stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 13:51:07",
+    "time_str": "13:51:07",
+    "data_age_min": 0.7,
+    "window_span_min": 4.4,
+    "symbol": "ACHR",
+    "direction": "SHORT",
+    "trigger_price": 4.75,
+    "change_1min_pct": 0.91,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-12 13:46:03",
     "time_str": "13:46:03",
     "data_age_min": 1.5,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARM stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 12:25:57",
-    "time_str": "12:25:57",
-    "data_age_min": 0.2,
-    "window_span_min": 6.8,
-    "symbol": "SOXX",
-    "direction": "SHORT",
-    "trigger_price": 151.99,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOXX stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 12:10:59",
-    "time_str": "12:10:59",
-    "data_age_min": 3.8,
-    "window_span_min": 4.2,
-    "symbol": "LCID",
-    "direction": "SHORT",
-    "trigger_price": 3.63,
-    "change_1min_pct": 0.55,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LCID stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 11:51:03",
-    "time_str": "11:51:03",
-    "data_age_min": 3.1,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.27,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
