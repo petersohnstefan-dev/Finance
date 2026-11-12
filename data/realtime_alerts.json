@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-12 09:55:54",
+    "time_str": "09:55:54",
+    "data_age_min": 2.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-12 09:11:10",
     "time_str": "09:11:10",
     "data_age_min": 0.2,
@@ -635,18 +648,5 @@
     "vol_ratio": 3.18,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP explodiert um +0.72% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 21:15:53",
-    "time_str": "21:15:53",
-    "data_age_min": 1.9,
-    "window_span_min": 4.0,
-    "symbol": "BLNK",
-    "direction": "SHORT",
-    "trigger_price": 0.48,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 0.17,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
