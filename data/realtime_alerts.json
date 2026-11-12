@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-12 22:20:55",
+    "time_str": "22:20:55",
+    "data_age_min": 3.7,
+    "window_span_min": 4.2,
+    "symbol": "ARM",
+    "direction": "SHORT",
+    "trigger_price": 199.65,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 22:20:55",
+    "time_str": "22:20:55",
+    "data_age_min": 3.2,
+    "window_span_min": 9.7,
+    "symbol": "RXRX",
+    "direction": "SHORT",
+    "trigger_price": 3.36,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RXRX stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-12 22:16:05",
     "time_str": "22:16:05",
     "data_age_min": 6.6,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.22,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ZS explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 21:51:00",
-    "time_str": "21:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "CRWD",
-    "direction": "LONG",
-    "trigger_price": 229.35,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 2.05,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 21:51:00",
-    "time_str": "21:51:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 3.34,
-    "change_1min_pct": 0.74,
-    "vol_ratio": 1.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
