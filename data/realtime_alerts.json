@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-12 12:26:04",
+    "time_str": "12:26:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "AMD",
+    "direction": "SHORT",
+    "trigger_price": 566.13,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMD stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 12:25:59",
+    "time_str": "12:25:59",
+    "data_age_min": 1.8,
+    "window_span_min": 7.2,
+    "symbol": "ARM",
+    "direction": "SHORT",
+    "trigger_price": 197.73,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 12:25:57",
+    "time_str": "12:25:57",
+    "data_age_min": 0.2,
+    "window_span_min": 6.8,
+    "symbol": "SOXX",
+    "direction": "SHORT",
+    "trigger_price": 151.99,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SOXX stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-12 12:10:59",
     "time_str": "12:10:59",
     "data_age_min": 3.8,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PACB explodiert um +0.96% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 22:10:57",
-    "time_str": "22:10:57",
-    "data_age_min": 2.0,
-    "window_span_min": 4.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.2,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 22:06:00",
-    "time_str": "22:06:00",
-    "data_age_min": 7.0,
-    "window_span_min": 5.0,
-    "symbol": "ABT",
-    "direction": "SHORT",
-    "trigger_price": 109.35,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 8.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ABT stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-11 22:05:59",
-    "time_str": "22:05:59",
-    "data_age_min": 1.6,
-    "window_span_min": 5.4,
-    "symbol": "UNH",
-    "direction": "SHORT",
-    "trigger_price": 400.0,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 UNH stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
