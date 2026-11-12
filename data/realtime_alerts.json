@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-12 13:46:03",
+    "time_str": "13:46:03",
+    "data_age_min": 1.5,
+    "window_span_min": 7.5,
+    "symbol": "MRK",
+    "direction": "LONG",
+    "trigger_price": 148.65,
+    "change_1min_pct": 0.53,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRK explodiert um +0.53% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 13:45:57",
+    "time_str": "13:45:57",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.31,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.31% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-12 13:41:11",
     "time_str": "13:41:11",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD stürzt um -1.27% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 11:46:11",
-    "time_str": "11:46:11",
-    "data_age_min": 4.7,
-    "window_span_min": 5.5,
-    "symbol": "LUNR",
-    "direction": "SHORT",
-    "trigger_price": 12.18,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 LUNR stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 11:46:11",
-    "time_str": "11:46:11",
-    "data_age_min": 0.6,
-    "window_span_min": 4.6,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 224.0,
-    "change_1min_pct": 0.67,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
