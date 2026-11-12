@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-12 20:26:01",
+    "time_str": "20:26:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 13.47,
+    "change_1min_pct": 0.74,
+    "vol_ratio": 0.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 20:26:00",
+    "time_str": "20:26:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "JOBY",
+    "direction": "SHORT",
+    "trigger_price": 5.39,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 0.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-12 20:25:59",
+    "time_str": "20:25:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 234.54,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.75,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-12 20:21:03",
     "time_str": "20:21:03",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.82,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CHPT stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 19:11:06",
-    "time_str": "19:11:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "BKSY",
-    "direction": "SHORT",
-    "trigger_price": 23.46,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 1.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 19:11:06",
-    "time_str": "19:11:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 1.93,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 19:11:06",
-    "time_str": "19:11:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "S",
-    "direction": "SHORT",
-    "trigger_price": 22.74,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 2.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 S stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
