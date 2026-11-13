@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-13 20:55:55",
+    "time_str": "20:55:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.57,
+    "change_1min_pct": 0.84,
+    "vol_ratio": 0.2,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 20:55:54",
+    "time_str": "20:55:54",
+    "data_age_min": 0.9,
+    "window_span_min": 4.0,
+    "symbol": "DNA",
+    "direction": "LONG",
+    "trigger_price": 9.6,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 1.05,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DNA explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 20:51:01",
     "time_str": "20:51:01",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SEDG stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 18:16:06",
-    "time_str": "18:16:06",
-    "data_age_min": 1.1,
-    "window_span_min": 3.0,
-    "symbol": "BLNK",
-    "direction": "SHORT",
-    "trigger_price": 0.43,
-    "change_1min_pct": 0.76,
-    "vol_ratio": 3.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 18:16:06",
-    "time_str": "18:16:06",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.61,
-    "change_1min_pct": 1.63,
-    "vol_ratio": 1.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -1.63% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
