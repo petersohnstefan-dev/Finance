@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-13 13:16:04",
+    "time_str": "13:16:04",
+    "data_age_min": 0.8,
+    "window_span_min": 4.3,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 333.5,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 13:16:04",
+    "time_str": "13:16:04",
+    "data_age_min": 4.7,
+    "window_span_min": 6.4,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 34.89,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 13:11:05",
     "time_str": "13:11:05",
     "data_age_min": 1.5,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARM explodiert um +0.62% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 10:16:07",
-    "time_str": "10:16:07",
-    "data_age_min": 0.0,
-    "window_span_min": 5.1,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 383.0,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 10:16:06",
-    "time_str": "10:16:06",
-    "data_age_min": 0.0,
-    "window_span_min": 5.1,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 795.29,
-    "change_1min_pct": 0.77,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.77% in 5 Min.! Momentum aktiv."
   }
 ]
