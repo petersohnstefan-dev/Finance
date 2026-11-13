@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-13 20:31:13",
+    "time_str": "20:31:13",
+    "data_age_min": 1.2,
+    "window_span_min": 5.0,
+    "symbol": "BKSY",
+    "direction": "LONG",
+    "trigger_price": 23.13,
+    "change_1min_pct": 0.7,
+    "vol_ratio": 3.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKSY explodiert um +0.70% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 20:31:12",
+    "time_str": "20:31:12",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 32.52,
+    "change_1min_pct": 0.91,
+    "vol_ratio": 0.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.91% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 20:31:11",
+    "time_str": "20:31:11",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "NVCR",
+    "direction": "LONG",
+    "trigger_price": 11.65,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 3.78,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVCR explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 20:25:55",
     "time_str": "20:25:55",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.78,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IOT stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 18:16:05",
-    "time_str": "18:16:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "GTLB",
-    "direction": "SHORT",
-    "trigger_price": 47.14,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.82,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GTLB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 18:16:05",
-    "time_str": "18:16:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "SHORT",
-    "trigger_price": 217.61,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.42,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 18:16:05",
-    "time_str": "18:16:05",
-    "data_age_min": 1.1,
-    "window_span_min": 4.0,
-    "symbol": "OKTA",
-    "direction": "SHORT",
-    "trigger_price": 181.3,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 1.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 OKTA stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
