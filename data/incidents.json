@@ -1,5 +1,35 @@
 [
  {
+  "timestamp": "2026-11-13 02:18:41",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_min_alpha_score": "seit der Aenderung am 2026-11-03 (70 -> 65) erst 3 abgeschlossene Trades; mindestens 5 noetig, um die Wirkung zu beurteilen"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-13 02:18:41"
+ },
+ {
+  "timestamp": "2026-11-13 02:17:54",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 1 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-13 02:17:54"
+ },
+ {
   "timestamp": "2026-11-12 02:58:44",
   "component": "ai_journal",
   "kind": "param_change_rejected",
