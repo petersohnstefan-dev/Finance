@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-13 07:25:51",
+    "time_str": "07:25:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "LONG",
+    "trigger_price": 0.07,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 0.82,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 07:25:50",
+    "time_str": "07:25:50",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 7.38,
+    "change_1min_pct": 1.17,
+    "vol_ratio": 1.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.17% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-12 22:51:01",
     "time_str": "22:51:01",
     "data_age_min": 1.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.58,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DKNG explodiert um +0.71% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 21:59:47",
-    "time_str": "21:59:47",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "ONON",
-    "direction": "SHORT",
-    "trigger_price": 33.08,
-    "change_1min_pct": 0.69,
-    "vol_ratio": 2.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONON stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 21:59:46",
-    "time_str": "21:59:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 31.89,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 3.56,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
