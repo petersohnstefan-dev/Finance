@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-13 10:05:49",
+    "time_str": "10:05:49",
+    "data_age_min": 0.7,
+    "window_span_min": 5.1,
+    "symbol": "ORCL",
+    "direction": "LONG",
+    "trigger_price": 126.3,
+    "change_1min_pct": 0.79,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL explodiert um +0.79% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 10:05:49",
+    "time_str": "10:05:49",
+    "data_age_min": 0.0,
+    "window_span_min": 4.8,
+    "symbol": "MSFT",
+    "direction": "LONG",
+    "trigger_price": 511.76,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSFT explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 10:01:31",
     "time_str": "10:01:31",
     "data_age_min": 2.5,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.2,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 META explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 22:01:31",
-    "time_str": "22:01:31",
-    "data_age_min": 0.1,
-    "window_span_min": 5.5,
-    "symbol": "NVDA",
-    "direction": "LONG",
-    "trigger_price": 166.66,
-    "change_1min_pct": 0.82,
-    "vol_ratio": 3.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVDA explodiert um +0.82% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-12 22:01:27",
-    "time_str": "22:01:27",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 1.85,
-    "change_1min_pct": 2.49,
-    "vol_ratio": 1.64,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +2.49% in 5 Min.! Momentum aktiv."
   }
 ]
