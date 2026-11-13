@@ -6,63 +6,49 @@
       "name": "⚡ Kurzfristiges Trading-Depot (Tage–Wochen / Squeezes & Hebel)",
       "strategy": "Trendfolgendes Swing-Trading über Tage bis Wochen auf Ausbrüche und Smart-Money-Signale. Volatilitätsskalierter Stop (ATR-Vielfaches) und Chandelier-Trailing statt festem Kursziel – Verluste eng begrenzt, Gewinner dürfen laufen.",
       "initial_cash": 10000.0,
-      "cash": 4184.583715748535,
+      "cash": 5252.576113414535,
       "positions": {
         "RUN": {
           "symbol": "RUN",
           "name": "RUN",
           "shares": 127.2691,
           "buy_price": 9.4388,
-          "current_price": 8.64,
+          "current_price": 8.57,
           "buy_date": "2026-11-05 16:03",
           "stop_loss": 8.287,
           "take_profit": null,
           "reason": "⚡ Echtzeit-Spike (+2.0%, Alpha 69/100) | PCR 0.33 | News 74/100 | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche. Die harten harten Fakten zeigen einen starken Echtzeit-Spike mit einem Breakout-Score von 70, ein extrem bullisches Put-Call-Ratio von 0.33 sowie positive Earnings-News (Sentiment 74/100). Der hohe Short Float von 35.65% bietet zudem erhebliches Potenzial fuer einen Short Squeeze, der das Momentum zusaetzlich anheizen kann. Zwar fehlen forensische Bilanzdaten und die ROE ist negativ, jedoch sind keine harten fundamentalen Insolvenzindikatoren (wie Altman Z Distress) nachgewiesen, weshalb kein zwingender Ausschlussgrund vorliegt.",
           "derivative_type": "STOCK",
           "peak_price": 10.27,
-          "last_updated": "18:01:57"
+          "last_updated": "19:31:37"
         },
         "VKTX": {
           "symbol": "VKTX",
           "name": "Viking Therapeutics, Inc.",
           "shares": 40.0749,
           "buy_price": 28.7073,
-          "current_price": 28.89,
+          "current_price": 29.12,
           "buy_date": "2026-11-09 18:41",
           "stop_loss": 25.045,
           "take_profit": null,
           "reason": "🚨 Smart-Money Ausbruch (Alpha 68/100) | PCR: 0.10 | Viking Therapeutics Announces Two Poster Presentations at ObesityWeek® 2026 | ⚖️ Tribunal (BUY): Das Mandat verlangt kurzfristiges Trading ueber Tage bis Wochen mit Fokus auf Momentum und Ausbrueche. VKTX weist einen starken Breakout-Score von 70, ein extrem bullisches Put-Call-Ratio von 0.10 und einen hohen Short Float von 21.06 Prozent auf, was exakt zum Profil passt. Die Datenabdeckung liegt bei ausreichenden 75 Prozent (> 50-Prozent-Grenze). Es liegt kein hartes Ausschlusskriterium vor (kein Klumpenrisiko, da RUN [Renewables/Utilities] und CELH [Consumer Staples/Beverages] nicht aus dem Healthcare-Sektor stammen, und die fundamentale Schieflage bei Biotech-Werten im klinischen Stadium mit starkem Short Squeeze-Potenzial im Rahmen des kurzfristigen Mandats tragbar ist).",
           "derivative_type": "STOCK",
           "peak_price": 29.7,
-          "last_updated": "18:01:57"
+          "last_updated": "19:31:37"
         },
         "IBM": {
           "symbol": "IBM",
           "name": "IBM",
           "shares": 8.1653,
           "buy_price": 245.4299,
-          "current_price": 245.84,
+          "current_price": 247.27,
           "buy_date": "2026-11-11 08:36",
           "stop_loss": 229.41,
           "take_profit": null,
           "reason": "⚡ Echtzeit-Spike (+6.5%, Alpha 67/100) | PCR 0.24 | News 56/100 | ⚖️ Tribunal (BUY): IBM erfuellt alle Mandatsvorgaben des Kurzfrist-Trading-Depots mit einem starken Momentum-Spike von +6.5%, einem Alpha-Score von 78.0 sowie positiven Nachrichten und einem extrem bullischen Put-Call-Ratio von 0.24. Entgegen den Bedenken der Gegenseite liegen keine fundamentalen Schieflagen vor; im Gegenteil belegen der Piotroski-Score von 7/9 und der Altman-Z-Wert von 3.34 eine solide Bilanz, womit kein Ausschlussgrund greift. Die verfuegbare Liquiditaet von 6024 Cash reicht fuer die Positionsaufnahme aus.",
           "derivative_type": "STOCK",
-          "last_updated": "18:01:57",
+          "last_updated": "19:31:37",
           "peak_price": 248.41
-        },
-        "FOUR": {
-          "symbol": "FOUR",
-          "name": "Shift4 Payments, Inc.",
-          "shares": 24.2393,
-          "buy_price": 43.5369,
-          "current_price": 43.87,
-          "buy_date": "2026-11-13 16:31",
-          "stop_loss": 37.631,
-          "take_profit": null,
-          "reason": "🚨 Smart-Money Ausbruch (Alpha 66/100) | PCR: 0.62 | Shift4: 3 Key Takeaways for Long-Term Investors | ⚖️ Tribunal (BUY): Das Kurzfrist-Trading-Mandat verlangt Fokus auf Momentum und Ausbrüche, während Bilanzqualität bei diesem Ansatz zweitrangig ist. Der Smart-Money-Ausbruch, ein Breakout-Score von 75, der starke kurzfristige Score von 73 sowie das bullische Put-Call-Ratio von 0.62 untermauern den Trade. Die Datenabdeckung liegt mit 75% über der kritischen 50%-Schwelle, und es gibt im Depot (RUN, VKTX, IBM) keine Sektorüberschneidung mit dem Technology-Bereich von FOUR. Das Mandat ist somit erfüllt.",
-          "derivative_type": "STOCK",
-          "last_updated": "17:26:30",
-          "peak_price": 44.11
         }
       },
       "history": [
@@ -866,6 +852,20 @@
           "total": 1055.31,
           "date": "2026-11-13 16:31",
           "reason": "🚨 Smart-Money Ausbruch (Alpha 66/100) | PCR: 0.62 | Shift4: 3 Key Takeaways for Long-Term Investors | ⚖️ Tribunal (BUY): Das Kurzfrist-Trading-Mandat verlangt Fokus auf Momentum und Ausbrüche, während Bilanzqualität bei diesem Ansatz zweitrangig ist. Der Smart-Money-Ausbruch, ein Breakout-Score von 75, der starke kurzfristige Score von 73 sowie das bullische Put-Call-Ratio von 0.62 untermauern den Trade. Die Datenabdeckung liegt mit 75% über der kritischen 50%-Schwelle, und es gibt im Depot (RUN, VKTX, IBM) keine Sektorüberschneidung mit dem Technology-Bereich von FOUR. Das Mandat ist somit erfüllt."
+        },
+        {
+          "type": "SELL",
+          "symbol": "FOUR",
+          "name": "Shift4 Payments, Inc.",
+          "product_type": "STOCK",
+          "shares": 24.2393,
+          "buy_price": 43.5369,
+          "sell_price": 44.1016,
+          "total": 1068.99,
+          "pnl": 13.69,
+          "pnl_pct": 1.3,
+          "date": "2026-11-13 19:31",
+          "reason": "🚨 Thesen-Bruch: Momentum & Smart-Money erodiert (Alpha: 50/100, PCR: 1.85) ➔ Vorzeitiger Ausstieg"
         }
       ]
     },
@@ -880,13 +880,13 @@
           "name": "The Cigna Group",
           "shares": 6.7051,
           "buy_price": 298.8766,
-          "current_price": 292.74,
+          "current_price": 293.59,
           "buy_date": "2026-10-28 13:21",
           "stop_loss": 268.45,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 61/100, News: 41/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7/9 und einem soliden KGV von 12,33 stark ausgeprägt, während die Bilanzierung laut Beneish M-Score unauffällig ist. Die Datenabdeckung liegt mit 70% über der kritischen 50%-Schwelle, und es liegt kein Sektor-Klumpenrisiko im Depot vor (bisher DUOL und CRM). Die geforderte Trendstärke wird durch den RSI von 64.4 und den starken Kurzfrist-Score untermauert, sodass kein Ausschlusskriterium greift.",
           "derivative_type": "STOCK",
-          "last_updated": "18:16:30",
+          "last_updated": "19:31:37",
           "peak_price": 313.12
         },
         "ACN": {
@@ -894,14 +894,14 @@
           "name": "Accenture plc",
           "shares": 4.801,
           "buy_price": 250.4499,
-          "current_price": 251.93,
+          "current_price": 252.97,
           "buy_date": "2026-11-13 07:12",
           "stop_loss": 224.95,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 66/100, News: 56/100) | ⚖️ Tribunal (BUY): Der Gesamt-Score von 91 sowie die Kombination aus starkem Altman-Z-Score (4.39) und hohem Piotroski (6/9) erfüllen die fundamentalen Anforderungen des Mandats voll und ganz. Zwar zeigt der Breakout-Score Schwächen, aber das Momentum wird durch einen Alpha-Score von 66.3 und ein solides News-Sentiment gestützt, sodass kein reines ungestütztes Momentum vorliegt. Auch das Depot-Risiko ist gering, da bisher nur eine einzige Position gehalten wird.",
           "derivative_type": "STOCK",
           "peak_price": 254.4,
-          "last_updated": "18:16:30"
+          "last_updated": "19:31:37"
         }
       },
       "history": [
@@ -1143,13 +1143,13 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 3885.6,
+          "current_price": 3890.3,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "18:16:30",
+          "last_updated": "19:31:37",
           "peak_price": 4640.8
         },
         "BTC-USD": {
@@ -1157,13 +1157,13 @@
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 68688.58,
+          "current_price": 68895.36,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "17:26:30",
+          "last_updated": "19:31:37",
           "peak_price": 86727.81
         },
         "SPGI": {
@@ -1171,27 +1171,27 @@
           "name": "S&P Global Inc.",
           "shares": 4.8951,
           "buy_price": 409.3871,
-          "current_price": 472.56,
+          "current_price": 473.72,
           "buy_date": "2026-10-15 08:36",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.2% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein starker Piotroski F-Score von 7/9 und ein unauffälliger Beneish M-Score von -2.42 erfüllen das Qualitätsmandat voll und ganz. Die Datenabdeckung liegt mit 70% über der Mindestgrenze von 50%, und das bestehende Finanzmandat im Depot begründet kein unzulässiges Klumpenrisiko im Sinne der Ausschlusskriterien.",
           "derivative_type": "STOCK",
           "peak_price": 482.86,
-          "last_updated": "18:01:57"
+          "last_updated": "19:31:37"
         },
         "UBER": {
           "symbol": "UBER",
           "name": "Uber Technologies, Inc.",
           "shares": 28.2945,
           "buy_price": 70.8264,
-          "current_price": 69.47,
+          "current_price": 69.29,
           "buy_date": "2026-10-16 18:18",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 6 / 9 (✅ Gute Solidität) | Analystenpotenzial 42.7% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein attraktives KGV von 15.50 sowie eine hohe Eigenkapitalrendite (ROE) von 37.16% untermauern die fundamentale Qualität und das Mandat für ein langfristiges Qualitätsinvestment, während die Bilanz mit einem Altman-Z-Score von 3.56 und einem Piotroski-Score von 6/9 solide bleibt und keine Ausschlusskriterien greifen.",
           "derivative_type": "STOCK",
-          "last_updated": "18:01:57",
+          "last_updated": "19:31:37",
           "peak_price": 72.18
         },
         "CRM": {
@@ -1199,14 +1199,14 @@
           "name": "Salesforce, Inc.",
           "shares": 8.8063,
           "buy_price": 227.5642,
-          "current_price": 216.71,
+          "current_price": 217.44,
           "buy_date": "2026-11-05 07:02",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.4% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der langfrist_score von 100, ein starker Piotroski-Score von 7 / 9 und ein moderates KGV von 20.33 spiegeln eine exzellente, mandatskonforme Bilanz- und Qualitätsbasis wider, während die Ausschlusskriterien (Piotroski < 4, Datenabdeckung < 50%, Sektor-Klumpenrisiko im Tech-Bereich mit UBER nicht übermässig verdichtet, reines Momentum) nicht greifen.",
           "derivative_type": "STOCK",
           "peak_price": 227.5642,
-          "last_updated": "17:26:30"
+          "last_updated": "19:31:37"
         }
       },
       "history": [
@@ -1405,7 +1405,7 @@
           "name": "🔻 Turbo Bear 1.5x auf ARK Autonomous Technology & Rob (KO: 174.65)",
           "shares": 54.5636,
           "buy_price": 7.2156,
-          "current_price": 7.069,
+          "current_price": 7.042000000000001,
           "buy_date": "2026-11-13 16:26",
           "stop_loss": 6.274,
           "take_profit": null,
@@ -1424,9 +1424,9 @@
           "current_underlying_price": 106.93,
           "cert_price": 7.13,
           "leverage": 1.5,
-          "distance_to_ko_pct": 62.4,
+          "distance_to_ko_pct": 62.0,
           "is_knocked_out": false,
-          "last_updated": "18:16:30",
+          "last_updated": "19:31:37",
           "peak_price": 7.2156
         },
         "CAVA": {
@@ -1434,13 +1434,13 @@
           "name": "CAVA Group, Inc.",
           "shares": 6.7323,
           "buy_price": 57.8254,
-          "current_price": 57.41,
+          "current_price": 57.36,
           "buy_date": "2026-11-13 16:37",
           "stop_loss": 50.785,
           "take_profit": null,
           "reason": "⚡ Daytrade (+0.8% Spike, Score 75/100 [volu15 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 12%",
           "derivative_type": "STOCK",
-          "last_updated": "18:16:30",
+          "last_updated": "19:31:37",
           "peak_price": 57.91
         },
         "KO548497": {
@@ -1448,7 +1448,7 @@
           "name": "⚡ Turbo Bull 1.5x auf Celsius Holdings, Inc. (KO: 11.07)",
           "shares": 178.9614,
           "buy_price": 2.196,
-          "current_price": 2.15,
+          "current_price": 2.186,
           "buy_date": "2026-11-13 17:26",
           "stop_loss": 1.91,
           "take_profit": null,
@@ -1467,10 +1467,10 @@
           "current_underlying_price": 32.56,
           "cert_price": 2.17,
           "leverage": 1.5,
-          "distance_to_ko_pct": 65.8,
+          "distance_to_ko_pct": 66.2,
           "is_knocked_out": false,
           "peak_price": 2.196,
-          "last_updated": "18:16:30"
+          "last_updated": "19:31:37"
         }
       },
       "history": [
@@ -4762,7 +4762,7 @@
     "medium_term_INVE-B.ST": "2026-10-27T13:16:43.962931+01:00",
     "medium_term_MRNA": "2026-10-15T18:36:27.859003+02:00",
     "medium_term_SMCI": "2026-10-19T19:36:31.118799+02:00",
-    "medium_term_CELH": "2026-11-13T19:11:33.377980+01:00",
+    "medium_term_CELH": "2026-11-13T23:31:46.941139+01:00",
     "medium_term_BATS.L": "2026-11-13T18:21:47.385339+01:00",
     "medium_term_AMZN": "2026-10-21T19:02:11.574474+02:00",
     "medium_term_PATH": "2026-10-31T01:11:44.987615+01:00",
