@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-13 18:06:05",
+    "time_str": "18:06:05",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "AMAT",
+    "direction": "LONG",
+    "trigger_price": 362.02,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.79,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMAT explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 18:06:04",
+    "time_str": "18:06:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "AMD",
+    "direction": "LONG",
+    "trigger_price": 526.25,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 0.68,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMD explodiert um +0.50% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 18:05:59",
+    "time_str": "18:05:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "LONG",
+    "trigger_price": 219.76,
+    "change_1min_pct": 0.91,
+    "vol_ratio": 0.86,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB explodiert um +0.91% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 18:01:29",
     "time_str": "18:01:29",
     "data_age_min": 1.5,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.08,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA explodiert um +0.90% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:16:11",
-    "time_str": "17:16:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "SHORT",
-    "trigger_price": 354.03,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:16:11",
-    "time_str": "17:16:11",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "CSCO",
-    "direction": "SHORT",
-    "trigger_price": 96.21,
-    "change_1min_pct": 0.52,
-    "vol_ratio": 0.62,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CSCO stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:16:10",
-    "time_str": "17:16:10",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 752.01,
-    "change_1min_pct": 0.67,
-    "vol_ratio": 0.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
