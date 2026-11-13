@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-13 18:26:07",
+    "time_str": "18:26:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "SHLS",
+    "direction": "SHORT",
+    "trigger_price": 8.12,
+    "change_1min_pct": 0.55,
+    "vol_ratio": 1.39,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SHLS stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 18:26:07",
+    "time_str": "18:26:07",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "ARRY",
+    "direction": "SHORT",
+    "trigger_price": 4.8,
+    "change_1min_pct": 0.83,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARRY stürzt um -0.83% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-13 18:26:07",
+    "time_str": "18:26:07",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "MNTS",
+    "direction": "LONG",
+    "trigger_price": 1.77,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MNTS explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-13 18:21:03",
     "time_str": "18:21:03",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.28,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONS explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:55:44",
-    "time_str": "17:55:44",
-    "data_age_min": 1.8,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.04,
-    "change_1min_pct": 1.01,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD stürzt um -1.01% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:50:57",
-    "time_str": "17:50:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ASTS",
-    "direction": "LONG",
-    "trigger_price": 32.13,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 17:50:56",
-    "time_str": "17:50:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "VKTX",
-    "direction": "SHORT",
-    "trigger_price": 28.44,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.47,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 VKTX stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
