@@ -1,5 +1,38 @@
 [
  {
+  "timestamp": "2026-11-14 01:57:56",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_breakeven_trigger_atr": "in den letzten 30 Tagen bereits 2x erhoeht; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "short_term_max_risk_per_trade_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-14 01:57:56"
+ },
+ {
+  "timestamp": "2026-11-14 01:57:22",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 3 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_min_risk_reward_ratio": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_breakeven_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_lock_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-14 01:57:22"
+ },
+ {
   "timestamp": "2026-11-13 02:18:41",
   "component": "ai_journal",
   "kind": "param_change_rejected",
