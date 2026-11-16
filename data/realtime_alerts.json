@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-16 22:41:08",
+    "time_str": "22:41:08",
+    "data_age_min": 9.5,
+    "window_span_min": 5.6,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.48,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 22:41:07",
+    "time_str": "22:41:07",
+    "data_age_min": 0.8,
+    "window_span_min": 7.3,
+    "symbol": "OKTA",
+    "direction": "SHORT",
+    "trigger_price": 179.4,
+    "change_1min_pct": 1.38,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA stürzt um -1.38% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-16 22:35:55",
     "time_str": "22:35:55",
     "data_age_min": 2.4,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.23,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "FTNT",
-    "direction": "SHORT",
-    "trigger_price": 123.12,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 1.44,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FTNT stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 315.61,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
