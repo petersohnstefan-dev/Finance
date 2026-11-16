@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-16 23:54:14",
+    "time_str": "23:54:14",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 1.5,
+    "change_1min_pct": 2.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -2.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 23:54:11",
+    "time_str": "23:54:11",
+    "data_age_min": 7.2,
+    "window_span_min": 3.0,
+    "symbol": "HODL",
+    "direction": "SHORT",
+    "trigger_price": 18.81,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HODL stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-16 22:50:56",
     "time_str": "22:50:56",
     "data_age_min": 4.5,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.45,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BKSY stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "PL",
-    "direction": "SHORT",
-    "trigger_price": 12.69,
-    "change_1min_pct": 0.89,
-    "vol_ratio": 0.96,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL stürzt um -0.89% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 1.97,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.55,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
