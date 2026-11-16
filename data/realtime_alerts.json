@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-16 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 1.4,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.39,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "QBTS",
+    "direction": "SHORT",
+    "trigger_price": 8.8,
+    "change_1min_pct": 0.68,
+    "vol_ratio": 1.62,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QBTS stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 207.9,
+    "change_1min_pct": 0.54,
+    "vol_ratio": 0.87,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-16 20:56:05",
     "time_str": "20:56:05",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.18,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JPM explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 19:51:07",
-    "time_str": "19:51:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "INTC",
-    "direction": "LONG",
-    "trigger_price": 55.6,
-    "change_1min_pct": 0.7,
-    "vol_ratio": 0.67,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC explodiert um +0.70% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 19:51:07",
-    "time_str": "19:51:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "LONG",
-    "trigger_price": 729.3,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU explodiert um +0.64% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 19:51:07",
-    "time_str": "19:51:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "CRM",
-    "direction": "LONG",
-    "trigger_price": 216.99,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRM explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
