@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-16 21:05:45",
+    "time_str": "21:05:45",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.45,
+    "change_1min_pct": 1.39,
+    "vol_ratio": 1.37,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.39% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-16 21:01:22",
     "time_str": "21:01:22",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": 0.69,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ORCL explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 19:51:07",
-    "time_str": "19:51:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "JPM",
-    "direction": "LONG",
-    "trigger_price": 339.42,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 1.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JPM explodiert um +0.55% in 5 Min.! Momentum aktiv."
   }
 ]
