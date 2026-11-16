@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-16 22:17:13",
+    "time_str": "22:17:13",
+    "data_age_min": 2.3,
+    "window_span_min": 6.9,
+    "symbol": "S",
+    "direction": "SHORT",
+    "trigger_price": 21.76,
+    "change_1min_pct": 0.81,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 22:17:12",
+    "time_str": "22:17:12",
+    "data_age_min": 0.5,
+    "window_span_min": 4.7,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 25.15,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 22:17:10",
+    "time_str": "22:17:10",
+    "data_age_min": 2.6,
+    "window_span_min": 5.6,
+    "symbol": "TAN",
+    "direction": "LONG",
+    "trigger_price": 40.48,
+    "change_1min_pct": 0.89,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TAN explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-16 22:11:08",
     "time_str": "22:11:08",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 3.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BLNK stürzt um -0.86% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:46:02",
-    "time_str": "21:46:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "KVYO",
-    "direction": "LONG",
-    "trigger_price": 23.09,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 KVYO explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:46:02",
-    "time_str": "21:46:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "LONG",
-    "trigger_price": 232.97,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 0.66,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:46:01",
-    "time_str": "21:46:01",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "SHORT",
-    "trigger_price": 28.38,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 2.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
