@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-16 11:40:57",
+    "time_str": "11:40:57",
+    "data_age_min": 11.0,
+    "window_span_min": 4.0,
+    "symbol": "BZ=F",
+    "direction": "LONG",
+    "trigger_price": 95.54,
+    "change_1min_pct": 2.8,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BZ=F explodiert um +2.80% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-16 11:40:56",
+    "time_str": "11:40:56",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.38,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.38% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-16 11:35:55",
     "time_str": "11:35:55",
     "data_age_min": 3.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 OKTA stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 22:46:09",
-    "time_str": "22:46:09",
-    "data_age_min": 2.3,
-    "window_span_min": 4.9,
-    "symbol": "BA",
-    "direction": "SHORT",
-    "trigger_price": 170.6,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BA stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-13 22:46:04",
-    "time_str": "22:46:04",
-    "data_age_min": 3.4,
-    "window_span_min": 3.7,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 193.65,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
