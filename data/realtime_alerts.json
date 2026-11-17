@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-17 17:31:17",
+    "time_str": "17:31:17",
+    "data_age_min": 3.3,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.39,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.28,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 17:31:17",
+    "time_str": "17:31:17",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "FOUR",
+    "direction": "SHORT",
+    "trigger_price": 40.8,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 1.19,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 FOUR stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-17 17:25:46",
     "time_str": "17:25:46",
     "data_age_min": 0.8,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.79,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MS explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 17:01:39",
-    "time_str": "17:01:39",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "GS",
-    "direction": "LONG",
-    "trigger_price": 875.65,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 1.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GS explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 17:01:39",
-    "time_str": "17:01:39",
-    "data_age_min": 0.7,
-    "window_span_min": 5.0,
-    "symbol": "NOW",
-    "direction": "LONG",
-    "trigger_price": 93.55,
-    "change_1min_pct": 0.94,
-    "vol_ratio": 0.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NOW explodiert um +0.94% in 5 Min.! Momentum aktiv."
   }
 ]
