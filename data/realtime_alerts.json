@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-17 15:21:04",
+    "time_str": "15:21:04",
+    "data_age_min": 0.6,
+    "window_span_min": 5.5,
+    "symbol": "DIS",
+    "direction": "LONG",
+    "trigger_price": 116.55,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DIS explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 15:21:00",
+    "time_str": "15:21:00",
+    "data_age_min": 1.1,
+    "window_span_min": 4.9,
+    "symbol": "BILL",
+    "direction": "LONG",
+    "trigger_price": 58.0,
+    "change_1min_pct": 3.15,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BILL explodiert um +3.15% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-17 15:16:06",
     "time_str": "15:16:06",
     "data_age_min": 3.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 JPM stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 13:55:59",
-    "time_str": "13:55:59",
-    "data_age_min": 4.7,
-    "window_span_min": 4.3,
-    "symbol": "GS",
-    "direction": "SHORT",
-    "trigger_price": 887.62,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 13:55:55",
-    "time_str": "13:55:55",
-    "data_age_min": 0.2,
-    "window_span_min": 4.7,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 1.43,
-    "change_1min_pct": 0.73,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
