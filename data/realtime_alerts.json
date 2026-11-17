@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-17 12:31:18",
+    "time_str": "12:31:18",
+    "data_age_min": 0.3,
+    "window_span_min": 5.0,
+    "symbol": "DIS",
+    "direction": "LONG",
+    "trigger_price": 119.7,
+    "change_1min_pct": 3.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DIS explodiert um +3.64% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 12:31:17",
+    "time_str": "12:31:17",
+    "data_age_min": 0.2,
+    "window_span_min": 2.1,
+    "symbol": "ADBE",
+    "direction": "SHORT",
+    "trigger_price": 243.21,
+    "change_1min_pct": 1.0,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ADBE stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 12:31:12",
+    "time_str": "12:31:12",
+    "data_age_min": 0.2,
+    "window_span_min": 6.0,
+    "symbol": "SMCI",
+    "direction": "LONG",
+    "trigger_price": 25.14,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-17 12:25:51",
     "time_str": "12:25:51",
     "data_age_min": 7.5,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MU stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 10:05:59",
-    "time_str": "10:05:59",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 501.78,
-    "change_1min_pct": 0.7,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.70% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 10:05:59",
-    "time_str": "10:05:59",
-    "data_age_min": 0.1,
-    "window_span_min": 4.9,
-    "symbol": "AVGO",
-    "direction": "SHORT",
-    "trigger_price": 332.54,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AVGO stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 10:05:59",
-    "time_str": "10:05:59",
-    "data_age_min": 0.3,
-    "window_span_min": 4.7,
-    "symbol": "AMZN",
-    "direction": "SHORT",
-    "trigger_price": 256.12,
-    "change_1min_pct": 0.92,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMZN stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
