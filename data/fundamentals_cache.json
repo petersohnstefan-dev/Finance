@@ -1406,43 +1406,10 @@
   }
  },
  "PACB": {
-  "fetched_ts": 1794234725.4745986,
+  "fetched_ts": 1794925886.9160903,
   "scores": {
-   "available": true,
-   "piotroski": 3,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": false,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": -5.89,
-   "altman_detail": {
-    "X1": 0.385,
-    "X2": -3.438,
-    "X3": -0.688,
-    "X4": 0.878,
-    "X5": 0.204
-   },
-   "altman_not_applicable": false,
-   "sector": "Healthcare",
-   "beneish_m": -5.3,
-   "beneish_detail": {
-    "DSRI": 1.24,
-    "GMI": 0.846,
-    "AQI": 0.534,
-    "SGI": 1.039,
-    "DEPI": 0.625,
-    "SGAI": 0.778,
-    "LVGI": 1.617,
-    "TATA": -0.555
-   },
-   "computed_at": "2026-11-09"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "PNE3.DE": {
@@ -1591,43 +1558,10 @@
   }
  },
  "MRNA": {
-  "fetched_ts": 1793822505.748016,
+  "fetched_ts": 1794925886.145049,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 16.78,
-   "altman_detail": {
-    "X1": 0.369,
-    "X2": 0.585,
-    "X3": -0.224,
-    "X4": 26.839,
-    "X5": 0.156
-   },
-   "altman_not_applicable": false,
-   "sector": "Healthcare",
-   "beneish_m": -3.36,
-   "beneish_detail": {
-    "DSRI": 0.855,
-    "GMI": 0.989,
-    "AQI": 1.167,
-    "SGI": 0.601,
-    "DEPI": 0.858,
-    "SGAI": 1.443,
-    "LVGI": 1.013,
-    "TATA": -0.077
-   },
-   "computed_at": "2026-11-04"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "HG=F": {
