@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-17 11:51:01",
+    "time_str": "11:51:01",
+    "data_age_min": 3.8,
+    "window_span_min": 7.2,
+    "symbol": "DIS",
+    "direction": "SHORT",
+    "trigger_price": 116.16,
+    "change_1min_pct": 0.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DIS stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 11:50:57",
+    "time_str": "11:50:57",
+    "data_age_min": 0.1,
+    "window_span_min": 5.8,
+    "symbol": "SMCI",
+    "direction": "SHORT",
+    "trigger_price": 24.75,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMCI stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-17 11:46:05",
     "time_str": "11:46:05",
     "data_age_min": 4.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 VKTX explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 22:46:09",
-    "time_str": "22:46:09",
-    "data_age_min": 0.0,
-    "window_span_min": 5.1,
-    "symbol": "INTC",
-    "direction": "SHORT",
-    "trigger_price": 54.93,
-    "change_1min_pct": 1.14,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 22:46:04",
-    "time_str": "22:46:04",
-    "data_age_min": 3.1,
-    "window_span_min": 3.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 8.38,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]
