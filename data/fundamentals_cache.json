@@ -813,10 +813,43 @@
   }
  },
  "ARRY": {
-  "fetched_ts": 1794322295.3778882,
+  "fetched_ts": 1794927098.8343127,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 1.23,
+   "altman_detail": {
+    "X1": 0.339,
+    "X2": -0.291,
+    "X3": -0.001,
+    "X4": 0.591,
+    "X5": 0.885
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.45,
+   "beneish_detail": {
+    "DSRI": 0.702,
+    "GMI": 1.398,
+    "AQI": 1.091,
+    "SGI": 1.402,
+    "DEPI": 2.371,
+    "SGAI": 0.882,
+    "LVGI": 0.938,
+    "TATA": -0.106
+   },
+   "computed_at": "2026-11-17"
   }
  },
  "NVCR": {
@@ -1805,10 +1838,43 @@
   }
  },
  "LUNR": {
-  "fetched_ts": 1794235886.5613182,
+  "fetched_ts": 1794927097.575453,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 1.53,
+   "altman_detail": {
+    "X1": 0.652,
+    "X2": -0.953,
+    "X3": -0.13,
+    "X4": 3.728,
+    "X5": 0.274
+   },
+   "altman_not_applicable": false,
+   "sector": "Industrials",
+   "beneish_m": -4.46,
+   "beneish_detail": {
+    "DSRI": 0.3,
+    "GMI": 0.415,
+    "AQI": null,
+    "SGI": 0.908,
+    "DEPI": 0.879,
+    "SGAI": 1.914,
+    "LVGI": 1.61,
+    "TATA": -0.122
+   },
+   "computed_at": "2026-11-17"
   }
  },
  "QUBT": {
