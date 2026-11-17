@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-17 19:50:54",
+    "time_str": "19:50:54",
+    "data_age_min": 0.9,
+    "window_span_min": 4.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 21.97,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 5.36,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 19:50:53",
+    "time_str": "19:50:53",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "SHORT",
+    "trigger_price": 222.08,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 1.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 19:50:52",
+    "time_str": "19:50:52",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.78,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 2.47,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-17 19:46:04",
     "time_str": "19:46:04",
     "data_age_min": 5.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.53,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 DDOG explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 19:06:05",
-    "time_str": "19:06:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ACHR",
-    "direction": "SHORT",
-    "trigger_price": 3.56,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.81,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ACHR stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 19:06:05",
-    "time_str": "19:06:05",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "LONG",
-    "trigger_price": 400.92,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 1.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 19:06:04",
-    "time_str": "19:06:04",
-    "data_age_min": 10.1,
-    "window_span_min": 5.0,
-    "symbol": "NG=F",
-    "direction": "SHORT",
-    "trigger_price": 3.15,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NG=F stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
