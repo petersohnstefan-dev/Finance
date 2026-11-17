@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-17 13:31:10",
+    "time_str": "13:31:10",
+    "data_age_min": 1.0,
+    "window_span_min": 6.2,
+    "symbol": "LUNR",
+    "direction": "SHORT",
+    "trigger_price": 11.82,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 13:31:08",
+    "time_str": "13:31:08",
+    "data_age_min": 2.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.48,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.48% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 13:31:07",
+    "time_str": "13:31:07",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 7.7,
+    "change_1min_pct": 1.01,
+    "vol_ratio": 1.45,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.01% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-17 13:25:55",
     "time_str": "13:25:55",
     "data_age_min": 0.3,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.34% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 12:15:59",
-    "time_str": "12:15:59",
-    "data_age_min": 2.0,
-    "window_span_min": 6.0,
-    "symbol": "ENVX",
-    "direction": "SHORT",
-    "trigger_price": 1.4,
-    "change_1min_pct": 0.64,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 12:06:00",
-    "time_str": "12:06:00",
-    "data_age_min": 1.9,
-    "window_span_min": 4.1,
-    "symbol": "ALAB",
-    "direction": "LONG",
-    "trigger_price": 204.98,
-    "change_1min_pct": 1.19,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB explodiert um +1.19% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 12:05:59",
-    "time_str": "12:05:59",
-    "data_age_min": 2.3,
-    "window_span_min": 3.8,
-    "symbol": "RKLB",
-    "direction": "LONG",
-    "trigger_price": 56.5,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
