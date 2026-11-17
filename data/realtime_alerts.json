@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-17 07:40:47",
+    "time_str": "07:40:47",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.05% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-17 07:40:47",
+    "time_str": "07:40:47",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 96.72,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -96.72% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-17 07:35:52",
     "time_str": "07:35:52",
     "data_age_min": 10.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 9.48,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MRNA explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:56:00",
-    "time_str": "21:56:00",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "QCOM",
-    "direction": "SHORT",
-    "trigger_price": 168.94,
-    "change_1min_pct": 0.68,
-    "vol_ratio": 2.69,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM stürzt um -0.68% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-16 21:55:57",
-    "time_str": "21:55:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "STEM",
-    "direction": "SHORT",
-    "trigger_price": 1.95,
-    "change_1min_pct": 2.01,
-    "vol_ratio": 0.4,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STEM stürzt um -2.01% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
