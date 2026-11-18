@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 19:40:57",
+    "time_str": "19:40:57",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "S",
+    "direction": "LONG",
+    "trigger_price": 23.24,
+    "change_1min_pct": 0.69,
+    "vol_ratio": 1.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S explodiert um +0.69% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 19:40:56",
+    "time_str": "19:40:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "APP",
+    "direction": "SHORT",
+    "trigger_price": 395.33,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 3.33,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 19:40:54",
+    "time_str": "19:40:54",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.05,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 19:35:56",
     "time_str": "19:35:56",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.52,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ORCL stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:40:57",
-    "time_str": "18:40:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "UBER",
-    "direction": "SHORT",
-    "trigger_price": 69.44,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.45,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 UBER stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:40:57",
-    "time_str": "18:40:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "INTC",
-    "direction": "SHORT",
-    "trigger_price": 54.55,
-    "change_1min_pct": 0.9,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INTC stürzt um -0.90% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:40:57",
-    "time_str": "18:40:57",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 702.18,
-    "change_1min_pct": 0.92,
-    "vol_ratio": 0.65,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
