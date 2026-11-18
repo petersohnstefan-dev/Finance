@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-18 09:46:01",
+    "time_str": "09:46:01",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "CL=F",
+    "direction": "SHORT",
+    "trigger_price": 82.98,
+    "change_1min_pct": 1.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CL=F stürzt um -1.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-18 09:31:10",
     "time_str": "09:31:10",
     "data_age_min": 2.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QCOM explodiert um +1.04% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-17 22:31:04",
-    "time_str": "22:31:04",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "NVDA",
-    "direction": "LONG",
-    "trigger_price": 161.41,
-    "change_1min_pct": 1.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVDA explodiert um +1.95% in 5 Min.! Momentum aktiv."
   }
 ]
