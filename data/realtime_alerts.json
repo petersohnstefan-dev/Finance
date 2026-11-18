@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 15:21:00",
+    "time_str": "15:21:00",
+    "data_age_min": 6.0,
+    "window_span_min": 5.0,
+    "symbol": "QUBT",
+    "direction": "SHORT",
+    "trigger_price": 5.23,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 15:21:00",
+    "time_str": "15:21:00",
+    "data_age_min": 0.5,
+    "window_span_min": 5.5,
+    "symbol": "ACHR",
+    "direction": "SHORT",
+    "trigger_price": 3.55,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 15:21:00",
+    "time_str": "15:21:00",
+    "data_age_min": 0.5,
+    "window_span_min": 5.5,
+    "symbol": "TEM",
+    "direction": "SHORT",
+    "trigger_price": 63.5,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-18 15:15:52",
     "time_str": "15:15:52",
     "data_age_min": 1.1,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QS explodiert um +0.63% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 14:01:27",
-    "time_str": "14:01:27",
-    "data_age_min": 4.2,
-    "window_span_min": 5.2,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 7.97,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:55:52",
-    "time_str": "13:55:52",
-    "data_age_min": 3.4,
-    "window_span_min": 5.5,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 7.8,
-    "change_1min_pct": 0.91,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.91% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:55:52",
-    "time_str": "13:55:52",
-    "data_age_min": 0.4,
-    "window_span_min": 5.5,
-    "symbol": "ALAB",
-    "direction": "SHORT",
-    "trigger_price": 216.02,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ALAB stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
