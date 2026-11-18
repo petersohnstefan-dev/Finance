@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-18 22:21:06",
+    "time_str": "22:21:06",
+    "data_age_min": 1.1,
+    "window_span_min": 6.0,
+    "symbol": "BKNG",
+    "direction": "LONG",
+    "trigger_price": 153.28,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BKNG explodiert um +0.58% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 22:21:00",
+    "time_str": "22:21:00",
+    "data_age_min": 0.4,
+    "window_span_min": 4.6,
+    "symbol": "ARM",
+    "direction": "LONG",
+    "trigger_price": 182.75,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 22:20:59",
+    "time_str": "22:20:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "LONG",
+    "trigger_price": 196.79,
+    "change_1min_pct": 0.62,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 22:20:57",
+    "time_str": "22:20:57",
+    "data_age_min": 2.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 22:16:03",
     "time_str": "22:16:03",
     "data_age_min": 0.6,
@@ -596,57 +648,5 @@
     "vol_ratio": 1.0,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PANW explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 21:55:54",
-    "time_str": "21:55:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "RKLB",
-    "direction": "SHORT",
-    "trigger_price": 53.29,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.43,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 21:55:53",
-    "time_str": "21:55:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "IONS",
-    "direction": "SHORT",
-    "trigger_price": 27.37,
-    "change_1min_pct": 0.87,
-    "vol_ratio": 2.98,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONS stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 21:50:54",
-    "time_str": "21:50:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 21.09,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 21:50:52",
-    "time_str": "21:50:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 17.92,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 2.61,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
