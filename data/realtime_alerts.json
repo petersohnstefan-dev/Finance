@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 21:01:24",
+    "time_str": "21:01:24",
+    "data_age_min": 1.4,
+    "window_span_min": 4.0,
+    "symbol": "HUBS",
+    "direction": "LONG",
+    "trigger_price": 207.26,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.51,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 21:01:23",
+    "time_str": "21:01:23",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "PATH",
+    "direction": "LONG",
+    "trigger_price": 11.77,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 1.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PATH explodiert um +0.60% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 21:01:22",
+    "time_str": "21:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "ALNY",
+    "direction": "SHORT",
+    "trigger_price": 147.8,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 2.6,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALNY stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-18 20:55:54",
     "time_str": "20:55:54",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.17,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FETH stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:55:46",
-    "time_str": "19:55:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "DDOG",
-    "direction": "LONG",
-    "trigger_price": 169.29,
-    "change_1min_pct": 0.84,
-    "vol_ratio": 0.94,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DDOG explodiert um +0.84% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:55:46",
-    "time_str": "19:55:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "JOBY",
-    "direction": "SHORT",
-    "trigger_price": 4.28,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 JOBY stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:55:46",
-    "time_str": "19:55:46",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "PATH",
-    "direction": "LONG",
-    "trigger_price": 11.84,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.19,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PATH explodiert um +0.59% in 5 Min.! Momentum aktiv."
   }
 ]

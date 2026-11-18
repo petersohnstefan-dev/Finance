@@ -1398,52 +1398,8 @@
       ]
     },
     "day_trading": {
-      "cash": 4010.9874370924113,
-      "positions": {
-        "KO776821": {
-          "symbol": "KO776821",
-          "name": "⚡ Turbo Bull 1.5x auf BILL Holdings, Inc. (KO: 22.508)",
-          "shares": 86.7653,
-          "buy_price": 4.4629,
-          "current_price": 4.369000000000001,
-          "buy_date": "2026-11-18 16:21",
-          "stop_loss": 3.881,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+1.4% Spike, Score 95/100 [volu25 tren20 spik15 stop20 mark15]) | 1.5x Hebel | Risiko 12%",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO776821",
-          "underlying_symbol": "BILL",
-          "underlying_name": "BILL Holdings, Inc.",
-          "direction": "LONG",
-          "ratio": 0.1,
-          "strike": 22.07,
-          "knockout_barrier": 22.51,
-          "initial_underlying_price": 66.2,
-          "current_underlying_price": 66.2,
-          "cert_price": 4.41,
-          "leverage": 1.5,
-          "distance_to_ko_pct": 65.8,
-          "is_knocked_out": false,
-          "peak_price": 4.4629,
-          "last_updated": "20:11:26"
-        },
-        "S": {
-          "symbol": "S",
-          "name": "SentinelOne, Inc.",
-          "shares": 16.4354,
-          "buy_price": 23.2865,
-          "current_price": 23.31,
-          "buy_date": "2026-11-18 19:51",
-          "stop_loss": 20.451,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+0.7% Spike, Score 75/100 [volu15 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 12%",
-          "derivative_type": "STOCK",
-          "peak_price": 23.31,
-          "last_updated": "20:11:26"
-        }
-      },
+      "cash": 4765.859057296011,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -4866,6 +4822,34 @@
           "total": 382.72,
           "date": "2026-11-18 19:51",
           "reason": "⚡ Daytrade (+0.7% Spike, Score 75/100 [volu15 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 12%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO776821",
+          "name": "⚡ Turbo Bull 1.5x auf BILL Holdings, Inc. (KO: 22.508)",
+          "product_type": "KNOCKOUT",
+          "shares": 86.7653,
+          "buy_price": 4.4629,
+          "sell_price": 4.3166,
+          "total": 374.53,
+          "pnl": -12.7,
+          "pnl_pct": -3.28,
+          "date": "2026-11-18 21:01",
+          "reason": "🛡️ EOD Pflichtverkauf (-2.1%) — Kein Übernacht-Risiko"
+        },
+        {
+          "type": "SELL",
+          "symbol": "S",
+          "name": "SentinelOne, Inc.",
+          "product_type": "STOCK",
+          "shares": 16.4354,
+          "buy_price": 23.2865,
+          "sell_price": 23.2634,
+          "total": 382.34,
+          "pnl": -0.38,
+          "pnl_pct": -0.1,
+          "date": "2026-11-18 21:01",
+          "reason": "🛡️ EOD Pflichtverkauf (+0.1%) — Kein Übernacht-Risiko"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
