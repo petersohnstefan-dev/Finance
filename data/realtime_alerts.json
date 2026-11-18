@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 18:45:56",
+    "time_str": "18:45:56",
+    "data_age_min": 0.9,
+    "window_span_min": 6.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 1.13,
+    "change_1min_pct": 0.87,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 18:45:55",
+    "time_str": "18:45:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "ENVX",
+    "direction": "LONG",
+    "trigger_price": 1.48,
+    "change_1min_pct": 0.89,
+    "vol_ratio": 0.12,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX explodiert um +0.89% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 18:45:54",
+    "time_str": "18:45:54",
+    "data_age_min": 3.9,
+    "window_span_min": 5.0,
+    "symbol": "ARVN",
+    "direction": "LONG",
+    "trigger_price": 6.88,
+    "change_1min_pct": 0.73,
+    "vol_ratio": 0.48,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARVN explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 18:40:58",
     "time_str": "18:40:58",
     "data_age_min": 1.0,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.41,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID explodiert um +0.68% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:31:14",
-    "time_str": "18:31:14",
-    "data_age_min": 0.3,
-    "window_span_min": 5.0,
-    "symbol": "SOFI",
-    "direction": "LONG",
-    "trigger_price": 14.4,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 1.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOFI explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:31:14",
-    "time_str": "18:31:14",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "IONQ",
-    "direction": "LONG",
-    "trigger_price": 24.08,
-    "change_1min_pct": 0.56,
-    "vol_ratio": 0.71,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 IONQ explodiert um +0.56% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 18:31:13",
-    "time_str": "18:31:13",
-    "data_age_min": 0.2,
-    "window_span_min": 5.0,
-    "symbol": "MSTR",
-    "direction": "LONG",
-    "trigger_price": 93.5,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.52,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
