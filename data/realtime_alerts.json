@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 20:31:10",
+    "time_str": "20:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "ASTS",
+    "direction": "LONG",
+    "trigger_price": 26.02,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 2.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 20:31:10",
+    "time_str": "20:31:10",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "RKLB",
+    "direction": "LONG",
+    "trigger_price": 53.95,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 0.99,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RKLB explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 20:31:07",
+    "time_str": "20:31:07",
+    "data_age_min": 3.1,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.06,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.06% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 20:25:45",
     "time_str": "20:25:45",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": 1.88,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S explodiert um +0.69% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:40:56",
-    "time_str": "19:40:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "APP",
-    "direction": "SHORT",
-    "trigger_price": 395.33,
-    "change_1min_pct": 1.08,
-    "vol_ratio": 3.33,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 APP stürzt um -1.08% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:40:54",
-    "time_str": "19:40:54",
-    "data_age_min": 1.9,
-    "window_span_min": 5.0,
-    "symbol": "STRK-USD",
-    "direction": "LONG",
-    "trigger_price": 0.03,
-    "change_1min_pct": 1.05,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 STRK-USD explodiert um +1.05% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 19:35:56",
-    "time_str": "19:35:56",
-    "data_age_min": 0.9,
-    "window_span_min": 4.0,
-    "symbol": "BKSY",
-    "direction": "SHORT",
-    "trigger_price": 21.05,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 0.68,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BKSY stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
