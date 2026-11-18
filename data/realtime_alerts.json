@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-18 15:05:47",
+    "time_str": "15:05:47",
+    "data_age_min": 2.1,
+    "window_span_min": 6.7,
+    "symbol": "ENVX",
+    "direction": "SHORT",
+    "trigger_price": 1.32,
+    "change_1min_pct": 0.59,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENVX stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 15:05:47",
+    "time_str": "15:05:47",
+    "data_age_min": 2.6,
+    "window_span_min": 4.2,
+    "symbol": "LUNR",
+    "direction": "LONG",
+    "trigger_price": 11.29,
+    "change_1min_pct": 0.68,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 LUNR explodiert um +0.68% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 15:05:45",
+    "time_str": "15:05:45",
+    "data_age_min": 10.8,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "SHORT",
+    "trigger_price": 3.26,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-18 15:01:31",
     "time_str": "15:01:31",
     "data_age_min": 0.8,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 S stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:45:50",
-    "time_str": "13:45:50",
-    "data_age_min": 0.4,
-    "window_span_min": 5.4,
-    "symbol": "HOOD",
-    "direction": "SHORT",
-    "trigger_price": 69.62,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:41:02",
-    "time_str": "13:41:02",
-    "data_age_min": 1.2,
-    "window_span_min": 5.9,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 8.32,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:36:01",
-    "time_str": "13:36:01",
-    "data_age_min": 0.0,
-    "window_span_min": 5.0,
-    "symbol": "TJX",
-    "direction": "LONG",
-    "trigger_price": 139.06,
-    "change_1min_pct": 4.44,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TJX explodiert um +4.44% in 5 Min.! Momentum aktiv."
   }
 ]
