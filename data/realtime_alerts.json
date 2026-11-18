@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-18 14:20:48",
+    "time_str": "14:20:48",
+    "data_age_min": 0.2,
+    "window_span_min": 4.6,
+    "symbol": "QBTS",
+    "direction": "SHORT",
+    "trigger_price": 8.3,
+    "change_1min_pct": 0.61,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QBTS stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 14:20:47",
+    "time_str": "14:20:47",
+    "data_age_min": 10.8,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "LONG",
+    "trigger_price": 3.27,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 1.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 14:15:56",
     "time_str": "14:15:56",
     "data_age_min": 12.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TEM explodiert um +0.52% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:05:56",
-    "time_str": "13:05:56",
-    "data_age_min": 1.9,
-    "window_span_min": 4.1,
-    "symbol": "URA",
-    "direction": "SHORT",
-    "trigger_price": 30.15,
-    "change_1min_pct": 0.5,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 URA stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 13:01:22",
-    "time_str": "13:01:22",
-    "data_age_min": 0.2,
-    "window_span_min": 8.2,
-    "symbol": "ENVX",
-    "direction": "LONG",
-    "trigger_price": 1.35,
-    "change_1min_pct": 2.01,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ENVX explodiert um +2.01% in 5 Min.! Momentum aktiv."
   }
 ]
