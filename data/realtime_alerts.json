@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-18 22:55:54",
+    "time_str": "22:55:54",
+    "data_age_min": 2.0,
+    "window_span_min": 2.9,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 22.34,
+    "change_1min_pct": 1.33,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -1.33% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-18 22:55:53",
+    "time_str": "22:55:53",
+    "data_age_min": 0.1,
+    "window_span_min": 3.8,
+    "symbol": "S",
+    "direction": "LONG",
+    "trigger_price": 23.96,
+    "change_1min_pct": 0.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-18 22:50:51",
     "time_str": "22:50:51",
     "data_age_min": 0.7,
@@ -622,31 +648,5 @@
     "vol_ratio": 9.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 TSLA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:01:23",
-    "time_str": "22:01:23",
-    "data_age_min": 2.4,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "LONG",
-    "trigger_price": 7.16,
-    "change_1min_pct": 0.85,
-    "vol_ratio": 3.38,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS explodiert um +0.85% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:01:23",
-    "time_str": "22:01:23",
-    "data_age_min": 0.4,
-    "window_span_min": 5.0,
-    "symbol": "RUN",
-    "direction": "LONG",
-    "trigger_price": 7.31,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 4.93,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RUN explodiert um +0.61% in 5 Min.! Momentum aktiv."
   }
 ]
