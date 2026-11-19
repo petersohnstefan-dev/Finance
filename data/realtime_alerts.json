@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-19 11:35:45",
+    "time_str": "11:35:45",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "PYTH-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.06,
+    "change_1min_pct": 1.13,
+    "vol_ratio": 0.16,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PYTH-USD stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-19 11:25:57",
     "time_str": "11:25:57",
     "data_age_min": 1.4,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STEM explodiert um +2.04% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:41:00",
-    "time_str": "22:41:00",
-    "data_age_min": 0.5,
-    "window_span_min": 4.6,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 7.7,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
