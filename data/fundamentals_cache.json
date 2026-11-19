@@ -253,10 +253,43 @@
   }
  },
  "BLNK": {
-  "fetched_ts": 1794491783.5374577,
+  "fetched_ts": 1795098707.8943667,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": -8.16,
+   "altman_detail": {
+    "X1": 0.175,
+    "X2": -5.578,
+    "X3": -0.506,
+    "X4": 0.687,
+    "X5": 0.7
+   },
+   "altman_not_applicable": false,
+   "sector": "Industrials",
+   "beneish_m": -4.52,
+   "beneish_detail": {
+    "DSRI": 0.836,
+    "GMI": 1.219,
+    "AQI": 0.867,
+    "SGI": 0.839,
+    "DEPI": 1.313,
+    "SGAI": 1.097,
+    "LVGI": 1.494,
+    "TATA": -0.356
+   },
+   "computed_at": "2026-11-19"
   }
  },
  "SOFI": {
@@ -777,10 +810,43 @@
   }
  },
  "INTU": {
-  "fetched_ts": 1793220100.1091614,
+  "fetched_ts": 1795098711.1385503,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 8,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 4.9,
+   "altman_detail": {
+    "X1": 0.14,
+    "X2": 0.518,
+    "X3": 0.171,
+    "X4": 4.763,
+    "X5": 0.583
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.91,
+   "beneish_detail": {
+    "DSRI": 1.035,
+    "GMI": 0.992,
+    "AQI": 0.886,
+    "SGI": 1.139,
+    "DEPI": 1.025,
+    "SGAI": 0.947,
+    "LVGI": 1.019,
+    "TATA": -0.116
+   },
+   "computed_at": "2026-11-19"
   }
  },
  "AMAT": {
@@ -1569,10 +1635,43 @@
   }
  },
  "NOW": {
-  "fetched_ts": 1793218902.799948,
+  "fetched_ts": 1795098709.9014406,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 5.5,
+   "altman_detail": {
+    "X1": 0.001,
+    "X2": 0.201,
+    "X3": 0.088,
+    "X4": 7.367,
+    "X5": 0.51
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.76,
+   "beneish_detail": {
+    "DSRI": 0.97,
+    "GMI": 1.021,
+    "AQI": 1.471,
+    "SGI": 1.209,
+    "DEPI": 0.97,
+    "SGAI": 0.952,
+    "LVGI": 0.949,
+    "TATA": -0.142
+   },
+   "computed_at": "2026-11-19"
   }
  },
  "RIVN": {
@@ -2363,10 +2462,43 @@
   }
  },
  "IONQ": {
-  "fetched_ts": 1793912807.2055447,
+  "fetched_ts": 1795098708.8181968,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 4,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 2.44,
+   "altman_detail": {
+    "X1": 0.368,
+    "X2": -0.182,
+    "X3": -0.096,
+    "X4": 4.251,
+    "X5": 0.02
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -0.6,
+   "beneish_detail": {
+    "DSRI": 1.717,
+    "GMI": 1.292,
+    "AQI": -0.878,
+    "SGI": 3.019,
+    "DEPI": 0.632,
+    "SGAI": 0.994,
+    "LVGI": 0.288,
+    "TATA": -0.035
+   },
+   "computed_at": "2026-11-19"
   }
  },
  "ICLN": {
