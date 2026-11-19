@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-19 07:05:53",
+    "time_str": "07:05:53",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.09,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.09% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-18 22:55:54",
     "time_str": "22:55:54",
     "data_age_min": 2.0,
@@ -635,18 +648,5 @@
     "vol_ratio": 3.68,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MU stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:01:27",
-    "time_str": "22:01:27",
-    "data_age_min": 0.1,
-    "window_span_min": 5.4,
-    "symbol": "TSLA",
-    "direction": "SHORT",
-    "trigger_price": 383.04,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 9.91,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 TSLA stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
