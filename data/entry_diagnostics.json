@@ -358,7 +358,7 @@
   },
   "2026-11-19": {
     "short_term": {
-      "runs": 172,
+      "runs": 173,
       "scored": 198,
       "entries": 0,
       "best_score": 60.0,
@@ -366,18 +366,18 @@
       "threshold": 65.0,
       "blocks": {
         "unter_min_alpha_score": 95,
-        "keine_kandidaten": 77
+        "keine_kandidaten": 78
       }
     },
     "day_trading": {
-      "runs": 172,
+      "runs": 173,
       "scored": 943,
       "entries": 1,
       "best_score": 87,
       "above_threshold": 1,
       "threshold": 75.0,
       "blocks": {
-        "ausserhalb_handelszeit": 16,
+        "ausserhalb_handelszeit": 17,
         "unter_min_entry_score": 133,
         "keine_kandidaten_nach_gates": 22
       }
