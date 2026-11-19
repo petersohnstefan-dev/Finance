@@ -1,42 +1,9 @@
 {
  "NVDA": {
-  "fetched_ts": 1791249482.5594947,
+  "fetched_ts": 1795101976.1369288,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": false,
-    "Cashflow > Gewinn (keine Accruals)": false,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": false
-   },
-   "altman_z": 74.75,
-   "altman_detail": {
-    "X1": 0.452,
-    "X2": 0.711,
-    "X3": 0.685,
-    "X4": 116.516,
-    "X5": 1.044
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -1.27,
-   "beneish_detail": {
-    "DSRI": 1.008,
-    "GMI": 1.055,
-    "AQI": 1.232,
-    "SGI": 1.655,
-    "DEPI": 1.061,
-    "SGAI": 0.793,
-    "LVGI": 0.807,
-    "TATA": 0.084
-   },
-   "computed_at": "2026-10-06"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "BAC": {
@@ -190,7 +157,7 @@
   }
  },
  "PLTR": {
-  "fetched_ts": 1793653907.0513644,
+  "fetched_ts": 1795101975.7278535,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
@@ -3236,7 +3203,7 @@
   }
  },
  "ARKW": {
-  "fetched_ts": 1792506640.2336314,
+  "fetched_ts": 1795101973.9664762,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
