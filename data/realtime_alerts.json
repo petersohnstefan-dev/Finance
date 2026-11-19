@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-19 12:15:58",
+    "time_str": "12:15:58",
+    "data_age_min": 1.0,
+    "window_span_min": 7.0,
+    "symbol": "ENPH",
+    "direction": "LONG",
+    "trigger_price": 23.23,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH explodiert um +0.78% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 12:15:58",
+    "time_str": "12:15:58",
+    "data_age_min": 0.1,
+    "window_span_min": 6.9,
+    "symbol": "PANW",
+    "direction": "SHORT",
+    "trigger_price": 372.21,
+    "change_1min_pct": 0.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PANW stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-19 12:11:14",
     "time_str": "12:11:14",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 FTNT stürzt um -1.10% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:50:51",
-    "time_str": "22:50:51",
-    "data_age_min": 0.5,
-    "window_span_min": 5.4,
-    "symbol": "ZS",
-    "direction": "SHORT",
-    "trigger_price": 202.05,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ZS stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:50:51",
-    "time_str": "22:50:51",
-    "data_age_min": 0.4,
-    "window_span_min": 5.5,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 247.5,
-    "change_1min_pct": 0.87,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.87% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
