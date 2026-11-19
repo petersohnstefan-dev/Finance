@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-19 14:35:52",
+    "time_str": "14:35:52",
+    "data_age_min": 1.7,
+    "window_span_min": 2.2,
+    "symbol": "ENPH",
+    "direction": "SHORT",
+    "trigger_price": 22.92,
+    "change_1min_pct": 0.82,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ENPH stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 14:35:51",
+    "time_str": "14:35:51",
+    "data_age_min": 1.5,
+    "window_span_min": 2.4,
+    "symbol": "ZS",
+    "direction": "SHORT",
+    "trigger_price": 204.1,
+    "change_1min_pct": 0.92,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS stürzt um -0.92% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 14:35:51",
+    "time_str": "14:35:51",
+    "data_age_min": 3.9,
+    "window_span_min": 5.0,
+    "symbol": "DKNG",
+    "direction": "LONG",
+    "trigger_price": 17.95,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DKNG explodiert um +0.56% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-19 14:31:17",
     "time_str": "14:31:17",
     "data_age_min": 0.4,
@@ -609,44 +648,5 @@
     "vol_ratio": 2.36,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 HBAR-USD stürzt um -1.20% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 13:25:52",
-    "time_str": "13:25:52",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "WLD-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.26,
-    "change_1min_pct": 1.24,
-    "vol_ratio": 0.12,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 WLD-USD stürzt um -1.24% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 13:25:51",
-    "time_str": "13:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "ONDO-USD",
-    "direction": "SHORT",
-    "trigger_price": 0.3,
-    "change_1min_pct": 1.07,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ONDO-USD stürzt um -1.07% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 13:25:51",
-    "time_str": "13:25:51",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "INJ-USD",
-    "direction": "SHORT",
-    "trigger_price": 7.16,
-    "change_1min_pct": 1.25,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 INJ-USD stürzt um -1.25% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
