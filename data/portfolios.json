@@ -1223,38 +1223,8 @@
       ]
     },
     "day_trading": {
-      "cash": 4379.015108017326,
-      "positions": {
-        "KO663526": {
-          "symbol": "KO663526",
-          "name": "🔻 Turbo Bear 1.5x auf AMD (KO: 855.31)",
-          "shares": 109.2461,
-          "buy_price": 3.5319,
-          "current_price": 3.8689,
-          "buy_date": "2026-11-19 16:32",
-          "stop_loss": 3.73,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+1.3% Spike, Score 87/100 [volu25 tren20 spik15 stop12 mark15]) | 1.5x Hebel | Risiko 12%",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO663526",
-          "underlying_symbol": "AMD",
-          "underlying_name": "AMD",
-          "direction": "SHORT",
-          "ratio": 0.01,
-          "strike": 872.77,
-          "knockout_barrier": 855.31,
-          "initial_underlying_price": 523.66,
-          "current_underlying_price": 523.66,
-          "cert_price": 3.49,
-          "leverage": 1.5,
-          "distance_to_ko_pct": 76.0,
-          "is_knocked_out": false,
-          "peak_price": 3.9216999999999995,
-          "last_updated": "20:56:17"
-        }
-      },
+      "cash": 4795.605397471846,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -4716,6 +4686,20 @@
           "total": 385.84,
           "date": "2026-11-19 16:32",
           "reason": "⚡ Daytrade (+1.3% Spike, Score 87/100 [volu25 tren20 spik15 stop12 mark15]) | 1.5x Hebel | Risiko 12%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO663526",
+          "name": "🔻 Turbo Bear 1.5x auf AMD (KO: 855.31)",
+          "product_type": "KNOCKOUT",
+          "shares": 109.2461,
+          "buy_price": 3.5319,
+          "sell_price": 3.8225,
+          "total": 417.59,
+          "pnl": 31.74,
+          "pnl_pct": 8.23,
+          "date": "2026-11-19 21:02",
+          "reason": "🛡️ EOD Pflichtverkauf (+9.5%) — Kein Übernacht-Risiko"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
