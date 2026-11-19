@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-19 20:45:52",
+    "time_str": "20:45:52",
+    "data_age_min": 0.9,
+    "window_span_min": 6.0,
+    "symbol": "STEM",
+    "direction": "SHORT",
+    "trigger_price": 0.7,
+    "change_1min_pct": 0.81,
+    "vol_ratio": 1.49,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STEM stürzt um -0.81% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 20:45:52",
+    "time_str": "20:45:52",
+    "data_age_min": 2.9,
+    "window_span_min": 6.0,
+    "symbol": "RDWR",
+    "direction": "SHORT",
+    "trigger_price": 33.5,
+    "change_1min_pct": 0.5,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RDWR stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 20:45:51",
+    "time_str": "20:45:51",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "DUOL",
+    "direction": "LONG",
+    "trigger_price": 151.81,
+    "change_1min_pct": 0.76,
+    "vol_ratio": 1.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DUOL explodiert um +0.76% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-19 20:40:56",
     "time_str": "20:40:56",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.51,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRSP stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 19:50:53",
-    "time_str": "19:50:53",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "NG=F",
-    "direction": "SHORT",
-    "trigger_price": 3.29,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NG=F stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 19:45:49",
-    "time_str": "19:45:49",
-    "data_age_min": 0.8,
-    "window_span_min": 5.0,
-    "symbol": "ESTC",
-    "direction": "SHORT",
-    "trigger_price": 78.2,
-    "change_1min_pct": 0.64,
-    "vol_ratio": 2.31,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC stürzt um -0.64% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 19:45:49",
-    "time_str": "19:45:49",
-    "data_age_min": 1.8,
-    "window_span_min": 5.0,
-    "symbol": "HUBS",
-    "direction": "LONG",
-    "trigger_price": 196.59,
-    "change_1min_pct": 0.62,
-    "vol_ratio": 0.53,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HUBS explodiert um +0.62% in 5 Min.! Momentum aktiv."
   }
 ]
