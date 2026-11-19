@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-19 09:15:55",
+    "time_str": "09:15:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "VOLV-B.ST",
+    "direction": "LONG",
+    "trigger_price": 322.9,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 0.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 VOLV-B.ST explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-19 09:15:49",
+    "time_str": "09:15:49",
+    "data_age_min": 0.8,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "LONG",
+    "trigger_price": 7.29,
+    "change_1min_pct": 1.28,
+    "vol_ratio": 0.71,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD explodiert um +1.28% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-19 09:05:55",
     "time_str": "09:05:55",
     "data_age_min": 0.9,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MNTS stürzt um -3.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:05:53",
-    "time_str": "22:05:53",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "ASTS",
-    "direction": "SHORT",
-    "trigger_price": 25.39,
-    "change_1min_pct": 0.82,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ASTS stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-18 22:05:53",
-    "time_str": "22:05:53",
-    "data_age_min": 1.1,
-    "window_span_min": 4.8,
-    "symbol": "AFRM",
-    "direction": "SHORT",
-    "trigger_price": 58.35,
-    "change_1min_pct": 0.95,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AFRM stürzt um -0.95% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
