@@ -1,5 +1,27 @@
 [
  {
+  "timestamp": "2026-11-19 17:06:37",
+  "component": "portfolio",
+  "kind": "large_loss",
+  "severity": "error",
+  "message": "medium_term: NVDA mit -575.05 EUR geschlossen (5.4% des Depotwerts)",
+  "context": {
+   "depot": "medium_term",
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "pnl": -575.05,
+   "pnl_pct": -28.75,
+   "einstand": 214.72,
+   "verkauf": 153.29,
+   "stop_loss": 193.25,
+   "produkt": "STOCK",
+   "basiswert": null,
+   "grund": "🚨 Trailing Stop-Loss ausgelöst (-28.6%)"
+  },
+  "count": 1,
+  "last_seen": "2026-11-19 17:06:37"
+ },
+ {
   "timestamp": "2026-11-19 02:57:49",
   "component": "ai_journal",
   "kind": "param_change_rejected",
