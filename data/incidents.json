@@ -1,5 +1,40 @@
 [
  {
+  "timestamp": "2026-11-19 02:57:49",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 3 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_min_alpha_score": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "short_term_breakeven_trigger_atr": "in den letzten 30 Tagen bereits 2x erhoeht; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "short_term_min_spike_pct": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-19 02:57:49"
+ },
+ {
+  "timestamp": "2026-11-19 02:57:09",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 4 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_stop_loss_pct": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "short_term_stop_loss_pct": "gehoert nicht zu Depot day_trading",
+    "daytrade_min_entry_score": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_breakeven_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-19 02:57:09"
+ },
+ {
   "timestamp": "2026-11-17 04:02:45",
   "component": "ai_journal",
   "kind": "param_change_rejected",
