@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-20 19:01:23",
+    "time_str": "19:01:23",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "MSTR",
+    "direction": "LONG",
+    "trigger_price": 80.99,
+    "change_1min_pct": 0.59,
+    "vol_ratio": 0.61,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MSTR explodiert um +0.59% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 19:01:22",
+    "time_str": "19:01:22",
+    "data_age_min": 0.4,
+    "window_span_min": 5.0,
+    "symbol": "CRSP",
+    "direction": "LONG",
+    "trigger_price": 39.62,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.25,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRSP explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-20 18:56:03",
     "time_str": "18:56:03",
     "data_age_min": 0.1,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.52,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BEAM stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 18:11:07",
-    "time_str": "18:11:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMAT",
-    "direction": "LONG",
-    "trigger_price": 307.51,
-    "change_1min_pct": 0.54,
-    "vol_ratio": 0.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMAT explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 18:11:07",
-    "time_str": "18:11:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 102.99,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.7,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.53% in 5 Min.! Momentum aktiv."
   }
 ]
