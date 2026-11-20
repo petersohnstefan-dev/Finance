@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-20 10:25:57",
+    "time_str": "10:25:57",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "QUBT",
+    "direction": "LONG",
+    "trigger_price": 4.8,
+    "change_1min_pct": 0.63,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 QUBT explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 10:25:56",
+    "time_str": "10:25:56",
+    "data_age_min": 2.1,
+    "window_span_min": 3.9,
+    "symbol": "ARM",
+    "direction": "LONG",
+    "trigger_price": 170.55,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM explodiert um +0.67% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-20 10:20:55",
     "time_str": "10:20:55",
     "data_age_min": 2.4,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SNOW stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 22:50:49",
-    "time_str": "22:50:49",
-    "data_age_min": 0.5,
-    "window_span_min": 5.4,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 240.0,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 22:50:49",
-    "time_str": "22:50:49",
-    "data_age_min": 3.6,
-    "window_span_min": 3.2,
-    "symbol": "NVAX",
-    "direction": "LONG",
-    "trigger_price": 7.79,
-    "change_1min_pct": 1.15,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NVAX explodiert um +1.15% in 5 Min.! Momentum aktiv."
   }
 ]
