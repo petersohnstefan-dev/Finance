@@ -872,7 +872,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 6889.910578575359,
+      "cash": 6486.743488450559,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -887,6 +887,34 @@
           "derivative_type": "STOCK",
           "last_updated": "20:51:38",
           "peak_price": 154.62
+        },
+        "KO588105": {
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 898.96)",
+          "shares": 173.5364,
+          "buy_price": 2.3175,
+          "current_price": 2.29,
+          "buy_date": "2026-11-20 22:01",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "🛡️ Makro-Absicherung: VIX 37.7 ≥ 28.0 — 397€ Buchwert gegen Korrektur gehedgt",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO588105",
+          "underlying_symbol": "SPY",
+          "underlying_name": "SPY Index",
+          "direction": "SHORT",
+          "ratio": 0.01,
+          "strike": 917.31,
+          "knockout_barrier": 898.96,
+          "initial_underlying_price": 687.98,
+          "current_underlying_price": 687.98,
+          "cert_price": 2.29,
+          "leverage": 3.0,
+          "distance_to_ko_pct": 30.7,
+          "is_knocked_out": false,
+          "is_macro_hedge": true
         }
       },
       "history": [
@@ -1603,6 +1631,17 @@
           "pnl_pct": -2.37,
           "date": "2026-11-20 20:56",
           "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 898.96)",
+          "product_type": "KNOCKOUT",
+          "shares": 173.5364,
+          "price": 2.29,
+          "total": 402.17,
+          "date": "2026-11-20 22:01",
+          "reason": "🛡️ Makro-Absicherung: VIX 37.7 ≥ 28.0 — 397€ Buchwert gegen Korrektur gehedgt"
         }
       ]
     },
@@ -1617,13 +1656,13 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 3531.5,
+          "current_price": 3525.2,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "20:51:38",
+          "last_updated": "22:01:46",
           "peak_price": 4640.8
         },
         "BTC-USD": {
@@ -1659,14 +1698,14 @@
           "name": "Salesforce, Inc.",
           "shares": 8.8063,
           "buy_price": 227.5642,
-          "current_price": 182.37,
+          "current_price": 180.05,
           "buy_date": "2026-11-05 07:02",
           "stop_loss": null,
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.4% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der langfrist_score von 100, ein starker Piotroski-Score von 7 / 9 und ein moderates KGV von 20.33 spiegeln eine exzellente, mandatskonforme Bilanz- und Qualitätsbasis wider, während die Ausschlusskriterien (Piotroski < 4, Datenabdeckung < 50%, Sektor-Klumpenrisiko im Tech-Bereich mit UBER nicht übermässig verdichtet, reines Momentum) nicht greifen.",
           "derivative_type": "STOCK",
           "peak_price": 227.5642,
-          "last_updated": "21:16:32"
+          "last_updated": "22:01:46"
         }
       },
       "history": [
