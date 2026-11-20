@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-11-20 21:21:09",
+    "time_str": "21:21:09",
+    "data_age_min": 0.2,
+    "window_span_min": 5.0,
+    "symbol": "INTU",
+    "direction": "LONG",
+    "trigger_price": 278.34,
+    "change_1min_pct": 0.62,
+    "vol_ratio": 0.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU explodiert um +0.62% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 21:21:05",
+    "time_str": "21:21:05",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "CHPT",
+    "direction": "LONG",
+    "trigger_price": 8.85,
+    "change_1min_pct": 1.35,
+    "vol_ratio": 8.27,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CHPT explodiert um +1.35% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 21:21:04",
+    "time_str": "21:21:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "JOBY",
+    "direction": "SHORT",
+    "trigger_price": 3.64,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 1.24,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JOBY stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 21:21:04",
+    "time_str": "21:21:04",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "CAVA",
+    "direction": "LONG",
+    "trigger_price": 49.51,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 2.07,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CAVA explodiert um +0.63% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-20 21:16:08",
     "time_str": "21:16:08",
     "data_age_min": 0.2,
@@ -596,57 +648,5 @@
     "vol_ratio": 2.18,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NET explodiert um +0.50% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:51:04",
-    "time_str": "20:51:04",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "CELH",
-    "direction": "SHORT",
-    "trigger_price": 28.58,
-    "change_1min_pct": 0.72,
-    "vol_ratio": 2.04,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CELH stürzt um -0.72% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:51:04",
-    "time_str": "20:51:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "MSTR",
-    "direction": "SHORT",
-    "trigger_price": 80.36,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 0.57,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:46:05",
-    "time_str": "20:46:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "LONG",
-    "trigger_price": 428.41,
-    "change_1min_pct": 1.07,
-    "vol_ratio": 0.83,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD explodiert um +1.07% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:46:02",
-    "time_str": "20:46:02",
-    "data_age_min": 2.1,
-    "window_span_min": 5.0,
-    "symbol": "MNTS",
-    "direction": "LONG",
-    "trigger_price": 1.96,
-    "change_1min_pct": 0.51,
-    "vol_ratio": 0.06,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MNTS explodiert um +0.51% in 5 Min.! Momentum aktiv."
   }
 ]
