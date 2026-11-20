@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-20 14:10:57",
+    "time_str": "14:10:57",
+    "data_age_min": 0.4,
+    "window_span_min": 4.6,
+    "symbol": "SYM",
+    "direction": "LONG",
+    "trigger_price": 32.44,
+    "change_1min_pct": 0.73,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SYM explodiert um +0.73% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 14:10:55",
+    "time_str": "14:10:55",
+    "data_age_min": 4.4,
+    "window_span_min": 7.5,
+    "symbol": "TAN",
+    "direction": "LONG",
+    "trigger_price": 36.23,
+    "change_1min_pct": 0.64,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TAN explodiert um +0.64% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-20 14:05:56",
     "time_str": "14:05:56",
     "data_age_min": 4.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LUNR stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 13:25:59",
-    "time_str": "13:25:59",
-    "data_age_min": 4.9,
-    "window_span_min": 7.1,
-    "symbol": "ESTC",
-    "direction": "SHORT",
-    "trigger_price": 74.16,
-    "change_1min_pct": 1.12,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ESTC stürzt um -1.12% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 13:25:58",
-    "time_str": "13:25:58",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 234.01,
-    "change_1min_pct": 0.69,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.69% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
