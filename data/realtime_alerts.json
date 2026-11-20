@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-20 10:46:07",
+    "time_str": "10:46:07",
+    "data_age_min": 3.2,
+    "window_span_min": 5.0,
+    "symbol": "INTU",
+    "direction": "LONG",
+    "trigger_price": 276.0,
+    "change_1min_pct": 0.54,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTU explodiert um +0.54% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 10:46:01",
+    "time_str": "10:46:01",
+    "data_age_min": 0.6,
+    "window_span_min": 5.4,
+    "symbol": "ALAB",
+    "direction": "SHORT",
+    "trigger_price": 199.3,
+    "change_1min_pct": 0.67,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ALAB stürzt um -0.67% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-20 10:40:52",
     "time_str": "10:40:52",
     "data_age_min": 2.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.25,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 SI=F explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 23:02:29",
-    "time_str": "23:02:29",
-    "data_age_min": 0.3,
-    "window_span_min": 6.2,
-    "symbol": "BLK",
-    "direction": "SHORT",
-    "trigger_price": 1131.0,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLK stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 23:02:28",
-    "time_str": "23:02:28",
-    "data_age_min": 6.3,
-    "window_span_min": 8.2,
-    "symbol": "ADBE",
-    "direction": "SHORT",
-    "trigger_price": 219.57,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ADBE stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
