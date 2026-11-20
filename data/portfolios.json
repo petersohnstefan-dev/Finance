@@ -873,7 +873,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 6698.76844049384,
+      "cash": 7101.11420146576,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -888,35 +888,6 @@
           "derivative_type": "STOCK",
           "last_updated": "11:16:32",
           "peak_price": 154.62
-        },
-        "KO588105": {
-          "symbol": "KO588105",
-          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 935.4)",
-          "shares": 171.0857,
-          "buy_price": 2.4187,
-          "current_price": 2.3862,
-          "buy_date": "2026-11-20 11:11",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "🛡️ Makro-Absicherung: VIX 29.9 ≥ 28.0 — 409€ Buchwert gegen Korrektur gehedgt",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO588105",
-          "underlying_symbol": "SPY",
-          "underlying_name": "SPY Index",
-          "direction": "SHORT",
-          "ratio": 0.01,
-          "strike": 954.49,
-          "knockout_barrier": 935.4,
-          "initial_underlying_price": 715.87,
-          "current_underlying_price": 715.87,
-          "cert_price": 2.39,
-          "leverage": 3.0,
-          "distance_to_ko_pct": 30.7,
-          "is_knocked_out": false,
-          "is_macro_hedge": true,
-          "last_updated": "11:16:32"
         }
       },
       "history": [
@@ -1169,6 +1140,20 @@
           "total": 413.8,
           "date": "2026-11-20 11:11",
           "reason": "🛡️ Makro-Absicherung: VIX 29.9 ≥ 28.0 — 409€ Buchwert gegen Korrektur gehedgt"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 935.4)",
+          "product_type": "KNOCKOUT",
+          "shares": 171.0857,
+          "buy_price": 2.4187,
+          "sell_price": 2.3576,
+          "total": 403.35,
+          "pnl": -10.46,
+          "pnl_pct": -2.53,
+          "date": "2026-11-20 11:21",
+          "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
         }
       ]
     },
@@ -4940,7 +4925,7 @@
     "medium_term_ESTC": "2026-10-23T19:06:29.629047+02:00",
     "medium_term_SIE.DE": "2026-10-14T14:06:46.068475+02:00",
     "long_term_SOL-USD": "2026-10-14T20:26:36.144627+02:00",
-    "long_term_ONON": "2026-11-20T11:02:06.547854+01:00",
+    "long_term_ONON": "2026-11-20T15:21:28.355687+01:00",
     "medium_term_GOOGL": "2026-10-15T15:41:23.492765+02:00",
     "medium_term_TLX.DE": "2026-10-20T13:11:34.691612+02:00",
     "medium_term_INVE-B.ST": "2026-10-27T13:16:43.962931+01:00",
