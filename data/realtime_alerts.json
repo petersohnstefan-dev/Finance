@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-20 13:01:23",
+    "time_str": "13:01:23",
+    "data_age_min": 0.1,
+    "window_span_min": 5.3,
+    "symbol": "ORCL",
+    "direction": "SHORT",
+    "trigger_price": 106.9,
+    "change_1min_pct": 0.56,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ORCL stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 13:01:22",
+    "time_str": "13:01:22",
+    "data_age_min": 1.2,
+    "window_span_min": 9.2,
+    "symbol": "MRK",
+    "direction": "SHORT",
+    "trigger_price": 132.43,
+    "change_1min_pct": 0.65,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRK stürzt um -0.65% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 13:01:22",
+    "time_str": "13:01:22",
+    "data_age_min": 0.0,
+    "window_span_min": 5.3,
+    "symbol": "AMD",
+    "direction": "SHORT",
+    "trigger_price": 453.69,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 AMD stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-20 12:55:43",
     "time_str": "12:55:43",
     "data_age_min": 1.5,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMAT explodiert um +0.78% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 11:05:56",
-    "time_str": "11:05:56",
-    "data_age_min": 0.4,
-    "window_span_min": 4.6,
-    "symbol": "ORCL",
-    "direction": "LONG",
-    "trigger_price": 107.7,
-    "change_1min_pct": 0.54,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ORCL explodiert um +0.54% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 11:05:56",
-    "time_str": "11:05:56",
-    "data_age_min": 1.9,
-    "window_span_min": 5.1,
-    "symbol": "BAC",
-    "direction": "SHORT",
-    "trigger_price": 48.36,
-    "change_1min_pct": 0.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BAC stürzt um -0.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 11:05:55",
-    "time_str": "11:05:55",
-    "data_age_min": 2.4,
-    "window_span_min": 9.5,
-    "symbol": "QCOM",
-    "direction": "LONG",
-    "trigger_price": 158.41,
-    "change_1min_pct": 0.65,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM explodiert um +0.65% in 5 Min.! Momentum aktiv."
   }
 ]
