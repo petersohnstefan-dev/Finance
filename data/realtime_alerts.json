@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-20 09:41:01",
+    "time_str": "09:41:01",
+    "data_age_min": 11.0,
+    "window_span_min": 5.0,
+    "symbol": "SI=F",
+    "direction": "LONG",
+    "trigger_price": 42.56,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SI=F explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-20 09:31:11",
     "time_str": "09:31:11",
     "data_age_min": 3.2,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ELF stürzt um -0.84% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-19 22:41:05",
-    "time_str": "22:41:05",
-    "data_age_min": 0.3,
-    "window_span_min": 4.8,
-    "symbol": "HIMS",
-    "direction": "SHORT",
-    "trigger_price": 15.9,
-    "change_1min_pct": 0.56,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HIMS stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
