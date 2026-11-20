@@ -873,7 +873,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 7015.850125467839,
+      "cash": 6601.0485004310385,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -888,6 +888,34 @@
           "derivative_type": "STOCK",
           "last_updated": "14:56:19",
           "peak_price": 154.62
+        },
+        "KO588105": {
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 935.4)",
+          "shares": 171.0857,
+          "buy_price": 2.4187,
+          "current_price": 2.39,
+          "buy_date": "2026-11-20 15:16",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "🛡️ Makro-Absicherung: VIX 30.2 ≥ 28.0 — 409€ Buchwert gegen Korrektur gehedgt",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO588105",
+          "underlying_symbol": "SPY",
+          "underlying_name": "SPY Index",
+          "direction": "SHORT",
+          "ratio": 0.01,
+          "strike": 954.49,
+          "knockout_barrier": 935.4,
+          "initial_underlying_price": 715.87,
+          "current_underlying_price": 715.87,
+          "cert_price": 2.39,
+          "leverage": 3.0,
+          "distance_to_ko_pct": 30.7,
+          "is_knocked_out": false,
+          "is_macro_hedge": true
         }
       },
       "history": [
@@ -1329,6 +1357,17 @@
           "pnl_pct": -2.53,
           "date": "2026-11-20 15:06",
           "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 935.4)",
+          "product_type": "KNOCKOUT",
+          "shares": 171.0857,
+          "price": 2.39,
+          "total": 413.8,
+          "date": "2026-11-20 15:16",
+          "reason": "🛡️ Makro-Absicherung: VIX 30.2 ≥ 28.0 — 409€ Buchwert gegen Korrektur gehedgt"
         }
       ]
     },
@@ -5129,7 +5168,7 @@
     "long_term_AFRM": "2026-11-05T05:50:38.980183+01:00",
     "short_term_BLNK": "2026-11-09T13:11:42.200087+01:00",
     "medium_term_CRM": "2026-11-17T20:02:01.001859+01:00",
-    "medium_term_SPGI": "2026-11-20T15:16:37.253737+01:00",
+    "medium_term_SPGI": "2026-11-20T19:16:44.986815+01:00",
     "long_term_SMCI": "2026-11-20T17:51:41.412983+01:00",
     "long_term_NEAR-USD": "2026-11-20T00:16:27.811835+01:00",
     "short_term_INTU": "2026-11-20T12:41:27.656317+01:00",
