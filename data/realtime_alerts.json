@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-20 21:26:00",
+    "time_str": "21:26:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "INTC",
+    "direction": "SHORT",
+    "trigger_price": 52.42,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 0.9,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INTC stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 21:25:59",
+    "time_str": "21:25:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "NVDA",
+    "direction": "LONG",
+    "trigger_price": 128.47,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 0.88,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NVDA explodiert um +0.82% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-20 21:25:55",
+    "time_str": "21:25:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "KVYO",
+    "direction": "SHORT",
+    "trigger_price": 22.19,
+    "change_1min_pct": 0.56,
+    "vol_ratio": 1.42,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 KVYO stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-20 21:21:09",
     "time_str": "21:21:09",
     "data_age_min": 0.2,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.43,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 QUBT stürzt um -0.56% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:51:05",
-    "time_str": "20:51:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 6.61,
-    "change_1min_pct": 0.6,
-    "vol_ratio": 1.25,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:51:05",
-    "time_str": "20:51:05",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "FOUR",
-    "direction": "SHORT",
-    "trigger_price": 38.51,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.34,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 FOUR stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-20 20:51:04",
-    "time_str": "20:51:04",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "NET",
-    "direction": "LONG",
-    "trigger_price": 276.15,
-    "change_1min_pct": 0.5,
-    "vol_ratio": 2.18,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 NET explodiert um +0.50% in 5 Min.! Momentum aktiv."
   }
 ]
