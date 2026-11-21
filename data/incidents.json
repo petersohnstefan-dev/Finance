@@ -1,5 +1,21 @@
 [
  {
+  "timestamp": "2026-11-21 02:51:18",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot medium_term: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "medium_term",
+   "abgelehnt": {
+    "medium_term_hedge_vix_threshold": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)",
+    "short_term_stop_loss_pct": "gehoert nicht zu Depot medium_term"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-21 02:51:18"
+ },
+ {
   "timestamp": "2026-11-21 02:39:25",
   "component": "ai_journal",
   "kind": "param_change_rejected",
