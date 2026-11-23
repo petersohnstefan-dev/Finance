@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-23 11:11:03",
+    "time_str": "11:11:03",
+    "data_age_min": 13.0,
+    "window_span_min": 6.1,
+    "symbol": "MS",
+    "direction": "SHORT",
+    "trigger_price": 171.0,
+    "change_1min_pct": 0.58,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MS stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 11:10:59",
+    "time_str": "11:10:59",
+    "data_age_min": 2.1,
+    "window_span_min": 4.9,
+    "symbol": "RIVN",
+    "direction": "LONG",
+    "trigger_price": 10.91,
+    "change_1min_pct": 0.85,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 RIVN explodiert um +0.85% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 11:10:56",
+    "time_str": "11:10:56",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "INJ-USD",
+    "direction": "SHORT",
+    "trigger_price": 6.38,
+    "change_1min_pct": 1.04,
+    "vol_ratio": 8.85,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 INJ-USD stürzt um -1.04% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-23 11:05:52",
     "time_str": "11:05:52",
     "data_age_min": 0.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONQ explodiert um +1.18% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 10:05:50",
-    "time_str": "10:05:50",
-    "data_age_min": 0.2,
-    "window_span_min": 4.7,
-    "symbol": "RKLB",
-    "direction": "LONG",
-    "trigger_price": 49.38,
-    "change_1min_pct": 0.57,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB explodiert um +0.57% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 10:05:50",
-    "time_str": "10:05:50",
-    "data_age_min": 1.1,
-    "window_span_min": 4.7,
-    "symbol": "COIN",
-    "direction": "LONG",
-    "trigger_price": 107.44,
-    "change_1min_pct": 0.97,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 COIN explodiert um +0.97% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 10:05:50",
-    "time_str": "10:05:50",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "CRWD",
-    "direction": "SHORT",
-    "trigger_price": 221.7,
-    "change_1min_pct": 0.98,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CRWD stürzt um -0.98% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]

@@ -872,7 +872,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 3959.8493756767975,
+      "cash": 4746.043519777838,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -915,35 +915,6 @@
           "derivative_type": "STOCK",
           "last_updated": "11:06:29",
           "peak_price": 224.8889
-        },
-        "KO588105": {
-          "symbol": "KO588105",
-          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
-          "shares": 346.5057,
-          "buy_price": 2.3276,
-          "current_price": 2.2994000000000008,
-          "buy_date": "2026-11-23 11:01",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "🛡️ Makro-Absicherung: VIX 30.5 ≥ 30.0 — 797€ Buchwert gegen Korrektur gehedgt",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO588105",
-          "underlying_symbol": "SPY",
-          "underlying_name": "SPY Index",
-          "direction": "SHORT",
-          "ratio": 0.01,
-          "strike": 919.75,
-          "knockout_barrier": 901.35,
-          "initial_underlying_price": 689.81,
-          "current_underlying_price": 689.81,
-          "cert_price": 2.3,
-          "leverage": 3.0,
-          "distance_to_ko_pct": 30.7,
-          "is_knocked_out": false,
-          "is_macro_hedge": true,
-          "last_updated": "11:06:29"
         }
       },
       "history": [
@@ -1893,6 +1864,20 @@
           "total": 806.53,
           "date": "2026-11-23 11:01",
           "reason": "🛡️ Makro-Absicherung: VIX 30.5 ≥ 30.0 — 797€ Buchwert gegen Korrektur gehedgt"
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
+          "product_type": "KNOCKOUT",
+          "shares": 346.5057,
+          "buy_price": 2.3276,
+          "sell_price": 2.2718,
+          "total": 787.19,
+          "pnl": -19.33,
+          "pnl_pct": -2.4,
+          "date": "2026-11-23 11:11",
+          "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
         }
       ]
     },
