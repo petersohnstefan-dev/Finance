@@ -872,7 +872,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 4640.407594401838,
+      "cash": 3832.8808566466378,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -885,7 +885,7 @@
           "take_profit": 197.28,
           "reason": "Stabiles Umsatzwachstum & Ausbruch über 200-Tage-Linie",
           "derivative_type": "STOCK",
-          "last_updated": "13:51:25",
+          "last_updated": "14:06:28",
           "peak_price": 154.62
         },
         "SPGI": {
@@ -900,7 +900,7 @@
           "reason": "📈 Growth & Smart Money (Alpha: 64/100, News: 50/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7 von 9 und einem unauffälligen Beneish-M-Score von -2.42 äusserst solide. Trotz des schwächeren kurzfristigen Momentums (Breakout-Score 25) bietet der stark oversold-Bereich (RSI 30.59) in Kombination mit einem Analystenpotenzial von über 20 % ein attraktives Chance-Risiko-Verhältnis für das mittelfristige Mandat, ohne dass harte Ausschlusskriterien verletzt wurden.",
           "derivative_type": "STOCK",
           "peak_price": 440.4491,
-          "last_updated": "13:51:25"
+          "last_updated": "14:06:28"
         },
         "IBM": {
           "symbol": "IBM",
@@ -913,8 +913,36 @@
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 70/100, News: 65/100) | ⚖️ Tribunal (BUY): Die Fundamentaldaten von IBM sind äusserst robust (Piotroski 7/9, Altman-Z 3.22, ROE 34.77%). Obwohl der RSI mit 24.02 und der Breakout-Score von 45 auf einen schwachen kurzfristigen Trend hindeuten, erfüllt die Aktie die Anforderungen des Mandats für mittelfristiges Wachstum durch starke fundamentale Kennzahlen und ein Analystenpotenzial von 15.78%. Die Ausschlusskriterien greifen nicht: Die Bilanz ist exzellent, die Datenabdeckung liegt mit 70% über der 50%-Grenze, es liegt kein massives Sektor-Klumpenrisiko im Depot vor (bisher nur DUOL, SPGI, KO588105), und das Argument stützt sich stark auf Fundamentaldaten.",
           "derivative_type": "STOCK",
-          "last_updated": "13:51:25",
+          "last_updated": "14:06:28",
           "peak_price": 224.8889
+        },
+        "KO588105": {
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
+          "shares": 346.5057,
+          "buy_price": 2.3276,
+          "current_price": 2.3,
+          "buy_date": "2026-11-23 14:06",
+          "stop_loss": null,
+          "take_profit": null,
+          "reason": "🛡️ Makro-Absicherung: VIX 31.6 ≥ 30.0 — 797€ Buchwert gegen Korrektur gehedgt",
+          "derivative_type": "KNOCKOUT",
+          "type": "KNOCKOUT",
+          "valid": true,
+          "wkn": "KO588105",
+          "underlying_symbol": "SPY",
+          "underlying_name": "SPY Index",
+          "direction": "SHORT",
+          "ratio": 0.01,
+          "strike": 919.75,
+          "knockout_barrier": 901.35,
+          "initial_underlying_price": 689.81,
+          "current_underlying_price": 689.81,
+          "cert_price": 2.3,
+          "leverage": 3.0,
+          "distance_to_ko_pct": 30.7,
+          "is_knocked_out": false,
+          "is_macro_hedge": true
         }
       },
       "history": [
@@ -2003,6 +2031,17 @@
           "pnl_pct": -2.37,
           "date": "2026-11-23 13:56",
           "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
+        },
+        {
+          "type": "BUY",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
+          "product_type": "KNOCKOUT",
+          "shares": 346.5057,
+          "price": 2.3,
+          "total": 806.53,
+          "date": "2026-11-23 14:06",
+          "reason": "🛡️ Makro-Absicherung: VIX 31.6 ≥ 30.0 — 797€ Buchwert gegen Korrektur gehedgt"
         }
       ]
     },
@@ -2017,13 +2056,13 @@
           "name": "Gold Dec 26",
           "shares": 0.3232,
           "buy_price": 4640.8,
-          "current_price": 3618.9,
+          "current_price": 3616.1,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Gold: Makro-Wertspeicher & Inflationsschutz im Bullenmarkt",
           "derivative_type": "STOCK",
-          "last_updated": "13:51:25",
+          "last_updated": "14:06:28",
           "peak_price": 4640.8
         },
         "BTC-USD": {
@@ -2031,13 +2070,13 @@
           "name": "Bitcoin USD",
           "shares": 0.019,
           "buy_price": 78964.48,
-          "current_price": 61155.6,
+          "current_price": 61296.29,
           "buy_date": "2026-08-24 22:07",
           "stop_loss": null,
           "take_profit": null,
           "reason": "Bitcoin: Digitales Gold & langfristiger Makrotrend über SMA200",
           "derivative_type": "STOCK",
-          "last_updated": "13:51:25",
+          "last_updated": "14:06:28",
           "peak_price": 86727.81
         },
         "UBER": {
@@ -2051,7 +2090,7 @@
           "take_profit": null,
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 6 / 9 (✅ Gute Solidität) | Analystenpotenzial 42.7% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der Langfrist-Score von 100, ein attraktives KGV von 15.50 sowie eine hohe Eigenkapitalrendite (ROE) von 37.16% untermauern die fundamentale Qualität und das Mandat für ein langfristiges Qualitätsinvestment, während die Bilanz mit einem Altman-Z-Score von 3.56 und einem Piotroski-Score von 6/9 solide bleibt und keine Ausschlusskriterien greifen.",
           "derivative_type": "STOCK",
-          "last_updated": "13:51:25",
+          "last_updated": "14:06:28",
           "peak_price": 72.18
         },
         "CRM": {
@@ -2066,7 +2105,7 @@
           "reason": "🏰 Burggraben & Bilanz-Audit: 🛡️ Solide Bilanz | Piotroski: 7 / 9 (✅ Gute Solidität) | Analystenpotenzial 26.4% (ungedeckelt gekauft) | ⚖️ Tribunal (BUY): Der langfrist_score von 100, ein starker Piotroski-Score von 7 / 9 und ein moderates KGV von 20.33 spiegeln eine exzellente, mandatskonforme Bilanz- und Qualitätsbasis wider, während die Ausschlusskriterien (Piotroski < 4, Datenabdeckung < 50%, Sektor-Klumpenrisiko im Tech-Bereich mit UBER nicht übermässig verdichtet, reines Momentum) nicht greifen.",
           "derivative_type": "STOCK",
           "peak_price": 227.5642,
-          "last_updated": "13:51:25"
+          "last_updated": "14:06:28"
         }
       },
       "history": [
