@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-23 14:51:05",
+    "time_str": "14:51:05",
+    "data_age_min": 2.0,
+    "window_span_min": 4.1,
+    "symbol": "S",
+    "direction": "SHORT",
+    "trigger_price": 23.85,
+    "change_1min_pct": 0.6,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 14:51:04",
+    "time_str": "14:51:04",
+    "data_age_min": 0.2,
+    "window_span_min": 4.9,
+    "symbol": "ACHR",
+    "direction": "SHORT",
+    "trigger_price": 3.07,
+    "change_1min_pct": 0.97,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ACHR stürzt um -0.97% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 14:51:04",
+    "time_str": "14:51:04",
+    "data_age_min": 0.1,
+    "window_span_min": 5.0,
+    "symbol": "ARM",
+    "direction": "SHORT",
+    "trigger_price": 165.12,
+    "change_1min_pct": 0.71,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ARM stürzt um -0.71% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-23 14:46:00",
     "time_str": "14:46:00",
     "data_age_min": 11.0,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 PA=F stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 13:46:05",
-    "time_str": "13:46:05",
-    "data_age_min": 11.3,
-    "window_span_min": 7.8,
-    "symbol": "CI",
-    "direction": "SHORT",
-    "trigger_price": 270.04,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CI stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 13:46:04",
-    "time_str": "13:46:04",
-    "data_age_min": 1.0,
-    "window_span_min": 9.1,
-    "symbol": "ABBV",
-    "direction": "LONG",
-    "trigger_price": 286.5,
-    "change_1min_pct": 0.53,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ABBV explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 13:45:59",
-    "time_str": "13:45:59",
-    "data_age_min": 0.2,
-    "window_span_min": 6.8,
-    "symbol": "QBTS",
-    "direction": "SHORT",
-    "trigger_price": 6.92,
-    "change_1min_pct": 1.0,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QBTS stürzt um -1.00% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
