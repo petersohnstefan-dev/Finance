@@ -872,7 +872,7 @@
       "name": "📈 Mittelfristiges Trend- & Growth-Depot (1–6 Monate / Swing)",
       "strategy": "Mittelfristige Trendfolge auf Wachstumswerte über der 50-Tage-Linie, mit Gewinnsicherung per Trailing-Stop und aktiver Makro-Absicherung über einen Index-Short bei erhöhtem VIX.",
       "initial_cash": 10000.0,
-      "cash": 5438.068358989757,
+      "cash": 5829.162971348557,
       "positions": {
         "DUOL": {
           "symbol": "DUOL",
@@ -888,35 +888,6 @@
           "last_updated": "07:56:20",
           "peak_price": 154.62
         },
-        "KO588105": {
-          "symbol": "KO588105",
-          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
-          "shares": 172.5915,
-          "buy_price": 2.3276,
-          "current_price": 2.2994000000000008,
-          "buy_date": "2026-11-23 07:51",
-          "stop_loss": null,
-          "take_profit": null,
-          "reason": "🛡️ Makro-Absicherung: VIX 35.9 ≥ 30.0 — 397€ Buchwert gegen Korrektur gehedgt",
-          "derivative_type": "KNOCKOUT",
-          "type": "KNOCKOUT",
-          "valid": true,
-          "wkn": "KO588105",
-          "underlying_symbol": "SPY",
-          "underlying_name": "SPY Index",
-          "direction": "SHORT",
-          "ratio": 0.01,
-          "strike": 919.75,
-          "knockout_barrier": 901.35,
-          "initial_underlying_price": 689.81,
-          "current_underlying_price": 689.81,
-          "cert_price": 2.3,
-          "leverage": 3.0,
-          "distance_to_ko_pct": 30.7,
-          "is_knocked_out": false,
-          "is_macro_hedge": true,
-          "last_updated": "07:56:20"
-        },
         "SPGI": {
           "symbol": "SPGI",
           "name": "S&P Global Inc.",
@@ -927,7 +898,8 @@
           "stop_loss": 395.61,
           "take_profit": null,
           "reason": "📈 Growth & Smart Money (Alpha: 64/100, News: 50/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7 von 9 und einem unauffälligen Beneish-M-Score von -2.42 äusserst solide. Trotz des schwächeren kurzfristigen Momentums (Breakout-Score 25) bietet der stark oversold-Bereich (RSI 30.59) in Kombination mit einem Analystenpotenzial von über 20 % ein attraktives Chance-Risiko-Verhältnis für das mittelfristige Mandat, ohne dass harte Ausschlusskriterien verletzt wurden.",
-          "derivative_type": "STOCK"
+          "derivative_type": "STOCK",
+          "peak_price": 440.4491
         }
       },
       "history": [
@@ -1766,6 +1738,20 @@
           "total": 1002.0,
           "date": "2026-11-23 07:56",
           "reason": "📈 Growth & Smart Money (Alpha: 64/100, News: 50/100) | ⚖️ Tribunal (BUY): Die fundamentale Basis ist mit einem Piotroski-Score von 7 von 9 und einem unauffälligen Beneish-M-Score von -2.42 äusserst solide. Trotz des schwächeren kurzfristigen Momentums (Breakout-Score 25) bietet der stark oversold-Bereich (RSI 30.59) in Kombination mit einem Analystenpotenzial von über 20 % ein attraktives Chance-Risiko-Verhältnis für das mittelfristige Mandat, ohne dass harte Ausschlusskriterien verletzt wurden."
+        },
+        {
+          "type": "SELL",
+          "symbol": "KO588105",
+          "name": "🔻 Turbo Bear 3.0x auf SPY Index (KO: 901.35)",
+          "product_type": "KNOCKOUT",
+          "shares": 172.5915,
+          "buy_price": 2.3276,
+          "sell_price": 2.2718,
+          "total": 392.09,
+          "pnl": -9.63,
+          "pnl_pct": -2.4,
+          "date": "2026-11-23 08:01",
+          "reason": "🛡️ Makro-Hedge aufgelöst (VIX 18.0 < 24.0) — Marktstress abgeklungen"
         }
       ]
     },
