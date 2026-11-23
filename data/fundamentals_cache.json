@@ -878,7 +878,7 @@
   }
  },
  "TXN": {
-  "fetched_ts": 1793210206.5129843,
+  "fetched_ts": 1795442526.3008337,
   "scores": {
    "available": true,
    "piotroski": 7,
@@ -893,12 +893,12 @@
     "Bruttomarge gestiegen": false,
     "Kapitalumschlag gestiegen": true
    },
-   "altman_z": 12.75,
+   "altman_z": 11.49,
    "altman_detail": {
     "X1": 0.306,
     "X2": 1.51,
     "X3": 0.181,
-    "X4": 15.263,
+    "X4": 13.161,
     "X5": 0.511
    },
    "altman_not_applicable": false,
@@ -914,7 +914,7 @@
     "LVGI": 1.04,
     "TATA": -0.062
    },
-   "computed_at": "2026-10-28"
+   "computed_at": "2026-11-23"
   }
  },
  "HALO": {
@@ -1853,10 +1853,43 @@
   }
  },
  "PL": {
-  "fetched_ts": 1793889724.466709,
+  "fetched_ts": 1795442527.2858295,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 2,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 0.53,
+   "altman_detail": {
+    "X1": 0.267,
+    "X2": -1.265,
+    "X3": -0.208,
+    "X4": 4.002,
+    "X5": 0.269
+   },
+   "altman_not_applicable": false,
+   "sector": "Industrials",
+   "beneish_m": -5.26,
+   "beneish_detail": {
+    "DSRI": 1.188,
+    "GMI": 1.02,
+    "AQI": -1.321,
+    "SGI": 1.259,
+    "DEPI": 1.207,
+    "SGAI": 0.852,
+    "LVGI": 3.282,
+    "TATA": -0.333
+   },
+   "computed_at": "2026-11-23"
   }
  },
  "DRW3.DE": {
