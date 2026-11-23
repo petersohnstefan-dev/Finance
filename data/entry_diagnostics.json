@@ -357,29 +357,29 @@
   },
   "2026-11-23": {
     "short_term": {
-      "runs": 129,
-      "scored": 240,
+      "runs": 130,
+      "scored": 241,
       "entries": 0,
       "best_score": 62.1,
       "above_threshold": 0,
       "threshold": 65.0,
       "blocks": {
-        "unter_min_alpha_score": 97,
+        "unter_min_alpha_score": 98,
         "keine_kandidaten": 32
       }
     },
     "day_trading": {
-      "runs": 129,
-      "scored": 718,
+      "runs": 130,
+      "scored": 727,
       "entries": 0,
       "best_score": 65,
       "above_threshold": 0,
-      "threshold": 80.0,
+      "threshold": 75.0,
       "blocks": {
         "ausserhalb_handelszeit": 10,
         "vix_pause": 5,
         "keine_kandidaten_nach_gates": 20,
-        "unter_min_entry_score": 94
+        "unter_min_entry_score": 95
       }
     }
   }
