@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-23 20:15:55",
+    "time_str": "20:15:55",
+    "data_age_min": 1.9,
+    "window_span_min": 5.0,
+    "symbol": "BLNK",
+    "direction": "SHORT",
+    "trigger_price": 0.33,
+    "change_1min_pct": 0.66,
+    "vol_ratio": 0.08,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 BLNK stürzt um -0.66% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 20:15:55",
+    "time_str": "20:15:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.4,
+    "change_1min_pct": 1.58,
+    "vol_ratio": 0.7,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-23 20:15:55",
+    "time_str": "20:15:55",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "OKTA",
+    "direction": "LONG",
+    "trigger_price": 206.4,
+    "change_1min_pct": 0.57,
+    "vol_ratio": 1.97,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 OKTA explodiert um +0.57% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-23 20:10:50",
     "time_str": "20:10:50",
     "data_age_min": 0.9,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.69,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ARKK explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 20:05:53",
-    "time_str": "20:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "XLK",
-    "direction": "LONG",
-    "trigger_price": 162.51,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 4.09,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 XLK explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 20:05:53",
-    "time_str": "20:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SOXX",
-    "direction": "LONG",
-    "trigger_price": 139.73,
-    "change_1min_pct": 0.8,
-    "vol_ratio": 3.01,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SOXX explodiert um +0.80% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-23 20:05:53",
-    "time_str": "20:05:53",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "SMH",
-    "direction": "LONG",
-    "trigger_price": 459.55,
-    "change_1min_pct": 0.71,
-    "vol_ratio": 0.03,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SMH explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
