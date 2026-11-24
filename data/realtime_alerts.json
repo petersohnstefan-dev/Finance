@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-24 19:41:03",
+    "time_str": "19:41:03",
+    "data_age_min": 1.1,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.34,
+    "change_1min_pct": 0.82,
+    "vol_ratio": 1.4,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-24 19:41:01",
+    "time_str": "19:41:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "MRNA",
+    "direction": "SHORT",
+    "trigger_price": 227.52,
+    "change_1min_pct": 0.58,
+    "vol_ratio": 0.8,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 MRNA stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-24 19:35:54",
     "time_str": "19:35:54",
     "data_age_min": 3.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 0.91,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 NVCR stürzt um -0.51% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 18:35:56",
-    "time_str": "18:35:56",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "BLNK",
-    "direction": "LONG",
-    "trigger_price": 0.33,
-    "change_1min_pct": 0.61,
-    "vol_ratio": 0.27,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BLNK explodiert um +0.61% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 18:35:54",
-    "time_str": "18:35:54",
-    "data_age_min": 0.9,
-    "window_span_min": 5.0,
-    "symbol": "BMRN",
-    "direction": "SHORT",
-    "trigger_price": 67.31,
-    "change_1min_pct": 0.75,
-    "vol_ratio": 2.6,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 BMRN stürzt um -0.75% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
