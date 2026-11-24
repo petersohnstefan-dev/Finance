@@ -1,32 +1,4 @@
 {
-  "2026-11-06": {
-    "short_term": {
-      "runs": 193,
-      "scored": 330,
-      "entries": 1,
-      "best_score": 76.5,
-      "above_threshold": 16,
-      "threshold": 65.0,
-      "blocks": {
-        "unter_min_alpha_score": 133,
-        "tribunal_veto_oder_kein_preis": 11,
-        "keine_kandidaten": 48
-      }
-    },
-    "day_trading": {
-      "runs": 193,
-      "scored": 1130,
-      "entries": 1,
-      "best_score": 80,
-      "above_threshold": 1,
-      "threshold": 80.0,
-      "blocks": {
-        "ausserhalb_handelszeit": 37,
-        "keine_kandidaten_nach_gates": 17,
-        "unter_min_entry_score": 138
-      }
-    }
-  },
   "2026-11-07": {
     "short_term": {
       "runs": 1,
@@ -380,6 +352,30 @@
         "vix_pause": 5,
         "keine_kandidaten_nach_gates": 20,
         "unter_min_entry_score": 131
+      }
+    }
+  },
+  "2026-11-24": {
+    "short_term": {
+      "runs": 1,
+      "scored": 0,
+      "entries": 0,
+      "best_score": null,
+      "above_threshold": 0,
+      "threshold": 65.0,
+      "blocks": {
+        "keine_kandidaten": 1
+      }
+    },
+    "day_trading": {
+      "runs": 1,
+      "scored": 0,
+      "entries": 0,
+      "best_score": null,
+      "above_threshold": 0,
+      "threshold": 75.0,
+      "blocks": {
+        "ausserhalb_handelszeit": 1
       }
     }
   }
