@@ -1,5 +1,23 @@
 [
  {
+  "timestamp": "2026-11-24 15:33:43",
+  "component": "tribunal",
+  "kind": "quota_exhausted",
+  "severity": "error",
+  "message": "Gemini-Kontingent erschoepft - bis zur Ruecksetzung werden keine Kaeufe freigegeben: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPleas",
+  "context": {
+   "versucht": [
+    "models/gemini-flash-lite-latest",
+    "models/gemini-2.5-flash-lite",
+    "models/gemini-3.1-flash-lite-preview"
+   ],
+   "folge": "Kauf wird abgelehnt (fail-closed)",
+   "hinweis": "Das Tribunal verbraucht 3 Aufrufe je Kandidat. Bei erschoepftem Kontingent hilft nur Warten oder ein hoeheres Gemini-Kontingent."
+  },
+  "count": 1,
+  "last_seen": "2026-11-24 15:33:43"
+ },
+ {
   "timestamp": "2026-11-24 05:54:25",
   "component": "ai_journal",
   "kind": "param_change_rejected",
