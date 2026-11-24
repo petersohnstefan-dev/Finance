@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-24 12:35:52",
+    "time_str": "12:35:52",
+    "data_age_min": 1.1,
+    "window_span_min": 5.8,
+    "symbol": "NOW",
+    "direction": "LONG",
+    "trigger_price": 89.91,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NOW explodiert um +0.55% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-24 12:35:47",
+    "time_str": "12:35:47",
+    "data_age_min": 4.1,
+    "window_span_min": 6.7,
+    "symbol": "TEM",
+    "direction": "LONG",
+    "trigger_price": 55.94,
+    "change_1min_pct": 0.79,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 TEM explodiert um +0.79% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-24 12:31:10",
     "time_str": "12:31:10",
     "data_age_min": 3.1,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 10:55:50",
-    "time_str": "10:55:50",
-    "data_age_min": 0.1,
-    "window_span_min": 4.8,
-    "symbol": "MU",
-    "direction": "SHORT",
-    "trigger_price": 669.9,
-    "change_1min_pct": 0.8,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MU stürzt um -0.80% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 10:55:50",
-    "time_str": "10:55:50",
-    "data_age_min": 0.1,
-    "window_span_min": 4.7,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 435.2,
-    "change_1min_pct": 0.6,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
