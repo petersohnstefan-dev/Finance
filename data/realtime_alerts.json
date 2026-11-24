@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-24 14:31:15",
+    "time_str": "14:31:15",
+    "data_age_min": 0.7,
+    "window_span_min": 4.5,
+    "symbol": "CRM",
+    "direction": "LONG",
+    "trigger_price": 185.46,
+    "change_1min_pct": 2.07,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 CRM explodiert um +2.07% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-24 14:31:11",
+    "time_str": "14:31:11",
+    "data_age_min": 10.2,
+    "window_span_min": 5.0,
+    "symbol": "ZS=F",
+    "direction": "SHORT",
+    "trigger_price": 1229.5,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 2.93,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ZS=F stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-24 14:31:11",
+    "time_str": "14:31:11",
+    "data_age_min": 10.2,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "SHORT",
+    "trigger_price": 3.58,
+    "change_1min_pct": 0.5,
+    "vol_ratio": 1.01,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F stürzt um -0.50% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-24 14:26:02",
     "time_str": "14:26:02",
     "data_age_min": 1.2,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 IONQ stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 14:10:50",
-    "time_str": "14:10:50",
-    "data_age_min": 0.4,
-    "window_span_min": 5.5,
-    "symbol": "RKLB",
-    "direction": "SHORT",
-    "trigger_price": 47.99,
-    "change_1min_pct": 0.61,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RKLB stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 14:10:50",
-    "time_str": "14:10:50",
-    "data_age_min": 0.1,
-    "window_span_min": 5.8,
-    "symbol": "HOOD",
-    "direction": "SHORT",
-    "trigger_price": 65.05,
-    "change_1min_pct": 1.14,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 HOOD stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-24 14:10:50",
-    "time_str": "14:10:50",
-    "data_age_min": 0.3,
-    "window_span_min": 4.6,
-    "symbol": "MSTR",
-    "direction": "SHORT",
-    "trigger_price": 80.85,
-    "change_1min_pct": 1.13,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 MSTR stürzt um -1.13% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
