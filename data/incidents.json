@@ -1,5 +1,37 @@
 [
  {
+  "timestamp": "2026-11-24 05:54:25",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot short_term: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "short_term",
+   "abgelehnt": {
+    "short_term_stop_loss_pct": "in den letzten 30 Tagen bereits 2x gesenkt; weitere Schritte in dieselbe Richtung sind gesperrt. Wenn 2 Korrekturen nichts bewirkt haben, liegt die Ursache nicht an diesem Parameter",
+    "short_term_stop_atr_mult": "Sprung auf eine Schrittweite begrenzt (angefragt wurde mehr)"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-24 05:54:25"
+ },
+ {
+  "timestamp": "2026-11-24 05:53:48",
+  "component": "ai_journal",
+  "kind": "param_change_rejected",
+  "severity": "info",
+  "message": "Depot day_trading: 2 Parameteraenderung(en) abgelehnt",
+  "context": {
+   "depot": "day_trading",
+   "abgelehnt": {
+    "daytrade_min_entry_score": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders",
+    "daytrade_trailing_breakeven_pct": "in den letzten 30 Tagen bereits 3x geaendert; weitere Aenderungen sind gesperrt. Ein Wert, der so oft angefasst wird, ist nicht gefunden, sondern umstritten - die Ursache liegt woanders"
+   }
+  },
+  "count": 1,
+  "last_seen": "2026-11-24 05:53:48"
+ },
+ {
   "timestamp": "2026-11-21 02:51:18",
   "component": "ai_journal",
   "kind": "param_change_rejected",
