@@ -3592,21 +3592,21 @@
   }
  },
  "XLP": {
-  "fetched_ts": 1794934912.65016,
+  "fetched_ts": 1795542097.6719093,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "SHY": {
-  "fetched_ts": 1794934911.7624404,
+  "fetched_ts": 1795542098.4380853,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "ZS=F": {
-  "fetched_ts": 1794330698.33783,
+  "fetched_ts": 1795542098.6096668,
   "scores": {
    "available": false,
    "reason": "Kein bilanzierendes Unternehmen (Krypto/Future)"
@@ -3681,10 +3681,43 @@
   }
  },
  "DIS": {
-  "fetched_ts": 1794915097.5158699,
+  "fetched_ts": 1795542097.0001502,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.6,
+   "altman_detail": {
+    "X1": -0.044,
+    "X2": 0.328,
+    "X3": 0.078,
+    "X4": 2.397,
+    "X5": 0.496
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.65,
+   "beneish_detail": {
+    "DSRI": 0.943,
+    "GMI": 0.993,
+    "AQI": 0.977,
+    "SGI": 1.084,
+    "DEPI": 1.047,
+    "SGAI": 0.94,
+    "LVGI": 0.994,
+    "TATA": -0.042
+   },
+   "computed_at": "2026-11-24"
   }
  },
  "CT=F": {
