@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-25 22:21:14",
+    "time_str": "22:21:14",
+    "data_age_min": 4.9,
+    "window_span_min": 7.3,
+    "symbol": "IBM",
+    "direction": "SHORT",
+    "trigger_price": 241.57,
+    "change_1min_pct": 0.78,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IBM stürzt um -0.78% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 22:21:10",
+    "time_str": "22:21:10",
+    "data_age_min": 1.4,
+    "window_span_min": 5.8,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.38,
+    "change_1min_pct": 1.42,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -1.42% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-25 22:16:02",
     "time_str": "22:16:02",
     "data_age_min": 0.2,
@@ -622,31 +648,5 @@
     "vol_ratio": 1.37,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 LCID stürzt um -1.14% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 22:01:14",
-    "time_str": "22:01:14",
-    "data_age_min": 2.2,
-    "window_span_min": 5.0,
-    "symbol": "AFRM",
-    "direction": "LONG",
-    "trigger_price": 60.52,
-    "change_1min_pct": 0.55,
-    "vol_ratio": 5.59,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AFRM explodiert um +0.55% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 22:01:14",
-    "time_str": "22:01:14",
-    "data_age_min": 0.1,
-    "window_span_min": 5.1,
-    "symbol": "DKNG",
-    "direction": "SHORT",
-    "trigger_price": 17.47,
-    "change_1min_pct": 1.19,
-    "vol_ratio": 2.72,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 DKNG stürzt um -1.19% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
