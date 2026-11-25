@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-25 10:50:50",
+    "time_str": "10:50:50",
+    "data_age_min": 2.2,
+    "window_span_min": 3.6,
+    "symbol": "SES",
+    "direction": "LONG",
+    "trigger_price": 0.35,
+    "change_1min_pct": 3.1,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES explodiert um +3.10% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 10:50:49",
+    "time_str": "10:50:49",
+    "data_age_min": 1.6,
+    "window_span_min": 5.2,
+    "symbol": "ASTS",
+    "direction": "SHORT",
+    "trigger_price": 22.83,
+    "change_1min_pct": 0.57,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ASTS stürzt um -0.57% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 10:50:49",
+    "time_str": "10:50:49",
+    "data_age_min": 1.1,
+    "window_span_min": 5.7,
+    "symbol": "APP",
+    "direction": "LONG",
+    "trigger_price": 370.0,
+    "change_1min_pct": 0.52,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 APP explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-25 10:45:56",
     "time_str": "10:45:56",
     "data_age_min": 0.5,
@@ -609,44 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 STRK-USD explodiert um +1.02% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 00:59:21",
-    "time_str": "00:59:21",
-    "data_age_min": 1.4,
-    "window_span_min": 8.0,
-    "symbol": "SES",
-    "direction": "SHORT",
-    "trigger_price": 0.34,
-    "change_1min_pct": 2.62,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SES stürzt um -2.62% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 00:59:20",
-    "time_str": "00:59:20",
-    "data_age_min": 13.8,
-    "window_span_min": 9.5,
-    "symbol": "ARM",
-    "direction": "LONG",
-    "trigger_price": 162.03,
-    "change_1min_pct": 0.51,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARM explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 00:59:20",
-    "time_str": "00:59:20",
-    "data_age_min": 4.7,
-    "window_span_min": 5.7,
-    "symbol": "RXRX",
-    "direction": "LONG",
-    "trigger_price": 2.7,
-    "change_1min_pct": 0.71,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX explodiert um +0.71% in 5 Min.! Momentum aktiv."
   }
 ]
