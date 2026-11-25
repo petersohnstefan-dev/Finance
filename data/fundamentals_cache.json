@@ -2127,10 +2127,43 @@
   }
  },
  "VRTX": {
-  "fetched_ts": 1793653610.2435086,
+  "fetched_ts": 1795640781.398749,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 6,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 14.45,
+   "altman_detail": {
+    "X1": 0.286,
+    "X2": 0.529,
+    "X3": 0.182,
+    "X4": 20.499,
+    "X5": 0.468
+   },
+   "altman_not_applicable": false,
+   "sector": "Healthcare",
+   "beneish_m": -2.2,
+   "beneish_detail": {
+    "DSRI": 1.171,
+    "GMI": 0.999,
+    "AQI": 0.946,
+    "SGI": 1.089,
+    "DEPI": 1.165,
+    "SGAI": 1.099,
+    "LVGI": 0.978,
+    "TATA": 0.013
+   },
+   "computed_at": "2026-11-25"
   }
  },
  "FSLR": {
@@ -2462,10 +2495,43 @@
   }
  },
  "SNOW": {
-  "fetched_ts": 1793217997.1110737,
+  "fetched_ts": 1795640783.25582,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": false,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": false,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 6.62,
+   "altman_detail": {
+    "X1": 0.145,
+    "X2": -1.04,
+    "X3": -0.143,
+    "X4": 13.098,
+    "X5": 0.513
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -3.49,
+   "beneish_detail": {
+    "DSRI": 1.094,
+    "GMI": 0.99,
+    "AQI": 1.108,
+    "SGI": 1.292,
+    "DEPI": 0.741,
+    "SGAI": 0.97,
+    "LVGI": 1.19,
+    "TATA": -0.279
+   },
+   "computed_at": "2026-11-25"
   }
  },
  "LIN": {
