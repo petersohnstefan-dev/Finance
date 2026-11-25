@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-25 21:06:02",
+    "time_str": "21:06:02",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SES",
+    "direction": "SHORT",
+    "trigger_price": 0.39,
+    "change_1min_pct": 0.74,
+    "vol_ratio": 0.53,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SES stürzt um -0.74% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 21:06:01",
+    "time_str": "21:06:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "S",
+    "direction": "LONG",
+    "trigger_price": 24.03,
+    "change_1min_pct": 0.52,
+    "vol_ratio": 0.04,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 S explodiert um +0.52% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 21:06:01",
+    "time_str": "21:06:01",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "HUBS",
+    "direction": "LONG",
+    "trigger_price": 211.44,
+    "change_1min_pct": 0.91,
+    "vol_ratio": 1.69,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 HUBS explodiert um +0.91% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-25 21:01:23",
     "time_str": "21:01:23",
     "data_age_min": 0.4,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.79,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 INTC stürzt um -0.82% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 20:46:07",
-    "time_str": "20:46:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AMD",
-    "direction": "SHORT",
-    "trigger_price": 403.89,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 0.82,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AMD stürzt um -0.58% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 20:46:07",
-    "time_str": "20:46:07",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "AVGO",
-    "direction": "SHORT",
-    "trigger_price": 295.65,
-    "change_1min_pct": 0.53,
-    "vol_ratio": 1.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 AVGO stürzt um -0.53% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 20:46:03",
-    "time_str": "20:46:03",
-    "data_age_min": 0.1,
-    "window_span_min": 5.0,
-    "symbol": "SHLS",
-    "direction": "SHORT",
-    "trigger_price": 7.09,
-    "change_1min_pct": 0.73,
-    "vol_ratio": 1.75,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SHLS stürzt um -0.73% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
