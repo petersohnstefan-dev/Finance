@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-25 11:16:00",
+    "time_str": "11:16:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "DSV.CO",
+    "direction": "LONG",
+    "trigger_price": 1401.5,
+    "change_1min_pct": 0.72,
+    "vol_ratio": 10.0,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 DSV.CO explodiert um +0.72% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 11:15:55",
+    "time_str": "11:15:55",
+    "data_age_min": 0.5,
+    "window_span_min": 5.4,
+    "symbol": "SMH",
+    "direction": "SHORT",
+    "trigger_price": 407.0,
+    "change_1min_pct": 0.55,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SMH stürzt um -0.55% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-25 11:05:54",
     "time_str": "11:05:54",
     "data_age_min": 2.6,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 MAERSK-B.CO explodiert um +0.53% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 09:45:53",
-    "time_str": "09:45:53",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "SI=F",
-    "direction": "LONG",
-    "trigger_price": 40.71,
-    "change_1min_pct": 1.33,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SI=F explodiert um +1.33% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 09:45:53",
-    "time_str": "09:45:53",
-    "data_age_min": 10.9,
-    "window_span_min": 5.0,
-    "symbol": "GC=F",
-    "direction": "LONG",
-    "trigger_price": 3563.3,
-    "change_1min_pct": 0.96,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 GC=F explodiert um +0.96% in 5 Min.! Momentum aktiv."
   }
 ]
