@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-25 13:55:55",
+    "time_str": "13:55:55",
+    "data_age_min": 4.6,
+    "window_span_min": 3.4,
+    "symbol": "ONON",
+    "direction": "LONG",
+    "trigger_price": 31.15,
+    "change_1min_pct": 0.93,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 ONON explodiert um +0.93% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-25 13:55:55",
+    "time_str": "13:55:55",
+    "data_age_min": 10.9,
+    "window_span_min": 5.0,
+    "symbol": "NG=F",
+    "direction": "SHORT",
+    "trigger_price": 3.61,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 1.83,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 NG=F stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-25 13:45:54",
     "time_str": "13:45:54",
     "data_age_min": 3.2,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 CRWD stürzt um -0.54% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 13:01:20",
-    "time_str": "13:01:20",
-    "data_age_min": 0.2,
-    "window_span_min": 2.1,
-    "symbol": "RXRX",
-    "direction": "SHORT",
-    "trigger_price": 2.6,
-    "change_1min_pct": 0.76,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 RXRX stürzt um -0.76% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 12:50:57",
-    "time_str": "12:50:57",
-    "data_age_min": 13.1,
-    "window_span_min": 8.8,
-    "symbol": "PL",
-    "direction": "SHORT",
-    "trigger_price": 10.18,
-    "change_1min_pct": 0.59,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PL stürzt um -0.59% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
