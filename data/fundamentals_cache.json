@@ -267,10 +267,43 @@
   }
  },
  "HUBS": {
-  "fetched_ts": 1795100180.3022578,
+  "fetched_ts": 1795705314.8187501,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 4.35,
+   "altman_detail": {
+    "X1": 0.255,
+    "X2": -0.196,
+    "X3": 0.018,
+    "X4": 5.742,
+    "X5": 0.812
+   },
+   "altman_not_applicable": false,
+   "sector": "Technology",
+   "beneish_m": -2.97,
+   "beneish_detail": {
+    "DSRI": 1.05,
+    "GMI": 1.015,
+    "AQI": 1.345,
+    "SGI": 1.192,
+    "DEPI": 0.797,
+    "SGAI": 0.942,
+    "LVGI": 0.911,
+    "TATA": -0.185
+   },
+   "computed_at": "2026-11-26"
   }
  },
  "ASTS": {
