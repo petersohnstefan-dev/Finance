@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-26 18:05:47",
+    "time_str": "18:05:47",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "LONG",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.11,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD explodiert um +1.11% in 5 Min.! Momentum aktiv."
+  },
+  {
+    "timestamp": "2026-11-26 18:05:47",
+    "time_str": "18:05:47",
+    "data_age_min": 1.8,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 1.47,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -1.47% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-26 17:46:01",
     "time_str": "17:46:01",
     "data_age_min": 1.0,
@@ -622,31 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 RUN explodiert um +1.31% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 22:35:56",
-    "time_str": "22:35:56",
-    "data_age_min": 1.9,
-    "window_span_min": 3.0,
-    "symbol": "QUBT",
-    "direction": "SHORT",
-    "trigger_price": 4.56,
-    "change_1min_pct": 0.52,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QUBT stürzt um -0.52% in 5 Min. ab! Panik-Verkauf aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 22:35:55",
-    "time_str": "22:35:55",
-    "data_age_min": 0.3,
-    "window_span_min": 4.7,
-    "symbol": "QS",
-    "direction": "LONG",
-    "trigger_price": 2.97,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QS explodiert um +0.85% in 5 Min.! Momentum aktiv."
   }
 ]
