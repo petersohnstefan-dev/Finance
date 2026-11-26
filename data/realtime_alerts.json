@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-11-26 20:20:54",
+    "time_str": "20:20:54",
+    "data_age_min": 0.9,
+    "window_span_min": 5.0,
+    "symbol": "SEI-USD",
+    "direction": "LONG",
+    "trigger_price": 0.04,
+    "change_1min_pct": 1.08,
+    "vol_ratio": 1.98,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEI-USD explodiert um +1.08% in 5 Min.! Momentum aktiv."
+  },
+  {
     "timestamp": "2026-11-26 20:15:55",
     "time_str": "20:15:55",
     "data_age_min": 0.9,
@@ -635,18 +648,5 @@
     "vol_ratio": null,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 BLNK explodiert um +1.73% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-25 22:41:05",
-    "time_str": "22:41:05",
-    "data_age_min": 0.4,
-    "window_span_min": 4.7,
-    "symbol": "PANW",
-    "direction": "SHORT",
-    "trigger_price": 345.0,
-    "change_1min_pct": 0.85,
-    "vol_ratio": null,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 PANW stürzt um -0.85% in 5 Min. ab! Panik-Verkauf aktiv."
   }
 ]
