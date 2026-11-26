@@ -1,5 +1,21 @@
 [
  {
+  "timestamp": "2026-11-26 03:58:37",
+  "component": "ai_journal",
+  "kind": "llm_parse_error",
+  "severity": "error",
+  "message": "Antwort des Modells war auch nach allen Reparaturversuchen kein gueltiges JSON",
+  "context": {
+   "depot": "day_trading",
+   "mode": "daily",
+   "rohantwort": "llm_raw_day_trading_daily_20261126-035837.txt",
+   "laenge": 5555,
+   "antwort_anfang": "{\n  \"reflection\": \"Das algorithmische Handelssystem 'day_trading' zeigt eine alarmierend schlechte Performance seit Depotstart mit einem Gesamt-PnL von -4910.79€, einer Win-Rate von 25.4% und einer Expectancy von -34.58€ pro Trade. Der Profit Factor von 0.19 ist extrem niedrig und weist auf eine mas"
+  },
+  "count": 2,
+  "last_seen": "2026-11-26 03:59:36"
+ },
+ {
   "timestamp": "2026-11-25 04:38:26",
   "component": "ai_journal",
   "kind": "param_change_rejected",
