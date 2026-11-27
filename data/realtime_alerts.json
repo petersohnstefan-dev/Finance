@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-11-27 17:21:00",
+    "time_str": "17:21:00",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "SEDG",
+    "direction": "SHORT",
+    "trigger_price": 20.92,
+    "change_1min_pct": 0.61,
+    "vol_ratio": 5.06,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 SEDG stürzt um -0.61% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-27 17:20:59",
+    "time_str": "17:20:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "IONQ",
+    "direction": "SHORT",
+    "trigger_price": 24.91,
+    "change_1min_pct": 0.6,
+    "vol_ratio": 0.17,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 IONQ stürzt um -0.60% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-27 17:20:59",
+    "time_str": "17:20:59",
+    "data_age_min": 1.0,
+    "window_span_min": 5.0,
+    "symbol": "PACB",
+    "direction": "SHORT",
+    "trigger_price": 1.57,
+    "change_1min_pct": 0.63,
+    "vol_ratio": 0.23,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 PACB stürzt um -0.63% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-27 17:16:00",
     "time_str": "17:16:00",
     "data_age_min": 0.1,
@@ -609,44 +648,5 @@
     "vol_ratio": 0.74,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 AMAT explodiert um +0.66% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-27 16:41:02",
-    "time_str": "16:41:02",
-    "data_age_min": 1.1,
-    "window_span_min": 5.0,
-    "symbol": "QCOM",
-    "direction": "LONG",
-    "trigger_price": 176.75,
-    "change_1min_pct": 0.58,
-    "vol_ratio": 1.08,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM explodiert um +0.58% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-27 16:40:59",
-    "time_str": "16:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "SEDG",
-    "direction": "LONG",
-    "trigger_price": 21.35,
-    "change_1min_pct": 1.16,
-    "vol_ratio": 1.32,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 SEDG explodiert um +1.16% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-27 16:40:59",
-    "time_str": "16:40:59",
-    "data_age_min": 1.0,
-    "window_span_min": 5.0,
-    "symbol": "ARRY",
-    "direction": "LONG",
-    "trigger_price": 4.41,
-    "change_1min_pct": 0.57,
-    "vol_ratio": 1.11,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 ARRY explodiert um +0.57% in 5 Min.! Momentum aktiv."
   }
 ]
