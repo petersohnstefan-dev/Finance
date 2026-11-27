@@ -220,43 +220,10 @@
   }
  },
  "BLNK": {
-  "fetched_ts": 1795098707.8943667,
+  "fetched_ts": 1795790787.792434,
   "scores": {
-   "available": true,
-   "piotroski": 4,
-   "piotroski_detail": {
-    "ROA positiv": false,
-    "Operativer Cashflow positiv": false,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": false,
-    "Bruttomarge gestiegen": false,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": -8.16,
-   "altman_detail": {
-    "X1": 0.175,
-    "X2": -5.578,
-    "X3": -0.506,
-    "X4": 0.687,
-    "X5": 0.7
-   },
-   "altman_not_applicable": false,
-   "sector": "Industrials",
-   "beneish_m": -4.52,
-   "beneish_detail": {
-    "DSRI": 0.836,
-    "GMI": 1.219,
-    "AQI": 0.867,
-    "SGI": 0.839,
-    "DEPI": 1.313,
-    "SGAI": 1.097,
-    "LVGI": 1.494,
-    "TATA": -0.356
-   },
-   "computed_at": "2026-11-19"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "SOFI": {
@@ -480,43 +447,10 @@
   }
  },
  "RDWR": {
-  "fetched_ts": 1795017723.6938627,
+  "fetched_ts": 1795790788.4780555,
   "scores": {
-   "available": true,
-   "piotroski": 8,
-   "piotroski_detail": {
-    "ROA positiv": true,
-    "Operativer Cashflow positiv": true,
-    "ROA gestiegen": true,
-    "Cashflow > Gewinn (keine Accruals)": true,
-    "Verschuldung gesunken": true,
-    "Liquiditätsgrad gestiegen": false,
-    "Keine Kapitalverwässerung": true,
-    "Bruttomarge gestiegen": true,
-    "Kapitalumschlag gestiegen": true
-   },
-   "altman_z": 3.98,
-   "altman_detail": {
-    "X1": 0.182,
-    "X2": 0.218,
-    "X3": 0.017,
-    "X4": 4.921,
-    "X5": 0.45
-   },
-   "altman_not_applicable": false,
-   "sector": "Technology",
-   "beneish_m": -1.82,
-   "beneish_detail": {
-    "DSRI": 1.896,
-    "GMI": 0.999,
-    "AQI": 0.917,
-    "SGI": 1.098,
-    "DEPI": 0.965,
-    "SGAI": 0.925,
-    "LVGI": 1.045,
-    "TATA": -0.044
-   },
-   "computed_at": "2026-11-18"
+   "available": false,
+   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
   }
  },
  "TOST": {
@@ -886,7 +820,7 @@
   }
  },
  "NVCR": {
-  "fetched_ts": 1794226279.105733,
+  "fetched_ts": 1795790788.0711222,
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
