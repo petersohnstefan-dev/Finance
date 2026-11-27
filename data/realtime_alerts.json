@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-11-27 21:20:57",
+    "time_str": "21:20:57",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "STRK-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.03,
+    "change_1min_pct": 1.51,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 STRK-USD stürzt um -1.51% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
+    "timestamp": "2026-11-27 21:20:57",
+    "time_str": "21:20:57",
+    "data_age_min": 3.0,
+    "window_span_min": 5.0,
+    "symbol": "JUP-USD",
+    "direction": "SHORT",
+    "trigger_price": 0.0,
+    "change_1min_pct": 5.69,
+    "vol_ratio": null,
+    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
+    "message": "🚨 JUP-USD stürzt um -5.69% in 5 Min. ab! Panik-Verkauf aktiv."
+  },
+  {
     "timestamp": "2026-11-27 21:05:53",
     "time_str": "21:05:53",
     "data_age_min": 7.9,
@@ -622,31 +648,5 @@
     "vol_ratio": 2.94,
     "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
     "message": "🚨 ORCL explodiert um +0.51% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-27 19:01:16",
-    "time_str": "19:01:16",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "CSCO",
-    "direction": "LONG",
-    "trigger_price": 97.09,
-    "change_1min_pct": 0.59,
-    "vol_ratio": 5.26,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 CSCO explodiert um +0.59% in 5 Min.! Momentum aktiv."
-  },
-  {
-    "timestamp": "2026-11-27 19:01:15",
-    "time_str": "19:01:15",
-    "data_age_min": 2.3,
-    "window_span_min": 5.0,
-    "symbol": "QCOM",
-    "direction": "LONG",
-    "trigger_price": 179.44,
-    "change_1min_pct": 1.38,
-    "vol_ratio": 9.28,
-    "urgency": "⚡ EXTREM (Sofortiger Intraday-Ausbruch)",
-    "message": "🚨 QCOM explodiert um +1.38% in 5 Min.! Momentum aktiv."
   }
 ]
