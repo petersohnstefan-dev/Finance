@@ -2598,23 +2598,8 @@
       ]
     },
     "day_trading": {
-      "cash": 4559.191946669848,
-      "positions": {
-        "CELH": {
-          "symbol": "CELH",
-          "name": "Celsius Holdings, Inc.",
-          "shares": 7.1321,
-          "buy_price": 30.5109,
-          "current_price": 30.21,
-          "buy_date": "2026-11-27 19:21",
-          "stop_loss": 27.101,
-          "take_profit": null,
-          "reason": "⚡ Daytrade (+0.7% Spike, Score 85/100 [volu25 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 11%",
-          "derivative_type": "STOCK",
-          "last_updated": "20:56:20",
-          "peak_price": 30.5109
-        }
-      },
+      "cash": 4773.2217661878485,
+      "positions": {},
       "history": [
         {
           "type": "BUY",
@@ -6176,6 +6161,20 @@
           "total": 217.61,
           "date": "2026-11-27 19:21",
           "reason": "⚡ Daytrade (+0.7% Spike, Score 85/100 [volu25 tren20 spik5 stop20 mark15]) | 1x Aktie | Risiko 11%"
+        },
+        {
+          "type": "SELL",
+          "symbol": "CELH",
+          "name": "Celsius Holdings, Inc.",
+          "product_type": "STOCK",
+          "shares": 7.1321,
+          "buy_price": 30.5109,
+          "sell_price": 30.1496,
+          "total": 215.03,
+          "pnl": -2.58,
+          "pnl_pct": -1.18,
+          "date": "2026-11-27 21:01",
+          "reason": "🛡️ EOD Pflichtverkauf (-1.0%) — Kein Übernacht-Risiko"
         }
       ],
       "name": "🔥 Daytrader-Depot (Intraday / Momentum mit Risiko-Budget)",
