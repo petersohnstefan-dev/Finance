@@ -1902,10 +1902,43 @@
   }
  },
  "NOVO-B.CO": {
-  "fetched_ts": 1789978295.1416273,
+  "fetched_ts": 1795809386.1187003,
   "scores": {
-   "available": false,
-   "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": true,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 3.92,
+   "altman_detail": {
+    "X1": -0.08,
+    "X2": 0.36,
+    "X3": 0.248,
+    "X4": 3.544,
+    "X5": 0.569
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.62,
+   "beneish_detail": {
+    "DSRI": 0.925,
+    "GMI": 1.046,
+    "AQI": 0.981,
+    "SGI": 1.064,
+    "DEPI": 0.763,
+    "SGAI": 0.98,
+    "LVGI": 0.93,
+    "TATA": -0.031
+   },
+   "computed_at": "2026-11-27"
   }
  },
  "ARKB": {
@@ -3469,6 +3502,126 @@
   "scores": {
    "available": false,
    "reason": "Weniger als zwei Geschäftsjahre verfügbar"
+  }
+ },
+ "SIX2.DE": {
+  "fetched_ts": 1795809385.027878,
+  "scores": {
+   "available": true,
+   "piotroski": 3,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": false,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": false,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 1.92,
+   "altman_detail": {
+    "X1": 0.53,
+    "X2": null,
+    "X3": 0.077,
+    "X4": 0.718,
+    "X5": 0.6
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -1.96,
+   "beneish_detail": {
+    "DSRI": 1.235,
+    "GMI": 1.017,
+    "AQI": 1.042,
+    "SGI": 1.07,
+    "DEPI": 0.963,
+    "SGAI": 1.025,
+    "LVGI": 1.07,
+    "TATA": 0.052
+   },
+   "computed_at": "2026-11-27"
+  }
+ },
+ "HEI.DE": {
+  "fetched_ts": 1795809387.5843198,
+  "scores": {
+   "available": true,
+   "piotroski": 7,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": true,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": false,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": true,
+    "Kapitalumschlag gestiegen": true
+   },
+   "altman_z": 2.65,
+   "altman_detail": {
+    "X1": 0.045,
+    "X2": 0.383,
+    "X3": 0.089,
+    "X4": 1.953,
+    "X5": 0.594
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.55,
+   "beneish_detail": {
+    "DSRI": 1.058,
+    "GMI": 0.996,
+    "AQI": 1.002,
+    "SGI": 1.014,
+    "DEPI": 1.084,
+    "SGAI": 0.987,
+    "LVGI": 1.006,
+    "TATA": -0.03
+   },
+   "computed_at": "2026-11-27"
+  }
+ },
+ "P911.DE": {
+  "fetched_ts": 1795809388.7643142,
+  "scores": {
+   "available": true,
+   "piotroski": 5,
+   "piotroski_detail": {
+    "ROA positiv": true,
+    "Operativer Cashflow positiv": true,
+    "ROA gestiegen": false,
+    "Cashflow > Gewinn (keine Accruals)": true,
+    "Verschuldung gesunken": true,
+    "Liquiditätsgrad gestiegen": false,
+    "Keine Kapitalverwässerung": true,
+    "Bruttomarge gestiegen": false,
+    "Kapitalumschlag gestiegen": false
+   },
+   "altman_z": 2.16,
+   "altman_detail": {
+    "X1": 0.11,
+    "X2": 0.32,
+    "X3": 0.012,
+    "X4": 1.423,
+    "X5": 0.688
+   },
+   "altman_not_applicable": false,
+   "sector": "N/A",
+   "beneish_m": -2.37,
+   "beneish_detail": {
+    "DSRI": 1.057,
+    "GMI": 1.851,
+    "AQI": 1.004,
+    "SGI": 0.905,
+    "DEPI": 0.812,
+    "SGAI": 1.046,
+    "LVGI": 0.972,
+    "TATA": -0.063
+   },
+   "computed_at": "2026-11-27"
   }
  }
 }
